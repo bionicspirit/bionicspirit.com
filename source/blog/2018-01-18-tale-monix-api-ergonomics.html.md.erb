@@ -1,0 +1,76 @@
+
+---
+title: "A Monix Tale (1): API Ergonomics"
+clean_summary:
+  Tidbits of API ergonomics in the Monix library, as compared with Haskell, Cats and Scalaz.
+tags:
+  - Functional
+  - Programming
+  - Haskell
+  - Scala
+  - Cats
+  - FP
+---
+
+This is Part 1 of a series of blog-posts aiming at explaining
+interesting tidbits and facts of design and implementation of
+[Monix](https://monix.io/), as compared with its close competition.
+
+## Using Types as Documentation, The Myth
+
+I'm currently learning and playing with [Haskell](https://www.haskell.org/). 
+
+I might not know Haskell well, but have
+[contributed and used](https://typelevel.org/) Scala libraries that expose
+purely functional APIs, based on a type class hierarchy inspired by
+math and Haskell, I'm already familiar with many high level concepts
+used in Haskell's community, concepts that make people struggle. For
+example I'm deeply familiar with 
+[Haskell's IO](https://wiki.haskell.org/IO_inside) because I implemented it
+[three](https://monix.io/docs/2x/eval/task.html)
+[times](https://funfix.org/api/effect/classes/io.html)
+[already](https://github.com/typelevel/cats-effect).
+
+<p class='extra-info' markdown='1'>
+Haskell is a nice language with an
+ecosystem full of good ideas, innovative abstractions and I'm 
+enthusiastic about [PureScript](http://www.purescript.org/) and
+[Eta](http://eta-lang.com/), the later being a Haskell port for the
+JVM, my platform of choice.
+
+Even if in this section I'm complaining about it, make no mistake, if
+you're bored and looking to expand your horizon then learning Haskell
+is probably the best choice you can make, due to the subsequent
+exposure to ways of doing 
+[actual FP](https://alexn.org/blog/2017/10/15/functional-programming.html) 
+and abstractions you've never seen before and that you won't see in most
+mainstream languages.
+</p>
+
+Yet my Haskell journey is still enough to make me struggle. This is
+because Haskell's documentation is notoriously bad. Yes, there are good
+Haskell books out there, but those are just for getting started.
+
+One reason is a cultural one.
+
+For example in the article
+[Programming with Types, Not Tutorials](https://www.schoolofhaskell.com/user/chowells79/types-not-tutorials)
+the author is giving a nice glipse of what Haskell's modern type system
+can do for you. 
+
+Haskell developers are also fond of saying that the more generic a
+type signature gets, the more you can reason about its behavior, the
+ecosystem striving for generic implementation, having been inspired by nice papers 
+like the famous
+[Theorems for free!](http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf)
+by Philip Wadler.
+
+So how do Haskell developers search for some function they need?
+
+Well, they are accustomed to using search engines that can search for
+type signatures in all available libraries, like
+[Hoogle](https://www.haskell.org/hoogle/) or
+[Hayoo](http://hayoo.fh-wedel.de/), which are really cool ;-)
+
+Yes, types are useful as documentation, but as you'll see, that's not
+the whole story.
