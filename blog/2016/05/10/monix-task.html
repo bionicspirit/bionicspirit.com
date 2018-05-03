@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="canonical" href="https://alexn.org/blog/2016/05/10/monix-task.html">
+  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alexelcu" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2016-05-10" />
+    
+    <meta property="article:tag" content="Functional" />
+    <meta property="article:tag" content="Code" />
+    <meta property="article:tag" content="Scala" />
+    <meta property="article:tag" content="Monix" />
+
+    <title>Monix Task - flatMap(Oslo) 2016</title>
+    <meta name="og:title" content="Monix Task - flatMap(Oslo) 2016" />
+    <meta name="twitter:title" content="Monix Task - flatMap(Oslo) 2016" />
+
+      <meta name="og:image" content="https://alexn.org/assets/img/2015/monifu-square.png" />
+      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/2015/monifu-square.png" />
+      <meta name="twitter:image" content="https://alexn.org/assets/img/2015/monifu-square.png" />
+
+      <meta name="og:description" content="My presentation from flatMap(Oslo) 2016. It&#x27;s about the Monix Task, a new type for dealing with asynchronous processing on top of Scala and Scala.js." />
+      <meta name="twitter:description" content="My presentation from flatMap(Oslo) 2016. It&#x27;s about the Monix Task, a new type for dealing with asynchronous processing on top of Scala and Scala.js." />
+      <meta name="description" content="My presentation from flatMap(Oslo) 2016. It&#x27;s about the Monix Task, a new type for dealing with asynchronous processing on top of Scala and Scala.js." />
+
+  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
+  <link href="/assets/css/all-b9d1ad87.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- Google authorship -->
+  <link href="https://plus.google.com/+alexelcu" rel="publisher">
+</head>
+<body>
+  <div id="header-container">
+    <header>
+      <h1 id="title">alexn.org</h1>
+
+      <meta itemprop="lastReviewed" content="2018-05-03"/>
+      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <meta itemprop="url" content="https://plus.google.com/+alexelcu">
+      </div>
+
+      <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
+        </div>
+      </div>
+
+      <nav>
+    	  <a href="/">alexn.org</a>
+    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
+      </nav>
+    </header>
+  </div>
+
+  <div id="main-container">
+    <div id="main">
+      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="headline">Monix Task - flatMap(Oslo) 2016</h1>
+
+    <div id="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2016/05/10/monix-task.html"/>
+      <meta itemprop="datePublished" content="2016-05-10"/>
+      <meta itemprop="dateModified" content="2016-05-10"/>
+
+      <time class="post-date" itemprop="dateCreated" datetime="2016-05-10">
+        May 10, 2016
+      </time>
+
+      <span class="twitter-link">
+        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
+      </span>
+
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/2015/monifu-square.png">
+          <meta itemprop="width" content="500">
+          <meta itemprop="height" content="303">
+        </div>
+
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
+          <meta itemprop="width" content="585">
+          <meta itemprop="height" content="585">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="content" itemprop="articleBody">
+    <p><img src="/assets/img/2015/monifu-square.png" class="right" width="200" alt="Monifu square" /></p>
+
+<p><strong>Monix Task: Lazy, Async &amp; Awesome</strong> -
+my presentation from
+<a href="http://2016.flatmap.no/nedelcu.html#session">flatMap(Oslo) 2016</a>:</p>
+
+<ul>
+  <li><a href="/assets/pdfs/Monix-Task.pdf">Slides (PDF file)</a></li>
+  <li><a href="https://vimeo.com/channels/flatmap2016/165922572">Video (Vimeo)</a></li>
+</ul>
+
+<p>Also see:</p>
+
+<ul>
+  <li><a href="/blog/2016/05/15/monix-observable.html">Akka &amp; Monix</a>,
+Typelevel Summit, Oslo, 2016</li>
+  <li>the <a href="https://github.com/monixio/monix">Monix</a> project</li>
+</ul>
+
+<h2 id="abstract">Abstract</h2>
+
+<p>Scala’s Future from the standard library is great, but sometimes we need more.</p>
+
+<p>A Future strives to be a value, one detached from time and for
+this reason its capabilities are restricted and for some use-cases
+its behavior ends up being unintuitive. Hence, while the Future/Promise
+pattern is great for representing asynchronous results of processes that
+may or may not be started yet, it cannot be used as a specification
+for an asynchronous computation.</p>
+
+<p>The Monix Task is in essence about dealing with asynchronous
+computations and non-determinism, being inspired by the Scalaz Task
+and designed from the ground up for performance and to be compatible with
+Scala.js/Javascript runtimes and with the Cats library. It also makes use of
+Scala’s Future to represent results, the two being complementary.</p>
+
+<p>In this talk I’ll show you its design, when you should use it and
+why in dealing with asynchronicity it’s better to work with Task
+instead of blocking threads.</p>
+
+
+    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
+        Alexandru Nedelcu</a> |
+      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
+        Twitter</a> |
+      <a href="https://github.com/alexandru" itemprop="url" rel="author">
+        GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    <div id="other-articles">
+      <h2>Recent Articles</h2>
+
+      <ul class="posts">
+      	<li>
+      	  <time datetime="2018-02-12">
+      	    2018-02-12 &raquo;
+      	  </time>
+      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-11-10">
+      	    2017-11-10 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-15">
+      	    2017-10-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-13">
+      	    2017-10-13 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-11">
+      	    2017-10-11 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/11/javascript-promise-leaks-memory.html" rel="prefetch related">JavaScript's Promise Leaks Memory</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-08-16">
+      	    2017-08-16 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html" rel="prefetch related">Automatic Releases to Maven Central with Travis and SBT</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-03-15">
+      	    2017-03-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/03/15/fp-inception.html" rel="prefetch related">Functional Programming Inception - Bucharest FP</a>
+      	</li>
+      </ul>
+    </div>
+
+    <div id="contributions">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'alexnorg';
+        var disqus_url = 'http://alexn.org/blog/2016/05/10/monix-task.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </footer>
+</article>
+
+    </div>
+  </div>
+
+  <div id="footer-container">
+    <footer>
+      <div class="contact">
+      	&copy; 2018 Alexandru Nedelcu
+      	<br>
+      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
+      </div>
+
+      <div class="rss">
+      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
+      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
+      	</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-84530423-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

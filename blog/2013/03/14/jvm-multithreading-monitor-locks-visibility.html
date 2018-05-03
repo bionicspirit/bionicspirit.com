@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="canonical" href="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html">
+  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alexelcu" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2013-03-14" />
+    
+    <meta property="article:tag" content="Languages" />
+    <meta property="article:tag" content="Functional" />
+    <meta property="article:tag" content="Scala" />
+    <meta property="article:tag" content="Java" />
+    <meta property="article:tag" content="Multithreading" />
+    <meta property="article:tag" content="Concurrency" />
+
+    <title>JVM Multithreading: Monitor Locks and Visibility</title>
+    <meta name="og:title" content="JVM Multithreading: Monitor Locks and Visibility" />
+    <meta name="twitter:title" content="JVM Multithreading: Monitor Locks and Visibility" />
+
+      <meta name="og:image" content="https://alexn.org/assets/img/2013/ferrari.jpg" />
+      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/2013/ferrari.jpg" />
+      <meta name="twitter:image" content="https://alexn.org/assets/img/2013/ferrari.jpg" />
+
+      <meta name="og:description" content="Languages, Functional, Scala, Java, Multithreading, Concurrency" />
+      <meta name="twitter:description" content="Languages, Functional, Scala, Java, Multithreading, Concurrency" />
+      <meta name="description" content="Languages, Functional, Scala, Java, Multithreading, Concurrency" />
+
+  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
+  <link href="/assets/css/all-b9d1ad87.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- Google authorship -->
+  <link href="https://plus.google.com/+alexelcu" rel="publisher">
+</head>
+<body>
+  <div id="header-container">
+    <header>
+      <h1 id="title">alexn.org</h1>
+
+      <meta itemprop="lastReviewed" content="2018-05-03"/>
+      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <meta itemprop="url" content="https://plus.google.com/+alexelcu">
+      </div>
+
+      <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
+        </div>
+      </div>
+
+      <nav>
+    	  <a href="/">alexn.org</a>
+    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
+      </nav>
+    </header>
+  </div>
+
+  <div id="main-container">
+    <div id="main">
+      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="headline">JVM Multithreading: Monitor Locks and Visibility</h1>
+
+    <div id="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html"/>
+      <meta itemprop="datePublished" content="2013-03-14"/>
+      <meta itemprop="dateModified" content="2013-03-14"/>
+
+      <time class="post-date" itemprop="dateCreated" datetime="2013-03-14">
+        Mar 14, 2013
+      </time>
+
+      <span class="twitter-link">
+        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
+      </span>
+
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/2013/ferrari.jpg">
+          <meta itemprop="width" content="300">
+          <meta itemprop="height" content="164">
+        </div>
+
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
+          <meta itemprop="width" content="585">
+          <meta itemprop="height" content="585">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="content" itemprop="articleBody">
+    <p>Multithreading is a bitch to deal with. While interviewing developers,
+I noticed that surprisingly many don't have knowledge about this topic
+and I can't blame them really. However, in this day and age, for some
+problem domains building highly-concurrent architectures may be
+paramount to the success of demanding projects. As you'll see, there
+are many high level solutions, but I personally prefer to learn with a
+bottom up approach, starting from the basic and unsafe primitives, as
+understanding the problem is always the first step to real solutions.</p>
+
+<p><img src="/assets/img/2013/ferrari.jpg" class="right" width="300" height="164" alt="Ferrari" /></p>
+
+<p>This is (hopefully) the start of a series of articles giving an
+overview of the primitives and tools available on top of the JVM for
+solving concurrency-related problems, with code given in Scala and
+Java, starting from standard synchronization techniques, going through
+low-level primitives and non-blocking algorithms based on
+compare-and-set, up to high-level tools, such as Futures/Promises,
+actors and optimistic locking with shared transactional memory.</p>
+
+<!-- read more -->
+
+<h2 id="the-problem-of-atomicity">The Problem of Atomicity</h2>
+
+<p>Over 100,000 people can watch the same soccer game from the same
+stadium, at the same time. Those same 100,000 people cannot all take a
+dump in the same bathroom at the same time. Writing data to a central
+location requires an agreed-upon protocol for establishing who's
+allowed to write and when.</p>
+
+<p>Most of our concurrency-related problems come from our usage of
+<em>mutable data and data-structures</em>, as both reading and writing are
+problematic. When updating a mutable data-structure, the data can get
+into an inconsistent state, so threads that are doing the reading can
+end-up with garbage. When multiple threads are updating the same
+data-structure, the result can be far worse as it can lead to
+irrecoverable data corruption.</p>
+
+<p>To solve the problem, you want updates to seem <em>instantaneous</em> from
+other threads, with no in-between intermediary and inconsistent
+state. A piece of code is considered <em>atomic</em> if it seems
+instantaneous to other threads.</p>
+
+<p>Consider implementing a basic stack. Below is one example in which
+many things can go wrong, pointing out a few gotchas off the top of
+my head.</p>
+
+<p>(<a href="https://github.com/alexandru/multithreading-tutorial/blob/master/src/main/java/JavaSynchronize1.java">See here for the Java version</a>)</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="cm">/**
+  * Class representing nodes in a simple linked list.
+  *
+  * NOTES:
+  *
+  * 1. considering this class is used in the context of a stack,
+  *    we never need to add or remove from the middle, so there's
+  *    no reason for why this shouldn't be immutable
+  *
+  * 2. leaving this class public exposes the internal implementation
+  *    of our stack
+  *
+  */</span>
+<span class="k">class</span> <span class="nc">Node</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">value</span><span class="k">:</span> <span class="kt">Any</span> <span class="o">=</span> <span class="kc">null</span>
+  <span class="k">var</span> <span class="n">next</span><span class="k">:</span> <span class="kt">Node</span> <span class="o">=</span> <span class="kc">null</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+  * Totally unsafe, totally screwed implementation of a stack.
+  */</span>
+<span class="k">class</span> <span class="nc">Stack</span> <span class="o">{</span>
+  <span class="cm">/**
+    * Gotcha: leaving our head public, means other threads can mess with
+    * the internal state of our stack, even more so because our Node class
+    * is mutable.
+    */</span>
+  <span class="k">var</span> <span class="n">head</span><span class="k">:</span> <span class="kt">Node</span> <span class="o">=</span> <span class="kc">null</span>
+
+  <span class="k">def</span> <span class="n">isEmpty</span> <span class="k">=</span> <span class="n">head</span> <span class="o">==</span> <span class="kc">null</span>
+
+  <span class="k">def</span> <span class="n">push</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Any</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">node</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Node</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">value</span> <span class="k">=</span> <span class="n">value</span>
+    <span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="n">head</span>
+    <span class="c1">// Gotcha: by the time we assign the new head, another thread
+</span>    <span class="c1">// may have changed it already
+</span>    <span class="k">this</span><span class="o">.</span><span class="n">head</span> <span class="k">=</span> <span class="n">node</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">pop</span><span class="o">()</span> <span class="k">=</span>
+    <span class="k">if</span> <span class="o">(!</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// Gotchas:
+</span>      <span class="c1">//
+</span>      <span class="c1">// 1. by the time the following is executed the `head`
+</span>      <span class="c1">//    can already be null
+</span>      <span class="c1">//
+</span>      <span class="c1">// 2. two or more threads may read the same `head` and
+</span>      <span class="c1">//    thus receive the same value on pop()
+</span>      <span class="k">val</span> <span class="n">node</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="n">head</span>
+
+      <span class="c1">// 1. again, the `head` can already be different,
+</span>      <span class="c1">//    so the following assignment may lose data
+</span>      <span class="c1">// 2. the new value may not be visible from other
+</span>      <span class="c1">//    threads
+</span>      <span class="k">this</span><span class="o">.</span><span class="n">head</span> <span class="k">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+      <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+    <span class="o">}</span>
+    <span class="k">else</span>
+      <span class="kc">null</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>The standard way to fix this, as preferred by Java developers, is to
+use the <code class="highlighter-rouge">synchronize</code> keyword on all the Stack's methods. You've seen
+this before, right?</p>
+
+<div class="highlight"><pre class="highlight java"><code><span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>The <code class="highlighter-rouge">synchronized</code> keyword creates a <em>monitor lock</em> (also called an
+<em>intrinsic lock</em>) on the implicit <code class="highlighter-rouge">this</code>. So in case of an instance,
+it creates a monitor on that instance. In the case of Java's <code class="highlighter-rouge">static</code>
+methods, it creates a monitor on the class object. It's important to
+keep this in mind, because <code class="highlighter-rouge">synchronized</code> is not some magical tool
+that solves every problem you may have and I like that Scala doesn't
+have such a keyword ;-)</p>
+
+<p>A <em>monitor lock</em> is guaranteed to be acquired by only a single thread
+at the same time. Other threads that try acquiring it in the process
+are blocked until the lock is free again.</p>
+
+<p>Lets improve the above using the following:</p>
+
+<ol>
+  <li>the Monitor pattern (monitor locks on <code class="highlighter-rouge">this</code>)</li>
+  <li>encapsulation of internal mutable state</li>
+  <li><code class="highlighter-rouge">Option[T]</code> instead of nulls (Guava's <code class="highlighter-rouge">Optional&lt;T&gt;</code> for the Java
+version), because that's how I roll</li>
+  <li>immutable nodes for our internal linked-list</li>
+</ol>
+
+<p>(<a href="https://github.com/alexandru/multithreading-tutorial/blob/master/src/main/java/JavaSynchronize2.java">See here for the Java version</a>)</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="cm">/**
+  * Better (mutable) stack implementation.
+  *
+  * For type-safety, changed the interface to take a type parameter.
+  */</span>
+<span class="k">class</span> <span class="nc">Stack</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="cm">/**
+    * Changes:
+    *
+    * 1. to prevent implementation leaks, nodes in our linked-list
+    *    have to be private, including the Node class
+    * 2. Node instances are now immutable (always prefer immutable
+    *    data structures)
+    * 3. never use nulls, prefer proper initialization and Option[T]
+    */</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Node</span><span class="o">(</span>
+    <span class="n">value</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">T</span><span class="o">],</span>
+    <span class="n">next</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Node</span><span class="o">]</span>
+  <span class="o">)</span>
+
+  <span class="cm">/**
+    * The head of our stack.
+    *
+    * Because the Node class is private, if you make this field
+    * public, then the compiler will trigger a compilation error
+    */</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">var</span> <span class="n">head</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Node</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span>
+
+  <span class="k">def</span> <span class="n">isEmpty</span> <span class="k">=</span>
+    <span class="k">this</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
+      <span class="n">head</span><span class="o">.</span><span class="n">isEmpty</span>
+    <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">push</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Stack</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
+    <span class="c1">// entering monitor lock
+</span>    <span class="k">this</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
+      <span class="n">head</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Node</span><span class="o">(</span>
+        <span class="n">value</span> <span class="k">=</span> <span class="nc">Option</span><span class="o">(</span><span class="n">value</span><span class="o">),</span>
+        <span class="n">next</span> <span class="k">=</span> <span class="n">head</span>
+      <span class="o">))</span>
+      <span class="k">this</span>
+    <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">pop</span><span class="o">()</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
+    <span class="c1">// Entering monitor lock
+</span>    <span class="c1">//
+</span>    <span class="c1">// Note that `isEmpty` is also synchronized, but monitor locks
+</span>    <span class="c1">// are reentrant so a lock can be acquired multiple times by the
+</span>    <span class="c1">// same thread.
+</span>    <span class="k">this</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(!</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="n">node</span> <span class="k">=</span> <span class="n">head</span><span class="o">.</span><span class="n">get</span>
+        <span class="n">head</span> <span class="k">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
+        <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+      <span class="o">}</span>
+      <span class="k">else</span>
+        <span class="nc">None</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>That's better. Not perfect though, as Stacks are the easiest immutable
+data-structures to implement … so how about not using any locks at
+all? (that's for another article)</p>
+
+<h3 id="the-big-problem-with-locks">The Big Problem with Locks</h3>
+
+<p>Take these 2 stacks:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">stack1</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">.</span><span class="n">push</span><span class="o">(</span><span class="s">"World"</span><span class="o">).</span><span class="n">push</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">)</span>
+<span class="k">val</span> <span class="n">stack2</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Stack</span>
+</code></pre></div>
+<p>Question: is the following thread safe?</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">while</span> <span class="o">(!</span><span class="n">stack1</span><span class="o">.</span><span class="n">isEmpty</span><span class="o">)</span>
+  <span class="n">stack2</span><span class="o">.</span><span class="n">push</span><span class="o">(</span> <span class="n">stack1</span><span class="o">.</span><span class="n">pop</span> <span class="o">)</span>
+</code></pre></div>
+<p>Answer: No. Given that:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">A</code> is thread safe</li>
+  <li><code class="highlighter-rouge">B</code> is thread safe</li>
+</ol>
+
+<p>Then using <code class="highlighter-rouge">A + B</code> is NOT thread safe, unless you make it so by using
+an external lock that protects both at all times.</p>
+
+<p>Code that's thread-safe through synchronization based on locks is
+<strong>not composable</strong>.</p>
+
+<h2 id="visibility">The Problem of Visibility</h2>
+
+<p>When speaking of multithreading, the most obvious problem is the
+inconsistency of shared mutable state when being changed and read by
+multiple threads at the same time. However the problem is actually
+twofold and the <em>atomicity</em> of code that changes mutable state is not
+your only problem.</p>
+
+<p>Take this piece of code Scala code (
+<a href="https://github.com/alexandru/multithreading-tutorial/blob/master/src/main/java/JavaVisibility1.java">see here for the Java version</a>):</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">var</span> <span class="n">result</span> <span class="k">=</span> <span class="s">"Not Initialized"</span>
+<span class="k">var</span> <span class="n">isDone</span> <span class="k">=</span> <span class="kc">false</span>
+
+<span class="k">val</span> <span class="n">producer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">result</span> <span class="k">=</span> <span class="s">"Hello, World!"</span>
+    <span class="n">isDone</span> <span class="k">=</span> <span class="kc">true</span>
+  <span class="o">}</span>
+<span class="o">})</span>
+
+<span class="k">val</span> <span class="n">consumer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// loops until isDone is true
+</span>    <span class="k">while</span> <span class="o">(!</span><span class="n">isDone</span><span class="o">)</span> <span class="o">{}</span>
+    <span class="n">println</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">})</span>  
+
+<span class="n">consumer</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
+<span class="n">producer</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
+<span class="n">consumer</span><span class="o">.</span><span class="n">join</span><span class="o">()</span>
+</code></pre></div>
+<p><strong>Question:</strong> What does the above print?</p>
+
+<ol>
+  <li><em>Hello, World!</em></li>
+  <li><em>Not initialized</em></li>
+  <li>Nothing, goes into an infinite loop</li>
+  <li>All of the above</li>
+</ol>
+
+<p>The answer may surprise some of you. It's actually number 4, all of
+the above. To make matters worse, you can't predict what happens, as
+it depends on the CPU architecture you have, on the number of cores,
+on who made the VM, on what other apps you have running, on whether
+the laptop is plugged in or not, on planetary alignments and so on.</p>
+
+<p>So what can happen?</p>
+
+<ol>
+  <li>
+    <p>On most desktops today, most of the time (as in &gt;50%) it will
+behave as expected, which kind of sucks really, because it's far
+better to have a fast and loud failure than one with subtle effects
+that may or may not manifest when you're testing the app.</p>
+  </li>
+  <li>
+    <p>The JVM doesn't guarantee that the instructions are executed in the
+given order. Amongst others, the VM may decide that those
+instructions are independent of each other and may reverse their
+order for things like better cache locality, or because processors
+are pretty smart about executing multi-cycles instructions, being
+able for example to start subsequent instructions before the
+previous ones are finished. So it's pretty common for the compiler
+to reorder instructions such that longer instructions are executed
+before shorter ones. The processor itself may decide to execute
+instructions out of order, even if the VM/compiler is issuing the
+instructions in the right order. From the point of view of the
+<code class="highlighter-rouge">producer</code> thread, the result is the same as if the instructions
+are executed in the given order, but you can't rely on it when
+viewing the results from outside threads.</p>
+  </li>
+  <li>
+    <p>The new value for <code class="highlighter-rouge">isDone</code> could be cached somewhere (like in a
+processor register) and the <code class="highlighter-rouge">consumer</code> thread may never see this
+new value. On my desktop in more than 1 out of 10 cases this little
+example goes into an infinite loop.</p>
+  </li>
+</ol>
+
+<h3 id="happens-before-relationships-and-memory-barriers">Happens-Before Relationships and Memory Barriers</h3>
+
+<p>As I was saying at point 2 above, in addition to cached values, you
+can also have reordered instructions. Say that you've got the
+following calls:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="n">statementA</span><span class="o">;</span>
+<span class="n">statementB</span><span class="o">;</span>
+</code></pre></div>
+<p>From the point of view of the thread executing these 2 statements, the
+result of <code class="highlighter-rouge">statementA</code> is available to <code class="highlighter-rouge">statementB</code>. We call this a
+<em><a href="http://en.wikipedia.org/wiki/Happened-before">happens-before</a></em>
+relationship between the two statements. So from the point of view of
+the executing thread, the result is always the same as if these 2
+statements are executing in order, even if these statements are
+executed in fact out of order.</p>
+
+<p>Outside of the executing thread, this <em>happens-before</em> relationship is
+not guaranteed. The result of <code class="highlighter-rouge">statementB</code> could be visible to other
+threads, while the result of <code class="highlighter-rouge">statementA</code> could be made visible later
+or <em>never</em>.</p>
+
+<p>In our example, to ensure that <code class="highlighter-rouge">isDone</code> is written after <code class="highlighter-rouge">result</code> and
+to ensure the visibility for outside threads for both, you need to
+create what is called a
+<em><a href="http://en.wikipedia.org/wiki/Memory_barrier">memory barrier</a></em>.</p>
+
+<p>The standard way of doing this is (again) through a <em>monitor lock</em>
+acquired on a certain object.</p>
+
+<p>A synchronization block guarantees two things:</p>
+
+<ul>
+  <li>all the writes that happened on other threads on variables, by using
+the monitor <code class="highlighter-rouge">X</code>, are visible to our current thread if it acquired
+<em>the same monitor</em> <code class="highlighter-rouge">X</code></li>
+  <li>at the end of the synchronization block, a memory barrier is created
+and changes made to variables inside that block will be visible to
+other threads that <em>use the same monitor</em></li>
+</ul>
+
+<p>To fix our problem with monitor locks, here's the Scala version (
+<a href="https://github.com/alexandru/multithreading-tutorial/blob/master/src/main/java/JavaVisibility2.java">see here for the Java version</a>):</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">var</span> <span class="n">result</span> <span class="k">=</span> <span class="s">"Not Initialized"</span>
+<span class="k">var</span> <span class="n">isDone</span> <span class="k">=</span> <span class="kc">false</span>
+<span class="k">val</span> <span class="n">lock</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AnyRef</span>
+
+<span class="k">val</span> <span class="n">consumer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+    <span class="k">var</span> <span class="n">continueLooping</span> <span class="k">=</span> <span class="kc">true</span>
+	
+    <span class="k">while</span> <span class="o">(</span><span class="n">continueLooping</span><span class="o">)</span>
+      <span class="n">lock</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
+        <span class="n">continueLooping</span> <span class="k">=</span> <span class="o">!</span><span class="n">isDone</span>
+      <span class="o">}</span>
+
+    <span class="n">println</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">})</span>
+
+<span class="k">val</span> <span class="n">producer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+    <span class="n">lock</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span> 
+      <span class="n">result</span> <span class="k">=</span> <span class="s">"Hello, World!"</span>
+      <span class="n">isDone</span> <span class="k">=</span> <span class="kc">true</span>
+    <span class="o">}</span> <span class="c1">// &lt;-- memory barrier
+</span>  <span class="o">}</span>
+<span class="o">})</span>
+
+<span class="n">consumer</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
+<span class="n">producer</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
+<span class="n">consumer</span><span class="o">.</span><span class="n">join</span><span class="o">()</span>
+</code></pre></div>
+<p>There is one big gotcha here. The JVM only guarantees <em>visibility</em> and
+<em>happens-before relationships</em> only if the threads involved in
+reading/writing to our variables are synchronized with the same
+monitor lock. This gotcha could happen for a bunch of reasons, for
+instance the JVM does escape-analysis and it can get rid of locks
+completely if it decides a lock isn't used concurrently by multiple
+threads.</p>
+
+<h3 id="volatiles">Volatiles</h3>
+
+<p>For this particular example, you actually don't need a lock at
+all. All you need is a <code class="highlighter-rouge">volatile</code>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="nd">@volatile</span>
+<span class="k">var</span> <span class="n">isDone</span> <span class="k">=</span> <span class="kc">false</span>
+</code></pre></div>
+<p>Or in Java:</p>
+
+<div class="highlight"><pre class="highlight java"><code><span class="kd">volatile</span> <span class="kt">boolean</span> <span class="n">isDone</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+</code></pre></div>
+<p>A write to a <code class="highlighter-rouge">volatile</code> also creates a memory-barrier. If you need
+memory barriers, then a write to a volatile on the JVM creates a
+<em>full-fence</em>. This guarantees not only the visibility of <code class="highlighter-rouge">isDone</code>, but
+it also guarantees the visibility of all other variables written prior
+to it by the same thread, like <code class="highlighter-rouge">result</code> in our example.</p>
+
+<p>Volatiles are useful sometimes in non-blocking algorithms. But even
+with the strong guarantee of the created memory-barrier, for most
+purposes where you need volatiles, you'll end up using atomic
+instances from the <code class="highlighter-rouge">java.util.concurrent.atomic</code> package, like
+<a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/atomic/AtomicReference.html">AtomicReference</a>
+or
+<a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a>.</p>
+
+<p>That's because you need <strong>compare and set</strong> for non-blocking
+algorithms, an atomic operation that's optimized on most CPUs today
+that you can't do with plain volatiles.</p>
+
+<p>But that's a topic for another article.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<p>Checkout the following:</p>
+
+<ul>
+  <li><strong><a href="http://www.cs.umd.edu/~pugh/java/memoryModel/jsr-133-faq.html">JSR 133 (Java Memory Model) FAQ</a></strong></li>
+  <li><strong><a href="http://www.amazon.com/gp/product/0321349601/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321349601&amp;linkCode=as2&amp;tag=bionicspirit-20">Java Concurrency in Practice</a></strong>
+ (affiliate Amazon link)</li>
+</ul>
+
+
+    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
+        Alexandru Nedelcu</a> |
+      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
+        Twitter</a> |
+      <a href="https://github.com/alexandru" itemprop="url" rel="author">
+        GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    <div id="other-articles">
+      <h2>Recent Articles</h2>
+
+      <ul class="posts">
+      	<li>
+      	  <time datetime="2018-02-12">
+      	    2018-02-12 &raquo;
+      	  </time>
+      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-11-10">
+      	    2017-11-10 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-15">
+      	    2017-10-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-13">
+      	    2017-10-13 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-11">
+      	    2017-10-11 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/11/javascript-promise-leaks-memory.html" rel="prefetch related">JavaScript's Promise Leaks Memory</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-08-16">
+      	    2017-08-16 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html" rel="prefetch related">Automatic Releases to Maven Central with Travis and SBT</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-03-15">
+      	    2017-03-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/03/15/fp-inception.html" rel="prefetch related">Functional Programming Inception - Bucharest FP</a>
+      	</li>
+      </ul>
+    </div>
+
+    <div id="contributions">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'alexnorg';
+        var disqus_url = 'http://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </footer>
+</article>
+
+    </div>
+  </div>
+
+  <div id="footer-container">
+    <footer>
+      <div class="contact">
+      	&copy; 2018 Alexandru Nedelcu
+      	<br>
+      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
+      </div>
+
+      <div class="rss">
+      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
+      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
+      	</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-84530423-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

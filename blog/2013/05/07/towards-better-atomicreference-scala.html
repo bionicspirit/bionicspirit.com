@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="canonical" href="https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html">
+  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alexelcu" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2013-05-07" />
+    
+    <meta property="article:tag" content="Languages" />
+    <meta property="article:tag" content="Functional" />
+    <meta property="article:tag" content="Scala" />
+    <meta property="article:tag" content="Java" />
+    <meta property="article:tag" content="Multithreading" />
+    <meta property="article:tag" content="Concurrency" />
+
+    <title>Towards a Better AtomicReference</title>
+    <meta name="og:title" content="Towards a Better AtomicReference" />
+    <meta name="twitter:title" content="Towards a Better AtomicReference" />
+
+      <meta name="og:image" content="https://alexn.org/assets/img/logo.png" />
+      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/logo.png" />
+      <meta name="twitter:image" content="https://alexn.org/assets/img/logo.png" />
+
+      <meta name="og:description" content="Languages, Functional, Scala, Java, Multithreading, Concurrency" />
+      <meta name="twitter:description" content="Languages, Functional, Scala, Java, Multithreading, Concurrency" />
+      <meta name="description" content="Languages, Functional, Scala, Java, Multithreading, Concurrency" />
+
+  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
+  <link href="/assets/css/all-b9d1ad87.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- Google authorship -->
+  <link href="https://plus.google.com/+alexelcu" rel="publisher">
+</head>
+<body>
+  <div id="header-container">
+    <header>
+      <h1 id="title">alexn.org</h1>
+
+      <meta itemprop="lastReviewed" content="2018-05-03"/>
+      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <meta itemprop="url" content="https://plus.google.com/+alexelcu">
+      </div>
+
+      <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
+        </div>
+      </div>
+
+      <nav>
+    	  <a href="/">alexn.org</a>
+    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
+      </nav>
+    </header>
+  </div>
+
+  <div id="main-container">
+    <div id="main">
+      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="headline">Towards a Better AtomicReference</h1>
+
+    <div id="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html"/>
+      <meta itemprop="datePublished" content="2013-05-07"/>
+      <meta itemprop="dateModified" content="2013-05-07"/>
+
+      <time class="post-date" itemprop="dateCreated" datetime="2013-05-07">
+        May 07, 2013
+      </time>
+
+      <span class="twitter-link">
+        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
+      </span>
+
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/logo.png">
+          <meta itemprop="width" content="300">
+          <meta itemprop="height" content="300">
+        </div>
+
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
+          <meta itemprop="width" content="585">
+          <meta itemprop="height" content="585">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="content" itemprop="articleBody">
+    <p>The
+<a href="http://docs.oracle.com/javase/6/docs/api/java/util/concurrent/atomic/package-summary.html">AtomicReference</a>
+is like a container for a <code class="highlighter-rouge">volatile</code> reference. Usage of <code class="highlighter-rouge">volatile</code>
+references is useful for the issue of
+<a href="/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html#visibility">visibility</a>
+in concurrent code, however <code class="highlighter-rouge">AtomicReference</code> also supports the atomic
+<a href="http://en.wikipedia.org/wiki/Compare-and-swap">Compare-and-Swap</a>
+operation (CAS for short), which is the pillar of all non-blocking
+data-structures and algorithms built on top of the JVM, including
+complex ones like the <code class="highlighter-rouge">ConcurrentLinkedQueue</code>, an implementation based
+on the
+<a href="http://www.cs.rochester.edu/u/michael/PODC96.html">Michael-Scott non-blocking queues</a>.</p>
+
+<p>However, the interface provided leaves something to be desired:</p>
+
+<ul>
+  <li>
+    <p>the <a href="http://docs.oracle.com/javase/6/docs/api/java/util/concurrent/atomic/AtomicReference.html#compareAndSet%28V,%20V%29">compareAndSet</a>
+operation is too low level and for 99% of everything we do in our day to day
+code it can be replaced with something much better, as we'll see</p>
+  </li>
+  <li>
+    <p>the classes from the <code class="highlighter-rouge">java.util.concurrent.atomic</code> package do not
+implement a common interface, so you can't use an
+<a href="http://docs.oracle.com/javase/6/docs/api/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a>
+in place of an <code class="highlighter-rouge">AtomicReference</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">AtomicInteger</code> and <code class="highlighter-rouge">AtomicLong</code> provide <code class="highlighter-rouge">incrementAndGet</code>, which is
+really useful in practice for keeping track of things in
+non-blocking counters, but why should that be available only for
+Ints and Longs?  Floats, Doubles, BigInt, BigDecimal and all kinds
+of numbers can be incremented too</p>
+  </li>
+</ul>
+
+<p><strong>IMPORTANT UPDATE (March 31, 2014):</strong> The content of this article is slightly obsolete, though
+still has pedagogical value. For an up to date article on my Atomic references, checkout the wiki page maintained for project <a href="https://github.com/alexandru/monifu/">Monifu</a>: <a href="https://github.com/alexandru/monifu/blob/master/docs/atomic.md">Atomic References</a></p>
+
+<!-- read more -->
+
+<p>This is a simple and working example of how Scala can improve your
+code tremendously. And I'm basically describing the implementation of
+my own <code class="highlighter-rouge">shifter.concurrency.atomic.Ref</code>. You can:</p>
+
+<ul>
+  <li>see the code in <a href="https://github.com/alexandru/shifter/blob/master/core/src/main/scala/shifter/concurrency/atomic/Ref.scala">my GitHub repo</a></li>
+  <li>checkout the <a href="http://shifter.alexn.org/api/current/core/#shifter.concurrency.atomic.package">API docs</a></li>
+</ul>
+
+<h2 id="the-common-interface">The Common Interface</h2>
+
+<p>Lets start by mirroring the basics of AtomicReference:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Ref</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">get</span><span class="k">:</span> <span class="kt">T</span>
+  <span class="k">def</span> <span class="n">set</span><span class="o">(</span><span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span>
+  <span class="k">def</span> <span class="n">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span>
+<span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">Ref</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">apply</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initial</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">RefAny</span><span class="o">(</span><span class="n">initial</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>With a generic implementation that for now just delegates to our inner
+<code class="highlighter-rouge">AtomicReference</code>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">RefAny</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initial</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Ref</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">get</span> <span class="k">=</span> 
+    <span class="n">instance</span><span class="o">.</span><span class="n">get</span><span class="o">()</span>  
+  <span class="k">def</span> <span class="n">set</span><span class="o">(</span><span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> 
+    <span class="n">instance</span><span class="o">.</span><span class="n">set</span><span class="o">(</span><span class="n">update</span><span class="o">)</span>  
+  <span class="k">def</span> <span class="n">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> 
+    <span class="n">instance</span><span class="o">.</span><span class="n">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="o">,</span> <span class="n">update</span><span class="o">)</span>
+	
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="n">instance</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">(</span><span class="n">initial</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>As I was saying, the <code class="highlighter-rouge">compareAndSet</code> is too low level. Much better is
+to work with transformations. How about defining a function with the
+following signature:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span>
+</code></pre></div>
+<p>And that can be used like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+
+<span class="n">ref</span><span class="o">.</span><span class="n">transformAndGet</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span>
+<span class="c1">// =&gt; 4
+</span></code></pre></div>
+<p>Well, incrementing numbers is not the only thing that you can do. For
+instance you could store and transform immutable data-structures, like a queue:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">collection.immutable.Queue</span>
+
+<span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="nc">Queue</span><span class="o">.</span><span class="n">empty</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span>
+
+<span class="n">ref</span><span class="o">.</span><span class="n">transformAndGet</span><span class="o">(</span><span class="n">q</span> <span class="k">=&gt;</span> <span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="o">(</span><span class="s">"Alex"</span><span class="o">))</span>
+</code></pre></div>
+<p>How about that? We got ourselves a non-blocking queue, without having
+to implement the dreadful Michael-Scott algorithm.</p>
+
+<p>Implementing <code class="highlighter-rouge">Ref.transformAndGet</code> is easy:</p>
+
+<div class="highlight"><pre class="highlight scala"><code>  <span class="nd">@tailrec</span>
+  <span class="k">final</span> <span class="k">def</span> <span class="n">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">oldValue</span> <span class="k">=</span> <span class="n">get</span>
+    <span class="k">val</span> <span class="n">newValue</span> <span class="k">=</span> <span class="n">cb</span><span class="o">(</span><span class="n">oldValue</span><span class="o">)</span>
+
+    <span class="k">if</span> <span class="o">(!</span><span class="n">compareAndSet</span><span class="o">(</span><span class="n">oldValue</span><span class="o">,</span> <span class="n">newValue</span><span class="o">))</span>
+	  <span class="c1">// tail-recursive call
+</span>      <span class="n">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="o">)</span>
+    <span class="k">else</span>
+      <span class="n">newValue</span>
+  <span class="o">}</span>
+</code></pre></div>
+<p>I'm using a tail-recursive function, guarded by the <code class="highlighter-rouge">tailrec</code>
+annotation, because that's how I roll. I also find it much more
+readable and less error-prone. It creates a loop … as long as the
+<code class="highlighter-rouge">compareAndSet</code> operation is unsuccessful, then it keeps trying.</p>
+
+<p>We can also implement <code class="highlighter-rouge">Ref.getAndTransform</code>, which returns the old
+value before the transformation occurred, instead of the update:</p>
+
+<div class="highlight"><pre class="highlight scala"><code>  <span class="nd">@tailrec</span>
+  <span class="k">final</span> <span class="k">def</span> <span class="n">getAndTransform</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">oldValue</span> <span class="k">=</span> <span class="n">get</span>
+    <span class="k">val</span> <span class="n">update</span> <span class="k">=</span> <span class="n">cb</span><span class="o">(</span><span class="n">oldValue</span><span class="o">)</span>
+
+    <span class="k">if</span> <span class="o">(!</span><span class="n">compareAndSet</span><span class="o">(</span><span class="n">oldValue</span><span class="o">,</span> <span class="n">update</span><span class="o">))</span>
+	  <span class="c1">// tail-recursive call
+</span>      <span class="n">getAndTransform</span><span class="o">(</span><span class="n">cb</span><span class="o">)</span>
+    <span class="k">else</span>
+      <span class="n">oldValue</span>
+  <span class="o">}</span>
+</code></pre></div>
+<p>We can have other utilities too, like
+<a href="http://shifter.alexn.org/api/current/core/index.html#shifter.concurrency.atomic.Ref@transformAndExtract[U]%28cb:T=%3E%28T,U%29%29:U">transformAndExtract</a>,
+but lets move on to our next issue … incrementing numbers.</p>
+
+<p>Of course, with our transformation functions, the presence of a
+shortcut for incrementing numbers is not that required anymore,
+however it's still a nice shortcut that can also provide readability
+and performance advantages. The problem with a generic
+<code class="highlighter-rouge">AtomicReference</code> is that not all reference types are numbers that can
+be incremented. Fortunately for us, Scala gives us
+<a href="http://en.wikipedia.org/wiki/Type_class">Type Classes</a> and there is
+already a type class defined in Scala's standard library for numbers:
+<a href="http://www.scala-lang.org/api/current/index.html#scala.math.Numeric">Numeric[T]</a>.</p>
+
+<p>What <code class="highlighter-rouge">Numeric[T]</code> does is to define, amongst others, the <code class="highlighter-rouge">sum</code>
+operation for type <code class="highlighter-rouge">T</code> and of course the value for <code class="highlighter-rouge">one</code>. And we don't
+need more than that.</p>
+
+<p>So we can define our <code class="highlighter-rouge">Ref.incrementAndGet</code> function, in a generic way,
+like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code>  <span class="k">def</span> <span class="n">incrementAndGet</span><span class="o">(</span><span class="k">implicit</span> <span class="n">num</span> <span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">=</span>
+    <span class="n">transformAndGet</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">num</span><span class="o">.</span><span class="n">plus</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">num</span><span class="o">.</span><span class="n">one</span><span class="o">))</span>
+</code></pre></div>
+<p>And lo and behold, this stuff works for any kind of number, not just
+Ints and Longs:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="nc">BigInt</span><span class="o">(</span><span class="mi">1</span><span class="o">))</span>
+<span class="n">ref</span><span class="k">:</span> <span class="kt">Ref</span><span class="o">[</span><span class="kt">scala.math.BigInt</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="n">ref</span><span class="o">.</span><span class="n">incrementAndGet</span>
+<span class="n">res0</span><span class="k">:</span> <span class="kt">scala.math.BigInt</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div>
+<p>Best of all, if we try doing this on things that aren't numbers, then
+it fails with a compile-time error:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="s">"hello"</span><span class="o">)</span>
+<span class="n">ref</span><span class="k">:</span> <span class="kt">Ref</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="n">hello</span><span class="o">)</span>
+
+<span class="n">scala</span><span class="o">&gt;</span> <span class="n">ref</span><span class="o">.</span><span class="n">incrementAndGet</span>
+<span class="o">&lt;</span><span class="n">console</span><span class="k">&gt;:</span><span class="mi">9</span><span class="k">:</span> <span class="kt">error:</span> <span class="kt">could</span> <span class="kt">not</span> <span class="kt">find</span> <span class="kt">implicit</span> <span class="kt">value</span> <span class="kt">for</span> <span class="kt">parameter</span> <span class="kt">num:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+              <span class="n">ref</span><span class="o">.</span><span class="n">incrementAndGet</span>
+                  <span class="o">^</span>
+</code></pre></div>
+<p><code class="highlighter-rouge">AtomicInteger</code> from Java's standard library already has an
+<code class="highlighter-rouge">incrementAndGet</code> and who knows, it might be more efficient than our
+implementation. Maybe at some point it will get translated into a
+single processor instruction. So we can take advantage of that by
+specializing our <code class="highlighter-rouge">Ref</code> for <code class="highlighter-rouge">Int</code>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">final</span> <span class="k">class</span> <span class="nc">RefInt</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Ref</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="o">{</span>
+  <span class="c1">// ....
+</span>  
+  <span class="k">override</span> <span class="k">def</span> <span class="n">incrementAndGet</span><span class="o">(</span><span class="k">implicit</span> <span class="n">num</span><span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+    <span class="n">instance</span><span class="o">.</span><span class="n">incrementAndGet</span><span class="o">()</span>
+
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="n">instance</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicInteger</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
+<span class="o">}</span>
+
+</code></pre></div>
+<p>And then we can make our primary constructor return a <code class="highlighter-rouge">RefInt</code>, in
+case the initial value is an <code class="highlighter-rouge">Int</code>. Well, here's how the code in
+<code class="highlighter-rouge">shifter.concurrency.atomic.Ref</code> looks like:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">object</span> <span class="nc">Ref</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefInt</span> <span class="o">=</span>
+    <span class="k">new</span> <span class="nc">RefInt</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefLong</span> <span class="o">=</span>
+    <span class="k">new</span> <span class="nc">RefLong</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Boolean</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefBoolean</span> <span class="o">=</span>
+    <span class="k">new</span> <span class="nc">RefBoolean</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">apply</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Ref</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
+    <span class="k">new</span> <span class="nc">RefAny</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initialValue</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>There is still one difference between a <code class="highlighter-rouge">Ref[Int]</code> and
+<code class="highlighter-rouge">AtomicInteger</code>. Our interface will be guilty of
+<a href="http://en.wikipedia.org/wiki/Object_type_%28object-oriented_programming%29#Boxing">boxing and unboxing</a>
+the integers passed to those functions. And in the wild, using
+<code class="highlighter-rouge">AtomicInteger</code> for cheap and non-blocking counters is really common,
+so it's a pitty if we'll have performance degradation here.</p>
+
+<p>The fix is easy though. The Scala compiler can specialize our type T
+for primitive types, if we annotate our type like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Ref</span><span class="o">[</span><span class="kt">@specialized</span><span class="o">(</span><span class="kt">scala.Int</span>, <span class="kt">scala.Long</span>, <span class="kt">scala.Boolean</span><span class="o">)</span> <span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="c1">// ...
+</span><span class="o">}</span>
+</code></pre></div>
+<p>In the example, the compiler will specialize the <code class="highlighter-rouge">Ref[T]</code> interface
+for Ints, Longs and Booleans, to avoid the boxing and unboxing
+overhead.</p>
+
+<p>What this will do is to generate specialized methods for these
+primitive types. You can inspect the generated interface easily with
+the <code class="highlighter-rouge">javap</code> utility. For instance, let's see what it generates for
+<code class="highlighter-rouge">compareAndSet</code>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="n">$</span> <span class="n">javap</span> <span class="n">shifter</span><span class="o">.</span><span class="n">concurrency</span><span class="o">.</span><span class="n">atomic</span><span class="o">.</span><span class="nc">Ref</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">compareAndSet</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">compareAndSet</span><span class="o">(</span><span class="n">T</span><span class="o">,</span> <span class="n">T</span><span class="o">);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">compareAndSet$mcZ$sp</span><span class="o">(</span><span class="n">boolean</span><span class="o">,</span> <span class="n">boolean</span><span class="o">);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">compareAndSet$mcI$sp</span><span class="o">(</span><span class="n">int</span><span class="o">,</span> <span class="n">int</span><span class="o">);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">compareAndSet$mcJ$sp</span><span class="o">(</span><span class="n">long</span><span class="o">,</span> <span class="n">long</span><span class="o">);</span>
+</code></pre></div>
+<p>Or for <code class="highlighter-rouge">incrementAndGet</code>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="n">$</span> <span class="n">javap</span> <span class="n">shifter</span><span class="o">.</span><span class="n">concurrency</span><span class="o">.</span><span class="n">atomic</span><span class="o">.</span><span class="nc">Ref</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">incrementAndGet</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">T</span> <span class="n">incrementAndGet</span><span class="o">(</span><span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="nc">Numeric</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">incrementAndGet$mcZ$sp</span><span class="o">(</span><span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="nc">Numeric</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="nc">Object</span><span class="o">&gt;);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">int</span> <span class="n">incrementAndGet$mcI$sp</span><span class="o">(</span><span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="nc">Numeric</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="nc">Object</span><span class="o">&gt;);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">long</span> <span class="n">incrementAndGet$mcJ$sp</span><span class="o">(</span><span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="nc">Numeric</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="nc">Object</span><span class="o">&gt;);</span>
+</code></pre></div>
+<p>So it's basically method overloading done by the Scala
+compiler. Clearly this adds some overhead in the generated .class
+files and it might not do what you think it does, so use it only if
+you really need it.</p>
+
+<p>As I was saying in the beginning, make sure to also (<strong>links update March 31, 2014</strong>):</p>
+
+<ul>
+  <li>see the code in <a href="https://github.com/alexandru/monifu">project Monifu</a></li>
+  <li>checkout the <a href="http://www.monifu.org/monifu-core/current/api/#monifu.concurrent.atomic.package">API docs</a></li>
+</ul>
+
+<p>Also, you may be interested in using
+<strong><a href="http://nbronson.github.io/scala-stm/">scala-stm</a></strong>, a library for
+<em>shared transactional memory</em>, that basically gives you the ability to
+orchestrate multiple atomic references at once.</p>
+
+
+    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
+        Alexandru Nedelcu</a> |
+      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
+        Twitter</a> |
+      <a href="https://github.com/alexandru" itemprop="url" rel="author">
+        GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    <div id="other-articles">
+      <h2>Recent Articles</h2>
+
+      <ul class="posts">
+      	<li>
+      	  <time datetime="2018-02-12">
+      	    2018-02-12 &raquo;
+      	  </time>
+      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-11-10">
+      	    2017-11-10 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-15">
+      	    2017-10-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-13">
+      	    2017-10-13 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-11">
+      	    2017-10-11 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/11/javascript-promise-leaks-memory.html" rel="prefetch related">JavaScript's Promise Leaks Memory</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-08-16">
+      	    2017-08-16 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html" rel="prefetch related">Automatic Releases to Maven Central with Travis and SBT</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-03-15">
+      	    2017-03-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/03/15/fp-inception.html" rel="prefetch related">Functional Programming Inception - Bucharest FP</a>
+      	</li>
+      </ul>
+    </div>
+
+    <div id="contributions">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'alexnorg';
+        var disqus_url = 'http://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </footer>
+</article>
+
+    </div>
+  </div>
+
+  <div id="footer-container">
+    <footer>
+      <div class="contact">
+      	&copy; 2018 Alexandru Nedelcu
+      	<br>
+      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
+      </div>
+
+      <div class="rss">
+      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
+      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
+      	</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-84530423-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

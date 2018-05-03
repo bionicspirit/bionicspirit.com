@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="canonical" href="https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html">
+  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alexelcu" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2015-12-15" />
+    
+    <meta property="article:tag" content="Functional" />
+    <meta property="article:tag" content="Code" />
+    <meta property="article:tag" content="Scala" />
+    <meta property="article:tag" content="Rx" />
+
+    <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell</title>
+    <meta name="og:title" content="Avoid Javaisms: Mocks, Stubs, DI is Code Smell" />
+    <meta name="twitter:title" content="Avoid Javaisms: Mocks, Stubs, DI is Code Smell" />
+
+      <meta name="og:image" content="https://alexn.org/assets/img/2015/skunk.jpg" />
+      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/2015/skunk.jpg" />
+      <meta name="twitter:image" content="https://alexn.org/assets/img/2015/skunk.jpg" />
+
+      <meta name="og:description" content="Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related." />
+      <meta name="twitter:description" content="Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related." />
+      <meta name="description" content="Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related." />
+
+  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
+  <link href="/assets/css/all-b9d1ad87.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- Google authorship -->
+  <link href="https://plus.google.com/+alexelcu" rel="publisher">
+</head>
+<body>
+  <div id="header-container">
+    <header>
+      <h1 id="title">alexn.org</h1>
+
+      <meta itemprop="lastReviewed" content="2018-05-03"/>
+      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <meta itemprop="url" content="https://plus.google.com/+alexelcu">
+      </div>
+
+      <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
+        </div>
+      </div>
+
+      <nav>
+    	  <a href="/">alexn.org</a>
+    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
+      </nav>
+    </header>
+  </div>
+
+  <div id="main-container">
+    <div id="main">
+      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="headline">Avoid Javaisms: Mocks, Stubs, DI is Code Smell</h1>
+
+    <div id="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html"/>
+      <meta itemprop="datePublished" content="2015-12-15"/>
+      <meta itemprop="dateModified" content="2015-12-15"/>
+
+      <time class="post-date" itemprop="dateCreated" datetime="2015-12-15">
+        Dec 15, 2015
+      </time>
+
+      <span class="twitter-link">
+        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
+      </span>
+
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/2015/skunk.jpg">
+          <meta itemprop="width" content="600">
+          <meta itemprop="height" content="345">
+        </div>
+
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
+          <meta itemprop="width" content="585">
+          <meta itemprop="height" content="585">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="content" itemprop="articleBody">
+    <p><img src="/assets/img/2015/skunk.jpg" class="right" width="300" style="border: 1px solid #eee" alt="Skunk" /></p>
+
+<p>I'm a man of strong opinions and I truly believe that when we are
+doing
+<a href="http://www.martinfowler.com/articles/mocksArentStubs.html">mocking, stubbing</a>,
+<a href="https://en.wikipedia.org/wiki/Dependency_injection">dependency injection</a>
+and integration testing, such practices represent clear signals for
+code smell, meaning code that sucks as a symptom of a bigger problem,
+one of design. The lumping together of these practices is not an
+accident, as they are related.</p>
+
+<p>Let's take an example. Often in our components we've got dependencies,
+other components only slightly related and on which we depend for
+producing the desired effects. Things like database access, for both
+reads and writes. In true Java spirit, lets build our noun:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">DBService</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">)</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">ItemConfig</span><span class="o">]</span>
+  <span class="k">def</span> <span class="n">saveItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">config</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+
+  <span class="k">def</span> <span class="n">readDatapoints</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">offset</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Datapoint</span><span class="o">]</span>
+  <span class="k">def</span> <span class="n">persistDatapoint</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">dp</span><span class="k">:</span> <span class="kt">Datapoint</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>This interface is reasonably abstract, meaning we aren't leaking too
+many underlying storage details. Well, we are assuming synchronous
+responses and the datapoints are read in batches instead of a nice
+stream, but those are details that can be corrected and the interface
+works for a text file, PostgreSQL, MongoDB or what have you. So now we
+can depend on it:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">ItemActor</span><span class="o">(</span><span class="n">db</span><span class="k">:</span> <span class="kt">DBService</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Init</span><span class="o">(</span><span class="n">uuid</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="n">db</span><span class="o">.</span><span class="n">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">))</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">???</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Of course, if you've got masochistic tendencies, you might prefer
+<a href="https://github.com/alexandru/scala-best-practices/blob/master/sections/3-architecture.md#31-should-not-use-the-cake-pattern">the Cake pattern</a>,
+being the same thing, only much worse, because now you've got garbage
+enhanced by global state and polymorphic superpowers, sucking as much
+as Guice, only at compile-time:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">ItemActorComponentImpl</span> <span class="o">{</span>
+  <span class="n">self</span><span class="k">:</span> <span class="kt">DBServiceComponent</span> <span class="o">=&gt;</span>
+
+  <span class="k">class</span> <span class="nc">ItemActor</span> <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="nc">Init</span><span class="o">(</span><span class="n">uuid</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="n">dbService</span><span class="o">.</span><span class="n">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
+          <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">))</span>
+    <span class="o">}</span>
+
+    <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">???</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>I personally can't stand that, being the epitome of good intentions
+gone wrong. But back to our point, if we want to test this actor, we'd
+have to mock or stub our <code class="highlighter-rouge">DBService</code>, right?</p>
+
+<p>Well, here's <em>the problem</em> mate: until now this actor only depends on
+<code class="highlighter-rouge">DBService.readItemConfig</code>, yet we have to mock or stub the entire
+interface of <code class="highlighter-rouge">DBService</code>. And having to mock or stub things unrelated
+to testing this functionality should indicate that this code is too
+<em>tightly coupled</em>. Right there your nose should reject the air
+emanated from this code and it's common sense that often save us,
+even though we often can't place our finger on the problem.</p>
+
+<p>OK, OK, lets fix this somewhat using a common Java "best practice", by
+splitting this interface into smaller modules. Our <code class="highlighter-rouge">DBService</code>
+interface does too much, or so the popular wisdom would say.</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">ItemConfigsRepository</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">read</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">)</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">ItemConfig</span><span class="o">]</span>
+  <span class="k">def</span> <span class="n">save</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">config</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+<span class="o">}</span>
+
+<span class="k">trait</span> <span class="nc">DatapointsRepository</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">readList</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">offset</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Datapoint</span><span class="o">]</span>
+  <span class="k">def</span> <span class="n">persist</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">dp</span><span class="k">:</span> <span class="kt">Datapoint</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>That feels better, right? By splitting functionality in smaller units
+of finer-grained stuff, this should ameliorate our dependency
+woes. Wrong! Now we've got two problems:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">ItemActor</span>
+  <span class="o">(</span><span class="n">icsRepo</span><span class="k">:</span> <span class="kt">ItemConfigsRepository</span><span class="o">,</span> <span class="n">dpsRepo</span><span class="k">:</span> <span class="kt">DatapointsRepository</span><span class="o">)</span>
+  <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
+  
+  <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Init</span><span class="o">(</span><span class="n">uuid</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="k">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="n">icsRepo</span><span class="o">.</span><span class="n">read</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="nc">State</span><span class="o">.</span><span class="n">empty</span><span class="o">))</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Signal</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">newState</span> <span class="k">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
+      <span class="n">dpsRepo</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">state</span><span class="o">.</span><span class="n">powerOutput</span><span class="o">)</span>
+      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>BAM, more dependencies, more garbage, more mocks and stubs. Does this
+ring a bell? Cake makes it worse btw. But anyway, now we can see that
+our solution with <code class="highlighter-rouge">ItemConfigsRepository</code> doesn't work, as <code class="highlighter-rouge">readItem</code>
+is often not used in the same place as <code class="highlighter-rouge">writeItem</code>, so our action had
+an opposite effect of what we wanted.</p>
+
+<p>How can this be, our interfaces are abstract and split in small units
+according to best practices, yet what are we doing wrong?</p>
+
+<p>Maybe this isn't so bad, right? I mean surely we can stub the
+dependencies that aren't actually used and be done with it, everybody
+else is doing it. And look, we've got dependency injection to deal
+with all the constructor annoyances. Oh, except when you've got more
+to add, things unrelated to the actual business logic, like persisting
+more stuff:</p>
+
+<div class="highlight"><pre class="highlight scala"><code>  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Signal</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">newState</span> <span class="k">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
+      <span class="n">dpsRepo</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">state</span><span class="o">.</span><span class="n">powerOutput</span><span class="o">)</span>
+      <span class="n">dpsRepo</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">state</span><span class="o">.</span><span class="n">basepoint</span><span class="o">)</span> <span class="c1">// &lt;-- here
+</span>      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
+  <span class="o">}</span>
+</code></pre></div>
+<p>So now with mocks, your tests are broken even though the business
+logic hasn't changed, whereas with stubs that ignore those calls, both
+of those calls might as well not exist. Both outcomes are wrong.</p>
+
+<p>Here we are having a side-effect, which is persisting values in the
+database in response to that <code class="highlighter-rouge">State</code> being evolved when receiving
+<code class="highlighter-rouge">Signal</code> values.</p>
+
+<p>Yet we have a non-obvious <em>implementation leak</em>. From the point of
+view of this actor, those persistence calls are just signals that a
+state change happened and that we could do (but not necessarily)
+something <em>in response</em>, but the actor should not care at all that
+what we are doing is actual persistence in a database repository, or
+sending values over an akka remoting connection, or over web-socket,
+or dumping some logs on disk. These concerns should be totally outside
+of our component and all we should be testing is if our component is
+signaling stuff to the outside world. We tried fixing <code class="highlighter-rouge">DBService</code> but
+in fact our Actor is broken.</p>
+
+<p>Meet the famous and underused
+<a href="https://en.wikipedia.org/wiki/Observer_pattern">Observer pattern</a>. And
+its sibling on steroids <a href="http://reactivex.io/">ReactiveX</a>. Here's the
+sample above using <a href="https://github.com/monifu/monifu">Monifu</a>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">ItemActor</span><span class="o">(</span><span class="n">output</span><span class="k">:</span> <span class="kt">Channel</span><span class="o">[</span><span class="kt">Signal</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
+
+  <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span> <span class="o">=&gt;</span>
+      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="nc">State</span><span class="o">.</span><span class="n">empty</span><span class="o">))</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Signal</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">newState</span> <span class="k">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
+      <span class="n">output</span><span class="o">.</span><span class="n">pushNext</span><span class="o">(</span><span class="n">newState</span><span class="o">)</span>
+      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
+      
+    <span class="k">case</span> <span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span> <span class="o">=&gt;</span>
+      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">state</span><span class="o">))</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// ...
+// in a galaxy far, far away
+</span>
+<span class="n">dbConfigSource</span><span class="o">.</span><span class="n">subscribe</span> <span class="o">{</span> <span class="n">config</span> <span class="k">=&gt;</span>
+  <span class="n">actor</span> <span class="o">!</span> <span class="n">itemConfig</span>
+<span class="o">}</span>
+
+<span class="n">output</span><span class="o">.</span><span class="n">subscribe</span> <span class="o">{</span> <span class="n">signal</span> <span class="k">=&gt;</span>
+  <span class="n">dbService</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">signal</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">powerOutput</span><span class="o">)</span>
+  <span class="n">dbService</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">signal</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">basepoint</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>OK, I know that Akka actors are cool and all, this is not about you
+using or not Akka actors. So lets implement the Observer pattern on
+top of Akka actors to see how that looks like:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">MyActor</span> <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="n">active</span><span class="o">(</span><span class="nc">State</span><span class="o">.</span><span class="n">empty</span><span class="o">,</span> <span class="nc">Set</span><span class="o">.</span><span class="n">empty</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">,</span> <span class="n">subscribers</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">ActorRef</span><span class="o">])</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="s">"register"</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="n">sender</span><span class="o">()</span>
+      <span class="k">if</span> <span class="o">(!</span><span class="n">subscribers</span><span class="o">.</span><span class="n">contains</span><span class="o">(</span><span class="n">ref</span><span class="o">))</span> <span class="o">{</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">watch</span><span class="o">(</span><span class="n">ref</span><span class="o">)</span>
+        <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">subscribers</span> <span class="o">+</span> <span class="n">ref</span><span class="o">))</span>
+      <span class="o">}</span>
+
+    <span class="k">case</span> <span class="nc">Terminated</span><span class="o">(</span><span class="n">ref</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="n">context</span><span class="o">.</span><span class="n">unwatch</span><span class="o">(</span><span class="n">ref</span><span class="o">)</span>
+      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">subscribers</span> <span class="o">-</span> <span class="n">sender</span><span class="o">))</span>
+
+    <span class="k">case</span> <span class="nc">Signal</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="n">newState</span> <span class="k">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>      
+      <span class="k">for</span> <span class="o">(</span><span class="n">subscriber</span> <span class="k">&lt;-</span> <span class="n">subscribers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">for</span> <span class="o">(</span><span class="n">event</span> <span class="k">&lt;-</span> <span class="n">newState</span><span class="o">.</span><span class="n">events</span><span class="o">)</span>
+          <span class="n">subscriber</span> <span class="o">!</span> <span class="n">event</span>
+      <span class="o">}</span>
+
+      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">newState</span><span class="o">,</span> <span class="n">subscribers</span><span class="o">))</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>It has been my general opinion that actors should
+<a href="https://github.com/alexandru/scala-best-practices/blob/master/sections/5-actors.md#52-should-mutate-state-in-actors-only-with-contextbecome">mutate their state with context.become</a>
+and one reason is because that enables us to separate the business
+logic from the actor and leave the actor to handle just the
+communication side. Should the above actor be tested? Maybe, if you've
+got time, but it really isn't a priority, because it doesn't contain
+business logic. Let's go deeper. The business logic, exposed by
+<code class="highlighter-rouge">newState = state.evolve</code> would be something like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Event</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+
+<span class="k">case</span> <span class="k">class</span> <span class="nc">State</span>
+  <span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">lastEvent</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">events</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Event</span><span class="o">])</span> <span class="o">{</span>
+
+  <span class="k">def</span> <span class="n">evolve</span><span class="o">(</span><span class="n">newValue</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">State</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">math</span><span class="o">.</span><span class="n">abs</span><span class="o">(</span><span class="n">newValue</span> <span class="o">-</span> <span class="n">lastEvent</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="o">)</span>
+      <span class="nc">State</span><span class="o">(</span><span class="n">newValue</span><span class="o">,</span> <span class="n">newValue</span><span class="o">,</span> <span class="nc">Seq</span><span class="o">(</span><span class="nc">Event</span><span class="o">(</span><span class="n">newValue</span><span class="o">)))</span>
+    <span class="k">else</span>
+      <span class="n">copy</span><span class="o">(</span><span class="n">value</span> <span class="k">=</span> <span class="n">newValue</span><span class="o">)</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="n">popEvents</span><span class="k">:</span> <span class="o">(</span><span class="kt">Seq</span><span class="o">[</span><span class="kt">Event</span><span class="o">],</span> <span class="nc">State</span><span class="o">)</span> <span class="k">=</span> 
+    <span class="o">(</span><span class="n">events</span><span class="o">,</span> <span class="n">copy</span><span class="o">(</span><span class="n">events</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">.</span><span class="n">empty</span><span class="o">))</span>
+<span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">State</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">empty</span> <span class="k">=</span> <span class="nc">State</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="nc">Seq</span><span class="o">.</span><span class="n">empty</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>M'kay, so this does have business logic that would be valuable for
+testing. AND we are modeling the side-effects in a pure way, by saying
+on each <code class="highlighter-rouge">evolve</code> "<em>here's a bunch of signals to emit Bob, I don't care
+how you do it or who reads them</em>".</p>
+
+<p>Does this code have any dependencies whatsoever? No, it's pure and can
+be tested in total isolation and for things that actually matter, you
+know, unit testing. This is the essence of functional programming and
+(I hope) of Scala. Because whenever you're using
+<a href="http://mockito.org/">Mockito</a> it means that you're not doing the
+above.</p>
+
+<p>In other words:</p>
+
+<ul>
+  <li>dependency injection, mocking and stubbing is meant for hiding
+garbage under the rug</li>
+  <li>for writes, you don't have to sprinkle your side-effecting calls all
+over the place, when you can decouple those concerns by implementing
+signaling by means of the Observer pattern</li>
+  <li>for reads you can have components that <em>push</em> those configurations
+into your component and the actual wiring is very often not worth
+testing, because …</li>
+  <li>testing has diminishing returns: math formulas, the whiles and the
+ifs and the decision making are very important, but the interaction
+with external components or systems? Not so much, especially because
+you end up testing other people's libraries and frameworks,
+essentially duplicating functionality and generally not worth the
+trouble</li>
+  <li>integration testing is like meat eating - it's not that meat eating
+is bad for you per se, but rather the fact that by eating meat
+you're not eating enough vegetables. You see, we have a finite
+budget and by doing integration testing it means that you're not
+doing something else. And people that do integration testing in
+their code are often the people that gave up on refactoring and unit
+testing their convoluted and tightly coupled code</li>
+  <li>mocks and stubs are a definite sign that your components are too
+tightly coupled and that your business logic is mixed with
+side-effects of short term value involving third-party components
+and systems. It's usually a sign that you need to clean up your mess</li>
+  <li>testing Akka actors is horrible because of their asynchronous nature
+and that's a good thing, because it makes you realize that actors
+are about communication and that you don't care about communication
+in your unit tests, so you'd better not have business logic in them ;-)</li>
+  <li>your DBService can always fail for reasons outside of your control,
+so instead of testing DBService, your effort is much better spent in
+making your own component more resilient to failure and in improving
+logging, because when it comes to external systems, testing the
+happy path is worthless, being the edge cases that get you</li>
+  <li>personally I dislike very much tests that pretend to test things,
+but have zero value - writing unit tests is just a means to an end,
+take time and have to be maintained, so don't burden your team with
+fragile tests that don't test anything of value, because that's not
+why you've been hired</li>
+</ul>
+
+<p>Pain is good. Mocks, stubs, DI, integration tests are about avoiding
+pain by fixing the symptoms rather than the disease. Don't treat the
+symptoms, treat the disease.</p>
+
+<p>Also see the list of
+<a href="https://github.com/alexandru/scala-best-practices">best practices</a> I
+initiated that's free of Javaisms.</p>
+
+<p>Cheers,</p>
+
+
+    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
+        Alexandru Nedelcu</a> |
+      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
+        Twitter</a> |
+      <a href="https://github.com/alexandru" itemprop="url" rel="author">
+        GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    <div id="other-articles">
+      <h2>Recent Articles</h2>
+
+      <ul class="posts">
+      	<li>
+      	  <time datetime="2018-02-12">
+      	    2018-02-12 &raquo;
+      	  </time>
+      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-11-10">
+      	    2017-11-10 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-15">
+      	    2017-10-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-13">
+      	    2017-10-13 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-11">
+      	    2017-10-11 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/11/javascript-promise-leaks-memory.html" rel="prefetch related">JavaScript's Promise Leaks Memory</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-08-16">
+      	    2017-08-16 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html" rel="prefetch related">Automatic Releases to Maven Central with Travis and SBT</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-03-15">
+      	    2017-03-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/03/15/fp-inception.html" rel="prefetch related">Functional Programming Inception - Bucharest FP</a>
+      	</li>
+      </ul>
+    </div>
+
+    <div id="contributions">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'alexnorg';
+        var disqus_url = 'http://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </footer>
+</article>
+
+    </div>
+  </div>
+
+  <div id="footer-container">
+    <footer>
+      <div class="contact">
+      	&copy; 2018 Alexandru Nedelcu
+      	<br>
+      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
+      </div>
+
+      <div class="rss">
+      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
+      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
+      	</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-84530423-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

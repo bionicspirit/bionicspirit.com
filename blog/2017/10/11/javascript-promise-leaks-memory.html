@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="canonical" href="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html">
+  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alexelcu" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2017-10-11" />
+    
+    <meta property="article:tag" content="Code" />
+    <meta property="article:tag" content="JavaScript" />
+    <meta property="article:tag" content="Promise" />
+    <meta property="article:tag" content="Funfix" />
+    <meta property="article:tag" content="Functional" />
+
+    <title>JavaScript's Promise Leaks Memory</title>
+    <meta name="og:title" content="JavaScript&#x27;s Promise Leaks Memory" />
+    <meta name="twitter:title" content="JavaScript&#x27;s Promise Leaks Memory" />
+
+      <meta name="og:image" content="https://alexn.org/assets/img/2017/then.png" />
+      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/2017/then.png" />
+      <meta name="twitter:image" content="https://alexn.org/assets/img/2017/then.png" />
+
+      <meta name="og:description" content="JavaScript&#x27;s Promise leaks memory in recursive loops and what you can do about it." />
+      <meta name="twitter:description" content="JavaScript&#x27;s Promise leaks memory in recursive loops and what you can do about it." />
+      <meta name="description" content="JavaScript&#x27;s Promise leaks memory in recursive loops and what you can do about it." />
+
+  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
+  <link href="/assets/css/all-b9d1ad87.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- Google authorship -->
+  <link href="https://plus.google.com/+alexelcu" rel="publisher">
+</head>
+<body>
+  <div id="header-container">
+    <header>
+      <h1 id="title">alexn.org</h1>
+
+      <meta itemprop="lastReviewed" content="2018-05-03"/>
+      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <meta itemprop="url" content="https://plus.google.com/+alexelcu">
+      </div>
+
+      <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
+        </div>
+      </div>
+
+      <nav>
+    	  <a href="/">alexn.org</a>
+    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
+      </nav>
+    </header>
+  </div>
+
+  <div id="main-container">
+    <div id="main">
+      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="headline">JavaScript's Promise Leaks Memory</h1>
+
+    <div id="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html"/>
+      <meta itemprop="datePublished" content="2017-10-11"/>
+      <meta itemprop="dateModified" content="2017-10-11"/>
+
+      <time class="post-date" itemprop="dateCreated" datetime="2017-10-11">
+        Oct 11, 2017
+      </time>
+
+      <span class="twitter-link">
+        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
+      </span>
+
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/2017/then.png">
+          <meta itemprop="width" content="1000">
+          <meta itemprop="height" content="1000">
+        </div>
+
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
+          <meta itemprop="width" content="585">
+          <meta itemprop="height" content="585">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="content" itemprop="articleBody">
+    <p>This piece of code will leak memory and eventually crash your Node.js
+process or browser:</p>
+
+<div class="highlight"><pre class="highlight typescript"><code><span class="c1">// Tested on Node.js 7.10, Firefox 57 and Chrome 61</span>
+<span class="c1">//</span>
+<span class="c1">// Usage of `setImmediate` is to prove that we have</span>
+<span class="c1">// async boundaries, can be removed for browsers</span>
+<span class="c1">// not supporting it.</span>
+
+<span class="kd">function</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">cb</span> <span class="o">=&gt;</span> <span class="nx">setImmediate</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">cb</span><span class="p">(</span><span class="nx">i</span><span class="p">)))</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">n</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nx">loop</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
+</code></pre></div>
+<p><a href="/assets/html/js-promise-leak.html" target="_blank"><b>→ Load Sample for Browser</b></a></p>
+
+<p>It takes a while to fill GBs of heap, plus Node is less conservative, the GC eventually
+freezing the process trying to recover memory, so give it a few seconds.</p>
+
+<p>This is equivalent with this <code class="highlighter-rouge">async</code> function:</p>
+
+<div class="highlight"><pre class="highlight typescript"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+
+  <span class="c1">// Recursive call</span>
+  <span class="k">return</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Of course, if this loop would be synchronous, not using <code class="highlighter-rouge">Promise</code> or <code class="highlighter-rouge">async</code> / <code class="highlighter-rouge">await</code>,
+then the process would blow up with a stack overflow error because
+at the moment of writing JavaScript does not do
+<a href="https://en.wikipedia.org/wiki/Tail_call">tail calls optimizations</a>
+(until everybody implements ECMAScript 6 fully at least).</p>
+
+<p>But before you jump to conclusions, this has nothing to do with JavaScript's
+lack of TCO support. This is because in our recursive function it's
+not JavaScript's <a href="https://en.wikipedia.org/wiki/Call_stack">call stack</a>
+that's managing that loop, but rather the <code class="highlighter-rouge">Promise</code> implementation.
+That recursive call is asynchronous and so it does not abuse the call stack
+by definition.</p>
+
+<p>Unfortunately, just like a regular function using the call stack for those
+recursive calls, the <code class="highlighter-rouge">Promise</code> implementation is abusing the heap memory,
+not chaining <code class="highlighter-rouge">then</code> calls correctly. And that sample should not leak,
+the <code class="highlighter-rouge">Promise</code> implementation should be able to do the equivalent of TCO
+and in such a case eliminate frames in the <code class="highlighter-rouge">then</code> chain being created.</p>
+
+<h2 id="the-spec-is-the-problem">The Spec is The Problem</h2>
+
+<p><a href="https://promisesaplus.com/">
+  <img src="/assets/img/2017/then.png" class="right" width="200" alt="Then" />
+</a></p>
+
+<p>We're talking of the <a href="https://promisesaplus.com/">Promise/A+ specification</a>.
+Relevant links to known issues on GitHub, explaining why:</p>
+
+<ol>
+  <li>Node.js issue, now closed:
+<strong><a href="https://github.com/nodejs/node/issues/6673">node/#6673</a></strong></li>
+  <li>Promise/A+ spec issue, open since 2014:
+<strong><a href="https://github.com/promises-aplus/promises-spec/issues/179">promises-spec/#179</a></strong></li>
+</ol>
+
+<p>As you'll see, there are some reasonable arguments for why the <code class="highlighter-rouge">Promise</code>
+implementation is allowed to leak memory. But I can't agree.</p>
+
+<h2 id="the-non-leaky-solution">The Non-leaky Solution</h2>
+
+<p>The solution, if you insist on using JavaScript's <code class="highlighter-rouge">Promise</code>, is to work
+with non-recursive functions:</p>
+
+<div class="highlight"><pre class="highlight typescript"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">i</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>But at this point any semblance of functional programming, if you ever had
+any, goes out the window, see below.</p>
+
+<h2 id="common-objections">Common Objections</h2>
+
+<p>Gathering feedback from people, here are the common objections:</p>
+
+<h3 id="1-this-is-normal">1. This is Normal</h3>
+
+<p>No, if you judge this implementation, relative to other <code class="highlighter-rouge">Promise</code> / <code class="highlighter-rouge">Future</code>
+implementations in the industry, which are setting expectations.</p>
+
+<p>Here are the implementations that I know about that DO NOT leak memory:</p>
+
+<ol>
+  <li><a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird</a>, probably
+the most popular non-standard <code class="highlighter-rouge">Promise</code> implementation for JavaScript</li>
+  <li><a href="https://www.scala-lang.org/">Scala</a>'s standard
+<a href="http://www.scala-lang.org/api/2.12.3/scala/concurrent/Future.html">Future</a>,
+in the wild since 2013; the fix for the leaky <code class="highlighter-rouge">flatMap</code>
+chains was added by <a href="https://twitter.com/richdougherty">Rich Dougherty</a>
+in <a href="https://github.com/scala/scala/pull/2674">this PR</a>, inspired
+by Twitter's <code class="highlighter-rouge">Future</code> implementation</li>
+  <li>Twitter's <a href="https://twitter.github.io/util/docs/com/twitter/util/Future.html">Future</a>,
+which is used in all of Twitter's backend infrastructure, being integrated
+in <a href="https://twitter.github.io/finagle/">Finagle</a></li>
+  <li><a href="http://trane.io/">Trane.io</a>, a Java Future implementation providing a <code class="highlighter-rouge">TailRec</code>
+builder meant precissely for this use-case</li>
+  <li>My very own Funfix <a href="https://funfix.org/api/exec/classes/future.html">Future</a>
+and Monix <a href="https://monix.io/api/3.0/monix/execution/CancelableFuture.html">CancelableFuture</a></li>
+</ol>
+
+<p>Interestingly, complaints for Scala's <code class="highlighter-rouge">Future</code> happened due to usage of
+Play's <a href="https://www.playframework.com/documentation/2.6.x/Iteratees">Iteratees</a>,
+with which people have been modeling stream processing.</p>
+
+<h3 id="2-but-it-does-unlimited-chaining-of-promises">2. But It Does Unlimited Chaining of Promises</h3>
+
+<p>Yes, that's why it's leaking memory.</p>
+
+<p>No, the implementation should not chain promises like that and an
+alternative implementation is possible and well known, as evidenced by
+the implementations mentioned that don't leak.</p>
+
+<p>The fault lies with the standard <code class="highlighter-rouge">Promise</code> implementation, not with
+the shown sample, being a legitimate use-case.</p>
+
+<h3 id="3-that-sample-does-not-use-the-return-value">3. That Sample Does Not Use the Return Value</h3>
+
+<p>The sample is kept simple for didactic purposes, however:</p>
+
+<ol>
+  <li>you can easily imagine a loop that processes a very long stream of data,
+aggregating information along the way, returning a result later</li>
+  <li>the script does do error handling and without that inner
+<code class="highlighter-rouge">return</code>, the <code class="highlighter-rouge">.catch(console.error)</code> would have no effect</li>
+</ol>
+
+<h3 id="4-thats-the-equivalent-of-a-stack-overflow">4. That's the Equivalent of a Stack Overflow</h3>
+
+<p>Yes, I've mentioned this above, but just to set your mind at rest on this point,
+proper Tail-Calls Optimizations are coming for normal call sites, being part of
+ECMAScript, see:</p>
+
+<ul>
+  <li><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-tail-position-calls">ECMAScript specification</a></li>
+  <li><a href="https://webkit.org/blog/6240/ecmascript-6-proper-tail-calls-in-webkit/">ECMAScript 6 Proper Tail Calls in WebKit</a></li>
+</ul>
+
+<p>You can't rely on it yet, but you can rest assured that in the future
+if that sample would be synchronous, it would not trigger a stack overflow.</p>
+
+<p>Therefore, given that asynchronous calls are by definition processes / events
+happening independently of the current call stack / run loop, this behavior
+is actually surprising, since one of the reasons to go async is to escape
+the limitations of the call stack.</p>
+
+<h3 id="5-you-dont-understand-how-promises-work">5. You Don't Understand How Promises Work</h3>
+
+<p>I've been told that I don't understand promises. So I apologize for the
+appeal to authority that I'm about to make.</p>
+
+<p>Data types for dealing with <em>asynchrony</em> have been a hobby of mine since
+2012 and I've been authoring several projects in which I implemented
+Promise-like data types:</p>
+
+<ul>
+  <li><a href="https://monix.io/">Monix</a>, which implements <code class="highlighter-rouge">Task</code>, one of the best ports
+of Haskell's <code class="highlighter-rouge">IO</code>, along with a complementary <code class="highlighter-rouge">CancelableFuture</code> and
+what I think is the best back-pressured Rx <code class="highlighter-rouge">Observable</code> implementations
+in existence</li>
+  <li><a href="https://github.com/funfix/funfix">Funfix</a>, a JavaScript library for FP,
+delivering a <code class="highlighter-rouge">Future</code> and an <code class="highlighter-rouge">IO</code> implementation, see below</li>
+  <li>have contributed to <a href="https://github.com/typelevel/cats-effect">cats-effect</a>,
+a more conservative <code class="highlighter-rouge">IO</code> port</li>
+</ul>
+
+<p class="extra-info">
+Bonus — see my <a href="https://www.youtube.com/watch?v=wi97X8_JQUk">presentation from Scala Days</a>!
+</p>
+
+<p>My work, good or bad, has followed a certain pattern, which is why I do
+understand promises, I do understand at least two solutions to this, hence
+this article.</p>
+
+<h3 id="6-no-use-cases-this-is-a-niche">6. No Use-cases, This is a Niche</h3>
+
+<p>Is functional programming a niche?</p>
+
+<p>You cannot describe any functional programming algorithm involving loops
+without tail recursions. If folds are used, then folds are described with
+tail recursions as well. That's because:</p>
+
+<ol>
+  <li>any loop can be described with a tail recursion</li>
+  <li>you can't have immutability of the state you're evolving without it</li>
+</ol>
+
+<p>An example of a use-case is the processing of really long / infinite streams of
+events, for which it's really natural to describe algorithms using tail recursions
+and for which you can't really work with imperative, mutation-based loops.</p>
+
+<p>Imagine reading chunks of data from a file and describing them with a data
+structure like this:</p>
+
+<div class="highlight"><pre class="highlight typescript"><code><span class="kr">interface</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span>
+
+<span class="kd">class</span> <span class="nx">Next</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="kr">implements</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span>
+    <span class="kr">public</span> <span class="nx">readonly</span> <span class="na">head</span><span class="p">:</span> <span class="nx">A</span><span class="p">,</span>
+    <span class="kr">public</span> <span class="nx">readonly</span> <span class="na">next</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;&gt;</span>
+  <span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nx">Halt</span> <span class="kr">implements</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">readonly</span> <span class="nx">error</span><span class="p">?:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Sample is using TypeScript (could be Flow) for making it clear what the types are.
+You can work with plain JavaScript of course.</p>
+
+<p>This structure is really cheap and effective, being a lazy, asynchronous,
+referentially transparent stream. And in fact it's really similar to JavaScript
+implementations of async iterators, so yes, you are going to work with
+something like this in the future, even if you don't like it ;-)</p>
+
+<p>And describing transformation functions like this one is really fun too:</p>
+
+<div class="highlight"><pre class="highlight typescript"><code><span class="kd">function</span> <span class="nx">map</span><span class="o">&lt;</span><span class="nx">A</span><span class="p">,</span> <span class="nx">B</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">list</span><span class="p">:</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">,</span> <span class="nx">f</span><span class="p">:</span> <span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="nx">A</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">B</span><span class="p">):</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">B</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">list</span> <span class="k">instanceof</span> <span class="nx">Next</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">try</span> <span class="p">{</span>
+      <span class="kd">const</span> <span class="nx">cons</span> <span class="o">=</span> <span class="nx">list</span> <span class="k">as</span> <span class="nx">Next</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nx">Next</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">cons</span><span class="p">.</span><span class="nx">head</span><span class="p">),</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">cons</span><span class="p">.</span><span class="nx">next</span><span class="p">().</span><span class="nx">then</span><span class="p">(</span><span class="nx">xs</span> <span class="o">=&gt;</span> <span class="nx">map</span><span class="p">(</span><span class="nx">xs</span><span class="p">,</span> <span class="nx">f</span><span class="p">)))</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nx">Halt</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">list</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Alas, with the <code class="highlighter-rouge">Promise</code> implementation leaking, this doesn't work ;-)</p>
+
+<h2 id="funfix">Funfix</h2>
+
+<p><a href="https://funfix.org">
+  <img src="/assets/img/funfix-1024.png" class="right" width="200" alt="Funfix 1024" />
+</a></p>
+
+<p>I've been building a new project, <a href="https://funfix.org/">Funfix</a>,
+a JavaScript library for functional programming (capital FP), supporting
+<a href="https://www.typescriptlang.org/">TypeScript</a> and <a href="https://flow.org/">Flow</a>
+types out of the box.</p>
+
+<p>Funfix exposes <a href="https://funfix.org/api/exec/classes/future.html">Future&lt;A&gt;</a>, an
+eager <code class="highlighter-rouge">Promise</code> alternative that's safe, cancellable and filled with goodies,
+along with <a href="https://funfix.org/api/effect/classes/io.html">IO&lt;A&gt;</a>, a lazy, lawful,
+cancellable data type for handling all kinds of side effects, inspired by Haskell,
+the two being complementary.</p>
+
+<p>This piece of code powered by <code class="highlighter-rouge">Future</code> does not leak:</p>
+
+<div class="highlight"><pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Future</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"funfix"</span>
+
+<span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">Future</span><span class="p">.</span><span class="k">of</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">).</span><span class="nx">flatMap</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nx">loop</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">recover</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
+</code></pre></div>
+<p>And neither does this one, powered by <code class="highlighter-rouge">IO</code>:</p>
+
+<div class="highlight"><pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">IO</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"funfix"</span>
+
+<span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">IO</span><span class="p">.</span><span class="k">of</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">).</span><span class="nx">flatMap</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="p">})</span>
+<span class="p">}</span>
+
+<span class="nx">loop</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">run</span><span class="p">().</span><span class="nx">recover</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
+</code></pre></div>
+<p>This <code class="highlighter-rouge">IO</code> is a port of <a href="https://monix.io/">Monix</a>'s
+<a href="https://monix.io/docs/2x/eval/task.html">Task</a>, being a better
+<code class="highlighter-rouge">IO</code> than Haskell's <code class="highlighter-rouge">IO</code> due to its cancellable nature ;-)</p>
+
+<p>In <a href="https://github.com/funfix/funfix/pull/57">this PR</a> I've also
+fixed the memory leak for <code class="highlighter-rouge">Future</code>, doing the same tricks that
+Scala's <a href="http://www.scala-lang.org/api/2.12.3/scala/concurrent/Future.html">Future</a>
+is doing. Now released in <a href="https://github.com/funfix/funfix/releases/tag/v6.2.0">v6.2.0</a>.</p>
+
+<p>And note that this is harder to do for Funfix's <code class="highlighter-rouge">Future</code> due to also
+having to deal with chains of <code class="highlighter-rouge">Cancelable</code> references, which can
+also leak.</p>
+
+<p class="extra-info">
+<strong>Author's Rant —</strong> in response to this article I've been called a scumbag
+for "<em>shameless self promotion</em>".<br /><br />
+I'm building stuff that I share with the world and I like talking about
+it on my personal blog. I'm not going to apologize for it.
+</p>
+
+<h2 id="final-words">Final Words</h2>
+
+<p>That the current JavaScript <code class="highlighter-rouge">Promise</code> implementation has this leak
+is a big problem, because tail-recursive calls are the cornerstone
+of functional programming.</p>
+
+<p>Yes, it's true that <code class="highlighter-rouge">Promise</code> is not a useful monadic type for doing FP,
+since it does not suspend side effects (which is why you should
+use <a href="https://funfix.org/api/effect/classes/io.html">IO</a>), but that's
+beside the point, plus for the FP purists out there, you can always
+suspend it in a thunk, assuming that it doesn't leak in <code class="highlighter-rouge">then</code> chains.</p>
+
+<p>This is also why I fear standardization by committee in general. Along with
+the totally awkward <code class="highlighter-rouge">then</code> signature that can't be safely described with
+TypeScript's or Flow's types, this is another example of how standard
+solutions can be harmful, because by being pushed as a standard, it makes
+it hard for alternatives to exist, since most people are just going to
+use the standard implementation, especially in JavaScript's ecosystem
+where people are afraid to take on dependencies.</p>
+
+
+    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
+        Alexandru Nedelcu</a> |
+      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
+        Twitter</a> |
+      <a href="https://github.com/alexandru" itemprop="url" rel="author">
+        GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    <div id="other-articles">
+      <h2>Recent Articles</h2>
+
+      <ul class="posts">
+      	<li>
+      	  <time datetime="2018-02-12">
+      	    2018-02-12 &raquo;
+      	  </time>
+      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-11-10">
+      	    2017-11-10 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-15">
+      	    2017-10-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-13">
+      	    2017-10-13 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-08-16">
+      	    2017-08-16 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html" rel="prefetch related">Automatic Releases to Maven Central with Travis and SBT</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-03-15">
+      	    2017-03-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/03/15/fp-inception.html" rel="prefetch related">Functional Programming Inception - Bucharest FP</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-01-30">
+      	    2017-01-30 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/01/30/asynchronous-programming-scala.html" rel="prefetch related">Asynchronous Programming and Scala</a>
+      	</li>
+      </ul>
+    </div>
+
+    <div id="contributions">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'alexnorg';
+        var disqus_url = 'http://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </footer>
+</article>
+
+    </div>
+  </div>
+
+  <div id="footer-container">
+    <footer>
+      <div class="contact">
+      	&copy; 2018 Alexandru Nedelcu
+      	<br>
+      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
+      </div>
+
+      <div class="rss">
+      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
+      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
+      	</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-84530423-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

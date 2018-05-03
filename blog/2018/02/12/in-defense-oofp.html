@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="canonical" href="https://alexn.org/blog/2018/02/12/in-defense-oofp.html">
+  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alexelcu" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-02-12" />
+    
+    <meta property="article:tag" content="Functional" />
+    <meta property="article:tag" content="Programming" />
+    <meta property="article:tag" content="Collections" />
+    <meta property="article:tag" content="Haskell" />
+    <meta property="article:tag" content="Scala" />
+    <meta property="article:tag" content="OOP" />
+    <meta property="article:tag" content="FP" />
+
+    <title>In Defense of OOFP</title>
+    <meta name="og:title" content="In Defense of OOFP" />
+    <meta name="twitter:title" content="In Defense of OOFP" />
+
+      <meta name="og:image" content="https://alexn.org/assets/img/2018/scala-spiral.png" />
+      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/2018/scala-spiral.png" />
+      <meta name="twitter:image" content="https://alexn.org/assets/img/2018/scala-spiral.png" />
+
+      <meta name="og:description" content="OOP versus Type Classes, exemplified and in defense of the Scala collections redesign." />
+      <meta name="twitter:description" content="OOP versus Type Classes, exemplified and in defense of the Scala collections redesign." />
+      <meta name="description" content="OOP versus Type Classes, exemplified and in defense of the Scala collections redesign." />
+
+  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
+  <link href="/assets/css/all-b9d1ad87.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- Google authorship -->
+  <link href="https://plus.google.com/+alexelcu" rel="publisher">
+</head>
+<body>
+  <div id="header-container">
+    <header>
+      <h1 id="title">alexn.org</h1>
+
+      <meta itemprop="lastReviewed" content="2018-05-03"/>
+      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <meta itemprop="url" content="https://plus.google.com/+alexelcu">
+      </div>
+
+      <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
+        </div>
+      </div>
+
+      <nav>
+    	  <a href="/">alexn.org</a>
+    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
+      </nav>
+    </header>
+  </div>
+
+  <div id="main-container">
+    <div id="main">
+      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="headline">In Defense of OOFP</h1>
+
+    <div id="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2018/02/12/in-defense-oofp.html"/>
+      <meta itemprop="datePublished" content="2018-02-12"/>
+      <meta itemprop="dateModified" content="2018-02-12"/>
+
+      <time class="post-date" itemprop="dateCreated" datetime="2018-02-12">
+        Feb 12, 2018
+      </time>
+
+      <span class="twitter-link">
+        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
+      </span>
+
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/2018/scala-spiral.png">
+          <meta itemprop="width" content="304">
+          <meta itemprop="height" content="492">
+        </div>
+
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
+          <meta itemprop="width" content="585">
+          <meta itemprop="height" content="585">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="content" itemprop="articleBody">
+    <p>This article is about OOP hierarchies, in comparisson with 
+<a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>, using as 
+example Scala's standard collections, which are involved in a recent
+debate around their redesign.</p>
+
+<p><img src="/assets/img/2018/scala-spiral.png" class="right" width="100" alt="Scala spiral" /></p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul>
+  <li><a href="#h1">1. Background</a>
+    <ul>
+      <li><a href="#h1-1">1.1. My Road to Scala</a></li>
+    </ul>
+  </li>
+  <li><a href="#h2">2. Criticism</a>
+    <ul>
+      <li><a href="#h2-1">2.1. CanBuildFrom</a></li>
+      <li><a href="#h2-2">2.2. Complex Hierarchy</a></li>
+      <li><a href="#h2-3">2.3. Seq or Other Super-types</a></li>
+      <li><a href="#h2-4">2.4. Not Using Type-classes</a></li>
+    </ul>
+  </li>
+  <li><a href="#h3">3. Constrained Parametric Polymorphism (Type-classes)</a></li>
+  <li><a href="#h4">4. Case Study: Monix Iterant</a>
+    <ul>
+      <li><a href="#h4-1">4.1. Type-classes For Super Powers</a></li>
+      <li><a href="#h4-2">4.2. Liskov Substitution Principle: OOP Strikes Back</a></li>
+      <li><a href="#h4-3">4.3. Iterator vs Foldable and Traverse</a></li>
+    </ul>
+  </li>
+  <li><a href="#h5">5. Seq My Love</a>
+    <ul>
+      <li><a href="#h5-1">5.1. Seq on Return</a></li>
+      <li><a href="#h5-2">5.2. Seq on Input</a></li>
+    </ul>
+  </li>
+  <li><a href="#h6">6. Conclusion</a></li>
+</ul>
+
+<h2 id="1-background"><a href="#h1" name="h1">1.</a> Background</h2>
+
+<p>Scala is a hybrid language, being at the same time its greatest
+strength and weakness.</p>
+
+<p>The
+<a href="https://github.com/scala/collection-strawman">collection-strawman</a>
+represents a redesign of Scala's standard collections, planned to be
+shipped in Scala 2.13, as part of a 
+<a href="https://github.com/scalacenter/advisoryboard/blob/master/proposals/007-collections.md">Scala Center proposal</a>.</p>
+
+<p>There are at the moment of writing two blog posts explaining the
+upcoming changes on Scala's blog:</p>
+
+<ol>
+  <li><a href="http://scala-lang.org/blog/2017/05/30/tribulations-canbuildfrom.html">Tribulations of CanBuildFrom</a></li>
+  <li><a href="http://scala-lang.org//blog/2017/11/28/view-based-collections.html">Let Them Be Lazy!</a></li>
+  <li><a href="http://www.scala-lang.org/blog/2017/02/28/collections-rework.html">Scala 2.13 Collections Rework</a></li>
+  <li><a href="http://www.scala-lang.org/blog/2018/02/09/collections-performance.html">On Performance of the New Collections</a></li>
+</ol>
+
+<p>It's now also receiving some criticism. This article represents my 
+2¢ on why I like this redesign and on why criticism of an
+OOP hierarchy are not warranted, even if you love FP.</p>
+
+<h3 id="11-my-road-to-scala"><a href="#h1-1" name="h1-1">1.1.</a> My Road to Scala</h3>
+
+<p>Like many others in the Scala community, I was attracted to Scala because
+it seemed to be a better, more expressive language, with stricter
+static type checks than Java or the other languages I worked
+with. Coming from Python at that time, Scala seemed like a breath of
+fresh air.</p>
+
+<p>Yes, I came to Scala in 2012 looking for a better OOP language and
+what I got was a great combination of Smalltalk-esque OOP features,
+mixed with an 
+<a href="https://alexn.org/blog/2017/10/15/functional-programming.html">actual FP culturre</a>. I
+have an article about 
+<a href="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html">what I liked about it</a>
+written back then and to be honest, not much has changed.</p>
+
+<p>But what really sold me were the standard collections. In spite of their
+internal complexity and problems being leaked at the call sites, it
+was the first time I felt my needs for standard data structures were
+met and even exceeded.</p>
+
+<h2 id="2-criticism"><a href="#h2" name="h2">2.</a> Criticism</h2>
+
+<p>There's plenty to complain about in the current implementation and
+here I'm doing my best to summarize it:</p>
+
+<h3 id="21-canbuildfrom"><a href="#h2-1" name="h2-1">2.1.</a> CanBuildFrom</h3>
+
+<p>Checkout this classic StackOverflow issue:</p>
+
+<p><a href="https://stackoverflow.com/questions/1722726/is-the-scala-2-8-collections-library-a-case-of-the-longest-suicide-note-in-hist">Is the Scala 2.8 collections library a case of “the longest suicide note in history”?</a></p>
+
+<p>In it the author rightfully complains that this method signature for
+<code class="highlighter-rouge">List</code> is scary and he doesn't understand it:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">Repr</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
+</code></pre></div>
+<p>The Scala core developers first tried to hide this signature, so if
+you'll take a look at the 
+<a href="https://www.scala-lang.org/api/current/scala/collection/immutable/List.html#map[B](f:A=%3EB):List[B]">current ScalaDoc for List.map</a>,
+you won't see it. But that's only a documentation trick, because
+the actual source-code (and your IDE) tells a different story, see 
+<a href="https://github.com/scala/scala/blob/v2.12.4/src/library/scala/collection/immutable/List.scala#L280">List.scala#280</a>.</p>
+
+<p>In essence <code class="highlighter-rouge">CanBuildFrom</code> is a clever abstraction, as 
+<a href="https://stackoverflow.com/a/1728140/3280">Martin Odersky</a> himself
+explains, however at this point we can all agree that its complexity 
+is not justified. Not only because it is difficult to understand, but
+because it has historically created issues for people at the call-sites.</p>
+
+<p>Here's what Coda Hale <a href="https://gist.github.com/anonymous/1406238">was writing</a> 
+back in 2011:</p>
+
+<blockquote>
+  <p>Replacing a <code class="highlighter-rouge">scala.collection.mutable.HashMap</code> with a
+<code class="highlighter-rouge">java.util.HashMap</code> in a wrapper produced an order-of-magnitude
+performance benefit for one of these loops. Again, this led to some
+heinous code as any of its methods which took a <code class="highlighter-rouge">Builder</code> or
+<code class="highlighter-rouge">CanBuildFrom</code> would immediately land us with a mutable.HashMap. (We
+ended up using explicit external iterators and a while-loop, too.)</p>
+</blockquote>
+
+<p>And:</p>
+
+<blockquote>
+  <p>The number of concepts I had to explain to new members of our team
+for even the simplest usage of a collection was surprising: implicit
+parameters, builder typeclasses, "operator overloading", return type
+inference, etc. etc.</p>
+</blockquote>
+
+<p>But if you'll take a look at 
+<a href="https://github.com/scala/collection-strawman/blob/master/collections/src/main/scala/strawman/collection/immutable/List.scala#L214">List.scala in collection-strawman</a>,
+that signature now looks like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
+</code></pre></div>
+<p>There, that brings justice to everybody that complained for all these
+years.</p>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: <code class="highlighter-rouge">CanBuildFrom</code> was a clever solution to an exaggerated
+problem, but you'll no longer have to worry about it. Beware of clever 
+solutions to problems you don't have!
+</p>
+
+<h3 id="22-complex-hierarchy"><a href="#h2-2" name="h2-2">2.2.</a> Complex Hierarchy</h3>
+
+<p>This is an awesome infographic, showing how complex the implementation is for 
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html">List</a>, 
+by <a href="https://github.com/tpolecat">Rob Norris</a>:</p>
+
+<p><a href="/assets/img/2018/scala-list.jpg" target="_blank">
+  <img src="/assets/img/2018/scala-list.jpg" class="center max-border" width="1650" height="1275" alt="Scala list" />
+</a></p>
+
+<p>This is indeed a disaster, there's no nicer way of saying it.</p>
+
+<p>And this is <code class="highlighter-rouge">List</code>, after the <code class="highlighter-rouge">collection-strawman</code> refactoring:</p>
+
+<p><a href="/assets/img/2018/scala-list-strawman.jpg" target="_blank">
+  <img src="/assets/img/2018/scala-list-strawman.jpg" class="center max-border" width="1200" height="845" alt="Scala list strawman" />
+</a></p>
+
+<p>(Again credit goes to Rob Norris)</p>
+
+<p>This is indeed vastly simplified and actually understandable.</p>
+
+<p>Some questions are left to be answered. Just by looking at this
+info-graphic I wonder in what capacity is there still code sharing
+between the immutable collections and the mutable versions, or between
+the lazy and the strict - ideally there should be no code sharing
+between mutable or immutable, between lazy and strict and I hope
+they've been extra careful this time around.</p>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: a complex OOP hierarchy, as clever as it may be,
+brings with it complexity beyond reason and is counter-productive for
+subtype polymorphism!
+</p>
+
+<h3 id="23-seq-or-other-super-types"><a href="#h2-3" name="h2-3">2.3.</a> Seq or Other Super-types</h3>
+
+<p><a href="https://github.com/djspiewak">Daniel Spiewak</a> made a good attempt at a
+<a href="https://gist.github.com/djspiewak/2ae2570c8856037a7738">proposal in 2015</a>.</p>
+
+<p>Here are some recent impressions, as a short introduction to this
+criticism:</p>
+
+<blockquote>
+  <p>You always care about the asymptotic properties of your data
+structures. So there is never a case where Seq makes sense, even as
+a concept!</p>
+</blockquote>
+
+<p>(<a href="https://twitter.com/djspiewak/status/962767948774457344" target="_blank">twitter.com/djspiewak</a>)</p>
+
+<blockquote>
+  <p>flatMap has very different constant factors depending on the
+underlying type (as it interacts with the function return). And
+there’s a huge number of problems you can’t solve this way.</p>
+</blockquote>
+
+<p>(<a href="https://twitter.com/djspiewak/status/962816361142435840" target="_blank">twitter.com/djspiewak</a>)</p>
+
+<p>The example that Daniel gives in his proposal is this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">is</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyThingy</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="n">t</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MyThingy</span>
+  <span class="k">for</span> <span class="o">(</span><span class="n">idx</span> <span class="k">&lt;-</span> <span class="mi">0</span> <span class="n">until</span> <span class="n">is</span><span class="o">.</span><span class="n">length</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">t</span><span class="o">.</span><span class="n">accumulate</span><span class="o">(</span><span class="n">is</span><span class="o">(</span><span class="n">idx</span><span class="o">))</span>
+  <span class="o">}</span>
+  <span class="n">t</span>
+<span class="o">}</span>
+</code></pre></div>
+<blockquote>
+  <p>If I showed you this code and asked you what the big-O complexity of
+it was, could you tell me the answer? No, you cannot, because it
+depends on the runtime type of <code class="highlighter-rouge">is</code>!</p>
+</blockquote>
+
+<p>This is a very good example showing a very frequent booby trap for
+beginners that aren't paying attention to their data structures.</p>
+
+<p>He goes on saying:</p>
+
+<blockquote>
+  <p>Choosing a collection is a very deliberate and intentional thing. We
+want to select our collection to match the complexity bounds of our
+problem. Encouraging (and even enabling!) users to work in terms of
+generic types that throw away this information is wrong, and very
+very much an anti-pattern.</p>
+</blockquote>
+
+<p>I very much respect this opinion and I know from where he's coming
+from, however I disagree with it.</p>
+
+<p>Choosing a collection type means committing to an implementation, it
+means specializing, which is a bad idea in many cases. And arguing
+against this is also like arguing against Haskell's
+<a href="https://hackage.haskell.org/package/base-4.10.1.0/docs/Data-Traversable.html">Traversable</a>
+(<a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Traverse.scala">cats.Traverse</a>).</p>
+
+<p>N.B. we are not arguing against the merits of Haskell's <code class="highlighter-rouge">Traversable</code>
+type class and how that compares with <code class="highlighter-rouge">Iterable</code>. More on that below.</p>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: OOP interfaces might expose leaky operations that
+are booby traps (e.g. <code class="highlighter-rouge">Seq</code> indexing), but this is not specific
+to OOP interfaces, vigilance in design is always needed!
+</p>
+
+<h3 id="24-not-using-type-classes"><a href="#h2-4" name="h2-4">2.4.</a> Not Using Type-classes</h3>
+
+<p>This is actually a separate argument that does have merit:</p>
+
+<blockquote>
+  <p>I'll stick to scalaz's separation of functionality and
+implementation through typeclasses… it's much easier to
+understand, faster, and easier to extend.</p>
+</blockquote>
+
+<p>(<a href="https://twitter.com/fommil/status/962736382467813376" target="_blank">twitter.com/fommil</a>)</p>
+
+<blockquote>
+  <p>You do not need a top-down hierarchy of collections. They're ready
+to break back compatibility, so why not do it right like Spiewak's
+suggestion 3 years ago? <code class="highlighter-rouge">Builder</code> and <code class="highlighter-rouge">IterableOnce</code> are symptoms of a
+deeper problem: poor design choices.</p>
+</blockquote>
+
+<p>(<a href="https://twitter.com/emi1ypi/status/962743355192020992" target="_blank">twitter.com/emi1ypi</a>)</p>
+
+<p>The argument for those amongst you not familiar with it is that
+type-classes can yield a better design for the standard collections,
+instead of an OOP hierarchy of interfaces.</p>
+
+<p>To re-use the example above:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">cats.Foldable</span>
+
+<span class="k">def</span> <span class="n">foo</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="kt">:</span> <span class="kt">Foldable</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyThingy</span> <span class="o">=</span> 
+  <span class="n">implicitly</span><span class="o">[</span><span class="kt">Foldable</span><span class="o">[</span><span class="kt">F</span><span class="o">]].</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MyThingy</span><span class="o">)(</span><span class="k">_</span> <span class="n">accumulate</span> <span class="k">_</span><span class="o">)</span>
+</code></pre></div>
+<p>Ah, now we are getting somewhere. But the astute reader should notice at this
+point that this means exposure of an extra <code class="highlighter-rouge">F[_]</code> type parameter that
+you don't actually need with OOP — well, OK, this syntax heaviness is
+an artifact of the Scala language, as in Haskell this wouldn't be an 
+issue.</p>
+
+<p>Also, not clearly visible here is that type-classes such as <code class="highlighter-rouge">Foldable</code>
+or <code class="highlighter-rouge">Traversable</code>, while more generic are also strictly less capable
+than <code class="highlighter-rouge">Iterable</code>. Yes, that's because of <code class="highlighter-rouge">Iterator</code>'s side effecting,
+but highly efficient and flexible protocol. More on that below.</p>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: type-classes are nice, playing well with
+parametric polymorphism, but in Scala the syntax is heavier than
+when using OOP, although this isn't an issue with Haskell
+</p>
+
+<h2 id="3-oop-vs-constrained-parametric-polymorphism-type-classes"><a href="#h3" name="h3">3.</a> OOP vs Constrained Parametric Polymorphism (Type-classes)</h2>
+
+<p>Lets imagine a function that sums up numbers:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">scala.math.Numeric</span>
+
+<span class="k">def</span> <span class="n">sum</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">A</span><span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span>
+  <span class="n">list</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">A</span><span class="o">.</span><span class="n">zero</span><span class="o">)(</span><span class="n">A</span><span class="o">.</span><span class="n">plus</span><span class="o">)</span>
+</code></pre></div>
+<p>Note we are already using <code class="highlighter-rouge">Numeric</code>, which is a type class exposed by
+Scala's standard library. And it's actually not the best type class we
+could use, as what we'd need here is a
+<a href="https://github.com/typelevel/cats/blob/v1.0.1/kernel/src/main/scala/cats/kernel/Monoid.scala">Monoid</a>,
+but ignore that.</p>
+
+<p>Meet Haskell's
+<a href="https://hackage.haskell.org/package/base-4.10.1.0/docs/Data-Foldable.html">Data.Foldable</a>,
+also described in
+<a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Foldable.scala">cats.Foldable</a>.</p>
+
+<p>With it we can fold arbitrary data-structures, e.g. we could sum up numbers:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">cats.Foldable</span>
+<span class="k">import</span> <span class="nn">scala.math.Numeric</span>
+
+<span class="k">def</span> <span class="n">sum</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+  <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Foldable</span><span class="o">[</span><span class="kt">F</span><span class="o">],</span> <span class="n">A</span><span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span> <span class="o">{</span>
+
+  <span class="n">F</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">A</span><span class="o">.</span><span class="n">zero</span><span class="o">)(</span><span class="n">A</span><span class="o">.</span><span class="n">plus</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>(N.B. using <code class="highlighter-rouge">F</code> and <code class="highlighter-rouge">A</code> as the type names <em>and</em> as the name of the
+implicit parameters is nothing special, just a convention)</p>
+
+<p>Is this better?</p>
+
+<ul>
+  <li><strong>PRO:</strong> describing <code class="highlighter-rouge">foldLeft</code> as a method on <code class="highlighter-rouge">F[_]</code> is no longer
+required, which makes <code class="highlighter-rouge">F[_]</code> data types more generic, more reusable;
+not very clear in this case, but if you're unfamiliar with
+type-class based design, trust me on this one</li>
+  <li><strong>CON:</strong> this method makes <code class="highlighter-rouge">F[_]</code> clearly visible, exposing it at the
+type system level - this is no longer subtyping, this is no longer the 
+<a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov substitution principle</a>,
+this is parametric polymorphism and it moves the dispatch cost at 
+compile time, with both the good and the bad</li>
+</ul>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: With Scala you can actually pick and choose the best
+approach - this can lead to choice paralysis however and lots of drama!
+</p>
+
+<h3 id="4-case-study-monix-iterant"><a href="#h4" name="h4">4.</a> Case Study: Monix Iterant</h3>
+
+<p><a href="https://www.youtube.com/watch?v=JFbYQGG2Nb4" target="_blank" title="A Tale of Two Monix Streams, by Alexandru Nedelcu">
+  <img src="/assets/img/2018/tale-monix.jpg" class="right border" width="400" alt="Tale monix" />
+</a></p>
+
+<p>At <a href="https://scala.world/schedule">Scala World</a> I had a talk titled
+<a href="https://www.youtube.com/watch?v=JFbYQGG2Nb4">A Tale of Two Monix Streams</a>
+in which I described the design of the upcoming <code class="highlighter-rouge">monix.tail.Iterant</code>.</p>
+
+<p>It's a wonderful data structure for modelling streams that makes use
+of type-classes defined in
+<a href="https://github.com/typelevel/cats-effect">cats-effect</a> for being able
+to describe asynchronous computations.  In the presentation I describe
+how I made use of type-classes, with actual restrictions placed on the
+operations themselves.</p>
+
+<p>If you're a beginner in FP design via type-classes, I highly recommend
+the second part of the presentation.</p>
+
+<p>Here's the gist - suppose we want a pure
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterator.html">Iterator</a>
+that is also capable of deferring the evaluation to a given <code class="highlighter-rouge">F[_]</code>
+(e.g. <code class="highlighter-rouge">monix.eval.Task</code>, <code class="highlighter-rouge">cats.effect.IO</code>), such that it's also
+capable of streaming events from asynchronous sources, we could
+describe it like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">]</span>
+
+<span class="nc">case</span> <span class="k">class</span> <span class="nc">Next</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">first</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
+  
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Suspend</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
+  
+<span class="k">case</span> <span class="k">class</span> <span class="nc">Halt</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">error</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">ITerant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
+</code></pre></div>
+<p>This is a data structure that resembles <code class="highlighter-rouge">List</code>, but that:</p>
+
+<ol>
+  <li>defers evaluation to an <code class="highlighter-rouge">F[_]</code> data type that's capable of
+suspending side effects, but note that the <em>actual type class
+restrictions</em> are not defined on the data structure itself</li>
+  <li>is capable of asynchronous processing, in case <code class="highlighter-rouge">F[_]</code> is
+capable of asynchronous processing (thus also being equivalent to
+the async iterators in JavaScript or Ix.NET)</li>
+  <li>is lazy, if <code class="highlighter-rouge">F[_]</code> is lazy, thus being equivalent to Scala's
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/Stream.html">Stream</a>,
+or Java's
+<a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html">Stream</a></li>
+  <li>is able to do resource handling, to close any open connections in
+case of interruption (by following <code class="highlighter-rouge">stop</code>), thus making it safer
+than plain iterators</li>
+</ol>
+
+<h3 id="41-type-classes-for-super-powers"><a href="#h4-1" name="h4-1">4.1.</a> Type-classes For Super Powers</h3>
+
+<p>So how can this simple data structure possibly have such super powers?</p>
+
+<p>The answer is that it defers the hard work to any <code class="highlighter-rouge">F[_]</code> data type
+whose capabilities are defined via type classes.</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">cats.effect.Sync</span>
+
+<span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span>
+  <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+
+  <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">current</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+    <span class="n">current</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="nc">Next</span><span class="o">(</span><span class="n">f</span><span class="o">(</span><span class="n">b</span><span class="o">),</span> <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">),</span> <span class="n">stop</span><span class="o">)</span>
+      <span class="k">case</span> <span class="nc">Suspend</span><span class="o">(</span><span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="nc">Suspend</span><span class="o">(</span><span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">),</span> <span class="n">stop</span><span class="o">)</span>
+      <span class="k">case</span> <span class="nc">Halt</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="nc">Halt</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
+    <span class="o">}</span>
+  <span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>That part about "<code class="highlighter-rouge">implicit F: Sync[F]</code>", that's the restriction we
+have for <code class="highlighter-rouge">F[_]</code>, defining its capabilities.</p>
+
+<p>What we need here is for <code class="highlighter-rouge">F[_]</code> to implement a <code class="highlighter-rouge">map</code> operation and
+thus it needs to have a
+<a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Functor.scala">Functor</a>
+instance, however our <code class="highlighter-rouge">map</code> is used in fact recursively and due to
+Scala being a strict language, if this <code class="highlighter-rouge">map</code> were to be strictly
+evaluated, then we'd 
+<a href="https://github.com/typelevel/cats-effect/issues/92">end up with a stack overflow</a>.
+This is why we require <code class="highlighter-rouge">cats.effect.Sync</code>, which implies a <code class="highlighter-rouge">Functor</code>,
+because <code class="highlighter-rouge">Sync</code> now suspends evaluation in <code class="highlighter-rouge">map</code> by law.</p>
+
+<p>You can see how this process goes: you only add the restrictions you
+want on the operations themselves, depending on your needs, not on
+the data structure, thus making the data structure more reusable.</p>
+
+<p><strong>IMPORTANT:</strong> <code class="highlighter-rouge">F</code> gets exposed via the type system at compile
+time. It's should be obvious that given <code class="highlighter-rouge">F</code> and <code class="highlighter-rouge">G</code>, then an
+<code class="highlighter-rouge">Iterant[F, A]</code> cannot be composed with an <code class="highlighter-rouge">Iterant[G, A]</code>. So an
+<code class="highlighter-rouge">Iterant[Task, A]</code> (see
+<a href="https://monix.io/docs/2x/eval/task.html">Task</a>) cannot be composed
+with an <code class="highlighter-rouge">Iterant[Coeval, A]</code> (see
+<a href="https://monix.io/docs/2x/eval/coeval.html">Coeval</a>), or with an
+<code class="highlighter-rouge">Iterant[IO, A]</code> (see
+<a href="https://github.com/typelevel/cats-effect/blob/v0.8/core/shared/src/main/scala/cats/effect/IO.scala">IO</a>),
+unless you convert between these data types explicitly.</p>
+
+<p>For example this should trigger a compile time error:</p>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">tasks</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">Task</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+<span class="k">val</span> <span class="n">ios</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="c1">// Nope, can't do this ;-)
+</span><span class="n">tasks</span> <span class="o">++</span> <span class="n">ios</span>
+</code></pre></div>
+<p class="extra-info">
+<b><u>TL;DR</u></b>: constrained parametric polymorphism via type-classes
+can give you super powers by effectively outsourcing the processing to
+pluggable data types with various capabilities, the restrictions being on
+the operations themselves!
+</p>
+
+<h3 id="42-liskov-substitution-principle-oop-strikes-back"><a href="#h4-2" name="h4-2">4.2.</a> Liskov Substitution Principle: OOP Strikes Back</h3>
+
+<p>That last example should make you think - parametric polymorphism implies:</p>
+
+<ol>
+  <li>exposing <code class="highlighter-rouge">F</code> type parameters at compile time</li>
+  <li>homogeneity</li>
+</ol>
+
+<p>Because on top of Scala we are looking for opportunities to optimize
+performance, due to the runtime not being optimized for laziness and
+<code class="highlighter-rouge">IO</code> data types (like Haskell), we want to process items in batches,
+where possible. For example we'd like to stream arrays, because arrays
+are contiguous memory blocks and if you don't find ways to work with
+arrays, then you're screwed in terms of throughput:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
+</code></pre></div>
+<p>But why only arrays? What if we allowed Scala's <code class="highlighter-rouge">List</code> or <code class="highlighter-rouge">Vector</code> as
+well? There's no harm in that and it would still have better
+throughput, so might as well use Scala's
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Seq.html">Seq</a>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
+</code></pre></div>
+<p>But wait, because somebody told us that OOP sucks or that the standard
+collections should not have a hierarchy, lets use type parameters, like we
+did with <code class="highlighter-rouge">F</code>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
+</code></pre></div>
+<p>Oh wait, this doesn't work, unless we'd expose <code class="highlighter-rouge">Seq[_]</code> in <code class="highlighter-rouge">Iterant</code> as well:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">]</span>
+
+<span class="nc">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Seq</span>, <span class="kt">A</span><span class="o">]</span>
+</code></pre></div>
+<p>But this sucks, not only due to the types getting more complicated
+(your Scala compiler is giving you ugly looks right about now), but
+also because you can't have heterogeneity:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">node1</span> <span class="k">=</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">),</span> <span class="nc">IO</span><span class="o">(</span><span class="nc">Halt</span><span class="o">(</span><span class="nc">None</span><span class="o">)),</span> <span class="nc">IO</span><span class="o">.</span><span class="n">unit</span><span class="o">)</span>
+<span class="c1">// Ooops, not compatible, List is not Array, will trigger error ;-)
+</span><span class="k">val</span> <span class="n">node2</span> <span class="k">=</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">),</span> <span class="nc">IO</span><span class="o">(</span><span class="n">node1</span><span class="o">),</span> <span class="nc">IO</span><span class="o">.</span><span class="n">unit</span><span class="o">)</span>
+</code></pre></div>
+<p>No, screw that, let's backtrack - at this point we need
+the type class restriction to be on the data structure itself:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
+  <span class="o">(</span><span class="k">implicit</span> <span class="nc">Seq</span><span class="k">:</span> <span class="kt">Foldable</span><span class="o">[</span><span class="kt">Seq</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
+</code></pre></div>
+<p>That's better, right?</p>
+
+<p>Wrong - if you're passing that type-class instance around, that's
+effectively a
+<a href="https://en.wikipedia.org/wiki/Virtual_method_table">vtable</a> so
+congratulations, you have an OOP encoding with extra garbage.</p>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: with constrained parametric polymorphism you
+either expose the data type as a type parameter, making types more
+complicated and saying goodbye to heterogeneity, or you end up with a
+shitty OOP substitute!
+</p>
+
+<h3 id="43-iterator-vs-foldable-and-traverse"><a href="#h4-3" name="h4-3">4.3.</a> Iterator vs Foldable and Traverse</h3>
+
+<p>Many people are under the impression that you can substitute the classic
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterator.html">Iterator</a>
+with the <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Foldable.scala">Foldable</a>
+and <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Traverse.scala">Traverse</a> 
+type-classes. This is understandable, because these type classes are
+really potent, really generic, great actually.</p>
+
+<p>Here's  Phil Freeman's opinion, the creator of the PureScript language:</p>
+
+<blockquote>
+  <p>ES2018 will include a whole new language feature in order to
+implement one instantiation of "traverse". I'll say it again - JS
+won't be fixed by adding more
+things. <a href="http://2ality.com/2017/02/ecmascript-2018.html">2ality.com/2017/02/ecmascript-2018.html</a></p>
+</blockquote>
+
+<p>(<a href="https://twitter.com/paf31/status/960270750903975936" target="_blank">twitter.com/paf31</a>)</p>
+
+<p>But that is simply <em>false</em>.</p>
+
+<p>Here's the big difference: <code class="highlighter-rouge">Iterator</code> allows you to <em>pause</em> the
+processing, until the current iteration cycle has finished, before
+processing the next item, being a pull-based protocol with the user
+being <em>completely in charge</em>. The user being responsible for advancing
+the cursor to the next item, whenever he wants, in a destructive
+manner is also what makes it error prone, but it's flexible
+nonetheless.</p>
+
+<p>So for example, how do you think this works?</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">ios</span><span class="k">:</span> <span class="kt">Iterable</span><span class="o">[</span><span class="kt">IO</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span> <span class="k">=</span> <span class="o">???</span>
+
+<span class="n">ios</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="nc">IO</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span> <span class="o">{</span> <span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">elem</span><span class="o">)</span> <span class="k">=&gt;</span> 
+  <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">acc</span><span class="o">;</span> <span class="n">e</span> <span class="k">&lt;-</span> <span class="n">elem</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">e</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>The short answer - it works, but if that stream is too big, it will
+blow up your process because there's no back-pressure in that fold.
+But I digress.</p>
+
+<p>Iterating over arrays in our <code class="highlighter-rouge">NextBatch</code> might prove tricky but is
+doable, for example in a <code class="highlighter-rouge">mapEval</code> implementation that needs to pop an
+item out of our <code class="highlighter-rouge">Array</code>, process that in the <code class="highlighter-rouge">F[_]</code> monadic context,
+then continue from where it left off:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
+  <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+ 
+  <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">index</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+    <span class="n">fa</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="k">val</span> <span class="n">eval</span> <span class="k">=</span> 
+          <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">batch</span><span class="o">.</span><span class="n">length</span><span class="o">)</span> 
+            <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span>
+          <span class="k">else</span>  
+            <span class="n">f</span><span class="o">(</span><span class="n">batch</span><span class="o">(</span><span class="n">index</span><span class="o">)).</span><span class="n">map</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+              <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">stop</span><span class="o">)</span>
+            <span class="o">}</span>
+        <span class="nc">Suspend</span><span class="o">(</span><span class="n">eval</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span>
+
+      <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="o">???</span>
+    <span class="o">}</span>
+  <span class="n">loop</span><span class="o">(</span><span class="mi">0</span><span class="o">)(</span><span class="n">fa</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Well, <code class="highlighter-rouge">Array</code> can be indexed, but that indexing would be death for
+<code class="highlighter-rouge">List</code>, isn't it?</p>
+
+<p>Turns out we have a perfectly capable abstraction for iterating over
+arrays, lists, vectors or what have you, the classic
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterator.html">Iterator</a>:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextCursor</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
+  <span class="n">cursor</span><span class="k">:</span> <span class="kt">Iterator</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
+</code></pre></div>
+<p>And now we can express this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
+  <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+ 
+  <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+    <span class="n">fa</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="n">loop</span><span class="o">(</span><span class="nc">NextCursor</span><span class="o">(</span><span class="n">batch</span><span class="o">.</span><span class="n">iterator</span><span class="o">(),</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">))</span>
+      <span class="k">case</span> <span class="nc">NextCursor</span><span class="o">(</span><span class="n">cursor</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
+        <span class="k">val</span> <span class="n">eval</span> <span class="k">=</span> 
+          <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">hasNext</span><span class="o">)</span> 
+            <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">)</span> 
+          <span class="k">else</span>
+            <span class="n">f</span><span class="o">(</span><span class="n">batch</span><span class="o">.</span><span class="n">next</span><span class="o">()).</span><span class="n">map</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+              <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">stop</span><span class="o">)</span>
+            <span class="o">}</span>
+        <span class="nc">Suspend</span><span class="o">(</span><span class="n">eval</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span>
+      <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> 
+        <span class="o">???</span>
+    <span class="o">}</span>
+  <span class="c1">// Suspends execution, because NextCursor is side-effectful ;-)
+</span>  <span class="nc">Suspend</span><span class="o">(</span><span class="n">F</span><span class="o">.</span><span class="n">delay</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">F</span><span class="o">.</span><span class="n">unit</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>Can you do that with <code class="highlighter-rouge">Foldable</code> / <code class="highlighter-rouge">Traverse</code>? No, you can't!</p>
+
+<p class="extra-info">
+If a tree falls in a forest and no one is around to hear it, is that a
+<a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)"><i>side effect</i></a>?
+<br /><br />
+The <code class="highlighter-rouge">Iterator</code> interface relies on side effects and is thus
+incompatible with functional programming. However if its mutation is
+properly suspended and encapsulated, such that <i>referential
+transparency</i> is preserved, then it really doesn't matter 😉
+</p>
+
+<p>To work with type-classes and pure functions, our first intuition
+should be something like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">IteratorTypeClass</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])]</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>This is a variation on the 
+<a href="https://wiki.haskell.org/State_Monad">state monad</a>, because yes, 
+we've got state to evolve.</p>
+
+<p>Here's the performance characteristics of such a decomposition
+for the <code class="highlighter-rouge">head</code> and <code class="highlighter-rouge">tail</code> operations, needed for this type
+class:</p>
+
+<ul>
+  <li><a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/Vector.html">Vector</a>,
+has "<em>effectively constant time</em>", which is worse than <code class="highlighter-rouge">List</code></li>
+  <li><a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/Queue.html">Queue</a>
+has "<em>amortized constant time</em>", which is worse than <code class="highlighter-rouge">List</code></li>
+  <li><a href="http://www.scala-lang.org/api/2.12.4/scala/Array.html">Array</a>
+has linear O(N) time for <code class="highlighter-rouge">tail</code>, aka you can change your job now</li>
+</ul>
+
+<p>Yes, <code class="highlighter-rouge">Iterator</code> is efficient for all of them, so it wins by a wide
+margin. The above is actually horrible and why a type class like 
+that isn't popular, because it relies on <code class="highlighter-rouge">List</code>'s encoding to be
+efficient 😉</p>
+
+<p>So that's not it. The pure type-class equivalent is actually this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">IteratorTypeClass</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
+  
+  <span class="k">def</span> <span class="n">start</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">])]</span>
+<span class="o">}</span>
+
+<span class="c1">// Sample instance for Array
+</span><span class="k">object</span> <span class="nc">ArrayIterator</span> <span class="k">extends</span> <span class="nc">IteratorTypeClass</span><span class="o">[</span><span class="kt">Array</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">type</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Int</span>
+  
+  <span class="k">def</span> <span class="n">start</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="mi">0</span>
+  <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> 
+    <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">&gt;=</span> <span class="n">fa</span><span class="o">.</span><span class="n">length</span><span class="o">)</span> <span class="nc">None</span>
+    <span class="k">else</span> <span class="nc">Some</span><span class="o">((</span><span class="n">fa</span><span class="o">(</span><span class="n">cursor</span><span class="o">),</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>But this will leak implementation details - not bad for our <code class="highlighter-rouge">Array</code>
+instance, but what if we had some sort of 
+<a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree">self-balancing tree</a>
+which you then changed to a 
+<a href="https://en.wikipedia.org/wiki/Hash_array_mapped_trie">HAMT</a>.
+In that case our <code class="highlighter-rouge">Pointer</code> would be some sort of node with links
+to its neighbors, so is it wise exposing it like that? How
+is Haskell's binary compatibility anyway? Does it even support
+dynamic linking?</p>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: <code class="highlighter-rouge">Iterator</code> actually beats pure, type-class
+based solution in performance, flexibility or encapsulation! It's 
+also lower-level, impure and error prone, but sorely needed sometimes.
+</p>
+
+<h2 id="5-seq-my-love"><a href="#h5" name="h5">5.</a> Seq My Love</h2>
+
+<p>I actually like
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Seq.html">Seq</a>
+and have never regretted using it.</p>
+
+<p>Not everybody agrees and as mentioned in section 
+<a href="#h2-3">2.3.</a>, there are people advising against its usage:</p>
+
+<blockquote>
+  <p>You always care about the asymptotic properties of your data
+structures. So there is never a case where Seq makes sense, even as
+a concept!</p>
+</blockquote>
+
+<p>(<a href="https://twitter.com/djspiewak/status/962767948774457344" target="_blank">twitter.com/djspiewak</a>)</p>
+
+<p>Here's why I disagree …</p>
+
+<h3 id="51-seq-on-return"><a href="#h5-1" name="h5-1">5.1.</a> Seq on Return</h3>
+
+<p>Returning <code class="highlighter-rouge">Seq</code> from a function gives you the freedom to change the
+implementation and this works well because:</p>
+
+<ol>
+  <li>you preserve backwards binary compatibility</li>
+  <li>users might only care to traverse it / fold it, which should be an
+O(n) operation for any sequence</li>
+</ol>
+
+<p>Real use-case from Monix, the
+<a href="https://github.com/monix/monix/blob/v3.0.0-M3/monix-reactive/shared/src/main/scala/monix/reactive/Observable.scala#L372">Observable.bufferSliding</a>
+operator:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="cm">/** Returns an observable that emits buffers of items it collects from
+  * the source observable. The resulting observable emits buffers
+  * every `skip` items, each containing `count` items.
+  *
+  * If the source observable completes, then the current buffer gets
+  * signaled downstream. If the source triggers an error then the
+  * current buffer is being dropped and the error gets propagated
+  * immediately.
+  *
+  * For `count` and `skip` there are 3 possibilities:
+  *
+  *  1. in case `skip == count`, then there are no items dropped and
+  *     no overlap, the call being equivalent to `buffer(count)`
+  *  1. in case `skip &lt; count`, then overlap between buffers
+  *     happens, with the number of elements being repeated being
+  *     `count - skip`
+  *  1. in case `skip &gt; count`, then `skip - count` elements start
+  *     getting dropped between windows
+  *
+  * @param count the maximum size of each buffer before it should
+  *        be emitted
+  * @param skip how many items emitted by the source observable should
+  *        be skipped before starting a new buffer. Note that when
+  *        skip and count are equal, this is the same operation as
+  *        `buffer(count)`
+  */</span>
+<span class="k">final</span> <span class="k">def</span> <span class="n">bufferSliding</span><span class="o">(</span><span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">skip</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
+  <span class="n">liftByOperator</span><span class="o">(</span><span class="k">new</span> <span class="nc">BufferSlidingOperator</span><span class="o">(</span><span class="n">count</span><span class="o">,</span> <span class="n">skip</span><span class="o">))</span>
+</code></pre></div>
+<p>Facts:</p>
+
+<ul>
+  <li><a href="https://github.com/monix/monix/blob/v3.0.0-M1/monix-reactive/shared/src/main/scala/monix/reactive/internal/operators/BufferSlidingOperator.scala#L43">current version (3.0.0-M3)</a>
+uses an <a href="https://www.scala-lang.org/api/2.12.4/scala/Array.html">Array</a> 
+as the internal buffer, emitting arrays 
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/mutable/WrappedArray.html">wrapped in Seq</a></li>
+  <li><a href="https://github.com/monix/monix/blob/v2.0.0/monix-reactive/shared/src/main/scala/monix/reactive/internal/operators/BufferSlidingOperator.scala#L41">version 2.0.0</a>
+used a <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/mutable/ListBuffer.html">ListBuffer</a>,
+thus emitting <code class="highlighter-rouge">List</code> chunks</li>
+</ul>
+
+<p>The change from <code class="highlighter-rouge">List</code> to <code class="highlighter-rouge">Array</code> was done:</p>
+
+<ul>
+  <li>without breaking backwards compatibility</li>
+  <li>with no consequence to the user, since these chunks are meant to be
+<i>small and manageable</i>, so all the user cares about is being
+able to traverse or fold them or to convert them into something else</li>
+</ul>
+
+<p>This is the infamous "<em>program to an interface, not to an implementation</em>"
+mantra that OOP developers like to repeat so much. You won't
+actually need this capability that often, but when you do, it's golden.</p>
+
+<p>Also note that when using a super-type such as <code class="highlighter-rouge">Seq</code> in an interface, due to the
+<a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">covariance</a>
+of return types, you're always allowed to override with a more
+specific type in implementing classes (e.g.  to go from <code class="highlighter-rouge">Seq</code> to
+<code class="highlighter-rouge">List</code>), and the Liskov substitution principle still applies.</p>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: there are perfectly valid use-cases for <code class="highlighter-rouge">Seq</code> as the return type!
+</p>
+
+<h3 id="52-seq-on-input"><a href="#h5-2" name="h5-2">5.2.</a> Seq on Input</h3>
+
+<p>The necessity for <code class="highlighter-rouge">Seq</code> is the same as for
+<a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Foldable.scala">Foldable</a>,
+the need to traverse a collection, aggregating its items into some final result.</p>
+
+<p><code class="highlighter-rouge">Seq</code> also implies that items come in a
+<a href="https://en.wikipedia.org/wiki/Sequence">sequence</a> in which order
+matters and repetition is allowed. For example a
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/Set.html">Set</a>
+shouldn't be a <code class="highlighter-rouge">Seq</code>, because <code class="highlighter-rouge">Set</code> does not allow repetition and has
+no ordering.</p>
+
+<p>So here's another real-world use-case, also from Monix, the
+<a href="https://github.com/monix/monix/blob/v3.0.0-M3/monix-reactive/shared/src/main/scala/monix/reactive/Observable.scala#L2148">Observable.startWith</a>
+operator:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="cm">/** Creates a new Observable that emits the given elements and then
+  * it also emits the events of the source (prepend operation).
+  */</span>
+<span class="k">final</span> <span class="k">def</span> <span class="n">startWith</span><span class="o">[</span><span class="kt">B</span> <span class="k">&gt;:</span> <span class="kt">A</span><span class="o">](</span><span class="n">elems</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nc">Observable</span><span class="o">.</span><span class="n">fromIterable</span><span class="o">(</span><span class="n">elems</span><span class="o">)</span> <span class="o">++</span> <span class="n">self</span>
+</code></pre></div>
+<p>Here we might have used an
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterator.html">Iterator</a>,
+however the result wouldn't have been pure and we might have used an
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterable.html">Iterable</a>,
+but as the author of this operator I felt that the input being a sequence
+is important for getting back a predictable result - after all, that ordering
+is important is implied by what this operator does.</p>
+
+<p>And note that all the implementation does is to care about traversal, via
+an <code class="highlighter-rouge">Iterator</code> loop.</p>
+
+<p class="extra-info">
+<b><u>TL;DR</u></b>: yes, there are perfectly valid use-cases for <code class="highlighter-rouge">Seq</code> as the input!
+</p>
+
+<h2 id="6-conclusion"><a href="#h6" name="h6">6.</a> Conclusion</h2>
+
+<p>Here's a summary:</p>
+
+<ul>
+  <li><a href="#h2-1">2.1.</a> — <code class="highlighter-rouge">CanBuildFrom</code> was a clever solution to an
+exagerated problem, but you'll no longer have to worry about
+it</li>
+  <li><a href="#h2-2">2.2.</a> — a complex OOP hierarchy, as clever as it may be,
+brings with it complexity beyond reason and is counter-productive
+for subtype polymorphism</li>
+  <li><a href="#h2-3">2.3.</a> — OOP interfaces might expose leaky operations that are
+booby traps (e.g. <code class="highlighter-rouge">Seq</code> indexing), but this is not specific to OOP
+interfaces, vigilance in design is always needed</li>
+  <li><a href="#h2-4">2.4.</a> — type-classes are nice, playing well with
+parametric polymorphism, but in Scala the syntax is heavier than
+when using OOP, although this isn't an issue with Haskell</li>
+  <li><a href="#h3">3.</a> with Scala you can actually pick and choose the best
+approach - this can lead to choice paralysis however and lots of
+drama</li>
+  <li><a href="#h4-1">4.1.</a> — constrained parametric polymorphism via type-classes
+can give you super powers by effectively outsourcing the processing
+to pluggable data types with various capabilities, the restrictions
+being on the operations themselves</li>
+  <li><a href="#h4-2">4.2.</a> — with constrained parametric polymorphism you either
+expose the data type as a type parameter, making types more
+complicated and saying goodbye to heterogeneity, or you end up with
+a shitty OOP substitute</li>
+  <li><a href="#h4-3">4.3.</a> — <code class="highlighter-rouge">Iterator</code> actually beats pure, type-class based
+solution in performance, flexibility or encapsulation. It's also
+lower-level, impure and error prone, but sorely needed sometimes</li>
+  <li><a href="#h5-1">5.1.</a> — there are perfectly valid use-cases for <code class="highlighter-rouge">Seq</code> as
+the return type</li>
+  <li><a href="#h5-2">5.2.</a> — there are perfectly valid use-cases for <code class="highlighter-rouge">Seq</code> as
+the input</li>
+</ul>
+
+<p>So yes, there will be people out there, such as myself, genuinely enjoying 
+Scala's OOP and the new collections.</p>
+
+<p>Thanks for reading ️❤️</p>
+
+
+    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
+        Alexandru Nedelcu</a> |
+      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
+        Twitter</a> |
+      <a href="https://github.com/alexandru" itemprop="url" rel="author">
+        GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    <div id="other-articles">
+      <h2>Recent Articles</h2>
+
+      <ul class="posts">
+      	<li>
+      	  <time datetime="2017-11-10">
+      	    2017-11-10 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-15">
+      	    2017-10-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-13">
+      	    2017-10-13 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-11">
+      	    2017-10-11 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/11/javascript-promise-leaks-memory.html" rel="prefetch related">JavaScript's Promise Leaks Memory</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-08-16">
+      	    2017-08-16 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html" rel="prefetch related">Automatic Releases to Maven Central with Travis and SBT</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-03-15">
+      	    2017-03-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/03/15/fp-inception.html" rel="prefetch related">Functional Programming Inception - Bucharest FP</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-01-30">
+      	    2017-01-30 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/01/30/asynchronous-programming-scala.html" rel="prefetch related">Asynchronous Programming and Scala</a>
+      	</li>
+      </ul>
+    </div>
+
+    <div id="contributions">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'alexnorg';
+        var disqus_url = 'http://alexn.org/blog/2018/02/12/in-defense-oofp.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </footer>
+</article>
+
+    </div>
+  </div>
+
+  <div id="footer-container">
+    <footer>
+      <div class="contact">
+      	&copy; 2018 Alexandru Nedelcu
+      	<br>
+      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
+      </div>
+
+      <div class="rss">
+      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
+      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
+      	</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-84530423-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

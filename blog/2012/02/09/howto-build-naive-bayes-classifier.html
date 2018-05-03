@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+
+  <link rel="canonical" href="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html">
+  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@alexelcu" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2012-02-09" />
+    
+    <meta property="article:tag" content="Algorithms" />
+    <meta property="article:tag" content="Programming" />
+    <meta property="article:tag" content="Mining" />
+    <meta property="article:tag" content="Ruby" />
+
+    <title>How To Build a Naive Bayes Classifier</title>
+    <meta name="og:title" content="How To Build a Naive Bayes Classifier" />
+    <meta name="twitter:title" content="How To Build a Naive Bayes Classifier" />
+
+      <meta name="og:image" content="https://alexn.org/assets/img/coin-flip.png" />
+      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/coin-flip.png" />
+      <meta name="twitter:image" content="https://alexn.org/assets/img/coin-flip.png" />
+
+      <meta name="og:description" content="Algorithms, Programming, Mining, Ruby" />
+      <meta name="twitter:description" content="Algorithms, Programming, Mining, Ruby" />
+      <meta name="description" content="Algorithms, Programming, Mining, Ruby" />
+
+  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
+  <link href="/assets/css/all-b9d1ad87.css" rel="stylesheet" />
+  <!--[if lt IE 9]>
+  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <![endif]-->
+
+  <!-- Google authorship -->
+  <link href="https://plus.google.com/+alexelcu" rel="publisher">
+</head>
+<body>
+  <div id="header-container">
+    <header>
+      <h1 id="title">alexn.org</h1>
+
+      <meta itemprop="lastReviewed" content="2018-05-03"/>
+      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <meta itemprop="url" content="https://plus.google.com/+alexelcu">
+      </div>
+
+      <div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
+        </div>
+      </div>
+
+      <nav>
+    	  <a href="/">alexn.org</a>
+    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
+      </nav>
+    </header>
+  </div>
+
+  <div id="main-container">
+    <div id="main">
+      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="headline">How To Build a Naive Bayes Classifier</h1>
+
+    <div id="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html"/>
+      <meta itemprop="datePublished" content="2012-02-09"/>
+      <meta itemprop="dateModified" content="2012-02-09"/>
+
+      <time class="post-date" itemprop="dateCreated" datetime="2012-02-09">
+        Feb 09, 2012
+      </time>
+
+      <span class="twitter-link">
+        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
+      </span>
+
+        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/coin-flip.png">
+          <meta itemprop="width" content="414">
+          <meta itemprop="height" content="218">
+        </div>
+
+      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+        <meta itemprop="name" content="Alexandru Nedelcu">
+        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
+          <meta itemprop="width" content="585">
+          <meta itemprop="height" content="585">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div id="content" itemprop="articleBody">
+    <p>Some use-cases for building a classifier:</p>
+
+<ul>
+  <li>Spam detection, for example you could build your own
+<a href="http://akismet.com/">Akismet</a> API</li>
+  <li>Automatic assignment of categories to a set of items</li>
+  <li>Automatic detection of the primary language (e.g. Google Translate)</li>
+  <li>Sentiment analysis, which in simple terms refers to discovering if
+an opinion is about love or hate about a certain topic</li>
+</ul>
+
+<p>In general you can do a lot better with more specialized techniques,
+however the Naive Bayes classifier is general-purpose, simple to
+implement and good-enough for most applications. And while other
+algorithms give better accuracy, in general I discovered that having
+better data in combination with an algorithm that you can tweak does
+give better results for less effort.</p>
+
+<p>In this article I'm describing the math behind it. Don't fear the
+math, as this is simple enough that a high-schooler understands. And
+even though there are a lot of libraries out there that already do
+this, you're far better off for understanding the concept behind it,
+otherwise you won't be able to tweak the implementation in response to
+your needs.</p>
+
+<!-- read more -->
+
+<h2 id="0-the-source-code">0. The Source Code</h2>
+
+<p>I published the source-code associated at
+<a href="https://github.com/alexandru/stuff-classifier">github.com/alexandru/stuff-classifier</a>. The
+implementation itself is at
+<a href="https://github.com/alexandru/stuff-classifier/blob/master/lib/stuff-classifier/bayes.rb">lib/bayes.rb</a>,
+with the corresponding
+<a href="https://github.com/alexandru/stuff-classifier/blob/master/test/test_002_naive_bayes.rb">test/test_002_naive_bayes.rb</a>.</p>
+
+<h2 id="1-introduction-to-probabilities">1. Introduction to Probabilities</h2>
+
+<p>Let's start by refreshing forgotten knowledge. Again, this is very
+basic stuff, but if you can't follow the theory here, you can always
+go to the
+<a href="http://www.khanacademy.org/#probability">probabilities section on khanacademy.org</a>.</p>
+
+<h3 id="11-events-and-event-types">1.1. Events and Event Types</h3>
+
+<p>An "event" is a set of outcomes (a subset of all possible outcomes)
+with a probability attached. So when flipping a coin, we can have one
+of these 2 events happening: tail or head. Each of them has a
+probability of 50%. Using a Venn diagram, this would look like this:</p>
+
+<p><img src="/assets/img/coin-flip.png" class="center" width="414" height="218" alt="Coin flip" /></p>
+
+<p>And another example which clearly shows the <em>dependence</em> between
+"rain" and "cloud formation", as raining can only happen if there are
+clouds:</p>
+
+<p><img src="/assets/img/inclusive.png" class="center" width="432" height="273" alt="Inclusive" /></p>
+
+<p>The relationship between events is very important, as you'll see next:</p>
+
+<ul>
+  <li>2 events are <strong>disjoint (exclusive)</strong> if they can't happen at the same
+time (a single coin flip cannot yield a tail and a head at the same
+time). For Bayes classification, we are not concerned with disjoint
+events.</li>
+  <li>2 events are <strong>independent</strong> when they can happen at the same time,
+but the occurrence of one event does not make the occurrence of
+another more or less probable. For example the second coin-flip you
+make is not affected by the outcome of the first coin-flip.</li>
+  <li>2 events are <strong>dependent</strong> if the outcome of one affects the other. In
+the example above, clearly it cannot rain without a cloud
+formation. Also, in a horse race, some horses have better
+performance on rainy days.</li>
+</ul>
+
+<p>What we are concerned here is the difference between dependent and
+independent events, because calculating the intersection (both
+happening at the same time) depends on it. So for independent events,
+calculating the intersection is easy:</p>
+
+<p><img src="/assets/img/independent-events-intersection.png" width="214" height="36" alt="Independent events intersection" /></p>
+
+<p>Some examples:</p>
+
+<ul>
+  <li>if you have 2 hard-drives, each of them having a 0.3 (30%)
+probability of failure within the next year, that means there's a
+0.09 (9%) probability of them failing both within the next year</li>
+  <li>if you flip a coin 4 times, there's a 0.0625 probability of getting
+a tail 4 times in a row (0.5 ^ 4)</li>
+</ul>
+
+<p>Things are not so simple for dependent events, which is where the
+Bayes Theorem comes into play.</p>
+
+<h3 id="12-conditional-probabilities-and-the-bayes-theorem">1.2. Conditional Probabilities and The Bayes Theorem</h3>
+
+<p>Let's take one example. So we have the following stats:</p>
+
+<ul>
+  <li>30 emails out of a total of 74 are spam messages</li>
+  <li>51 emails out of those 74 contain the word "penis"</li>
+  <li>20 emails containing the word "penis" have been marked as spam</li>
+</ul>
+
+<p>So the question is: what is the probability that the latest received
+email is a spam message, given that it contains the word "penis"?</p>
+
+<p>So these 2 events are clearly dependent, which is why you must use the
+simple form of the Bayes Theorem:</p>
+
+<p><img src="/assets/img/conditional-prob.png" width="490" height="272" alt="Conditional prob" /></p>
+
+<p>With the solution being:</p>
+
+<p><img src="/assets/img/spam-simple-bayes.png" width="415" height="199" alt="Spam simple bayes" /></p>
+
+<p>This was a simple one, you could definitely see the result without
+complicating yourself with the Bayes formula.</p>
+
+<h3 id="13-the-naive-bayes-approach">1.3. The Naive Bayes Approach</h3>
+
+<p>Let us complicate the problem above by adding to it:</p>
+
+<ul>
+  <li>25 emails out of the total contain the word "viagra"</li>
+  <li>24 emails out of those have been marked as spam</li>
+  <li>so what's the probability that an email is spam, given that it
+contains both "viagra" and "penis"?</li>
+</ul>
+
+<p>Shit just got more complicated, because now the formula is this one:</p>
+
+<p><img src="/assets/img/spam-multiple-bayes.png" width="467" height="68" alt="Spam multiple bayes" /></p>
+
+<p>And you definitely don't want to bother with it if we keep adding
+words. But what if we simplified our assumptions and just say that the
+occurrence of <em>penis</em> is totally independent from the occurrence of
+<em>viagra</em>? Then the formula just got much simpler:</p>
+
+<p><img src="/assets/img/spam-multiple-bayes-naive.png" width="407" height="250" alt="Spam multiple bayes naive" /></p>
+
+<p>To classify an email as spam, you'll have to calculate the conditional
+probability by taking hints from the words contained. And the Naive
+Bayes approach is exactly what I described above: we make the
+assumption that the occurrence of one word is totally unrelated to the
+occurrence of another, to simplify the processing and complexity
+involved.</p>
+
+<p>This does highlight the flaw of this method of classification, because
+clearly those 2 events we've picked (viagra and penis) are correlated
+and our assumption is wrong. But this just means our results will be
+less accurate.</p>
+
+<h2 id="2-implementation">2. Implementation</h2>
+
+<p>I mention it again, you can take a look at the source-code published
+at
+<a href="https://github.com/alexandru/stuff-classifier/">github.com/alexandru/stuff-classifier</a>.</p>
+
+<h3 id="21-general-algorithm">2.1. General Algorithm</h3>
+
+<p>You simply get the probability for a text to belong to each of the
+categories you test against. The category with the highest probability
+for the given text wins:</p>
+
+<p><img src="/assets/img/bayes-classifier-formula.png" width="588" height="70" alt="Bayes classifier formula" /></p>
+
+<p>Do note that above I also eliminated the <em>denominator</em> from our original
+formula, because it is a constant that we do not need (called
+<em>evidence</em>).</p>
+
+<h3 id="22-avoiding-floating-point-underflow-update-feb-27-2012">2.2. Avoiding Floating Point Underflow (UPDATE Feb 27, 2012)</h3>
+
+<p>Because of the underlying limits of floating points, if you're working
+with big documents (not the case in this example), you do have to make
+one important optimization to the above formula:</p>
+
+<ul>
+  <li>instead of the probabilities of each word, you store the (natural)
+logarithms of those probabilities</li>
+  <li>instead of multiplying the numbers, you add them instead</li>
+</ul>
+
+<p>So instead of the above formula, if you need this optimization, then
+use this one:</p>
+
+<p><img src="/assets/img/bayes-logarithms.png" width="703" height="67" alt="Bayes logarithms" /></p>
+
+<h3 id="23-training">2.3. Training</h3>
+
+<p>Your implementation must have a training method. Here's how mine looks like:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">category</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+  <span class="n">each_word</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">w</span><span class="o">|</span> <span class="n">increment_word</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span> <span class="p">}</span>
+  <span class="n">increment_cat</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>And its usage:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">classifier</span><span class="p">.</span><span class="nf">train</span> <span class="ss">:spam</span><span class="p">,</span> <span class="s2">"Grow your penis to 20 inches in just 1 week"</span>
+<span class="n">classifier</span><span class="p">.</span><span class="nf">train</span> <span class="ss">:ham</span><span class="p">,</span>  <span class="s2">"I'm hungry, no I don't want your penis"</span>
+</code></pre></div>
+<p>For the full implementation, take a look at
+<a href="https://github.com/alexandru/stuff-classifier/blob/master/lib/stuff-classifier/base.rb">base.rb</a>.</p>
+
+<h3 id="24-getting-rid-of-stop-words--stemming">2.4. Getting Rid of Stop Words / Stemming</h3>
+
+<p>First of all, you must get rid of the junk. Every language has words
+that are so commonly used that make them meaningless for any kind of
+classification you may want to do. For instance in English you have
+words such as "the", "to", "you", "he", "only", "if", "it" that you
+can safely strip out from the text.</p>
+
+<p>I've compiled a list of such words in this file:
+<a href="https://github.com/alexandru/stuff-classifier/blob/master/lib/stuff-classifier/stop_words.rb">stop_words.rb</a>. You
+can compile such a list by yourself if you're not using English for
+example. Head over to <a href="http://www.gutenberg.org/">Project Gutenberg</a>,
+download some books in the language you want, count the words in them,
+sort by popularity in descending order and keep the top words as words
+that you can safely ignore.</p>
+
+<p>Also, our classifier is really dumb in the sense that it does not care
+about the meaning or context of a word. So there's a problem: consider
+the word "running". What you want is to treat this just as "run",
+which is the morphological root of the word. You also want to treat
+"parenting" and "parents" as "parent".</p>
+
+<p>This process is called <em>stemming</em> and there are lots of libraries for
+it. I think currently the most up-to-date and comprehensive library
+for stemming is Snowball. It's a C library with lots of bindings
+available, including for Ruby and Python and it even has support for
+my native language (Romanian).</p>
+
+<p>Take a look at what I'm doing in
+<a href="https://github.com/alexandru/stuff-classifier/blob/master/lib/stuff-classifier/tokenizer.rb">tokenizer.rb</a>,
+where I'm getting rid of stop words and stemming the remainings.</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="n">each_word</span><span class="p">(</span><span class="s1">'Hello world! How are you?'</span><span class="p">)</span>
+
+<span class="c1"># =&gt; ["hello", "world"]</span>
+
+<span class="n">each_word</span><span class="p">(</span><span class="s1">'Lots of dogs, lots of cats! 
+  This is the information highway'</span><span class="p">)</span>
+
+<span class="c1"># =&gt; ["lot", "dog", "lot", "cat", "inform", "highwai"]</span>
+
+<span class="n">each_word</span><span class="p">(</span><span class="s2">"I don't really get what you want to
+  accomplish. There is a class TestEval2, you can do test_eval2 =
+  TestEval2.new afterwards. And: class A ... end always yields nil, so
+  your output is ok I guess ;-)"</span><span class="p">)</span>
+
+<span class="c1"># =&gt; ["really", "want", "accomplish", "class",</span>
+<span class="c1">#     "testeval", "test", "eval", "testeval", "new", </span>
+<span class="c1">#     "class", "end", "yields", "nil", "output", </span>
+<span class="c1">#     "ok", "guess"]</span>
+</code></pre></div>
+<p><strong>NOTE:</strong> depending on the size of your training data, this may not be
+a good idea. Stemming is useful in the beginning when you don't have a
+lot of data. Otherwise consider "<em>house</em>" and "<em>housing</em>" … the
+former is used less frequently in a spammy context then the later.</p>
+
+<h3 id="25-implementation-guidelines">2.5. Implementation Guidelines</h3>
+
+<p>When classifying emails for spam, it is a good idea to be sure that a
+certain message is a spam message, otherwise users may get pissed by
+too many false positives.</p>
+
+<p>Therefore it is a good idea to have <em>thresholds</em>. This is how my
+implementation looks like:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">classify</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kp">nil</span><span class="p">)</span>
+  <span class="c1"># Find the category with the highest probability</span>
+
+  <span class="n">max_prob</span> <span class="o">=</span> <span class="mf">0.0</span>
+  <span class="n">best</span> <span class="o">=</span> <span class="kp">nil</span>
+  
+  <span class="n">scores</span> <span class="o">=</span> <span class="n">cat_scores</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+  <span class="n">scores</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">score</span><span class="o">|</span>
+    <span class="n">cat</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">score</span>
+    <span class="k">if</span> <span class="n">prob</span> <span class="o">&gt;</span> <span class="n">max_prob</span>
+      <span class="n">max_prob</span> <span class="o">=</span> <span class="n">prob</span>
+      <span class="n">best</span> <span class="o">=</span> <span class="n">cat</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="c1"># Return the default category in case the threshold condition was</span>
+  <span class="c1"># not met. For example, if the threshold for :spam is 1.2</span>
+  <span class="c1">#</span>
+  <span class="c1">#    :spam =&gt; 0.73, :ham =&gt; 0.40  (OK)</span>
+  <span class="c1">#    :spam =&gt; 0.80, :ham =&gt; 0.70  (Fail, :ham is too close)</span>
+
+  <span class="k">return</span> <span class="n">default</span> <span class="k">unless</span> <span class="n">best</span>
+  <span class="n">threshold</span> <span class="o">=</span> <span class="vi">@thresholds</span><span class="p">[</span><span class="n">best</span><span class="p">]</span> <span class="o">||</span> <span class="mf">1.0</span>
+
+  <span class="n">scores</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">score</span><span class="o">|</span>
+    <span class="n">cat</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">score</span>
+    <span class="k">next</span> <span class="k">if</span> <span class="n">cat</span> <span class="o">==</span> <span class="n">best</span>
+    <span class="k">return</span> <span class="n">default</span> <span class="k">if</span> <span class="n">prob</span> <span class="o">*</span> <span class="n">threshold</span> <span class="o">&gt;</span> <span class="n">max_prob</span>
+  <span class="k">end</span>
+
+  <span class="k">return</span> <span class="n">best</span>
+<span class="k">end</span>
+</code></pre></div>
+<h2 id="final-words">Final Words</h2>
+
+<p>My example involved spam classification, however this is not how
+modern spam classifiers work btw. Because the independence assumptions
+are often inaccurate, this type of classifier can be gamed by spammers
+to trigger a lot of false positives, which will make the user turn the
+feature off eventually.</p>
+
+<p>But it is general purpose, being good enough not only for spam
+detection, but also for lots of other use-cases and it's enough to get
+you started.</p>
+
+
+    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
+        Alexandru Nedelcu</a> |
+      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
+        Twitter</a> |
+      <a href="https://github.com/alexandru" itemprop="url" rel="author">
+        GitHub</a>
+    </div>
+  </div>
+
+  <footer>
+    <div id="other-articles">
+      <h2>Recent Articles</h2>
+
+      <ul class="posts">
+      	<li>
+      	  <time datetime="2018-02-12">
+      	    2018-02-12 &raquo;
+      	  </time>
+      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-11-10">
+      	    2017-11-10 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-15">
+      	    2017-10-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-13">
+      	    2017-10-13 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-10-11">
+      	    2017-10-11 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/10/11/javascript-promise-leaks-memory.html" rel="prefetch related">JavaScript's Promise Leaks Memory</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-08-16">
+      	    2017-08-16 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html" rel="prefetch related">Automatic Releases to Maven Central with Travis and SBT</a>
+      	</li>
+      	<li>
+      	  <time datetime="2017-03-15">
+      	    2017-03-15 &raquo;
+      	  </time>
+      	  <a href="/blog/2017/03/15/fp-inception.html" rel="prefetch related">Functional Programming Inception - Bucharest FP</a>
+      	</li>
+      </ul>
+    </div>
+
+    <div id="contributions">
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'alexnorg';
+        var disqus_url = 'http://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html';
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+  </footer>
+</article>
+
+    </div>
+  </div>
+
+  <div id="footer-container">
+    <footer>
+      <div class="contact">
+      	&copy; 2018 Alexandru Nedelcu
+      	<br>
+      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
+      </div>
+
+      <div class="rss">
+      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
+      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
+      	</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-84530423-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
