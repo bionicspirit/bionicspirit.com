@@ -559,8 +559,10 @@ is eager to <a href="https://hillelwayne.com/post/theorem-prover-showdown/">prov
 
 <p>I am not saying that the Bifunctor <code class="highlighter-rouge">IO[E, A]</code> is not useful.</p>
 
-<p>I'm pretty sure it will prove useful for some very specific use-cases, the same kind
-of use-cases for which <code class="highlighter-rouge">EitherT</code> is useful, except with a less orthogonal design.</p>
+<p>I'm pretty sure it will prove useful for some use-cases, the same kind of use-cases
+for which <code class="highlighter-rouge">EitherT</code> is useful, except with a less orthogonal design. Well you gain
+some performance in that process, although when you're using <code class="highlighter-rouge">EitherT</code> it's debatable
+whether it matters for those particular use cases.</p>
 
 <p>What I am saying is that:</p>
 
