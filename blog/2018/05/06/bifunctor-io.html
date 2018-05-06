@@ -262,7 +262,7 @@ code and give us a way to show anyone reading the code that we’ve already hand
 
 <h2 id="the-problems-of-javas-checked-exceptions">The Problems of Java's Checked Exceptions</h2>
 
-<p>While I think that the Bifunctor IO is a cool implementation, that's pretty cool
+<p>While I think that the Bifunctor IO is a cool implementation, that's pretty useful
 for certain people, or certain use cases, I believe that ultimately it's not a good
 default implementation, as it shares the same problems as Java's Checked Exceptions.
 Or in other words, it's ignoring decades of experience with exceptions, since
@@ -281,7 +281,7 @@ interesting articles:</p>
 
 <h3 id="1-composition-destroys-specific-error-types">1. Composition Destroys Specific Error Types</h3>
 
-<p>Lets get back a more serious example:</p>
+<p>Let's go with a more serious example:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">java.io._</span>
 
@@ -330,7 +330,7 @@ type of the result, what you'll have to deal with is actually worse:</p>
   <span class="n">num</span> <span class="k">&lt;-</span> <span class="n">convertToNumber</span><span class="o">(</span><span class="n">line</span><span class="o">).</span><span class="n">leftWiden</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">]</span>
 <span class="o">}</span> <span class="k">yield</span> <span class="n">num</span>
 </code></pre></div>
-<p>Not sure about how people feel about this, but to me this isn't an
+<p>Not sure how people feel about this, but to me this isn't an
 improvement over the status quo, far from it, this is just noise
 polluting the code. And before you say anything in its defence, make
 sure the argument doesn't also apply to Java and everything you
