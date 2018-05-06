@@ -499,7 +499,7 @@ it means that handling of <code class="highlighter-rouge">Throwable</code> is ou
 <ol>
   <li>crash the process, which would be the default, naive implementation</li>
   <li>your thread crashes without making a sound, logging to a stderr that gets redirected to <code class="highlighter-rouge">/dev/null</code></li>
-  <li>use something like a custom Java's
+  <li>use something like a custom Java
 <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.UncaughtExceptionHandler.html">Thread.UncaughtExceptionHandler</a>,
 or Scalaz's specific "fiber" error reporter to report such errors somewhere</li>
 </ol>
@@ -511,8 +511,8 @@ number in return, but it gives you an unexpected response - maybe it has a maxim
 of concurrent connections or something.</p>
 
 <p>When making requests to web services, wouldn't it be better to give them some slack?
-Wouldn't it be better to do retries with <em>exponential backoff</em> a couple of times before crashing?
-Or maybe use utilities such as
+Wouldn't it be better to do retries with <a href="https://en.wikipedia.org/wiki/Exponential_backoff">exponential backoff</a>
+a couple of times before crashing? Or maybe use utilities such as
 <a href="https://monix.io/docs/3x/eval/circuit-breaker.html">TaskCircuitBreaker</a>? Of course it is. And in
 the environments I worked on, such instances are very frequent and the processes have to be really
 resilient to failure and resiliency is built-in only when having the assumption that
@@ -526,24 +526,24 @@ But the Bifunctor <code class="highlighter-rouge">IO</code> no longer does.</p>
 the Cats-Effect project:</p>
 
 <blockquote>
-  <p><em>The JVM runtime is typed to a first order. Which happens to be exactly what the type
+  <p>The JVM runtime is typed to a first order. Which happens to be exactly what the type
 parameter of IO reflects. I'm not talking about code in general, just IO.
-IO is the runtime, the runtime is IO.</em></p>
+IO is the runtime, the runtime is IO.</p>
 </blockquote>
 
 <p>(<a href="https://twitter.com/djspiewak/status/983807277613236230">link</a>)</p>
 
 <blockquote>
-  <p><em>The whole purpose of IO as an abstraction is to control the runtime.
+  <p>The whole purpose of IO as an abstraction is to control the runtime.
 If you pretend that the runtime has a property which it does not, then that
-control is weakened and can be corrupted (in this case, by uncontrolled crashes).</em></p>
+control is weakened and can be corrupted (in this case, by uncontrolled crashes).</p>
 </blockquote>
 
 <p>(<a href="https://twitter.com/djspiewak/status/983808880349073408">link</a>)</p>
 
 <blockquote>
-  <p><em>IO needs to reflect and describe the capabilities of the runtime, for good or for bad.
-All it takes is an "innocent" throw to turn it all into a lie, and you can't prevent that.</em></p>
+  <p>IO needs to reflect and describe the capabilities of the runtime, for good or for bad.
+All it takes is an "innocent" throw to turn it all into a lie, and you can't prevent that.</p>
 </blockquote>
 
 <p>(<a href="https://twitter.com/djspiewak/status/983805298526699520">link</a>)</p>
@@ -552,7 +552,7 @@ All it takes is an "innocent" throw to turn it all into a lie, and you can't pre
 this great divide being between those that think types can prove correctness in all cases
 and those that don't.</p>
 
-<p>If you're in the later camp, I think <a href="https://twitter.com/Hillelogram">Hillel Wayne</a>
+<p>If you're in the former camp, I think <a href="https://twitter.com/Hillelogram">Hillel Wayne</a>
 is eager to <a href="https://hillelwayne.com/post/theorem-prover-showdown/">prove you wrong</a> 😉</p>
 
 <h2 id="final-words">Final Words</h2>
@@ -560,7 +560,7 @@ is eager to <a href="https://hillelwayne.com/post/theorem-prover-showdown/">prov
 <p>I am not saying that the Bifunctor <code class="highlighter-rouge">IO[E, A]</code> is not useful.</p>
 
 <p>I'm pretty sure it will prove useful for some very specific use-cases, the same kind
-of use-cases for which <code class="highlighter-rouge">EitherT</code> is useful, except with a less orthogonal design..</p>
+of use-cases for which <code class="highlighter-rouge">EitherT</code> is useful, except with a less orthogonal design.</p>
 
 <p>What I am saying is that:</p>
 
