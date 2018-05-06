@@ -47,7 +47,7 @@
     <header>
       <h1 id="title">alexn.org</h1>
 
-      <meta itemprop="lastReviewed" content="2018-05-03"/>
+      <meta itemprop="lastReviewed" content="2018-05-06"/>
       <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
         <meta itemprop="name" content="Alexandru Nedelcu">
         <meta itemprop="url" content="https://plus.google.com/+alexelcu">
@@ -103,10 +103,12 @@
   </header>
 
   <div id="content" itemprop="articleBody">
-    <p>This article is about OOP hierarchies, in comparisson with 
-<a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>, using as 
+    <p>This article is about OOP hierarchies, in comparisson with
+<a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>, using as
 example Scala's standard collections, which are involved in a recent
 debate around their redesign.</p>
+
+<!-- read more -->
 
 <p><img src="/assets/img/2018/scala-spiral.png" class="right" width="100" alt="Scala spiral" /></p>
 
@@ -151,7 +153,7 @@ strength and weakness.</p>
 <p>The
 <a href="https://github.com/scala/collection-strawman">collection-strawman</a>
 represents a redesign of Scala's standard collections, planned to be
-shipped in Scala 2.13, as part of a 
+shipped in Scala 2.13, as part of a
 <a href="https://github.com/scalacenter/advisoryboard/blob/master/proposals/007-collections.md">Scala Center proposal</a>.</p>
 
 <p>There are at the moment of writing two blog posts explaining the
@@ -164,7 +166,7 @@ upcoming changes on Scala's blog:</p>
   <li><a href="http://www.scala-lang.org/blog/2018/02/09/collections-performance.html">On Performance of the New Collections</a></li>
 </ol>
 
-<p>It's now also receiving some criticism. This article represents my 
+<p>It's now also receiving some criticism. This article represents my
 2¢ on why I like this redesign and on why criticism of an
 OOP hierarchy are not warranted, even if you love FP.</p>
 
@@ -178,9 +180,9 @@ fresh air.</p>
 
 <p>Yes, I came to Scala in 2012 looking for a better OOP language and
 what I got was a great combination of Smalltalk-esque OOP features,
-mixed with an 
+mixed with an
 <a href="https://alexn.org/blog/2017/10/15/functional-programming.html">actual FP culturre</a>. I
-have an article about 
+have an article about
 <a href="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html">what I liked about it</a>
 written back then and to be honest, not much has changed.</p>
 
@@ -206,19 +208,19 @@ here I'm doing my best to summarize it:</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">Repr</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
 </code></pre></div>
 <p>The Scala core developers first tried to hide this signature, so if
-you'll take a look at the 
+you'll take a look at the
 <a href="https://www.scala-lang.org/api/current/scala/collection/immutable/List.html#map[B](f:A=%3EB):List[B]">current ScalaDoc for List.map</a>,
 you won't see it. But that's only a documentation trick, because
-the actual source-code (and your IDE) tells a different story, see 
+the actual source-code (and your IDE) tells a different story, see
 <a href="https://github.com/scala/scala/blob/v2.12.4/src/library/scala/collection/immutable/List.scala#L280">List.scala#280</a>.</p>
 
-<p>In essence <code class="highlighter-rouge">CanBuildFrom</code> is a clever abstraction, as 
+<p>In essence <code class="highlighter-rouge">CanBuildFrom</code> is a clever abstraction, as
 <a href="https://stackoverflow.com/a/1728140/3280">Martin Odersky</a> himself
-explains, however at this point we can all agree that its complexity 
+explains, however at this point we can all agree that its complexity
 is not justified. Not only because it is difficult to understand, but
 because it has historically created issues for people at the call-sites.</p>
 
-<p>Here's what Coda Hale <a href="https://gist.github.com/anonymous/1406238">was writing</a> 
+<p>Here's what Coda Hale <a href="https://gist.github.com/anonymous/1406238">was writing</a>
 back in 2011:</p>
 
 <blockquote>
@@ -239,7 +241,7 @@ parameters, builder typeclasses, "operator overloading", return type
 inference, etc. etc.</p>
 </blockquote>
 
-<p>But if you'll take a look at 
+<p>But if you'll take a look at
 <a href="https://github.com/scala/collection-strawman/blob/master/collections/src/main/scala/strawman/collection/immutable/List.scala#L214">List.scala in collection-strawman</a>,
 that signature now looks like this:</p>
 
@@ -250,14 +252,14 @@ years.</p>
 
 <p class="extra-info">
 <b><u>TL;DR</u></b>: <code class="highlighter-rouge">CanBuildFrom</code> was a clever solution to an exaggerated
-problem, but you'll no longer have to worry about it. Beware of clever 
+problem, but you'll no longer have to worry about it. Beware of clever
 solutions to problems you don't have!
 </p>
 
 <h3 id="22-complex-hierarchy"><a href="#h2-2" name="h2-2">2.2.</a> Complex Hierarchy</h3>
 
-<p>This is an awesome infographic, showing how complex the implementation is for 
-<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html">List</a>, 
+<p>This is an awesome infographic, showing how complex the implementation is for
+<a href="https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html">List</a>,
 by <a href="https://github.com/tpolecat">Rob Norris</a>:</p>
 
 <p><a href="/assets/img/2018/scala-list.jpg" target="_blank">
@@ -389,13 +391,13 @@ instead of an OOP hierarchy of interfaces.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">cats.Foldable</span>
 
-<span class="k">def</span> <span class="n">foo</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="kt">:</span> <span class="kt">Foldable</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyThingy</span> <span class="o">=</span> 
+<span class="k">def</span> <span class="n">foo</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="kt">:</span> <span class="kt">Foldable</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyThingy</span> <span class="o">=</span>
   <span class="n">implicitly</span><span class="o">[</span><span class="kt">Foldable</span><span class="o">[</span><span class="kt">F</span><span class="o">]].</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MyThingy</span><span class="o">)(</span><span class="k">_</span> <span class="n">accumulate</span> <span class="k">_</span><span class="o">)</span>
 </code></pre></div>
 <p>Ah, now we are getting somewhere. But the astute reader should notice at this
 point that this means exposure of an extra <code class="highlighter-rouge">F[_]</code> type parameter that
 you don't actually need with OOP — well, OK, this syntax heaviness is
-an artifact of the Scala language, as in Haskell this wouldn't be an 
+an artifact of the Scala language, as in Haskell this wouldn't be an
 issue.</p>
 
 <p>Also, not clearly visible here is that type-classes such as <code class="highlighter-rouge">Foldable</code>
@@ -451,9 +453,9 @@ required, which makes <code class="highlighter-rouge">F[_]</code> data types mor
 not very clear in this case, but if you're unfamiliar with
 type-class based design, trust me on this one</li>
   <li><strong>CON:</strong> this method makes <code class="highlighter-rouge">F[_]</code> clearly visible, exposing it at the
-type system level - this is no longer subtyping, this is no longer the 
+type system level - this is no longer subtyping, this is no longer the
 <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov substitution principle</a>,
-this is parametric polymorphism and it moves the dispatch cost at 
+this is parametric polymorphism and it moves the dispatch cost at
 compile time, with both the good and the bad</li>
 </ul>
 
@@ -493,10 +495,10 @@ describe it like this:</p>
 
 <span class="nc">case</span> <span class="k">class</span> <span class="nc">Next</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">first</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
-  
+
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Suspend</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
-  
+
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Halt</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">error</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">ITerant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div>
@@ -550,7 +552,7 @@ thus it needs to have a
 <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Functor.scala">Functor</a>
 instance, however our <code class="highlighter-rouge">map</code> is used in fact recursively and due to
 Scala being a strict language, if this <code class="highlighter-rouge">map</code> were to be strictly
-evaluated, then we'd 
+evaluated, then we'd
 <a href="https://github.com/typelevel/cats-effect/issues/92">end up with a stack overflow</a>.
 This is why we require <code class="highlighter-rouge">cats.effect.Sync</code>, which implies a <code class="highlighter-rouge">Functor</code>,
 because <code class="highlighter-rouge">Sync</code> now suspends evaluation in <code class="highlighter-rouge">map</code> by law.</p>
@@ -601,8 +603,8 @@ are contiguous memory blocks and if you don't find ways to work with
 arrays, then you're screwed in terms of throughput:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
-  <span class="n">batch</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
-  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span>
   <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div>
@@ -612,8 +614,8 @@ throughput, so might as well use Scala's
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Seq.html">Seq</a>:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
-  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
-  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span>
   <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div>
@@ -622,8 +624,8 @@ collections should not have a hierarchy, lets use type parameters, like we
 did with <code class="highlighter-rouge">F</code>:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
-  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
-  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span>
   <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div>
@@ -632,8 +634,8 @@ did with <code class="highlighter-rouge">F</code>:</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">]</span>
 
 <span class="nc">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
-  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
-  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span>
   <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Seq</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div>
@@ -649,8 +651,8 @@ also because you can't have heterogeneity:</p>
 the type class restriction to be on the data structure itself:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
-  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> 
-  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span>
   <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="nc">Seq</span><span class="k">:</span> <span class="kt">Foldable</span><span class="o">[</span><span class="kt">Seq</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
@@ -674,7 +676,7 @@ shitty OOP substitute!
 <p>Many people are under the impression that you can substitute the classic
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterator.html">Iterator</a>
 with the <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Foldable.scala">Foldable</a>
-and <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Traverse.scala">Traverse</a> 
+and <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Traverse.scala">Traverse</a>
 type-classes. This is understandable, because these type classes are
 really potent, really generic, great actually.</p>
 
@@ -703,7 +705,7 @@ nonetheless.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">ios</span><span class="k">:</span> <span class="kt">Iterable</span><span class="o">[</span><span class="kt">IO</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span> <span class="k">=</span> <span class="o">???</span>
 
-<span class="n">ios</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="nc">IO</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span> <span class="o">{</span> <span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">elem</span><span class="o">)</span> <span class="k">=&gt;</span> 
+<span class="n">ios</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="nc">IO</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span> <span class="o">{</span> <span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">elem</span><span class="o">)</span> <span class="k">=&gt;</span>
   <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">acc</span><span class="o">;</span> <span class="n">e</span> <span class="k">&lt;-</span> <span class="n">elem</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">e</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -718,14 +720,14 @@ then continue from where it left off:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
- 
+
   <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">index</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
     <span class="n">fa</span> <span class="k">match</span> <span class="o">{</span>
       <span class="k">case</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="k">val</span> <span class="n">eval</span> <span class="k">=</span> 
-          <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">batch</span><span class="o">.</span><span class="n">length</span><span class="o">)</span> 
+        <span class="k">val</span> <span class="n">eval</span> <span class="k">=</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">batch</span><span class="o">.</span><span class="n">length</span><span class="o">)</span>
             <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span>
-          <span class="k">else</span>  
+          <span class="k">else</span>
             <span class="n">f</span><span class="o">(</span><span class="n">batch</span><span class="o">(</span><span class="n">index</span><span class="o">)).</span><span class="n">map</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
               <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">stop</span><span class="o">)</span>
             <span class="o">}</span>
@@ -745,7 +747,7 @@ arrays, lists, vectors or what have you, the classic
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextCursor</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
   <span class="n">cursor</span><span class="k">:</span> <span class="kt">Iterator</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
-  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span> 
+  <span class="n">rest</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]],</span>
   <span class="n">stop</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div>
@@ -753,21 +755,21 @@ arrays, lists, vectors or what have you, the classic
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
- 
+
   <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
     <span class="n">fa</span> <span class="k">match</span> <span class="o">{</span>
       <span class="k">case</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
         <span class="n">loop</span><span class="o">(</span><span class="nc">NextCursor</span><span class="o">(</span><span class="n">batch</span><span class="o">.</span><span class="n">iterator</span><span class="o">(),</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">))</span>
       <span class="k">case</span> <span class="nc">NextCursor</span><span class="o">(</span><span class="n">cursor</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="k">val</span> <span class="n">eval</span> <span class="k">=</span> 
-          <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">hasNext</span><span class="o">)</span> 
-            <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">)</span> 
+        <span class="k">val</span> <span class="n">eval</span> <span class="k">=</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">hasNext</span><span class="o">)</span>
+            <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">)</span>
           <span class="k">else</span>
             <span class="n">f</span><span class="o">(</span><span class="n">batch</span><span class="o">.</span><span class="n">next</span><span class="o">()).</span><span class="n">map</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
               <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">stop</span><span class="o">)</span>
             <span class="o">}</span>
         <span class="nc">Suspend</span><span class="o">(</span><span class="n">eval</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span>
-      <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> 
+      <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
         <span class="o">???</span>
     <span class="o">}</span>
   <span class="c1">// Suspends execution, because NextCursor is side-effectful ;-)
@@ -793,8 +795,8 @@ should be something like this:</p>
   <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])]</span>
 <span class="o">}</span>
 </code></pre></div>
-<p>This is a variation on the 
-<a href="https://wiki.haskell.org/State_Monad">state monad</a>, because yes, 
+<p>This is a variation on the
+<a href="https://wiki.haskell.org/State_Monad">state monad</a>, because yes,
 we've got state to evolve.</p>
 
 <p>Here's the performance characteristics of such a decomposition
@@ -811,7 +813,7 @@ has linear O(N) time for <code class="highlighter-rouge">tail</code>, aka you ca
 </ul>
 
 <p>Yes, <code class="highlighter-rouge">Iterator</code> is efficient for all of them, so it wins by a wide
-margin. The above is actually horrible and why a type class like 
+margin. The above is actually horrible and why a type class like
 that isn't popular, because it relies on <code class="highlighter-rouge">List</code>'s encoding to be
 efficient 😉</p>
 
@@ -819,7 +821,7 @@ efficient 😉</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">IteratorTypeClass</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span>
   <span class="k">type</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
-  
+
   <span class="k">def</span> <span class="n">start</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
   <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">])]</span>
 <span class="o">}</span>
@@ -827,17 +829,17 @@ efficient 😉</p>
 <span class="c1">// Sample instance for Array
 </span><span class="k">object</span> <span class="nc">ArrayIterator</span> <span class="k">extends</span> <span class="nc">IteratorTypeClass</span><span class="o">[</span><span class="kt">Array</span><span class="o">]</span> <span class="o">{</span>
   <span class="k">type</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Int</span>
-  
+
   <span class="k">def</span> <span class="n">start</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="mi">0</span>
-  <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> 
+  <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span>
     <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">&gt;=</span> <span class="n">fa</span><span class="o">.</span><span class="n">length</span><span class="o">)</span> <span class="nc">None</span>
     <span class="k">else</span> <span class="nc">Some</span><span class="o">((</span><span class="n">fa</span><span class="o">(</span><span class="n">cursor</span><span class="o">),</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>But this will leak implementation details - not bad for our <code class="highlighter-rouge">Array</code>
-instance, but what if we had some sort of 
+instance, but what if we had some sort of
 <a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree">self-balancing tree</a>
-which you then changed to a 
+which you then changed to a
 <a href="https://en.wikipedia.org/wiki/Hash_array_mapped_trie">HAMT</a>.
 In that case our <code class="highlighter-rouge">Pointer</code> would be some sort of node with links
 to its neighbors, so is it wise exposing it like that? How
@@ -846,7 +848,7 @@ dynamic linking?</p>
 
 <p class="extra-info">
 <b><u>TL;DR</u></b>: <code class="highlighter-rouge">Iterator</code> actually beats pure, type-class
-based solution in performance, flexibility or encapsulation! It's 
+based solution in performance, flexibility or encapsulation! It's
 also lower-level, impure and error prone, but sorely needed sometimes.
 </p>
 
@@ -856,7 +858,7 @@ also lower-level, impure and error prone, but sorely needed sometimes.
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Seq.html">Seq</a>
 and have never regretted using it.</p>
 
-<p>Not everybody agrees and as mentioned in section 
+<p>Not everybody agrees and as mentioned in section
 <a href="#h2-3">2.3.</a>, there are people advising against its usage:</p>
 
 <blockquote>
@@ -917,8 +919,8 @@ operator:</p>
 
 <ul>
   <li><a href="https://github.com/monix/monix/blob/v3.0.0-M1/monix-reactive/shared/src/main/scala/monix/reactive/internal/operators/BufferSlidingOperator.scala#L43">current version (3.0.0-M3)</a>
-uses an <a href="https://www.scala-lang.org/api/2.12.4/scala/Array.html">Array</a> 
-as the internal buffer, emitting arrays 
+uses an <a href="https://www.scala-lang.org/api/2.12.4/scala/Array.html">Array</a>
+as the internal buffer, emitting arrays
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/mutable/WrappedArray.html">wrapped in Seq</a></li>
   <li><a href="https://github.com/monix/monix/blob/v2.0.0/monix-reactive/shared/src/main/scala/monix/reactive/internal/operators/BufferSlidingOperator.scala#L41">version 2.0.0</a>
 used a <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/mutable/ListBuffer.html">ListBuffer</a>,
@@ -1023,7 +1025,7 @@ the return type</li>
 the input</li>
 </ul>
 
-<p>So yes, there will be people out there, such as myself, genuinely enjoying 
+<p>So yes, there will be people out there, such as myself, genuinely enjoying
 Scala's OOP and the new collections.</p>
 
 <p>Thanks for reading ️❤️</p>
@@ -1045,6 +1047,12 @@ Scala's OOP and the new collections.</p>
       <h2>Recent Articles</h2>
 
       <ul class="posts">
+      	<li>
+      	  <time datetime="2018-05-06">
+      	    2018-05-06 &raquo;
+      	  </time>
+      	  <a href="/blog/2018/05/06/bifunctor-io.html" rel="prefetch related">Bifunctor IO is Like Java's Checked Exceptions</a>
+      	</li>
       	<li>
       	  <time datetime="2017-11-10">
       	    2017-11-10 &raquo;
@@ -1080,12 +1088,6 @@ Scala's OOP and the new collections.</p>
       	    2017-03-15 &raquo;
       	  </time>
       	  <a href="/blog/2017/03/15/fp-inception.html" rel="prefetch related">Functional Programming Inception - Bucharest FP</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-01-30">
-      	    2017-01-30 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/01/30/asynchronous-programming-scala.html" rel="prefetch related">Asynchronous Programming and Scala</a>
       	</li>
       </ul>
     </div>
