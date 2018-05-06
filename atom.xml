@@ -5,7 +5,7 @@
  <subtitle type="text">Blog about programming and personal projects, by Alexandru Nedelcu</subtitle>
  <link href="https://alexn.org/atom.xml" rel="self"/>
  <link href="https://alexn.org/" />
- <updated>2018-05-06T15:18:16+00:00</updated>
+ <updated>2018-05-06T15:22:57+00:00</updated>
 
  <author>
    <name>Alexandru Nedelcu</name>
@@ -14,7 +14,7 @@
 
  <entry>
    <id>http://alexn.org/blog/2018/05/06/bifunctor-io.html</id>
-   <title>Bifunctor IO is Like Java's Checked Exceptions</title>
+   <title>On Bifunctor IO and Java's Checked Exceptions</title>
    <link href="https://alexn.org/blog/2018/05/06/bifunctor-io.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
    <published>2018-05-05T21:00:00+00:00</published>
    <updated>2018-05-05T21:00:00+00:00</updated>
