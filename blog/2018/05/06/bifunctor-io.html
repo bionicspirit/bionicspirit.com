@@ -126,6 +126,7 @@ shares the same problems as Java's Checked Exceptions.</p>
       <li><a href="#5-the-bifunctor-io-doesnt-reflect-the-runtime">5. The Bifunctor IO Doesn't Reflect the Runtime</a></li>
     </ul>
   </li>
+  <li><a href="#io-cannot-be-an-alias-of-the-bifunctor-io">IO Cannot Be an Alias of the Bifunctor IO</a></li>
   <li><a href="#final-words">Final Words</a></li>
 </ul>
 
@@ -433,6 +434,10 @@ thus leave them with <em>unreachable code</em> - which is something that some Ja
 libraries are known to have done</li>
 </ol>
 
+<p>NOTE: there are cases in which <em>you want</em> to break binary compatibility in
+case the error type changes.  That is precisely the use case for which the
+Bifunctor IO or <code class="highlighter-rouge">EitherT</code> are recommended.</p>
+
 <h3 id="4-it-pushes-complexity-to-the-user">4. It Pushes Complexity to the User</h3>
 
 <p>On utility I deeply understand the need to parameterize all things. But the question is,
@@ -556,6 +561,28 @@ and those that don't.</p>
 
 <p>If you're in the former camp, I think <a href="https://twitter.com/Hillelogram">Hillel Wayne</a>
 is eager to <a href="https://hillelwayne.com/post/theorem-prover-showdown/">prove you wrong</a> 😉</p>
+
+<h2 id="io-cannot-be-an-alias-of-the-bifunctor-io">IO Cannot Be an Alias of the Bifunctor IO</h2>
+
+<p>You might be temped to say that:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">type</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">BIO</span><span class="o">[</span><span class="kt">Throwable</span>, <span class="kt">A</span><span class="o">]</span>
+</code></pre></div>
+<p>This is not true and it gave birth to, what I like to call, the great
+"<em>No True Functor</em>" debate and fallacy 😜</p>
+
+<p>But details about it would take another article to explain.</p>
+
+<p>So it's enough to say that <code class="highlighter-rouge">cats.effect.IO</code> and <code class="highlighter-rouge">monix.eval.Task</code> has got you
+covered in all cases, whereas a Bifunctor <code class="highlighter-rouge">IO</code> needs to pretend that developers
+on top of the JVM can work only with total functions, on top of an environment
+that actively proves you wrong, thus applying the "<em>let it crash</em>" philosophy
+on top of a runtime that makes this really expensive to do so
+(i.e. the JVM is not Erlang).</p>
+
+<p>This is another great divide in mentality, although I can see the merits of
+the arguments on the other side. In such cases it's relevant by what kind
+of problems you got burned or not in the past I guess.</p>
 
 <h2 id="final-words">Final Words</h2>
 
