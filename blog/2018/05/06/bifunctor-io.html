@@ -48,7 +48,7 @@
     <header>
       <h1 id="title">alexn.org</h1>
 
-      <meta itemprop="lastReviewed" content="2018-05-06"/>
+      <meta itemprop="lastReviewed" content="2018-05-07"/>
       <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
         <meta itemprop="name" content="Alexandru Nedelcu">
         <meta itemprop="url" content="https://plus.google.com/+alexelcu">
@@ -139,7 +139,7 @@ shares the same problems as Java's Checked Exceptions.</p>
 <span class="o">}</span>
 </code></pre></div>
 <p>What this means is that <code class="highlighter-rouge">IO</code> is like a thunk, like a function with
-zero parametters, that upon execution will finally produce an <code class="highlighter-rouge">A</code>
+zero parameters, that upon execution will finally produce an <code class="highlighter-rouge">A</code>
 value, if successful. The type also signals possible side effects that
 might happen upon execution, but since it behaves like a function
 (that hasn't been executed yet), when you are given an <code class="highlighter-rouge">IO</code> value you
@@ -199,7 +199,7 @@ could throw an <code class="highlighter-rouge">ArithmeticException</code>. An ea
 <span class="o">}</span>
 </code></pre></div>
 <p>Such a type parameterizes the error type in <code class="highlighter-rouge">E</code>. This is more or less like usage of
-<code class="highlighter-rouge">Either</code> to express the error, but as you shell see below, they aren't exactly
+<code class="highlighter-rouge">Either</code> to express the error, but as you shall see below, they aren't exactly
 equivalent:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="n">opaque</span> <span class="k">type</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">E</span>, <span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="nc">IO</span><span class="o">[</span><span class="kt">Either</span><span class="o">[</span><span class="kt">E</span>, <span class="kt">A</span><span class="o">]]</span>
@@ -364,7 +364,7 @@ you can actually do something about it, otherwise it's fine to live in
 blissful ignorance.</p>
 
 <p>Empirical evidence suggests that most checked exceptions in Java are
-either ignored or rethrown, forcing people to write catch blocks that
+either ignored or re-thrown, forcing people to write catch blocks that
 are meaningless and even error prone.</p>
 
 <p>You can even find some studies on handling of checked exceptions in
