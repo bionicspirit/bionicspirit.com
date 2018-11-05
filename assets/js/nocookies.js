@@ -1,0 +1,1 @@
+!function(){function o(o){document.cookie=o+"=; Max-Age=-99999999;"}function c(){for(var c=/(\w+)[=]/g,e=document.cookie;match=c.exec(e);){try{console&&console.log&&console.log("[Privacy scanner] deleting cookie: "+match[1])}catch(o){}o(match[1])}}function e(){c(),setTimeout(e,1e3)}e()}();
