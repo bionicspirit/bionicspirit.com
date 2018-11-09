@@ -5,7 +5,7 @@
  <subtitle type="text">Blog about programming and personal projects, by Alexandru Nedelcu</subtitle>
  <link href="https://alexn.org/atom.xml" rel="self"/>
  <link href="https://alexn.org/" />
- <updated>2018-11-09T19:55:40+00:00</updated>
+ <updated>2018-11-09T22:53:09+02:00</updated>
 
  <author>
    <name>Alexandru Nedelcu</name>
@@ -16,8 +16,8 @@
    <id>http://alexn.org/blog/2018/05/06/bifunctor-io.html</id>
    <title>On Bifunctor IO and Java's Checked Exceptions</title>
    <link href="https://alexn.org/blog/2018/05/06/bifunctor-io.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2018-05-05T21:00:00+00:00</published>
-   <updated>2018-05-05T21:00:00+00:00</updated>
+   <published>2018-05-06T00:00:00+03:00</published>
+   <updated>2018-05-06T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -53,8 +53,8 @@ shares the same problems as Java's Checked Exceptions.</p>
    <id>http://alexn.org/blog/2018/02/12/in-defense-oofp.html</id>
    <title>In Defense of OOFP</title>
    <link href="https://alexn.org/blog/2018/02/12/in-defense-oofp.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2018-02-11T22:00:00+00:00</published>
-   <updated>2018-02-11T22:00:00+00:00</updated>
+   <published>2018-02-12T00:00:00+02:00</published>
+   <updated>2018-02-12T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -90,8 +90,8 @@ debate around their redesign.</p>
    <id>http://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html</id>
    <title>Minitest: Zero Crap Scala Testing Library</title>
    <link href="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-11-09T22:00:00+00:00</published>
-   <updated>2017-11-09T22:00:00+00:00</updated>
+   <published>2017-11-10T00:00:00+02:00</published>
+   <updated>2017-11-10T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -431,8 +431,8 @@ codebase much.</p>
    <id>http://alexn.org/blog/2017/10/15/functional-programming.html</id>
    <title>What is Functional Programming?</title>
    <link href="https://alexn.org/blog/2017/10/15/functional-programming.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-10-14T21:00:00+00:00</published>
-   <updated>2017-10-14T21:00:00+00:00</updated>
+   <published>2017-10-15T00:00:00+03:00</published>
+   <updated>2017-10-15T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -750,8 +750,8 @@ but it's not that good for learning FP in 2017.</p>
    <id>http://alexn.org/blog/2017/10/13/scaladays-copenhagen.html</id>
    <title>Scala Days 2017 — Monix Task</title>
    <link href="https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-10-12T21:00:00+00:00</published>
-   <updated>2017-10-12T21:00:00+00:00</updated>
+   <published>2017-10-13T00:00:00+03:00</published>
+   <updated>2017-10-13T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -802,8 +802,8 @@ and <a href="http://event.scaladays.org/scaladays-cph-2017">Copenhagen</a>:</p>
    <id>http://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html</id>
    <title>JavaScript's Promise Leaks Memory</title>
    <link href="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-10-10T21:00:00+00:00</published>
-   <updated>2017-10-10T21:00:00+00:00</updated>
+   <published>2017-10-11T00:00:00+03:00</published>
+   <updated>2017-10-11T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -1175,8 +1175,8 @@ where people are afraid to take on dependencies.</p>
    <id>http://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html</id>
    <title>Automatic Releases to Maven Central with Travis and SBT</title>
    <link href="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-08-15T21:00:00+00:00</published>
-   <updated>2017-08-15T21:00:00+00:00</updated>
+   <published>2017-08-16T00:00:00+03:00</published>
+   <updated>2017-08-16T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -1637,8 +1637,8 @@ forgetting what I did the first time.</p>
    <id>http://alexn.org/blog/2017/03/15/fp-inception.html</id>
    <title>Functional Programming Inception - Bucharest FP</title>
    <link href="https://alexn.org/blog/2017/03/15/fp-inception.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-03-14T22:00:00+00:00</published>
-   <updated>2017-03-14T22:00:00+00:00</updated>
+   <published>2017-03-15T00:00:00+02:00</published>
+   <updated>2017-03-15T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -1713,8 +1713,8 @@ developer has in his daily work.</p>
    <id>http://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html</id>
    <title>Asynchronous Programming and Scala</title>
    <link href="https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-01-29T22:00:00+00:00</published>
-   <updated>2017-01-29T22:00:00+00:00</updated>
+   <published>2017-01-30T00:00:00+02:00</published>
+   <updated>2017-01-30T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -3070,8 +3070,8 @@ avoiding concurrency 💀</p>
    <id>http://alexn.org/blog/2017/01/16/iterator.html</id>
    <title>Fixing scala.collection.Iterator</title>
    <link href="https://alexn.org/blog/2017/01/16/iterator.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-01-15T22:00:00+00:00</published>
-   <updated>2017-01-15T22:00:00+00:00</updated>
+   <published>2017-01-16T00:00:00+02:00</published>
+   <updated>2017-01-16T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -3362,8 +3362,8 @@ grandparents, I'm afraid to wish for it.</p>
    <id>http://alexn.org/blog/2017/01/13/traversable.html</id>
    <title>Why scala.collection.Traversable Is Bad Design</title>
    <link href="https://alexn.org/blog/2017/01/13/traversable.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2017-01-12T22:00:00+00:00</published>
-   <updated>2017-01-12T22:00:00+00:00</updated>
+   <published>2017-01-13T00:00:00+02:00</published>
+   <updated>2017-01-13T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -3531,8 +3531,8 @@ if you want to learn more checkout this presentation:
    <id>http://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html</id>
    <title>Add to NewsBlur Bookmarklet</title>
    <link href="https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2016-11-10T22:00:00+00:00</published>
-   <updated>2016-11-10T22:00:00+00:00</updated>
+   <published>2016-11-11T00:00:00+02:00</published>
+   <updated>2016-11-11T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -3594,8 +3594,8 @@ and you should see all bookmarks, press and hold on the new
    <id>http://alexn.org/blog/2016/08/25/monix-task-performance.html</id>
    <title>Monix Task vs Scalaz vs Future, The Benchmark</title>
    <link href="https://alexn.org/blog/2016/08/25/monix-task-performance.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2016-08-24T21:00:00+00:00</published>
-   <updated>2016-08-24T21:00:00+00:00</updated>
+   <published>2016-08-25T00:00:00+03:00</published>
+   <updated>2016-08-25T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -3964,8 +3964,8 @@ forked tasks it evens out with the performance of <code class="highlighter-rouge
    <id>http://alexn.org/blog/2016/05/15/monix-observable.html</id>
    <title>Akka &amp; Monix - Typelevel Summit, Oslo 2016</title>
    <link href="https://alexn.org/blog/2016/05/15/monix-observable.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2016-05-14T21:00:00+00:00</published>
-   <updated>2016-05-14T21:00:00+00:00</updated>
+   <published>2016-05-15T00:00:00+03:00</published>
+   <updated>2016-05-15T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -4031,8 +4031,8 @@ presentation of Monix Observable and how that helps.</p>
    <id>http://alexn.org/blog/2016/05/10/monix-task.html</id>
    <title>Monix Task - flatMap(Oslo) 2016</title>
    <link href="https://alexn.org/blog/2016/05/10/monix-task.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2016-05-09T21:00:00+00:00</published>
-   <updated>2016-05-09T21:00:00+00:00</updated>
+   <published>2016-05-10T00:00:00+03:00</published>
+   <updated>2016-05-10T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -4100,8 +4100,8 @@ instead of blocking threads.</p>
    <id>http://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html</id>
    <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell</title>
    <link href="https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2015-12-14T22:00:00+00:00</published>
-   <updated>2015-12-14T22:00:00+00:00</updated>
+   <published>2015-12-15T00:00:00+02:00</published>
+   <updated>2015-12-15T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -4441,8 +4441,8 @@ initiated that's free of Javaisms.</p>
    <id>http://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html</id>
    <title>Monifu vs Akka Streams</title>
    <link href="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2015-09-05T21:00:00+00:00</published>
-   <updated>2015-09-05T21:00:00+00:00</updated>
+   <published>2015-09-06T00:00:00+03:00</published>
+   <updated>2015-09-06T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -4809,8 +4809,8 @@ which is why I'm dumbfounded by claims of parallelism</li>
    <id>http://alexn.org/blog/2014/10/20/scala-best-practices.html</id>
    <title>Scala Best Practices</title>
    <link href="https://alexn.org/blog/2014/10/20/scala-best-practices.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2014-10-19T21:00:00+00:00</published>
-   <updated>2014-10-19T21:00:00+00:00</updated>
+   <published>2014-10-20T00:00:00+03:00</published>
+   <updated>2014-10-20T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -4846,8 +4846,8 @@ which is why I'm dumbfounded by claims of parallelism</li>
    <id>http://alexn.org/blog/2013/05/13/getting-started-with-scala.html</id>
    <title>Resources for Learning Scala</title>
    <link href="https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2013-05-12T21:00:00+00:00</published>
-   <updated>2013-05-12T21:00:00+00:00</updated>
+   <published>2013-05-13T00:00:00+03:00</published>
+   <updated>2013-05-13T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -4882,8 +4882,8 @@ development.</p>
    <id>http://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html</id>
    <title>Towards a Better AtomicReference</title>
    <link href="https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2013-05-06T21:00:00+00:00</published>
-   <updated>2013-05-06T21:00:00+00:00</updated>
+   <published>2013-05-07T00:00:00+03:00</published>
+   <updated>2013-05-07T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -4952,8 +4952,8 @@ still has pedagogical value. For an up to date article on my Atomic references, 
    <id>http://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html</id>
    <title>JVM Multithreading: Monitor Locks and Visibility</title>
    <link href="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2013-03-13T22:00:00+00:00</published>
-   <updated>2013-03-13T22:00:00+00:00</updated>
+   <published>2013-03-14T00:00:00+02:00</published>
+   <updated>2013-03-14T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5002,8 +5002,8 @@ actors and optimistic locking with shared transactional memory.</p>
    <id>http://alexn.org/blog/2012/11/07/notes-javascript-development.html</id>
    <title>Notes On Javascript Client-side Development</title>
    <link href="https://alexn.org/blog/2012/11/07/notes-javascript-development.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2012-11-06T22:00:00+00:00</published>
-   <updated>2012-11-06T22:00:00+00:00</updated>
+   <published>2012-11-07T00:00:00+02:00</published>
+   <updated>2012-11-07T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5048,8 +5048,8 @@ optimized and gzipped JS.</p>
    <id>http://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html</id>
    <title>On Scala, Functional Programming and Type-Classes</title>
    <link href="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2012-11-01T22:00:00+00:00</published>
-   <updated>2012-11-01T22:00:00+00:00</updated>
+   <published>2012-11-02T00:00:00+02:00</published>
+   <updated>2012-11-02T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5090,8 +5090,8 @@ the intellectual masturbation of a fool.</p>
    <id>http://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html</id>
    <title>How To Build a Naive Bayes Classifier</title>
    <link href="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2012-02-08T22:00:00+00:00</published>
-   <updated>2012-02-08T22:00:00+00:00</updated>
+   <published>2012-02-09T00:00:00+02:00</published>
+   <updated>2012-02-09T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5144,8 +5144,8 @@ your needs.</p>
    <id>http://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html</id>
    <title>Data Mining: Finding Similar Items and Users</title>
    <link href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2012-01-15T22:00:00+00:00</published>
-   <updated>2012-01-15T22:00:00+00:00</updated>
+   <published>2012-01-16T00:00:00+02:00</published>
+   <updated>2012-01-16T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5187,8 +5187,8 @@ understanding the process, at least intuitively.</p>
    <id>http://alexn.org/blog/2012/01/05/blogging-for-hackers.html</id>
    <title>Blogging Platform for Hackers</title>
    <link href="https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2012-01-04T22:00:00+00:00</published>
-   <updated>2012-01-04T22:00:00+00:00</updated>
+   <published>2012-01-05T00:00:00+02:00</published>
+   <updated>2012-01-05T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5243,8 +5243,8 @@ by Tom Preston-Werner, GitHub's cofounder and the author of Jekyll.</p>
    <id>http://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html</id>
    <title>Crawling the Android Marketplace</title>
    <link href="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2011-12-14T22:00:00+00:00</published>
-   <updated>2011-12-14T22:00:00+00:00</updated>
+   <published>2011-12-15T00:00:00+02:00</published>
+   <updated>2011-12-15T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5292,8 +5292,8 @@ and crawled it.</p>
    <id>http://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html</id>
    <title>Earning Money as an Amazon Affiliate</title>
    <link href="https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2011-11-28T22:00:00+00:00</published>
-   <updated>2011-11-28T22:00:00+00:00</updated>
+   <published>2011-11-29T00:00:00+02:00</published>
+   <updated>2011-11-29T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5335,8 +5335,8 @@ and crawled it.</p>
    <id>http://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html</id>
    <title>4 Books For Learning to Design, The Hard Way</title>
    <link href="https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2011-11-24T22:00:00+00:00</published>
-   <updated>2011-11-24T22:00:00+00:00</updated>
+   <published>2011-11-25T00:00:00+02:00</published>
+   <updated>2011-11-25T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5370,8 +5370,8 @@ and crawled it.</p>
    <id>http://alexn.org/blog/2011/10/29/how-i-use-flickr.html</id>
    <title>How I Use Flickr: For Backup</title>
    <link href="https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2011-10-28T21:00:00+00:00</published>
-   <updated>2011-10-28T21:00:00+00:00</updated>
+   <published>2011-10-29T00:00:00+03:00</published>
+   <updated>2011-10-29T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5412,8 +5412,8 @@ and crawled it.</p>
    <id>http://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html</id>
    <title>Why I Find Heroku Suboptimal</title>
    <link href="https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2011-10-22T21:00:00+00:00</published>
-   <updated>2011-10-22T21:00:00+00:00</updated>
+   <published>2011-10-23T00:00:00+03:00</published>
+   <updated>2011-10-23T00:00:00+03:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
@@ -5484,8 +5484,8 @@ and crawled it.</p>
    <id>http://alexn.org/blog/2011/03/24/cross-domain-requests.html</id>
    <title>Cross-Domain, Cross-Browser AJAX Requests</title>
    <link href="https://alexn.org/blog/2011/03/24/cross-domain-requests.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
-   <published>2011-03-23T22:00:00+00:00</published>
-   <updated>2011-03-23T22:00:00+00:00</updated>
+   <published>2011-03-24T00:00:00+02:00</published>
+   <updated>2011-03-24T00:00:00+02:00</updated>
 
    <author>
      <name>Alexandru Nedelcu</name>
