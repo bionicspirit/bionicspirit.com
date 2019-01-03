@@ -5,7 +5,7 @@
  <subtitle type="text">Blog about programming and personal projects, by Alexandru Nedelcu</subtitle>
  <link href="https://alexn.org/atom.xml" rel="self"/>
  <link href="https://alexn.org/" />
- <updated>2018-12-11T13:03:37+00:00</updated>
+ <updated>2019-01-03T14:41:07+00:00</updated>
 
  <author>
    <name>Alexandru Nedelcu</name>
@@ -25,7 +25,7 @@
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -62,7 +62,7 @@ shares the same problems as Java's Checked Exceptions.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -99,7 +99,7 @@ debate around their redesign.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -440,7 +440,7 @@ codebase much.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -759,7 +759,7 @@ but it's not that good for learning FP in 2017.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -811,7 +811,7 @@ and <a href="http://event.scaladays.org/scaladays-cph-2017">Copenhagen</a>:</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -1184,7 +1184,7 @@ where people are afraid to take on dependencies.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -1646,7 +1646,7 @@ forgetting what I did the first time.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -1722,7 +1722,7 @@ developer has in his daily work.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -3079,7 +3079,7 @@ avoiding concurrency 💀</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -3371,7 +3371,7 @@ grandparents, I'm afraid to wish for it.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -3540,7 +3540,7 @@ if you want to learn more checkout this presentation:
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -3603,7 +3603,7 @@ and you should see all bookmarks, press and hold on the new
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -3973,7 +3973,7 @@ forked tasks it evens out with the performance of <code class="highlighter-rouge
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -4040,7 +4040,7 @@ presentation of Monix Observable and how that helps.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -4109,7 +4109,7 @@ instead of blocking threads.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -4450,7 +4450,7 @@ initiated that's free of Javaisms.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -4818,7 +4818,7 @@ which is why I'm dumbfounded by claims of parallelism</li>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -4855,7 +4855,7 @@ which is why I'm dumbfounded by claims of parallelism</li>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -4891,7 +4891,7 @@ development.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -4961,7 +4961,7 @@ still has pedagogical value. For an up to date article on my Atomic references, 
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5011,7 +5011,7 @@ actors and optimistic locking with shared transactional memory.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5057,7 +5057,7 @@ optimized and gzipped JS.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5099,7 +5099,7 @@ the intellectual masturbation of a fool.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5153,7 +5153,7 @@ your needs.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5196,7 +5196,7 @@ understanding the process, at least intuitively.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5252,7 +5252,7 @@ by Tom Preston-Werner, GitHub's cofounder and the author of Jekyll.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5301,7 +5301,7 @@ and crawled it.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5344,7 +5344,7 @@ and crawled it.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5379,7 +5379,7 @@ and crawled it.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5421,7 +5421,7 @@ and crawled it.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
@@ -5493,7 +5493,7 @@ and crawled it.</p>
    </author>
 
    <rights type="text">
-     Copyright 2018 Alexandru Nedelcu.
+     Copyright 2019 Alexandru Nedelcu.
      Some rights reserved (CC BY-NC 3.0)
      License: http://creativecommons.org/licenses/by-nc/3.0/
    </rights>
