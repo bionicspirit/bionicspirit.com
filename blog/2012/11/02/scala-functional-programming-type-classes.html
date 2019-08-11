@@ -32,9 +32,9 @@
       <meta name="description" content="Languages, Functional, Scala, Clojure, Java" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -223,8 +223,8 @@ fold could be empty)</li>
 <p>Well, you can define a type-class, like so:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">-T</span>, <span class="kt">R</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">acc</span><span class="k">:</span> <span class="kt">R</span><span class="o">,</span> <span class="n">elem</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span>
-  <span class="k">def</span> <span class="n">zero</span><span class="k">:</span> <span class="kt">R</span>
+  <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">acc</span><span class="k">:</span> <span class="kt">R</span><span class="o">,</span> <span class="n">elem</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span>
+  <span class="k">def</span> <span class="nf">zero</span><span class="k">:</span> <span class="kt">R</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>But wait, isn't this just a simple Java-like interface? Well yes, yes
@@ -236,8 +236,8 @@ is an object and every type is a class.</p>
 of course. Let's look at how we'll implement our <code class="highlighter-rouge">sum()</code> function that
 uses this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">sum</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">adder</span><span class="k">:</span> <span class="kt">CanFold</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=</span> 
-  <span class="n">list</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">adder</span><span class="o">.</span><span class="n">zero</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">adder</span><span class="o">.</span><span class="n">sum</span><span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">e</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">sum</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">adder</span><span class="k">:</span> <span class="kt">CanFold</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=</span> 
+  <span class="nv">list</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="nv">adder</span><span class="o">.</span><span class="py">zero</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">adder</span><span class="o">.</span><span class="py">sum</span><span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">e</span><span class="o">))</span>
 </code></pre></div>
 <p>So if the Scala compiler can find an implicit <code class="highlighter-rouge">CanFold</code> in scope
 that's defined for type A, then it uses it to return a type B. This is
@@ -258,15 +258,15 @@ define them in the companion object of the trait <code class="highlighter-rouge"
   <span class="c1">// default implementation for integers
 </span>  
   <span class="k">implicit</span> <span class="k">object</span> <span class="nc">CanFoldInts</span> <span class="k">extends</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Int</span>, <span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
-    <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">acc</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">e</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">e</span>
-    <span class="k">def</span> <span class="n">zero</span> <span class="k">=</span> <span class="mi">0</span>
+    <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">acc</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">e</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">e</span>
+    <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="mi">0</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>And usage is as expected:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// notice how the result of summing Integers is a Long
-</span><span class="n">sum</span><span class="o">(</span><span class="mi">1</span> <span class="o">::</span> <span class="mi">2</span> <span class="o">::</span> <span class="mi">3</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
+</span><span class="nf">sum</span><span class="o">(</span><span class="mi">1</span> <span class="o">::</span> <span class="mi">2</span> <span class="o">::</span> <span class="mi">3</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
 <span class="c1">//=&gt; Long = 6
 </span></code></pre></div>
 <p>I'm not going to lie to you as this stuff gets hard to learn and while
@@ -280,7 +280,7 @@ default implementation for base types. That's why we've made the type
 parameter T <em>contravariant</em> in the <code class="highlighter-rouge">CanFold[-T,R]</code> definition. What
 contravariance means is precisely this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">if</span> <span class="n">B</span> <span class="n">inherits</span> <span class="n">from</span> <span class="n">A</span> <span class="o">(</span><span class="n">B</span> <span class="k">&lt;:</span> <span class="n">A</span><span class="o">),</span> <span class="n">then</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">if</span> <span class="n">B</span> <span class="n">inherits</span> <span class="n">from</span> <span class="nf">A</span> <span class="o">(</span><span class="n">B</span> <span class="k">&lt;:</span> <span class="n">A</span><span class="o">),</span> <span class="n">then</span>
 <span class="nc">CanFold</span><span class="o">[</span><span class="kt">A</span>, <span class="k">_</span><span class="o">]</span> <span class="n">inherits</span> <span class="n">from</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">B</span>, <span class="k">_</span><span class="o">]</span> <span class="o">(</span><span class="nc">CanFold</span><span class="o">[</span><span class="kt">A</span>,<span class="k">_</span><span class="o">]</span> <span class="k">&lt;:</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">B</span>,<span class="k">_</span><span class="o">])</span>
 </code></pre></div>
 <p>This allows us to define a CanFold for any Traversable and it will
@@ -288,14 +288,14 @@ work for any Seq / Vector / List and so on.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">object</span> <span class="nc">CanFoldSeqs</span> 
 <span class="k">extends</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
-  <span class="k">def</span> <span class="n">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
+  <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
+  <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>So this can sum up any kind of <code class="highlighter-rouge">Traversable</code>. The problem is that it
 loses the type parameter in the process:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">sum</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">)</span> <span class="o">::</span> <span class="nc">List</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nf">sum</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">)</span> <span class="o">::</span> <span class="nc">List</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
 <span class="c1">//=&gt; Traversable[Any] = List(1, 2, 3, 4, 5)
 </span></code></pre></div>
 <p>And the reason for why I mentioned this is hard is because after
@@ -306,12 +306,12 @@ implicit object, you can provide an implicit <code class="highlighter-rouge">def
 right thing, helping the compiler to see the type embedded in that
 container:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nc">CanFoldSeqs</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
-  <span class="k">def</span> <span class="n">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSeqs</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
+  <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
 <span class="o">}</span>
 
-<span class="n">sum</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span> <span class="o">::</span> <span class="nc">List</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
+<span class="nf">sum</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span> <span class="o">::</span> <span class="nc">List</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
 <span class="c1">//=&gt; Traversable[Int] = List(1, 2, 3, 4, 5)
 </span></code></pre></div>
 <p>Implicits are even more flexible than meets the eye. Apparently the
@@ -326,12 +326,12 @@ about the returned types.</p>
 <p>Say in addition to a CanFold[Traversable,_] you also define something
 for Sets (which are also traversable) …</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nc">CanFoldSets</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
-  <span class="k">def</span> <span class="n">zero</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">.</span><span class="n">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSets</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
+  <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nv">Set</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
 <span class="o">}</span>
 
-<span class="n">sum</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Set</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
+<span class="nf">sum</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Set</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
 </code></pre></div>
 <p>This will generate a conflict error and I'm still looking for a
 solution that makes the compiler use the most specific type it can
@@ -351,10 +351,10 @@ definitions:</p>
   <span class="c1">// shadowing the more general definition 
 </span>  <span class="c1">// (notice the block, representing its own scope, 
 </span>  <span class="c1">//  so shadowing is local)
-</span>  <span class="k">def</span> <span class="nc">CanFoldSeqs</span> <span class="k">=</span> <span class="kc">null</span>
+</span>  <span class="k">def</span> <span class="nf">CanFoldSeqs</span> <span class="k">=</span> <span class="kc">null</span>
 
   <span class="c1">// this now works
-</span>  <span class="n">sum</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Set</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
+</span>  <span class="nf">sum</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Set</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
   <span class="c1">//=&gt; Set[Int] = Set(1, 2, 3, 4)
 </span><span class="o">}</span>
 </code></pre></div>
@@ -363,17 +363,17 @@ multiple levels, such that some implicits take priority over others,
 likes so:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">LowLevelImplicits</span> <span class="o">{</span>
-  <span class="k">implicit</span> <span class="k">def</span> <span class="nc">CanFoldSeqs</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
-    <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
-    <span class="k">def</span> <span class="n">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
+  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSeqs</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
   <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">CanFold</span> <span class="k">extends</span> <span class="nc">LowLevelImplicits</span> <span class="o">{</span>
   <span class="c1">// higher precedence over the above
-</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="nc">CanFoldSets</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
-    <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
-    <span class="k">def</span> <span class="n">zero</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">.</span><span class="n">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSets</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
+    <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nv">Set</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -390,26 +390,26 @@ from Scala's own collections library.</p>
 <p>You can sum things up in sequences, as long as you have an
 implementation of type-class <code class="highlighter-rouge">Numeric[T]</code> in scope:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="n">sum</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">sum</span>
 <span class="c1">//=&gt; Int = 10
 </span></code></pre></div>
 <p>You can sort things, as long as you have an implementation of
 type-class <code class="highlighter-rouge">Ordering[T]</code> in scope:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="s">"d"</span><span class="o">,</span> <span class="s">"c"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">,</span> <span class="s">"a"</span><span class="o">,</span> <span class="s">"b"</span><span class="o">).</span><span class="n">sorted</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="s">"d"</span><span class="o">,</span> <span class="s">"c"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">,</span> <span class="s">"a"</span><span class="o">,</span> <span class="s">"b"</span><span class="o">).</span><span class="py">sorted</span>
 <span class="c1">//=&gt; List[java.lang.String] = List(a, b, c, d, e)
 </span></code></pre></div>
 <p>A collection will always do the right thing, returning the same kind
 of collection when doing a <code class="highlighter-rouge">map()</code> or a <code class="highlighter-rouge">flatMap()</code> or a <code class="highlighter-rouge">filter()</code>
 over it. For instance to revert the keys and values of a Map:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">Map</span><span class="o">(</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">).</span><span class="n">map</span><span class="o">{</span> <span class="k">case</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">v</span><span class="o">,</span><span class="n">k</span><span class="o">)</span> <span class="o">}</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nc">Map</span><span class="o">(</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">{</span> <span class="nf">case</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">v</span><span class="o">,</span><span class="n">k</span><span class="o">)</span> <span class="o">}</span>
 <span class="c1">//=&gt; scala.collection.immutable.Map[Int,Int] = Map(2 -&gt; 1, 4 -&gt; 3)
 </span></code></pre></div>
 <p>However, if the function you give to <code class="highlighter-rouge">map()</code> above does not return a
 pair, then the result is converted to an iterable:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">Map</span><span class="o">(</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">).</span><span class="n">map</span><span class="o">{</span> <span class="k">case</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">}</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nc">Map</span><span class="o">(</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">{</span> <span class="nf">case</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">}</span>
 <span class="c1">//=&gt; scala.collection.immutable.Iterable[Int] = List(4, 8)
 </span></code></pre></div>
 <p>Even more awesome than this, take for example the <code class="highlighter-rouge">BitSet</code> which is a
@@ -417,13 +417,13 @@ compressed <code class="highlighter-rouge">Set</code> of integers (so it's optim
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">collection.immutable.BitSet</span>
 
-<span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span>
+<span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span>
 <span class="c1">//=&gt; BitSet = BitSet(3, 4, 5, 6)
 </span></code></pre></div>
 <p>Mapping over it still returns a BitSet, as expected. However, look at
 what happens when the mapping function returns Strings:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="s">"number "</span> <span class="o">+</span> <span class="n">x</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="s">"number "</span> <span class="o">+</span> <span class="nv">x</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
 <span class="c1">//=&gt; Set[java.lang.String] = Set(number 1, number 2, number 3, number 4)
 </span></code></pre></div>
 <p>Again, it did the right thing, because you can't store Strings in a
@@ -434,7 +434,7 @@ strings. How is this possible, you may ask?</p>
 <a href="http://www.scala-lang.org/api/current/scala/collection/generic/CanBuildFrom.html">CanBuildFrom</a>
 pattern. The signature of <code class="highlighter-rouge">map()</code> used above is a bit of a mouthful:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">BitSet</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">BitSet</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
 </code></pre></div>
 <p>So, similar to my example with <code class="highlighter-rouge">CanFold</code>:</p>
 
@@ -459,7 +459,7 @@ have to implement an implicit object of this type:</p>
 </code></pre></div>
 <p>And then this will work:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nc">Person</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nc">Person</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
 <span class="c1">//=&gt; People = People(Person(1), Person(2), Person(3), Person(4))
 </span></code></pre></div>
 <p>So what's great is that the provided implicits for <code class="highlighter-rouge">CanBuildFrom</code> can
@@ -497,17 +497,17 @@ sequentially:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">math._</span>
 
-<span class="k">def</span> <span class="n">isPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">range</span> <span class="k">=</span> <span class="mi">2</span> <span class="n">to</span> <span class="n">sqrt</span><span class="o">(</span><span class="n">abs</span><span class="o">(</span><span class="n">n</span><span class="o">)).</span><span class="n">toInt</span>
-  <span class="o">!</span> <span class="n">range</span><span class="o">.</span><span class="n">exists</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">isPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">range</span> <span class="k">=</span> <span class="mi">2</span> <span class="n">to</span> <span class="nf">sqrt</span><span class="o">(</span><span class="nf">abs</span><span class="o">(</span><span class="n">n</span><span class="o">)).</span><span class="py">toInt</span>
+  <span class="o">!</span> <span class="nv">range</span><span class="o">.</span><span class="py">exists</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>If you have multiple cores around doing nothing, here's how to
 calculate it by putting those extra cores at work:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">isPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">range</span> <span class="k">=</span> <span class="mi">2</span> <span class="n">to</span> <span class="n">sqrt</span><span class="o">(</span><span class="n">abs</span><span class="o">(</span><span class="n">n</span><span class="o">)).</span><span class="n">toInt</span>
-  <span class="o">!</span> <span class="n">range</span><span class="o">.</span><span class="n">par</span><span class="o">.</span><span class="n">exists</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">isPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">range</span> <span class="k">=</span> <span class="mi">2</span> <span class="n">to</span> <span class="nf">sqrt</span><span class="o">(</span><span class="nf">abs</span><span class="o">(</span><span class="n">n</span><span class="o">)).</span><span class="py">toInt</span>
+  <span class="o">!</span> <span class="nv">range</span><span class="o">.</span><span class="py">par</span><span class="o">.</span><span class="py">exists</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Notice the difference?</p>
@@ -538,11 +538,11 @@ example of what the combination can do, consider Scala's
 and returns either True if the value is in the Set, or False
 otherwise. This means you can do this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">primaryColors</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="s">"red"</span><span class="o">,</span> <span class="s">"green"</span><span class="o">,</span> <span class="s">"blue"</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">primaryColors</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="s">"red"</span><span class="o">,</span> <span class="s">"green"</span><span class="o">,</span> <span class="s">"blue"</span><span class="o">)</span>
 
-<span class="k">val</span> <span class="n">colors</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">"red"</span><span class="o">,</span> <span class="s">"purple"</span><span class="o">,</span> <span class="s">"yellow"</span><span class="o">,</span> <span class="s">"vanilla"</span><span class="o">,</span> <span class="s">"white"</span><span class="o">,</span> <span class="s">"black"</span><span class="o">,</span> <span class="s">"blue"</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">colors</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">"red"</span><span class="o">,</span> <span class="s">"purple"</span><span class="o">,</span> <span class="s">"yellow"</span><span class="o">,</span> <span class="s">"vanilla"</span><span class="o">,</span> <span class="s">"white"</span><span class="o">,</span> <span class="s">"black"</span><span class="o">,</span> <span class="s">"blue"</span><span class="o">)</span>
 
-<span class="n">colors</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="n">primaryColors</span><span class="o">)</span>
+<span class="nv">colors</span><span class="o">.</span><span class="py">filter</span><span class="o">(</span><span class="n">primaryColors</span><span class="o">)</span>
 </code></pre></div>
 <p>This is possible because our set is in fact a subtype of
 <code class="highlighter-rouge">Function1[String, Boolean]</code>, so you can pass it to any higher-order
@@ -590,7 +590,7 @@ Haskell. In particular Haskell supports
 while Scala only rank-1. One point that Scala wins over Haskell is
 definitely this one:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">).</span><span class="n">flatMap</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nc">Option</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">).</span><span class="py">flatMap</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nc">Option</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
 <span class="c1">//=&gt; List[Int] = List(1, 2, 3, 4, 5)
 </span></code></pre></div>
 <p>Doing the above in Haskell (using the <code class="highlighter-rouge">bind</code> operator) triggers a
@@ -729,8 +729,8 @@ is not a problem, but a bonus. For instance this gives you polymorphic
 behavior without needing type parameters or higher-kinded types or
 other mechanisms, just plain OOP subtyping relationships:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">length</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Any</span><span class="o">])</span> <span class="k">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
-   <span class="k">case</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">head</span><span class="o">,</span> <span class="n">tail</span><span class="o">)</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">length</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">length</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Any</span><span class="o">])</span> <span class="k">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+   <span class="k">case</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">head</span><span class="o">,</span> <span class="n">tail</span><span class="o">)</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">length</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span>
    <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="mi">0</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -741,22 +741,22 @@ be there:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">List</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span> <span class="o">{</span>
   <span class="c1">// abstract definition
-</span>  <span class="k">def</span> <span class="n">length</span><span class="k">:</span> <span class="kt">Int</span>
+</span>  <span class="k">def</span> <span class="nf">length</span><span class="k">:</span> <span class="kt">Int</span>
 <span class="o">}</span>
 
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">+T</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">length</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">tail</span><span class="o">.</span><span class="n">length</span>
+  <span class="k">val</span> <span class="nv">length</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nv">tail</span><span class="o">.</span><span class="py">length</span>
 <span class="o">}</span>
 
 <span class="k">case</span> <span class="k">object</span> <span class="nc">Nil</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">length</span> <span class="k">=</span> <span class="mi">0</span>
+  <span class="k">val</span> <span class="nv">length</span> <span class="k">=</span> <span class="mi">0</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Now, isn't that nice? What would it take to turn this into a lazy
 list?</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">+T</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">lazy</span> <span class="k">val</span> <span class="n">length</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">tail</span><span class="o">().</span><span class="n">length</span>
+  <span class="k">lazy</span> <span class="k">val</span> <span class="nv">length</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">tail</span><span class="o">().</span><span class="py">length</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>You can see how <code class="highlighter-rouge">length</code> hasn't changed for either <code class="highlighter-rouge">List[T]</code> or for
@@ -764,8 +764,8 @@ list?</p>
 why not model this with OOP in Ocaml? Because for algebraic
 data-types, the compiler helps you, like this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span> 
-   <span class="k">case</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">head</span><span class="o">,</span> <span class="n">tail</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">head</span> <span class="o">+</span> <span class="n">sum</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span> 
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span> 
+   <span class="k">case</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">head</span><span class="o">,</span> <span class="n">tail</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">head</span> <span class="o">+</span> <span class="nf">sum</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span> 
    <span class="c1">//-&gt; oops, no termination
 </span><span class="o">}</span>
 
@@ -773,21 +773,21 @@ data-types, the compiler helps you, like this:</p>
 </span><span class="n">warning</span><span class="k">:</span> <span class="kt">match</span> <span class="kt">is</span> <span class="kt">not</span> <span class="kt">exhaustive!</span>
 <span class="kt">missing</span> <span class="kt">combination</span>            <span class="kt">Nil</span>
 
-       <span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+       <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
 	                                   <span class="o">^</span>
 </code></pre></div>
 <p>Did I mention Scala also has structural typing if you want it? Yes it
 can (albeit, without the awesome type-inferencing that Ocaml is
 capable of and it's mostly based on runtime reflection):</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">type</span> <span class="kt">Closeable</span> <span class="o">=</span> <span class="o">{</span> <span class="k">def</span> <span class="n">close</span><span class="o">()</span><span class="k">:</span><span class="kt">Unit</span> <span class="o">}</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">type</span> <span class="kt">Closeable</span> <span class="o">=</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">close</span><span class="o">()</span><span class="k">:</span><span class="kt">Unit</span> <span class="o">}</span>
 
-<span class="k">def</span> <span class="n">using</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span> <span class="k">&lt;:</span> <span class="kt">Closeable</span><span class="o">](</span><span class="n">closable</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span> 
+<span class="k">def</span> <span class="nf">using</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span> <span class="k">&lt;:</span> <span class="kt">Closeable</span><span class="o">](</span><span class="n">closable</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span> 
   <span class="k">try</span> <span class="o">{</span>
-    <span class="n">f</span><span class="o">(</span><span class="n">closable</span><span class="o">)</span>
+    <span class="nf">f</span><span class="o">(</span><span class="n">closable</span><span class="o">)</span>
   <span class="o">}</span>
   <span class="k">finally</span> <span class="o">{</span>
-    <span class="n">closable</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+    <span class="nv">closable</span><span class="o">.</span><span class="py">close</span><span class="o">()</span>
   <span class="o">}</span>
 </code></pre></div>
 <p>This comparisson isn't really fair btw, because I've been fixating on

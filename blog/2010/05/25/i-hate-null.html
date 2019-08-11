@@ -29,9 +29,9 @@
       <meta name="description" content="Python, Monads" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -242,10 +242,10 @@
 <div class="highlight"><pre class="highlight python"><code><span class="n">all_td_elems</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'table'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span><span class="s">'search-params'</span><span class="p">})</span>\    
     <span class="o">.</span><span class="n">findParent</span><span class="p">(</span><span class="s">'form'</span><span class="p">)</span>\    
     <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'td'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span> <span class="s">'elem'</span><span class="p">})</span>\    
-    <span class="o">.</span><span class="n">do_cache</span><span class="p">()</span> <span class="c"># not an inspiring name unfortunately</span>
-
-    <span class="c"># and then resume with the same behavior ...</span>
-    <span class="n">all_td_elements</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'input'</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span><span class="o">.</span><span class="n">do</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">do_cache</span><span class="p">()</span> <span class="c1"># not an inspiring name unfortunately
+</span>
+    <span class="c1"># and then resume with the same behavior ...
+</span>    <span class="n">all_td_elements</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'input'</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span><span class="o">.</span><span class="n">do</span><span class="p">()</span>
 </code></pre></div>
 <p>
   Yeah, it's just a small hack, but it's so damn useful sometimes.

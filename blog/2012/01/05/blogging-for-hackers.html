@@ -34,9 +34,9 @@
       <meta name="description" content="Publishing, Server, Cloud, Heroku, GAE, Ruby, Jekyll" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -187,7 +187,7 @@ Jekyll-generated stuff.</p>
 <p>First, the setup:</p>
 
 <div class="highlight"><pre class="highlight shell"><code><span class="c"># install the heroku command-line utility</span>
-gem install heroku
+gem <span class="nb">install </span>heroku
 
 <span class="c"># change to your website directory</span>
 <span class="nb">cd </span>website/
@@ -217,7 +217,7 @@ content. We'll need a <em>./Gemfile</em> …</p>
 </code></pre></div>
 <p>Then install these gems with:</p>
 
-<div class="highlight"><pre class="highlight shell"><code>bundle install
+<div class="highlight"><pre class="highlight shell"><code>bundle <span class="nb">install</span>
 </code></pre></div>
 <p>You also need a Rake configuration file, <em>./config.ru</em>. What follows is the
 configuration that I am using. You can go simpler, a lot simpler than
@@ -408,13 +408,13 @@ intended:</p>
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">destination</span><span class="pi">:</span> <span class="s">./_site</span>
 
 <span class="na">expires</span><span class="pi">:</span>
-  <span class="na">html</span><span class="pi">:</span> <span class="s">3600</span> <span class="c1"># one hour</span>
-  <span class="na">assets</span><span class="pi">:</span> <span class="s">1314000</span> <span class="c1"># one year</span>
+  <span class="na">html</span><span class="pi">:</span> <span class="m">3600</span> <span class="c1"># one hour</span>
+  <span class="na">assets</span><span class="pi">:</span> <span class="m">1314000</span> <span class="c1"># one year</span>
 
 <span class="na">redirects</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">from</span><span class="pi">:</span> <span class="s">/rss/</span>
     <span class="na">to</span><span class="pi">:</span> <span class="s">http://feeds.feedburner.com/bionicspirit</span>
-    <span class="na">type</span><span class="pi">:</span> <span class="s">302</span>
+    <span class="na">type</span><span class="pi">:</span> <span class="m">302</span>
 </code></pre></div>
 <p>OK, so once done, test this configuration:</p>
 
@@ -485,9 +485,9 @@ GAE to send a periodic <em>ping</em> to your website.</p>
 root (assuming <em>./assets</em> is the directory you want to serve from GAE):</p>
 
 <div class="highlight"><pre class="highlight yaml"><code><span class="na">application</span><span class="pi">:</span> <span class="s">assets-bionicspirit</span>
-<span class="na">version</span><span class="pi">:</span> <span class="s">1</span>
+<span class="na">version</span><span class="pi">:</span> <span class="m">1</span>
 <span class="na">runtime</span><span class="pi">:</span> <span class="s">python27</span>
-<span class="na">api_version</span><span class="pi">:</span> <span class="s">1</span>
+<span class="na">api_version</span><span class="pi">:</span> <span class="m">1</span>
 <span class="na">threadsafe</span><span class="pi">:</span> <span class="no">true</span>
 
 <span class="na">handlers</span><span class="pi">:</span>

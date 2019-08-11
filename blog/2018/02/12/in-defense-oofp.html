@@ -34,9 +34,9 @@
       <meta name="description" content="OOP versus Type Classes, exemplified and in defense of the Scala collections redesign." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -202,7 +202,7 @@ here I'm doing my best to summarize it:</p>
 <p>In it the author rightfully complains that this method signature for
 <code class="highlighter-rouge">List</code> is scary and he doesn't understand it:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">Repr</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">Repr</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
 </code></pre></div>
 <p>The Scala core developers first tried to hide this signature, so if
 you'll take a look at the
@@ -242,7 +242,7 @@ inference, etc. etc.</p>
 <a href="https://github.com/scala/collection-strawman/blob/master/collections/src/main/scala/strawman/collection/immutable/List.scala#L214">List.scala in collection-strawman</a>,
 that signature now looks like this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">B</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
 </code></pre></div>
 <p>There, that brings justice to everybody that complained for all these
 years.</p>
@@ -314,10 +314,10 @@ there’s a huge number of problems you can’t solve this way.</p>
 
 <p>The example that Daniel gives in his proposal is this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">is</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyThingy</span> <span class="o">=</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">t</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MyThingy</span>
-  <span class="k">for</span> <span class="o">(</span><span class="n">idx</span> <span class="k">&lt;-</span> <span class="mi">0</span> <span class="n">until</span> <span class="n">is</span><span class="o">.</span><span class="n">length</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">t</span><span class="o">.</span><span class="n">accumulate</span><span class="o">(</span><span class="n">is</span><span class="o">(</span><span class="n">idx</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">foo</span><span class="o">(</span><span class="n">is</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyThingy</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">t</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">MyThingy</span>
+  <span class="nf">for</span> <span class="o">(</span><span class="n">idx</span> <span class="k">&lt;-</span> <span class="mi">0</span> <span class="n">until</span> <span class="nv">is</span><span class="o">.</span><span class="py">length</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nv">t</span><span class="o">.</span><span class="py">accumulate</span><span class="o">(</span><span class="nf">is</span><span class="o">(</span><span class="n">idx</span><span class="o">))</span>
   <span class="o">}</span>
   <span class="n">t</span>
 <span class="o">}</span>
@@ -388,8 +388,8 @@ instead of an OOP hierarchy of interfaces.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">cats.Foldable</span>
 
-<span class="k">def</span> <span class="n">foo</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="kt">:</span> <span class="kt">Foldable</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyThingy</span> <span class="o">=</span>
-  <span class="n">implicitly</span><span class="o">[</span><span class="kt">Foldable</span><span class="o">[</span><span class="kt">F</span><span class="o">]].</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MyThingy</span><span class="o">)(</span><span class="k">_</span> <span class="n">accumulate</span> <span class="k">_</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="kt">:</span> <span class="kt">Foldable</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">MyThingy</span> <span class="o">=</span>
+  <span class="n">implicitly</span><span class="o">[</span><span class="kt">Foldable</span><span class="o">[</span><span class="kt">F</span><span class="o">]].</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="k">new</span> <span class="nc">MyThingy</span><span class="o">)(</span><span class="k">_</span> <span class="n">accumulate</span> <span class="k">_</span><span class="o">)</span>
 </code></pre></div>
 <p>Ah, now we are getting somewhere. But the astute reader should notice at this
 point that this means exposure of an extra <code class="highlighter-rouge">F[_]</code> type parameter that
@@ -414,8 +414,8 @@ when using OOP, although this isn't an issue with Haskell
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">scala.math.Numeric</span>
 
-<span class="k">def</span> <span class="n">sum</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">A</span><span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span>
-  <span class="n">list</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">A</span><span class="o">.</span><span class="n">zero</span><span class="o">)(</span><span class="n">A</span><span class="o">.</span><span class="n">plus</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">sum</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">A</span><span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span>
+  <span class="nv">list</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="nv">A</span><span class="o">.</span><span class="py">zero</span><span class="o">)(</span><span class="nv">A</span><span class="o">.</span><span class="py">plus</span><span class="o">)</span>
 </code></pre></div>
 <p>Note we are already using <code class="highlighter-rouge">Numeric</code>, which is a type class exposed by
 Scala's standard library. And it's actually not the best type class we
@@ -433,10 +433,10 @@ also described in
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">cats.Foldable</span>
 <span class="k">import</span> <span class="nn">scala.math.Numeric</span>
 
-<span class="k">def</span> <span class="n">sum</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+<span class="k">def</span> <span class="nf">sum</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Foldable</span><span class="o">[</span><span class="kt">F</span><span class="o">],</span> <span class="n">A</span><span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span> <span class="o">{</span>
 
-  <span class="n">F</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">A</span><span class="o">.</span><span class="n">zero</span><span class="o">)(</span><span class="n">A</span><span class="o">.</span><span class="n">plus</span><span class="o">)</span>
+  <span class="nv">F</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="nv">A</span><span class="o">.</span><span class="py">zero</span><span class="o">)(</span><span class="nv">A</span><span class="o">.</span><span class="py">plus</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>(N.B. using <code class="highlighter-rouge">F</code> and <code class="highlighter-rouge">A</code> as the type names <em>and</em> as the name of the
@@ -526,19 +526,19 @@ whose capabilities are defined via type classes.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">cats.effect.Sync</span>
 
-<span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
 
-  <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">current</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">(</span><span class="n">current</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
     <span class="n">current</span> <span class="k">match</span> <span class="o">{</span>
       <span class="k">case</span> <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="nc">Next</span><span class="o">(</span><span class="n">f</span><span class="o">(</span><span class="n">b</span><span class="o">),</span> <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">),</span> <span class="n">stop</span><span class="o">)</span>
+        <span class="nc">Next</span><span class="o">(</span><span class="nf">f</span><span class="o">(</span><span class="n">b</span><span class="o">),</span> <span class="nv">rest</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">loop</span><span class="o">),</span> <span class="n">stop</span><span class="o">)</span>
       <span class="k">case</span> <span class="nc">Suspend</span><span class="o">(</span><span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="nc">Suspend</span><span class="o">(</span><span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">),</span> <span class="n">stop</span><span class="o">)</span>
+        <span class="nc">Suspend</span><span class="o">(</span><span class="nv">rest</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">loop</span><span class="o">),</span> <span class="n">stop</span><span class="o">)</span>
       <span class="k">case</span> <span class="nc">Halt</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span>
         <span class="nc">Halt</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
     <span class="o">}</span>
-  <span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)</span>
+  <span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>That part about "<code class="highlighter-rouge">implicit F: Sync[F]</code>", that's the restriction we
@@ -570,8 +570,8 @@ with an <code class="highlighter-rouge">Iterant[Coeval, A]</code> (see
 unless you convert between these data types explicitly.</p>
 
 <p>For example this should trigger a compile time error:</p>
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">tasks</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">Task</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
-<span class="k">val</span> <span class="n">ios</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">tasks</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">Task</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+<span class="k">val</span> <span class="nv">ios</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
 
 <span class="c1">// Nope, can't do this ;-)
 </span><span class="n">tasks</span> <span class="o">++</span> <span class="n">ios</span>
@@ -640,9 +640,9 @@ did with <code class="highlighter-rouge">F</code>:</p>
 (your Scala compiler is giving you ugly looks right about now), but
 also because you can't have heterogeneity:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">node1</span> <span class="k">=</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">),</span> <span class="nc">IO</span><span class="o">(</span><span class="nc">Halt</span><span class="o">(</span><span class="nc">None</span><span class="o">)),</span> <span class="nc">IO</span><span class="o">.</span><span class="n">unit</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">node1</span> <span class="k">=</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="nc">Array</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">),</span> <span class="nc">IO</span><span class="o">(</span><span class="nc">Halt</span><span class="o">(</span><span class="nc">None</span><span class="o">)),</span> <span class="nv">IO</span><span class="o">.</span><span class="py">unit</span><span class="o">)</span>
 <span class="c1">// Ooops, not compatible, List is not Array, will trigger error ;-)
-</span><span class="k">val</span> <span class="n">node2</span> <span class="k">=</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">),</span> <span class="nc">IO</span><span class="o">(</span><span class="n">node1</span><span class="o">),</span> <span class="nc">IO</span><span class="o">.</span><span class="n">unit</span><span class="o">)</span>
+</span><span class="k">val</span> <span class="nv">node2</span> <span class="k">=</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">),</span> <span class="nc">IO</span><span class="o">(</span><span class="n">node1</span><span class="o">),</span> <span class="nv">IO</span><span class="o">.</span><span class="py">unit</span><span class="o">)</span>
 </code></pre></div>
 <p>No, screw that, let's backtrack - at this point we need
 the type class restriction to be on the data structure itself:</p>
@@ -700,10 +700,10 @@ nonetheless.</p>
 
 <p>So for example, how do you think this works?</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">ios</span><span class="k">:</span> <span class="kt">Iterable</span><span class="o">[</span><span class="kt">IO</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span> <span class="k">=</span> <span class="o">???</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">ios</span><span class="k">:</span> <span class="kt">Iterable</span><span class="o">[</span><span class="kt">IO</span><span class="o">[</span><span class="kt">Int</span><span class="o">]]</span> <span class="k">=</span> <span class="o">???</span>
 
-<span class="n">ios</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="nc">IO</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span> <span class="o">{</span> <span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">elem</span><span class="o">)</span> <span class="k">=&gt;</span>
-  <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">acc</span><span class="o">;</span> <span class="n">e</span> <span class="k">&lt;-</span> <span class="n">elem</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">e</span>
+<span class="nv">ios</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="nc">IO</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span> <span class="o">{</span> <span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">elem</span><span class="o">)</span> <span class="k">=&gt;</span>
+  <span class="nf">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">acc</span><span class="o">;</span> <span class="n">e</span> <span class="k">&lt;-</span> <span class="n">elem</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">e</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>The short answer - it works, but if that stream is too big, it will
@@ -715,24 +715,24 @@ doable, for example in a <code class="highlighter-rouge">mapEval</code> implemen
 item out of our <code class="highlighter-rouge">Array</code>, process that in the <code class="highlighter-rouge">F[_]</code> monadic context,
 then continue from where it left off:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
 
-  <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">index</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">(</span><span class="n">index</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
     <span class="n">fa</span> <span class="k">match</span> <span class="o">{</span>
       <span class="k">case</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="k">val</span> <span class="n">eval</span> <span class="k">=</span>
-          <span class="k">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">batch</span><span class="o">.</span><span class="n">length</span><span class="o">)</span>
-            <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span>
+        <span class="k">val</span> <span class="nv">eval</span> <span class="k">=</span>
+          <span class="nf">if</span> <span class="o">(</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="nv">batch</span><span class="o">.</span><span class="py">length</span><span class="o">)</span>
+            <span class="nv">rest</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="mi">0</span><span class="o">))</span>
           <span class="k">else</span>
-            <span class="n">f</span><span class="o">(</span><span class="n">batch</span><span class="o">(</span><span class="n">index</span><span class="o">)).</span><span class="n">map</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
-              <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">stop</span><span class="o">)</span>
+            <span class="nf">f</span><span class="o">(</span><span class="nf">batch</span><span class="o">(</span><span class="n">index</span><span class="o">)).</span><span class="py">map</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+              <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="nv">F</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">index</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">stop</span><span class="o">)</span>
             <span class="o">}</span>
         <span class="nc">Suspend</span><span class="o">(</span><span class="n">eval</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span>
 
       <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="o">???</span>
     <span class="o">}</span>
-  <span class="n">loop</span><span class="o">(</span><span class="mi">0</span><span class="o">)(</span><span class="n">fa</span><span class="o">)</span>
+  <span class="nf">loop</span><span class="o">(</span><span class="mi">0</span><span class="o">)(</span><span class="n">fa</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Well, <code class="highlighter-rouge">Array</code> can be indexed, but that indexing would be death for
@@ -750,27 +750,27 @@ arrays, lists, vectors or what have you, the classic
 </code></pre></div>
 <p>And now we can express this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
 
-  <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
     <span class="n">fa</span> <span class="k">match</span> <span class="o">{</span>
       <span class="k">case</span> <span class="nc">NextBatch</span><span class="o">(</span><span class="n">batch</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="n">loop</span><span class="o">(</span><span class="nc">NextCursor</span><span class="o">(</span><span class="n">batch</span><span class="o">.</span><span class="n">iterator</span><span class="o">(),</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">))</span>
+        <span class="nf">loop</span><span class="o">(</span><span class="nc">NextCursor</span><span class="o">(</span><span class="nv">batch</span><span class="o">.</span><span class="py">iterator</span><span class="o">(),</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">))</span>
       <span class="k">case</span> <span class="nc">NextCursor</span><span class="o">(</span><span class="n">cursor</span><span class="o">,</span> <span class="n">rest</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="k">val</span> <span class="n">eval</span> <span class="k">=</span>
-          <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="n">hasNext</span><span class="o">)</span>
-            <span class="n">rest</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">loop</span><span class="o">)</span>
+        <span class="k">val</span> <span class="nv">eval</span> <span class="k">=</span>
+          <span class="nf">if</span> <span class="o">(</span><span class="nv">cursor</span><span class="o">.</span><span class="py">hasNext</span><span class="o">)</span>
+            <span class="nv">rest</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">loop</span><span class="o">)</span>
           <span class="k">else</span>
-            <span class="n">f</span><span class="o">(</span><span class="n">batch</span><span class="o">.</span><span class="n">next</span><span class="o">()).</span><span class="n">map</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
-              <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">stop</span><span class="o">)</span>
+            <span class="nf">f</span><span class="o">(</span><span class="nv">batch</span><span class="o">.</span><span class="py">next</span><span class="o">()).</span><span class="py">map</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+              <span class="nc">Next</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="nv">F</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">stop</span><span class="o">)</span>
             <span class="o">}</span>
         <span class="nc">Suspend</span><span class="o">(</span><span class="n">eval</span><span class="o">,</span> <span class="n">stop</span><span class="o">)</span>
       <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
         <span class="o">???</span>
     <span class="o">}</span>
   <span class="c1">// Suspends execution, because NextCursor is side-effectful ;-)
-</span>  <span class="nc">Suspend</span><span class="o">(</span><span class="n">F</span><span class="o">.</span><span class="n">delay</span><span class="o">(</span><span class="n">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)),</span> <span class="n">F</span><span class="o">.</span><span class="n">unit</span><span class="o">)</span>
+</span>  <span class="nc">Suspend</span><span class="o">(</span><span class="nv">F</span><span class="o">.</span><span class="py">delay</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">)),</span> <span class="nv">F</span><span class="o">.</span><span class="py">unit</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Can you do that with <code class="highlighter-rouge">Foldable</code> / <code class="highlighter-rouge">Traverse</code>? No, you can't!</p>
@@ -789,7 +789,7 @@ transparency</i> is preserved, then it really doesn't matter 😉
 should be something like this:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">IteratorTypeClass</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])]</span>
+  <span class="k">def</span> <span class="nf">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])]</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>This is a variation on the
@@ -819,18 +819,18 @@ efficient 😉</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">IteratorTypeClass</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span>
   <span class="k">type</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
 
-  <span class="k">def</span> <span class="n">start</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
-  <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">])]</span>
+  <span class="k">def</span> <span class="nf">start</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">Pointer</span><span class="o">[</span><span class="kt">A</span><span class="o">])]</span>
 <span class="o">}</span>
 
 <span class="c1">// Sample instance for Array
 </span><span class="k">object</span> <span class="nc">ArrayIterator</span> <span class="k">extends</span> <span class="nc">IteratorTypeClass</span><span class="o">[</span><span class="kt">Array</span><span class="o">]</span> <span class="o">{</span>
   <span class="k">type</span> <span class="kt">Pointer</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Int</span>
 
-  <span class="k">def</span> <span class="n">start</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="mi">0</span>
-  <span class="k">def</span> <span class="n">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">&gt;=</span> <span class="n">fa</span><span class="o">.</span><span class="n">length</span><span class="o">)</span> <span class="nc">None</span>
-    <span class="k">else</span> <span class="nc">Some</span><span class="o">((</span><span class="n">fa</span><span class="o">(</span><span class="n">cursor</span><span class="o">),</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span>
+  <span class="k">def</span> <span class="nf">start</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="mi">0</span>
+  <span class="k">def</span> <span class="nf">next</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">cursor</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span>
+    <span class="nf">if</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">&gt;=</span> <span class="nv">fa</span><span class="o">.</span><span class="py">length</span><span class="o">)</span> <span class="nc">None</span>
+    <span class="k">else</span> <span class="nc">Some</span><span class="o">((</span><span class="nf">fa</span><span class="o">(</span><span class="n">cursor</span><span class="o">),</span> <span class="n">cursor</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>But this will leak implementation details - not bad for our <code class="highlighter-rouge">Array</code>
@@ -909,8 +909,8 @@ operator:</p>
   *        skip and count are equal, this is the same operation as
   *        `buffer(count)`
   */</span>
-<span class="k">final</span> <span class="k">def</span> <span class="n">bufferSliding</span><span class="o">(</span><span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">skip</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
-  <span class="n">liftByOperator</span><span class="o">(</span><span class="k">new</span> <span class="nc">BufferSlidingOperator</span><span class="o">(</span><span class="n">count</span><span class="o">,</span> <span class="n">skip</span><span class="o">))</span>
+<span class="k">final</span> <span class="k">def</span> <span class="nf">bufferSliding</span><span class="o">(</span><span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">skip</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
+  <span class="nf">liftByOperator</span><span class="o">(</span><span class="k">new</span> <span class="nc">BufferSlidingOperator</span><span class="o">(</span><span class="n">count</span><span class="o">,</span> <span class="n">skip</span><span class="o">))</span>
 </code></pre></div>
 <p>Facts:</p>
 
@@ -967,8 +967,8 @@ operator:</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="cm">/** Creates a new Observable that emits the given elements and then
   * it also emits the events of the source (prepend operation).
   */</span>
-<span class="k">final</span> <span class="k">def</span> <span class="n">startWith</span><span class="o">[</span><span class="kt">B</span> <span class="k">&gt;:</span> <span class="kt">A</span><span class="o">](</span><span class="n">elems</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
-  <span class="nc">Observable</span><span class="o">.</span><span class="n">fromIterable</span><span class="o">(</span><span class="n">elems</span><span class="o">)</span> <span class="o">++</span> <span class="n">self</span>
+<span class="k">final</span> <span class="k">def</span> <span class="nf">startWith</span><span class="o">[</span><span class="kt">B</span> <span class="k">&gt;:</span> <span class="kt">A</span><span class="o">](</span><span class="n">elems</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">Observable</span><span class="o">.</span><span class="py">fromIterable</span><span class="o">(</span><span class="n">elems</span><span class="o">)</span> <span class="o">++</span> <span class="n">self</span>
 </code></pre></div>
 <p>Here we might have used an
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterator.html">Iterator</a>,

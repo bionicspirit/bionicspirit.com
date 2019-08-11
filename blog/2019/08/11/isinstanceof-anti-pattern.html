@@ -29,9 +29,9 @@
       <meta name="description" content="Scala has a much better way of discriminating between types." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -109,18 +109,18 @@
 
 <h2 id="the-anti-pattern">The Anti-Pattern</h2>
 
-<p>Given some piece of heavy logic, lets say you want to describe a function that can execute a block of code, along with some finalizer, something like this:</p>
+<p>Given some piece of heavy logic, let's say you want to describe a function that can execute a block of code, along with some finalizer, something like this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">guarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">guarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
   <span class="k">try</span> <span class="n">f</span> <span class="k">finally</span> <span class="n">finalizer</span>
 </code></pre></div>
 <p>And usage:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="n">guarantee</span> <span class="o">{</span>
-  <span class="n">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span>
+  <span class="nf">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span>
   <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="o">}</span> <span class="o">{</span>
-  <span class="n">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
+  <span class="nf">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Then one of your colleagues comes along and tries it with <code class="highlighter-rouge">Future</code>:</p>
@@ -130,11 +130,11 @@
 
 <span class="n">guarantee</span> <span class="o">{</span>
   <span class="nc">Future</span> <span class="o">{</span>
-    <span class="n">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span>
+    <span class="nf">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span>
     <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
   <span class="o">}</span>
 <span class="o">}</span> <span class="o">{</span>
-  <span class="n">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
+  <span class="nf">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
 <span class="o">}</span>
 
 <span class="c1">//=&gt; Done!
@@ -144,13 +144,13 @@
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">scala.util.control.NonFatal</span>
 
-<span class="k">def</span> <span class="n">guarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
+<span class="k">def</span> <span class="nf">guarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
   <span class="k">try</span> <span class="o">{</span>
     <span class="n">f</span> <span class="k">match</span> <span class="o">{</span>
       <span class="c1">// Anti-pattern
 </span>      <span class="k">case</span> <span class="n">ref</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="k">_</span><span class="o">]</span> <span class="k">=&gt;</span>
-        <span class="n">ref</span><span class="o">.</span><span class="n">transform</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span> <span class="n">finalizer</span><span class="o">;</span> <span class="n">r</span> <span class="o">}</span>
-          <span class="o">.</span><span class="n">asInstanceOf</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span>
+        <span class="nv">ref</span><span class="o">.</span><span class="py">transform</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span> <span class="n">finalizer</span><span class="o">;</span> <span class="n">r</span> <span class="o">}</span>
+          <span class="o">.</span><span class="py">asInstanceOf</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span>
       <span class="k">case</span> <span class="n">result</span> <span class="k">=&gt;</span>
         <span class="n">finalizer</span>
         <span class="n">result</span>
@@ -172,11 +172,11 @@
 <span class="n">guarantee</span> <span class="o">{</span>
   <span class="c1">// Oh noes!
 </span>  <span class="nc">Task</span> <span class="o">{</span>
-    <span class="n">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span>
+    <span class="nf">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span>
     <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
   <span class="o">}</span>
 <span class="o">}</span> <span class="o">{</span>
-  <span class="n">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
+  <span class="nf">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
 <span class="o">}</span>
 
 <span class="c1">//=&gt; Done!
@@ -188,46 +188,46 @@
 <p>Let us define a type class for discriminating between types at <em>compile-time</em>:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span>
+  <span class="k">def</span> <span class="nf">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Now our function can look like this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">guarantee</span><span class="o">[</span><span class="kt">R:</span> <span class="kt">CanGuarantee</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
-  <span class="n">implicitly</span><span class="o">[</span><span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]].</span><span class="n">guarantee</span><span class="o">(</span><span class="n">f</span><span class="o">)(</span><span class="n">finalizer</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">guarantee</span><span class="o">[</span><span class="kt">R:</span> <span class="kt">CanGuarantee</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
+  <span class="n">implicitly</span><span class="o">[</span><span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]].</span><span class="py">guarantee</span><span class="o">(</span><span class="n">f</span><span class="o">)(</span><span class="n">finalizer</span><span class="o">)</span>
 </code></pre></div>
 <p>To get the behavior of the original sample, we can define the default instances in the companion object like this:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">object</span> <span class="nc">CanGuarantee</span>  <span class="o">{</span>
   <span class="c1">// Future instance
-</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="n">futureInstance</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
+</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">futureInstance</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
     <span class="k">new</span> <span class="nc">CanGuarantee</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
-      <span class="k">def</span> <span class="n">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
-        <span class="nc">Future</span><span class="o">(</span><span class="n">f</span><span class="o">).</span><span class="n">flatten</span><span class="o">.</span><span class="n">transform</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
+      <span class="k">def</span> <span class="nf">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+        <span class="nc">Future</span><span class="o">(</span><span class="n">f</span><span class="o">).</span><span class="py">flatten</span><span class="o">.</span><span class="py">transform</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
           <span class="n">finalizer</span>
           <span class="n">r</span>
         <span class="o">}</span>
     <span class="o">}</span>
 
   <span class="c1">// Default instance
-</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="n">syncInstance</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span>
+</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">syncInstance</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span>
     <span class="k">new</span> <span class="nc">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="o">{</span>
-      <span class="k">def</span> <span class="n">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
+      <span class="k">def</span> <span class="nf">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
         <span class="k">try</span> <span class="n">f</span> <span class="k">finally</span> <span class="n">finalizer</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>The upside is that now the mechanism is extensible, without modifying the original function:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">final</span> <span class="k">class</span> <span class="nc">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="k">val</span> <span class="n">run</span><span class="k">:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">final</span> <span class="k">class</span> <span class="nc">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="k">val</span> <span class="nv">run</span><span class="k">:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span>
 
 <span class="k">object</span> <span class="nc">Thunk</span> <span class="o">{</span>
   <span class="c1">// Extending our logic with a new data type
-</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="n">canGuarantee</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
+</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">canGuarantee</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
     <span class="k">new</span> <span class="nc">CanGuarantee</span><span class="o">[</span><span class="kt">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
-      <span class="k">def</span> <span class="n">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+      <span class="k">def</span> <span class="nf">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Thunk</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
         <span class="k">new</span> <span class="nc">Thunk</span><span class="o">(()</span> <span class="k">=&gt;</span> <span class="o">{</span>
-          <span class="k">try</span> <span class="n">f</span><span class="o">.</span><span class="n">run</span><span class="o">()</span> <span class="k">finally</span> <span class="n">finalizer</span>
+          <span class="k">try</span> <span class="nv">f</span><span class="o">.</span><span class="py">run</span><span class="o">()</span> <span class="k">finally</span> <span class="n">finalizer</span>
         <span class="o">})</span>
     <span class="o">}</span>
 <span class="o">}</span>
@@ -238,11 +238,11 @@
 
 <div class="highlight"><pre class="highlight scala"><code><span class="n">guarantee</span> <span class="o">{</span>
   <span class="k">new</span> <span class="nc">Thunk</span> <span class="o">{</span> <span class="o">()</span> <span class="k">=&gt;</span>
-    <span class="n">println</span><span class="o">(</span><span class="s">"Calculating!"</span><span class="o">)</span>
+    <span class="nf">println</span><span class="o">(</span><span class="s">"Calculating!"</span><span class="o">)</span>
     <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span>
   <span class="o">}</span>
 <span class="o">}</span> <span class="o">{</span>
-  <span class="n">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
+  <span class="nf">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>The <code class="highlighter-rouge">syncInstance</code> that we defined above is incorrect for <code class="highlighter-rouge">Thunk</code>. This means that we can introduce silent bugs. What should happen here?</p>
@@ -250,11 +250,11 @@
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">java.util.concurrent.CompletableFuture</span>
 
 <span class="n">guarantee</span> <span class="o">{</span>
-  <span class="nc">CompletableFuture</span><span class="o">.</span><span class="n">runAsync</span> <span class="o">{</span> <span class="o">()</span> <span class="k">=&gt;</span>
-    <span class="n">println</span><span class="o">(</span><span class="s">"Running!"</span><span class="o">)</span>
+  <span class="nv">CompletableFuture</span><span class="o">.</span><span class="py">runAsync</span> <span class="o">{</span> <span class="o">()</span> <span class="k">=&gt;</span>
+    <span class="nf">println</span><span class="o">(</span><span class="s">"Running!"</span><span class="o">)</span>
   <span class="o">}</span>
 <span class="o">}</span> <span class="o">{</span>
-  <span class="n">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
+  <span class="nf">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span>
 <span class="o">}</span>
 <span class="c1">//=&gt; Done!
 //=&gt; Running!
@@ -269,22 +269,22 @@
 If this value is synchronously calculated via an effectful function,
 then use CanGuarantee.synchronous to create one."""</span><span class="o">)</span>
 <span class="k">trait</span> <span class="nc">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span>
+  <span class="k">def</span> <span class="nf">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span>
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">CanGuarantee</span> <span class="o">{</span>
   <span class="c1">// No longer implicit
-</span>  <span class="k">def</span> <span class="n">synchronous</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span>
+</span>  <span class="k">def</span> <span class="nf">synchronous</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span>
     <span class="k">new</span> <span class="nc">CanGuarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="o">{</span>
-      <span class="k">def</span> <span class="n">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
+      <span class="k">def</span> <span class="nf">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
         <span class="k">try</span> <span class="n">f</span> <span class="k">finally</span> <span class="n">finalizer</span>
     <span class="o">}</span>
 
   <span class="c1">// Future instance
-</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="n">futureInstance</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
+</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">futureInstance</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span><span class="k">:</span> <span class="kt">CanGuarantee</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
     <span class="k">new</span> <span class="nc">CanGuarantee</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
-      <span class="k">def</span> <span class="n">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
-        <span class="nc">Future</span><span class="o">(</span><span class="n">f</span><span class="o">).</span><span class="n">flatten</span><span class="o">.</span><span class="n">transform</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
+      <span class="k">def</span> <span class="nf">guarantee</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+        <span class="nc">Future</span><span class="o">(</span><span class="n">f</span><span class="o">).</span><span class="py">flatten</span><span class="o">.</span><span class="py">transform</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
           <span class="n">finalizer</span>
           <span class="n">r</span>
         <span class="o">}</span>
@@ -311,9 +311,9 @@ then use CanGuarantee.synchronous[Unit] to create one.
 </code></pre></div>
 <p>If you want to work with <code class="highlighter-rouge">Unit</code>, you have to create an instance for it, but notice how the error message tells you exactly what to do:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">val</span> <span class="n">ev</span> <span class="k">=</span> <span class="nc">CanGuarantee</span><span class="o">.</span><span class="n">synchronous</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">val</span> <span class="nv">ev</span> <span class="k">=</span> <span class="nv">CanGuarantee</span><span class="o">.</span><span class="py">synchronous</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 
-<span class="n">guarantee</span> <span class="o">{</span> <span class="n">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span> <span class="o">}</span> <span class="o">{</span> <span class="n">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span> <span class="o">}</span>
+<span class="n">guarantee</span> <span class="o">{</span> <span class="nf">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span> <span class="o">}</span> <span class="o">{</span> <span class="nf">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span> <span class="o">}</span>
 </code></pre></div>
 <h2 id="in-conclusion">In conclusion</h2>
 

@@ -33,9 +33,9 @@
       <meta name="description" content="The Task in Monix has really good performance. See the benchmark." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -134,11 +134,11 @@ words the performance of the run-loop, on both normal/synchronous
 tasks and tasks that are forked in separate (logical) threads. So in
 other words:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">Task</span><span class="o">.</span><span class="n">sequence</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nv">Task</span><span class="o">.</span><span class="py">sequence</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
 </code></pre></div>
 <p>Which is translated more or less into this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">tasks</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">init</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">et</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">acc</span><span class="o">.</span><span class="n">flatMap</span><span class="o">(</span><span class="n">b</span> <span class="k">=&gt;</span> <span class="n">et</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">e</span> <span class="k">=&gt;</span> <span class="n">b</span> <span class="o">+=</span> <span class="n">e</span><span class="o">)))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nv">tasks</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">init</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">et</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">acc</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="n">b</span> <span class="k">=&gt;</span> <span class="nv">et</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">e</span> <span class="k">=&gt;</span> <span class="n">b</span> <span class="o">+=</span> <span class="n">e</span><span class="o">)))</span>
 </code></pre></div>
 <p>So for synchronous tasks (that evaluate immediately), and note here
 that Scala's <code class="highlighter-rouge">Future</code> is not applicable since <code class="highlighter-rouge">Future</code> is not
@@ -223,7 +223,7 @@ and fares quite better compared with Scala's standard <code class="highlighter-r
 
 <p>The gather operation would be:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">Task</span><span class="o">.</span><span class="n">gather</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nv">Task</span><span class="o">.</span><span class="py">gather</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
 </code></pre></div>
 <p>This works like <code class="highlighter-rouge">sequence</code>, except that the evaluation has non-ordered
 effects. What this means is that, if the tasks are forking threads,
@@ -322,7 +322,7 @@ better.</p>
 
 <p>The <code class="highlighter-rouge">gatherUnordered</code> operation would be:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">Task</span><span class="o">.</span><span class="n">gatherUnordered</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nv">Task</span><span class="o">.</span><span class="py">gatherUnordered</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
 </code></pre></div>
 <p>This behaves like <code class="highlighter-rouge">gather</code>, except that it does not care for the order
 in which the results are served. Can have much better performance if

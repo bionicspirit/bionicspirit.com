@@ -33,9 +33,9 @@
       <meta name="description" content="Python, Android, Mining, Stats, Web, API" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -142,9 +142,9 @@ apparently. This crawler and associated data only serves educational
 purposes. Don't abuse it.</p>
 
 <div class="highlight"><pre class="highlight python"><code><span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">AndroidMarketCrawler</span><span class="p">(</span><span class="n">concurrency</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
-    <span class="c"># app is at this point a dictionary with the details needed, like</span>
-    <span class="c">#  id, name, developer name, number of installs, etc...</span>
-    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+    <span class="c1"># app is at this point a dictionary with the details needed, like
+</span>    <span class="c1">#  id, name, developer name, number of installs, etc...
+</span>    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div>
 <p>I used the Python programming language, along with
 <a href="http://eventlet.net">Eventlet</a> for fetching URLs in parallel (async I/O with

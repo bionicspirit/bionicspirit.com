@@ -29,9 +29,9 @@
       <meta name="description" content="An Add to NewsBlur bookmarklet that you can copy-paste for iPhone&#x2F;iPad&#x2F;Android usage" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -123,11 +123,11 @@ and you should see all bookmarks, press and hold on the new
 <p>Here is the unencoded Javascript for your inspection:</p>
 
 <div class="highlight"><pre class="highlight javascript"><code><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-  <span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="o">+</span><span class="s1">''</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">l</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="o">+</span><span class="dl">''</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">l</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^</span><span class="se">(?:</span><span class="sr">https</span><span class="se">?</span><span class="sr">:</span><span class="se">[/]{2}(?:</span><span class="sr">www.</span><span class="se">)?)?</span><span class="sr">newsblur.com/i</span><span class="p">))</span> 
-    <span class="nx">alert</span><span class="p">(</span><span class="s2">"Cannot add NewsBlur.com itself!"</span><span class="p">);</span>
+    <span class="nx">alert</span><span class="p">(</span><span class="dl">"</span><span class="s2">Cannot add NewsBlur.com itself!</span><span class="dl">"</span><span class="p">);</span>
   <span class="k">else</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="s1">'https://www.newsblur.com/?url='</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">l</span><span class="p">);</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">https://www.newsblur.com/?url=</span><span class="dl">'</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">l</span><span class="p">);</span>
 <span class="p">})();</span><span class="k">void</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </code></pre></div>
 <p>Enjoy!</p>

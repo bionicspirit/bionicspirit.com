@@ -30,9 +30,9 @@
       <meta name="description" content="Traversable was a design mistake, is redundant and we should remove it" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -124,18 +124,18 @@ in its exposed signature, the API being error prone</li>
 the <code class="highlighter-rouge">Traversable</code> is a trait like the following:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Traversable</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">foreach</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">foreach</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>The standard library also has the venerable <code class="highlighter-rouge">Iterable</code> / <code class="highlighter-rouge">Iterator</code>:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Iterable</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">iterator</span><span class="o">()</span><span class="k">:</span> <span class="kt">Iterator</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">iterator</span><span class="o">()</span><span class="k">:</span> <span class="kt">Iterator</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
 <span class="o">}</span>
 
 <span class="k">trait</span> <span class="nc">Iterator</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">hasNext</span><span class="k">:</span> <span class="kt">Boolean</span>
-  <span class="k">def</span> <span class="n">next</span><span class="o">()</span><span class="k">:</span> <span class="kt">A</span>
+  <span class="k">def</span> <span class="nf">hasNext</span><span class="k">:</span> <span class="kt">Boolean</span>
+  <span class="k">def</span> <span class="nf">next</span><span class="o">()</span><span class="k">:</span> <span class="kt">A</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Can you spot the similarities?</p>
@@ -182,9 +182,9 @@ as championed by <a href="https://github.com/Reactive-Extensions/Rx.NET">Rx.NET<
 as the true dual of <code class="highlighter-rouge">Iterator</code>:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Observer</span><span class="o">[</span><span class="kt">-A</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">onNext</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
-  <span class="k">def</span> <span class="n">onComplete</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span>
-  <span class="k">def</span> <span class="n">onError</span><span class="o">(</span><span class="n">ex</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">onNext</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">onComplete</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">onError</span><span class="o">(</span><span class="n">ex</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>(Hello <strong><a href="https://monix.io/">Monix</a></strong> :-))</p>
@@ -208,7 +208,7 @@ traversable that can only be traversed once, like its name says.
 We've got this:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">TraversableOnce</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">foreach</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">foreach</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 <span class="o">}</span>
 
 <span class="k">trait</span> <span class="nc">Traversable</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="nc">extends</span> <span class="nc">TraversableOnce</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>

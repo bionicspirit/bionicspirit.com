@@ -32,9 +32,9 @@
       <meta name="description" content="Asynchrony is everywhere and it subsumes concurrency. Here&#x27;s what you can do." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -214,7 +214,7 @@ deal with asynchrony, some more successful than others.</p>
 <p>We like to pretend that we can describe functions that can convert
 asynchronous results to synchronous ones:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">await</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">await</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">A</span>
 </code></pre></div>
 <p>Fact of the matter is that we can't pretend that asynchronous
 processes are equivalent with normal functions. If you need a lesson
@@ -318,18 +318,18 @@ result.</p>
 
 <span class="k">type</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">(</span><span class="n">A</span> <span class="k">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Unit</span>
 
-<span class="k">def</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+<span class="k">def</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
   <span class="n">onFinish</span> <span class="k">=&gt;</span> <span class="o">{</span>
-    <span class="n">global</span><span class="o">.</span><span class="n">execute</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
-      <span class="k">def</span> <span class="n">run</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
-        <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span>
-        <span class="n">onFinish</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
+    <span class="nv">global</span><span class="o">.</span><span class="py">execute</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+      <span class="k">def</span> <span class="nf">run</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">2</span>
+        <span class="nf">onFinish</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
       <span class="o">}</span>
     <span class="o">})</span>
   <span class="o">}</span>
 
 <span class="c1">// Usage
-</span><span class="n">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
+</span><span class="nf">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
 <span class="c1">//=&gt; Result: 40
 </span></code></pre></div>
 <h3 id="31-sequencing-purgatory-of-side-effects"><a href="#h3-1" name="h3-1">3.1.</a> Sequencing (Purgatory of Side-effects)</h3>
@@ -337,18 +337,18 @@ result.</p>
 <p>Let's combine two asynchronous results, with the execution happening
 one after another, in a neat sequence:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
   <span class="n">onFinish</span> <span class="k">=&gt;</span> <span class="o">{</span>
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
-      <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+      <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span>
         <span class="c1">// Combining the two results
-</span>        <span class="n">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+</span>        <span class="nf">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
       <span class="o">}</span>
     <span class="o">}</span>
   <span class="o">}</span>
 
 <span class="c1">// Usage
-</span><span class="n">timesFour</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
+</span><span class="nf">timesFour</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
 <span class="c1">//=&gt; Result: 80
 </span></code></pre></div>
 <p>Looks simple now, but we are only combining two results, one after another.</p>
@@ -356,7 +356,7 @@ one after another, in a neat sequence:</p>
 <p>The big problem however is that <em>asynchrony infects everything it touches</em>.
 Let's assume for  the sake of argument that we start with a pure function:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">4</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="mi">4</span>
 </code></pre></div>
 <p>But then your enterprise architect, after hearing about these Enterprise JavaBeans and
 a lap dance, decides that you should depend on this asynchronous <code class="highlighter-rouge">timesTwo</code>
@@ -380,22 +380,22 @@ the naive way to do it is terribly wrong:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// REALLY BAD SAMPLE
 </span>
-<span class="k">def</span> <span class="n">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+<span class="k">def</span> <span class="nf">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
   <span class="n">onFinish</span> <span class="k">=&gt;</span> <span class="o">{</span>
     <span class="k">var</span> <span class="n">cacheA</span> <span class="k">=</span> <span class="mi">0</span>
 
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span> <span class="n">cacheA</span> <span class="k">=</span> <span class="n">a</span> <span class="o">}</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span> <span class="n">cacheA</span> <span class="k">=</span> <span class="n">a</span> <span class="o">}</span>
 
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span>
       <span class="c1">// Combining the two results
-</span>      <span class="n">onFinish</span><span class="o">(</span><span class="n">cacheA</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+</span>      <span class="nf">onFinish</span><span class="o">(</span><span class="n">cacheA</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
     <span class="o">}</span>
   <span class="o">}</span>
 
-<span class="n">timesFourInParallel</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
+<span class="nf">timesFourInParallel</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
 <span class="c1">//=&gt; Result: 80
 </span>
-<span class="n">timesFourInParallel</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
+<span class="nf">timesFourInParallel</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
 <span class="c1">//=&gt; Result: 40
 </span></code></pre></div>
 <p>This right here is an example showing <em>nondeterminism</em> in action. We
@@ -418,31 +418,31 @@ doing synchronization.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// BAD SAMPLE FOR THE JVM (only works for Javascript)
 </span>
-<span class="k">def</span> <span class="n">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+<span class="k">def</span> <span class="nf">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
   <span class="n">onFinish</span> <span class="k">=&gt;</span> <span class="o">{</span>
     <span class="k">var</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span> <span class="o">=</span> <span class="nc">Start</span>
 
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
       <span class="n">state</span> <span class="k">match</span> <span class="o">{</span>
         <span class="k">case</span> <span class="nc">Start</span> <span class="k">=&gt;</span>
           <span class="n">state</span> <span class="k">=</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)</span>
         <span class="k">case</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="k">=&gt;</span>
-          <span class="n">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+          <span class="nf">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
         <span class="k">case</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
           <span class="c1">// Can't be caught b/c async, hopefully it gets reported
-</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
       <span class="o">}</span>
     <span class="o">}</span>
 
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span>
       <span class="n">state</span> <span class="k">match</span> <span class="o">{</span>
         <span class="k">case</span> <span class="nc">Start</span> <span class="k">=&gt;</span>
           <span class="n">state</span> <span class="k">=</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)</span>
         <span class="k">case</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="k">=&gt;</span>
-          <span class="n">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+          <span class="nf">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
         <span class="k">case</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
           <span class="c1">// Can't be caught b/c async, hopefully it gets reported
-</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
       <span class="o">}</span>
     <span class="o">}</span>
   <span class="o">}</span>
@@ -461,19 +461,19 @@ be synchronized.</p>
 <p>One solution is to use <code class="highlighter-rouge">synchronized</code> blocks, also called <em>intrinsic locks</em>:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// We need a common reference to act as our monitor
-</span><span class="k">val</span> <span class="n">lock</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AnyRef</span>
+</span><span class="k">val</span> <span class="nv">lock</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AnyRef</span>
 <span class="k">var</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span> <span class="o">=</span> <span class="nc">Start</span>
 
-<span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
-  <span class="n">lock</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
+<span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+  <span class="nv">lock</span><span class="o">.</span><span class="py">synchronized</span> <span class="o">{</span>
     <span class="n">state</span> <span class="k">match</span> <span class="o">{</span>
       <span class="k">case</span> <span class="nc">Start</span> <span class="k">=&gt;</span>
         <span class="n">state</span> <span class="k">=</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)</span>
       <span class="k">case</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="n">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+        <span class="nf">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
       <span class="k">case</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
         <span class="c1">// Can't be caught b/c async, hopefully it gets reported
-</span>        <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+</span>        <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
     <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
@@ -499,37 +499,37 @@ which is perfect for this case:</p>
 <span class="k">import</span> <span class="nn">scala.annotation.tailrec</span>
 <span class="k">import</span> <span class="nn">java.util.concurrent.atomic.AtomicReference</span>
 
-<span class="k">def</span> <span class="n">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+<span class="k">def</span> <span class="nf">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
   <span class="n">onFinish</span> <span class="k">=&gt;</span> <span class="o">{</span>
-    <span class="k">val</span> <span class="n">state</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">[</span><span class="kt">State</span><span class="o">](</span><span class="nc">Start</span><span class="o">)</span>
+    <span class="k">val</span> <span class="nv">state</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">[</span><span class="kt">State</span><span class="o">](</span><span class="nc">Start</span><span class="o">)</span>
 
-    <span class="nd">@tailrec</span> <span class="k">def</span> <span class="n">onValueA</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
-      <span class="n">state</span><span class="o">.</span><span class="n">get</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="nd">@tailrec</span> <span class="k">def</span> <span class="nf">onValueA</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+      <span class="nv">state</span><span class="o">.</span><span class="py">get</span> <span class="k">match</span> <span class="o">{</span>
         <span class="k">case</span> <span class="nc">Start</span> <span class="k">=&gt;</span>
-          <span class="k">if</span> <span class="o">(!</span><span class="n">state</span><span class="o">.</span><span class="n">compareAndSet</span><span class="o">(</span><span class="nc">Start</span><span class="o">,</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)))</span>
-            <span class="n">onValueA</span><span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="c1">// retry
+          <span class="nf">if</span> <span class="o">(!</span><span class="nv">state</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="nc">Start</span><span class="o">,</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)))</span>
+            <span class="nf">onValueA</span><span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="c1">// retry
 </span>        <span class="k">case</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="k">=&gt;</span>
-          <span class="n">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+          <span class="nf">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
         <span class="k">case</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
           <span class="c1">// Can't be caught b/c async, hopefully it gets reported
-</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
       <span class="o">}</span>
 
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)(</span><span class="n">onValueA</span><span class="o">)</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)(</span><span class="n">onValueA</span><span class="o">)</span>
 
-    <span class="nd">@tailrec</span> <span class="k">def</span> <span class="n">onValueB</span><span class="o">(</span><span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
-      <span class="n">state</span><span class="o">.</span><span class="n">get</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="nd">@tailrec</span> <span class="k">def</span> <span class="nf">onValueB</span><span class="o">(</span><span class="n">b</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+      <span class="nv">state</span><span class="o">.</span><span class="py">get</span> <span class="k">match</span> <span class="o">{</span>
         <span class="k">case</span> <span class="nc">Start</span> <span class="k">=&gt;</span>
-          <span class="k">if</span> <span class="o">(!</span><span class="n">state</span><span class="o">.</span><span class="n">compareAndSet</span><span class="o">(</span><span class="nc">Start</span><span class="o">,</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)))</span>
-            <span class="n">onValueB</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="c1">// retry
+          <span class="nf">if</span> <span class="o">(!</span><span class="nv">state</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="nc">Start</span><span class="o">,</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)))</span>
+            <span class="nf">onValueB</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="c1">// retry
 </span>        <span class="k">case</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="k">=&gt;</span>
-          <span class="n">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+          <span class="nf">onFinish</span><span class="o">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
         <span class="k">case</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
           <span class="c1">// Can't be caught b/c async, hopefully it gets reported
-</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
       <span class="o">}</span>
 
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)(</span><span class="n">onValueB</span><span class="o">)</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)(</span><span class="n">onValueB</span><span class="o">)</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -557,7 +557,7 @@ define the above operation in a generic way:</p>
 
 <span class="k">type</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="k">=</span> <span class="o">(</span><span class="n">A</span> <span class="k">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Unit</span>
 
-<span class="k">def</span> <span class="n">mapBoth</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span>,<span class="kt">R</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">fb</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">B</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+<span class="k">def</span> <span class="nf">mapBoth</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span>,<span class="kt">R</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">fb</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">B</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
   <span class="c1">// Defines the state machine
 </span>  <span class="k">sealed</span> <span class="k">trait</span> <span class="nc">State</span><span class="o">[</span><span class="kt">+A</span>,<span class="kt">+B</span><span class="o">]</span>
   <span class="c1">// Initial state
@@ -568,64 +568,64 @@ define the above operation in a generic way:</p>
 </span>  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">WaitForB</span><span class="o">[</span><span class="kt">+A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">State</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">Nothing</span><span class="o">]</span>
 
   <span class="n">onFinish</span> <span class="k">=&gt;</span> <span class="o">{</span>
-    <span class="k">val</span> <span class="n">state</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">[</span><span class="kt">State</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">]](</span><span class="nc">Start</span><span class="o">)</span>
+    <span class="k">val</span> <span class="nv">state</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">[</span><span class="kt">State</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">]](</span><span class="nc">Start</span><span class="o">)</span>
 
-    <span class="nd">@tailrec</span> <span class="k">def</span> <span class="n">onValueA</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
-      <span class="n">state</span><span class="o">.</span><span class="n">get</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="nd">@tailrec</span> <span class="k">def</span> <span class="nf">onValueA</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+      <span class="nv">state</span><span class="o">.</span><span class="py">get</span> <span class="k">match</span> <span class="o">{</span>
         <span class="k">case</span> <span class="nc">Start</span> <span class="k">=&gt;</span>
-          <span class="k">if</span> <span class="o">(!</span><span class="n">state</span><span class="o">.</span><span class="n">compareAndSet</span><span class="o">(</span><span class="nc">Start</span><span class="o">,</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)))</span>
-            <span class="n">onValueA</span><span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="c1">// retry
+          <span class="nf">if</span> <span class="o">(!</span><span class="nv">state</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="nc">Start</span><span class="o">,</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)))</span>
+            <span class="nf">onValueA</span><span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="c1">// retry
 </span>        <span class="k">case</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="k">=&gt;</span>
-          <span class="n">onFinish</span><span class="o">(</span><span class="n">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">))</span>
+          <span class="nf">onFinish</span><span class="o">(</span><span class="nf">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">))</span>
         <span class="k">case</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
           <span class="c1">// Can't be caught b/c async, hopefully it gets reported
-</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
       <span class="o">}</span>
 
-    <span class="nd">@tailrec</span> <span class="k">def</span> <span class="n">onValueB</span><span class="o">(</span><span class="n">b</span><span class="k">:</span> <span class="kt">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
-      <span class="n">state</span><span class="o">.</span><span class="n">get</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="nd">@tailrec</span> <span class="k">def</span> <span class="nf">onValueB</span><span class="o">(</span><span class="n">b</span><span class="k">:</span> <span class="kt">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+      <span class="nv">state</span><span class="o">.</span><span class="py">get</span> <span class="k">match</span> <span class="o">{</span>
         <span class="k">case</span> <span class="nc">Start</span> <span class="k">=&gt;</span>
-          <span class="k">if</span> <span class="o">(!</span><span class="n">state</span><span class="o">.</span><span class="n">compareAndSet</span><span class="o">(</span><span class="nc">Start</span><span class="o">,</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)))</span>
-            <span class="n">onValueB</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="c1">// retry
+          <span class="nf">if</span> <span class="o">(!</span><span class="nv">state</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="nc">Start</span><span class="o">,</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="n">b</span><span class="o">)))</span>
+            <span class="nf">onValueB</span><span class="o">(</span><span class="n">b</span><span class="o">)</span> <span class="c1">// retry
 </span>        <span class="k">case</span> <span class="nc">WaitForB</span><span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="k">=&gt;</span>
-          <span class="n">onFinish</span><span class="o">(</span><span class="n">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">))</span>
+          <span class="nf">onFinish</span><span class="o">(</span><span class="nf">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">))</span>
         <span class="k">case</span> <span class="nc">WaitForA</span><span class="o">(</span><span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
           <span class="c1">// Can't be caught b/c async, hopefully it gets reported
-</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="n">state</span><span class="o">.</span><span class="n">toString</span><span class="o">)</span>
+</span>          <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
       <span class="o">}</span>
 
-    <span class="n">fa</span><span class="o">(</span><span class="n">onValueA</span><span class="o">)</span>
-    <span class="n">fb</span><span class="o">(</span><span class="n">onValueB</span><span class="o">)</span>
+    <span class="nf">fa</span><span class="o">(</span><span class="n">onValueA</span><span class="o">)</span>
+    <span class="nf">fb</span><span class="o">(</span><span class="n">onValueB</span><span class="o">)</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>And now we can define an operation similar to Scala's <code class="highlighter-rouge">Future.sequence</code>,
 because our will is strong and our courage immensurable 😇</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">sequence</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span> <span class="o">{</span>
-  <span class="nd">@tailrec</span> <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">]],</span> <span class="n">acc</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">sequence</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="nd">@tailrec</span> <span class="k">def</span> <span class="nf">loop</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Async</span><span class="o">[</span><span class="kt">A</span><span class="o">]],</span> <span class="n">acc</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span>
     <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
       <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span>
-        <span class="n">onFinish</span> <span class="k">=&gt;</span> <span class="n">acc</span><span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="n">onFinish</span><span class="o">(</span><span class="n">r</span><span class="o">.</span><span class="n">reverse</span><span class="o">))</span>
+        <span class="n">onFinish</span> <span class="k">=&gt;</span> <span class="nf">acc</span><span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="nf">onFinish</span><span class="o">(</span><span class="nv">r</span><span class="o">.</span><span class="py">reverse</span><span class="o">))</span>
       <span class="k">case</span> <span class="n">x</span> <span class="o">::</span> <span class="n">xs</span> <span class="k">=&gt;</span>
-        <span class="k">val</span> <span class="n">update</span> <span class="k">=</span> <span class="n">mapBoth</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">acc</span><span class="o">)(</span><span class="k">_</span> <span class="o">::</span> <span class="k">_</span><span class="o">)</span>
-        <span class="n">loop</span><span class="o">(</span><span class="n">xs</span><span class="o">,</span> <span class="n">update</span><span class="o">)</span>
+        <span class="k">val</span> <span class="nv">update</span> <span class="k">=</span> <span class="nf">mapBoth</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">acc</span><span class="o">)(</span><span class="k">_</span> <span class="o">::</span> <span class="k">_</span><span class="o">)</span>
+        <span class="nf">loop</span><span class="o">(</span><span class="n">xs</span><span class="o">,</span> <span class="n">update</span><span class="o">)</span>
     <span class="o">}</span>
 
-  <span class="k">val</span> <span class="n">empty</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span> <span class="k">_</span><span class="o">(</span><span class="nc">Nil</span><span class="o">)</span>
-  <span class="n">loop</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">empty</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">empty</span><span class="k">:</span> <span class="kt">Async</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span> <span class="nf">_</span><span class="o">(</span><span class="nc">Nil</span><span class="o">)</span>
+  <span class="nf">loop</span><span class="o">(</span><span class="n">list</span><span class="o">,</span> <span class="n">empty</span><span class="o">)</span>
 <span class="o">}</span>
 
 <span class="c1">// Invocation
-</span><span class="n">sequence</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="n">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">),</span> <span class="n">timesTwo</span><span class="o">(</span><span class="mi">30</span><span class="o">)))</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
-  <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $r"</span><span class="o">)</span>
+</span><span class="nf">sequence</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="nf">timesTwo</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">),</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">30</span><span class="o">)))</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
+  <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $r"</span><span class="o">)</span>
 <span class="o">}</span>
 <span class="c1">//=&gt; Result: List(20, 40, 60)
 </span></code></pre></div>
 <p>Oh, you really think we are done?</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">list</span> <span class="k">=</span> <span class="mf">0.</span><span class="n">until</span><span class="o">(</span><span class="mi">10000</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">).</span><span class="n">toList</span>
-<span class="n">sequence</span><span class="o">(</span><span class="n">list</span><span class="o">)(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Sum: ${r.sum}"</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">list</span> <span class="k">=</span> <span class="mf">0.</span><span class="nf">until</span><span class="o">(</span><span class="mi">10000</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">).</span><span class="py">toList</span>
+<span class="nf">sequence</span><span class="o">(</span><span class="n">list</span><span class="o">)(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Sum: ${r.sum}"</span><span class="o">))</span>
 </code></pre></div>
 <p>Behold the glorious memory error that will probably crash your program in production,
 being considered a fatal error that Scala's <code class="highlighter-rouge">NonFatal</code> does not catch:</p>
@@ -689,15 +689,15 @@ many combinators defined based on those primary operations:</p>
 
 <span class="k">trait</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span> <span class="o">{</span>
   <span class="c1">// abstract
-</span>  <span class="k">def</span> <span class="n">value</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Try</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span>
+</span>  <span class="k">def</span> <span class="nf">value</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Try</span><span class="o">[</span><span class="kt">T</span><span class="o">]]</span>
 
   <span class="c1">// abstract
-</span>  <span class="k">def</span> <span class="n">onComplete</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">Try</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nc">Unit</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+</span>  <span class="k">def</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="kt">Try</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nc">Unit</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 
   <span class="c1">// Transforms values
-</span>  <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">U</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">U</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">U</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+</span>  <span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">U</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">U</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">U</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
   <span class="c1">// Sequencing ;-)
-</span>  <span class="k">def</span> <span class="n">flatMap</span><span class="o">[</span><span class="kt">U</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">U</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">U</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+</span>  <span class="k">def</span> <span class="nf">flatMap</span><span class="o">[</span><span class="kt">U</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">U</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">U</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
   <span class="c1">// ...
 </span><span class="o">}</span>
 </code></pre></div>
@@ -744,14 +744,14 @@ come back until you do.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">scala.concurrent.</span><span class="o">{</span><span class="nc">Future</span><span class="o">,</span> <span class="nc">ExecutionContext</span><span class="o">}</span>
 
-<span class="k">def</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+<span class="k">def</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
   <span class="nc">Future</span><span class="o">(</span><span class="n">n</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
 
 <span class="c1">// Usage
 </span><span class="o">{</span>
   <span class="k">import</span> <span class="nn">scala.concurrent.ExecutionContext.Implicits.global</span>
 
-  <span class="n">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="n">onComplete</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
+  <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="py">onComplete</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
   <span class="c1">//=&gt; Result: Success(40)
 </span><span class="o">}</span>
 </code></pre></div>
@@ -761,14 +761,14 @@ execution context, it's going to run on a different thread.</p>
 
 <p>Now to do sequencing like in <a href="#h3-1">section 3.1</a>:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
-  <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">);</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nf">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">);</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 <span class="c1">// Usage
 </span><span class="o">{</span>
   <span class="k">import</span> <span class="nn">scala.concurrent.ExecutionContext.Implicits.global</span>
 
-  <span class="n">timesFour</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="n">onComplete</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
+  <span class="nf">timesFour</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="py">onComplete</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
   <span class="c1">//=&gt; Result: Success(80)
 </span><span class="o">}</span>
 </code></pre></div>
@@ -776,9 +776,9 @@ execution context, it's going to run on a different thread.</p>
 translated to nothing more than calls to <code class="highlighter-rouge">flatMap</code> and <code class="highlighter-rouge">map</code>, being
 literally equivalent with:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
-  <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="n">flatMap</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="py">map</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span>
       <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
     <span class="o">}</span>
   <span class="o">}</span>
@@ -788,10 +788,10 @@ your project, then you can do it like:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">scala.async.Async.</span><span class="o">{</span><span class="n">async</span><span class="o">,</span> <span class="n">await</span><span class="o">}</span>
 
-<span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+<span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
   <span class="n">async</span> <span class="o">{</span>
-    <span class="k">val</span> <span class="n">a</span> <span class="k">=</span> <span class="n">await</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">(</span><span class="n">a</span><span class="o">))</span>
-    <span class="k">val</span> <span class="n">b</span> <span class="k">=</span> <span class="n">await</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">(</span><span class="n">b</span><span class="o">))</span>
+    <span class="k">val</span> <span class="nv">a</span> <span class="k">=</span> <span class="nf">await</span><span class="o">(</span><span class="nf">timesTwo</span><span class="o">(</span><span class="n">a</span><span class="o">))</span>
+    <span class="k">val</span> <span class="nv">b</span> <span class="k">=</span> <span class="nf">await</span><span class="o">(</span><span class="nf">timesTwo</span><span class="o">(</span><span class="n">b</span><span class="o">))</span>
     <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
   <span class="o">}</span>
 </code></pre></div>
@@ -806,12 +806,12 @@ anonymous function and unfortunately Scala code is usually full of
 such expressions. This does not work:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// BAD SAMPLE
-</span><span class="k">def</span> <span class="n">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]])(</span><span class="k">implicit</span> <span class="n">ec</span><span class="o">;</span> <span class="nc">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+</span><span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]])(</span><span class="k">implicit</span> <span class="n">ec</span><span class="o">;</span> <span class="nc">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
   <span class="n">async</span> <span class="o">{</span>
     <span class="k">var</span> <span class="n">sum</span> <span class="k">=</span> <span class="mi">0</span>
     <span class="c1">// Nope, not going to work because "for" is translated to "foreach"
-</span>    <span class="k">for</span> <span class="o">(</span><span class="n">f</span> <span class="k">&lt;-</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">sum</span> <span class="o">+=</span> <span class="n">await</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
+</span>    <span class="nf">for</span> <span class="o">(</span><span class="n">f</span> <span class="k">&lt;-</span> <span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">sum</span> <span class="o">+=</span> <span class="nf">await</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
     <span class="o">}</span>
   <span class="o">}</span>
 </code></pre></div>
@@ -830,13 +830,13 @@ independent of each other, which means that we can call them in
 parallel. With <code class="highlighter-rouge">Future</code> this is easier, although its evaluation
 semantics can be a little confusing for beginners:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
   <span class="c1">// Future is eagerly evaluated, so this will trigger the
 </span>  <span class="c1">// execution of both before the composition happens
-</span>  <span class="k">val</span> <span class="n">fa</span> <span class="k">=</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
-  <span class="k">val</span> <span class="n">fb</span> <span class="k">=</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
+</span>  <span class="k">val</span> <span class="nv">fa</span> <span class="k">=</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">fb</span> <span class="k">=</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
 
-  <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">fa</span><span class="o">;</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">fb</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+  <span class="nf">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">fa</span><span class="o">;</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">fb</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
   <span class="c1">// fa.flatMap(a =&gt; fb.map(b =&gt; a + b))
 </span><span class="o">}</span>
 </code></pre></div>
@@ -848,8 +848,8 @@ before the composition happens.</p>
 <p>An alternative would be to use <code class="highlighter-rouge">Future.sequence</code>, which works for
 arbitrary collections:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
-  <span class="nc">Future</span><span class="o">.</span><span class="n">sequence</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">::</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">sum</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFourInParallel</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">Future</span><span class="o">.</span><span class="py">sequence</span><span class="o">(</span><span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">::</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">sum</span><span class="o">)</span>
 </code></pre></div>
 <p>This too can catch beginners by surprise, because those futures are
 going to be executed in parallel only if the collection given to
@@ -862,32 +862,32 @@ the name is sort of a misnomer obviously.</p>
 of the reliance on the <code class="highlighter-rouge">ExecutionContext</code> for executing callbacks). So
 retrying the sample in <a href="#h3-3">section 3.3</a>:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">mapBoth</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span>,<span class="kt">R</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">fb</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">mapBoth</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span>,<span class="kt">R</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">fb</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
 
-  <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">fa</span><span class="o">;</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">fb</span><span class="o">)</span> <span class="k">yield</span> <span class="n">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span>
+  <span class="nf">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">fa</span><span class="o">;</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">fb</span><span class="o">)</span> <span class="k">yield</span> <span class="nf">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span>
 <span class="o">}</span>
 
-<span class="k">def</span> <span class="n">sequence</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span>
+<span class="k">def</span> <span class="nf">sequence</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span> <span class="o">{</span>
 
-  <span class="k">val</span> <span class="n">seed</span> <span class="k">=</span> <span class="nc">Future</span><span class="o">.</span><span class="n">successful</span><span class="o">(</span><span class="nc">List</span><span class="o">.</span><span class="n">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
-  <span class="n">list</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">seed</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">f</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="k">for</span> <span class="o">(</span><span class="n">l</span> <span class="k">&lt;-</span> <span class="n">acc</span><span class="o">;</span> <span class="n">a</span> <span class="k">&lt;-</span> <span class="n">f</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">::</span> <span class="n">l</span><span class="o">)</span>
-    <span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">reverse</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">seed</span> <span class="k">=</span> <span class="nv">Future</span><span class="o">.</span><span class="py">successful</span><span class="o">(</span><span class="nv">List</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+  <span class="nv">list</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">seed</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">f</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">for</span> <span class="o">(</span><span class="n">l</span> <span class="k">&lt;-</span> <span class="n">acc</span><span class="o">;</span> <span class="n">a</span> <span class="k">&lt;-</span> <span class="n">f</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">::</span> <span class="n">l</span><span class="o">)</span>
+    <span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">reverse</span><span class="o">)</span>
 <span class="o">}</span>
 
 <span class="c1">// Invocation
 </span><span class="o">{</span>
   <span class="k">import</span> <span class="nn">scala.concurrent.ExecutionContext.Implicits.global</span>
 
-  <span class="n">sequence</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="n">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">),</span> <span class="n">timesTwo</span><span class="o">(</span><span class="mi">30</span><span class="o">))).</span><span class="n">foreach</span><span class="o">(</span><span class="n">println</span><span class="o">)</span>
+  <span class="nf">sequence</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="nf">timesTwo</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">),</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">30</span><span class="o">))).</span><span class="py">foreach</span><span class="o">(</span><span class="n">println</span><span class="o">)</span>
   <span class="c1">// =&gt; List(20, 40, 60)
 </span><span class="o">}</span>
 </code></pre></div>
 <p>And this time we get no <code class="highlighter-rouge">StackOverflowError</code>:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">list</span> <span class="k">=</span> <span class="mf">0.</span><span class="n">until</span><span class="o">(</span><span class="mi">10000</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">).</span><span class="n">toList</span>
-<span class="n">sequence</span><span class="o">(</span><span class="n">list</span><span class="o">).</span><span class="n">foreach</span><span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Sum: ${r.sum}"</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">list</span> <span class="k">=</span> <span class="mf">0.</span><span class="nf">until</span><span class="o">(</span><span class="mi">10000</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">).</span><span class="py">toList</span>
+<span class="nf">sequence</span><span class="o">(</span><span class="n">list</span><span class="o">).</span><span class="py">foreach</span><span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Sum: ${r.sum}"</span><span class="o">))</span>
 <span class="c1">//=&gt; Sum: 99990000
 </span></code></pre></div>
 <h3 id="44-performance-considerations"><a href="#4-4" name="h4-4">4.4.</a> Performance Considerations</h3>
@@ -1030,7 +1030,7 @@ something to avoid, because
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">monix.eval.Task</span>
 
-<span class="k">def</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+<span class="k">def</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
   <span class="nc">Task</span><span class="o">(</span><span class="n">n</span> <span class="o">*</span> <span class="mi">2</span><span class="o">)</span>
 
 <span class="c1">// Usage
@@ -1038,7 +1038,7 @@ something to avoid, because
   <span class="c1">// Our ExecutionContext needed on evaluation
 </span>  <span class="k">import</span> <span class="nn">monix.execution.Scheduler.Implicits.global</span>
 
-  <span class="n">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="n">foreach</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
+  <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="py">foreach</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
   <span class="c1">//=&gt; Result: 40
 </span><span class="o">}</span>
 </code></pre></div>
@@ -1053,15 +1053,15 @@ which is Monix's enhanced <code class="highlighter-rouge">ExecutionContext</code
 
 <p>Now to do sequencing like in <a href="#h3-1">section 3.1</a>:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
-  <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">);</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nf">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">);</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 
 <span class="c1">// Usage
 </span><span class="o">{</span>
   <span class="c1">// Our ExecutionContext needed on evaluation
 </span>  <span class="k">import</span> <span class="nn">monix.execution.Scheduler.Implicits.global</span>
 
-  <span class="n">timesFour</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="n">foreach</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
+  <span class="nf">timesFour</span><span class="o">(</span><span class="mi">20</span><span class="o">).</span><span class="py">foreach</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
   <span class="c1">//=&gt; Result: 80
 </span><span class="o">}</span>
 </code></pre></div>
@@ -1069,9 +1069,9 @@ which is Monix's enhanced <code class="highlighter-rouge">ExecutionContext</code
 is translated by the Scala compiler to nothing more than calls to
 <code class="highlighter-rouge">flatMap</code> and <code class="highlighter-rouge">map</code>, literally equivalent with:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
-  <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="n">flatMap</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
-    <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="n">map</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">}</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span> <span class="n">a</span> <span class="k">=&gt;</span>
+    <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="py">map</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">}</span>
   <span class="o">}</span>
 </code></pre></div>
 <h3 id="52-parallelism"><a href="#h5-2" name="h5-2">5.2.</a> Parallelism</h3>
@@ -1085,18 +1085,18 @@ switches for what is in essence sequential work.</p>
 <p>But first, translating the sample using <code class="highlighter-rouge">Future</code> does not work:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// BAD SAMPLE (for achieving parallelism, as this will be sequential)
-</span><span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+</span><span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
   <span class="c1">// Will not trigger execution b/c Task is lazy
-</span>  <span class="k">val</span> <span class="n">fa</span> <span class="k">=</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
-  <span class="k">val</span> <span class="n">fb</span> <span class="k">=</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
+</span>  <span class="k">val</span> <span class="nv">fa</span> <span class="k">=</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">fb</span> <span class="k">=</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
   <span class="c1">// Evaluation will be sequential b/c of laziness
-</span>  <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">fa</span><span class="o">;</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">fb</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span>  <span class="nf">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">fa</span><span class="o">;</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">fb</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>In order to achieve parallelism <code class="highlighter-rouge">Task</code> requires you to be explicit about it:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
-  <span class="nc">Task</span><span class="o">.</span><span class="n">mapBoth</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">),</span> <span class="n">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">))(</span><span class="k">_</span> <span class="o">+</span> <span class="k">_</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">timesFour</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">Task</span><span class="o">.</span><span class="py">mapBoth</span><span class="o">(</span><span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">),</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">))(</span><span class="k">_</span> <span class="o">+</span> <span class="k">_</span><span class="o">)</span>
 </code></pre></div>
 <p>Oh, does <code class="highlighter-rouge">mapBoth</code> seem familiar? If those two tasks fork threads on
 execution, then they will get executed in parallel as <code class="highlighter-rouge">mapBoth</code> starts
@@ -1113,10 +1113,10 @@ for getting a hint on how <code class="highlighter-rouge">Task</code> got implem
 in <a href="#h4-3">section 4.3</a>, except that you can see the laziness in
 the signature of <code class="highlighter-rouge">sequence</code>:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">sequence</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Task</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">seed</span> <span class="k">=</span> <span class="nc">Task</span><span class="o">.</span><span class="n">now</span><span class="o">(</span><span class="nc">List</span><span class="o">.</span><span class="n">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
-  <span class="n">list</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">seed</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">f</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="k">for</span> <span class="o">(</span><span class="n">l</span> <span class="k">&lt;-</span> <span class="n">acc</span><span class="o">;</span> <span class="n">a</span> <span class="k">&lt;-</span> <span class="n">f</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">::</span> <span class="n">l</span><span class="o">)</span>
-    <span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">reverse</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">sequence</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Task</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">seed</span> <span class="k">=</span> <span class="nv">Task</span><span class="o">.</span><span class="py">now</span><span class="o">(</span><span class="nv">List</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+  <span class="nv">list</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">seed</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">f</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nf">for</span> <span class="o">(</span><span class="n">l</span> <span class="k">&lt;-</span> <span class="n">acc</span><span class="o">;</span> <span class="n">a</span> <span class="k">&lt;-</span> <span class="n">f</span><span class="o">)</span> <span class="k">yield</span> <span class="n">a</span> <span class="o">::</span> <span class="n">l</span><span class="o">)</span>
+    <span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">reverse</span><span class="o">)</span>
 <span class="o">}</span>
 
 <span class="c1">// Invocation
@@ -1124,7 +1124,7 @@ the signature of <code class="highlighter-rouge">sequence</code>:</p>
   <span class="c1">// Our ExecutionContext needed on evaluation
 </span>  <span class="k">import</span> <span class="nn">monix.execution.Scheduler.Implicits.global</span>
 
-  <span class="n">sequence</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="n">timesTwo</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="n">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">),</span> <span class="n">timesTwo</span><span class="o">(</span><span class="mi">30</span><span class="o">))).</span><span class="n">foreach</span><span class="o">(</span><span class="n">println</span><span class="o">)</span>
+  <span class="nf">sequence</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="nf">timesTwo</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">),</span> <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">30</span><span class="o">))).</span><span class="py">foreach</span><span class="o">(</span><span class="n">println</span><span class="o">)</span>
   <span class="c1">// =&gt; List(20, 40, 60)
 </span><span class="o">}</span>
 </code></pre></div>
@@ -1207,10 +1207,10 @@ are tripped by the unchallenged belief that ";" defines sequencing.</em>"
   <span class="cm">/** Constructor (said to lift a value `A` in the `F[A]`
     * monadic context). Also part of `Applicative`, see below.
     */</span>
-  <span class="k">def</span> <span class="n">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
 
   <span class="cm">/** FTW */</span>
-  <span class="k">def</span> <span class="n">flatMap</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">flatMap</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>And providing an implementation for <code class="highlighter-rouge">Future</code>:</p>
@@ -1221,15 +1221,15 @@ are tripped by the unchallenged belief that ";" defines sequencing.</em>"
 </span><span class="k">class</span> <span class="nc">FutureMonad</span><span class="o">(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span>
   <span class="k">extends</span> <span class="nc">Monad</span><span class="o">[</span><span class="kt">Future</span><span class="o">]</span> <span class="o">{</span>
 
-  <span class="k">def</span> <span class="n">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
-    <span class="nc">Future</span><span class="o">.</span><span class="n">successful</span><span class="o">(</span><span class="n">a</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">Future</span><span class="o">.</span><span class="py">successful</span><span class="o">(</span><span class="n">a</span><span class="o">)</span>
 
-  <span class="k">def</span> <span class="n">flatMap</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
-    <span class="n">fa</span><span class="o">.</span><span class="n">flatMap</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">flatMap</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">fa</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">FutureMonad</span> <span class="o">{</span>
-  <span class="k">implicit</span> <span class="k">def</span> <span class="n">instance</span><span class="o">(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">FutureMonad</span> <span class="o">=</span>
+  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">instance</span><span class="o">(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">FutureMonad</span> <span class="o">=</span>
     <span class="k">new</span> <span class="nc">FutureMonad</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -1238,14 +1238,14 @@ that works with <code class="highlighter-rouge">Task</code>, <code class="highli
 great if the <code class="highlighter-rouge">flatMap</code> operation is stack-safe:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="cm">/** Calculates the N-th number in a Fibonacci series. */</span>
-<span class="k">def</span> <span class="n">fib</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]](</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Monad</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">BigInt</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">loop</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">BigInt</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">BigInt</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">BigInt</span><span class="o">]</span> <span class="k">=</span>
-    <span class="n">F</span><span class="o">.</span><span class="n">flatMap</span><span class="o">(</span><span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="o">{</span> <span class="n">n</span> <span class="k">=&gt;</span>
-      <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="n">b</span><span class="o">)</span>
-      <span class="k">else</span> <span class="n">loop</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">fib</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]](</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Monad</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">BigInt</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">a</span><span class="k">:</span> <span class="kt">BigInt</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">BigInt</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">BigInt</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">F</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="nv">F</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="o">{</span> <span class="n">n</span> <span class="k">=&gt;</span>
+      <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">)</span> <span class="nv">F</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="n">b</span><span class="o">)</span>
+      <span class="k">else</span> <span class="nf">loop</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="n">b</span><span class="o">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">)</span>
     <span class="o">}</span>
 
-  <span class="n">loop</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="nc">BigInt</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="nc">BigInt</span><span class="o">(</span><span class="mi">1</span><span class="o">))</span>
+  <span class="nf">loop</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="nc">BigInt</span><span class="o">(</span><span class="mi">0</span><span class="o">),</span> <span class="nc">BigInt</span><span class="o">(</span><span class="mi">1</span><span class="o">))</span>
 <span class="o">}</span>
 
 <span class="c1">// Usage:
@@ -1255,7 +1255,7 @@ great if the <code class="highlighter-rouge">flatMap</code> operation is stack-s
   <span class="k">import</span> <span class="nn">scala.concurrent.ExecutionContext.Implicits.global</span>
 
   <span class="c1">// Invocation
-</span>  <span class="n">fib</span><span class="o">[</span><span class="kt">Future</span><span class="o">](</span><span class="mi">40</span><span class="o">).</span><span class="n">foreach</span><span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="n">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $r"</span><span class="o">))</span>
+</span>  <span class="n">fib</span><span class="o">[</span><span class="kt">Future</span><span class="o">](</span><span class="mi">40</span><span class="o">).</span><span class="py">foreach</span><span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $r"</span><span class="o">))</span>
   <span class="c1">//=&gt; Result: 102334155
 </span><span class="o">}</span>
 </code></pre></div>
@@ -1276,23 +1276,23 @@ than monads 😏</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Functor</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span>
   <span class="cm">/** I hope we are all familiar with this one. */</span>
-  <span class="k">def</span> <span class="n">map</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
 <span class="o">}</span>
 
 <span class="k">trait</span> <span class="nc">Applicative</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="nc">extends</span> <span class="nc">Functor</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="o">{</span>
   <span class="cm">/** Constructor (lifts a value `A` in the `F[A]` applicative context). */</span>
-  <span class="k">def</span> <span class="n">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
 
   <span class="cm">/** Maps over two references at the same time.
     *
     * In other implementations the applicative operation is `ap`,
     * but `map2` is easier to understand.
     */</span>
-  <span class="k">def</span> <span class="n">map2</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span>,<span class="kt">R</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">fb</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">map2</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span>,<span class="kt">R</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">fb</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span>
 <span class="o">}</span>
 
 <span class="k">trait</span> <span class="nc">Monad</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="nc">extends</span> <span class="nc">Applicative</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">flatMap</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">flatMap</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>And to expand our <code class="highlighter-rouge">Future</code> implementation:</p>
@@ -1301,32 +1301,32 @@ than monads 😏</p>
 </span><span class="k">class</span> <span class="nc">FutureMonad</span><span class="o">(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span>
   <span class="k">extends</span> <span class="nc">Monad</span><span class="o">[</span><span class="kt">Future</span><span class="o">]</span> <span class="o">{</span>
 
-  <span class="k">def</span> <span class="n">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
-    <span class="nc">Future</span><span class="o">.</span><span class="n">successful</span><span class="o">(</span><span class="n">a</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">pure</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">a</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">Future</span><span class="o">.</span><span class="py">successful</span><span class="o">(</span><span class="n">a</span><span class="o">)</span>
 
-  <span class="k">def</span> <span class="n">flatMap</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
-    <span class="n">fa</span><span class="o">.</span><span class="n">flatMap</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">flatMap</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="nc">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">fa</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
 
-  <span class="k">def</span> <span class="n">map2</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span>,<span class="kt">R</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">fb</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">def</span> <span class="nf">map2</span><span class="o">[</span><span class="kt">A</span>,<span class="kt">B</span>,<span class="kt">R</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">fb</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">B</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">A</span><span class="o">,</span><span class="kt">B</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">R</span><span class="o">]</span> <span class="k">=</span>
     <span class="c1">// For Future there's no point in supplying an implementation that's
 </span>    <span class="c1">// not based on flatMap, but that's not the case for Task ;-)
-</span>    <span class="k">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">fa</span><span class="o">;</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">fb</span><span class="o">)</span> <span class="k">yield</span> <span class="n">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span>
+</span>    <span class="nf">for</span> <span class="o">(</span><span class="n">a</span> <span class="k">&lt;-</span> <span class="n">fa</span><span class="o">;</span> <span class="n">b</span> <span class="k">&lt;-</span> <span class="n">fb</span><span class="o">)</span> <span class="k">yield</span> <span class="nf">f</span><span class="o">(</span><span class="n">a</span><span class="o">,</span><span class="n">b</span><span class="o">)</span>
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">FutureMonad</span> <span class="o">{</span>
-  <span class="k">implicit</span> <span class="k">def</span> <span class="n">instance</span><span class="o">(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">FutureMonad</span> <span class="o">=</span>
+  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">instance</span><span class="o">(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">FutureMonad</span> <span class="o">=</span>
     <span class="k">new</span> <span class="nc">FutureMonad</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>So we can now define generic functions based on <code class="highlighter-rouge">Applicative</code> which is going
 to work for <code class="highlighter-rouge">Future</code>, <code class="highlighter-rouge">Task</code>, etc:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">sequence</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">sequence</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]])</span>
   <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Applicative</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">List</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="k">=</span> <span class="o">{</span>
 
-  <span class="k">val</span> <span class="n">seed</span> <span class="k">=</span> <span class="n">F</span><span class="o">.</span><span class="n">pure</span><span class="o">(</span><span class="nc">List</span><span class="o">.</span><span class="n">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
-  <span class="k">val</span> <span class="n">r</span> <span class="k">=</span> <span class="n">list</span><span class="o">.</span><span class="n">foldLeft</span><span class="o">(</span><span class="n">seed</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">.</span><span class="n">map2</span><span class="o">(</span><span class="n">acc</span><span class="o">,</span><span class="n">e</span><span class="o">)((</span><span class="n">l</span><span class="o">,</span><span class="n">a</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">::</span> <span class="n">l</span><span class="o">))</span>
-  <span class="n">F</span><span class="o">.</span><span class="n">map</span><span class="o">(</span><span class="n">r</span><span class="o">)(</span><span class="k">_</span><span class="o">.</span><span class="n">reverse</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">seed</span> <span class="k">=</span> <span class="nv">F</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="nv">List</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+  <span class="k">val</span> <span class="nv">r</span> <span class="k">=</span> <span class="nv">list</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">seed</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">F</span><span class="o">.</span><span class="py">map2</span><span class="o">(</span><span class="n">acc</span><span class="o">,</span><span class="n">e</span><span class="o">)((</span><span class="n">l</span><span class="o">,</span><span class="n">a</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">::</span> <span class="n">l</span><span class="o">))</span>
+  <span class="nv">F</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">r</span><span class="o">)(</span><span class="nv">_</span><span class="o">.</span><span class="py">reverse</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p class="extra-info">
@@ -1346,7 +1346,7 @@ Thinking of Haskell's and Scalaz's <code class="highlighter-rouge">IO</code>, we
 defined a type-class called <a href="https://github.com/functional-streams-for-scala/fs2/blob/series/1.0/core/shared/src/main/scala/fs2/util/Effect.scala">Effect</a> that goes like this (simplified):</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Effect</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="nc">extends</span> <span class="nc">Monad</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">unsafeRunAsync</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">Try</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">unsafeRunAsync</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">Try</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>This looks like our initial <code class="highlighter-rouge">Async</code> type, very much similar with

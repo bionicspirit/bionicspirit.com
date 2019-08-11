@@ -31,9 +31,9 @@
       <meta name="description" content="Server, VoIP, FreeSWITCH, Javascript" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -271,7 +271,7 @@ tutorial is based on the default settings.</p>
   following code:
 </p>
 
-<div class="highlight"><pre class="highlight javascript"><code><span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="s1">'sofia/external/$number@provider'</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="dl">'</span><span class="s1">sofia/external/$number@provider</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">// The following line is a deprecated method </span>
 <span class="c1">// session.originate(undefined, 'sofia/external/$number@provider'); </span>
 
@@ -279,7 +279,7 @@ tutorial is based on the default settings.</p>
  
 <span class="k">if</span> <span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">ready</span><span class="p">())</span> <span class="p">{</span> 
     <span class="nx">session</span><span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-    <span class="nx">session</span><span class="p">.</span><span class="nx">streamFile</span><span class="p">(</span><span class="s1">'/path/to/your.wav'</span><span class="p">);</span>
+    <span class="nx">session</span><span class="p">.</span><span class="nx">streamFile</span><span class="p">(</span><span class="dl">'</span><span class="s1">/path/to/your.wav</span><span class="dl">'</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 <p> 
@@ -318,8 +318,8 @@ tutorial is based on the default settings.</p>
 </code></pre></div> 
 Or in your script:
 
-<div class="highlight"><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="s2">"{origination_caller_id_number=1234567}"</span>
-                          <span class="o">+</span> <span class="s2">"sofia/external/$number@provider"</span><span class="p">);</span>
+<div class="highlight"><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="dl">"</span><span class="s2">{origination_caller_id_number=1234567}</span><span class="dl">"</span>
+                          <span class="o">+</span> <span class="dl">"</span><span class="s2">sofia/external/$number@provider</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div> 
 <p> 
   For the B-leg of a bridged connection, you either set
@@ -346,28 +346,28 @@ Or in your script:
 </p>
 
 <div class="highlight"><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">makeCall</span><span class="p">(</span><span class="nx">nr_or_tries</span><span class="p">)</span> <span class="p">{</span> 
-    <span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="s1">'sofia/external/$number@provider'</span><span class="p">);</span>
+    <span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="dl">'</span><span class="s1">sofia/external/$number@provider</span><span class="dl">'</span><span class="p">);</span>
     <span class="c1">// The following line is a deprecated method </span>
     <span class="c1">//session.originate(undefined, 'sofia/external/$number@provider'); </span>
  
     <span class="nx">session</span><span class="p">.</span><span class="nx">waitForAnswer</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
  
-    <span class="k">if</span> <span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">cause</span> <span class="o">==</span> <span class="s2">"USER_BUSY"</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">if</span> <span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">cause</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">USER_BUSY</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span> 
         <span class="c1">// not sure if this is necessary </span>
 	<span class="c1">// session.hangup(); </span>
  
 	<span class="k">if</span> <span class="p">(</span><span class="nx">nr_or_tries</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> 
-	    <span class="nx">console_log</span><span class="p">(</span><span class="s2">"Action: Trying again!"</span><span class="p">);</span>
+	    <span class="nx">console_log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Action: Trying again!</span><span class="dl">"</span><span class="p">);</span>
 	    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 	<span class="p">}</span> 
  
-	<span class="nx">console_log</span><span class="p">(</span><span class="s2">"Action: Cannot try again, skipping!"</span><span class="p">);</span>
+	<span class="nx">console_log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Action: Cannot try again, skipping!</span><span class="dl">"</span><span class="p">);</span>
     <span class="p">}</span> 
  
  
     <span class="k">if</span> <span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">ready</span><span class="p">())</span> <span class="p">{</span> 
         <span class="nx">session</span><span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-	<span class="nx">session</span><span class="p">.</span><span class="nx">streamFile</span><span class="p">(</span><span class="s1">'/path/to/your.wav'</span><span class="p">);</span>
+	<span class="nx">session</span><span class="p">.</span><span class="nx">streamFile</span><span class="p">(</span><span class="dl">'</span><span class="s1">/path/to/your.wav</span><span class="dl">'</span><span class="p">);</span>
 	<span class="nx">session</span><span class="p">.</span><span class="nx">hangup</span><span class="p">();</span>
     <span class="p">}</span> 
 <span class="p">}</span> 
@@ -402,7 +402,7 @@ Or in your script:
   after you execute the <i>originate</i> command, you have to execute
   the following:
  
-  <div class="highlight"><pre class="highlight javascript"><code><span class="nx">session</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span><span class="s2">"start_dtmf"</span><span class="p">);</span></code></pre></div>
+  <div class="highlight"><pre class="highlight javascript"><code><span class="nx">session</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span><span class="dl">"</span><span class="s2">start_dtmf</span><span class="dl">"</span><span class="p">);</span></code></pre></div>
 </p> 
  
 <p> 
@@ -416,20 +416,20 @@ Or in your script:
 <div class="highlight"><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="cm">/*... params ... */</span><span class="p">);</span>
 <span class="c1">// The following line is a deprecated method </span>
 <span class="c1">//session.originate(/*... params ... */); </span>
-<span class="nx">session</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span><span class="s2">"start_dtmf"</span><span class="p">);</span>
+<span class="nx">session</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span><span class="dl">"</span><span class="s2">start_dtmf</span><span class="dl">"</span><span class="p">);</span>
  
 <span class="kd">var</span> <span class="nx">on_event</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">arg</span> <span class="p">)</span> <span class="p">{</span> 
  
     <span class="c1">// we are only concerned with "dtmf" event types </span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">!=</span> <span class="s2">"dtmf"</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">type</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">dtmf</span><span class="dl">"</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
  
-    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">digit</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">)</span> <span class="p">{</span> 
-        <span class="k">return</span> <span class="s2">"seek:0"</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">digit</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">1</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">return</span> <span class="dl">"</span><span class="s2">seek:0</span><span class="dl">"</span><span class="p">;</span>
     <span class="p">}</span> 
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">digit</span> <span class="o">==</span> <span class="s2">"2"</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">digit</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">2</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span> 
  
         <span class="nx">session</span><span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
-	<span class="nx">session</span><span class="p">.</span><span class="nx">streamFile</span><span class="p">(</span><span class="s2">"/path/to/another.wav"</span><span class="p">);</span>
+	<span class="nx">session</span><span class="p">.</span><span class="nx">streamFile</span><span class="p">(</span><span class="dl">"</span><span class="s2">/path/to/another.wav</span><span class="dl">"</span><span class="p">);</span>
  
 	<span class="cm">/* current audio file is stopped
 	* on returning false
@@ -446,7 +446,7 @@ Or in your script:
  
 <span class="k">if</span> <span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">ready</span><span class="p">())</span> <span class="p">{</span> 
     <span class="nx">session</span><span class="p">.</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
-    <span class="nx">session</span><span class="p">.</span><span class="nx">streamFile</span><span class="p">(</span><span class="s2">"/path/to/your.wav"</span><span class="p">,</span> <span class="nx">on_event</span><span class="p">);</span>
+    <span class="nx">session</span><span class="p">.</span><span class="nx">streamFile</span><span class="p">(</span><span class="dl">"</span><span class="s2">/path/to/your.wav</span><span class="dl">"</span><span class="p">,</span> <span class="nx">on_event</span><span class="p">);</span>
 <span class="p">}</span></code></pre></div>
  
 <p>
@@ -464,14 +464,14 @@ Or in your script:
 </p>
 
 <div class="highlight"><pre class="highlight javascript"><code><span class="c1">// the original session </span>
-<span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="s1">'sofia/external/$number@provider'</span><span class="p">);</span>
+<span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="dl">'</span><span class="s1">sofia/external/$number@provider</span><span class="dl">'</span><span class="p">);</span>
 <span class="c1">// The following line is a deprecated method </span>
 <span class="c1">// session.originate(undefined, 'sofia/external/$number@provider'); </span>
 
 <span class="nx">session</span><span class="p">.</span><span class="nx">answer</span><span class="p">();</span>
 
 <span class="k">if</span> <span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">ready</span><span class="p">())</span> <span class="p">{</span> 
-    <span class="kd">var</span> <span class="nx">new_session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="s1">'sofia/external/$another_number&gt;@provider'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">new_session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="dl">'</span><span class="s1">sofia/external/$another_number&gt;@provider</span><span class="dl">'</span><span class="p">);</span>
     <span class="c1">// The following line is a deprecated method </span>
     <span class="c1">//new_session.originate(session, 'sofia/external/$another_number@provider'); </span>
     <span class="nx">new_session</span><span class="p">.</span><span class="nx">answer</span><span class="p">();</span>
@@ -548,20 +548,20 @@ Or in your script:
 <span class="c1"># make sure it's located in your @USE paths </span>
 <span class="k">use</span> <span class="nn">FreeSWITCH::</span><span class="nv">Client</span><span class="p">;</span>
 
-<span class="k">my</span> <span class="nv">$fs</span> <span class="o">=</span> <span class="nv">init</span> <span class="nn">FreeSWITCH::</span><span class="nv">Client</span> <span class="p">{</span><span class="o">-</span><span class="nv">password</span> <span class="o">=&gt;</span> <span class="s">'ClueCon'</span><span class="p">}</span> <span class="ow">or</span> <span class="nb">die</span> <span class="s">"Error: $@"</span><span class="p">;</span>
+<span class="k">my</span> <span class="nv">$fs</span> <span class="o">=</span> <span class="nv">init</span> <span class="nn">FreeSWITCH::</span><span class="nv">Client</span> <span class="p">{</span><span class="o">-</span><span class="nv">password</span> <span class="o">=&gt;</span> <span class="p">'</span><span class="s1">ClueCon</span><span class="p">'}</span> <span class="ow">or</span> <span class="nb">die</span> <span class="p">"</span><span class="s2">Error: $@</span><span class="p">";</span>
 
 <span class="c1"># shows number of active channels ... </span>
 <span class="c1"># useful when you want to control the maximum number of </span>
 <span class="c1"># calls made simultaneously </span>
 
-<span class="nv">$reply</span> <span class="o">=</span> <span class="nv">$fs</span><span class="o">-&gt;</span><span class="nv">command</span><span class="p">(</span><span class="s">"show channels"</span><span class="p">);</span>
-<span class="k">print</span> <span class="s">"Channels\n------------\n$reply\n"</span><span class="p">;</span>
+<span class="nv">$reply</span> <span class="o">=</span> <span class="nv">$fs</span><span class="o">-&gt;</span><span class="nv">command</span><span class="p">("</span><span class="s2">show channels</span><span class="p">");</span>
+<span class="k">print</span> <span class="p">"</span><span class="s2">Channels</span><span class="se">\n</span><span class="s2">------------</span><span class="se">\n</span><span class="si">$reply</span><span class="se">\n</span><span class="p">";</span>
 
 <span class="c1"># calls our script, that initiates a call </span>
 <span class="c1"># the command is non-blocking, so you can make multiple </span>
 <span class="c1"># calls in parallel </span>
 
-<span class="nv">$fs</span><span class="o">-&gt;</span><span class="nv">command</span><span class="p">(</span><span class="s">"jsrun dialer.js"</span><span class="p">);</span>
+<span class="nv">$fs</span><span class="o">-&gt;</span><span class="nv">command</span><span class="p">("</span><span class="s2">jsrun dialer.js</span><span class="p">");</span>
 
 <span class="nv">$fs</span><span class="o">-&gt;</span><span class="nv">disconnect</span><span class="p">();</span></code></pre></div>
 

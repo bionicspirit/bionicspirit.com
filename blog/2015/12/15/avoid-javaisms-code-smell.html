@@ -31,9 +31,9 @@
       <meta name="description" content="Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -114,11 +114,11 @@ producing the desired effects. Things like database access, for both
 reads and writes. In true Java spirit, lets build our noun:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">DBService</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">)</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">ItemConfig</span><span class="o">]</span>
-  <span class="k">def</span> <span class="n">saveItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">config</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">)</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">ItemConfig</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">saveItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">config</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 
-  <span class="k">def</span> <span class="n">readDatapoints</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">offset</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Datapoint</span><span class="o">]</span>
-  <span class="k">def</span> <span class="n">persistDatapoint</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">dp</span><span class="k">:</span> <span class="kt">Datapoint</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">readDatapoints</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">offset</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Datapoint</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">persistDatapoint</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">dp</span><span class="k">:</span> <span class="kt">Datapoint</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>This interface is reasonably abstract, meaning we aren't leaking too
@@ -129,13 +129,13 @@ works for a text file, PostgreSQL, MongoDB or what have you. So now we
 can depend on it:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">ItemActor</span><span class="o">(</span><span class="n">db</span><span class="k">:</span> <span class="kt">DBService</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">receive</span> <span class="k">=</span> <span class="o">{</span>
     <span class="k">case</span> <span class="nc">Init</span><span class="o">(</span><span class="n">uuid</span><span class="o">)</span> <span class="k">=&gt;</span>
-      <span class="k">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="n">db</span><span class="o">.</span><span class="n">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
-        <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">))</span>
+      <span class="nf">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="nv">db</span><span class="o">.</span><span class="py">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
+        <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">))</span>
   <span class="o">}</span>
 
-  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">???</span>
+  <span class="k">def</span> <span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">???</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Of course, if you've got masochistic tendencies, you might prefer
@@ -148,13 +148,13 @@ as Guice, only at compile-time:</p>
   <span class="n">self</span><span class="k">:</span> <span class="kt">DBServiceComponent</span> <span class="o">=&gt;</span>
 
   <span class="k">class</span> <span class="nc">ItemActor</span> <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
-    <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">def</span> <span class="nf">receive</span> <span class="k">=</span> <span class="o">{</span>
       <span class="k">case</span> <span class="nc">Init</span><span class="o">(</span><span class="n">uuid</span><span class="o">)</span> <span class="k">=&gt;</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="n">dbService</span><span class="o">.</span><span class="n">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
-          <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">))</span>
+        <span class="nf">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="nv">dbService</span><span class="o">.</span><span class="py">readItemConfig</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
+          <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">))</span>
     <span class="o">}</span>
 
-    <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">???</span>
+    <span class="k">def</span> <span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">???</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -175,13 +175,13 @@ splitting this interface into smaller modules. Our <code class="highlighter-roug
 interface does too much, or so the popular wisdom would say.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">ItemConfigsRepository</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">read</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">)</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">ItemConfig</span><span class="o">]</span>
-  <span class="k">def</span> <span class="n">save</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">config</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">read</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">)</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">ItemConfig</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">save</span><span class="o">(</span><span class="n">uuid</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">config</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 <span class="o">}</span>
 
 <span class="k">trait</span> <span class="nc">DatapointsRepository</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">readList</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">offset</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Datapoint</span><span class="o">]</span>
-  <span class="k">def</span> <span class="n">persist</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">dp</span><span class="k">:</span> <span class="kt">Datapoint</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">readList</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">offset</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Datapoint</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">persist</span><span class="o">(</span><span class="n">item</span><span class="k">:</span> <span class="kt">UUID</span><span class="o">,</span> <span class="n">dp</span><span class="k">:</span> <span class="kt">Datapoint</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>That feels better, right? By splitting functionality in smaller units
@@ -192,17 +192,17 @@ woes. Wrong! Now we've got two problems:</p>
   <span class="o">(</span><span class="n">icsRepo</span><span class="k">:</span> <span class="kt">ItemConfigsRepository</span><span class="o">,</span> <span class="n">dpsRepo</span><span class="k">:</span> <span class="kt">DatapointsRepository</span><span class="o">)</span>
   <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
   
-  <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">receive</span> <span class="k">=</span> <span class="o">{</span>
     <span class="k">case</span> <span class="nc">Init</span><span class="o">(</span><span class="n">uuid</span><span class="o">)</span> <span class="k">=&gt;</span>
-      <span class="k">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="n">icsRepo</span><span class="o">.</span><span class="n">read</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
-        <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="nc">State</span><span class="o">.</span><span class="n">empty</span><span class="o">))</span>
+      <span class="nf">for</span> <span class="o">(</span><span class="n">cfg</span> <span class="k">&lt;-</span> <span class="nv">icsRepo</span><span class="o">.</span><span class="py">read</span><span class="o">(</span><span class="n">uuid</span><span class="o">))</span>
+        <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="nv">State</span><span class="o">.</span><span class="py">empty</span><span class="o">))</span>
   <span class="o">}</span>
 
-  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
     <span class="k">case</span> <span class="nc">Signal</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
-      <span class="k">val</span> <span class="n">newState</span> <span class="k">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
-      <span class="n">dpsRepo</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">state</span><span class="o">.</span><span class="n">powerOutput</span><span class="o">)</span>
-      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
+      <span class="k">val</span> <span class="nv">newState</span> <span class="k">=</span> <span class="nv">state</span><span class="o">.</span><span class="py">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
+      <span class="nv">dpsRepo</span><span class="o">.</span><span class="py">persist</span><span class="o">(</span><span class="nv">cfg</span><span class="o">.</span><span class="py">uuid</span><span class="o">,</span> <span class="nv">state</span><span class="o">.</span><span class="py">powerOutput</span><span class="o">)</span>
+      <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -222,12 +222,12 @@ with all the constructor annoyances. Oh, except when you've got more
 to add, things unrelated to the actual business logic, like persisting
 more stuff:</p>
 
-<div class="highlight"><pre class="highlight scala"><code>  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+<div class="highlight"><pre class="highlight scala"><code>  <span class="k">def</span> <span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
     <span class="k">case</span> <span class="nc">Signal</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
-      <span class="k">val</span> <span class="n">newState</span> <span class="k">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
-      <span class="n">dpsRepo</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">state</span><span class="o">.</span><span class="n">powerOutput</span><span class="o">)</span>
-      <span class="n">dpsRepo</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">cfg</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">state</span><span class="o">.</span><span class="n">basepoint</span><span class="o">)</span> <span class="c1">// &lt;-- here
-</span>      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
+      <span class="k">val</span> <span class="nv">newState</span> <span class="k">=</span> <span class="nv">state</span><span class="o">.</span><span class="py">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
+      <span class="nv">dpsRepo</span><span class="o">.</span><span class="py">persist</span><span class="o">(</span><span class="nv">cfg</span><span class="o">.</span><span class="py">uuid</span><span class="o">,</span> <span class="nv">state</span><span class="o">.</span><span class="py">powerOutput</span><span class="o">)</span>
+      <span class="nv">dpsRepo</span><span class="o">.</span><span class="py">persist</span><span class="o">(</span><span class="nv">cfg</span><span class="o">.</span><span class="py">uuid</span><span class="o">,</span> <span class="nv">state</span><span class="o">.</span><span class="py">basepoint</span><span class="o">)</span> <span class="c1">// &lt;-- here
+</span>      <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
   <span class="o">}</span>
 </code></pre></div>
 <p>So now with mocks, your tests are broken even though the business
@@ -257,32 +257,32 @@ sample above using <a href="https://github.com/monifu/monifu">Monifu</a>:</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">ItemActor</span><span class="o">(</span><span class="n">output</span><span class="k">:</span> <span class="kt">Channel</span><span class="o">[</span><span class="kt">Signal</span><span class="o">])</span>
   <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
 
-  <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">receive</span> <span class="k">=</span> <span class="o">{</span>
     <span class="k">case</span> <span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span> <span class="o">=&gt;</span>
-      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="nc">State</span><span class="o">.</span><span class="n">empty</span><span class="o">))</span>
+      <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="nv">State</span><span class="o">.</span><span class="py">empty</span><span class="o">))</span>
   <span class="o">}</span>
 
-  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span><span class="o">,</span> <span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">)</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
     <span class="k">case</span> <span class="nc">Signal</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
-      <span class="k">val</span> <span class="n">newState</span> <span class="k">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
-      <span class="n">output</span><span class="o">.</span><span class="n">pushNext</span><span class="o">(</span><span class="n">newState</span><span class="o">)</span>
-      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
+      <span class="k">val</span> <span class="nv">newState</span> <span class="k">=</span> <span class="nv">state</span><span class="o">.</span><span class="py">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>
+      <span class="nv">output</span><span class="o">.</span><span class="py">pushNext</span><span class="o">(</span><span class="n">newState</span><span class="o">)</span>
+      <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">newState</span><span class="o">))</span>
       
     <span class="k">case</span> <span class="n">cfg</span><span class="k">:</span> <span class="kt">ItemConfig</span> <span class="o">=&gt;</span>
-      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">state</span><span class="o">))</span>
+      <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">cfg</span><span class="o">,</span> <span class="n">state</span><span class="o">))</span>
   <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="c1">// ...
 // in a galaxy far, far away
 </span>
-<span class="n">dbConfigSource</span><span class="o">.</span><span class="n">subscribe</span> <span class="o">{</span> <span class="n">config</span> <span class="k">=&gt;</span>
+<span class="nv">dbConfigSource</span><span class="o">.</span><span class="py">subscribe</span> <span class="o">{</span> <span class="n">config</span> <span class="k">=&gt;</span>
   <span class="n">actor</span> <span class="o">!</span> <span class="n">itemConfig</span>
 <span class="o">}</span>
 
-<span class="n">output</span><span class="o">.</span><span class="n">subscribe</span> <span class="o">{</span> <span class="n">signal</span> <span class="k">=&gt;</span>
-  <span class="n">dbService</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">signal</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">powerOutput</span><span class="o">)</span>
-  <span class="n">dbService</span><span class="o">.</span><span class="n">persist</span><span class="o">(</span><span class="n">signal</span><span class="o">.</span><span class="n">uuid</span><span class="o">,</span> <span class="n">signal</span><span class="o">.</span><span class="n">basepoint</span><span class="o">)</span>
+<span class="nv">output</span><span class="o">.</span><span class="py">subscribe</span> <span class="o">{</span> <span class="n">signal</span> <span class="k">=&gt;</span>
+  <span class="nv">dbService</span><span class="o">.</span><span class="py">persist</span><span class="o">(</span><span class="nv">signal</span><span class="o">.</span><span class="py">uuid</span><span class="o">,</span> <span class="nv">signal</span><span class="o">.</span><span class="py">powerOutput</span><span class="o">)</span>
+  <span class="nv">dbService</span><span class="o">.</span><span class="py">persist</span><span class="o">(</span><span class="nv">signal</span><span class="o">.</span><span class="py">uuid</span><span class="o">,</span> <span class="nv">signal</span><span class="o">.</span><span class="py">basepoint</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>OK, I know that Akka actors are cool and all, this is not about you
@@ -290,28 +290,28 @@ using or not Akka actors. So lets implement the Observer pattern on
 top of Akka actors to see how that looks like:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">MyActor</span> <span class="k">extends</span> <span class="nc">Actor</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">receive</span> <span class="k">=</span> <span class="n">active</span><span class="o">(</span><span class="nc">State</span><span class="o">.</span><span class="n">empty</span><span class="o">,</span> <span class="nc">Set</span><span class="o">.</span><span class="n">empty</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">receive</span> <span class="k">=</span> <span class="nf">active</span><span class="o">(</span><span class="nv">State</span><span class="o">.</span><span class="py">empty</span><span class="o">,</span> <span class="nv">Set</span><span class="o">.</span><span class="py">empty</span><span class="o">)</span>
 
-  <span class="k">def</span> <span class="n">active</span><span class="o">(</span><span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">,</span> <span class="n">subscribers</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">ActorRef</span><span class="o">])</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">active</span><span class="o">(</span><span class="n">state</span><span class="k">:</span> <span class="kt">State</span><span class="o">,</span> <span class="n">subscribers</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">ActorRef</span><span class="o">])</span><span class="k">:</span> <span class="kt">Receive</span> <span class="o">=</span> <span class="o">{</span>
     <span class="k">case</span> <span class="s">"register"</span> <span class="k">=&gt;</span>
-      <span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="n">sender</span><span class="o">()</span>
-      <span class="k">if</span> <span class="o">(!</span><span class="n">subscribers</span><span class="o">.</span><span class="n">contains</span><span class="o">(</span><span class="n">ref</span><span class="o">))</span> <span class="o">{</span>
-        <span class="n">context</span><span class="o">.</span><span class="n">watch</span><span class="o">(</span><span class="n">ref</span><span class="o">)</span>
-        <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">subscribers</span> <span class="o">+</span> <span class="n">ref</span><span class="o">))</span>
+      <span class="k">val</span> <span class="nv">ref</span> <span class="k">=</span> <span class="nf">sender</span><span class="o">()</span>
+      <span class="nf">if</span> <span class="o">(!</span><span class="nv">subscribers</span><span class="o">.</span><span class="py">contains</span><span class="o">(</span><span class="n">ref</span><span class="o">))</span> <span class="o">{</span>
+        <span class="nv">context</span><span class="o">.</span><span class="py">watch</span><span class="o">(</span><span class="n">ref</span><span class="o">)</span>
+        <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">subscribers</span> <span class="o">+</span> <span class="n">ref</span><span class="o">))</span>
       <span class="o">}</span>
 
     <span class="k">case</span> <span class="nc">Terminated</span><span class="o">(</span><span class="n">ref</span><span class="o">)</span> <span class="k">=&gt;</span>
-      <span class="n">context</span><span class="o">.</span><span class="n">unwatch</span><span class="o">(</span><span class="n">ref</span><span class="o">)</span>
-      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">subscribers</span> <span class="o">-</span> <span class="n">sender</span><span class="o">))</span>
+      <span class="nv">context</span><span class="o">.</span><span class="py">unwatch</span><span class="o">(</span><span class="n">ref</span><span class="o">)</span>
+      <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">subscribers</span> <span class="o">-</span> <span class="n">sender</span><span class="o">))</span>
 
     <span class="k">case</span> <span class="nc">Signal</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
-      <span class="k">val</span> <span class="n">newState</span> <span class="k">=</span> <span class="n">state</span><span class="o">.</span><span class="n">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>      
-      <span class="k">for</span> <span class="o">(</span><span class="n">subscriber</span> <span class="k">&lt;-</span> <span class="n">subscribers</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">for</span> <span class="o">(</span><span class="n">event</span> <span class="k">&lt;-</span> <span class="n">newState</span><span class="o">.</span><span class="n">events</span><span class="o">)</span>
+      <span class="k">val</span> <span class="nv">newState</span> <span class="k">=</span> <span class="nv">state</span><span class="o">.</span><span class="py">evolve</span><span class="o">(</span><span class="n">value</span><span class="o">)</span>      
+      <span class="nf">for</span> <span class="o">(</span><span class="n">subscriber</span> <span class="k">&lt;-</span> <span class="n">subscribers</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nf">for</span> <span class="o">(</span><span class="n">event</span> <span class="k">&lt;-</span> <span class="nv">newState</span><span class="o">.</span><span class="py">events</span><span class="o">)</span>
           <span class="n">subscriber</span> <span class="o">!</span> <span class="n">event</span>
       <span class="o">}</span>
 
-      <span class="n">context</span><span class="o">.</span><span class="n">become</span><span class="o">(</span><span class="n">active</span><span class="o">(</span><span class="n">newState</span><span class="o">,</span> <span class="n">subscribers</span><span class="o">))</span>
+      <span class="nv">context</span><span class="o">.</span><span class="py">become</span><span class="o">(</span><span class="nf">active</span><span class="o">(</span><span class="n">newState</span><span class="o">,</span> <span class="n">subscribers</span><span class="o">))</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -329,19 +329,19 @@ business logic. Let's go deeper. The business logic, exposed by
 <span class="k">case</span> <span class="k">class</span> <span class="nc">State</span>
   <span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">lastEvent</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">events</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">Event</span><span class="o">])</span> <span class="o">{</span>
 
-  <span class="k">def</span> <span class="n">evolve</span><span class="o">(</span><span class="n">newValue</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">State</span> <span class="o">=</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">math</span><span class="o">.</span><span class="n">abs</span><span class="o">(</span><span class="n">newValue</span> <span class="o">-</span> <span class="n">lastEvent</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">evolve</span><span class="o">(</span><span class="n">newValue</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">State</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="nf">if</span> <span class="o">(</span><span class="nv">math</span><span class="o">.</span><span class="py">abs</span><span class="o">(</span><span class="n">newValue</span> <span class="o">-</span> <span class="n">lastEvent</span><span class="o">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="o">)</span>
       <span class="nc">State</span><span class="o">(</span><span class="n">newValue</span><span class="o">,</span> <span class="n">newValue</span><span class="o">,</span> <span class="nc">Seq</span><span class="o">(</span><span class="nc">Event</span><span class="o">(</span><span class="n">newValue</span><span class="o">)))</span>
     <span class="k">else</span>
-      <span class="n">copy</span><span class="o">(</span><span class="n">value</span> <span class="k">=</span> <span class="n">newValue</span><span class="o">)</span>
+      <span class="nf">copy</span><span class="o">(</span><span class="n">value</span> <span class="k">=</span> <span class="n">newValue</span><span class="o">)</span>
   <span class="o">}</span>
 
-  <span class="k">def</span> <span class="n">popEvents</span><span class="k">:</span> <span class="o">(</span><span class="kt">Seq</span><span class="o">[</span><span class="kt">Event</span><span class="o">],</span> <span class="nc">State</span><span class="o">)</span> <span class="k">=</span> 
-    <span class="o">(</span><span class="n">events</span><span class="o">,</span> <span class="n">copy</span><span class="o">(</span><span class="n">events</span> <span class="k">=</span> <span class="nc">Seq</span><span class="o">.</span><span class="n">empty</span><span class="o">))</span>
+  <span class="k">def</span> <span class="nf">popEvents</span><span class="k">:</span> <span class="o">(</span><span class="kt">Seq</span><span class="o">[</span><span class="kt">Event</span><span class="o">],</span> <span class="nc">State</span><span class="o">)</span> <span class="k">=</span> 
+    <span class="o">(</span><span class="n">events</span><span class="o">,</span> <span class="nf">copy</span><span class="o">(</span><span class="n">events</span> <span class="k">=</span> <span class="nv">Seq</span><span class="o">.</span><span class="py">empty</span><span class="o">))</span>
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">State</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">empty</span> <span class="k">=</span> <span class="nc">State</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="nc">Seq</span><span class="o">.</span><span class="n">empty</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">empty</span> <span class="k">=</span> <span class="nc">State</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="nv">Seq</span><span class="o">.</span><span class="py">empty</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>M'kay, so this does have business logic that would be valuable for

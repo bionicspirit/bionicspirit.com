@@ -34,9 +34,9 @@
       <meta name="description" content="Enabling automatic releases for your open source Scala project with Travis and SBT." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -239,10 +239,10 @@ publishing artifacts to Maven Central</li>
 <p>For PGP the configuration is as follows:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="n">useGpg</span> <span class="o">:=</span> <span class="kc">false</span>
-<span class="n">usePgpKeyHex</span><span class="o">(</span><span class="s">"2673B174C4071B0E"</span><span class="o">)</span>
-<span class="n">pgpPublicRing</span> <span class="o">:=</span> <span class="n">baseDirectory</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="s">"project"</span> <span class="o">/</span> <span class="s">".gnupg"</span> <span class="o">/</span> <span class="s">"pubring.gpg"</span>
-<span class="n">pgpSecretRing</span> <span class="o">:=</span> <span class="n">baseDirectory</span><span class="o">.</span><span class="n">value</span> <span class="o">/</span> <span class="s">"project"</span> <span class="o">/</span> <span class="s">".gnupg"</span> <span class="o">/</span> <span class="s">"secring.gpg"</span>
-<span class="n">pgpPassphrase</span> <span class="o">:=</span> <span class="n">sys</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">get</span><span class="o">(</span><span class="s">"PGP_PASS"</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">toArray</span><span class="o">)</span>
+<span class="nf">usePgpKeyHex</span><span class="o">(</span><span class="s">"2673B174C4071B0E"</span><span class="o">)</span>
+<span class="n">pgpPublicRing</span> <span class="o">:=</span> <span class="nv">baseDirectory</span><span class="o">.</span><span class="py">value</span> <span class="o">/</span> <span class="s">"project"</span> <span class="o">/</span> <span class="s">".gnupg"</span> <span class="o">/</span> <span class="s">"pubring.gpg"</span>
+<span class="n">pgpSecretRing</span> <span class="o">:=</span> <span class="nv">baseDirectory</span><span class="o">.</span><span class="py">value</span> <span class="o">/</span> <span class="s">"project"</span> <span class="o">/</span> <span class="s">".gnupg"</span> <span class="o">/</span> <span class="s">"secring.gpg"</span>
+<span class="n">pgpPassphrase</span> <span class="o">:=</span> <span class="nv">sys</span><span class="o">.</span><span class="py">env</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="s">"PGP_PASS"</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">toArray</span><span class="o">)</span>
 </code></pre></div>
 <p>Explanation:</p>
 
@@ -264,34 +264,34 @@ set such env variables to be available in your build</li>
 
 <p>For publishing to Sonatype, we'll need these settings:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">sonatypeProfileName</span> <span class="o">:=</span> <span class="n">organization</span><span class="o">.</span><span class="n">value</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="n">sonatypeProfileName</span> <span class="o">:=</span> <span class="nv">organization</span><span class="o">.</span><span class="py">value</span>
 
 <span class="n">credentials</span> <span class="o">+=</span> <span class="nc">Credentials</span><span class="o">(</span>
   <span class="s">"Sonatype Nexus Repository Manager"</span><span class="o">,</span>
   <span class="s">"oss.sonatype.org"</span><span class="o">,</span>
-  <span class="n">sys</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="s">"SONATYPE_USER"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
-  <span class="n">sys</span><span class="o">.</span><span class="n">env</span><span class="o">.</span><span class="n">getOrElse</span><span class="o">(</span><span class="s">"SONATYPE_PASS"</span><span class="o">,</span> <span class="s">""</span><span class="o">)</span>
+  <span class="nv">sys</span><span class="o">.</span><span class="py">env</span><span class="o">.</span><span class="py">getOrElse</span><span class="o">(</span><span class="s">"SONATYPE_USER"</span><span class="o">,</span> <span class="s">""</span><span class="o">),</span>
+  <span class="nv">sys</span><span class="o">.</span><span class="py">env</span><span class="o">.</span><span class="py">getOrElse</span><span class="o">(</span><span class="s">"SONATYPE_PASS"</span><span class="o">,</span> <span class="s">""</span><span class="o">)</span>
 <span class="o">)</span>
 
-<span class="n">isSnapshot</span> <span class="o">:=</span> <span class="n">version</span><span class="o">.</span><span class="n">value</span> <span class="n">endsWith</span> <span class="s">"SNAPSHOT"</span>
+<span class="n">isSnapshot</span> <span class="o">:=</span> <span class="nv">version</span><span class="o">.</span><span class="py">value</span> <span class="n">endsWith</span> <span class="s">"SNAPSHOT"</span>
 
 <span class="n">publishTo</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span>
-  <span class="k">if</span> <span class="o">(</span><span class="n">isSnapshot</span><span class="o">.</span><span class="n">value</span><span class="o">)</span>
-    <span class="nc">Opts</span><span class="o">.</span><span class="n">resolver</span><span class="o">.</span><span class="n">sonatypeSnapshots</span>
+  <span class="nf">if</span> <span class="o">(</span><span class="nv">isSnapshot</span><span class="o">.</span><span class="py">value</span><span class="o">)</span>
+    <span class="nv">Opts</span><span class="o">.</span><span class="py">resolver</span><span class="o">.</span><span class="py">sonatypeSnapshots</span>
   <span class="k">else</span>
-    <span class="nc">Opts</span><span class="o">.</span><span class="n">resolver</span><span class="o">.</span><span class="n">sonatypeStaging</span>
+    <span class="nv">Opts</span><span class="o">.</span><span class="py">resolver</span><span class="o">.</span><span class="py">sonatypeStaging</span>
 <span class="o">)</span>
 </code></pre></div>
 <p>In addition to these options, for Sonatype we also need the required
 artifact info (e.g. license, homepage, authors). Here's what I have
 for Shade, adjust accordingly:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">licenses</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span><span class="s">"MIT"</span> <span class="o">-&gt;</span> <span class="n">url</span><span class="o">(</span><span class="s">"https://opensource.org/licenses/MIT"</span><span class="o">))</span>
-<span class="n">homepage</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span><span class="n">url</span><span class="o">(</span><span class="s">"https://github.com/monix/shade"</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="n">licenses</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span><span class="s">"MIT"</span> <span class="o">-&gt;</span> <span class="nf">url</span><span class="o">(</span><span class="s">"https://opensource.org/licenses/MIT"</span><span class="o">))</span>
+<span class="n">homepage</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span><span class="nf">url</span><span class="o">(</span><span class="s">"https://github.com/monix/shade"</span><span class="o">))</span>
 
 <span class="n">scmInfo</span> <span class="o">:=</span> <span class="nc">Some</span><span class="o">(</span>
   <span class="nc">ScmInfo</span><span class="o">(</span>
-    <span class="n">url</span><span class="o">(</span><span class="s">"https://github.com/monix/shade"</span><span class="o">),</span>
+    <span class="nf">url</span><span class="o">(</span><span class="s">"https://github.com/monix/shade"</span><span class="o">),</span>
     <span class="s">"scm:git@github.com:monix/shade.git"</span>
   <span class="o">))</span>
 
@@ -300,7 +300,7 @@ for Shade, adjust accordingly:</p>
     <span class="n">id</span><span class="o">=</span><span class="s">"alexelcu"</span><span class="o">,</span>
     <span class="n">name</span><span class="o">=</span><span class="s">"Alexandru Nedelcu"</span><span class="o">,</span>
     <span class="n">email</span><span class="o">=</span><span class="s">"noreply@alexn.org"</span><span class="o">,</span>
-    <span class="n">url</span><span class="k">=</span><span class="n">url</span><span class="o">(</span><span class="s">"https://alexn.org"</span><span class="o">)</span>
+    <span class="n">url</span><span class="k">=</span><span class="nf">url</span><span class="o">(</span><span class="s">"https://alexn.org"</span><span class="o">)</span>
   <span class="o">))</span>
 </code></pre></div>
 <p>TIP, to find out the ID of a license type, see this cool list:
@@ -312,24 +312,24 @@ more details below.</p>
 <p>And then to enable Git versioning for snapshots (e.g. <code class="highlighter-rouge">3.0.0-9d94d3d</code>)
 you can do:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">enablePlugins</span><span class="o">(</span><span class="nc">GitVersioning</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nf">enablePlugins</span><span class="o">(</span><span class="nc">GitVersioning</span><span class="o">)</span>
 
 <span class="cm">/* The BaseVersion setting represents the in-development (upcoming) version,
  * as an alternative to SNAPSHOTS.
  */</span>
-<span class="n">git</span><span class="o">.</span><span class="n">baseVersion</span> <span class="o">:=</span> <span class="s">"3.0.0"</span>
+<span class="nv">git</span><span class="o">.</span><span class="py">baseVersion</span> <span class="o">:=</span> <span class="s">"3.0.0"</span>
 
-<span class="k">val</span> <span class="nc">ReleaseTag</span> <span class="k">=</span> <span class="s">"""^v([\d\.]+)$"""</span><span class="o">.</span><span class="n">r</span>
-<span class="n">git</span><span class="o">.</span><span class="n">gitTagToVersionNumber</span> <span class="o">:=</span> <span class="o">{</span>
+<span class="k">val</span> <span class="nv">ReleaseTag</span> <span class="k">=</span> <span class="s">"""^v([\d\.]+)$"""</span><span class="o">.</span><span class="py">r</span>
+<span class="nv">git</span><span class="o">.</span><span class="py">gitTagToVersionNumber</span> <span class="o">:=</span> <span class="o">{</span>
   <span class="k">case</span> <span class="nc">ReleaseTag</span><span class="o">(</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nc">Some</span><span class="o">(</span><span class="n">v</span><span class="o">)</span>
   <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="nc">None</span>
 <span class="o">}</span>
 
-<span class="n">git</span><span class="o">.</span><span class="n">formattedShaVersion</span> <span class="o">:=</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">suffix</span> <span class="k">=</span> <span class="n">git</span><span class="o">.</span><span class="n">makeUncommittedSignifierSuffix</span><span class="o">(</span><span class="n">git</span><span class="o">.</span><span class="n">gitUncommittedChanges</span><span class="o">.</span><span class="n">value</span><span class="o">,</span> <span class="n">git</span><span class="o">.</span><span class="n">uncommittedSignifier</span><span class="o">.</span><span class="n">value</span><span class="o">)</span>
+<span class="nv">git</span><span class="o">.</span><span class="py">formattedShaVersion</span> <span class="o">:=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">suffix</span> <span class="k">=</span> <span class="nv">git</span><span class="o">.</span><span class="py">makeUncommittedSignifierSuffix</span><span class="o">(</span><span class="nv">git</span><span class="o">.</span><span class="py">gitUncommittedChanges</span><span class="o">.</span><span class="py">value</span><span class="o">,</span> <span class="nv">git</span><span class="o">.</span><span class="py">uncommittedSignifier</span><span class="o">.</span><span class="py">value</span><span class="o">)</span>
 
-  <span class="n">git</span><span class="o">.</span><span class="n">gitHeadCommit</span><span class="o">.</span><span class="n">value</span> <span class="n">map</span> <span class="o">{</span> <span class="k">_</span><span class="o">.</span><span class="n">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">7</span><span class="o">)</span> <span class="o">}</span> <span class="n">map</span> <span class="o">{</span> <span class="n">sha</span> <span class="k">=&gt;</span>
-    <span class="n">git</span><span class="o">.</span><span class="n">baseVersion</span><span class="o">.</span><span class="n">value</span> <span class="o">+</span> <span class="s">"-"</span> <span class="o">+</span> <span class="n">sha</span> <span class="o">+</span> <span class="n">suffix</span>
+  <span class="nv">git</span><span class="o">.</span><span class="py">gitHeadCommit</span><span class="o">.</span><span class="py">value</span> <span class="n">map</span> <span class="o">{</span> <span class="nv">_</span><span class="o">.</span><span class="py">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">7</span><span class="o">)</span> <span class="o">}</span> <span class="n">map</span> <span class="o">{</span> <span class="n">sha</span> <span class="k">=&gt;</span>
+    <span class="nv">git</span><span class="o">.</span><span class="py">baseVersion</span><span class="o">.</span><span class="py">value</span> <span class="o">+</span> <span class="s">"-"</span> <span class="o">+</span> <span class="n">sha</span> <span class="o">+</span> <span class="n">suffix</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -344,8 +344,8 @@ are good thus far.</p>
 
 <p>In <code class="highlighter-rouge">build.sbt</code> I configured these 2 commands:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">addCommandAlias</span><span class="o">(</span><span class="s">"ci-all"</span><span class="o">,</span>  <span class="s">";+clean ;+compile ;+test ;+package"</span><span class="o">)</span>
-<span class="n">addCommandAlias</span><span class="o">(</span><span class="s">"release"</span><span class="o">,</span> <span class="s">";+publishSigned ;sonatypeReleaseAll"</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nf">addCommandAlias</span><span class="o">(</span><span class="s">"ci-all"</span><span class="o">,</span>  <span class="s">";+clean ;+compile ;+test ;+package"</span><span class="o">)</span>
+<span class="nf">addCommandAlias</span><span class="o">(</span><span class="s">"release"</span><span class="o">,</span> <span class="s">";+publishSigned ;sonatypeReleaseAll"</span><span class="o">)</span>
 </code></pre></div>
 <p>Then the <code class="highlighter-rouge">.travis.yml</code> file has something like this:</p>
 

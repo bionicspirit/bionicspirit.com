@@ -33,9 +33,9 @@
       <meta name="description" content="Languages, Functional, Scala, Java, Multithreading, Concurrency" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -176,19 +176,19 @@ my head.</p>
     */</span>
   <span class="k">var</span> <span class="n">head</span><span class="k">:</span> <span class="kt">Node</span> <span class="o">=</span> <span class="kc">null</span>
 
-  <span class="k">def</span> <span class="n">isEmpty</span> <span class="k">=</span> <span class="n">head</span> <span class="o">==</span> <span class="kc">null</span>
+  <span class="k">def</span> <span class="nf">isEmpty</span> <span class="k">=</span> <span class="n">head</span> <span class="o">==</span> <span class="kc">null</span>
 
-  <span class="k">def</span> <span class="n">push</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Any</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">val</span> <span class="n">node</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Node</span>
-    <span class="n">node</span><span class="o">.</span><span class="n">value</span> <span class="k">=</span> <span class="n">value</span>
-    <span class="n">node</span><span class="o">.</span><span class="n">next</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="n">head</span>
+  <span class="k">def</span> <span class="nf">push</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Any</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">node</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Node</span>
+    <span class="nv">node</span><span class="o">.</span><span class="py">value</span> <span class="k">=</span> <span class="n">value</span>
+    <span class="nv">node</span><span class="o">.</span><span class="py">next</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">head</span>
     <span class="c1">// Gotcha: by the time we assign the new head, another thread
 </span>    <span class="c1">// may have changed it already
-</span>    <span class="k">this</span><span class="o">.</span><span class="n">head</span> <span class="k">=</span> <span class="n">node</span>
+</span>    <span class="k">this</span><span class="o">.</span><span class="py">head</span> <span class="k">=</span> <span class="n">node</span>
   <span class="o">}</span>
 
-  <span class="k">def</span> <span class="n">pop</span><span class="o">()</span> <span class="k">=</span>
-    <span class="k">if</span> <span class="o">(!</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">pop</span><span class="o">()</span> <span class="k">=</span>
+    <span class="nf">if</span> <span class="o">(!</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
       <span class="c1">// Gotchas:
 </span>      <span class="c1">//
 </span>      <span class="c1">// 1. by the time the following is executed the `head`
@@ -196,14 +196,14 @@ my head.</p>
 </span>      <span class="c1">//
 </span>      <span class="c1">// 2. two or more threads may read the same `head` and
 </span>      <span class="c1">//    thus receive the same value on pop()
-</span>      <span class="k">val</span> <span class="n">node</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="n">head</span>
+</span>      <span class="k">val</span> <span class="nv">node</span> <span class="k">=</span> <span class="k">this</span><span class="o">.</span><span class="py">head</span>
 
       <span class="c1">// 1. again, the `head` can already be different,
 </span>      <span class="c1">//    so the following assignment may lose data
 </span>      <span class="c1">// 2. the new value may not be visible from other
 </span>      <span class="c1">//    threads
-</span>      <span class="k">this</span><span class="o">.</span><span class="n">head</span> <span class="k">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
-      <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+</span>      <span class="k">this</span><span class="o">.</span><span class="py">head</span> <span class="k">=</span> <span class="nv">node</span><span class="o">.</span><span class="py">next</span>
+      <span class="nv">node</span><span class="o">.</span><span class="py">value</span>
     <span class="o">}</span>
     <span class="k">else</span>
       <span class="kc">null</span>
@@ -269,14 +269,14 @@ version), because that's how I roll</li>
     */</span>
   <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">var</span> <span class="n">head</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Node</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span>
 
-  <span class="k">def</span> <span class="n">isEmpty</span> <span class="k">=</span>
-    <span class="k">this</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
-      <span class="n">head</span><span class="o">.</span><span class="n">isEmpty</span>
+  <span class="k">def</span> <span class="nf">isEmpty</span> <span class="k">=</span>
+    <span class="k">this</span><span class="o">.</span><span class="py">synchronized</span> <span class="o">{</span>
+      <span class="nv">head</span><span class="o">.</span><span class="py">isEmpty</span>
     <span class="o">}</span>
 
-  <span class="k">def</span> <span class="n">push</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Stack</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">def</span> <span class="nf">push</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Stack</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
     <span class="c1">// entering monitor lock
-</span>    <span class="k">this</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
+</span>    <span class="k">this</span><span class="o">.</span><span class="py">synchronized</span> <span class="o">{</span>
       <span class="n">head</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Node</span><span class="o">(</span>
         <span class="n">value</span> <span class="k">=</span> <span class="nc">Option</span><span class="o">(</span><span class="n">value</span><span class="o">),</span>
         <span class="n">next</span> <span class="k">=</span> <span class="n">head</span>
@@ -284,17 +284,17 @@ version), because that's how I roll</li>
       <span class="k">this</span>
     <span class="o">}</span>
 
-  <span class="k">def</span> <span class="n">pop</span><span class="o">()</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">def</span> <span class="nf">pop</span><span class="o">()</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
     <span class="c1">// Entering monitor lock
 </span>    <span class="c1">//
 </span>    <span class="c1">// Note that `isEmpty` is also synchronized, but monitor locks
 </span>    <span class="c1">// are reentrant so a lock can be acquired multiple times by the
 </span>    <span class="c1">// same thread.
-</span>    <span class="k">this</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
-      <span class="k">if</span> <span class="o">(!</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">val</span> <span class="n">node</span> <span class="k">=</span> <span class="n">head</span><span class="o">.</span><span class="n">get</span>
-        <span class="n">head</span> <span class="k">=</span> <span class="n">node</span><span class="o">.</span><span class="n">next</span>
-        <span class="n">node</span><span class="o">.</span><span class="n">value</span>
+</span>    <span class="k">this</span><span class="o">.</span><span class="py">synchronized</span> <span class="o">{</span>
+      <span class="nf">if</span> <span class="o">(!</span><span class="n">isEmpty</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="nv">node</span> <span class="k">=</span> <span class="nv">head</span><span class="o">.</span><span class="py">get</span>
+        <span class="n">head</span> <span class="k">=</span> <span class="nv">node</span><span class="o">.</span><span class="py">next</span>
+        <span class="nv">node</span><span class="o">.</span><span class="py">value</span>
       <span class="o">}</span>
       <span class="k">else</span>
         <span class="nc">None</span>
@@ -309,13 +309,13 @@ all? (that's for another article)</p>
 
 <p>Take these 2 stacks:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">stack1</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Stack</span><span class="o">.</span><span class="n">push</span><span class="o">(</span><span class="s">"World"</span><span class="o">).</span><span class="n">push</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">)</span>
-<span class="k">val</span> <span class="n">stack2</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Stack</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">stack1</span> <span class="k">=</span> <span class="k">new</span> <span class="nv">Stack</span><span class="o">.</span><span class="py">push</span><span class="o">(</span><span class="s">"World"</span><span class="o">).</span><span class="py">push</span><span class="o">(</span><span class="s">"Hello"</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">stack2</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Stack</span>
 </code></pre></div>
 <p>Question: is the following thread safe?</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">while</span> <span class="o">(!</span><span class="n">stack1</span><span class="o">.</span><span class="n">isEmpty</span><span class="o">)</span>
-  <span class="n">stack2</span><span class="o">.</span><span class="n">push</span><span class="o">(</span> <span class="n">stack1</span><span class="o">.</span><span class="n">pop</span> <span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nf">while</span> <span class="o">(!</span><span class="nv">stack1</span><span class="o">.</span><span class="py">isEmpty</span><span class="o">)</span>
+  <span class="nv">stack2</span><span class="o">.</span><span class="py">push</span><span class="o">(</span> <span class="nv">stack1</span><span class="o">.</span><span class="py">pop</span> <span class="o">)</span>
 </code></pre></div>
 <p>Answer: No. Given that:</p>
 
@@ -344,24 +344,24 @@ your only problem.</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="k">var</span> <span class="n">result</span> <span class="k">=</span> <span class="s">"Not Initialized"</span>
 <span class="k">var</span> <span class="n">isDone</span> <span class="k">=</span> <span class="kc">false</span>
 
-<span class="k">val</span> <span class="n">producer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+<span class="k">val</span> <span class="nv">producer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
     <span class="n">result</span> <span class="k">=</span> <span class="s">"Hello, World!"</span>
     <span class="n">isDone</span> <span class="k">=</span> <span class="kc">true</span>
   <span class="o">}</span>
 <span class="o">})</span>
 
-<span class="k">val</span> <span class="n">consumer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+<span class="k">val</span> <span class="nv">consumer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
     <span class="c1">// loops until isDone is true
-</span>    <span class="k">while</span> <span class="o">(!</span><span class="n">isDone</span><span class="o">)</span> <span class="o">{}</span>
-    <span class="n">println</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
+</span>    <span class="nf">while</span> <span class="o">(!</span><span class="n">isDone</span><span class="o">)</span> <span class="o">{}</span>
+    <span class="nf">println</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
   <span class="o">}</span>
 <span class="o">})</span>  
 
-<span class="n">consumer</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
-<span class="n">producer</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
-<span class="n">consumer</span><span class="o">.</span><span class="n">join</span><span class="o">()</span>
+<span class="nv">consumer</span><span class="o">.</span><span class="py">start</span><span class="o">()</span>
+<span class="nv">producer</span><span class="o">.</span><span class="py">start</span><span class="o">()</span>
+<span class="nv">consumer</span><span class="o">.</span><span class="py">join</span><span class="o">()</span>
 </code></pre></div>
 <p><strong>Question:</strong> What does the above print?</p>
 
@@ -457,33 +457,33 @@ other threads that <em>use the same monitor</em></li>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">var</span> <span class="n">result</span> <span class="k">=</span> <span class="s">"Not Initialized"</span>
 <span class="k">var</span> <span class="n">isDone</span> <span class="k">=</span> <span class="kc">false</span>
-<span class="k">val</span> <span class="n">lock</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AnyRef</span>
+<span class="k">val</span> <span class="nv">lock</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AnyRef</span>
 
-<span class="k">val</span> <span class="n">consumer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
+<span class="k">val</span> <span class="nv">consumer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
     <span class="k">var</span> <span class="n">continueLooping</span> <span class="k">=</span> <span class="kc">true</span>
 	
-    <span class="k">while</span> <span class="o">(</span><span class="n">continueLooping</span><span class="o">)</span>
-      <span class="n">lock</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span>
+    <span class="nf">while</span> <span class="o">(</span><span class="n">continueLooping</span><span class="o">)</span>
+      <span class="nv">lock</span><span class="o">.</span><span class="py">synchronized</span> <span class="o">{</span>
         <span class="n">continueLooping</span> <span class="k">=</span> <span class="o">!</span><span class="n">isDone</span>
       <span class="o">}</span>
 
-    <span class="n">println</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
+    <span class="nf">println</span><span class="o">(</span><span class="n">result</span><span class="o">)</span>
   <span class="o">}</span>
 <span class="o">})</span>
 
-<span class="k">val</span> <span class="n">producer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">run</span><span class="o">()</span> <span class="o">{</span>
-    <span class="n">lock</span><span class="o">.</span><span class="n">synchronized</span> <span class="o">{</span> 
+<span class="k">val</span> <span class="nv">producer</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Thread</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nv">lock</span><span class="o">.</span><span class="py">synchronized</span> <span class="o">{</span> 
       <span class="n">result</span> <span class="k">=</span> <span class="s">"Hello, World!"</span>
       <span class="n">isDone</span> <span class="k">=</span> <span class="kc">true</span>
     <span class="o">}</span> <span class="c1">// &lt;-- memory barrier
 </span>  <span class="o">}</span>
 <span class="o">})</span>
 
-<span class="n">consumer</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
-<span class="n">producer</span><span class="o">.</span><span class="n">start</span><span class="o">()</span>
-<span class="n">consumer</span><span class="o">.</span><span class="n">join</span><span class="o">()</span>
+<span class="nv">consumer</span><span class="o">.</span><span class="py">start</span><span class="o">()</span>
+<span class="nv">producer</span><span class="o">.</span><span class="py">start</span><span class="o">()</span>
+<span class="nv">consumer</span><span class="o">.</span><span class="py">join</span><span class="o">()</span>
 </code></pre></div>
 <p>There is one big gotcha here. The JVM only guarantees <em>visibility</em> and
 <em>happens-before relationships</em> only if the threads involved in

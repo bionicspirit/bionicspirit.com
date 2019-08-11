@@ -32,9 +32,9 @@
       <meta name="description" content="JavaScript&#x27;s Promise leaks memory in recursive loops and what you can do about it." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -128,7 +128,7 @@ freezing the process trying to recover memory, so give it a few seconds.</p>
 <p>This is equivalent with this <code class="highlighter-rouge">async</code> function:</p>
 
 <div class="highlight"><pre class="highlight typescript"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
-  <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
+  <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
 
   <span class="c1">// Recursive call</span>
@@ -182,7 +182,7 @@ with non-recursive functions:</p>
   <span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span>
 
   <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">i</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="nx">i</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
   <span class="p">}</span>
 <span class="p">}</span>
@@ -369,7 +369,7 @@ the two being complementary.</p>
 
 <p>This piece of code powered by <code class="highlighter-rouge">Future</code> does not leak:</p>
 
-<div class="highlight"><pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Future</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"funfix"</span>
+<div class="highlight"><pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Future</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">funfix</span><span class="dl">"</span>
 
 <span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">Future</span><span class="p">.</span><span class="k">of</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">).</span><span class="nx">flatMap</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -382,7 +382,7 @@ the two being complementary.</p>
 </code></pre></div>
 <p>And neither does this one, powered by <code class="highlighter-rouge">IO</code>:</p>
 
-<div class="highlight"><pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">IO</span> <span class="p">}</span> <span class="k">from</span> <span class="s2">"funfix"</span>
+<div class="highlight"><pre class="highlight typescript"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">IO</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">funfix</span><span class="dl">"</span>
 
 <span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">return</span> <span class="nx">IO</span><span class="p">.</span><span class="k">of</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">n</span><span class="p">).</span><span class="nx">flatMap</span><span class="p">(</span><span class="nx">i</span> <span class="o">=&gt;</span> <span class="p">{</span>

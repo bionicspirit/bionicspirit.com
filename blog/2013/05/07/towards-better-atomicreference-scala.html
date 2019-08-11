@@ -33,9 +33,9 @@
       <meta name="description" content="Languages, Functional, Scala, Java, Multithreading, Concurrency" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -154,40 +154,40 @@ my own <code class="highlighter-rouge">shifter.concurrency.atomic.Ref</code>. Yo
 <p>Lets start by mirroring the basics of AtomicReference:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Ref</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">get</span><span class="k">:</span> <span class="kt">T</span>
-  <span class="k">def</span> <span class="n">set</span><span class="o">(</span><span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span>
-  <span class="k">def</span> <span class="n">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span>
+  <span class="k">def</span> <span class="nf">get</span><span class="k">:</span> <span class="kt">T</span>
+  <span class="k">def</span> <span class="nf">set</span><span class="o">(</span><span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span>
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">Ref</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">apply</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initial</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">RefAny</span><span class="o">(</span><span class="n">initial</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">apply</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initial</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">RefAny</span><span class="o">(</span><span class="n">initial</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>With a generic implementation that for now just delegates to our inner
 <code class="highlighter-rouge">AtomicReference</code>:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">RefAny</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initial</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Ref</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">get</span> <span class="k">=</span> 
-    <span class="n">instance</span><span class="o">.</span><span class="n">get</span><span class="o">()</span>  
-  <span class="k">def</span> <span class="n">set</span><span class="o">(</span><span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> 
-    <span class="n">instance</span><span class="o">.</span><span class="n">set</span><span class="o">(</span><span class="n">update</span><span class="o">)</span>  
-  <span class="k">def</span> <span class="n">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> 
-    <span class="n">instance</span><span class="o">.</span><span class="n">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="o">,</span> <span class="n">update</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">get</span> <span class="k">=</span> 
+    <span class="nv">instance</span><span class="o">.</span><span class="py">get</span><span class="o">()</span>  
+  <span class="k">def</span> <span class="nf">set</span><span class="o">(</span><span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> 
+    <span class="nv">instance</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="n">update</span><span class="o">)</span>  
+  <span class="k">def</span> <span class="nf">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">update</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span> <span class="k">=</span> 
+    <span class="nv">instance</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="n">expect</span><span class="o">,</span> <span class="n">update</span><span class="o">)</span>
 	
-  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="n">instance</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">(</span><span class="n">initial</span><span class="o">)</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="nv">instance</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">(</span><span class="n">initial</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>As I was saying, the <code class="highlighter-rouge">compareAndSet</code> is too low level. Much better is
 to work with transformations. How about defining a function with the
 following signature:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span>
 </code></pre></div>
 <p>And that can be used like this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
 
-<span class="n">ref</span><span class="o">.</span><span class="n">transformAndGet</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span>
+<span class="nv">ref</span><span class="o">.</span><span class="py">transformAndGet</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span>
 <span class="c1">// =&gt; 4
 </span></code></pre></div>
 <p>Well, incrementing numbers is not the only thing that you can do. For
@@ -195,9 +195,9 @@ instance you could store and transform immutable data-structures, like a queue:<
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">collection.immutable.Queue</span>
 
-<span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="nc">Queue</span><span class="o">.</span><span class="n">empty</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span>
+<span class="k">val</span> <span class="nv">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="nv">Queue</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span>
 
-<span class="n">ref</span><span class="o">.</span><span class="n">transformAndGet</span><span class="o">(</span><span class="n">q</span> <span class="k">=&gt;</span> <span class="n">q</span><span class="o">.</span><span class="n">enqueue</span><span class="o">(</span><span class="s">"Alex"</span><span class="o">))</span>
+<span class="nv">ref</span><span class="o">.</span><span class="py">transformAndGet</span><span class="o">(</span><span class="n">q</span> <span class="k">=&gt;</span> <span class="nv">q</span><span class="o">.</span><span class="py">enqueue</span><span class="o">(</span><span class="s">"Alex"</span><span class="o">))</span>
 </code></pre></div>
 <p>How about that? We got ourselves a non-blocking queue, without having
 to implement the dreadful Michael-Scott algorithm.</p>
@@ -205,13 +205,13 @@ to implement the dreadful Michael-Scott algorithm.</p>
 <p>Implementing <code class="highlighter-rouge">Ref.transformAndGet</code> is easy:</p>
 
 <div class="highlight"><pre class="highlight scala"><code>  <span class="nd">@tailrec</span>
-  <span class="k">final</span> <span class="k">def</span> <span class="n">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=</span> <span class="o">{</span>
-    <span class="k">val</span> <span class="n">oldValue</span> <span class="k">=</span> <span class="n">get</span>
-    <span class="k">val</span> <span class="n">newValue</span> <span class="k">=</span> <span class="n">cb</span><span class="o">(</span><span class="n">oldValue</span><span class="o">)</span>
+  <span class="k">final</span> <span class="k">def</span> <span class="nf">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">oldValue</span> <span class="k">=</span> <span class="n">get</span>
+    <span class="k">val</span> <span class="nv">newValue</span> <span class="k">=</span> <span class="nf">cb</span><span class="o">(</span><span class="n">oldValue</span><span class="o">)</span>
 
-    <span class="k">if</span> <span class="o">(!</span><span class="n">compareAndSet</span><span class="o">(</span><span class="n">oldValue</span><span class="o">,</span> <span class="n">newValue</span><span class="o">))</span>
+    <span class="nf">if</span> <span class="o">(!</span><span class="nf">compareAndSet</span><span class="o">(</span><span class="n">oldValue</span><span class="o">,</span> <span class="n">newValue</span><span class="o">))</span>
 	  <span class="c1">// tail-recursive call
-</span>      <span class="n">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="o">)</span>
+</span>      <span class="nf">transformAndGet</span><span class="o">(</span><span class="n">cb</span><span class="o">)</span>
     <span class="k">else</span>
       <span class="n">newValue</span>
   <span class="o">}</span>
@@ -225,13 +225,13 @@ readable and less error-prone. It creates a loop … as long as the
 value before the transformation occurred, instead of the update:</p>
 
 <div class="highlight"><pre class="highlight scala"><code>  <span class="nd">@tailrec</span>
-  <span class="k">final</span> <span class="k">def</span> <span class="n">getAndTransform</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=</span> <span class="o">{</span>
-    <span class="k">val</span> <span class="n">oldValue</span> <span class="k">=</span> <span class="n">get</span>
-    <span class="k">val</span> <span class="n">update</span> <span class="k">=</span> <span class="n">cb</span><span class="o">(</span><span class="n">oldValue</span><span class="o">)</span>
+  <span class="k">final</span> <span class="k">def</span> <span class="nf">getAndTransform</span><span class="o">(</span><span class="n">cb</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=&gt;</span> <span class="n">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">T</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">oldValue</span> <span class="k">=</span> <span class="n">get</span>
+    <span class="k">val</span> <span class="nv">update</span> <span class="k">=</span> <span class="nf">cb</span><span class="o">(</span><span class="n">oldValue</span><span class="o">)</span>
 
-    <span class="k">if</span> <span class="o">(!</span><span class="n">compareAndSet</span><span class="o">(</span><span class="n">oldValue</span><span class="o">,</span> <span class="n">update</span><span class="o">))</span>
+    <span class="nf">if</span> <span class="o">(!</span><span class="nf">compareAndSet</span><span class="o">(</span><span class="n">oldValue</span><span class="o">,</span> <span class="n">update</span><span class="o">))</span>
 	  <span class="c1">// tail-recursive call
-</span>      <span class="n">getAndTransform</span><span class="o">(</span><span class="n">cb</span><span class="o">)</span>
+</span>      <span class="nf">getAndTransform</span><span class="o">(</span><span class="n">cb</span><span class="o">)</span>
     <span class="k">else</span>
       <span class="n">oldValue</span>
   <span class="o">}</span>
@@ -257,27 +257,27 @@ need more than that.</p>
 <p>So we can define our <code class="highlighter-rouge">Ref.incrementAndGet</code> function, in a generic way,
 like this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code>  <span class="k">def</span> <span class="n">incrementAndGet</span><span class="o">(</span><span class="k">implicit</span> <span class="n">num</span> <span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">=</span>
-    <span class="n">transformAndGet</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">num</span><span class="o">.</span><span class="n">plus</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">num</span><span class="o">.</span><span class="n">one</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code>  <span class="k">def</span> <span class="nf">incrementAndGet</span><span class="o">(</span><span class="k">implicit</span> <span class="n">num</span> <span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">=</span>
+    <span class="nf">transformAndGet</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nv">num</span><span class="o">.</span><span class="py">plus</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="nv">num</span><span class="o">.</span><span class="py">one</span><span class="o">))</span>
 </code></pre></div>
 <p>And lo and behold, this stuff works for any kind of number, not just
 Ints and Longs:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="nc">BigInt</span><span class="o">(</span><span class="mi">1</span><span class="o">))</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="nv">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="nc">BigInt</span><span class="o">(</span><span class="mi">1</span><span class="o">))</span>
 <span class="n">ref</span><span class="k">:</span> <span class="kt">Ref</span><span class="o">[</span><span class="kt">scala.math.BigInt</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
 
-<span class="n">scala</span><span class="o">&gt;</span> <span class="n">ref</span><span class="o">.</span><span class="n">incrementAndGet</span>
+<span class="n">scala</span><span class="o">&gt;</span> <span class="nv">ref</span><span class="o">.</span><span class="py">incrementAndGet</span>
 <span class="n">res0</span><span class="k">:</span> <span class="kt">scala.math.BigInt</span> <span class="o">=</span> <span class="mi">2</span>
 </code></pre></div>
 <p>Best of all, if we try doing this on things that aren't numbers, then
 it fails with a compile-time error:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="n">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="s">"hello"</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="n">scala</span><span class="o">&gt;</span> <span class="k">val</span> <span class="nv">ref</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="s">"hello"</span><span class="o">)</span>
 <span class="n">ref</span><span class="k">:</span> <span class="kt">Ref</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="nc">Ref</span><span class="o">(</span><span class="n">hello</span><span class="o">)</span>
 
-<span class="n">scala</span><span class="o">&gt;</span> <span class="n">ref</span><span class="o">.</span><span class="n">incrementAndGet</span>
+<span class="n">scala</span><span class="o">&gt;</span> <span class="nv">ref</span><span class="o">.</span><span class="py">incrementAndGet</span>
 <span class="o">&lt;</span><span class="n">console</span><span class="k">&gt;:</span><span class="mi">9</span><span class="k">:</span> <span class="kt">error:</span> <span class="kt">could</span> <span class="kt">not</span> <span class="kt">find</span> <span class="kt">implicit</span> <span class="kt">value</span> <span class="kt">for</span> <span class="kt">parameter</span> <span class="kt">num:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
-              <span class="n">ref</span><span class="o">.</span><span class="n">incrementAndGet</span>
+              <span class="nv">ref</span><span class="o">.</span><span class="py">incrementAndGet</span>
                   <span class="o">^</span>
 </code></pre></div>
 <p><code class="highlighter-rouge">AtomicInteger</code> from Java's standard library already has an
@@ -289,10 +289,10 @@ specializing our <code class="highlighter-rouge">Ref</code> for <code class="hig
 <div class="highlight"><pre class="highlight scala"><code><span class="k">final</span> <span class="k">class</span> <span class="nc">RefInt</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">extends</span> <span class="nc">Ref</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="o">{</span>
   <span class="c1">// ....
 </span>  
-  <span class="k">override</span> <span class="k">def</span> <span class="n">incrementAndGet</span><span class="o">(</span><span class="k">implicit</span> <span class="n">num</span><span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
-    <span class="n">instance</span><span class="o">.</span><span class="n">incrementAndGet</span><span class="o">()</span>
+  <span class="k">override</span> <span class="k">def</span> <span class="nf">incrementAndGet</span><span class="o">(</span><span class="k">implicit</span> <span class="n">num</span><span class="k">:</span> <span class="kt">Numeric</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+    <span class="nv">instance</span><span class="o">.</span><span class="py">incrementAndGet</span><span class="o">()</span>
 
-  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="n">instance</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicInteger</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="nv">instance</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicInteger</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
 <span class="o">}</span>
 
 </code></pre></div>
@@ -301,16 +301,16 @@ case the initial value is an <code class="highlighter-rouge">Int</code>. Well, h
 <code class="highlighter-rouge">shifter.concurrency.atomic.Ref</code> looks like:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">object</span> <span class="nc">Ref</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefInt</span> <span class="o">=</span>
+  <span class="k">def</span> <span class="nf">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefInt</span> <span class="o">=</span>
     <span class="k">new</span> <span class="nc">RefInt</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
 
-  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefLong</span> <span class="o">=</span>
+  <span class="k">def</span> <span class="nf">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefLong</span> <span class="o">=</span>
     <span class="k">new</span> <span class="nc">RefLong</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
 
-  <span class="k">def</span> <span class="n">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Boolean</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefBoolean</span> <span class="o">=</span>
+  <span class="k">def</span> <span class="nf">apply</span><span class="o">(</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">Boolean</span><span class="o">)</span><span class="k">:</span> <span class="kt">RefBoolean</span> <span class="o">=</span>
     <span class="k">new</span> <span class="nc">RefBoolean</span><span class="o">(</span><span class="n">initialValue</span><span class="o">)</span>
 
-  <span class="k">def</span> <span class="n">apply</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Ref</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">def</span> <span class="nf">apply</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initialValue</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Ref</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span>
     <span class="k">new</span> <span class="nc">RefAny</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">initialValue</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -337,19 +337,19 @@ primitive types. You can inspect the generated interface easily with
 the <code class="highlighter-rouge">javap</code> utility. For instance, let's see what it generates for
 <code class="highlighter-rouge">compareAndSet</code>:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">$</span> <span class="n">javap</span> <span class="n">shifter</span><span class="o">.</span><span class="n">concurrency</span><span class="o">.</span><span class="n">atomic</span><span class="o">.</span><span class="nc">Ref</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">compareAndSet</span>
-  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">compareAndSet</span><span class="o">(</span><span class="n">T</span><span class="o">,</span> <span class="n">T</span><span class="o">);</span>
-  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">compareAndSet$mcZ$sp</span><span class="o">(</span><span class="n">boolean</span><span class="o">,</span> <span class="n">boolean</span><span class="o">);</span>
-  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">compareAndSet$mcI$sp</span><span class="o">(</span><span class="n">int</span><span class="o">,</span> <span class="n">int</span><span class="o">);</span>
-  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">compareAndSet$mcJ$sp</span><span class="o">(</span><span class="n">long</span><span class="o">,</span> <span class="n">long</span><span class="o">);</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="n">$</span> <span class="n">javap</span> <span class="nv">shifter</span><span class="o">.</span><span class="py">concurrency</span><span class="o">.</span><span class="py">atomic</span><span class="o">.</span><span class="py">Ref</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">compareAndSet</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="nf">compareAndSet</span><span class="o">(</span><span class="n">T</span><span class="o">,</span> <span class="n">T</span><span class="o">);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="nf">compareAndSet$mcZ$sp</span><span class="o">(</span><span class="n">boolean</span><span class="o">,</span> <span class="n">boolean</span><span class="o">);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="nf">compareAndSet$mcI$sp</span><span class="o">(</span><span class="n">int</span><span class="o">,</span> <span class="n">int</span><span class="o">);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="nf">compareAndSet$mcJ$sp</span><span class="o">(</span><span class="n">long</span><span class="o">,</span> <span class="n">long</span><span class="o">);</span>
 </code></pre></div>
 <p>Or for <code class="highlighter-rouge">incrementAndGet</code>:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">$</span> <span class="n">javap</span> <span class="n">shifter</span><span class="o">.</span><span class="n">concurrency</span><span class="o">.</span><span class="n">atomic</span><span class="o">.</span><span class="nc">Ref</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">incrementAndGet</span>
-  <span class="n">public</span> <span class="k">abstract</span> <span class="n">T</span> <span class="n">incrementAndGet</span><span class="o">(</span><span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="nc">Numeric</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;);</span>
-  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="n">incrementAndGet$mcZ$sp</span><span class="o">(</span><span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="nc">Numeric</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="nc">Object</span><span class="o">&gt;);</span>
-  <span class="n">public</span> <span class="k">abstract</span> <span class="n">int</span> <span class="n">incrementAndGet$mcI$sp</span><span class="o">(</span><span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="nc">Numeric</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="nc">Object</span><span class="o">&gt;);</span>
-  <span class="n">public</span> <span class="k">abstract</span> <span class="n">long</span> <span class="n">incrementAndGet$mcJ$sp</span><span class="o">(</span><span class="n">scala</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="nc">Numeric</span><span class="o">&lt;</span><span class="n">java</span><span class="o">.</span><span class="n">lang</span><span class="o">.</span><span class="nc">Object</span><span class="o">&gt;);</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="n">$</span> <span class="n">javap</span> <span class="nv">shifter</span><span class="o">.</span><span class="py">concurrency</span><span class="o">.</span><span class="py">atomic</span><span class="o">.</span><span class="py">Ref</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">incrementAndGet</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">T</span> <span class="nf">incrementAndGet</span><span class="o">(</span><span class="nv">scala</span><span class="o">.</span><span class="py">math</span><span class="o">.</span><span class="py">Numeric</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">boolean</span> <span class="nf">incrementAndGet$mcZ$sp</span><span class="o">(</span><span class="nv">scala</span><span class="o">.</span><span class="py">math</span><span class="o">.</span><span class="py">Numeric</span><span class="o">&lt;</span><span class="nv">java</span><span class="o">.</span><span class="py">lang</span><span class="o">.</span><span class="py">Object</span><span class="o">&gt;);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">int</span> <span class="nf">incrementAndGet$mcI$sp</span><span class="o">(</span><span class="nv">scala</span><span class="o">.</span><span class="py">math</span><span class="o">.</span><span class="py">Numeric</span><span class="o">&lt;</span><span class="nv">java</span><span class="o">.</span><span class="py">lang</span><span class="o">.</span><span class="py">Object</span><span class="o">&gt;);</span>
+  <span class="n">public</span> <span class="k">abstract</span> <span class="n">long</span> <span class="nf">incrementAndGet$mcJ$sp</span><span class="o">(</span><span class="nv">scala</span><span class="o">.</span><span class="py">math</span><span class="o">.</span><span class="py">Numeric</span><span class="o">&lt;</span><span class="nv">java</span><span class="o">.</span><span class="py">lang</span><span class="o">.</span><span class="py">Object</span><span class="o">&gt;);</span>
 </code></pre></div>
 <p>So it's basically method overloading done by the Scala
 compiler. Clearly this adds some overhead in the generated .class

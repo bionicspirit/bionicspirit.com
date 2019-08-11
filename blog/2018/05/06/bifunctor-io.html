@@ -35,9 +35,9 @@
       <meta name="description" content="Bifunctor IO is a hot topic in the Scala community. Herein I&#x27;m expressing my dislike for it, as it shares the problems of Java&#x27;s Checked Exceptions." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -181,8 +181,8 @@ Runtime. This means that this code is legit:</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">cats.effect.IO</span>
 <span class="k">import</span> <span class="nn">scala.util.Random</span>
 
-<span class="k">def</span> <span class="n">genRandomPosInt</span><span class="o">(</span><span class="n">max</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
-  <span class="nc">IO</span><span class="o">(</span><span class="nc">Math</span><span class="o">.</span><span class="n">floorMod</span><span class="o">(</span><span class="nc">Random</span><span class="o">.</span><span class="n">nextInt</span><span class="o">(),</span> <span class="n">max</span><span class="o">))</span>
+<span class="k">def</span> <span class="nf">genRandomPosInt</span><span class="o">(</span><span class="n">max</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nc">IO</span><span class="o">(</span><span class="nv">Math</span><span class="o">.</span><span class="py">floorMod</span><span class="o">(</span><span class="nv">Random</span><span class="o">.</span><span class="py">nextInt</span><span class="o">(),</span> <span class="n">max</span><span class="o">))</span>
 </code></pre></div>
 <p>The astute reader might notice that this isn't a total function, as it
 could throw an <code class="highlighter-rouge">ArithmeticException</code>. An easy mistake to make.</p>
@@ -210,15 +210,15 @@ equivalent:</p>
 <p>Exposing the error type would allow one to be very explicit at compile time
 about the error:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">openFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">FileNotFoundException</span>, <span class="kt">BufferedReader</span><span class="o">]</span> <span class="k">=</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">openFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">FileNotFoundException</span>, <span class="kt">BufferedReader</span><span class="o">]</span> <span class="k">=</span>
   <span class="c1">// Made up API
-</span>  <span class="nc">BIO</span><span class="o">.</span><span class="n">delayE</span> <span class="o">{</span>
+</span>  <span class="nv">BIO</span><span class="o">.</span><span class="py">delayE</span> <span class="o">{</span>
     <span class="k">try</span> <span class="nc">Right</span><span class="o">(</span><span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileReader</span><span class="o">(</span><span class="n">file</span><span class="o">)))</span>
     <span class="k">catch</span> <span class="o">{</span> <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">FileNotFoundException</span> <span class="o">=&gt;</span> <span class="nc">Left</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="o">}</span>
   <span class="o">}</span>
 
-<span class="k">def</span> <span class="n">genRandomInt</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">Nothing</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
-  <span class="nc">BIO</span><span class="o">.</span><span class="n">delayE</span><span class="o">(</span><span class="nc">Right</span><span class="o">(</span><span class="nc">Random</span><span class="o">.</span><span class="n">nextInt</span><span class="o">()))</span>
+<span class="k">def</span> <span class="nf">genRandomInt</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">Nothing</span>, <span class="kt">Int</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">BIO</span><span class="o">.</span><span class="py">delayE</span><span class="o">(</span><span class="nc">Right</span><span class="o">(</span><span class="nv">Random</span><span class="o">.</span><span class="py">nextInt</span><span class="o">()))</span>
 </code></pre></div>
 <p>You can see in the first function that we are very explicit about
 <code class="highlighter-rouge">FileNotFoundException</code> being an error that could happen, instructing readers
@@ -285,32 +285,32 @@ interesting articles:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">java.io._</span>
 
-<span class="k">def</span> <span class="n">openFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">FileNotFoundException</span>, <span class="kt">BufferedReader</span><span class="o">]</span> <span class="k">=</span>
+<span class="k">def</span> <span class="nf">openFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">FileNotFoundException</span>, <span class="kt">BufferedReader</span><span class="o">]</span> <span class="k">=</span>
   <span class="c1">// Made up API
-</span>  <span class="nc">BIO</span><span class="o">.</span><span class="n">delayE</span> <span class="o">{</span>
+</span>  <span class="nv">BIO</span><span class="o">.</span><span class="py">delayE</span> <span class="o">{</span>
     <span class="k">try</span> <span class="nc">Right</span><span class="o">(</span><span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileReader</span><span class="o">(</span><span class="n">file</span><span class="o">)))</span>
     <span class="k">catch</span> <span class="o">{</span> <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">FileNotFoundException</span> <span class="o">=&gt;</span> <span class="nc">Left</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="o">}</span>
   <span class="o">}</span>
 
-<span class="k">def</span> <span class="n">readLine</span><span class="o">(</span><span class="n">in</span><span class="k">:</span> <span class="kt">BufferedReader</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">IOException</span>, <span class="kt">String</span><span class="o">]</span> <span class="k">=</span>
-  <span class="nc">BIO</span><span class="o">.</span><span class="n">delayE</span> <span class="o">{</span>
-    <span class="k">try</span> <span class="nc">Right</span><span class="o">(</span><span class="n">in</span><span class="o">.</span><span class="n">readLine</span><span class="o">())</span>
+<span class="k">def</span> <span class="nf">readLine</span><span class="o">(</span><span class="n">in</span><span class="k">:</span> <span class="kt">BufferedReader</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">IOException</span>, <span class="kt">String</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">BIO</span><span class="o">.</span><span class="py">delayE</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="nc">Right</span><span class="o">(</span><span class="nv">in</span><span class="o">.</span><span class="py">readLine</span><span class="o">())</span>
     <span class="k">catch</span> <span class="o">{</span> <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">IOException</span> <span class="o">=&gt;</span> <span class="nc">Left</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="o">}</span>
-    <span class="k">finally</span> <span class="n">in</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+    <span class="k">finally</span> <span class="nv">in</span><span class="o">.</span><span class="py">close</span><span class="o">()</span>
   <span class="o">}</span>
 
-<span class="k">def</span> <span class="n">convertToNumber</span><span class="o">(</span><span class="n">nr</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">NumberFormatException</span>, <span class="kt">Long</span><span class="o">]</span> <span class="k">=</span>
-  <span class="nc">BIO</span><span class="o">.</span><span class="n">delayE</span> <span class="o">{</span>
-    <span class="k">try</span> <span class="nc">Right</span><span class="o">(</span><span class="n">nr</span><span class="o">.</span><span class="n">toLong</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">convertToNumber</span><span class="o">(</span><span class="n">nr</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">NumberFormatException</span>, <span class="kt">Long</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">BIO</span><span class="o">.</span><span class="py">delayE</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="nc">Right</span><span class="o">(</span><span class="nv">nr</span><span class="o">.</span><span class="py">toLong</span><span class="o">)</span>
     <span class="k">catch</span> <span class="o">{</span> <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">NumberFormatException</span> <span class="o">=&gt;</span> <span class="nc">Left</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="o">}</span>
   <span class="o">}</span>
 </code></pre></div>
 <p>What would be the type of a composition of multiple <code class="highlighter-rouge">IO</code> values like this?</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">for</span> <span class="o">{</span>
-  <span class="n">buffer</span> <span class="k">&lt;-</span> <span class="n">openFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
-  <span class="n">line</span> <span class="k">&lt;-</span> <span class="n">readLine</span><span class="o">(</span><span class="n">buffer</span><span class="o">)</span>
-  <span class="n">num</span> <span class="k">&lt;-</span> <span class="n">convertToNumber</span><span class="o">(</span><span class="n">line</span><span class="o">)</span>
+  <span class="n">buffer</span> <span class="k">&lt;-</span> <span class="nf">openFile</span><span class="o">(</span><span class="n">file</span><span class="o">)</span>
+  <span class="n">line</span> <span class="k">&lt;-</span> <span class="nf">readLine</span><span class="o">(</span><span class="n">buffer</span><span class="o">)</span>
+  <span class="n">num</span> <span class="k">&lt;-</span> <span class="nf">convertToNumber</span><span class="o">(</span><span class="n">line</span><span class="o">)</span>
 <span class="o">}</span> <span class="k">yield</span> <span class="n">num</span>
 </code></pre></div>
 <p>That's right, you'll have a <code class="highlighter-rouge">Throwable</code> on your hands. And this is
@@ -325,9 +325,9 @@ simply cast it.</p>
 type of the result, what you'll have to deal with is actually worse:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">for</span> <span class="o">{</span>
-  <span class="n">buffer</span> <span class="k">&lt;-</span> <span class="n">openFile</span><span class="o">(</span><span class="n">file</span><span class="o">).</span><span class="n">leftWiden</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">]</span>
-  <span class="n">line</span> <span class="k">&lt;-</span> <span class="n">readLine</span><span class="o">(</span><span class="n">buffer</span><span class="o">).</span><span class="n">leftWiden</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">]</span>
-  <span class="n">num</span> <span class="k">&lt;-</span> <span class="n">convertToNumber</span><span class="o">(</span><span class="n">line</span><span class="o">).</span><span class="n">leftWiden</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">]</span>
+  <span class="n">buffer</span> <span class="k">&lt;-</span> <span class="nf">openFile</span><span class="o">(</span><span class="n">file</span><span class="o">).</span><span class="py">leftWiden</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">]</span>
+  <span class="n">line</span> <span class="k">&lt;-</span> <span class="nf">readLine</span><span class="o">(</span><span class="n">buffer</span><span class="o">).</span><span class="py">leftWiden</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">]</span>
+  <span class="n">num</span> <span class="k">&lt;-</span> <span class="nf">convertToNumber</span><span class="o">(</span><span class="n">line</span><span class="o">).</span><span class="py">leftWiden</span><span class="o">[</span><span class="kt">Throwable</span><span class="o">]</span>
 <span class="o">}</span> <span class="k">yield</span> <span class="n">num</span>
 </code></pre></div>
 <p>Not sure how people feel about this, but to me this isn't an
@@ -404,7 +404,7 @@ recovery being less frequent.</p>
 
 <p>Lets say that we have this function:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">param</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">FileNotFoundException</span>, <span class="kt">B</span><span class="o">]</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">foo</span><span class="o">(</span><span class="n">param</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">FileNotFoundException</span>, <span class="kt">B</span><span class="o">]</span>
 </code></pre></div>
 <p>By saying that it can end with a <code class="highlighter-rouge">FileNotFoundException</code>, we are instructing
 all callers, at all call sites, to handle this error as part of the exposed API.</p>
@@ -418,7 +418,7 @@ Bifunctor <code class="highlighter-rouge">IO</code>.</p>
 maybe we turn it into something that reads a memory location. Now all of a sudden
 <code class="highlighter-rouge">FileNotFoundException</code> is no longer a possibility.</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">foo</span><span class="o">(</span><span class="n">param</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">Unit</span>, <span class="kt">B</span><span class="o">]</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">foo</span><span class="o">(</span><span class="n">param</span><span class="k">:</span> <span class="kt">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">Unit</span>, <span class="kt">B</span><span class="o">]</span>
 </code></pre></div>
 <p>This then bubbles down to all call sites, effectively breaking backwards compatibility,
 so all that depend on your <code class="highlighter-rouge">foo</code> will have to upgrade and recompile. And as the author
@@ -485,11 +485,11 @@ multiple type parameters are not part of standard Haskell.</p>
 <p>I gave this piece of code above and I'm fairly sure that you missed the
 bug in it:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">readLine</span><span class="o">(</span><span class="n">in</span><span class="k">:</span> <span class="kt">BufferedReader</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">IOException</span>, <span class="kt">String</span><span class="o">]</span> <span class="k">=</span>
-  <span class="nc">BIO</span><span class="o">.</span><span class="n">delayE</span> <span class="o">{</span>
-    <span class="k">try</span> <span class="nc">Right</span><span class="o">(</span><span class="n">in</span><span class="o">.</span><span class="n">readLine</span><span class="o">())</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">readLine</span><span class="o">(</span><span class="n">in</span><span class="k">:</span> <span class="kt">BufferedReader</span><span class="o">)</span><span class="k">:</span> <span class="kt">BIO</span><span class="o">[</span><span class="kt">IOException</span>, <span class="kt">String</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">BIO</span><span class="o">.</span><span class="py">delayE</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="nc">Right</span><span class="o">(</span><span class="nv">in</span><span class="o">.</span><span class="py">readLine</span><span class="o">())</span>
     <span class="k">catch</span> <span class="o">{</span> <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">IOException</span> <span class="o">=&gt;</span> <span class="nc">Left</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="o">}</span>
-    <span class="k">finally</span> <span class="n">in</span><span class="o">.</span><span class="n">close</span><span class="o">()</span>
+    <span class="k">finally</span> <span class="nv">in</span><span class="o">.</span><span class="py">close</span><span class="o">()</span>
   <span class="o">}</span>
 </code></pre></div>
 <p>The bug is that <code class="highlighter-rouge">in.close()</code> can throw exceptions as well. Actually on top of the JVM

@@ -31,9 +31,9 @@
       <meta name="description" content="Functional, Scala, Rx, Reactive Streams" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -154,18 +154,18 @@ throttling, therefore the code needs to implement it.</p>
 <p>To throttle once per second, here's what the Akka Streams sample is doing:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// Akka Streams sample
-</span><span class="k">def</span> <span class="n">onePerSecValve</span><span class="k">:</span> <span class="kt">Flow</span><span class="o">[</span><span class="kt">State</span>, <span class="kt">State</span>, <span class="kt">Unit</span><span class="o">]</span> <span class="k">=</span>
+</span><span class="k">def</span> <span class="nf">onePerSecValve</span><span class="k">:</span> <span class="kt">Flow</span><span class="o">[</span><span class="kt">State</span>, <span class="kt">State</span>, <span class="kt">Unit</span><span class="o">]</span> <span class="k">=</span>
   <span class="nc">Flow</span><span class="o">()</span> <span class="o">{</span> <span class="k">implicit</span> <span class="n">b</span> <span class="k">⇒</span>
     <span class="k">import</span> <span class="nn">FlowGraph.Implicits._</span>
 
-    <span class="k">val</span> <span class="n">zip</span> <span class="k">=</span> <span class="n">b</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="nc">ZipWith</span><span class="o">[</span><span class="kt">State</span>, <span class="kt">Tick.</span><span class="k">type</span>, <span class="kt">State</span><span class="o">](</span><span class="nc">Keep</span><span class="o">.</span><span class="n">left</span><span class="o">)</span>
-      <span class="o">.</span><span class="n">withAttributes</span><span class="o">(</span><span class="nc">OperationAttributes</span><span class="o">.</span><span class="n">inputBuffer</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">)))</span>
-    <span class="k">val</span> <span class="n">dropOne</span> <span class="k">=</span> <span class="n">b</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="nc">Flow</span><span class="o">[</span><span class="kt">State</span><span class="o">].</span><span class="n">drop</span><span class="o">(</span><span class="mi">1</span><span class="o">))</span>
+    <span class="k">val</span> <span class="nv">zip</span> <span class="k">=</span> <span class="nv">b</span><span class="o">.</span><span class="py">add</span><span class="o">(</span><span class="nc">ZipWith</span><span class="o">[</span><span class="kt">State</span>, <span class="kt">Tick.</span><span class="k">type</span>, <span class="kt">State</span><span class="o">](</span><span class="nv">Keep</span><span class="o">.</span><span class="py">left</span><span class="o">)</span>
+      <span class="o">.</span><span class="py">withAttributes</span><span class="o">(</span><span class="nv">OperationAttributes</span><span class="o">.</span><span class="py">inputBuffer</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">1</span><span class="o">)))</span>
+    <span class="k">val</span> <span class="nv">dropOne</span> <span class="k">=</span> <span class="nv">b</span><span class="o">.</span><span class="py">add</span><span class="o">(</span><span class="nc">Flow</span><span class="o">[</span><span class="kt">State</span><span class="o">].</span><span class="py">drop</span><span class="o">(</span><span class="mi">1</span><span class="o">))</span>
 
-    <span class="nc">Source</span><span class="o">(</span><span class="nc">Duration</span><span class="o">.</span><span class="nc">Zero</span><span class="o">,</span> <span class="mf">1.</span><span class="n">second</span><span class="o">,</span> <span class="nc">Tick</span><span class="o">)</span> <span class="o">~&gt;</span> <span class="n">zip</span><span class="o">.</span><span class="n">in1</span>
-    <span class="n">zip</span><span class="o">.</span><span class="n">out</span> <span class="o">~&gt;</span> <span class="n">dropOne</span><span class="o">.</span><span class="n">inlet</span>
+    <span class="nc">Source</span><span class="o">(</span><span class="nv">Duration</span><span class="o">.</span><span class="py">Zero</span><span class="o">,</span> <span class="mf">1.</span><span class="n">second</span><span class="o">,</span> <span class="nc">Tick</span><span class="o">)</span> <span class="o">~&gt;</span> <span class="nv">zip</span><span class="o">.</span><span class="py">in1</span>
+    <span class="nv">zip</span><span class="o">.</span><span class="py">out</span> <span class="o">~&gt;</span> <span class="nv">dropOne</span><span class="o">.</span><span class="py">inlet</span>
 
-    <span class="o">(</span><span class="n">zip</span><span class="o">.</span><span class="n">in0</span><span class="o">,</span> <span class="n">dropOne</span><span class="o">.</span><span class="n">outlet</span><span class="o">)</span>
+    <span class="o">(</span><span class="nv">zip</span><span class="o">.</span><span class="py">in0</span><span class="o">,</span> <span class="nv">dropOne</span><span class="o">.</span><span class="py">outlet</span><span class="o">)</span>
   <span class="o">}</span>
 </code></pre></div>
 <p>Monifu has
@@ -174,10 +174,10 @@ built-in, but if that weren't the case, here's how you could implement
 sampling per second:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// Monifu sample
-</span><span class="k">def</span> <span class="n">throttleOnePerSec</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">source</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
-  <span class="k">val</span> <span class="n">tick</span> <span class="k">=</span> <span class="nc">Observable</span><span class="o">.</span><span class="n">intervalAtFixedRate</span><span class="o">(</span><span class="mf">1.</span><span class="n">second</span><span class="o">,</span> <span class="mf">1.</span><span class="n">second</span><span class="o">)</span>
-  <span class="n">source</span><span class="o">.</span><span class="n">whileBusyDropEvents</span><span class="o">.</span><span class="n">zip</span><span class="o">(</span><span class="n">tick</span><span class="o">)</span>
-    <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="o">(</span><span class="n">elem</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">elem</span> <span class="o">}</span>
+</span><span class="k">def</span> <span class="nf">throttleOnePerSec</span><span class="o">[</span><span class="kt">T</span><span class="o">](</span><span class="n">source</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span><span class="k">:</span> <span class="kt">Observable</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">tick</span> <span class="k">=</span> <span class="nv">Observable</span><span class="o">.</span><span class="py">intervalAtFixedRate</span><span class="o">(</span><span class="mf">1.</span><span class="n">second</span><span class="o">,</span> <span class="mf">1.</span><span class="n">second</span><span class="o">)</span>
+  <span class="nv">source</span><span class="o">.</span><span class="py">whileBusyDropEvents</span><span class="o">.</span><span class="py">zip</span><span class="o">(</span><span class="n">tick</span><span class="o">)</span>
+    <span class="o">.</span><span class="py">map</span> <span class="o">{</span> <span class="nf">case</span> <span class="o">(</span><span class="n">elem</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">elem</span> <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>Both pieces of code are doing roughly the same thing. A different
@@ -197,39 +197,39 @@ merged:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// Akka Streams sample
 </span><span class="nc">Source</span><span class="o">(()</span> <span class="k">⇒</span> <span class="k">new</span> <span class="nc">RandomDoubleValueGenerator</span><span class="o">())</span>
-  <span class="o">.</span><span class="n">grouped</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
-  <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="n">x</span> <span class="o">+:</span> <span class="n">y</span> <span class="o">+:</span> <span class="nc">Nil</span> <span class="k">⇒</span> <span class="nc">Point</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="o">}</span>
-  <span class="o">.</span><span class="n">via</span><span class="o">(</span><span class="n">broadcastFilterMerge</span><span class="o">)</span>
+  <span class="o">.</span><span class="py">grouped</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+  <span class="o">.</span><span class="py">map</span> <span class="o">{</span> <span class="k">case</span> <span class="n">x</span> <span class="o">+:</span> <span class="n">y</span> <span class="o">+:</span> <span class="nc">Nil</span> <span class="k">⇒</span> <span class="nc">Point</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="o">}</span>
+  <span class="o">.</span><span class="py">via</span><span class="o">(</span><span class="n">broadcastFilterMerge</span><span class="o">)</span>
 
 <span class="c1">// ...
-</span><span class="k">def</span> <span class="n">broadcastFilterMerge</span><span class="k">:</span> <span class="kt">Flow</span><span class="o">[</span><span class="kt">Point</span>, <span class="kt">Sample</span>, <span class="kt">Unit</span><span class="o">]</span> <span class="k">=</span>
+</span><span class="k">def</span> <span class="nf">broadcastFilterMerge</span><span class="k">:</span> <span class="kt">Flow</span><span class="o">[</span><span class="kt">Point</span>, <span class="kt">Sample</span>, <span class="kt">Unit</span><span class="o">]</span> <span class="k">=</span>
   <span class="nc">Flow</span><span class="o">()</span> <span class="o">{</span> <span class="k">implicit</span> <span class="n">b</span> <span class="k">⇒</span>
     <span class="k">import</span> <span class="nn">FlowGraph.Implicits._</span>
 
-    <span class="k">val</span> <span class="n">broadcast</span> <span class="k">=</span> <span class="n">b</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="nc">Broadcast</span><span class="o">[</span><span class="kt">Point</span><span class="o">](</span><span class="mi">2</span><span class="o">))</span> <span class="c1">// split one upstream into 2 downstreams
-</span>    <span class="k">val</span> <span class="n">filterInner</span> <span class="k">=</span> <span class="n">b</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="nc">Flow</span><span class="o">[</span><span class="kt">Point</span><span class="o">].</span><span class="n">filter</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">isInner</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="nc">InnerSample</span><span class="o">))</span>
-    <span class="k">val</span> <span class="n">filterOuter</span> <span class="k">=</span> <span class="n">b</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="nc">Flow</span><span class="o">[</span><span class="kt">Point</span><span class="o">].</span><span class="n">filter</span><span class="o">(!</span><span class="k">_</span><span class="o">.</span><span class="n">isInner</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="nc">OuterSample</span><span class="o">))</span>
-    <span class="k">val</span> <span class="n">merge</span> <span class="k">=</span> <span class="n">b</span><span class="o">.</span><span class="n">add</span><span class="o">(</span><span class="nc">Merge</span><span class="o">[</span><span class="kt">Sample</span><span class="o">](</span><span class="mi">2</span><span class="o">))</span> <span class="c1">// merge 2 upstreams into one downstream
+    <span class="k">val</span> <span class="nv">broadcast</span> <span class="k">=</span> <span class="nv">b</span><span class="o">.</span><span class="py">add</span><span class="o">(</span><span class="nc">Broadcast</span><span class="o">[</span><span class="kt">Point</span><span class="o">](</span><span class="mi">2</span><span class="o">))</span> <span class="c1">// split one upstream into 2 downstreams
+</span>    <span class="k">val</span> <span class="nv">filterInner</span> <span class="k">=</span> <span class="nv">b</span><span class="o">.</span><span class="py">add</span><span class="o">(</span><span class="nc">Flow</span><span class="o">[</span><span class="kt">Point</span><span class="o">].</span><span class="py">filter</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">isInner</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="nc">InnerSample</span><span class="o">))</span>
+    <span class="k">val</span> <span class="nv">filterOuter</span> <span class="k">=</span> <span class="nv">b</span><span class="o">.</span><span class="py">add</span><span class="o">(</span><span class="nc">Flow</span><span class="o">[</span><span class="kt">Point</span><span class="o">].</span><span class="py">filter</span><span class="o">(!</span><span class="nv">_</span><span class="o">.</span><span class="py">isInner</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="nc">OuterSample</span><span class="o">))</span>
+    <span class="k">val</span> <span class="nv">merge</span> <span class="k">=</span> <span class="nv">b</span><span class="o">.</span><span class="py">add</span><span class="o">(</span><span class="nc">Merge</span><span class="o">[</span><span class="kt">Sample</span><span class="o">](</span><span class="mi">2</span><span class="o">))</span> <span class="c1">// merge 2 upstreams into one downstream
 </span>
-    <span class="n">broadcast</span><span class="o">.</span><span class="n">out</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">~&gt;</span> <span class="n">filterInner</span> <span class="o">~&gt;</span> <span class="n">merge</span><span class="o">.</span><span class="n">in</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
-    <span class="n">broadcast</span><span class="o">.</span><span class="n">out</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">~&gt;</span> <span class="n">filterOuter</span> <span class="o">~&gt;</span> <span class="n">merge</span><span class="o">.</span><span class="n">in</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+    <span class="nv">broadcast</span><span class="o">.</span><span class="py">out</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="o">~&gt;</span> <span class="n">filterInner</span> <span class="o">~&gt;</span> <span class="nv">merge</span><span class="o">.</span><span class="py">in</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+    <span class="nv">broadcast</span><span class="o">.</span><span class="py">out</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">~&gt;</span> <span class="n">filterOuter</span> <span class="o">~&gt;</span> <span class="nv">merge</span><span class="o">.</span><span class="py">in</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
 
-    <span class="o">(</span><span class="n">broadcast</span><span class="o">.</span><span class="n">in</span><span class="o">,</span> <span class="n">merge</span><span class="o">.</span><span class="n">out</span><span class="o">)</span>
+    <span class="o">(</span><span class="nv">broadcast</span><span class="o">.</span><span class="py">in</span><span class="o">,</span> <span class="nv">merge</span><span class="o">.</span><span class="py">out</span><span class="o">)</span>
   <span class="o">}</span>
 </code></pre></div>
 <p>Here's Monifu's version, doing the same thing.</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="c1">// Monifu sample
-</span><span class="k">val</span> <span class="n">source</span> <span class="k">=</span> <span class="nc">Observable</span>
-  <span class="o">.</span><span class="n">fromIterator</span><span class="o">(</span><span class="k">new</span> <span class="nc">RandomDoubleValueGenerator</span><span class="o">())</span>
-  <span class="o">.</span><span class="n">buffer</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
-  <span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="k">case</span> <span class="nc">Seq</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">⇒</span> <span class="nc">Point</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="o">}</span>
-  <span class="o">.</span><span class="n">share</span><span class="o">()</span> <span class="c1">// shares the data-source
+</span><span class="k">val</span> <span class="nv">source</span> <span class="k">=</span> <span class="nc">Observable</span>
+  <span class="o">.</span><span class="py">fromIterator</span><span class="o">(</span><span class="k">new</span> <span class="nc">RandomDoubleValueGenerator</span><span class="o">())</span>
+  <span class="o">.</span><span class="py">buffer</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+  <span class="o">.</span><span class="py">map</span> <span class="o">{</span> <span class="k">case</span> <span class="nc">Seq</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="k">⇒</span> <span class="nc">Point</span><span class="o">(</span><span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">)</span> <span class="o">}</span>
+  <span class="o">.</span><span class="py">share</span><span class="o">()</span> <span class="c1">// shares the data-source
 </span>
-<span class="k">val</span> <span class="n">innerSamples</span> <span class="k">=</span> <span class="n">source</span><span class="o">.</span><span class="n">filter</span><span class="o">(</span><span class="k">_</span><span class="o">.</span><span class="n">isInner</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="nc">InnerSample</span><span class="o">)</span>
-<span class="k">val</span> <span class="n">outerSamples</span> <span class="k">=</span> <span class="n">source</span><span class="o">.</span><span class="n">filter</span><span class="o">(!</span><span class="k">_</span><span class="o">.</span><span class="n">isInner</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="nc">OuterSample</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">innerSamples</span> <span class="k">=</span> <span class="nv">source</span><span class="o">.</span><span class="py">filter</span><span class="o">(</span><span class="nv">_</span><span class="o">.</span><span class="py">isInner</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="nc">InnerSample</span><span class="o">)</span>
+<span class="k">val</span> <span class="nv">outerSamples</span> <span class="k">=</span> <span class="nv">source</span><span class="o">.</span><span class="py">filter</span><span class="o">(!</span><span class="nv">_</span><span class="o">.</span><span class="py">isInner</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="nc">OuterSample</span><span class="o">)</span>
 
-<span class="nc">Observable</span><span class="o">.</span><span class="n">merge</span><span class="o">(</span><span class="n">innerSamples</span><span class="o">,</span> <span class="n">outerSamples</span><span class="o">)</span>
+<span class="nv">Observable</span><span class="o">.</span><span class="py">merge</span><span class="o">(</span><span class="n">innerSamples</span><span class="o">,</span> <span class="n">outerSamples</span><span class="o">)</span>
 </code></pre></div>
 <p>At this point I think a pattern emerges.</p>
 
@@ -309,11 +309,11 @@ concerns, you
 <a href="https://en.wikipedia.org/wiki/Observer_pattern">already know it</a>):</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">Observer</span><span class="o">[</span><span class="kt">-T</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">onNext</span><span class="o">(</span><span class="n">elem</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Ack</span><span class="o">]</span>
+  <span class="k">def</span> <span class="nf">onNext</span><span class="o">(</span><span class="n">elem</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Ack</span><span class="o">]</span>
 
-  <span class="k">def</span> <span class="n">onError</span><span class="o">(</span><span class="n">ex</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">onError</span><span class="o">(</span><span class="n">ex</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span>
 
-  <span class="k">def</span> <span class="n">onComplete</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span>
+  <span class="k">def</span> <span class="nf">onComplete</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span>
 <span class="o">}</span>
 </code></pre></div>
 <p>In contrast, I found the source-code and the concepts in Akka Streams

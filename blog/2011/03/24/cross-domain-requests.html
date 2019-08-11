@@ -30,9 +30,9 @@
       <meta name="description" content="Javascript, Browser, Web" />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -146,7 +146,7 @@
 
 <div class="highlight"><pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
 <span class="c1">// NOPE, it doesn't work, yet</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="s2">"http://destination.org"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="dl">"</span><span class="s2">POST</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">http://destination.org</span><span class="dl">"</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
 </code></pre></div>
 <h2>Response of <i>destination.org</i></h2>
 
@@ -207,9 +207,9 @@
     <span class="kd">var</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span>
 <span class="p">}</span> <span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{}</span>	
 
-<span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span> <span class="o">&amp;&amp;</span> <span class="s2">"withCredentials"</span> <span class="k">in</span> <span class="nx">xhr</span><span class="p">){</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">withCredentials</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">xhr</span><span class="p">){</span>
     <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">XDomainRequest</span> <span class="o">!=</span> <span class="s2">"undefined"</span><span class="p">){</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">XDomainRequest</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">){</span>
     <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XDomainRequest</span><span class="p">();</span>
     <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
 <span class="p">}</span>
@@ -247,7 +247,7 @@
         <span class="c1">// IExplorer also skips on readyState</span>
         <span class="c1">// Also, it's success/error based on the `event_type` used at the call-site</span>
         <span class="c1">// </span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">event_type</span> <span class="o">==</span> <span class="s1">'load'</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">is_iexplorer</span><span class="p">()</span> <span class="o">||</span> <span class="nx">XHRobj</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">success</span><span class="p">)</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">event_type</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">load</span><span class="dl">'</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="nx">is_iexplorer</span><span class="p">()</span> <span class="o">||</span> <span class="nx">XHRobj</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nx">success</span><span class="p">)</span>
             <span class="nx">success</span><span class="p">(</span><span class="nx">XHRobj</span><span class="p">.</span><span class="nx">responseText</span><span class="p">,</span> <span class="nx">XHRobj</span><span class="p">);</span>
         <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span>
             <span class="nx">error</span><span class="p">(</span><span class="nx">XHRobj</span><span class="p">);</span>
@@ -274,8 +274,8 @@
 <span class="c1">// For every other browser, the XHRobj we want is in `e.target`, </span>
 <span class="c1">// where `e` is an event object.</span>
 <span class="c1">//</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span>  <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">handle_load</span><span class="p">(</span><span class="s1">'load'</span><span class="p">)(</span><span class="nx">is_iexplorer</span><span class="p">()</span> <span class="p">?</span> <span class="nx">e</span> <span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="p">};</span>
-<span class="nx">xhr</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">handle_load</span><span class="p">(</span><span class="s1">'error'</span><span class="p">)(</span><span class="nx">is_iexplorer</span><span class="p">()</span> <span class="p">?</span> <span class="nx">e</span> <span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="p">};</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onload</span>  <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">handle_load</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">)(</span><span class="nx">is_iexplorer</span><span class="p">()</span> <span class="p">?</span> <span class="nx">e</span> <span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="p">};</span>
+<span class="nx">xhr</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">handle_load</span><span class="p">(</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">)(</span><span class="nx">is_iexplorer</span><span class="p">()</span> <span class="p">?</span> <span class="nx">e</span> <span class="p">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">)</span> <span class="p">};</span>
 <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </code></pre></div>
 <p>
@@ -283,7 +283,7 @@
 </p>
 
 <div class="highlight"><pre class="highlight javascript"><code><span class="kd">function</span> <span class="nx">is_iexplorer</span><span class="p">()</span> <span class="p">{</span> 
-    <span class="k">return</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'MSIE'</span><span class="p">)</span> <span class="o">!=-</span><span class="mi">1</span> 
+    <span class="k">return</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="dl">'</span><span class="s1">MSIE</span><span class="dl">'</span><span class="p">)</span> <span class="o">!=-</span><span class="mi">1</span> 
 <span class="p">}</span>
 </code></pre></div>
 <p>
@@ -325,11 +325,11 @@
 <span class="c1">// implementation for XMLHttpRequest)</span>
 <span class="c1">//</span>
 <span class="kd">function</span> <span class="nx">_ajax_with_flxhr</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">url</span>     <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="s1">'url'</span><span class="p">];</span>
-    <span class="kd">var</span> <span class="nx">type</span>    <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="s1">'type'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'GET'</span><span class="p">;</span>
-    <span class="kd">var</span> <span class="nx">success</span> <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="s1">'success'</span><span class="p">];</span>
-    <span class="kd">var</span> <span class="nx">error</span>   <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="s1">'error'</span><span class="p">];</span>
-    <span class="kd">var</span> <span class="nx">data</span>    <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="s1">'data'</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">url</span>     <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="dl">'</span><span class="s1">url</span><span class="dl">'</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">type</span>    <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">]</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">GET</span><span class="dl">'</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">success</span> <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="dl">'</span><span class="s1">success</span><span class="dl">'</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">error</span>   <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="dl">'</span><span class="s1">error</span><span class="dl">'</span><span class="p">];</span>
+    <span class="kd">var</span> <span class="nx">data</span>    <span class="o">=</span> <span class="nx">options</span><span class="p">[</span><span class="dl">'</span><span class="s1">data</span><span class="dl">'</span><span class="p">];</span>
 
     <span class="c1">//</span>
     <span class="c1">// handles callbacks, just as above</span>
@@ -345,7 +345,7 @@
 
     <span class="kd">var</span> <span class="nx">flproxy</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">flensed</span><span class="p">.</span><span class="nx">flXHR</span><span class="p">({</span> 
         <span class="na">autoUpdatePlayer</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span> 
-        <span class="na">instanceId</span><span class="p">:</span><span class="s2">"myproxy1"</span><span class="p">,</span> 
+        <span class="na">instanceId</span><span class="p">:</span><span class="dl">"</span><span class="s2">myproxy1</span><span class="dl">"</span><span class="p">,</span> 
         <span class="na">xmlResponseText</span><span class="p">:</span><span class="kc">false</span><span class="p">,</span> 
         <span class="na">onreadystatechange</span><span class="p">:</span><span class="nx">handle_load</span>
     <span class="p">});</span>
@@ -442,16 +442,16 @@
     <span class="nx">FILES_LOADING</span><span class="p">[</span><span class="nx">file</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
 
     <span class="c1">// dynamically adds a &lt;script&gt; tag to the document</span>
-    <span class="kd">var</span> <span class="nx">html_doc</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">'head'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
-    <span class="nx">js</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'script'</span><span class="p">);</span>
-    <span class="nx">js</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'type'</span><span class="p">,</span> <span class="s1">'text/javascript'</span><span class="p">);</span>
-    <span class="nx">js</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span> <span class="nx">file</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">html_doc</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">head</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="nx">js</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">js</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">type</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">text/javascript</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">js</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">src</span><span class="dl">'</span><span class="p">,</span> <span class="nx">file</span><span class="p">);</span>
     <span class="nx">html_doc</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">js</span><span class="p">);</span>
 
     <span class="c1">// onload, then go through the stack of callbacks, </span>
     <span class="c1">// and execute all of them</span>
     <span class="nx">js</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="nx">js</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="s1">'complete'</span> <span class="o">||</span> <span class="nx">js</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="s1">'loaded'</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">js</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">complete</span><span class="dl">'</span> <span class="o">||</span> <span class="nx">js</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">==</span> <span class="dl">'</span><span class="s1">loaded</span><span class="dl">'</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nx">FILES_INCLUDED</span><span class="p">[</span><span class="nx">file</span><span class="p">])</span> <span class="p">{</span>
                 <span class="nx">FILES_INCLUDED</span><span class="p">[</span><span class="nx">file</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
                 <span class="nx">execute_callbacks</span><span class="p">(</span><span class="nx">file</span><span class="p">);</span>
@@ -478,9 +478,9 @@
 </p>
 
 <div class="highlight"><pre class="highlight javascript"><code><span class="c1">// to recapitulate</span>
-<span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span> <span class="o">&amp;&amp;</span> <span class="s2">"withCredentials"</span> <span class="k">in</span> <span class="nx">xhr</span><span class="p">){</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span> <span class="o">&amp;&amp;</span> <span class="dl">"</span><span class="s2">withCredentials</span><span class="dl">"</span> <span class="k">in</span> <span class="nx">xhr</span><span class="p">){</span>
     <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
-<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">XDomainRequest</span> <span class="o">!=</span> <span class="s2">"undefined"</span><span class="p">){</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">XDomainRequest</span> <span class="o">!=</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">){</span>
     <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XDomainRequest</span><span class="p">();</span>
     <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">url</span><span class="p">);</span>
 <span class="p">}</span>
@@ -489,7 +489,7 @@
 
 <span class="c1">// NOT SUPPORTED, then fallback</span>
 <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">xhr</span><span class="p">)</span> 
-    <span class="nx">async_load_javascript</span><span class="p">(</span><span class="nx">CROSSDOMAINJS_PATH</span> <span class="o">+</span> <span class="s2">"flXHR/flXHR.js"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">async_load_javascript</span><span class="p">(</span><span class="nx">CROSSDOMAINJS_PATH</span> <span class="o">+</span> <span class="dl">"</span><span class="s2">flXHR/flXHR.js</span><span class="dl">"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
         <span class="nx">_ajax_with_flxhr</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
     <span class="p">});</span>
 </code></pre></div>

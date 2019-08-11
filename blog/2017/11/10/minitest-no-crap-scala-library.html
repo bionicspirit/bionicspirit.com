@@ -30,9 +30,9 @@
       <meta name="description" content="Provides only the minimal functionality needed, with ScalaCheck integration and maximum compatibility." />
 
   <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-b1326ee4.css" rel="stylesheet" />
+  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
   <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-0c76b2ed.css" rel="stylesheet" />
+  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
   <![endif]-->
 </head>
 <body>
@@ -166,13 +166,13 @@ error message back, depending on whether the implementation does or
 doesn't do macros for <code class="highlighter-rouge">assert</code>, but if it does, then that's a whole
 other can of worms:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">assert</span><span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nf">assert</span><span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span>
 </code></pre></div>
 <p><strong>Fact:</strong> most assertions that you need to do in testing are <em>equality
 tests</em> and for that rare moment in which you need inequality tests, you
 can simply add a custom error message:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">assert</span><span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">,</span> <span class="n">s</span><span class="s">"$x &gt; $y"</span><span class="o">)</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nf">assert</span><span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">,</span> <span class="n">s</span><span class="s">"$x &gt; $y"</span><span class="o">)</span>
 </code></pre></div>
 <p>Yes, it's repetitive, but I don't care, because this is such a rare
 event that I don't want to optimize it with a special DSL or even with
@@ -182,7 +182,7 @@ macros.</p>
 words like "<code class="highlighter-rouge">it</code>", forcing you to phrase the test's description in a
 certain way. I frequently end up with "sentences" that makes no sense:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="n">it</span><span class="o">(</span><span class="s">"left identity"</span><span class="o">)</span> <span class="o">{</span>
+<div class="highlight"><pre class="highlight scala"><code><span class="nf">it</span><span class="o">(</span><span class="s">"left identity"</span><span class="o">)</span> <span class="o">{</span>
   <span class="c1">// ...
 </span><span class="o">}</span>
 </code></pre></div>
@@ -250,33 +250,33 @@ suite, it could inherit from <code class="highlighter-rouge">SimpleTestSuite</co
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">minitest.SimpleTestSuite</span>
 
 <span class="k">object</span> <span class="nc">MySimpleSuite</span> <span class="k">extends</span> <span class="nc">SimpleTestSuite</span> <span class="o">{</span>
-  <span class="n">test</span><span class="o">(</span><span class="s">"should be"</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"should be"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nf">assertEquals</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
   <span class="o">}</span>
 
-  <span class="n">test</span><span class="o">(</span><span class="s">"should not be"</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">assert</span><span class="o">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">!=</span> <span class="mi">3</span><span class="o">)</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"should not be"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nf">assert</span><span class="o">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">!=</span> <span class="mi">3</span><span class="o">)</span>
   <span class="o">}</span>
 
-  <span class="n">test</span><span class="o">(</span><span class="s">"should throw"</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"should throw"</span><span class="o">)</span> <span class="o">{</span>
     <span class="k">class</span> <span class="nc">DummyException</span> <span class="k">extends</span> <span class="nc">RuntimeException</span><span class="o">(</span><span class="s">"DUMMY"</span><span class="o">)</span>
-    <span class="k">def</span> <span class="n">test</span><span class="o">()</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">throw</span> <span class="k">new</span> <span class="nc">DummyException</span>
+    <span class="k">def</span> <span class="nf">test</span><span class="o">()</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">throw</span> <span class="k">new</span> <span class="nc">DummyException</span>
 
     <span class="n">intercept</span><span class="o">[</span><span class="kt">DummyException</span><span class="o">]</span> <span class="o">{</span>
-      <span class="n">test</span><span class="o">()</span>
+      <span class="nf">test</span><span class="o">()</span>
     <span class="o">}</span>
   <span class="o">}</span>
 
-  <span class="n">test</span><span class="o">(</span><span class="s">"test result of"</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">assertResult</span><span class="o">(</span><span class="s">"hello world"</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"test result of"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nf">assertResult</span><span class="o">(</span><span class="s">"hello world"</span><span class="o">)</span> <span class="o">{</span>
       <span class="s">"hello"</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="s">"world"</span>
     <span class="o">}</span>
   <span class="o">}</span>
 
-  <span class="n">test</span><span class="o">(</span><span class="s">"should be ignored"</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">if</span> <span class="o">(</span><span class="nc">Platform</span><span class="o">.</span><span class="n">isJS</span><span class="o">)</span> <span class="n">ignore</span><span class="o">(</span><span class="s">"Blocking not supported on top of JS"</span><span class="o">)</span>
-    <span class="k">val</span> <span class="n">r</span> <span class="k">=</span> <span class="nc">Await</span><span class="o">.</span><span class="n">result</span><span class="o">(</span><span class="nc">Future</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="nc">Duration</span><span class="o">.</span><span class="nc">Inf</span><span class="o">)</span>
-    <span class="n">assertEquals</span><span class="o">(</span><span class="n">r</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"should be ignored"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nf">if</span> <span class="o">(</span><span class="nv">Platform</span><span class="o">.</span><span class="py">isJS</span><span class="o">)</span> <span class="nf">ignore</span><span class="o">(</span><span class="s">"Blocking not supported on top of JS"</span><span class="o">)</span>
+    <span class="k">val</span> <span class="nv">r</span> <span class="k">=</span> <span class="nv">Await</span><span class="o">.</span><span class="py">result</span><span class="o">(</span><span class="nc">Future</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="nv">Duration</span><span class="o">.</span><span class="py">Inf</span><span class="o">)</span>
+    <span class="nf">assertEquals</span><span class="o">(</span><span class="n">r</span><span class="o">,</span> <span class="mi">1</span><span class="o">)</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -289,16 +289,16 @@ Then on each <code class="highlighter-rouge">test</code> definition, you'll rece
 <span class="k">import</span> <span class="nn">minitest.TestSuite</span>
 
 <span class="k">object</span> <span class="nc">MyTestSuite</span> <span class="k">extends</span> <span class="nc">TestSuite</span><span class="o">[</span><span class="kt">TestScheduler</span><span class="o">]</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="n">setup</span><span class="o">()</span> <span class="k">=</span> <span class="nc">TestScheduler</span><span class="o">()</span>
+  <span class="k">def</span> <span class="nf">setup</span><span class="o">()</span> <span class="k">=</span> <span class="nc">TestScheduler</span><span class="o">()</span>
 
-  <span class="k">def</span> <span class="n">tearDown</span><span class="o">(</span><span class="n">env</span><span class="k">:</span> <span class="kt">TestScheduler</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
-    <span class="n">assert</span><span class="o">(</span><span class="n">env</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">tasks</span><span class="o">.</span><span class="n">isEmpty</span><span class="o">,</span> <span class="s">"Scheduler should not have tasks left"</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">tearDown</span><span class="o">(</span><span class="n">env</span><span class="k">:</span> <span class="kt">TestScheduler</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+    <span class="nf">assert</span><span class="o">(</span><span class="nv">env</span><span class="o">.</span><span class="py">state</span><span class="o">.</span><span class="py">tasks</span><span class="o">.</span><span class="py">isEmpty</span><span class="o">,</span> <span class="s">"Scheduler should not have tasks left"</span><span class="o">)</span>
 
-  <span class="n">test</span><span class="o">(</span><span class="s">"simulated async"</span><span class="o">)</span> <span class="o">{</span> <span class="k">implicit</span> <span class="n">ec</span> <span class="k">=&gt;</span>
-    <span class="k">val</span> <span class="n">f</span> <span class="k">=</span> <span class="nc">Future</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
-    <span class="n">ec</span><span class="o">.</span><span class="n">tick</span><span class="o">()</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"simulated async"</span><span class="o">)</span> <span class="o">{</span> <span class="k">implicit</span> <span class="n">ec</span> <span class="k">=&gt;</span>
+    <span class="k">val</span> <span class="nv">f</span> <span class="k">=</span> <span class="nc">Future</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+    <span class="nv">ec</span><span class="o">.</span><span class="py">tick</span><span class="o">()</span>
 	
-    <span class="n">assertEquals</span><span class="o">(</span><span class="n">f</span><span class="o">.</span><span class="n">value</span><span class="o">,</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Success</span><span class="o">(</span><span class="mi">2</span><span class="o">)))</span>
+    <span class="nf">assertEquals</span><span class="o">(</span><span class="nv">f</span><span class="o">.</span><span class="py">value</span><span class="o">,</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Success</span><span class="o">(</span><span class="mi">2</span><span class="o">)))</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -308,11 +308,11 @@ and return a <code class="highlighter-rouge">Future[Unit]</code>:</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">scala.concurrent.ExecutionContext.Implicits.global</span>
 
 <span class="k">object</span> <span class="nc">MySimpleSuite</span> <span class="k">extends</span> <span class="nc">SimpleTestSuite</span> <span class="o">{</span>
-  <span class="n">testAsync</span><span class="o">(</span><span class="s">"asynchronous execution"</span><span class="o">)</span> <span class="o">{</span>
-    <span class="k">val</span> <span class="n">future</span> <span class="k">=</span> <span class="nc">Future</span><span class="o">(</span><span class="mi">100</span><span class="o">).</span><span class="n">map</span><span class="o">(</span><span class="k">_</span><span class="o">+</span><span class="mi">1</span><span class="o">)</span>
+  <span class="nf">testAsync</span><span class="o">(</span><span class="s">"asynchronous execution"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">future</span> <span class="k">=</span> <span class="nc">Future</span><span class="o">(</span><span class="mi">100</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="k">_</span><span class="o">+</span><span class="mi">1</span><span class="o">)</span>
     
-    <span class="k">for</span> <span class="o">(</span><span class="n">result</span> <span class="k">&lt;-</span> <span class="n">future</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
-      <span class="n">assertEquals</span><span class="o">(</span><span class="n">result</span><span class="o">,</span> <span class="mi">101</span><span class="o">)</span>
+    <span class="nf">for</span> <span class="o">(</span><span class="n">result</span> <span class="k">&lt;-</span> <span class="n">future</span><span class="o">)</span> <span class="k">yield</span> <span class="o">{</span>
+      <span class="nf">assertEquals</span><span class="o">(</span><span class="n">result</span><span class="o">,</span> <span class="mi">101</span><span class="o">)</span>
     <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
@@ -324,12 +324,12 @@ So for property-based testing:</p>
 <div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">minitest.laws.Checkers</span>
 
 <span class="k">object</span> <span class="nc">MyLawsTest</span> <span class="k">extends</span> <span class="nc">SimpleTestSuite</span> <span class="k">with</span> <span class="nc">Checkers</span> <span class="o">{</span>
-  <span class="n">test</span><span class="o">(</span><span class="s">"addition of integers is commutative"</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">check2</span><span class="o">((</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span><span class="o">)</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"addition of integers is commutative"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nf">check2</span><span class="o">((</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">==</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span><span class="o">)</span>
   <span class="o">}</span>
   
-  <span class="n">test</span><span class="o">(</span><span class="s">"addition of integers is transitive"</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">check3</span><span class="o">((</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)</span> <span class="o">+</span> <span class="n">z</span> <span class="o">==</span> <span class="n">x</span> <span class="o">+</span> <span class="o">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="o">))</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"addition of integers is transitive"</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nf">check3</span><span class="o">((</span><span class="n">x</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span> <span class="n">z</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">)</span> <span class="o">+</span> <span class="n">z</span> <span class="o">==</span> <span class="n">x</span> <span class="o">+</span> <span class="o">(</span><span class="n">y</span> <span class="o">+</span> <span class="n">z</span><span class="o">))</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div>
@@ -363,21 +363,21 @@ your own utilities and I recommend piggybacking on ScalaCheck, e.g:</p>
 <span class="k">import</span> <span class="nn">org.scalacheck.</span><span class="o">{</span><span class="nc">Prop</span><span class="o">,</span> <span class="nc">Test</span><span class="o">}</span>
 <span class="k">import</span> <span class="nn">scala.concurrent.ExecutionContext.Implicits.global</span>
 
-<span class="k">trait</span> <span class="nc">PureTestSuite</span> <span class="k">extends</span> <span class="n">minitest</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="nc">AbstractTestSuite</span> <span class="o">{</span>
-  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="n">ts</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SimpleTestSuite</span> <span class="o">{}</span>
-  <span class="k">lazy</span> <span class="k">val</span> <span class="n">properties</span> <span class="k">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">properties</span>
+<span class="k">trait</span> <span class="nc">PureTestSuite</span> <span class="k">extends</span> <span class="nv">minitest</span><span class="o">.</span><span class="py">api</span><span class="o">.</span><span class="py">AbstractTestSuite</span> <span class="o">{</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="nv">ts</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">SimpleTestSuite</span> <span class="o">{}</span>
+  <span class="k">lazy</span> <span class="k">val</span> <span class="nv">properties</span> <span class="k">=</span> <span class="nv">ts</span><span class="o">.</span><span class="py">properties</span>
   
-  <span class="k">def</span> <span class="n">test</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Prop</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> 
-    <span class="n">ts</span><span class="o">.</span><span class="n">test</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-      <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="nc">Test</span><span class="o">.</span><span class="n">check</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">f</span><span class="o">)</span>
-      <span class="k">if</span> <span class="o">(!</span><span class="n">result</span><span class="o">.</span><span class="n">passed</span><span class="o">)</span> <span class="n">fail</span><span class="o">(</span><span class="nc">Pretty</span><span class="o">.</span><span class="n">pretty</span><span class="o">(</span><span class="n">result</span><span class="o">))</span>
+  <span class="k">def</span> <span class="nf">test</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Prop</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> 
+    <span class="nv">ts</span><span class="o">.</span><span class="py">test</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">Test</span><span class="o">.</span><span class="py">check</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">f</span><span class="o">)</span>
+      <span class="nf">if</span> <span class="o">(!</span><span class="nv">result</span><span class="o">.</span><span class="py">passed</span><span class="o">)</span> <span class="nf">fail</span><span class="o">(</span><span class="nv">Pretty</span><span class="o">.</span><span class="py">pretty</span><span class="o">(</span><span class="n">result</span><span class="o">))</span>
     <span class="o">}</span>
 
-  <span class="k">def</span> <span class="n">testIO</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">IO</span><span class="o">[</span><span class="kt">Prop</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> 
-    <span class="n">ts</span><span class="o">.</span><span class="n">testAsync</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-      <span class="n">f</span><span class="o">.</span><span class="n">unsafeToFuture</span><span class="o">.</span><span class="n">map</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span>
-        <span class="k">val</span> <span class="n">result</span> <span class="k">=</span> <span class="nc">Test</span><span class="o">.</span><span class="n">check</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">f</span><span class="o">)</span>
-        <span class="k">if</span> <span class="o">(!</span><span class="n">result</span><span class="o">.</span><span class="n">passed</span><span class="o">)</span> <span class="n">fail</span><span class="o">(</span><span class="nc">Pretty</span><span class="o">.</span><span class="n">pretty</span><span class="o">(</span><span class="n">result</span><span class="o">))</span>
+  <span class="k">def</span> <span class="nf">testIO</span><span class="o">(</span><span class="n">name</span><span class="k">:</span> <span class="kt">String</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">IO</span><span class="o">[</span><span class="kt">Prop</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> 
+    <span class="nv">ts</span><span class="o">.</span><span class="py">testAsync</span><span class="o">(</span><span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+      <span class="nv">f</span><span class="o">.</span><span class="py">unsafeToFuture</span><span class="o">.</span><span class="py">map</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span>
+        <span class="k">val</span> <span class="nv">result</span> <span class="k">=</span> <span class="nv">Test</span><span class="o">.</span><span class="py">check</span><span class="o">(</span><span class="n">config</span><span class="o">,</span> <span class="n">f</span><span class="o">)</span>
+        <span class="nf">if</span> <span class="o">(!</span><span class="nv">result</span><span class="o">.</span><span class="py">passed</span><span class="o">)</span> <span class="nf">fail</span><span class="o">(</span><span class="nv">Pretty</span><span class="o">.</span><span class="py">pretty</span><span class="o">(</span><span class="n">result</span><span class="o">))</span>
       <span class="o">}</span>
     <span class="o">}</span>
 <span class="o">}</span>
