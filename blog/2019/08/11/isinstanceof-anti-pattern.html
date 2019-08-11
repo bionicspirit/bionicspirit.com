@@ -101,6 +101,12 @@
 
 <!-- read more -->
 
+<p class="extra-info">
+  When C# developers try Java, one primary complaint is about the lack of reification for Java's generics and by that they mean the ability to discriminate between different type parameters, so to differentiate between <code class="highlighter-rouge">List[Int]</code> and <code class="highlighter-rouge">List[String]</code> via <code class="highlighter-rouge">isInstanceOf</code> checks. Java and Scala do type erasure so a <code class="highlighter-rouge">List[String]</code> at runtime becomes a <code class="highlighter-rouge">List[Any]</code>.
+  <br /><br />
+  Interestingly this complaint is not valid for Scala. Because of Scala's expressiveness, you shouldn't need to do <code class="highlighter-rouge">isInstanceOf</code> checks, unless it's for interoperability or for awkward micro optimizations that have no place in high level code. Reification is a runtime construct and Scala solves the associated use cases by moving all of that at compile time, via implicit parameters.
+</p>
+
 <h2 id="the-anti-pattern">The Anti-Pattern</h2>
 
 <p>Given some piece of heavy logic, lets say you want to describe a function that can execute a block of code, along with some finalizer, something like this:</p>
@@ -311,7 +317,7 @@ then use CanGuarantee.synchronous[Unit] to create one.
 </code></pre></div>
 <h2 id="in-conclusion">In conclusion</h2>
 
-<p>Friends don't let friends use <code class="highlighter-rouge">isInstanceOf</code> checks, because Scala has better ways of handling such instances.</p>
+<p>Friends don't let friends use <code class="highlighter-rouge">isInstanceOf</code> checks, because Scala has better ways of handling the related use cases.</p>
 
 <p>Enjoy~</p>
 
