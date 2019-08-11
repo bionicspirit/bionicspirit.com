@@ -16,13 +16,13 @@
     <meta property="article:tag" content="Programming" />
     <meta property="article:tag" content="Scala" />
 
-    <title>Scala's isInstanceOf Is An Anti Pattern</title>
-    <meta name="og:title" content="Scala&#x27;s isInstanceOf Is An Anti Pattern" />
-    <meta name="twitter:title" content="Scala&#x27;s isInstanceOf Is An Anti Pattern" />
+    <title>Scala's isInstanceOf is an Anti-Pattern</title>
+    <meta name="og:title" content="Scala&#x27;s isInstanceOf is an Anti-Pattern" />
+    <meta name="twitter:title" content="Scala&#x27;s isInstanceOf is an Anti-Pattern" />
 
-      <meta name="og:image" content="https://alexn.org/assets/img/logo.png" />
-      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/logo.png" />
-      <meta name="twitter:image" content="https://alexn.org/assets/img/logo.png" />
+      <meta name="og:image" content="https://alexn.org/assets/img/alex-nedelcu-400-square.jpg" />
+      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/alex-nedelcu-400-square.jpg" />
+      <meta name="twitter:image" content="https://alexn.org/assets/img/alex-nedelcu-400-square.jpg" />
 
       <meta name="og:description" content="Scala has a much better way of discriminating between types." />
       <meta name="twitter:description" content="Scala has a much better way of discriminating between types." />
@@ -62,7 +62,7 @@
     <div id="main">
       <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
   <header>
-    <h1 itemprop="headline">Scala's isInstanceOf Is An Anti Pattern</h1>
+    <h1 itemprop="headline">Scala's isInstanceOf is an Anti-Pattern</h1>
 
     <div id="meta">
       <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html"/>
@@ -78,9 +78,9 @@
       </span>
 
         <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/logo.png">
-          <meta itemprop="width" content="300">
-          <meta itemprop="height" content="300">
+          <meta itemprop="url" content="https://alexn.org/assets/img/alex-nedelcu-400-square.jpg">
+          <meta itemprop="width" content="400">
+          <meta itemprop="height" content="400">
         </div>
 
       <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
@@ -95,15 +95,15 @@
   </header>
 
   <div id="content" itemprop="articleBody">
-    <p>When you use <code class="highlighter-rouge">isInstanceOf[Class]</code> checks, that's an anti-pattern, as Scala has a much better way of discriminating between types. Scala has implicit parameters, by which you can describe <a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>.</p>
+    <p>When you use <code class="highlighter-rouge">isInstanceOf[Class]</code> checks, that's an anti-pattern, as Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe <a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>.</p>
 
-<p>Let's do an illustrative example…</p>
+<p>Let's do an exercise …</p>
 
 <!-- read more -->
 
 <h2 id="the-anti-pattern">The Anti-Pattern</h2>
 
-<p>Given some piece of heavy logic, lets say you want to describe a function that can complete at the end, as a finalizer, so you write this:</p>
+<p>Given some piece of heavy logic, lets say you want to describe a function that can execute a block of code, along with some finalizer, something like this:</p>
 
 <div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="n">guarantee</span><span class="o">[</span><span class="kt">R</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">R</span><span class="o">)(</span><span class="n">finalizer</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="nc">Unit</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
   <span class="k">try</span> <span class="n">f</span> <span class="k">finally</span> <span class="n">finalizer</span>
@@ -393,7 +393,7 @@ then use CanGuarantee.synchronous[Unit] to create one.
               data-isso-vote="true"
               data-vote-levels=""
               src="https://alexn.org/comments/alexn/js/embed.min.js"></script>
-      <section id="isso-thread" data-title="Scala's isInstanceOf Is An Anti Pattern">
+      <section id="isso-thread" data-title="Scala's isInstanceOf is an Anti-Pattern">
       </section>
     </div>
   </footer>
