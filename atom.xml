@@ -5,13 +5,44 @@
  <subtitle type="text">Blog about programming and personal projects, by Alexandru Nedelcu</subtitle>
  <link href="https://alexn.org/atom.xml" rel="self"/>
  <link href="https://alexn.org/" />
- <updated>2019-03-26T08:31:15+00:00</updated>
+ <updated>2019-08-11T16:20:26+00:00</updated>
 
  <author>
    <name>Alexandru Nedelcu</name>
    <uri>https://alexn.org/</uri>
  </author>
 
+ <entry>
+   <id>http://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html</id>
+   <title>Scala's isInstanceOf Is An Anti Pattern</title>
+   <link href="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
+   <published>2019-08-10T21:00:00+00:00</published>
+   <updated>2019-08-10T21:00:00+00:00</updated>
+
+   <author>
+     <name>Alexandru Nedelcu</name>
+     <uri>https://alexn.org</uri>
+   </author>
+
+   <rights type="text">
+     Copyright 2019 Alexandru Nedelcu.
+     Some rights reserved (CC BY-NC 3.0)
+     License: http://creativecommons.org/licenses/by-nc/3.0/
+   </rights>
+
+   <category><![CDATA[Programming]]></category>
+   <category><![CDATA[Scala]]></category>
+
+   <content type="html"><![CDATA[
+   <p>When you use <code class="highlighter-rouge">isInstanceOf[Class]</code> checks, that's an anti-pattern, as Scala has a much better way of discriminating between types. Scala has implicit parameters, by which you can describe <a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>.</p>
+
+<p>Let's do an illustrative example…</p>
+
+
+
+   <p><a rel="full-article" href="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"><b>Read This Article &raquo;</b></a></p>
+   ]]></content>
+ </entry>
  <entry>
    <id>http://alexn.org/blog/2018/05/06/bifunctor-io.html</id>
    <title>On Bifunctor IO and Java's Checked Exceptions</title>
