@@ -5,13 +5,139 @@
  <subtitle type="text">Blog about programming and personal projects, by Alexandru Nedelcu</subtitle>
  <link href="https://alexn.org/atom.xml" rel="self"/>
  <link href="https://alexn.org/" />
- <updated>2019-08-11T22:13:43+00:00</updated>
+ <updated>2019-11-22T10:41:44+00:00</updated>
 
  <author>
    <name>Alexandru Nedelcu</name>
    <uri>https://alexn.org/</uri>
  </author>
 
+ <entry>
+   <id>http://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html</id>
+   <title>Regexp Replacement via Function in Java/Scala</title>
+   <link href="https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication"/>
+   <published>2019-11-21T22:00:00+00:00</published>
+   <updated>2019-11-21T22:00:00+00:00</updated>
+
+   <author>
+     <name>Alexandru Nedelcu</name>
+     <uri>https://alexn.org</uri>
+   </author>
+
+   <rights type="text">
+     Copyright 2019 Alexandru Nedelcu.
+     Some rights reserved (CC BY-NC 3.0)
+     License: http://creativecommons.org/licenses/by-nc/3.0/
+   </rights>
+
+   <category><![CDATA[Programming]]></category>
+   <category><![CDATA[Scala]]></category>
+   <category><![CDATA[Ruby]]></category>
+
+   <content type="html"><![CDATA[
+   <p>Article explains how to have fine grained control over replacements when using
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String)">String.replaceAll</a>
+or similar in Java or Scala. The samples given are in Scala, but if you're a
+Java user, the snippets can be easily translated without any issues.</p>
+
+<p class="extra-info">
+  The following task should be obvious to accomplish in Scala / Java,
+  yet I've lost 2 hours on it, because Java's standard library is aged
+  and arcane.
+  <br><br>
+  Writing this article mostly for myself, to dump this somewhere 🙂
+</p>
+
+<p>In Ruby if  you want to replace all occurrences of a string, via a regular expression, you can use <a href="https://ruby-doc.org/core-2.6.5/String.html#method-i-gsub">gsub</a>:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="s2">"HelloWorld!"</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/(?&lt;=[a-z0-9_])[A-Z]/</span><span class="p">,</span> <span class="s1">' \0'</span><span class="p">)</span>
+<span class="c1">#=&gt; Hello World!</span>
+</code></pre></div>
+<p>This API is available in Scala/Java as well:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="s">"HelloWorld!"</span><span class="o">.</span><span class="py">replaceAll</span><span class="o">(</span><span class="s">"(?&lt;=[a-z0-9_])[A-Z]"</span><span class="o">,</span> <span class="s">" $0"</span><span class="o">)</span>
+<span class="c1">// res: String = Hello World!
+</span></code></pre></div>
+<p>However Ruby goes one step further and accepts as the replacement a function block:</p>
+
+<div class="highlight"><pre class="highlight ruby"><code><span class="s2">"HelloWorld!"</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/(?&lt;=[a-z0-9_])[A-Z]/</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">ch</span><span class="o">|</span> <span class="n">ch</span><span class="p">.</span><span class="nf">downcase</span> <span class="p">}</span>
+<span class="c1">#=&gt; Hello world!</span>
+
+<span class="s2">"Apollo 12"</span><span class="p">.</span><span class="nf">gsub</span><span class="p">(</span><span class="sr">/\d+/</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">num</span><span class="o">|</span> <span class="n">num</span><span class="p">.</span><span class="nf">to_i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">}</span>
+<span class="c1">#=&gt; "Apollo 13"</span>
+</code></pre></div>
+<p>The Java API exposed by <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">Pattern</a> is a little awkward, so lets see how to do this in Scala / Java:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">type</span> <span class="kt">Index</span> <span class="o">=</span> <span class="nc">Int</span>
+<span class="k">type</span> <span class="kt">MatchGroup</span> <span class="o">=</span> <span class="nc">String</span>
+
+<span class="k">def</span> <span class="nf">replaceAll</span><span class="o">(</span><span class="n">regex</span><span class="k">:</span> <span class="kt">Pattern</span><span class="o">,</span> <span class="n">input</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+  <span class="o">(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Index</span><span class="o">,</span> <span class="kt">MatchGroup</span><span class="o">,</span> <span class="nc">List</span><span class="o">[</span><span class="kt">MatchGroup</span><span class="o">])</span> <span class="k">=&gt;</span> <span class="nc">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="o">{</span>
+
+  <span class="k">val</span> <span class="nv">m</span> <span class="k">=</span> <span class="nv">regex</span><span class="o">.</span><span class="py">matcher</span><span class="o">(</span><span class="n">input</span><span class="o">)</span>
+  <span class="k">val</span> <span class="nv">sb</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">StringBuffer</span>
+
+  <span class="nf">while</span> <span class="o">(</span><span class="nv">m</span><span class="o">.</span><span class="py">find</span><span class="o">())</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">groups</span> <span class="k">=</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="nv">buffer</span> <span class="k">=</span> <span class="nv">ListBuffer</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span>
+      <span class="k">var</span> <span class="n">i</span> <span class="k">=</span> <span class="mi">0</span>
+      <span class="nf">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="nv">m</span><span class="o">.</span><span class="py">groupCount</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">buffer</span> <span class="o">+=</span> <span class="nv">m</span><span class="o">.</span><span class="py">group</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="o">}</span>
+      <span class="nv">buffer</span><span class="o">.</span><span class="py">toList</span>
+    <span class="o">}</span>
+    <span class="k">val</span> <span class="nv">replacement</span> <span class="k">=</span> <span class="nf">f</span><span class="o">(</span><span class="nv">m</span><span class="o">.</span><span class="py">start</span><span class="o">(),</span> <span class="nv">m</span><span class="o">.</span><span class="py">group</span><span class="o">(),</span> <span class="n">groups</span><span class="o">)</span>
+    <span class="nv">m</span><span class="o">.</span><span class="py">appendReplacement</span><span class="o">(</span><span class="n">sb</span><span class="o">,</span> <span class="nv">Matcher</span><span class="o">.</span><span class="py">quoteReplacement</span><span class="o">(</span><span class="n">replacement</span><span class="o">))</span>
+  <span class="o">}</span>
+
+  <span class="nv">m</span><span class="o">.</span><span class="py">appendTail</span><span class="o">(</span><span class="n">sb</span><span class="o">)</span>
+  <span class="nv">sb</span><span class="o">.</span><span class="py">toString</span>
+<span class="o">}</span>
+</code></pre></div>
+<p>What happens here is that <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Matcher.html">Matcher</a> allows you to replace all occurrences of a string with an iterator-like protocol by using:</p>
+
+<ul>
+  <li>
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Matcher.html#find()">.find</a>: for finding the next occurrence in a <code class="highlighter-rouge">while</code> loop</li>
+  <li>
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Matcher.html#appendReplacement(java.lang.StringBuilder,java.lang.String)">.appendReplacement</a>: which appends the remaining text after the discovery of the last match and the current one, plus the replacement that you've calculated for the current match
+    <ul>
+      <li>Note this requires the usage of <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Matcher.html#quoteReplacement(java.lang.String)">quoteReplacement</a>, because otherwise the logic in <code class="highlighter-rouge">appendReplacement</code> will treat certain special chars like <code class="highlighter-rouge">\</code> and <code class="highlighter-rouge">$</code>, so this specifies that you want the replacement to be verbatim</li>
+    </ul>
+  </li>
+  <li>
+<a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Matcher.html#appendTail(java.lang.StringBuilder)">.appendTail</a>: to append to the final string whatever is left</li>
+</ul>
+
+<p>We can now describe something like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">camelCaseToSnakeCase</span><span class="o">(</span><span class="n">input</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span>
+  <span class="nf">replaceAll</span><span class="o">(</span><span class="s">"[A-Z](?=[a-z0-9_])"</span><span class="o">.</span><span class="py">r</span><span class="o">.</span><span class="py">pattern</span><span class="o">,</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="n">i</span><span class="o">,</span> <span class="n">ch</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="o">(</span><span class="nf">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="s">"_"</span> <span class="k">else</span> <span class="s">""</span><span class="o">)</span> <span class="o">+</span> <span class="nv">ch</span><span class="o">.</span><span class="py">toLowerCase</span>
+  <span class="o">}</span>
+
+<span class="c1">// And usage:
+</span><span class="nf">camelCaseToSnakeCase</span><span class="o">(</span><span class="s">"RebuildSubscribersCounts"</span><span class="o">)</span>
+<span class="c1">//=&gt; res: String = rebuild_subscribers_counts
+</span></code></pre></div>
+<p>Or like this:</p>
+
+<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">incrementNumbersIn</span><span class="o">(</span><span class="n">input</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span>
+  <span class="nf">replaceAll</span><span class="o">(</span><span class="s">"\\d+"</span><span class="o">.</span><span class="py">r</span><span class="o">.</span><span class="py">pattern</span><span class="o">,</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="k">_</span><span class="o">,</span> <span class="n">num</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="o">(</span><span class="nv">num</span><span class="o">.</span><span class="py">toInt</span> <span class="o">+</span> <span class="mi">1</span><span class="o">).</span><span class="py">toString</span>
+  <span class="o">}</span>
+
+<span class="c1">// And usage:
+</span><span class="nf">incrementNumbersIn</span><span class="o">(</span><span class="s">"Apollo 12"</span><span class="o">)</span>
+<span class="c1">//=&gt; res: String = Apollo 13
+</span></code></pre></div>
+<p>Enjoy ~</p>
+
+
+   <p><a rel="full-article" href="https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication"><b>Read This Article &raquo;</b></a></p>
+   ]]></content>
+ </entry>
  <entry>
    <id>http://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html</id>
    <title>Scala's isInstanceOf is an Anti-Pattern</title>
