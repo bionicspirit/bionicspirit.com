@@ -9,8 +9,8 @@
     <description>Blog about programming and personal projects</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://feed.alexn.org/" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Apr 2020 14:26:38 +0000</pubDate>
-    <lastBuildDate>Tue, 21 Apr 2020 14:26:38 +0000</lastBuildDate>
+    <pubDate>Tue, 21 Apr 2020 14:50:47 +0000</pubDate>
+    <lastBuildDate>Tue, 21 Apr 2020 14:50:47 +0000</lastBuildDate>
   	<language>ro</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -35,7 +35,7 @@
         ]]></description>
         <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html</link>
-        <guid isPermaLink="false">https://alexn.org/2019/11/22/howto-regexp-replacement-via-function-java-scala/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -68,7 +68,7 @@
         ]]></description>
         <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html</link>
-        <guid isPermaLink="false">https://alexn.org/2019/08/11/isinstanceof-anti-pattern/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -101,7 +101,7 @@
         ]]></description>
         <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2018/05/06/bifunctor-io.html</link>
-        <guid isPermaLink="false">https://alexn.org/2018/05/06/bifunctor-io/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2018/05/06/bifunctor-io.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -140,7 +140,7 @@
         ]]></description>
         <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2018/02/12/in-defense-oofp.html</link>
-        <guid isPermaLink="false">https://alexn.org/2018/02/12/in-defense-oofp/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2018/02/12/in-defense-oofp.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -179,7 +179,7 @@
         ]]></description>
         <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/11/10/minitest-no-crap-scala-library/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -212,7 +212,7 @@
         ]]></description>
         <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/10/15/functional-programming.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/10/15/functional-programming/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/10/15/functional-programming.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -246,7 +246,7 @@
         ]]></description>
         <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/10/13/scaladays-copenhagen/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -282,7 +282,7 @@
         ]]></description>
         <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/10/11/javascript-promise-leaks-memory/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -317,7 +317,7 @@
         ]]></description>
         <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/08/16/automatic-releases-sbt-travis/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -347,7 +347,7 @@
         ]]></description>
         <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/03/15/fp-inception.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/03/15/fp-inception/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/03/15/fp-inception.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -377,7 +377,7 @@
         ]]></description>
         <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/01/30/asynchronous-programming-scala/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -414,7 +414,7 @@
         ]]></description>
         <pubDate>Mon, 16 Jan 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/01/16/iterator.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/01/16/iterator/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/01/16/iterator.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -447,7 +447,7 @@
         ]]></description>
         <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/01/13/traversable.html</link>
-        <guid isPermaLink="false">https://alexn.org/2017/01/13/traversable/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2017/01/13/traversable.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -480,7 +480,7 @@
         ]]></description>
         <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html</link>
-        <guid isPermaLink="false">https://alexn.org/2016/11/11/newsblur-bookmarklet/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -511,7 +511,7 @@
         ]]></description>
         <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2016/08/25/monix-task-performance.html</link>
-        <guid isPermaLink="false">https://alexn.org/2016/08/25/monix-task-performance/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2016/08/25/monix-task-performance.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -545,7 +545,7 @@
         ]]></description>
         <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2016/05/15/monix-observable.html</link>
-        <guid isPermaLink="false">https://alexn.org/2016/05/15/monix-observable/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2016/05/15/monix-observable.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -575,7 +575,7 @@
         ]]></description>
         <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2016/05/10/monix-task.html</link>
-        <guid isPermaLink="false">https://alexn.org/2016/05/10/monix-task/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2016/05/10/monix-task.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -610,7 +610,7 @@
         ]]></description>
         <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html</link>
-        <guid isPermaLink="false">https://alexn.org/2015/12/15/avoid-javaisms-code-smell/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -646,7 +646,7 @@ but let me give you the perspective from the other side.
         ]]></description>
         <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html</link>
-        <guid isPermaLink="false">https://alexn.org/2015/09/06/monifu-vs-akka-streams/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -681,7 +681,7 @@ but let me give you the perspective from the other side.
         ]]></description>
         <pubDate>Mon, 20 Oct 2014 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2014/10/20/scala-best-practices.html</link>
-        <guid isPermaLink="false">https://alexn.org/2014/10/20/scala-best-practices/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2014/10/20/scala-best-practices.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -722,7 +722,7 @@ but let me give you the perspective from the other side.
         ]]></description>
         <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2013/05/13/getting-started-with-scala.html</link>
-        <guid isPermaLink="false">https://alexn.org/2013/05/13/getting-started-with-scala/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2013/05/13/getting-started-with-scala.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -764,7 +764,7 @@ but let me give you the perspective from the other side.
         ]]></description>
         <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html</link>
-        <guid isPermaLink="false">https://alexn.org/2013/05/07/towards-better-atomicreference-scala/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -811,7 +811,7 @@ but let me give you the perspective from the other side.
         ]]></description>
         <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html</link>
-        <guid isPermaLink="false">https://alexn.org/2013/03/14/jvm-multithreading-monitor-locks-visibility/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -850,7 +850,7 @@ but let me give you the perspective from the other side.
         ]]></description>
         <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/11/07/notes-javascript-development.html</link>
-        <guid isPermaLink="false">https://alexn.org/2012/11/07/notes-javascript-development/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2012/11/07/notes-javascript-development.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -886,7 +886,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html</link>
-        <guid isPermaLink="false">https://alexn.org/2012/11/02/scala-functional-programming-type-classes/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -918,7 +918,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html</link>
-        <guid isPermaLink="false">https://alexn.org/2012/02/09/howto-build-naive-bayes-classifier/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -955,7 +955,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html</link>
-        <guid isPermaLink="false">https://alexn.org/2012/01/16/cosine-similarity-euclidean-distance/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -992,7 +992,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Thu, 05 Jan 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/01/05/blogging-for-hackers.html</link>
-        <guid isPermaLink="false">https://alexn.org/2012/01/05/blogging-for-hackers/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2012/01/05/blogging-for-hackers.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1031,7 +1031,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html</link>
-        <guid isPermaLink="false">https://alexn.org/2011/12/15/crawling-the-android-marketplace-155200-apps/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1068,7 +1068,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Mon, 12 Dec 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/12/12/android-learning-resources.html</link>
-        <guid isPermaLink="false">https://alexn.org/2011/12/12/android-learning-resources/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2011/12/12/android-learning-resources.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1106,7 +1106,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Tue, 29 Nov 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html</link>
-        <guid isPermaLink="false">https://alexn.org/2011/11/29/earning-money-as-an-amazon-affiliate/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1139,7 +1139,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Fri, 25 Nov 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html</link>
-        <guid isPermaLink="false">https://alexn.org/2011/11/25/4-books-for-learning-to-design-the-hard-way/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1174,7 +1174,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Sat, 29 Oct 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/10/29/how-i-use-flickr.html</link>
-        <guid isPermaLink="false">https://alexn.org/2011/10/29/how-i-use-flickr/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2011/10/29/how-i-use-flickr.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1209,7 +1209,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Sun, 23 Oct 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html</link>
-        <guid isPermaLink="false">https://alexn.org/2011/10/23/why-i-find-heroku-suboptimal/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1250,7 +1250,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Thu, 24 Mar 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/03/24/cross-domain-requests.html</link>
-        <guid isPermaLink="false">https://alexn.org/2011/03/24/cross-domain-requests/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2011/03/24/cross-domain-requests.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1286,7 +1286,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Tue, 25 May 2010 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2010/05/25/i-hate-null.html</link>
-        <guid isPermaLink="false">https://alexn.org/2010/05/25/i-hate-null/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2010/05/25/i-hate-null.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1319,7 +1319,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html</link>
-        <guid isPermaLink="false">https://alexn.org/2009/02/20/tips-for-creating-voip-dialer/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
@@ -1359,7 +1359,7 @@ In this article I’m describing my impressions of the Scala programming languag
         ]]></description>
         <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html</link>
-        <guid isPermaLink="false">https://alexn.org/2009/02/01/using-best-tools-programming-not-doable/</guid>
+        <guid isPermaLink="true">https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
