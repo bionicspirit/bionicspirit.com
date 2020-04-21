@@ -9,8 +9,8 @@
     <description>On programming and personal projects</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://feed.alexn.org/" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Apr 2020 21:59:03 +0000</pubDate>
-    <lastBuildDate>Tue, 21 Apr 2020 21:59:03 +0000</lastBuildDate>
+    <pubDate>Tue, 21 Apr 2020 23:16:28 +0000</pubDate>
+    <lastBuildDate>Tue, 21 Apr 2020 23:16:28 +0000</lastBuildDate>
   	<language>ro</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -29,7 +29,7 @@
           <br />
           
           <p>Simple and very effective implementation of a Semaphore, used for easily parallelizing work in JavaScript/TypeScript.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2020/04/21/javascript-semaphore.html">Read article →</a>
           </p>
@@ -64,7 +64,7 @@
           </a>
           
           <p>Dusted off my website, with big plans ahead.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2020/04/21/blog-updates.html">Read article →</a>
           </p>
@@ -96,7 +96,7 @@
           <br />
           
           <p>Replace in strings via regexp, with the replacement being calculated via a function.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html">Read article →</a>
           </p>
@@ -128,7 +128,7 @@
           <br />
           
           <p>Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe type classes.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html">Read article →</a>
           </p>
@@ -162,7 +162,7 @@
           <br />
           
           <p>Bifunctor IO is a hot topic in the Scala community. Herein I’m expressing my dislike for it, as it shares the problems of Java’s Checked Exceptions.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2018/05/06/bifunctor-io.html">Read article →</a>
           </p>
@@ -200,7 +200,7 @@
           <br />
           
           <p>OOP versus Type Classes, exemplified and in defense of the Scala collections redesign.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2018/02/12/in-defense-oofp.html">Read article →</a>
           </p>
@@ -238,7 +238,7 @@
           <br />
           
           <p>Minitest is my minimal testing library that I’ve been using for developing Monix.
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html">Read article →</a>
           </p>
@@ -272,7 +272,7 @@
           <br />
           
           <p>FP is programming with (mathematical) functions, there’s no room for interpretation.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2017/10/15/functional-programming.html">Read article →</a>
           </p>
@@ -309,7 +309,7 @@
           </a>
           
           <p>My presentation from Scala Days 2017, Chicago (April) and Copenhagen (June), on the design of Monix’s Task.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html">Read article →</a>
           </p>
@@ -344,7 +344,7 @@
         <title>JavaScript's Promise Leaks Memory</title>
         <description><![CDATA[
           <p>JavaScript’s Promise leaks memory in recursive loops and what you can do about it.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html">Read article →</a>
           </p>
@@ -380,7 +380,7 @@
           <br />
           
           <p>Enabling automatic releases for your open source Scala project with Travis and SBT.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html">Read article →</a>
           </p>
@@ -409,7 +409,7 @@
         <title>Functional Programming Inception (Presentation)</title>
         <description><![CDATA[
           <p>My presentation from the Bucharest FP meetup.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2017/03/15/fp-inception.html">Read article →</a>
           </p>
@@ -438,7 +438,7 @@
         <title>Asynchronous Programming and Scala</title>
         <description><![CDATA[
           <p>Asynchrony is everywhere and it subsumes concurrency. This article explains what asynchronous processing is and its challenges.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html">Read article →</a>
           </p>
@@ -474,7 +474,7 @@
           <br />
           
           <p>The venerable Iterator interface we all love and hate could use some improvements. This is a follow-up to my previous article, in which I talked about getting rid of Traversable because the Iterable and Iterator duo is enough for Scala’s standard library.
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2017/01/16/iterator.html">Read article →</a>
           </p>
@@ -508,7 +508,7 @@
           <br />
           
           <p>Traversable was a design mistake, is redundant and we should remove it.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2017/01/13/traversable.html">Read article →</a>
           </p>
@@ -542,7 +542,7 @@
           <br />
           
           <p>An Add to NewsBlur bookmarklet that you can copy-paste for iPhone/iPad/Android usage</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html">Read article →</a>
           </p>
@@ -574,7 +574,7 @@
           <br />
           
           <p>The Task in Monix has really good performance. See the benchmark.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2016/08/25/monix-task-performance.html">Read article →</a>
           </p>
@@ -613,7 +613,7 @@
           </a>
           
           <p>Presentation from Typelevel Summit, Oslo, 2016, about my experience in dealing with modeling behavior by processing asynchronous soft-real time signals using Akka &amp; Monix.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2016/05/15/monix-observable.html">Read article →</a>
           </p>
@@ -648,7 +648,7 @@
           </a>
           
           <p>My presentation from flatMap(Oslo) 2016. It’s about the Monix Task, a new type for dealing with asynchronous processing on top of Scala and Scala.js.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2016/05/10/monix-task.html">Read article →</a>
           </p>
@@ -684,7 +684,7 @@
           <br />
           
           <p>Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html">Read article →</a>
           </p>
@@ -719,7 +719,7 @@ The Reactive Streams Implementation Landscape.
 It was a good talk, yet I felt a little bias towards Akka Streams,
 which is natural coming from somebody that is contributing to Akka,
 but let me give you the perspective from the other side.
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html">Read article →</a>
           </p>
@@ -755,7 +755,7 @@ but let me give you the perspective from the other side.
           <br />
           
           <p>This is a collection of best practices for Scala, something to get you started.
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2014/10/20/scala-best-practices.html">Read article →</a>
           </p>
@@ -797,7 +797,7 @@ but let me give you the perspective from the other side.
   my colleagues and other people that are interested in Scala
   development.
 
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2013/05/13/getting-started-with-scala.html">Read article →</a>
           </p>
@@ -840,7 +840,7 @@ but let me give you the perspective from the other side.
   on the
   Michael-Scott non-blocking queues.
 
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html">Read article →</a>
           </p>
@@ -888,7 +888,7 @@ but let me give you the perspective from the other side.
   bottom up approach, starting from the basic and unsafe primitives, as
   understanding the problem is always the first step to real solutions.
 
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html">Read article →</a>
           </p>
@@ -928,7 +928,7 @@ but let me give you the perspective from the other side.
           <br />
           
           <p>Client-side JavaScript development can be quite overwhelming, even for senior developers. I’m describing here what I did in a recent piece of client-side functionality to keep my sanity. This interface I’m talking about is served on mobile-phones, so it must be pretty bloat-free, adding salt over injury.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2012/11/07/notes-javascript-development.html">Read article →</a>
           </p>
@@ -965,7 +965,7 @@ but let me give you the perspective from the other side.
           
           <p>I’ve been following the excellent Coursera course on <a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a> led by Martin Odersky. This was not my first encounter with Scala as I’ve been using it including for my day job.
 In this article I’m describing my impressions of the Scala programming language and why I fel in love with it.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html">Read article →</a>
           </p>
@@ -996,7 +996,7 @@ In this article I’m describing my impressions of the Scala programming languag
         <title>How To Build a Naive Bayes Classifier</title>
         <description><![CDATA[
           <p>In machine learning a classifier is able to predict, given an input, a probability distribution over a set of categories. Some use-cases for building a classifier: spam detection, for example you could build your own Akismet API, automatic assignment of categories to a set of items, automatic detection of the primary language (e.g. Google Translate), sentiment analysis, which in simple terms refers to discovering if an opinion is about love or hate about a certain topic.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html">Read article →</a>
           </p>
@@ -1032,7 +1032,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>How to find related items? Here are recipes based on really simple formulas. If you pay attention, this technique is used all over the web (like on Amazon) to personalize the user experience and increase conversion rates. Because we want to give kick-ass product recommendations.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html">Read article →</a>
           </p>
@@ -1068,7 +1068,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>Host your own static website on Heroku’s free plan, use Google’s App Engine as a CDN, keep Heroku’s free dyno alive, generate the website via Jekyll.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2012/01/05/blogging-for-hackers.html">Read article →</a>
           </p>
@@ -1108,7 +1108,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>I had a very specific need for fetching the details for some apps in the Android marketplace, in an automated manner. Here I’m describing a script that I used to crawl the marketplace back in 2011.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html">Read article →</a>
           </p>
@@ -1144,7 +1144,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>Starting out learning Android development may be intimidating at first, as with any new platform of reasonable complexity you’ll have a lot to learn. However the learning process is fun. So here are some learning resources that I’m currently following.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2011/12/12/android-learning-resources.html">Read article →</a>
           </p>
@@ -1181,7 +1181,7 @@ In this article I’m describing my impressions of the Scala programming languag
   on a tight budget and (2) a cheap bastard - so what if I could get
   enough money to pay for my monthly hosting on Linode, while
   satisfying my urge to write from time to time?
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html">Read article →</a>
           </p>
@@ -1215,7 +1215,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>I present some books I enjoyed, which is the path I’m taking to get better at design and user experience.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html">Read article →</a>
           </p>
@@ -1251,7 +1251,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>I’ve got a growing number of personal pictures and the collection is growing since 2003 … Pro accounts on Flickr have unlimited storage and can upload and access full-resolution pictures.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2011/10/29/how-i-use-flickr.html">Read article →</a>
           </p>
@@ -1285,7 +1285,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>Heroku is great. It basically allows you to avoid growing-up. The deployment itself couldn’t be simpler, and when browsing their web interface for available add-ons, I feel like a child in a candy-store. But I’ve outgrown it.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html">Read article →</a>
           </p>
@@ -1327,7 +1327,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>This article describes how to make cross-browser requests, in all browsers (including IExplorer 6), using web standards along with fallbacks and without using a proxy or JSONP (which is limited and awkward) – as long as you control the destination server, or if the destination server allows.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2011/03/24/cross-domain-requests.html">Read article →</a>
           </p>
@@ -1362,7 +1362,7 @@ In this article I’m describing my impressions of the Scala programming languag
           
           <p>How many times have you had a chain of methods like this (example showing BeautifulSoup in action) …
 
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2010/05/25/i-hate-null.html">Read article →</a>
           </p>
@@ -1394,7 +1394,7 @@ In this article I’m describing my impressions of the Scala programming languag
           <br />
           
           <p>FreeSWITCH is a free and open source application server for real-time communication, WebRTC, telecommunications, video and Voice over Internet Protocol. Let’s build a VoIP dialer with it.</p>
-          
+
           <p>
             <a href="https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html">Read article →</a>
           </p>
@@ -1433,7 +1433,7 @@ In this article I’m describing my impressions of the Scala programming languag
           
           <p>There's something that bothers me when it comes to starting a new project. You can't really use the best tool for a certain job, if that tool is not integrated with the rest of your platform. Let me explain.
 
-</p>          
+</p>
           <p>
             <a href="https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html">Read article →</a>
           </p>
