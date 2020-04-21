@@ -43,7 +43,7 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202004212103">
+    <link rel="stylesheet" href="/assets/css/style.css?202004212203">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/04/21/javascript-semaphore.html">
 
@@ -191,14 +191,10 @@
 
   <span class="k">async</span> <span class="nx">withLock</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">f</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_acquire</span><span class="p">()</span>
-    <span class="k">try</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="k">await</span> <span class="nx">f</span><span class="p">()</span>
-    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
-      <span class="k">this</span><span class="p">.</span><span class="nx">_release</span><span class="p">()</span>
-    <span class="p">}</span>
+    <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_execWithRelease</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
   <span class="p">}</span>
 
-  <span class="k">async</span> <span class="nx">withLockRunAndForget</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">(</span><span class="na">f</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">async</span> <span class="nx">withLockRunAndForget</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">f</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">await</span> <span class="k">this</span><span class="p">.</span><span class="nx">_acquire</span><span class="p">()</span>
     <span class="c1">// Ignoring returned promise on purpose!</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_execWithRelease</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
