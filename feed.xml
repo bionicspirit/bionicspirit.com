@@ -9,13 +9,74 @@
     <description>On programming and personal projects</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://feed.alexn.org/" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 21 Apr 2020 16:41:29 +0000</pubDate>
-    <lastBuildDate>Tue, 21 Apr 2020 16:41:29 +0000</lastBuildDate>
+    <pubDate>Tue, 21 Apr 2020 18:10:05 +0000</pubDate>
+    <lastBuildDate>Tue, 21 Apr 2020 18:10:05 +0000</lastBuildDate>
   	<language>ro</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.0.0</generator>
 
+    
+      
+      <item>
+        <title>Parallelizing Work via a JavaScript Semaphore</title>
+        <description><![CDATA[
+          
+          <a href="https://alexn.org/blog/2020/04/21/javascript-semaphore.html">
+            <img src="https://alexn.org/assets/media/articles/async-semaphore-typescript.png" align="middle" style="display: block; max-width:100%; margin: 0 auto;" />
+          </a>
+          <br />
+          
+          <p>Simple and very effective implementation of a Semaphore, used for easily parallelizing work in JavaScript/TypeScript.</p>
+          
+          <p>
+            <a href="https://alexn.org/blog/2020/04/21/javascript-semaphore.html">Read article →</a>
+          </p>
+        ]]></description>
+        <pubDate>Tue, 21 Apr 2020 16:00:00 +0000</pubDate>
+        <link>https://alexn.org/blog/2020/04/21/javascript-semaphore.html</link>
+        <guid isPermaLink="true">https://alexn.org/blog/2020/04/21/javascript-semaphore.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+        <category>Asynchrony</category>
+        
+        <category>Concurrency</category>
+        
+        <category>JavaScript</category>
+        
+        <category>TypeScript</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Blog Updates</title>
+        <description><![CDATA[
+          
+          <p>Status and updates.</p>
+          
+          <p>
+            <a href="https://alexn.org/blog/2020/04/21/blog-updates.html">Read article →</a>
+          </p>
+        ]]></description>
+        <pubDate>Tue, 21 Apr 2020 10:00:00 +0000</pubDate>
+        <link>https://alexn.org/blog/2020/04/21/blog-updates.html</link>
+        <guid isPermaLink="true">https://alexn.org/blog/2020/04/21/blog-updates.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+        <category>Blogging</category>
+        
+        <category>Personal</category>
+        
+      </item>
+      
     
       
       <item>
@@ -40,8 +101,6 @@
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
         
-        
-        <category>Programming</category>
         
         <category>Scala</category>
         
@@ -109,8 +168,6 @@
         
         <category>Best Of</category>
         
-        <category>Programming</category>
-        
         <category>FP</category>
         
         <category>Typelevel</category>
@@ -147,8 +204,6 @@
         
         
         <category>Best Of</category>
-        
-        <category>Programming</category>
         
         <category>OOP</category>
         
@@ -221,8 +276,6 @@
         <category>Best Of</category>
         
         <category>FP</category>
-        
-        <category>Programming</category>
         
         <category>Haskell</category>
         
@@ -390,8 +443,6 @@
         <category>Asynchrony</category>
         
         <category>Concurrency</category>
-        
-        <category>Programming</category>
         
       </item>
       
@@ -926,8 +977,6 @@ In this article I’m describing my impressions of the Scala programming languag
         
         <category>Best Of</category>
         
-        <category>Programming</category>
-        
         <category>Algorithms</category>
         
         <category>Mining</category>
@@ -963,8 +1012,6 @@ In this article I’m describing my impressions of the Scala programming languag
         
         <category>Best Of</category>
         
-        <category>Programming</category>
-        
         <category>Algorithms</category>
         
         <category>Mining</category>
@@ -998,7 +1045,7 @@ In this article I’m describing my impressions of the Scala programming languag
         <dc:creator>Alexandru Nedelcu</dc:creator>
         
         
-        <category>Publishing</category>
+        <category>Blogging</category>
         
         <category>Server</category>
         
@@ -1036,8 +1083,6 @@ In this article I’m describing my impressions of the Scala programming languag
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
         
-        
-        <category>Programming</category>
         
         <category>Python</category>
         
@@ -1077,8 +1122,6 @@ In this article I’m describing my impressions of the Scala programming languag
         <category>Books</category>
         
         <category>Android</category>
-        
-        <category>Programming</category>
         
       </item>
       
@@ -1180,8 +1223,6 @@ In this article I’m describing my impressions of the Scala programming languag
         <dc:creator>Alexandru Nedelcu</dc:creator>
         
         
-        <category>Programming</category>
-        
         <category>Cloud</category>
         
         <category>API</category>
@@ -1256,8 +1297,6 @@ In this article I’m describing my impressions of the Scala programming languag
         <dc:creator>Alexandru Nedelcu</dc:creator>
         
         
-        <category>Programming</category>
-        
         <category>JavaScript</category>
         
         <category>Browser</category>
@@ -1292,8 +1331,6 @@ In this article I’m describing my impressions of the Scala programming languag
         <dc:creator>Alexandru Nedelcu</dc:creator>
         
         
-        <category>Programming</category>
-        
         <category>Rant</category>
         
         <category>Python</category>
@@ -1326,8 +1363,6 @@ In this article I’m describing my impressions of the Scala programming languag
         
         
         <category>Best Of</category>
-        
-        <category>Programming</category>
         
         <category>VoIP</category>
         
@@ -1364,8 +1399,6 @@ In this article I’m describing my impressions of the Scala programming languag
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
         
-        
-        <category>Programming</category>
         
         <category>Languages</category>
         

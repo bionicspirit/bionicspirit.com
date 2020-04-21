@@ -9,36 +9,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Scala Days 2017 — Monix Task &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Blog Updates &#8211; Alexandru Nedelcu's Blog</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
-    <meta content="Scala Days 2017 — Monix Task" property="og:title">
-    <meta content="My presentation from Scala Days 2017, Chicago (April) and Copenhagen (June), on the design of Monix's Task." property="og:description">
-    <meta content="https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html" property="og:url">
-    <meta content="2017-10-13T00:00:00+00:00" property="article:published_time">
-    <meta property="og:type" content="video.other" />
-    <meta property="og:video:url" content="https://www.youtube-nocookie.com/embed/wi97X8_JQUk" />
-    <meta property="og:video:secure_url" content="https://www.youtube-nocookie.com/embed/wi97X8_JQUk" />
-    <meta property="og:video:type" content="text/html" />
-    <meta property="og:video:width" content="560" />
-    <meta property="og:video:height" content="315" /> 
-    <meta property="og:image" content="https://img.youtube.com/vi/wi97X8_JQUk/maxresdefault.jpg" />
-    <meta property="og:image:secure_url" content="https://img.youtube.com/vi//maxresdefault.jpg" />
+    <meta content="Blog Updates" property="og:title">
+    <meta content="Status and updates." property="og:description">
+    <meta content="https://alexn.org/blog/2020/04/21/blog-updates.html" property="og:url">
+    <meta content="2020-04-21T10:00:00+00:00" property="article:published_time">
+    
+    <meta content="website" property="og:type">
+    <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/logo/800px.png" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:card" content="player" />
-    <meta name="twitter:player" content="https://www.youtube-nocookie.com/embed/wi97X8_JQUk">
-    <meta name="twitter:player:width" content="560">
-    <meta name="twitter:player:height" content="315">
-    <meta name="twitter:image" content="https://img.youtube.com/vi/wi97X8_JQUk/maxresdefault.jpg" />
+    
+    <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Scala Days 2017 — Monix Task">
-    <meta name="twitter:url" content="https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html">
-    <meta name="twitter:description" content="My presentation from Scala Days 2017, Chicago (April) and Copenhagen (June), on the design of Monix's Task.">
+    <meta name="twitter:title" content="Blog Updates">
+    <meta name="twitter:url" content="https://alexn.org/blog/2020/04/21/blog-updates.html">
+    <meta name="twitter:description" content="Status and updates.">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
     <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
@@ -53,7 +46,7 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/css/style.css">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html">
+    <link rel="canonical" href="https://alexn.org/blog/2020/04/21/blog-updates.html">
 
     <!-- Modernizr -->
     <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
@@ -89,12 +82,12 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Scala Days 2017 — Monix Task</h1>
+  <h1 class="postTitle" itemprop="headline">Blog Updates</h1>
   <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html"/>
-    <meta itemprop="datePublished" content="2017-10-13T00:00:00+0000"/>
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/04/21/blog-updates.html"/>
+    <meta itemprop="datePublished" content="2020-04-21T10:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2017-10-13T00:00:00+0000">October 13, 2017</time>
+    <time itemprop="dateCreated" datetime="2020-04-21T10:00:00+0000">April 21, 2020</time>
     | <nobr><span class="time">1</span> minut</nobr>
   </p>
 
@@ -117,47 +110,47 @@
   
 
   <div id="content" itemprop="articleBody">
-    <p class="intro withcap">Presentation from <a href="http://scaladays.org/">Scala Days</a>, held in 
-<a href="http://event.scaladays.org/scaladays-chicago-2017">Chicago</a>
-and <a href="http://event.scaladays.org/scaladays-cph-2017">Copenhagen</a>:</p>
+    <p class="intro withcap">
+  I love writing. I write long emails, long chat texts, long code comments. Some of my rants are epic. Sometimes I'm amazed that my colleagues have the patience to read it all 🙂
+</p>
+
+<p>Yet I’ve neglected my personal blog. This happens because <a href="https://twitter.com/alexelcu" target="_blank">Twitter</a> fulfilled my needs for shitposting and for code I ended up creating snippets as <a href="https://gist.github.com/alexandru" target="_blank">Gists</a>, many of which are private, meant for colleagues.</p>
+
+<p>No more. I dusted off my blog and will commence a regular posting schedule.</p>
+
+<p class="info-bubble">
+  This blog is about programming, but take note that I don’t do just functional programming, or just Scala. Today’s article is about <a href="/blog/2020/04/21/javascript-semaphore.html">imperative, Promise-driven JavaScript</a>.
+</p>
+
+<h2 id="website-generation">Website Generation</h2>
+
+<p>Like all professional software developers that want to write more, I started with yak shaving by updating my blog:</p>
 
 <ul>
-  <li><a href="/assets/pdfs/monix-task-scaladays.pdf">Slides (PDF file)</a></li>
-  <li><a href="https://www.youtube.com/watch?v=wi97X8_JQUk">Video (YouTube)</a></li>
+  <li>Migrated from <a href="https://middlemanapp.com/" rel="nofollow" target="_blank">Middleman</a> to <a href="https://jekyllrb.com/" rel="nofollow" target="_blank">Jekyll</a> for generating my static website</li>
+  <li>Changed the design from something homemade to modified <a href="https://github.com/brianmaierjr/long-haul" rel="nofollow" target="_blank">brianmaierjr/long-haul</a></li>
+  <li>Disabled comments, replaced widget with an email address — if you want to talk with me about my articles, we can do so in private; design should be responsive on mobile phones</li>
+  <li>Automatic thumbnails for Vimeo/YouTube videos, enabled for Twitter/Facebook cards; expect more videos soon</li>
+  <li>Integration of <a href="https://www.mathjax.org/" rel="nofollow" target="_blank">MathJax</a> for math formulas</li>
 </ul>
 
-<figure class="video">
-  <div class="video-container">
-    <span class="embed-youtube" style="text-align:center; display: block;">
-      <iframe width="1100" height="619" src="https://www.youtube-nocookie.com/embed/wi97X8_JQUk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-    </span>
-  </div>
-  <figcaption>
-    <a href="https://www.youtube.com/watch?v=wi97X8_JQUk" target="_blank">
-      Link
-      (YouTube)
-    </a>
-  </figcaption>
-</figure>
+<p>In addition to the above:</p>
 
-<h2 id="abstract">Abstract</h2>
+<ul>
+  <li>website is hosted by my own DigitalOcean VPS</li>
+  <li>cached via Cloudflare</li>
+  <li>automatically built via GitHub Actions on pushes</li>
+  <li>with a “web hook” handling the refresh on my VPS, via <a href="https://github.com/alexandru/github-webhook-listener">github-webhook-listener</a>, another massive yak shave 🙂</li>
+</ul>
 
-<figure>
-  <img src="/assets/media/articles/scaladays.jpg" />
-</figure>
-
-<p>Scala’s Future from the standard library is great, but sometimes we need more. A Future strives to be a value, one detached from time and for this reason its capabilities are restricted and for some use-cases its behavior ends up being unintuitive. Therefore, while the Future/Promise pattern is great for representing asynchronous results of processes that may or may not be started yet, it cannot be used as a specification for an asynchronous computation.</p>
-
-<p>The Monix Task is in essence about dealing with asynchronous computations and non-determinism, being inspired by the Scalaz Task and designed from the ground up for performance and to be compatible with Scala.js/Javascript runtimes and with the Cats library. It also makes use of Scala’s Future to represent results, the two being complementary.</p>
-
-<p>In this talk I’ll show you its design, when you should use it and why in dealing with asynchronicity it’s better to work with Task instead of blocking threads.</p>
+<p>If you find anything broken, please let me know.</p>
 
   </div>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2017-10-13T00:00:00+0000">
-        Published: October 13, 2017
+    <time itemprop="dateModified" content="2020-04-21T10:00:00+0000">
+        Published: April 21, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -167,25 +160,10 @@ and <a href="http://event.scaladays.org/scaladays-cph-2017">Copenhagen</a>:</p>
       Tags:
       
         
-        <a href="/tag/functional/" class="category">functional</a>
+        <a href="/tag/blogging/" class="category">blogging</a>
       
          | 
-        <a href="/tag/code/" class="category">code</a>
-      
-         | 
-        <a href="/tag/scala/" class="category">scala</a>
-      
-         | 
-        <a href="/tag/monix/" class="category">monix</a>
-      
-         | 
-        <a href="/tag/presentation/" class="category">presentation</a>
-      
-         | 
-        <a href="/tag/video/" class="category">video</a>
-      
-         | 
-        <a href="/tag/slides/" class="category">slides</a>
+        <a href="/tag/personal/" class="category">personal</a>
       
     </div>
   </div>
@@ -214,26 +192,6 @@ and <a href="http://event.scaladays.org/scaladays-cph-2017">Copenhagen</a>:</p>
                | <a href="/tag/javascript" class="tag">javascript</a>
             
                | <a href="/tag/typescript" class="tag">typescript</a>
-                        
-          </div>
-          <time>April 21, 2020</time>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      
-      
-      
-      <div class="item">
-        <a class="related-link" href="/blog/2020/04/21/blog-updates.html">
-          Blog Updates
-        </a>
-        <div class="related-meta">
-          <div class="tags">
-            
-            
-              <a href="/tag/blogging" class="tag">blogging</a>
-            
-               | <a href="/tag/personal" class="tag">personal</a>
                         
           </div>
           <time>April 21, 2020</time>
@@ -284,6 +242,32 @@ and <a href="http://event.scaladays.org/scaladays-cph-2017">Copenhagen</a>:</p>
       </div>
       
       
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/05/06/bifunctor-io.html">
+          On Bifunctor IO and Java's Checked Exceptions
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/typelevel" class="tag">typelevel</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+                        
+          </div>
+          <time>May 6, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
       <div class="clearfix"></div>
     </div>
   </div>
@@ -308,7 +292,7 @@ and <a href="http://event.scaladays.org/scaladays-cph-2017">Copenhagen</a>:</p>
     (function () {
       var lhs = "comments";
       var rhs = "m9.alexn.org";
-      var subject = "Comment on `Scala Days 2017 — Monix Task`";
+      var subject = "Comment on `Blog Updates`";
       document.write("<a href=\"mailto");
       document.write(":" + lhs + "@");
       document.write(rhs);
@@ -324,7 +308,7 @@ and <a href="http://event.scaladays.org/scaladays-cph-2017">Copenhagen</a>:</p>
 
 <p>
   If you noticed a typo, help me by submitting a pull request:
-  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2017-10-13-scaladays-copenhagen.md" target="_blank">Edit Page on GitHub</a>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2020-04-21-blog-updates.md" target="_blank">Edit Page on GitHub</a>
 </p>
 
     </div>  
