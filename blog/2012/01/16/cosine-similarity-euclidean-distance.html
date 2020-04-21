@@ -1,175 +1,212 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
-
-  <link rel="canonical" href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html">
-  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@alexelcu" />
-
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2012-01-16" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Data Mining: Finding Similar Items and Users &#8211; alexn.org</title>
     
-    <meta property="article:tag" content="Algorithms" />
-    <meta property="article:tag" content="Programming" />
-    <meta property="article:tag" content="Mining" />
-    <meta property="article:tag" content="Ruby" />
 
-    <title>Data Mining: Finding Similar Items and Users</title>
-    <meta name="og:title" content="Data Mining: Finding Similar Items and Users" />
-    <meta name="twitter:title" content="Data Mining: Finding Similar Items and Users" />
+    <!-- Open Graph Meta -->
+    <meta content="alexn.org" property="og:site_name">
+    <meta content="Data Mining: Finding Similar Items and Users" property="og:title">
+    <meta content="How to find related items? Here are recipes based on really simple formulas. If you pay attention, this technique is used all over the web (like on Amazon) to personalize the user experience and increase conversion rates. Because we want to give kick-ass product recommendations." property="og:description">
+    <meta content="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html" property="og:url">
+    <meta content="2012-01-16T00:00:00+00:00" property="article:published_time">
+    <meta content="2019-12-28T00:00:00+00:00" property="article:modified_time">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/cosine-distance.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/cosine-distance.png" />
+    <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
-      <meta name="og:image" content="https://alexn.org/assets/img/similarity-graphic-small.png" />
-      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/similarity-graphic-small.png" />
-      <meta name="twitter:image" content="https://alexn.org/assets/img/similarity-graphic-small.png" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/cosine-distance.png">
+    <meta name="twitter:site" content="@alexelcu">
+    <meta name="twitter:creator" content="@alexelcu">
+    <meta name="twitter:title" content="Data Mining: Finding Similar Items and Users">
+    <meta name="twitter:url" content="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html">
+    <meta name="twitter:description" content="How to find related items? Here are recipes based on really simple formulas. If you pay attention, this technique is used all over the web (like on Amazon) to personalize the user experience and increase conversion rates. Because we want to give kick-ass product recommendations.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo/192px.png" sizes="192x192" />
+    <link rel="icon" href="/assets/logo/270px.png" sizes="270x270" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/logo/180px.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
-      <meta name="og:description" content="Algorithms, Programming, Mining, Ruby" />
-      <meta name="twitter:description" content="Algorithms, Programming, Mining, Ruby" />
-      <meta name="description" content="Algorithms, Programming, Mining, Ruby" />
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="alexn.org" href="https://feed.alexn.org/" />
 
-  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
-  <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
-  <![endif]-->
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html">
+
+    <!-- Modernizr -->
+    <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
 </head>
+
+
 <body>
-  <div id="header-container">
-    <header>
-      <h1 id="title">alexn.org</h1>
 
-      <meta itemprop="lastReviewed" content="2019-11-22"/>
-      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
-        <meta itemprop="name" content="Alexandru Nedelcu">
-        <meta itemprop="url" content="https://alexn.org/about.html">
-      </div>
-
-      <div class="github-fork-ribbon-wrapper right">
-        <div class="github-fork-ribbon">
-          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
-        </div>
-      </div>
-
-      <nav>
-    	  <a href="/">alexn.org</a>
-    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
-      </nav>
-    </header>
-  </div>
-
-  <div id="main-container">
-    <div id="main">
-      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="headline">Data Mining: Finding Similar Items and Users</h1>
-
-    <div id="meta">
-      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html"/>
-      <meta itemprop="datePublished" content="2012-01-16"/>
-      <meta itemprop="dateModified" content="2012-01-16"/>
-
-      <time class="post-date" itemprop="dateCreated" datetime="2012-01-16">
-        Jan 16, 2012
-      </time>
-
-      <span class="twitter-link">
-        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
-      </span>
-
-        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/similarity-graphic-small.png">
-          <meta itemprop="width" content="150">
-          <meta itemprop="height" content="102">
-        </div>
-
-      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="Alexandru Nedelcu">
-        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
-          <meta itemprop="width" content="585">
-          <meta itemprop="height" content="585">
-        </div>
-      </div>
+    <div class="header">
+    <div class="container">
+        <h1 class="logo"><a href="/">AlexN =&lt;&lt; org</a></h1>
+        <nav class="nav-collapse">
+            <ul class="noList">
+                
+                <li class="element first  ">
+                    <a href="/">Home</a>
+                </li>
+                
+                <li class="element   ">
+                    <a href="/about.html">About</a>
+                </li>
+                
+                <li class="element   last">
+                    <a href="/subscribe.html">Subscribe</a>
+                </li>
+                
+            </ul>
+        </nav>
     </div>
-  </header>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <h1 class="postTitle" itemprop="headline">Data Mining: Finding Similar Items and Users</h1>
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html"/>
+    <meta itemprop="datePublished" content="2012-01-16T00:00:00+0000"/>
+    
+    <time itemprop="dateCreated" datetime="2012-01-16T00:00:00+0000">January 16, 2012</time>
+    | <nobr><span class="time">17</span> minute</nobr>
+  </p>
+
+  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/media/articles/cosine-distance.png" />
+      <img src="/assets/media/articles/cosine-distance.png" alt="" />
+      
+    </figure>
+    
+  
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="alexn.org">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    </div>
+  </div>
+  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu" />
+      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+      <meta itemprop="url" content="https://twitter.com/alexelcu" />
+      <meta itemprop="url" content="https://www.facebook.com/alexelcu" />
+      <meta itemprop="url" content="https://github.com/alexandru" />
+    </div>
+  
 
   <div id="content" itemprop="articleBody">
-    <p><img src="/assets/img/similarity-graphic-small.png" class="right" width="150" height="102" alt="Similarity graphic small" /></p>
-
-<p>Because we want to give kick-ass product recommendations.</p>
-
-<p>I'm showing you how to find related items based on a really simple
-formula. If you pay attention, this technique is used all over the web
-(like on Amazon) to personalize the user experience and increase
-conversion rates.</p>
+    <p class="intro withcap">
+  How to find related items? Here are recipes based on really simple
+  formulas. If you pay attention, this technique is used all over the web
+  (like on Amazon) to personalize the user experience and increase
+  conversion rates. Because we want to give kick-ass product recommendations.
+</p>
 
 <p>To get one question out of the way: there are already many available
-libraries that do this, but as you'll see there are multiple ways of
-skinning the cat and you won't be able to pick the right one without
+libraries that do this, but as you’ll see there are multiple ways of
+skinning the cat and you won’t be able to pick the right one without
 understanding the process, at least intuitively.</p>
 
-<!-- read more -->
+<ul>
+  <li><a href="#defining-the-problem">Defining the Problem</a></li>
+  <li><a href="#redefining-the-problem-in-terms-of-geometry">Redefining the Problem in Terms of Geometry</a></li>
+  <li><a href="#euclidean-distance">Euclidean Distance</a>
+    <ul>
+      <li><a href="#the-problem-or-strength-of-euclidean-distance">The Problem (or Strength) of Euclidean Distance</a></li>
+    </ul>
+  </li>
+  <li><a href="#cosine-similarity">Cosine Similarity</a>
+    <ul>
+      <li><a href="#the-problem-with-our-sample-the-tf-idf-weight">The Problem with Our Sample; The Tf-Idf Weight</a></li>
+    </ul>
+  </li>
+  <li><a href="#pearson-correlation-coefficient">Pearson Correlation Coefficient</a></li>
+  <li><a href="#manhattan-distance">Manhattan Distance</a></li>
+</ul>
 
 <h2 id="defining-the-problem">Defining the Problem</h2>
 
-<p><img src="/assets/img/amazon.png" class="right" title="Amazon gives kick-ass suggestions to their customers" width="300" height="273" alt="Amazon" /></p>
+<p><img src="/assets/media/articles/amazon-recommended-items.png" alt="Amazon gives kick-ass suggestions to their customers" /></p>
 
-<p>To find similar items to a certain item, you've got to first define
+<p>To find similar items to a certain item, you’ve got to first define
 what it means for 2 items to be similar and this depends on the
-problem you're trying to solve:</p>
+problem you’re trying to solve:</p>
 
 <ul>
   <li>on a blog, you may want to suggest similar articles that share the
 same tags, or that have been viewed by the same people viewing the
 item you want to compare with</li>
-  <li>Amazon has this section called "<em>customers that bought this item also
-bought</em>", which is self-explanatory</li>
+  <li>Amazon has this section called “<em>customers that bought this item also
+bought</em>”, which is self-explanatory</li>
   <li>a service like IMDB, based on your ratings, could find users similar
 to you, users that liked or hated approximately the same movies you did,
-thus giving you suggestions on movies you'd like to watch in the future</li>
+thus giving you suggestions on movies you’d like to watch in the future</li>
 </ul>
 
-<p>In each case you need a way to classify these items you're comparing,
-whether it is tags, or items purchased, or movies reviewed. We'll be
+<p>In each case you need a way to classify these items you’re comparing,
+whether it is tags, or items purchased, or movies reviewed. We’ll be
 using tags, as it is simpler, but the formula holds for more
 complicated instances.</p>
 
 <h2 id="redefining-the-problem-in-terms-of-geometry">Redefining the Problem in Terms of Geometry</h2>
 
-<p>We'll be using my blog as sample. Let's take some tags:</p>
+<p>We’ll be using my blog as sample. Let’s take some tags:</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="s2">"API"</span><span class="p">,</span> <span class="s2">"Algorithms"</span><span class="p">,</span> <span class="s2">"Amazon"</span><span class="p">,</span> <span class="s2">"Android"</span><span class="p">,</span> <span class="s2">"Books"</span><span class="p">,</span> <span class="s2">"Browser"</span><span class="p">]</span>
-</code></pre></div>
-<p>That's 6 tags. Well, what if we considered these tags as dimensions in
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="p">[</span><span class="s2">"API"</span><span class="p">,</span> <span class="s2">"Algorithms"</span><span class="p">,</span> <span class="s2">"Amazon"</span><span class="p">,</span> <span class="s2">"Android"</span><span class="p">,</span> <span class="s2">"Books"</span><span class="p">,</span> <span class="s2">"Browser"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>That’s 6 tags. Well, what if we considered these tags as dimensions in
 a 6-dimensional
 <a href="http://en.wikipedia.org/wiki/Euclidean_space">Euclidean space</a>? Then
 each item you want to sort or compare becomes a point in this space,
 in which a coordinate (representing a tag) is either one (tagged) or
 zero (not tagged).</p>
 
-<p>So let's say we've got one article tagged with <em>API</em> and
+<p>So let’s say we’ve got one article tagged with <em>API</em> and
 <em>Browser</em>. Then its associated point will be:</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span>
-</code></pre></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">]</span>
+</code></pre></div></div>
+
 <p>Now these coordinates could represent something else. For instance
-they could represent users. If say you've got a total of 6 users in
+they could represent users. If say you’ve got a total of 6 users in
 your system, 2 of them rating an item with 3 and 5 stars respectively,
 you could have for the article in question this associated point
 (do note the order is very important):</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
-</code></pre></div>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="p">[</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span> <span class="p">]</span>
+</code></pre></div></div>
+
 <p>So now you can go ahead and calculate distances between these
 points. For instance you could calculate the angle between the
 associated vectors, or the actual euclidean distance between the 2
-points. For a 2-dimensional Euclidean space, here's how it would look
+points. For a 2-dimensional Euclidean space, here’s how it would look
 like:</p>
 
-<p><img src="/assets/img/similarity-graphic.png" class="center" width="392" height="327" alt="Similarity graphic" /></p>
+<figure>
+  <img src="/assets/media/articles/similarity-graphic.png" />
+</figure>
 
 <h2 id="euclidean-distance">Euclidean Distance</h2>
 
@@ -177,12 +214,12 @@ like:</p>
 simple. Considering 2 points, A and B, with their associated
 coordinates, the distance is defined as:</p>
 
-<p><img src="/assets/img/euclidean-distance.png" class="center" width="473" height="74" alt="Euclidean distance" /></p>
+<script type="math/tex; mode=display">distance(A, B) = \sqrt{(a_1-b_1)^2 + (a_2-b_2)^2 + \ldots + (a_n-b_n)^2}</script>
 
 <p>The lower the distance between 2 points, then the higher the
-similarity. Here's some Ruby code:</p>
+similarity. Here’s some Ruby code:</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="c1"># Returns the Euclidean distance between 2 points</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1"># Returns the Euclidean distance between 2 points</span>
 <span class="c1">#</span>
 <span class="c1"># Params:</span>
 <span class="c1">#  - a, b: list of coordinates (float or integer)</span>
@@ -202,57 +239,58 @@ similarity. Here's some Ruby code:</p>
   <span class="n">tags_space</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">c</span><span class="o">|</span> <span class="n">tags_set</span><span class="p">.</span><span class="nf">member?</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span>
 <span class="k">end</span>
 
-<span class="c1"># Returns other_items sorted by similarity to this_item </span>
+<span class="c1"># Returns other_items sorted by similarity to this_item</span>
 <span class="c1"># (most relevant are first in the returned list)</span>
 <span class="c1">#</span>
 <span class="c1"># Params:</span>
 <span class="c1">#  - items: list of hashes that have [:tags]</span>
 <span class="c1">#  - by_these_tags: list of tags to compare with</span>
 <span class="k">def</span> <span class="nf">sort_by_similarity</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">by_these_tags</span><span class="p">)</span>
-  <span class="n">tags_space</span> <span class="o">=</span> <span class="n">by_these_tags</span> <span class="o">+</span> <span class="n">items</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">[</span><span class="ss">:tags</span><span class="p">]}</span>  
+  <span class="n">tags_space</span> <span class="o">=</span> <span class="n">by_these_tags</span> <span class="o">+</span> <span class="n">items</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="n">x</span><span class="p">[</span><span class="ss">:tags</span><span class="p">]}</span>
   <span class="n">tags_space</span><span class="p">.</span><span class="nf">flatten!</span><span class="p">.</span><span class="nf">sort!</span><span class="p">.</span><span class="nf">uniq!</span>
 
   <span class="n">this_point</span> <span class="o">=</span> <span class="n">tags_to_point</span><span class="p">(</span><span class="n">by_these_tags</span><span class="p">,</span> <span class="n">tags_space</span><span class="p">)</span>
-  <span class="n">other_points</span> <span class="o">=</span> <span class="n">items</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> 
+  <span class="n">other_points</span> <span class="o">=</span> <span class="n">items</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span>
     <span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">tags_to_point</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="ss">:tags</span><span class="p">],</span> <span class="n">tags_space</span><span class="p">)]</span>
   <span class="p">}</span>
 
   <span class="n">similarities</span> <span class="o">=</span> <span class="n">other_points</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">item</span><span class="p">,</span> <span class="n">that_point</span><span class="o">|</span>
     <span class="p">[</span><span class="n">item</span><span class="p">,</span> <span class="n">euclidean_distance</span><span class="p">(</span><span class="n">this_point</span><span class="p">,</span> <span class="n">that_point</span><span class="p">)]</span>
   <span class="p">}</span>
-  
+
   <span class="n">sorted</span> <span class="o">=</span> <span class="n">similarities</span><span class="p">.</span><span class="nf">sort</span> <span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">|</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=&gt;</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
   <span class="k">return</span> <span class="n">sorted</span><span class="p">.</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">point</span><span class="p">,</span><span class="n">s</span><span class="o">|</span> <span class="n">point</span><span class="p">}</span>
 <span class="k">end</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>And here is the test you could do, and btw you can copy the above and
 the bellow script and run it directly:</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="c1"># SAMPLE DATA</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1"># SAMPLE DATA</span>
 
 <span class="n">all_articles</span> <span class="o">=</span> <span class="p">[</span>
   <span class="p">{</span>
-   <span class="ss">:article</span> <span class="o">=&gt;</span> <span class="s2">"Data Mining: Finding Similar Items"</span><span class="p">,</span> 
-   <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Algorithms"</span><span class="p">,</span> <span class="s2">"Programming"</span><span class="p">,</span> <span class="s2">"Mining"</span><span class="p">,</span> 
+   <span class="ss">:article</span> <span class="o">=&gt;</span> <span class="s2">"Data Mining: Finding Similar Items"</span><span class="p">,</span>
+   <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Algorithms"</span><span class="p">,</span> <span class="s2">"Programming"</span><span class="p">,</span> <span class="s2">"Mining"</span><span class="p">,</span>
      <span class="s2">"Python"</span><span class="p">,</span> <span class="s2">"Ruby"</span><span class="p">]</span>
-  <span class="p">},</span> 
+  <span class="p">},</span>
   <span class="p">{</span>
-   <span class="ss">:article</span> <span class="o">=&gt;</span> <span class="s2">"Blogging Platform for Hackers"</span><span class="p">,</span>  
-   <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Publishing"</span><span class="p">,</span> <span class="s2">"Server"</span><span class="p">,</span> <span class="s2">"Cloud"</span><span class="p">,</span> <span class="s2">"Heroku"</span><span class="p">,</span> 
+   <span class="ss">:article</span> <span class="o">=&gt;</span> <span class="s2">"Blogging Platform for Hackers"</span><span class="p">,</span>
+   <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Publishing"</span><span class="p">,</span> <span class="s2">"Server"</span><span class="p">,</span> <span class="s2">"Cloud"</span><span class="p">,</span> <span class="s2">"Heroku"</span><span class="p">,</span>
      <span class="s2">"Jekyll"</span><span class="p">,</span> <span class="s2">"GAE"</span><span class="p">]</span>
-  <span class="p">},</span> 
+  <span class="p">},</span>
   <span class="p">{</span>
-   <span class="ss">:article</span> <span class="o">=&gt;</span> <span class="s2">"UX Tip: Don't Hurt Me On Sign-Up"</span><span class="p">,</span> 
+   <span class="ss">:article</span> <span class="o">=&gt;</span> <span class="s2">"UX Tip: Don't Hurt Me On Sign-Up"</span><span class="p">,</span>
    <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Web"</span><span class="p">,</span> <span class="s2">"Design"</span><span class="p">,</span> <span class="s2">"UX"</span><span class="p">]</span>
-  <span class="p">},</span> 
+  <span class="p">},</span>
   <span class="p">{</span>
-   <span class="ss">:article</span> <span class="o">=&gt;</span> <span class="s2">"Crawling the Android Marketplace"</span><span class="p">,</span> 
-   <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Python"</span><span class="p">,</span> <span class="s2">"Android"</span><span class="p">,</span> <span class="s2">"Mining"</span><span class="p">,</span> 
+   <span class="ss">:article</span> <span class="o">=&gt;</span> <span class="s2">"Crawling the Android Marketplace"</span><span class="p">,</span>
+   <span class="ss">:tags</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"Python"</span><span class="p">,</span> <span class="s2">"Android"</span><span class="p">,</span> <span class="s2">"Mining"</span><span class="p">,</span>
      <span class="s2">"Web"</span><span class="p">,</span> <span class="s2">"API"</span><span class="p">]</span>
   <span class="p">}</span>
 <span class="p">]</span>
 
-<span class="c1"># SORTING these articles by similarity with an article </span>
+<span class="c1"># SORTING these articles by similarity with an article</span>
 <span class="c1"># tagged with Publishing + Web + API</span>
 <span class="c1">#</span>
 <span class="c1">#</span>
@@ -276,27 +314,30 @@ the bellow script and run it directly:</p>
 
 <span class="nb">require</span> <span class="s1">'yaml'</span>
 <span class="nb">puts</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">sorted</span><span class="p">)</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h3 id="the-problem-or-strength-of-euclidean-distance">The Problem (or Strength) of Euclidean Distance</h3>
 
 <p>Can you see one flaw with it for our chosen data-set and intention? I
 think you can - the first 2 articles have the same Euclidean distance
-to ["Publishing", "Web", "API"], even though the first article shares
+to [“Publishing”, “Web”, “API”], even though the first article shares
 2 tags with our chosen item, instead of just 1 tag as the rest.</p>
 
 <p>To visualize why, look at the points used in calculating the distance
 for the first article:</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>So 4 coordinates are different. Now look at the points used for the
 second article:</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-</code></pre></div>
-<p>Again, 4 coordinates are different. So here's the deal with Euclidean
+</code></pre></div></div>
+
+<p>Again, 4 coordinates are different. So here’s the deal with Euclidean
 distance: it measures <em>dissimilarity</em>. The coordinates that are the
 same are less important than the coordinates that are different. For
 my purpose here, this is not good - because articles with more tags
@@ -306,12 +347,20 @@ my purpose here, this is not good - because articles with more tags
 
 <p>This method is very similar to the one above, but does tend to give
 slightly different results, because this one actually measures
-similarity instead of dissimilarity. Here's the formula:</p>
+similarity instead of dissimilarity. Here’s the formula:</p>
 
-<p><img src="/assets/img/cosine-similarity.png" class="center" width="422" height="148" alt="Cosine similarity" /></p>
+<script type="math/tex; mode=display">similarity=
+  cos(\theta)=
+  \frac{A \cdot B}{\|A\| \|B\|}=
+  \frac{
+    \displaystyle\sum_{i=1}^{n} A_i B_i
+  }{
+    \sqrt{ \displaystyle\sum_{i=1}^{n} A_i^2 }
+    \sqrt{ \displaystyle\sum_{i=1}^{n} B_i^2 }
+  }</script>
 
 <p>If you look at the visual with the 2 axis and 2 points, we need the
-cosine of the angle <em>theta</em> that's between the vectors associated with
+cosine of the angle <em>theta</em> that’s between the vectors associated with
 our 2 points. And for our sample it does give better results.</p>
 
 <p>The values will range between -1 and 1. -1 means that 2 items are
@@ -320,10 +369,10 @@ other and 1 means that the 2 items are very similar (btw, because we
 are only doing zeros and ones for coordinates here, this score will
 never get negative for our sample).</p>
 
-<p>Here's the Ruby code (leaving out the wiring to our sample data, do
+<p>Here’s the Ruby code (leaving out the wiring to our sample data, do
 that as an exercise):</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">dot_product</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">dot_product</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
   <span class="n">products</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">b</span><span class="p">).</span><span class="nf">map</span><span class="p">{</span><span class="o">|</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">|</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">}</span>
   <span class="n">products</span><span class="p">.</span><span class="nf">inject</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">s</span><span class="p">,</span><span class="nb">p</span><span class="o">|</span> <span class="n">s</span> <span class="o">+</span> <span class="nb">p</span><span class="p">}</span>
 <span class="k">end</span>
@@ -333,7 +382,7 @@ that as an exercise):</p>
   <span class="no">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">squares</span><span class="p">.</span><span class="nf">inject</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">s</span><span class="p">,</span> <span class="n">c</span><span class="o">|</span> <span class="n">s</span> <span class="o">+</span> <span class="n">c</span><span class="p">})</span>
 <span class="k">end</span>
 
-<span class="c1"># Returns the cosine of the angle between the vectors </span>
+<span class="c1"># Returns the cosine of the angle between the vectors</span>
 <span class="c1">#associated with 2 points</span>
 <span class="c1">#</span>
 <span class="c1"># Params:</span>
@@ -342,10 +391,11 @@ that as an exercise):</p>
 <span class="k">def</span> <span class="nf">cosine_similarity</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
   <span class="n">dot_product</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">magnitude</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">magnitude</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
 <span class="k">end</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>Also, sorting the articles in the above sample gives me the following:</p>
 
-<div class="highlight"><pre class="highlight yaml"><code><span class="pi">-</span> <span class="na">article</span><span class="pi">:</span> <span class="s">Crawling the Android Marketplace</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="pi">-</span> <span class="na">article</span><span class="pi">:</span> <span class="s">Crawling the Android Marketplace</span>
   <span class="na">similarity</span><span class="pi">:</span> <span class="m">0.5163977794943222</span>
 
 <span class="pi">-</span> <span class="na">article</span><span class="pi">:</span> <span class="s2">"</span><span class="s">UX</span><span class="nv"> </span><span class="s">Tip:</span><span class="nv"> </span><span class="s">Don't</span><span class="nv"> </span><span class="s">Hurt</span><span class="nv"> </span><span class="s">Me</span><span class="nv"> </span><span class="s">On</span><span class="nv"> </span><span class="s">Sign-Up"</span>
@@ -356,9 +406,10 @@ that as an exercise):</p>
 
 <span class="pi">-</span> <span class="na">article</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Data</span><span class="nv"> </span><span class="s">Mining:</span><span class="nv"> </span><span class="s">Finding</span><span class="nv"> </span><span class="s">Similar</span><span class="nv"> </span><span class="s">Items"</span>
   <span class="na">similarity</span><span class="pi">:</span> <span class="m">0.0</span>
-</code></pre></div>
-<p>Right, so much better for this chosen sample and usage. Ain't this
-fun? BUT, you guessed it, there's a problem with this too …</p>
+</code></pre></div></div>
+
+<p>Right, so much better for this chosen sample and usage. Ain’t this
+fun? BUT, you guessed it, there’s a problem with this too …</p>
 
 <h3 id="the-problem-with-our-sample-the-tf-idf-weight">The Problem with Our Sample; The Tf-Idf Weight</h3>
 
@@ -366,18 +417,18 @@ fun? BUT, you guessed it, there's a problem with this too …</p>
 number of common tags and use that as a metric. The result would be
 the same without getting fancy with Cosine Similarity :-)</p>
 
-<p>Clearly a tag such as "Heroku" is more specific than a general purpose
-tag such as "Web". Also, just because Jekyll was mentioned in an
-article, that doesn't make the article about Jekyll. Also an article
-tagged with "Android" may be twice as Android-related as another
-article also tagged with "Android".</p>
+<p>Clearly a tag such as “Heroku” is more specific than a general purpose
+tag such as “Web”. Also, just because Jekyll was mentioned in an
+article, that doesn’t make the article about Jekyll. Also an article
+tagged with “Android” may be twice as Android-related as another
+article also tagged with “Android”.</p>
 
-<p>So here's a solution to this: the
+<p>So here’s a solution to this: the
 <strong><a href="http://en.wikipedia.org/wiki/Tf%E2%80%93idf">Tf-Idf weight</a></strong>, <em>a
 statistical measure used to evaluate how important a word is to a
 document in a collection or corpus</em>. With it you can give values to
 your coordinates that are much more specific than simple ones and
-zeros. But I'll leave that for another day.</p>
+zeros. But I’ll leave that for another day.</p>
 
 <p>Also, related to our simple data-set here, perhaps an even simpler
 metric, like the
@@ -389,7 +440,7 @@ better.</p>
 <p>The
 <a href="http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient">Pearson Correlation Coefficient</a>
 for finding the similarity of 2 items is slightly more sophisticated
-and doesn't really apply to my chosen data-set. This coefficient
+and doesn’t really apply to my chosen data-set. This coefficient
 measures how well two samples are linearly related.</p>
 
 <p>For example, on IMDB we may have 2 users. One of them, lets call him
@@ -400,11 +451,23 @@ as there is a perfect linear correlation between them, since Mary just
 gives the same rankings as John plus 3. The formula itself or the
 theory is not very intuitive though. But it is simple to calculate:</p>
 
-<p><img src="/assets/img/pearson.png" class="center" width="395" height="222" alt="Pearson" /></p>
+<script type="math/tex; mode=display">r = \frac{
+  \displaystyle\sum_{i=1}^{n} a_i b_i -
+  \frac{
+    \displaystyle\sum_{i=1}^{n} a_i \displaystyle\sum_{i=1}^{n} b_i
+  }{n}
+}{
+  \sqrt{
+    (\displaystyle\sum_{i=1}^{n} a_i^2 -
+      \frac{(\displaystyle\sum_{i=1}^{n} a_i)^2}{n}) \cdot
+    (\displaystyle\sum_{i=1}^{n} b_i^2 -
+      \frac{(\displaystyle\sum_{i=1}^{n} b_i)^2}{n})
+  }
+}</script>
 
-<p>Here's the code:</p>
+<p>Here’s the code:</p>
 
-<div class="highlight"><pre class="highlight ruby"><code><span class="k">def</span> <span class="nf">pearson_score</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">pearson_score</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
   <span class="n">n</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">length</span>
   <span class="k">return</span> <span class="mi">0</span> <span class="k">unless</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span>
 
@@ -416,13 +479,13 @@ theory is not very intuitive though. But it is simple to calculate:</p>
   <span class="n">sum2_sq</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="nf">inject</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">c</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">c</span> <span class="o">**</span> <span class="mi">2</span><span class="p">}</span>
   <span class="c1"># summing up the product</span>
   <span class="n">prod_sum</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="nf">zip</span><span class="p">(</span><span class="n">b</span><span class="p">).</span><span class="nf">inject</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span><span class="o">|</span><span class="n">sum</span><span class="p">,</span> <span class="n">ab</span><span class="o">|</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">ab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">ab</span><span class="p">[</span><span class="mi">1</span><span class="p">]}</span>
-  
+
   <span class="c1"># calculating the Pearson score</span>
-  <span class="n">num</span> <span class="o">=</span> <span class="n">prod_sum</span> <span class="o">-</span> <span class="p">(</span><span class="n">sum1</span> <span class="o">*</span><span class="n">sum2</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>  
+  <span class="n">num</span> <span class="o">=</span> <span class="n">prod_sum</span> <span class="o">-</span> <span class="p">(</span><span class="n">sum1</span> <span class="o">*</span><span class="n">sum2</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
   <span class="n">den</span> <span class="o">=</span> <span class="no">Math</span><span class="p">.</span><span class="nf">sqrt</span><span class="p">((</span><span class="n">sum1_sq</span> <span class="o">-</span> <span class="p">(</span><span class="n">sum1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">sum2_sq</span> <span class="o">-</span> <span class="p">(</span><span class="n">sum2</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">n</span><span class="p">))</span>
 
   <span class="k">return</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">den</span> <span class="o">==</span> <span class="mi">0</span>
-  <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span>  
+  <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span>
 <span class="k">end</span>
 
 
@@ -434,10 +497,11 @@ theory is not very intuitive though. But it is simple to calculate:</p>
 <span class="c1"># =&gt; 0.4338609156373132</span>
 <span class="nb">puts</span> <span class="n">pearson_score</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="c1"># =&gt; -1</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <h2 id="manhattan-distance">Manhattan Distance</h2>
 
-<p>There is no one size fits all and the formula you're going to use
+<p>There is no one size fits all and the formula you’re going to use
 depends on your data and what you want out of it.</p>
 
 <p>For instance the
@@ -447,14 +511,16 @@ point to the other if a grid-like path is followed. I like this
 graphic from Wikipedia that perfectly illustrates the difference with
 Euclidean distance:</p>
 
-<p><img src="/assets/img/manhattan.png" class="center" width="283" height="283" alt="Manhattan" /></p>
+<figure>
+  <img src="/assets/media/articles/manhattan.svg" alt="Manhattan distance" />
+</figure>
 
 <p>Red, yellow and blue lines all have the same length and the distance
 is bigger than the corresponding green diagonal, which is the normal
 Euclidean distance.</p>
 
-<p>Personally I haven't found a usage for it, as it is more related to
-path-finding algorithms, but it's a good thing to keep in mind that it
+<p>Personally I haven’t found a usage for it, as it is more related to
+path-finding algorithms, but it’s a good thing to keep in mind that it
 exists and may prove useful. Since it measures how many changes you
 have to do to your origin location to get to your destination while
 being limited to taking small steps in a grid-like system, it is very
@@ -463,135 +529,273 @@ similar in spirit to the
 which measures the minimum number of changes required to transform
 some text into another.</p>
 
+  </div>
 
-    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu">
-      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
-        Alexandru Nedelcu</a> |
-      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
-        Twitter</a> |
-      <a href="https://github.com/alexandru" itemprop="url" rel="author">
-        GitHub</a>
+  <div id="article-details">
+    
+    <time itemprop="dateModified" content="2019-12-28T00:00:00+0000">
+        Updated: December 28, 2019
+    </time>
+    
+      | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
+    
+
+    <div id="all-categories">
+      Tags:
+      
+        
+        <a href="/tag/best of/" class="category">best of</a>
+      
+         | 
+        <a href="/tag/programming/" class="category">programming</a>
+      
+         | 
+        <a href="/tag/algorithms/" class="category">algorithms</a>
+      
+         | 
+        <a href="/tag/mining/" class="category">mining</a>
+      
+         | 
+        <a href="/tag/ruby/" class="category">ruby</a>
+      
     </div>
   </div>
 
-  <footer>
-    <div id="other-articles">
-      <h2>Recent Articles</h2>
+  
+  <div class="related">
+    <h2>Similar Articles</h2>
+    <div class="container">
+      
+      
 
-      <ul class="posts">
-      	<li>
-      	  <time datetime="2019-11-22">
-      	    2019-11-22 &raquo;
-      	  </time>
-      	  <a href="/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html" rel="prefetch related">Regexp Replacement via Function in Java/Scala</a>
-      	</li>
-      	<li>
-      	  <time datetime="2019-08-11">
-      	    2019-08-11 &raquo;
-      	  </time>
-      	  <a href="/blog/2019/08/11/isinstanceof-anti-pattern.html" rel="prefetch related">Scala's isInstanceOf is an Anti-Pattern</a>
-      	</li>
-      	<li>
-      	  <time datetime="2018-05-06">
-      	    2018-05-06 &raquo;
-      	  </time>
-      	  <a href="/blog/2018/05/06/bifunctor-io.html" rel="prefetch related">On Bifunctor IO and Java's Checked Exceptions</a>
-      	</li>
-      	<li>
-      	  <time datetime="2018-02-12">
-      	    2018-02-12 &raquo;
-      	  </time>
-      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-11-10">
-      	    2017-11-10 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-10-15">
-      	    2017-10-15 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-10-13">
-      	    2017-10-13 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
-      	</li>
-      </ul>
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html">
+          Regexp Replacement via Function in Java/Scala
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/ruby" class="tag">ruby</a>
+                        
+          </div>
+          <time>November 22, 2019</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2019/08/11/isinstanceof-anti-pattern.html">
+          Scala's isInstanceOf is an Anti-Pattern
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>August 11, 2019</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/05/06/bifunctor-io.html">
+          On Bifunctor IO and Java's Checked Exceptions
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/typelevel" class="tag">typelevel</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+                        
+          </div>
+          <time>May 6, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/02/12/in-defense-oofp.html">
+          In Defense of OOFP
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/oop" class="tag">oop</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>February 12, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      <div class="clearfix"></div>
     </div>
+  </div>
+  
 
-    <div id="contributions">
-      <script data-isso="/comments/alexn/"
-              data-isso-css="true"
-              data-isso-lang="en"
-              data-isso-reply-to-self="true"
-              data-isso-require-author="true"
-              data-isso-require-email="false"
-              data-isso-reply-notifications="true"
-              data-isso-max-comments-top="10"
-              data-isso-max-comments-nested="5"
-              data-isso-reveal-on-click="5"
-              data-isso-gravatar="true"
-              data-isso-avatar="false"
-              data-isso-vote="true"
-              data-vote-levels=""
-              src="https://alexn.org/comments/alexn/js/embed.min.js"></script>
-      <section id="isso-thread" data-title="Data Mining: Finding Similar Items and Users">
-      </section>
-    </div>
-  </footer>
+  
 </article>
 
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      <h2>Feedback?</h2>
+
+<p>
+  If you wish to discus this article, an email would be most welcome:
+  <script>
+    (function () {
+      var lhs = "comments";
+      var rhs = "m9.alexn.org";
+      var subject = "Comment on `Data Mining: Finding Similar Items and Users`";
+      document.write("<a href=\"mailto");
+      document.write(":" + lhs + "@");
+      document.write(rhs);
+      if (subject) { document.write("?subject=" + subject); }
+      document.write("\">" + lhs + "@" + rhs + "<\/a>");
+    })()
+  </script>
+  <noscript>
+    <em>Email address is protected by JavaScript, activate it to see it!</em>
+  </noscript>
+</p>
+
+<p>
+  If you noticed a typo, help me by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2012-01-16-cosine-similarity-euclidean-distance.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+    </div>  
+  </div>
+  
+
+  <div class="bottom">
+    <div class="container">
+      <span class="copy">
+          Alexn.org &copy; 2020
+      </span>
+      <span class="links">
+        <a href="/docs/privacy-policy.html">Privacy Policy</a> |
+        <a href="/about.html#contact">Contact</a>
+      </span>
     </div>
   </div>
+</div><!-- end .footer -->
 
-  <div id="footer-container">
-    <footer>
-      <div class="rss">
-      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
-      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
-      	</a>
-      </div>
+   <script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js" type="text/javascript"></script>
+<script async src="/assets/js/load-mathjax.js"></script>
 
-      <div class="links">
-        <a href="/docs/privacy-policy.html">Privacy policy</a> |
-        <a href="https://twitter.com/alexelcu" target="_blank">Twitter</a> |
-        <a href="https://github.com/alexandru" target="_blank">GitHub</a>
-      </div>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script type="text/javascript">
+function _gaLoad() {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      <div class="contact">
-      	&copy; 2019 Alexandru Nedelcu
-      	<br>
-      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
-      </div>
-    </footer>
-  </div>
+  ga('create', 'UA-84530423-1', {
+    'cookieName': '_gaAlexNOrg',
+    'cookieExpires': 60 * 60 * 24 * 30 * 3  // 3 months, in seconds
+  });
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
 
-  <!-- Analytics -->
-  <script>
-    function loadAnalytics() {
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  // Click handler
+  $(function () {
+    $('a[href]').each(function (idx, elem) {
+      var it = $(elem);
+      var href = it.attr('href');
 
-      ga('create', 'UA-84530423-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
+      if (href.match(/^https?[:]\/\//) && !href.match(/alexn\.org/)) {
+        it.click(_gaEvent('general', 'click', 'external-link', href));
+      } else if (href.match(/^#/)) {
+        it.click(_gaEvent('general', 'click', 'page-anchor', href));
+      } else {
+        it.click(_gaEvent('general', 'click', 'internal-link', href));
+      }
+    })
+  })
+}
+
+function _gaEvent(category, action, label, value) {
+  return function () {
+    if (_doNotTrack || typeof ga !== 'function') {
+      return;
     }
-    // Checks DO-NOT-TRACK status
-    if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
-      var dnd = window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.external.msTrackingProtectionEnabled();
-      if (!dnd) loadAnalytics();
-    } else {
-      loadAnalytics();
-    }
-  </script>
-  <!-- End Analytics -->  
+    ga(function () {
+      ga('send', 'event', category, action, label, value);
+    });
+   }
+}
+
+// Checks DO-NOT-TRACK status
+window._doNotTrack = false;
+if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
+  window._doNotTrack = window.doNotTrack == "1" || navigator.doNotTrack == "yes" ||
+    navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" ||
+    ('msTrackingProtectionEnabled' in window.external && window.external.msTrackingProtectionEnabled());
+}
+if (!_doNotTrack) {
+  console.log("Analytics are loading.")
+  _gaLoad();
+} else if (typeof(console) !== "undefined") {
+  console.log("Analytics are off due to Do Not Track setting!");
+}
+</script>
+
+
+
+   
+   <!-- <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"6c8297e886b517d8535e8410e","lid":"a3391a44b0","uniqueMethods":true}) })</script> -->
+   
 </body>
+
 </html>

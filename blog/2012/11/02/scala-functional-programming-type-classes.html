@@ -1,132 +1,153 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
-
-  <link rel="canonical" href="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html">
-  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@alexelcu" />
-
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2012-11-02" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>On Scala, Functional Programming and Type-Classes &#8211; alexn.org</title>
     
-    <meta property="article:tag" content="Languages" />
-    <meta property="article:tag" content="Functional" />
-    <meta property="article:tag" content="Scala" />
-    <meta property="article:tag" content="Clojure" />
-    <meta property="article:tag" content="Java" />
 
-    <title>On Scala, Functional Programming and Type-Classes</title>
-    <meta name="og:title" content="On Scala, Functional Programming and Type-Classes" />
-    <meta name="twitter:title" content="On Scala, Functional Programming and Type-Classes" />
+    <!-- Open Graph Meta -->
+    <meta content="alexn.org" property="og:site_name">
+    <meta content="On Scala, Functional Programming and Type-Classes" property="og:title">
+    <meta content="I've been following the excellent Coursera course on [Functional Programming Principles in Scala](https://www.coursera.org/course/progfun) led by Martin Odersky. This was not my first encounter with Scala as I've been using it including for my day job.
+In this article I'm describing my impressions of the Scala programming language and why I fel in love with it." property="og:description">
+    <meta content="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html" property="og:url">
+    <meta content="2012-11-02T00:00:00+00:00" property="article:published_time">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala.png" />
+    <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
-      <meta name="og:image" content="https://alexn.org/assets/img/programming-scala.jpg" />
-      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/programming-scala.jpg" />
-      <meta name="twitter:image" content="https://alexn.org/assets/img/programming-scala.jpg" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala.png">
+    <meta name="twitter:site" content="@alexelcu">
+    <meta name="twitter:creator" content="@alexelcu">
+    <meta name="twitter:title" content="On Scala, Functional Programming and Type-Classes">
+    <meta name="twitter:url" content="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html">
+    <meta name="twitter:description" content="I've been following the excellent Coursera course on [Functional Programming Principles in Scala](https://www.coursera.org/course/progfun) led by Martin Odersky. This was not my first encounter with Scala as I've been using it including for my day job.
+In this article I'm describing my impressions of the Scala programming language and why I fel in love with it.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo/192px.png" sizes="192x192" />
+    <link rel="icon" href="/assets/logo/270px.png" sizes="270x270" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/logo/180px.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
-      <meta name="og:description" content="Languages, Functional, Scala, Clojure, Java" />
-      <meta name="twitter:description" content="Languages, Functional, Scala, Clojure, Java" />
-      <meta name="description" content="Languages, Functional, Scala, Clojure, Java" />
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="alexn.org" href="https://feed.alexn.org/" />
 
-  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
-  <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
-  <![endif]-->
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html">
+
+    <!-- Modernizr -->
+    <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
 </head>
+
+
 <body>
-  <div id="header-container">
-    <header>
-      <h1 id="title">alexn.org</h1>
 
-      <meta itemprop="lastReviewed" content="2019-11-22"/>
-      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
-        <meta itemprop="name" content="Alexandru Nedelcu">
-        <meta itemprop="url" content="https://alexn.org/about.html">
-      </div>
-
-      <div class="github-fork-ribbon-wrapper right">
-        <div class="github-fork-ribbon">
-          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
-        </div>
-      </div>
-
-      <nav>
-    	  <a href="/">alexn.org</a>
-    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
-      </nav>
-    </header>
-  </div>
-
-  <div id="main-container">
-    <div id="main">
-      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="headline">On Scala, Functional Programming and Type-Classes</h1>
-
-    <div id="meta">
-      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html"/>
-      <meta itemprop="datePublished" content="2012-11-02"/>
-      <meta itemprop="dateModified" content="2012-11-02"/>
-
-      <time class="post-date" itemprop="dateCreated" datetime="2012-11-02">
-        Nov 02, 2012
-      </time>
-
-      <span class="twitter-link">
-        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
-      </span>
-
-        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/programming-scala.jpg">
-          <meta itemprop="width" content="83">
-          <meta itemprop="height" content="110">
-        </div>
-
-      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="Alexandru Nedelcu">
-        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
-          <meta itemprop="width" content="585">
-          <meta itemprop="height" content="585">
-        </div>
-      </div>
+    <div class="header">
+    <div class="container">
+        <h1 class="logo"><a href="/">AlexN =&lt;&lt; org</a></h1>
+        <nav class="nav-collapse">
+            <ul class="noList">
+                
+                <li class="element first  ">
+                    <a href="/">Home</a>
+                </li>
+                
+                <li class="element   ">
+                    <a href="/about.html">About</a>
+                </li>
+                
+                <li class="element   last">
+                    <a href="/subscribe.html">Subscribe</a>
+                </li>
+                
+            </ul>
+        </nav>
     </div>
-  </header>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <h1 class="postTitle" itemprop="headline">On Scala, Functional Programming and Type-Classes</h1>
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html"/>
+    <meta itemprop="datePublished" content="2012-11-02T00:00:00+0000"/>
+    
+    <time itemprop="dateCreated" datetime="2012-11-02T00:00:00+0000">November 2, 2012</time>
+    | <nobr><span class="time">42</span> minute</nobr>
+  </p>
+
+  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala.png" />
+      <img src="/assets/media/articles/scala.png" alt="" />
+      
+    </figure>
+    
+  
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="alexn.org">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    </div>
+  </div>
+  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu" />
+      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+      <meta itemprop="url" content="https://twitter.com/alexelcu" />
+      <meta itemprop="url" content="https://www.facebook.com/alexelcu" />
+      <meta itemprop="url" content="https://github.com/alexandru" />
+    </div>
+  
 
   <div id="content" itemprop="articleBody">
-    <p>I've been following the excellent Coursera course on
-<a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>
-led by Martin Odersky. This was not my first encounter with Scala as
-I've been using it including for my day job. In parallel, because I
-felt the need for a Javascript replacement, I've been learning Clojure
-too, because of the excellent ClojureScript.</p>
+    <p class="intro withcap">
+  I’ve been following the excellent Coursera course on
+  <a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a>
+  led by Martin Odersky. This was not my first encounter with Scala as
+  I’ve been using it including for my day job. In parallel, because I
+  felt the need for a Javascript replacement, I’ve been learning Clojure
+  too, because of the excellent ClojureScript.
+</p>
 
-<p>I've fallen in love with both and I can't really pick a favorite. For
+<p>I’ve fallen in love with both and I can’t really pick a favorite. For
 what is worth this document represents my (rookie) experience with
 Scala, being complete yack shaving on my part, or you could call it
 the intellectual masturbation of a fool.</p>
 
 <!-- read more -->
 
-<p><strong>UPDATE:</strong> as if the article wasn't long enough, I've added to it some
+<p><strong>UPDATE:</strong> as if the article wasn’t long enough, I’ve added to it some
 more stuff (like a couple of times :-)</p>
 
 <h2 id="1-functional-programming-for-the-win">1. Functional Programming for the Win</h2>
 
-<p>It's not a silver bullet, but on the whole it's awesome. You really
+<p>It’s not a silver bullet, but on the whole it’s awesome. You really
 have to experience it, while leaving aside the preconceptions and
-biases you've been building up by honing those imperative skills for
+biases you’ve been building up by honing those imperative skills for
 years. Students learn functional programing more easily, fresh as they
 are, otherwise the learning experience can be painful.</p>
 
-<p>But we haven't evolved much in the last 200,000 years and so our brain
+<p>But we haven’t evolved much in the last 200,000 years and so our brain
 finds pleasure mostly in the things that appeal to our inner-animal,
 being interested in the means to get laid, eat food, sleep and escape
-wild beasts. Learning can be a pleasure, but not when you're venturing
+wild beasts. Learning can be a pleasure, but not when you’re venturing
 to unfamiliar grounds, so if you start, hang in there.</p>
 
 <p>We need some definitions though. Functional programming …</p>
@@ -156,16 +177,16 @@ also add:</p>
 <ul>
   <li>has a rich collection of immutable/persistent data-structures (in
 general if you want to assess the viability of any programming
-language, disregarding the platform it runs on, it's perfectly
+language, disregarding the platform it runs on, it’s perfectly
 characterized by its basic primitives and data-structures;
 e.g. think of C++, Java, or Javascript)</li>
   <li>exposes a type-system that deals efficiently with the
 <a href="http://en.wikipedia.org/wiki/Expression_problem">expression problem</a>; 
-Rich Hickey calls this "<em>polymorphism a la carte</em>"</li>
+Rich Hickey calls this “<em>polymorphism a la carte</em>”</li>
 </ul>
 
 <p>You can also go to the extreme of specifying that all side-effects
-must be modeled with monadic types, but that's a little too much IMHO,
+must be modeled with monadic types, but that’s a little too much IMHO,
 as only one mostly-mainstream language fits that bill (Haskell).</p>
 
 <h2 id="2-is-scala-a-functional-programming-language">2. Is Scala a Functional Programming Language?</h2>
@@ -178,13 +199,13 @@ planned. Now move along …</p>
 
 <h2 id="3-polymorphism-à-la-carte">3. Polymorphism À la Carte</h2>
 
-<p>This is a term that I've been hearing from Rich Hickey, when he talks
-about open type-systems, referring primarily to Clojure's Protocols
-and Haskell's Type-Classes.</p>
+<p>This is a term that I’ve been hearing from Rich Hickey, when he talks
+about open type-systems, referring primarily to Clojure’s Protocols
+and Haskell’s Type-Classes.</p>
 
 <p>These mechanisms for polymorphisms are good solutions for dealing with
 the expression problem being in stark contrast with Object-Oriented
-Programming as we've come to know it from Java and C++.</p>
+Programming as we’ve come to know it from Java and C++.</p>
 
 <p>OOP is often a closed type-system, especially as used in static
 languages. Adding new classes into an existing hierarchy, adding new
@@ -201,7 +222,7 @@ a dynamic type-system.</p>
 
 <h2 id="4-yes-virginia-scala-has-type-classes">4. Yes Virginia, Scala has Type-Classes</h2>
 
-<p>So what's a type class? It's like an interface in Java, except that
+<p>So what’s a type class? It’s like an interface in Java, except that
 you can make any existing types conform to it without modifying the
 implementation of that type.</p>
 
@@ -213,7 +234,7 @@ do that for each particular type.</p>
 <p>There are several problems with doing this in Java or C#:</p>
 
 <ul>
-  <li>there is no interface defined for "<code class="highlighter-rouge">+</code>" on types that support addition
+  <li>there is no interface defined for “<code class="highlighter-rouge">+</code>” on types that support addition
 (like Integers, BigInteger, BigDecimal, floating-point numbers,
 strings, etc…)</li>
   <li>we need to start from some <em>zero</em> (the list of elements you want to
@@ -222,25 +243,27 @@ fold could be empty)</li>
 
 <p>Well, you can define a type-class, like so:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">-T</span>, <span class="kt">R</span><span class="o">]</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">trait</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">-T</span>, <span class="kt">R</span><span class="o">]</span> <span class="o">{</span>
   <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">acc</span><span class="k">:</span> <span class="kt">R</span><span class="o">,</span> <span class="n">elem</span><span class="k">:</span> <span class="kt">T</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span>
   <span class="k">def</span> <span class="nf">zero</span><span class="k">:</span> <span class="kt">R</span>
 <span class="o">}</span>
-</code></pre></div>
-<p>But wait, isn't this just a simple Java-like interface? Well yes, yes
-it is. That's the awesome thing about Scala - in Scala every instance
+</code></pre></div></div>
+
+<p>But wait, isn’t this just a simple Java-like interface? Well yes, yes
+it is. That’s the awesome thing about Scala - in Scala every instance
 is an object and every type is a class.</p>
 
 <p>So what makes this interface a type-class?
 <a href="http://ropas.snu.ac.kr/~bruno/papers/TypeClasses.pdf">Objects in combination with implicit parameters</a>
-of course. Let's look at how we'll implement our <code class="highlighter-rouge">sum()</code> function that
+of course. Let’s look at how we’ll implement our <code class="highlighter-rouge">sum()</code> function that
 uses this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">sum</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">adder</span><span class="k">:</span> <span class="kt">CanFold</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=</span> 
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">sum</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">](</span><span class="n">list</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="k">implicit</span> <span class="n">adder</span><span class="k">:</span> <span class="kt">CanFold</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span><span class="o">])</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=</span> 
   <span class="nv">list</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="nv">adder</span><span class="o">.</span><span class="py">zero</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">adder</span><span class="o">.</span><span class="py">sum</span><span class="o">(</span><span class="n">acc</span><span class="o">,</span> <span class="n">e</span><span class="o">))</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>So if the Scala compiler can find an implicit <code class="highlighter-rouge">CanFold</code> in scope
-that's defined for type A, then it uses it to return a type B. This is
+that’s defined for type A, then it uses it to return a type B. This is
 awesomeness on multiple levels:</p>
 
 <ul>
@@ -254,50 +277,55 @@ lists, whatever</li>
 default implicits for certain types (globally available) you have to
 define them in the companion object of the trait <code class="highlighter-rouge">CanFold</code>, like this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">object</span> <span class="nc">CanFold</span> <span class="o">{</span>
-  <span class="c1">// default implementation for integers
-</span>  
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">object</span> <span class="nc">CanFold</span> <span class="o">{</span>
+  <span class="c1">// default implementation for integers</span>
+  
   <span class="k">implicit</span> <span class="k">object</span> <span class="nc">CanFoldInts</span> <span class="k">extends</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Int</span>, <span class="kt">Long</span><span class="o">]</span> <span class="o">{</span>
     <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">acc</span><span class="k">:</span> <span class="kt">Long</span><span class="o">,</span> <span class="n">e</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="n">acc</span> <span class="o">+</span> <span class="n">e</span>
     <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="mi">0</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>And usage is as expected:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="c1">// notice how the result of summing Integers is a Long
-</span><span class="nf">sum</span><span class="o">(</span><span class="mi">1</span> <span class="o">::</span> <span class="mi">2</span> <span class="o">::</span> <span class="mi">3</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
-<span class="c1">//=&gt; Long = 6
-</span></code></pre></div>
-<p>I'm not going to lie to you as this stuff gets hard to learn and while
-learning how to do this, you'll end-up pulling your hair out wishing
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// notice how the result of summing Integers is a Long</span>
+<span class="nf">sum</span><span class="o">(</span><span class="mi">1</span> <span class="o">::</span> <span class="mi">2</span> <span class="o">::</span> <span class="mi">3</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
+<span class="c1">//=&gt; Long = 6</span>
+</code></pre></div></div>
+
+<p>I’m not going to lie to you as this stuff gets hard to learn and while
+learning how to do this, you’ll end-up pulling your hair out wishing
 for dynamic typing where all of this is not a concern. However you
 should distinguish between <em>hard</em> and <em>complex</em> (the former is
 relative and subjective, the later is absolute and objective).</p>
 
 <p>One issue with our implementation is when you want to provide a
-default implementation for base types. That's why we've made the type
+default implementation for base types. That’s why we’ve made the type
 parameter T <em>contravariant</em> in the <code class="highlighter-rouge">CanFold[-T,R]</code> definition. What
 contravariance means is precisely this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">if</span> <span class="n">B</span> <span class="n">inherits</span> <span class="n">from</span> <span class="nf">A</span> <span class="o">(</span><span class="n">B</span> <span class="k">&lt;:</span> <span class="n">A</span><span class="o">),</span> <span class="n">then</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">if</span> <span class="n">B</span> <span class="n">inherits</span> <span class="n">from</span> <span class="nf">A</span> <span class="o">(</span><span class="n">B</span> <span class="k">&lt;:</span> <span class="n">A</span><span class="o">),</span> <span class="n">then</span>
 <span class="nc">CanFold</span><span class="o">[</span><span class="kt">A</span>, <span class="k">_</span><span class="o">]</span> <span class="n">inherits</span> <span class="n">from</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">B</span>, <span class="k">_</span><span class="o">]</span> <span class="o">(</span><span class="nc">CanFold</span><span class="o">[</span><span class="kt">A</span>,<span class="k">_</span><span class="o">]</span> <span class="k">&lt;:</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">B</span>,<span class="k">_</span><span class="o">])</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>This allows us to define a CanFold for any Traversable and it will
 work for any Seq / Vector / List and so on.</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">object</span> <span class="nc">CanFoldSeqs</span> 
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">implicit</span> <span class="k">object</span> <span class="nc">CanFoldSeqs</span> 
 <span class="k">extends</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">]]</span> <span class="o">{</span>
   <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="k">_</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
   <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
 <span class="o">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>So this can sum up any kind of <code class="highlighter-rouge">Traversable</code>. The problem is that it
 loses the type parameter in the process:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nf">sum</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">)</span> <span class="o">::</span> <span class="nc">List</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
-<span class="c1">//=&gt; Traversable[Any] = List(1, 2, 3, 4, 5)
-</span></code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nf">sum</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">)</span> <span class="o">::</span> <span class="nc">List</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
+<span class="c1">//=&gt; Traversable[Any] = List(1, 2, 3, 4, 5)</span>
+</code></pre></div></div>
+
 <p>And the reason for why I mentioned this is hard is because after
 pulling my hair out, I had to
 <a href="http://stackoverflow.com/questions/13176697/problems-with-contravariance-in-scala">ask on StackOverflow</a>
@@ -306,14 +334,15 @@ implicit object, you can provide an implicit <code class="highlighter-rouge">def
 right thing, helping the compiler to see the type embedded in that
 container:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSeqs</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSeqs</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
   <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
   <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
 <span class="o">}</span>
 
 <span class="nf">sum</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">)</span> <span class="o">::</span> <span class="nc">List</span><span class="o">(</span><span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
-<span class="c1">//=&gt; Traversable[Int] = List(1, 2, 3, 4, 5)
-</span></code></pre></div>
+<span class="c1">//=&gt; Traversable[Int] = List(1, 2, 3, 4, 5)</span>
+</code></pre></div></div>
+
 <p>Implicits are even more flexible than meets the eye. Apparently the
 compiler can also work with functions that return the instance you
 want, instead of concrete instances. As a side-note, what I did above
@@ -326,43 +355,46 @@ about the returned types.</p>
 <p>Say in addition to a CanFold[Traversable,_] you also define something
 for Sets (which are also traversable) …</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSets</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSets</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
   <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
   <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nv">Set</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
 <span class="o">}</span>
 
 <span class="nf">sum</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Set</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
-</code></pre></div>
-<p>This will generate a conflict error and I'm still looking for a
-solution that makes the compiler use the most specific type it can
-find, while still keeping that nice contra-variance we've got going
-(hey, I'm just getting started). The error message looks like this:</p>
+</code></pre></div></div>
 
-<div class="highlight"><pre class="highlight shell"><code>both method CanFoldSeqs <span class="k">in </span>object ...
+<p>This will generate a conflict error and I’m still looking for a
+solution that makes the compiler use the most specific type it can
+find, while still keeping that nice contra-variance we’ve got going
+(hey, I’m just getting started). The error message looks like this:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>both method CanFoldSeqs <span class="k">in </span>object ...
 and method CanFoldSets <span class="k">in </span>object ...
 match expected <span class="nb">type </span>CanFold[Set[Int], B]
-</code></pre></div>
-<p>That's not bad at all as far as error messages go. You could just
+</code></pre></div></div>
+
+<p>That’s not bad at all as far as error messages go. You could just
 avoid being too general and in case you want to override the default
 behavior in the current scope, you can shadow the conflicting
 definitions:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="o">{</span> 
-  <span class="c1">// shadowing the more general definition 
-</span>  <span class="c1">// (notice the block, representing its own scope, 
-</span>  <span class="c1">//  so shadowing is local)
-</span>  <span class="k">def</span> <span class="nf">CanFoldSeqs</span> <span class="k">=</span> <span class="kc">null</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="o">{</span> 
+  <span class="c1">// shadowing the more general definition </span>
+  <span class="c1">// (notice the block, representing its own scope, </span>
+  <span class="c1">//  so shadowing is local)</span>
+  <span class="k">def</span> <span class="nf">CanFoldSeqs</span> <span class="k">=</span> <span class="kc">null</span>
 
-  <span class="c1">// this now works
-</span>  <span class="nf">sum</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Set</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
-  <span class="c1">//=&gt; Set[Int] = Set(1, 2, 3, 4)
-</span><span class="o">}</span>
-</code></pre></div>
+  <span class="c1">// this now works</span>
+  <span class="nf">sum</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Set</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">)</span> <span class="o">::</span> <span class="nc">Nil</span><span class="o">)</span>
+  <span class="c1">//=&gt; Set[Int] = Set(1, 2, 3, 4)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
 <p>Another solution that <code class="highlighter-rouge">CanBuildFrom</code> uses is to define implicits on
 multiple levels, such that some implicits take priority over others,
 likes so:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">trait</span> <span class="nc">LowLevelImplicits</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">trait</span> <span class="nc">LowLevelImplicits</span> <span class="o">{</span>
   <span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSeqs</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
     <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Traversable</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
     <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nc">Traversable</span><span class="o">()</span>
@@ -370,63 +402,70 @@ likes so:</p>
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">CanFold</span> <span class="k">extends</span> <span class="nc">LowLevelImplicits</span> <span class="o">{</span>
-  <span class="c1">// higher precedence over the above
-</span>  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSets</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
+  <span class="c1">// higher precedence over the above</span>
+  <span class="k">implicit</span> <span class="k">def</span> <span class="nf">CanFoldSets</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">CanFold</span><span class="o">[</span><span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>, <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span> <span class="o">{</span>
     <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">x</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">y</span><span class="k">:</span> <span class="kt">Set</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=</span> <span class="n">x</span> <span class="o">++</span> <span class="n">y</span>
     <span class="k">def</span> <span class="nf">zero</span> <span class="k">=</span> <span class="nv">Set</span><span class="o">.</span><span class="py">empty</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
   <span class="o">}</span>
 <span class="o">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>And yeah, it will do the right thing. A little ugly though, as it
 means you have to have specific knowledge about how these implicits
 are prioritized. In essence, this is heavy stuff already and a little
 complex too. Good design can make for kick-ass libraries though.</p>
 
-<h2 id="5-scalas-collections-library-is-awesome">5. Scala's Collections Library is Awesome</h2>
+<h2 id="5-scalas-collections-library-is-awesome">5. Scala’s Collections Library is Awesome</h2>
 
 <p>So what does the above buy you anyway? The following are some examples
-from Scala's own collections library.</p>
+from Scala’s own collections library.</p>
 
 <p>You can sum things up in sequences, as long as you have an
 implementation of type-class <code class="highlighter-rouge">Numeric[T]</code> in scope:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">sum</span>
-<span class="c1">//=&gt; Int = 10
-</span></code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">sum</span>
+<span class="c1">//=&gt; Int = 10</span>
+</code></pre></div></div>
+
 <p>You can sort things, as long as you have an implementation of
 type-class <code class="highlighter-rouge">Ordering[T]</code> in scope:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="s">"d"</span><span class="o">,</span> <span class="s">"c"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">,</span> <span class="s">"a"</span><span class="o">,</span> <span class="s">"b"</span><span class="o">).</span><span class="py">sorted</span>
-<span class="c1">//=&gt; List[java.lang.String] = List(a, b, c, d, e)
-</span></code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">List</span><span class="o">(</span><span class="s">"d"</span><span class="o">,</span> <span class="s">"c"</span><span class="o">,</span> <span class="s">"e"</span><span class="o">,</span> <span class="s">"a"</span><span class="o">,</span> <span class="s">"b"</span><span class="o">).</span><span class="py">sorted</span>
+<span class="c1">//=&gt; List[java.lang.String] = List(a, b, c, d, e)</span>
+</code></pre></div></div>
+
 <p>A collection will always do the right thing, returning the same kind
 of collection when doing a <code class="highlighter-rouge">map()</code> or a <code class="highlighter-rouge">flatMap()</code> or a <code class="highlighter-rouge">filter()</code>
 over it. For instance to revert the keys and values of a Map:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">Map</span><span class="o">(</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">{</span> <span class="nf">case</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">v</span><span class="o">,</span><span class="n">k</span><span class="o">)</span> <span class="o">}</span>
-<span class="c1">//=&gt; scala.collection.immutable.Map[Int,Int] = Map(2 -&gt; 1, 4 -&gt; 3)
-</span></code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">Map</span><span class="o">(</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">{</span> <span class="nf">case</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="o">(</span><span class="n">v</span><span class="o">,</span><span class="n">k</span><span class="o">)</span> <span class="o">}</span>
+<span class="c1">//=&gt; scala.collection.immutable.Map[Int,Int] = Map(2 -&gt; 1, 4 -&gt; 3)</span>
+</code></pre></div></div>
+
 <p>However, if the function you give to <code class="highlighter-rouge">map()</code> above does not return a
 pair, then the result is converted to an iterable:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">Map</span><span class="o">(</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">{</span> <span class="nf">case</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">}</span>
-<span class="c1">//=&gt; scala.collection.immutable.Iterable[Int] = List(4, 8)
-</span></code></pre></div>
-<p>Even more awesome than this, take for example the <code class="highlighter-rouge">BitSet</code> which is a
-compressed <code class="highlighter-rouge">Set</code> of integers (so it's optimized for storing integers):</p>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">Map</span><span class="o">(</span><span class="mi">1</span> <span class="o">-&gt;</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">{</span> <span class="nf">case</span> <span class="o">(</span><span class="n">k</span><span class="o">,</span><span class="n">v</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">v</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">}</span>
+<span class="c1">//=&gt; scala.collection.immutable.Iterable[Int] = List(4, 8)</span>
+</code></pre></div></div>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">collection.immutable.BitSet</span>
+<p>Even more awesome than this, take for example the <code class="highlighter-rouge">BitSet</code> which is a
+compressed <code class="highlighter-rouge">Set</code> of integers (so it’s optimized for storing integers):</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">collection.immutable.BitSet</span>
 
 <span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">2</span><span class="o">)</span>
-<span class="c1">//=&gt; BitSet = BitSet(3, 4, 5, 6)
-</span></code></pre></div>
+<span class="c1">//=&gt; BitSet = BitSet(3, 4, 5, 6)</span>
+</code></pre></div></div>
+
 <p>Mapping over it still returns a BitSet, as expected. However, look at
 what happens when the mapping function returns Strings:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="s">"number "</span> <span class="o">+</span> <span class="nv">x</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
-<span class="c1">//=&gt; Set[java.lang.String] = Set(number 1, number 2, number 3, number 4)
-</span></code></pre></div>
-<p>Again, it did the right thing, because you can't store Strings in a
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="s">"number "</span> <span class="o">+</span> <span class="nv">x</span><span class="o">.</span><span class="py">toString</span><span class="o">)</span>
+<span class="c1">//=&gt; Set[java.lang.String] = Set(number 1, number 2, number 3, number 4)</span>
+</code></pre></div></div>
+
+<p>Again, it did the right thing, because you can’t store Strings in a
 BitSet, as BitSets are for integers. So it returned a plain Set of
 strings. How is this possible, you may ask?</p>
 
@@ -434,12 +473,13 @@ strings. How is this possible, you may ask?</p>
 <a href="http://www.scala-lang.org/api/current/scala/collection/generic/CanBuildFrom.html">CanBuildFrom</a>
 pattern. The signature of <code class="highlighter-rouge">map()</code> used above is a bit of a mouthful:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">BitSet</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
-</code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Int</span><span class="o">)</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">BitSet</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
+</code></pre></div></div>
+
 <p>So, similar to my example with <code class="highlighter-rouge">CanFold</code>:</p>
 
 <ul>
-  <li>the compiler takes type B from the mapping function <code class="highlighter-rouge">f: (Int) =&gt; B</code> that's provided as an argument</li>
+  <li>the compiler takes type B from the mapping function <code class="highlighter-rouge">f: (Int) =&gt; B</code> that’s provided as an argument</li>
   <li>searches for an implicit in scope of type <code class="highlighter-rouge">CanBuildFrom[BitSet, B, _]</code></li>
   <li>the return type is established as the third type parameter of the implicit that is used</li>
   <li>the actual building of the result is externalized; the BitSet does
@@ -448,28 +488,31 @@ not need to know how to build Sets of Strings</li>
 
 <p>So basically, if you define your own types like so:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">class</span> <span class="nc">People</span> <span class="k">extends</span> <span class="nc">Traversable</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="o">{</span> <span class="cm">/* yada yada... */</span> <span class="o">}</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">class</span> <span class="nc">People</span> <span class="k">extends</span> <span class="nc">Traversable</span><span class="o">[</span><span class="kt">Person</span><span class="o">]</span> <span class="o">{</span> <span class="cm">/* yada yada... */</span> <span class="o">}</span>
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Person</span><span class="o">(</span><span class="n">id</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>Then if you want the mapping (or flatMapping) of a BitSet to return a
 <code class="highlighter-rouge">People</code> collection in case the function returns <code class="highlighter-rouge">Person</code>, then you
 have to implement an implicit object of this type:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">CanBuildFrom</span><span class="o">[</span><span class="kt">BitSet</span>, <span class="kt">Person</span>, <span class="kt">People</span><span class="o">]</span>
-</code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">CanBuildFrom</span><span class="o">[</span><span class="kt">BitSet</span>, <span class="kt">Person</span>, <span class="kt">People</span><span class="o">]</span>
+</code></pre></div></div>
+
 <p>And then this will work:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nc">Person</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
-<span class="c1">//=&gt; People = People(Person(1), Person(2), Person(3), Person(4))
-</span></code></pre></div>
-<p>So what's great is that the provided implicits for <code class="highlighter-rouge">CanBuildFrom</code> can
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">BitSet</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">).</span><span class="py">map</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nc">Person</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
+<span class="c1">//=&gt; People = People(Person(1), Person(2), Person(3), Person(4))</span>
+</code></pre></div></div>
+
+<p>So what’s great is that the provided implicits for <code class="highlighter-rouge">CanBuildFrom</code> can
 be overridden by your own implementations and you can provide
 CanBuildFrom implementations for your own types, etc…</p>
 
 <p>(as a side note, Clojure cannot do conversions based on the given
 mapping function, even if the Seq protocol is awesome nonetheless and
 doing something akin to CanBuildFrom in Haskell is difficult from what
-I've been told)</p>
+I’ve been told)</p>
 
 <p>If you want a lazy
 <a href="http://www.scala-lang.org/api/current/scala/collection/Iterator.html">Iterator</a>
@@ -491,59 +534,62 @@ something. But Streams are not the only lazy collections, Scala also has
 <a href="http://www.scala-lang.org/docu/files/collections-api/collections_42.html">Views</a>
 and you can transform any collection into a corresponding view, including Maps.</p>
 
-<p>But that's not all. Scala also has implementations of collections that
-do things in parallel. Here's how to calculate if a number is prime,
+<p>But that’s not all. Scala also has implementations of collections that
+do things in parallel. Here’s how to calculate if a number is prime,
 sequentially:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">import</span> <span class="nn">math._</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">math._</span>
 
 <span class="k">def</span> <span class="nf">isPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
   <span class="k">val</span> <span class="nv">range</span> <span class="k">=</span> <span class="mi">2</span> <span class="n">to</span> <span class="nf">sqrt</span><span class="o">(</span><span class="nf">abs</span><span class="o">(</span><span class="n">n</span><span class="o">)).</span><span class="py">toInt</span>
   <span class="o">!</span> <span class="nv">range</span><span class="o">.</span><span class="py">exists</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
 <span class="o">}</span>
-</code></pre></div>
-<p>If you have multiple cores around doing nothing, here's how to
+</code></pre></div></div>
+
+<p>If you have multiple cores around doing nothing, here’s how to
 calculate it by putting those extra cores at work:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">isPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">isPrime</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span> <span class="k">=</span> <span class="o">{</span>
   <span class="k">val</span> <span class="nv">range</span> <span class="k">=</span> <span class="mi">2</span> <span class="n">to</span> <span class="nf">sqrt</span><span class="o">(</span><span class="nf">abs</span><span class="o">(</span><span class="n">n</span><span class="o">)).</span><span class="py">toInt</span>
   <span class="o">!</span> <span class="nv">range</span><span class="o">.</span><span class="py">par</span><span class="o">.</span><span class="py">exists</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="n">n</span> <span class="o">%</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span>
 <span class="o">}</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>Notice the difference?</p>
 
 <h2 id="6-is-this-complex">6. Is this complex?</h2>
 
-<p>I mentioned above that this stuff is not complex, it's just
+<p>I mentioned above that this stuff is not complex, it’s just
 hard. Scala does have complexities when it comes to really advanced
 use-cases, as can be seen in this article:
 <a href="http://yz.mit.edu/wp/true-scala-complexity/">True Scala Complexity</a></p>
 
-<p>It's worth mentioning however that, as Martin Odersky noted in the
+<p>It’s worth mentioning however that, as Martin Odersky noted in the
 Hacker News thread of that article, the author tries to accomplish
-something that's not possible in most languages out there, while a
+something that’s not possible in most languages out there, while a
 solution is still possible in Scala (albeit with small limitations).</p>
 
 <h2 id="7-are-oop-features-getting-in-the-way">7. Are OOP Features Getting in the Way?</h2>
 
 <p>I happen to disagree and I actually love the blend of OOP with
 functional features. Martin Odersky claims that OOP is orthogonal to
-functional programming. But if you pay attention, you'll notice it's
+functional programming. But if you pay attention, you’ll notice it’s
 not only orthogonal, but complementary in an elegant way.</p>
 
-<p>I'm indicating below instances where I think OOP helps, but as a clear
-example of what the combination can do, consider Scala's
+<p>I’m indicating below instances where I think OOP helps, but as a clear
+example of what the combination can do, consider Scala’s
 <a href="http://www.scala-lang.org/api/current/scala/collection/immutable/Set.html">Set</a>. A
 <code class="highlighter-rouge">Set[T]</code> can be viewed as a function that takes a parameter of type T
 and returns either True if the value is in the Set, or False
 otherwise. This means you can do this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">val</span> <span class="nv">primaryColors</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="s">"red"</span><span class="o">,</span> <span class="s">"green"</span><span class="o">,</span> <span class="s">"blue"</span><span class="o">)</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">val</span> <span class="nv">primaryColors</span> <span class="k">=</span> <span class="nc">Set</span><span class="o">(</span><span class="s">"red"</span><span class="o">,</span> <span class="s">"green"</span><span class="o">,</span> <span class="s">"blue"</span><span class="o">)</span>
 
 <span class="k">val</span> <span class="nv">colors</span> <span class="k">=</span> <span class="nc">List</span><span class="o">(</span><span class="s">"red"</span><span class="o">,</span> <span class="s">"purple"</span><span class="o">,</span> <span class="s">"yellow"</span><span class="o">,</span> <span class="s">"vanilla"</span><span class="o">,</span> <span class="s">"white"</span><span class="o">,</span> <span class="s">"black"</span><span class="o">,</span> <span class="s">"blue"</span><span class="o">)</span>
 
 <span class="nv">colors</span><span class="o">.</span><span class="py">filter</span><span class="o">(</span><span class="n">primaryColors</span><span class="o">)</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>This is possible because our set is in fact a subtype of
 <code class="highlighter-rouge">Function1[String, Boolean]</code>, so you can pass it to any higher-order
 function that expects that signature.</p>
@@ -556,43 +602,44 @@ so Sets are interchangeable with functions in mathematics.</p>
 
 <p>This means operations on Sets like <em>unions</em>, <em>intersections</em>,
 <em>complements</em>, <em>Cartesian products</em> and so on can be replaced with
-operations on functions and that's exactly what
+operations on functions and that’s exactly what
 <a href="http://en.wikipedia.org/wiki/Boolean_algebra">boolean algebra</a> is
 about. In mathematical terms, these mathematical structures (sets and
 functions that take an argument and return 0/1) are equivalent
 (indistinguishable) because there exists an isomorphism between them,
 savvy? :-)</p>
 
-<p>And I don't know how Haskell handles this for <code class="highlighter-rouge">Data.Set</code>, or if it
+<p>And I don’t know how Haskell handles this for <code class="highlighter-rouge">Data.Set</code>, or if it
 handles it at all, but OOP subtyping seems like the easiest way to
 model something like this in a static language …</p>
 
 <ul>
   <li>for one, the hierarchy is simple to understand, simple to model, as subtyping is something that OOP simply does -
-you just inherit from <code class="highlighter-rouge">Function1[-T, +R]</code> - and you're done</li>
+you just inherit from <code class="highlighter-rouge">Function1[-T, +R]</code> - and you’re done</li>
   <li>downcasting to a function is something OOP simply does - you just
 pass your object to something that expects a function and you can forget the original type of that value</li>
 </ul>
 
 <p>This is just a small and insignificant example of course, like most
-examples I'm giving here, but to me properly done OOP (where every
+examples I’m giving here, but to me properly done OOP (where every
 type is modeled with classes and every value is some kind of object)
-just feels right … I like this principle of "<em>turtles all the way
-down</em>", even if you could probably point to things that aren't
-"turtles", but this also happens in languages that are the epitome of
+just feels right … I like this principle of “<em>turtles all the way
+down</em>”, even if you could probably point to things that aren’t
+“turtles”, but this also happens in languages that are the epitome of
 kick-ass turtles-recursion, like Scheme or Smalltalk.</p>
 
 <h2 id="8-scala-versus-haskell">8. Scala versus Haskell</h2>
 
-<p>Scala's static type-system is sometimes less expressive than that of
+<p>Scala’s static type-system is sometimes less expressive than that of
 Haskell. In particular Haskell supports
 <a href="https://en.wikibooks.org/wiki/Haskell/Polymorphism#Higher_rank_types">rank-2 polymorphism</a>,
 while Scala only rank-1. One point that Scala wins over Haskell is
 definitely this one:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">).</span><span class="py">flatMap</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nc">Option</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
-<span class="c1">//=&gt; List[Int] = List(1, 2, 3, 4, 5)
-</span></code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">,</span><span class="mi">4</span><span class="o">,</span><span class="mi">5</span><span class="o">).</span><span class="py">flatMap</span><span class="o">(</span><span class="n">x</span> <span class="k">=&gt;</span> <span class="nc">Option</span><span class="o">(</span><span class="n">x</span><span class="o">))</span>
+<span class="c1">//=&gt; List[Int] = List(1, 2, 3, 4, 5)</span>
+</code></pre></div></div>
+
 <p>Doing the above in Haskell (using the <code class="highlighter-rouge">bind</code> operator) triggers a
 compile-time error, because the return type of the mapping function is
 expected to be of type <code class="highlighter-rouge">List</code> and the <code class="highlighter-rouge">Maybe</code> type (the equivalent of
@@ -600,18 +647,18 @@ expected to be of type <code class="highlighter-rouge">List</code> and the <code
 
 <p><code class="highlighter-rouge">Option</code> in Scala is not a collection, but it is <em>viewable</em> as a
 collection of either 0 or 1 elements. As a consequence, because of
-good design decisions, the monadic types defined in Scala's collection
+good design decisions, the monadic types defined in Scala’s collection
 library are more composable.</p>
 
 <p>EDIT: this example is simple and shallow. As pointed out in the
-comments, it's easy to make the conversion by yourself, however I'm
-talking about the design choices of Scala's library and the
+comments, it’s easy to make the conversion by yourself, however I’m
+talking about the design choices of Scala’s library and the
 awesomeness of implicits. As a result, the standard monadic types
 provided by Scala (all collections, Futures, Promises, everything that
 has a filter/map/flatMap, etc…) are inherently more composable and
 friendlier.</p>
 
-<p>It's also worth pointing out that Scala's collections library is so
+<p>It’s also worth pointing out that Scala’s collections library is so
 awesome precisely because OOP plays a part and there are cases where
 doing similar things in Haskell require experimental GHC extensions.</p>
 
@@ -626,7 +673,7 @@ collection will be a monadic type by default.</p>
 <p>Haskell is lazy by default. This is good for many problems. In Scala
 lazyness is a choice. In Haskell this lazyness is awesome, but in my
 experience while playing with it, it gets very hard to reason about
-the resulting performance. Sometimes it's fast without you doing
+the resulting performance. Sometimes it’s fast without you doing
 anything, other times - well, profiling and fixing performance issues
 in Haskell is not for mortals. Scala is more predictable, being strict
 and lazy when needed. It also has at its disposal the awesome JVM
@@ -641,27 +688,28 @@ Ocaml). And you really start wishing for an ad-hoc polymorphism
 mechanism in which the types are open.</p>
 
 <p>In regards to how one implements <code class="highlighter-rouge">CanFold</code> F# takes the crown as the
-ugly ducklin' as it follows the (really screwed) C# conventions of
-defining "<code class="highlighter-rouge">+</code>" as static functions on classes (a reminiscence of C++
-btw), so even if you know that a T is an Integer, you can't sum 2
+ugly ducklin’ as it follows the (really screwed) C# conventions of
+defining “<code class="highlighter-rouge">+</code>” as static functions on classes (a reminiscence of C++
+btw), so even if you know that a T is an Integer, you can’t sum 2
 Integers based on the interface definition alone, because the compiler
 cannot make the connection to <code class="highlighter-rouge">T + T</code>, as in OOP interfaces/subtyping
-only applies to instances, not classes and "static members". This is
+only applies to instances, not classes and “static members”. This is
 why they had to extend the language. Take a look at the signature for
 <code class="highlighter-rouge">List.sum</code> in F#:</p>
 
-<div class="highlight"><pre class="highlight ocaml"><code><span class="nn">List</span><span class="p">.</span><span class="n">sum</span> <span class="o">:</span> <span class="o">^</span><span class="nc">T</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="o">^</span><span class="nc">T</span> <span class="p">(</span><span class="n">requires</span> 
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nn">List</span><span class="p">.</span><span class="n">sum</span> <span class="o">:</span> <span class="o">^</span><span class="nc">T</span> <span class="kt">list</span> <span class="o">-&gt;</span> <span class="o">^</span><span class="nc">T</span> <span class="p">(</span><span class="n">requires</span> 
   <span class="o">^</span><span class="nc">T</span> <span class="k">with</span> <span class="n">static</span> <span class="n">member</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="ow">and</span> <span class="o">^</span><span class="nc">T</span> <span class="k">with</span> <span class="n">static</span> <span class="n">member</span> <span class="nc">Zero</span><span class="p">)</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>First of all, this is bad from all perspectives, as it uses the
-(really fucked up) notion of "<em>static members</em>" that should have never
-happened in OOP. It's also not a type-class as it is <em>not open</em> - you
+(really fucked up) notion of “<em>static members</em>” that should have never
+happened in OOP. It’s also not a type-class as it is <em>not open</em> - you
 cannot modify a built-in type to have the required static members,
 being the same problem you get with classic OOP inheritance of
-interfaces. You also cannot override the implementation, as you'd wish
+interfaces. You also cannot override the implementation, as you’d wish
 in certain contexts.</p>
 
-<p>In Scala there is no such thing as "<em>static members</em>", "<code class="highlighter-rouge">+</code>"
+<p>In Scala there is no such thing as “<em>static members</em>”, “<code class="highlighter-rouge">+</code>”
 operations being plain polymorphic instance methods.</p>
 
 <p>The one thing I really like about
@@ -679,7 +727,7 @@ right now.</p>
 
 <p><strong>Ocaml</strong> goes a long way with its structural typing for OOP. Ocaml
 has the most advanced type-inferencer out of the popular functional
-languages, being more advanced than the one in Haskell. It's a potent
+languages, being more advanced than the one in Haskell. It’s a potent
 language, but sadly it has no equivalent for type-classes.</p>
 
 <p>The right way to implement <code class="highlighter-rouge">CanFold</code> in Ocaml/SML would be to
@@ -687,15 +735,15 @@ explicitly pass a dictionary of pointers around, as described here:
 <a href="http://okmij.org/ftp/ML/ML.html#typeclass">Typeclass overloading and bounded polymorphism in ML</a>.</p>
 
 <p>Scala, unlike Ocaml and F#, does not have 2 type-systems in the same
-language, as Scala follows the "<em>uniform access
-principle</em>". Type-classes and algebraic data-types are still modeled
+language, as Scala follows the “<em>uniform access
+principle</em>”. Type-classes and algebraic data-types are still modeled
 by means of OOP classes and objects.</p>
 
 <p>Why does it matter? If you ever worked with C++ you can understand
 this - if OOP is pervasive in your language and not just something
 completely optional, then every type in the system should be
 (or considered) polymorphic and extending from some Object,
-otherwise you'll end up with lots and lots of pain. It's also a matter
+otherwise you’ll end up with lots and lots of pain. It’s also a matter
 of having to make choices.</p>
 
 <p>In Scala the code is indeed more verbose, but it reduces complexity a
@@ -710,14 +758,16 @@ tail, right?</p>
 
 <p>In Ocaml:</p>
 
-<div class="highlight"><pre class="highlight ocaml"><code><span class="k">type</span> <span class="k">'</span><span class="n">a</span> <span class="n">my_list</span> <span class="o">=</span> <span class="nc">Nil</span> <span class="o">|</span> <span class="nc">List</span> <span class="k">of</span> <span class="k">'</span><span class="n">a</span> <span class="o">*</span> <span class="k">'</span><span class="n">a</span> <span class="n">my_list</span>
-</code></pre></div>
+<div class="language-ocaml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">type</span> <span class="k">'</span><span class="n">a</span> <span class="n">my_list</span> <span class="o">=</span> <span class="nc">Nil</span> <span class="o">|</span> <span class="nc">List</span> <span class="k">of</span> <span class="k">'</span><span class="n">a</span> <span class="o">*</span> <span class="k">'</span><span class="n">a</span> <span class="n">my_list</span>
+</code></pre></div></div>
+
 <p>Extremely elegant and simple. And in Scala:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">List</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">List</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span>
 <span class="nc">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">+t</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span>
 <span class="k">case</span> <span class="k">object</span> <span class="nc">Nil</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>What a mouthful.</p>
 
 <p>One difference should immediately be noticeable, our <code class="highlighter-rouge">List</code> has
@@ -729,19 +779,20 @@ is not a problem, but a bonus. For instance this gives you polymorphic
 behavior without needing type parameters or higher-kinded types or
 other mechanisms, just plain OOP subtyping relationships:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">length</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Any</span><span class="o">])</span> <span class="k">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">length</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Any</span><span class="o">])</span> <span class="k">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
    <span class="k">case</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">head</span><span class="o">,</span> <span class="n">tail</span><span class="o">)</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">length</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span>
    <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="mi">0</span>
 <span class="o">}</span>
-</code></pre></div>
-<p>However, that's not efficient. A much better approach is to make
+</code></pre></div></div>
+
+<p>However, that’s not efficient. A much better approach is to make
 <code class="highlighter-rouge">length()</code> polymorphic (in the OOP sense), after all <code class="highlighter-rouge">length()</code> is a
-defining property of Lists, so there's no reason for why it shouldn't
+defining property of Lists, so there’s no reason for why it shouldn’t
 be there:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">List</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span> <span class="o">{</span>
-  <span class="c1">// abstract definition
-</span>  <span class="k">def</span> <span class="nf">length</span><span class="k">:</span> <span class="kt">Int</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">List</span><span class="o">[</span><span class="kt">+T</span><span class="o">]</span> <span class="o">{</span>
+  <span class="c1">// abstract definition</span>
+  <span class="k">def</span> <span class="nf">length</span><span class="k">:</span> <span class="kt">Int</span>
 <span class="o">}</span>
 
 <span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">+T</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
@@ -751,36 +802,39 @@ be there:</p>
 <span class="k">case</span> <span class="k">object</span> <span class="nc">Nil</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span> <span class="o">{</span>
   <span class="k">val</span> <span class="nv">length</span> <span class="k">=</span> <span class="mi">0</span>
 <span class="o">}</span>
-</code></pre></div>
-<p>Now, isn't that nice? What would it take to turn this into a lazy
+</code></pre></div></div>
+
+<p>Now, isn’t that nice? What would it take to turn this into a lazy
 list?</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">+T</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Pair</span><span class="o">[</span><span class="kt">+T</span><span class="o">](</span><span class="n">head</span><span class="k">:</span> <span class="kt">T</span><span class="o">,</span> <span class="n">tail</span><span class="k">:</span> <span class="o">()</span> <span class="o">=&gt;</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">])</span> <span class="k">extends</span> <span class="nc">List</span><span class="o">[</span><span class="kt">T</span><span class="o">]</span> <span class="o">{</span>
   <span class="k">lazy</span> <span class="k">val</span> <span class="nv">length</span> <span class="k">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">tail</span><span class="o">().</span><span class="py">length</span>
 <span class="o">}</span>
-</code></pre></div>
-<p>You can see how <code class="highlighter-rouge">length</code> hasn't changed for either <code class="highlighter-rouge">List[T]</code> or for
+</code></pre></div></div>
+
+<p>You can see how <code class="highlighter-rouge">length</code> hasn’t changed for either <code class="highlighter-rouge">List[T]</code> or for
 <code class="highlighter-rouge">Nil</code>, just for <code class="highlighter-rouge">Pair</code>, which makes it a good candidate for OOP. So
 why not model this with OOP in Ocaml? Because for algebraic
 data-types, the compiler helps you, like this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span> 
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span> 
    <span class="k">case</span> <span class="nc">Pair</span><span class="o">(</span><span class="n">head</span><span class="o">,</span> <span class="n">tail</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">head</span> <span class="o">+</span> <span class="nf">sum</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span> 
-   <span class="c1">//-&gt; oops, no termination
-</span><span class="o">}</span>
+   <span class="c1">//-&gt; oops, no termination</span>
+<span class="o">}</span>
 
-<span class="c1">//-&gt; output from the compiler ...
-</span><span class="n">warning</span><span class="k">:</span> <span class="kt">match</span> <span class="kt">is</span> <span class="kt">not</span> <span class="kt">exhaustive!</span>
+<span class="c1">//-&gt; output from the compiler ...</span>
+<span class="n">warning</span><span class="k">:</span> <span class="kt">match</span> <span class="kt">is</span> <span class="kt">not</span> <span class="kt">exhaustive!</span>
 <span class="kt">missing</span> <span class="kt">combination</span>            <span class="kt">Nil</span>
 
        <span class="k">def</span> <span class="nf">sum</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Int</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
 	                                   <span class="o">^</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>Did I mention Scala also has structural typing if you want it? Yes it
 can (albeit, without the awesome type-inferencing that Ocaml is
-capable of and it's mostly based on runtime reflection):</p>
+capable of and it’s mostly based on runtime reflection):</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="k">type</span> <span class="kt">Closeable</span> <span class="o">=</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">close</span><span class="o">()</span><span class="k">:</span><span class="kt">Unit</span> <span class="o">}</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">type</span> <span class="kt">Closeable</span> <span class="o">=</span> <span class="o">{</span> <span class="k">def</span> <span class="nf">close</span><span class="o">()</span><span class="k">:</span><span class="kt">Unit</span> <span class="o">}</span>
 
 <span class="k">def</span> <span class="nf">using</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">B</span> <span class="k">&lt;:</span> <span class="kt">Closeable</span><span class="o">](</span><span class="n">closable</span><span class="k">:</span> <span class="kt">B</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="kt">B</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=</span> 
   <span class="k">try</span> <span class="o">{</span>
@@ -789,39 +843,40 @@ capable of and it's mostly based on runtime reflection):</p>
   <span class="k">finally</span> <span class="o">{</span>
     <span class="nv">closable</span><span class="o">.</span><span class="py">close</span><span class="o">()</span>
   <span class="o">}</span>
-</code></pre></div>
-<p>This comparisson isn't really fair btw, because I've been fixating on
+</code></pre></div></div>
+
+<p>This comparisson isn’t really fair btw, because I’ve been fixating on
 issues that Scala does really well. Ocaml is great, however I
 personally find it limiting and awkward at the edges of the 2 type
-systems it contains. Or maybe I'm just a spoiled brat.</p>
+systems it contains. Or maybe I’m just a spoiled brat.</p>
 
 <h2 id="10-static-type-versus-dynamic-type-systems">10. Static-type versus Dynamic-type Systems</h2>
 
 <p>Static versus dynamic is what polarizes developers most in separate
-camps. It's like a never-ending flamewar, with healthy dosages of
+camps. It’s like a never-ending flamewar, with healthy dosages of
 religiosity.</p>
 
 <p>At its core, a static type system helps you by providing proof at
-compile-time that the types you're using behave as you expect them to
-behave (note I'm speaking of types, not instances). This is good,
+compile-time that the types you’re using behave as you expect them to
+behave (note I’m speaking of types, not instances). This is good,
 because you need all the help you can get and static typing can
 eliminate a lot of errors.</p>
 
 <p>This is a doubly-edged sword though. By definition a static type
 system will reject pieces of code that are perfectly correct. Also,
-it's not a silver bullet, as Rich Hickey said in his excellent
+it’s not a silver bullet, as Rich Hickey said in his excellent
 <a href="http://www.infoq.com/presentations/Simple-Made-Easy">Simple Made Easy</a>
-talk: "<em>What's the common thing that all bugs in the wild share? They
-passed the type-checker, they passed all the tests!</em>"</p>
+talk: “<em>What’s the common thing that all bugs in the wild share? They
+passed the type-checker, they passed all the tests!</em>”</p>
 
-<p>I've seen opinions that "<em>structural typing</em>" or "<em>type-inference</em>"
-are as good as "<em>duck typing</em>". That couldn't be further from the
+<p>I’ve seen opinions that “<em>structural typing</em>” or “<em>type-inference</em>”
+are as good as “<em>duck typing</em>”. That couldn’t be further from the
 truth - the real power of duck typing comes from the ability to create
 / modify types and functions on the fly at runtime. In other words you
-can make shit up and as long as it's correct, then it works. In
+can make shit up and as long as it’s correct, then it works. In
 contrast, a static type system actively rejects pieces of code if it
-can't prove that the types you're using support the computation you're
-trying to do, so no matter how smart the type system is, you'll always
+can’t prove that the types you’re using support the computation you’re
+trying to do, so no matter how smart the type system is, you’ll always
 end up in lots of instances where you have to spoon-feed the compiler
 to allow you to do what <em>you mean</em> (n.b. not all compilers are equal).</p>
 
@@ -833,11 +888,11 @@ whole class of errors.</p>
 
 <p>Here we define <em>an error</em> as being an incorrect state of the
 computation or corrupted output that takes the developers by
-surprise. An exceptional state that's being controlled is not an
+surprise. An exceptional state that’s being controlled is not an
 error. This is why Haskell makes such a big fuss out of dealing with
 side-effects by means of monadic types - because it makes you think
 about exceptional state and either deal with it, or make it somebody
-else's problem.</p>
+else’s problem.</p>
 
 <p>Thinking of Scala versus Clojure and Haskell, in regards to its
 static-type system Scala sits somewhere in the middle. This is both
@@ -851,13 +906,13 @@ is a good trade-off.</p>
 <p>I personally lean towards dynamic type systems, however the tradeoffs
 I end up making in Scala are worth it for the extra type safety it
 brings. On the other hand Clojure, because of its support for
-multi-methods and protocols and macros, is a dynamic language that's
+multi-methods and protocols and macros, is a dynamic language that’s
 more expressive than most other languages, including dynamic ones,
 especially the mainstream, like Python, Ruby, Perl, Javascript or PHP.</p>
 
 <h2 id="11-performance">11. Performance</h2>
 
-<p>I don't have any experience or proof on this, just personal feelings :-)</p>
+<p>I don’t have any experience or proof on this, just personal feelings :-)</p>
 
 <p>Scala runs on top of the JVM. When using closures or immutable
 data-structures, it is wasteful. However there are a few things to
@@ -873,12 +928,12 @@ compile-time)</li>
 / to reuse memory of prior states - just as when adding a new
 element to a List the old reference gets used as the tail, this
 also happens with Vectors and Maps - they are still less efficient
-than Java's collections, but it's a good tradeoff as these
+than Java’s collections, but it’s a good tradeoff as these
 data-structures can be used without read-locks, so bye, bye
 lock-contention of threads</li>
   <li>Scala creates lots of short lived objects. This can stress the
 garbage collector, but on the other hand the JVM has the most
-advanced garbage collectors available, so you shouldn't worry about
+advanced garbage collectors available, so you shouldn’t worry about
 it unless profiling tools tell you to … for instance on the JVM
 heap allocation is as cheap as stack allocation, it can also do some
 escape analysis to get rid of some locks and to allocate some
@@ -886,9 +941,9 @@ short-lived objects on the stack and deallocation of short-lived
 objects is cheap, because the GC is generational so it deallocates
 whole chucks of memory at once instead of individual references
 … so why worry about it?</li>
-  <li>the only instance to be concerned about is if you're building on top
+  <li>the only instance to be concerned about is if you’re building on top
 of Android, as Android does not have a JVM - but even there, Scala
-is workable (or so I've heard)</li>
+is workable (or so I’ve heard)</li>
 </ul>
 
 <h2 id="12-tools-of-the-trade">12. Tools of the Trade</h2>
@@ -898,7 +953,7 @@ for Scala, the replacement for Maven, the slayer of XML files.</p>
 
 <p>The syntax is really weird and leads to cargo-culting. It broke
 compatibility and so many examples available online are out of
-date. When you're reading the
+date. When you’re reading the
 <a href="http://www.scala-sbt.org/release/docs/Getting-Started/Welcome.html">Getting Started</a>
 tome, it describes something about immutable data-structures, settings
 options that are either lazy or strict, how to transform values with a
@@ -908,10 +963,10 @@ so on.</p>
 <p>Comparing this to how you work with Ruby Gems / Rake and Bundler is
 simply not fun. Only a mother could love this syntax.</p>
 
-<p>Then I've already had problems with its Ivy integration, not being
+<p>Then I’ve already had problems with its Ivy integration, not being
 able to solve some dependencies. Thankfully I could find a fix.</p>
 
-<p>On the other hand it's really pragmatic and I prefer it over Maven,
+<p>On the other hand it’s really pragmatic and I prefer it over Maven,
 even if the Scala Maven plugin is in really good shape right now. Here
 are some highlights of SBT:</p>
 
@@ -919,8 +974,8 @@ are some highlights of SBT:</p>
   <li>it can do cross-builds between multiple Scala versions; as is well
 known, major Scala versions are breaking binary compatibility, so if
 you want your library to support multiple Scala versions then SBT is
-a must, as it makes cross-building a breeze (it's almost too easy)</li>
-  <li>it's well integrated with ScalaTest, being able of continous
+a must, as it makes cross-building a breeze (it’s almost too easy)</li>
+  <li>it’s well integrated with ScalaTest, being able of continous
 compilation and testing, with output in colors - a really good tool
 for TDD</li>
   <li>it makes it easy to deal with multiple sub-projects in the same root
@@ -928,15 +983,15 @@ project, sub-projects that can be worked-on, tested or published
 individually or as a whole</li>
   <li>all Scala projects have instructions for SBT first, Maven second and
 missing instructions for everything else - this is particularly
-painful if you're dealing with plugins (like doing precompilation of
+painful if you’re dealing with plugins (like doing precompilation of
 templates with Scalate or something)</li>
 </ul>
 
 <p>I use Emacs.</p>
 
 <p>IDEs are not on the same level as Java. But I tried out
-<a href="http://blog.jetbrains.com/scala/">IntelliJ IDEA's Scala plugin</a> and
-it's quite decent, with refactoring, intellisense and everything
+<a href="http://blog.jetbrains.com/scala/">IntelliJ IDEA’s Scala plugin</a> and
+it’s quite decent, with refactoring, intellisense and everything
 nice. An Eclipse plugin is also available, developed now by TypeSafe,
 however last time I tried, it was unstable.</p>
 
@@ -945,12 +1000,12 @@ hand these IDEs are functional and completely awesome when compared to
 what you get by picking other functional languages, except maybe F#.</p>
 
 <p>With Scala you can use all the profiling and monitoring tools and
-classpath reloading tricks that you can use with Java. Nothing's
+classpath reloading tricks that you can use with Java. Nothing’s
 stopping you, as every tool meant for the JVM also works with Scala.</p>
 
 <h2 id="13-concurrency-and-parallelism">13. Concurrency and Parallelism</h2>
 
-<p>It's enough to say that Scala doesn't restrict you in any way:</p>
+<p>It’s enough to say that Scala doesn’t restrict you in any way:</p>
 
 <ul>
   <li><a href="http://akka.io/">Light-weight actors</a> that can process tons of messages (Erlang-style)
@@ -963,7 +1018,7 @@ are properly implemented as monadic types</li>
   <li><a href="http://docs.scala-lang.org/overviews/parallel-collections/overview.html">Parallel collections</a></li>
   <li><a href="http://doc.akka.io/docs/akka/snapshot/scala/dataflow.html">Async/await as in C#</a>, though it requires a compiler plugin</li>
   <li>The awesome Java NIO, along with Netty, Mina and the whole ecosystem
-for async I/O (you don't know what pleasure feels like until you
+for async I/O (you don’t know what pleasure feels like until you
 wrap <a href="https://github.com/AsyncHttpClient/async-http-client">Async-Http-Client</a>
 in Akka Promises which you can combine in for-comprehensions)</li>
 </ul>
@@ -974,25 +1029,25 @@ features, Scala defines as libraries. So there are definitely upsides ;-)</p>
 
 <h2 id="14-learning-resources">14. Learning Resources</h2>
 
-<p>I've found the following to be good resources for learning Scala (note
+<p>I’ve found the following to be good resources for learning Scala (note
 that Amazon links have my affiliate tag, but if you want the eBook
-version don't buy from Amazon, prefer buying directly from the
-publisher, as you'll get both a DRM-free Kindle version and a PDF):</p>
+version don’t buy from Amazon, prefer buying directly from the
+publisher, as you’ll get both a DRM-free Kindle version and a PDF):</p>
 
 <p><strong><a href="https://www.coursera.org/course/progfun">Functional Programming Principles in Scala</a></strong>,
 already mentioned, is an excellent course provided by Coursera / EPFL,
 taught by Martin Odersky. The course is almost over, but the material
 will be left online, which means you can follow the lectures and do
-the assignments and I'm pretty sure many students that attended will
+the assignments and I’m pretty sure many students that attended will
 remain on that forum for answering questions.</p>
 
 <p><strong><a href="http://twitter.github.com/scala_school/">Scala School</a></strong> - a freely
 available online tutorial by Twitter, which is very friendly to
-newbies. I've read it and it's pretty good.</p>
+newbies. I’ve read it and it’s pretty good.</p>
 
 <p><strong><a href="http://docs.scala-lang.org/">Scala Documentation Project</a></strong> -
 definitely checkout this website, as they aggregate everything good
-here. If you want to learn more about Scala's library, especially the
+here. If you want to learn more about Scala’s library, especially the
 collections, this is the place to learn from.</p>
 
 <p><strong><a href="http://aperiodic.net/phil/scala/s-99/">Ninety-Nine Scala Problems</a></strong></p>
@@ -1003,7 +1058,7 @@ stuck, you can view a solution which is often idiomatic. See also this
 complete test-suite, to spare you of the effort.</li>
 </ul>
 
-<p><a href="http://www.amazon.com/gp/product/B004Z1FTXS/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B004Z1FTXS&amp;linkCode=as2&amp;tag=bionicspirit-20"><img src="/assets/img/programming-scala.jpg" class="left" width="83" height="110" alt="Programming scala" /></a>
+<p><a href="http://www.amazon.com/gp/product/B004Z1FTXS/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B004Z1FTXS&amp;linkCode=as2&amp;tag=bionicspirit-20"><img src="/assets/media/articles/programming-scala.jpg" align="left" width="100" style="width:100px" class="left" loading="lazy" /></a>
 <a href="http://www.amazon.com/gp/product/B004Z1FTXS/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B004Z1FTXS&amp;linkCode=as2&amp;tag=bionicspirit-20"><b>Programming in Scala</b></a> 
 by Martin Odersky is a good book on programming, not just Scala - many
 of the exercises in
@@ -1013,22 +1068,22 @@ solving those problems, which is good.</p>
 
 <div class="clear"></div>
 
-<p><a href="http://www.amazon.com/gp/product/0321774094/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321774094&amp;linkCode=as2&amp;tag=bionicspirit-20"><img src="/assets/img/scala-impatient.jpg" class="left" width="84" height="110" alt="Scala impatient" /></a>
+<p><a href="http://www.amazon.com/gp/product/0321774094/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321774094&amp;linkCode=as2&amp;tag=bionicspirit-20"><img src="/assets/media/articles/scala-for-the-impatient.jpeg" align="left" width="100" style="width:100px" class="left" loading="lazy" /></a>
 <a href="http://www.amazon.com/gp/product/0321774094/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0321774094&amp;linkCode=as2&amp;tag=bionicspirit-20"><b>Scala for the Impatient</b></a>
 by Cay S. Horstmann, is a good pragmatic book on Scala (not so much on
-functional programming), but it's for developers experienced in other
-languages, so it's fast-paced while not scaring you away with endless
+functional programming), but it’s for developers experienced in other
+languages, so it’s fast-paced while not scaring you away with endless
 discussions on types (like I just did). The PDF for the first part (out of 3) is 
 available from the 
 <a href="http://typesafe.com/resources/free-books">Typesafe website</a>.</p>
 
 <div class="clear"></div>
 
-<p><a href="http://www.amazon.com/gp/product/1935182706/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1935182706&amp;linkCode=as2&amp;tag=bionicspirit-20"><img src="/assets/img/scala-depth.jpg" class="left" width="88" height="110" alt="Scala depth" /></a>
+<p><a href="http://www.amazon.com/gp/product/1935182706/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1935182706&amp;linkCode=as2&amp;tag=bionicspirit-20"><img src="/assets/media/articles/scalaindepth.png" align="left" width="100" style="width:100px" class="left" loading="lazy" /></a>
 <a href="http://www.amazon.com/gp/product/1935182706/ref=as_li_ss_il?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1935182706&amp;linkCode=as2&amp;tag=bionicspirit-20"><b>Scala in Depth</b></a>
 by Joshua Suereth D. - this is an advanced book on Scala, with many
-insights into how functional idioms work in it. I've yet to finish
-reading, as it's not really an easy lecture. But it's a good book. Get
+insights into how functional idioms work in it. I’ve yet to finish
+reading, as it’s not really an easy lecture. But it’s a good book. Get
 the eBook straight from <a href="http://www.manning.com/suereth/">Manning</a>.</p>
 
 <div class="clear"></div>
@@ -1039,135 +1094,273 @@ the eBook straight from <a href="http://www.manning.com/suereth/">Manning</a>.</
 or patience for it (or once I finish reading the
 <a href="http://joyofclojure.com/">Joy of Clojure</a>, great book btw).</p>
 
+  </div>
 
-    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu">
-      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
-        Alexandru Nedelcu</a> |
-      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
-        Twitter</a> |
-      <a href="https://github.com/alexandru" itemprop="url" rel="author">
-        GitHub</a>
+  <div id="article-details">
+    
+    <time itemprop="dateModified" content="2012-11-02T00:00:00+0000">
+        Published: November 2, 2012
+    </time>
+    
+      | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
+    
+
+    <div id="all-categories">
+      Tags:
+      
+        
+        <a href="/tag/languages/" class="category">languages</a>
+      
+         | 
+        <a href="/tag/functional/" class="category">functional</a>
+      
+         | 
+        <a href="/tag/scala/" class="category">scala</a>
+      
+         | 
+        <a href="/tag/clojure/" class="category">clojure</a>
+      
+         | 
+        <a href="/tag/java/" class="category">java</a>
+      
     </div>
   </div>
 
-  <footer>
-    <div id="other-articles">
-      <h2>Recent Articles</h2>
+  
+  <div class="related">
+    <h2>Similar Articles</h2>
+    <div class="container">
+      
+      
 
-      <ul class="posts">
-      	<li>
-      	  <time datetime="2019-11-22">
-      	    2019-11-22 &raquo;
-      	  </time>
-      	  <a href="/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html" rel="prefetch related">Regexp Replacement via Function in Java/Scala</a>
-      	</li>
-      	<li>
-      	  <time datetime="2019-08-11">
-      	    2019-08-11 &raquo;
-      	  </time>
-      	  <a href="/blog/2019/08/11/isinstanceof-anti-pattern.html" rel="prefetch related">Scala's isInstanceOf is an Anti-Pattern</a>
-      	</li>
-      	<li>
-      	  <time datetime="2018-05-06">
-      	    2018-05-06 &raquo;
-      	  </time>
-      	  <a href="/blog/2018/05/06/bifunctor-io.html" rel="prefetch related">On Bifunctor IO and Java's Checked Exceptions</a>
-      	</li>
-      	<li>
-      	  <time datetime="2018-02-12">
-      	    2018-02-12 &raquo;
-      	  </time>
-      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-11-10">
-      	    2017-11-10 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-10-15">
-      	    2017-10-15 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-10-13">
-      	    2017-10-13 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
-      	</li>
-      </ul>
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html">
+          Regexp Replacement via Function in Java/Scala
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/ruby" class="tag">ruby</a>
+                        
+          </div>
+          <time>November 22, 2019</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2019/08/11/isinstanceof-anti-pattern.html">
+          Scala's isInstanceOf is an Anti-Pattern
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>August 11, 2019</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/05/06/bifunctor-io.html">
+          On Bifunctor IO and Java's Checked Exceptions
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/typelevel" class="tag">typelevel</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+                        
+          </div>
+          <time>May 6, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/02/12/in-defense-oofp.html">
+          In Defense of OOFP
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/oop" class="tag">oop</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>February 12, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      <div class="clearfix"></div>
     </div>
+  </div>
+  
 
-    <div id="contributions">
-      <script data-isso="/comments/alexn/"
-              data-isso-css="true"
-              data-isso-lang="en"
-              data-isso-reply-to-self="true"
-              data-isso-require-author="true"
-              data-isso-require-email="false"
-              data-isso-reply-notifications="true"
-              data-isso-max-comments-top="10"
-              data-isso-max-comments-nested="5"
-              data-isso-reveal-on-click="5"
-              data-isso-gravatar="true"
-              data-isso-avatar="false"
-              data-isso-vote="true"
-              data-vote-levels=""
-              src="https://alexn.org/comments/alexn/js/embed.min.js"></script>
-      <section id="isso-thread" data-title="On Scala, Functional Programming and Type-Classes">
-      </section>
-    </div>
-  </footer>
+  
 </article>
 
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      <h2>Feedback?</h2>
+
+<p>
+  If you wish to discus this article, an email would be most welcome:
+  <script>
+    (function () {
+      var lhs = "comments";
+      var rhs = "m9.alexn.org";
+      var subject = "Comment on `On Scala, Functional Programming and Type-Classes`";
+      document.write("<a href=\"mailto");
+      document.write(":" + lhs + "@");
+      document.write(rhs);
+      if (subject) { document.write("?subject=" + subject); }
+      document.write("\">" + lhs + "@" + rhs + "<\/a>");
+    })()
+  </script>
+  <noscript>
+    <em>Email address is protected by JavaScript, activate it to see it!</em>
+  </noscript>
+</p>
+
+<p>
+  If you noticed a typo, help me by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2012-11-02-scala-functional-programming-type-classes.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+    </div>  
+  </div>
+  
+
+  <div class="bottom">
+    <div class="container">
+      <span class="copy">
+          Alexn.org &copy; 2020
+      </span>
+      <span class="links">
+        <a href="/docs/privacy-policy.html">Privacy Policy</a> |
+        <a href="/about.html#contact">Contact</a>
+      </span>
     </div>
   </div>
+</div><!-- end .footer -->
 
-  <div id="footer-container">
-    <footer>
-      <div class="rss">
-      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
-      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
-      	</a>
-      </div>
+   <script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js" type="text/javascript"></script>
 
-      <div class="links">
-        <a href="/docs/privacy-policy.html">Privacy policy</a> |
-        <a href="https://twitter.com/alexelcu" target="_blank">Twitter</a> |
-        <a href="https://github.com/alexandru" target="_blank">GitHub</a>
-      </div>
 
-      <div class="contact">
-      	&copy; 2019 Alexandru Nedelcu
-      	<br>
-      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
-      </div>
-    </footer>
-  </div>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script type="text/javascript">
+function _gaLoad() {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  <!-- Analytics -->
-  <script>
-    function loadAnalytics() {
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84530423-1', {
+    'cookieName': '_gaAlexNOrg',
+    'cookieExpires': 60 * 60 * 24 * 30 * 3  // 3 months, in seconds
+  });
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
 
-      ga('create', 'UA-84530423-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
+  // Click handler
+  $(function () {
+    $('a[href]').each(function (idx, elem) {
+      var it = $(elem);
+      var href = it.attr('href');
+
+      if (href.match(/^https?[:]\/\//) && !href.match(/alexn\.org/)) {
+        it.click(_gaEvent('general', 'click', 'external-link', href));
+      } else if (href.match(/^#/)) {
+        it.click(_gaEvent('general', 'click', 'page-anchor', href));
+      } else {
+        it.click(_gaEvent('general', 'click', 'internal-link', href));
+      }
+    })
+  })
+}
+
+function _gaEvent(category, action, label, value) {
+  return function () {
+    if (_doNotTrack || typeof ga !== 'function') {
+      return;
     }
-    // Checks DO-NOT-TRACK status
-    if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
-      var dnd = window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.external.msTrackingProtectionEnabled();
-      if (!dnd) loadAnalytics();
-    } else {
-      loadAnalytics();
-    }
-  </script>
-  <!-- End Analytics -->  
+    ga(function () {
+      ga('send', 'event', category, action, label, value);
+    });
+   }
+}
+
+// Checks DO-NOT-TRACK status
+window._doNotTrack = false;
+if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
+  window._doNotTrack = window.doNotTrack == "1" || navigator.doNotTrack == "yes" ||
+    navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" ||
+    ('msTrackingProtectionEnabled' in window.external && window.external.msTrackingProtectionEnabled());
+}
+if (!_doNotTrack) {
+  console.log("Analytics are loading.")
+  _gaLoad();
+} else if (typeof(console) !== "undefined") {
+  console.log("Analytics are off due to Do Not Track setting!");
+}
+</script>
+
+
+
+   
+   <!-- <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"6c8297e886b517d8535e8410e","lid":"a3391a44b0","uniqueMethods":true}) })</script> -->
+   
 </body>
+
 </html>

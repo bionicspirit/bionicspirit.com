@@ -1,111 +1,134 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
-
-  <link rel="canonical" href="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html">
-  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@alexelcu" />
-
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2011-12-15" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Crawling the Android Marketplace &#8211; alexn.org</title>
     
-    <meta property="article:tag" content="Python" />
-    <meta property="article:tag" content="Android" />
-    <meta property="article:tag" content="Mining" />
-    <meta property="article:tag" content="Stats" />
-    <meta property="article:tag" content="Web" />
-    <meta property="article:tag" content="API" />
 
-    <title>Crawling the Android Marketplace</title>
-    <meta name="og:title" content="Crawling the Android Marketplace" />
-    <meta name="twitter:title" content="Crawling the Android Marketplace" />
+    <!-- Open Graph Meta -->
+    <meta content="alexn.org" property="og:site_name">
+    <meta content="Crawling the Android Marketplace" property="og:title">
+    <meta content="I had a very specific need for fetching the details for some apps in the Android marketplace, in an automated manner. Here I'm describing a script that I used to crawl the marketplace back in 2011." property="og:description">
+    <meta content="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html" property="og:url">
+    <meta content="2011-12-15T00:00:00+00:00" property="article:published_time">
+    <meta content="2019-12-18T00:00:00+00:00" property="article:modified_time">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/wolf-spider.jpg" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/wolf-spider.jpg" />
+    <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
-      <meta name="og:image" content="https://alexn.org/assets/img/wolfspider150.gif" />
-      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/wolfspider150.gif" />
-      <meta name="twitter:image" content="https://alexn.org/assets/img/wolfspider150.gif" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/wolf-spider.jpg">
+    <meta name="twitter:site" content="@alexelcu">
+    <meta name="twitter:creator" content="@alexelcu">
+    <meta name="twitter:title" content="Crawling the Android Marketplace">
+    <meta name="twitter:url" content="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html">
+    <meta name="twitter:description" content="I had a very specific need for fetching the details for some apps in the Android marketplace, in an automated manner. Here I'm describing a script that I used to crawl the marketplace back in 2011.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo/192px.png" sizes="192x192" />
+    <link rel="icon" href="/assets/logo/270px.png" sizes="270x270" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/logo/180px.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
-      <meta name="og:description" content="Python, Android, Mining, Stats, Web, API" />
-      <meta name="twitter:description" content="Python, Android, Mining, Stats, Web, API" />
-      <meta name="description" content="Python, Android, Mining, Stats, Web, API" />
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="alexn.org" href="https://feed.alexn.org/" />
 
-  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
-  <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
-  <![endif]-->
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html">
+
+    <!-- Modernizr -->
+    <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
 </head>
+
+
 <body>
-  <div id="header-container">
-    <header>
-      <h1 id="title">alexn.org</h1>
 
-      <meta itemprop="lastReviewed" content="2019-11-22"/>
-      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
-        <meta itemprop="name" content="Alexandru Nedelcu">
-        <meta itemprop="url" content="https://alexn.org/about.html">
-      </div>
-
-      <div class="github-fork-ribbon-wrapper right">
-        <div class="github-fork-ribbon">
-          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
-        </div>
-      </div>
-
-      <nav>
-    	  <a href="/">alexn.org</a>
-    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
-      </nav>
-    </header>
-  </div>
-
-  <div id="main-container">
-    <div id="main">
-      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="headline">Crawling the Android Marketplace</h1>
-
-    <div id="meta">
-      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html"/>
-      <meta itemprop="datePublished" content="2011-12-15"/>
-      <meta itemprop="dateModified" content="2011-12-15"/>
-
-      <time class="post-date" itemprop="dateCreated" datetime="2011-12-15">
-        Dec 15, 2011
-      </time>
-
-      <span class="twitter-link">
-        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
-      </span>
-
-        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/wolfspider150.gif">
-          <meta itemprop="width" content="150">
-          <meta itemprop="height" content="165">
-        </div>
-
-      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="Alexandru Nedelcu">
-        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
-          <meta itemprop="width" content="585">
-          <meta itemprop="height" content="585">
-        </div>
-      </div>
+    <div class="header">
+    <div class="container">
+        <h1 class="logo"><a href="/">AlexN =&lt;&lt; org</a></h1>
+        <nav class="nav-collapse">
+            <ul class="noList">
+                
+                <li class="element first  ">
+                    <a href="/">Home</a>
+                </li>
+                
+                <li class="element   ">
+                    <a href="/about.html">About</a>
+                </li>
+                
+                <li class="element   last">
+                    <a href="/subscribe.html">Subscribe</a>
+                </li>
+                
+            </ul>
+        </nav>
     </div>
-  </header>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <h1 class="postTitle" itemprop="headline">Crawling the Android Marketplace</h1>
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html"/>
+    <meta itemprop="datePublished" content="2011-12-15T00:00:00+0000"/>
+    
+    <time itemprop="dateCreated" datetime="2011-12-15T00:00:00+0000">December 15, 2011</time>
+    | <nobr><span class="time">3</span> minute</nobr>
+  </p>
+
+  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/media/articles/wolf-spider.jpg" />
+      <img src="/assets/media/articles/wolf-spider.jpg" alt="" />
+      
+    </figure>
+    
+  
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="alexn.org">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    </div>
+  </div>
+  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu" />
+      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+      <meta itemprop="url" content="https://twitter.com/alexelcu" />
+      <meta itemprop="url" content="https://www.facebook.com/alexelcu" />
+      <meta itemprop="url" content="https://github.com/alexandru" />
+    </div>
+  
 
   <div id="content" itemprop="articleBody">
-    <p>I had a very specific need for fetching the details for some apps in
-the marketplace, in an automated manner. And so I found
-<a href="https://github.com/jberkel/supermarket">the supermarket gem</a>, a
-wrapper for the
+    <p class="intro withcap">I had a very specific need for fetching the details for some apps in
+the Android marketplace, in an automated manner. Here I'm describing a
+script that I used to crawl the marketplace back in 2011.</p>
+
+<p class="info-bubble">
+  <strong>UPDATE (2019-12-18):</strong> this is an old article, the script I used no longer works, but it can still be a good starting point for building your own web crawler.
+</p>
+
+<p>First I found <a href="https://github.com/jberkel/supermarket">the supermarket
+gem</a>, a wrapper for the
 <a href="http://code.google.com/p/android-market-api/">Android Market API</a>
 Java implementation. However, it gives unpredictable results (it
-wouldn't return the details of our in-house apps or of many other
+wouldn’t return the details of our in-house apps or of many other
 examples I tried) and Google is placing hard-limits on the number of
 requests you can make per minute. This is an internal API, probably
 used by the marketplace client and the implementation mentioned above
@@ -117,18 +140,14 @@ and crawled it.</p>
 
 <p>The script and the data collected are is available. Read below.</p>
 
-<!-- read more -->
-
 <h2 id="how-to-do-it-by-yourself">How To Do it By Yourself</h2>
-
-<p><img src="/assets/img/wolfspider150.gif" class="right" width="150" height="165" alt="Wolfspider150" /></p>
 
 <p>The actual script that I created can be found in the
 <a href="https://github.com/alexandru/AndroidMarketCrawler">AndroidMarketCrawler</a>
 GitHub Repository, with the relevant files being:</p>
 
 <ul>
-  <li><a href="https://github.com/alexandru/AndroidMarketCrawler/blob/master/crawler.py">crawler.py</a> - source code with lots of comments, it's really not complicated, you should go read it</li>
+  <li><a href="https://github.com/alexandru/AndroidMarketCrawler/blob/master/crawler.py">crawler.py</a> - source code with lots of comments, it’s really not complicated, you should go read it</li>
   <li>marketplace_database.json_lines.bz2 - compressed file
 containing the details of the crawled apps, one per each line; this
 is not a proper JSON file, you use it by reading it line by line,
@@ -139,13 +158,14 @@ memory)</li>
 
 <p><strong>UPDATE:</strong> The Android Marketplace explicitly bans crawling
 apparently. This crawler and associated data only serves educational
-purposes. Don't abuse it.</p>
+purposes. Don’t abuse it.</p>
 
-<div class="highlight"><pre class="highlight python"><code><span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">AndroidMarketCrawler</span><span class="p">(</span><span class="n">concurrency</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">AndroidMarketCrawler</span><span class="p">(</span><span class="n">concurrency</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="c1"># app is at this point a dictionary with the details needed, like
 </span>    <span class="c1">#  id, name, developer name, number of installs, etc...
 </span>    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
-</code></pre></div>
+</code></pre></div></div>
+
 <p>I used the Python programming language, along with
 <a href="http://eventlet.net">Eventlet</a> for fetching URLs in parallel (async I/O with
 epoll/libevent, providing you with coroutines support and green
@@ -158,14 +178,14 @@ equivalents such as
 
 <p>So you start fetching content from a root and add application links as
 you encounter them in a queue. We are then using a (green) threadpool
-to start fetching jobs for each of the links in the queue. So it's
+to start fetching jobs for each of the links in the queue. So it’s
 recursive. The results are also pushed in another queue, ready to be
 consumed by the client.</p>
 
-<p>Be careful though, don't abuse this, as it will generate a ton of
+<p>Be careful though, don’t abuse this, as it will generate a ton of
 traffic and your IP may end up being banned by Google. It also takes a
 lot of time; with good bandwidth and a VPS located in California, it
-still took me 5 hours for the script to finish. Don't abuse the
+still took me 5 hours for the script to finish. Don’t abuse the
 concurrency settings either, 10 is enough.</p>
 
 <h2 id="155200-apps-available-from-the-us">155,200 Apps Available From the US</h2>
@@ -193,140 +213,274 @@ the number of downloads is between 42,576,311 and 164,116,615. This
 number seems rather low to me, making it clear that Android
 distribution is freemium based.</p>
 
-<p><em>UPDATE: initially here there were some charts showing the popularity
-of free/paid apps per category. I deleted them as I don't like the
-flames these kind of charts generate!</em></p>
 
+  </div>
 
+  <div id="article-details">
+    
+    <time itemprop="dateModified" content="2019-12-18T00:00:00+0000">
+        Updated: December 18, 2019
+    </time>
+    
+      | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
+    
 
-    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu">
-      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
-        Alexandru Nedelcu</a> |
-      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
-        Twitter</a> |
-      <a href="https://github.com/alexandru" itemprop="url" rel="author">
-        GitHub</a>
+    <div id="all-categories">
+      Tags:
+      
+        
+        <a href="/tag/programming/" class="category">programming</a>
+      
+         | 
+        <a href="/tag/python/" class="category">python</a>
+      
+         | 
+        <a href="/tag/android/" class="category">android</a>
+      
+         | 
+        <a href="/tag/web/" class="category">web</a>
+      
+         | 
+        <a href="/tag/api/" class="category">api</a>
+      
     </div>
   </div>
 
-  <footer>
-    <div id="other-articles">
-      <h2>Recent Articles</h2>
+  
+  <div class="related">
+    <h2>Similar Articles</h2>
+    <div class="container">
+      
+      
 
-      <ul class="posts">
-      	<li>
-      	  <time datetime="2019-11-22">
-      	    2019-11-22 &raquo;
-      	  </time>
-      	  <a href="/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html" rel="prefetch related">Regexp Replacement via Function in Java/Scala</a>
-      	</li>
-      	<li>
-      	  <time datetime="2019-08-11">
-      	    2019-08-11 &raquo;
-      	  </time>
-      	  <a href="/blog/2019/08/11/isinstanceof-anti-pattern.html" rel="prefetch related">Scala's isInstanceOf is an Anti-Pattern</a>
-      	</li>
-      	<li>
-      	  <time datetime="2018-05-06">
-      	    2018-05-06 &raquo;
-      	  </time>
-      	  <a href="/blog/2018/05/06/bifunctor-io.html" rel="prefetch related">On Bifunctor IO and Java's Checked Exceptions</a>
-      	</li>
-      	<li>
-      	  <time datetime="2018-02-12">
-      	    2018-02-12 &raquo;
-      	  </time>
-      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-11-10">
-      	    2017-11-10 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-10-15">
-      	    2017-10-15 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-10-13">
-      	    2017-10-13 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
-      	</li>
-      </ul>
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html">
+          Regexp Replacement via Function in Java/Scala
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/ruby" class="tag">ruby</a>
+                        
+          </div>
+          <time>November 22, 2019</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2019/08/11/isinstanceof-anti-pattern.html">
+          Scala's isInstanceOf is an Anti-Pattern
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>August 11, 2019</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/05/06/bifunctor-io.html">
+          On Bifunctor IO and Java's Checked Exceptions
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/typelevel" class="tag">typelevel</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+                        
+          </div>
+          <time>May 6, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/02/12/in-defense-oofp.html">
+          In Defense of OOFP
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/oop" class="tag">oop</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>February 12, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      <div class="clearfix"></div>
     </div>
+  </div>
+  
 
-    <div id="contributions">
-      <script data-isso="/comments/alexn/"
-              data-isso-css="true"
-              data-isso-lang="en"
-              data-isso-reply-to-self="true"
-              data-isso-require-author="true"
-              data-isso-require-email="false"
-              data-isso-reply-notifications="true"
-              data-isso-max-comments-top="10"
-              data-isso-max-comments-nested="5"
-              data-isso-reveal-on-click="5"
-              data-isso-gravatar="true"
-              data-isso-avatar="false"
-              data-isso-vote="true"
-              data-vote-levels=""
-              src="https://alexn.org/comments/alexn/js/embed.min.js"></script>
-      <section id="isso-thread" data-title="Crawling the Android Marketplace">
-      </section>
-    </div>
-  </footer>
+  
 </article>
 
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      <h2>Feedback?</h2>
+
+<p>
+  If you wish to discus this article, an email would be most welcome:
+  <script>
+    (function () {
+      var lhs = "comments";
+      var rhs = "m9.alexn.org";
+      var subject = "Comment on `Crawling the Android Marketplace`";
+      document.write("<a href=\"mailto");
+      document.write(":" + lhs + "@");
+      document.write(rhs);
+      if (subject) { document.write("?subject=" + subject); }
+      document.write("\">" + lhs + "@" + rhs + "<\/a>");
+    })()
+  </script>
+  <noscript>
+    <em>Email address is protected by JavaScript, activate it to see it!</em>
+  </noscript>
+</p>
+
+<p>
+  If you noticed a typo, help me by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2011-12-15-crawling-the-android-marketplace-155200-apps.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+    </div>  
+  </div>
+  
+
+  <div class="bottom">
+    <div class="container">
+      <span class="copy">
+          Alexn.org &copy; 2020
+      </span>
+      <span class="links">
+        <a href="/docs/privacy-policy.html">Privacy Policy</a> |
+        <a href="/about.html#contact">Contact</a>
+      </span>
     </div>
   </div>
+</div><!-- end .footer -->
 
-  <div id="footer-container">
-    <footer>
-      <div class="rss">
-      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
-      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
-      	</a>
-      </div>
+   <script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js" type="text/javascript"></script>
 
-      <div class="links">
-        <a href="/docs/privacy-policy.html">Privacy policy</a> |
-        <a href="https://twitter.com/alexelcu" target="_blank">Twitter</a> |
-        <a href="https://github.com/alexandru" target="_blank">GitHub</a>
-      </div>
 
-      <div class="contact">
-      	&copy; 2019 Alexandru Nedelcu
-      	<br>
-      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
-      </div>
-    </footer>
-  </div>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script type="text/javascript">
+function _gaLoad() {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  <!-- Analytics -->
-  <script>
-    function loadAnalytics() {
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84530423-1', {
+    'cookieName': '_gaAlexNOrg',
+    'cookieExpires': 60 * 60 * 24 * 30 * 3  // 3 months, in seconds
+  });
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
 
-      ga('create', 'UA-84530423-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
+  // Click handler
+  $(function () {
+    $('a[href]').each(function (idx, elem) {
+      var it = $(elem);
+      var href = it.attr('href');
+
+      if (href.match(/^https?[:]\/\//) && !href.match(/alexn\.org/)) {
+        it.click(_gaEvent('general', 'click', 'external-link', href));
+      } else if (href.match(/^#/)) {
+        it.click(_gaEvent('general', 'click', 'page-anchor', href));
+      } else {
+        it.click(_gaEvent('general', 'click', 'internal-link', href));
+      }
+    })
+  })
+}
+
+function _gaEvent(category, action, label, value) {
+  return function () {
+    if (_doNotTrack || typeof ga !== 'function') {
+      return;
     }
-    // Checks DO-NOT-TRACK status
-    if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
-      var dnd = window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.external.msTrackingProtectionEnabled();
-      if (!dnd) loadAnalytics();
-    } else {
-      loadAnalytics();
-    }
-  </script>
-  <!-- End Analytics -->  
+    ga(function () {
+      ga('send', 'event', category, action, label, value);
+    });
+   }
+}
+
+// Checks DO-NOT-TRACK status
+window._doNotTrack = false;
+if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
+  window._doNotTrack = window.doNotTrack == "1" || navigator.doNotTrack == "yes" ||
+    navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" ||
+    ('msTrackingProtectionEnabled' in window.external && window.external.msTrackingProtectionEnabled());
+}
+if (!_doNotTrack) {
+  console.log("Analytics are loading.")
+  _gaLoad();
+} else if (typeof(console) !== "undefined") {
+  console.log("Analytics are off due to Do Not Track setting!");
+}
+</script>
+
+
+
+   
+   <!-- <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"6c8297e886b517d8535e8410e","lid":"a3391a44b0","uniqueMethods":true}) })</script> -->
+   
 </body>
+
 </html>

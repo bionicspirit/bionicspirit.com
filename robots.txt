@@ -1,4 +1,1 @@
-# robotstxt.org/
-
-User-agent: *
-
+Sitemap: https://alexn.org/sitemap.xml

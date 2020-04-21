@@ -1,115 +1,124 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage" prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
-
-  <link rel="canonical" href="https://alexn.org/blog/2016/08/25/monix-task-performance.html">
-  <link rel="alternate" href="/atom.xml" title="Atom feed" type="application/atom+xml">
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@alexelcu" />
-
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="2016-08-25" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Monix Task vs Scalaz vs Future, The Benchmark &#8211; alexn.org</title>
     
-    <meta property="article:tag" content="Functional" />
-    <meta property="article:tag" content="Code" />
-    <meta property="article:tag" content="Scala" />
-    <meta property="article:tag" content="Monix" />
-    <meta property="article:tag" content="Scalaz" />
-    <meta property="article:tag" content="Typelevel" />
 
-    <title>Monix Task vs Scalaz vs Future, The Benchmark</title>
-    <meta name="og:title" content="Monix Task vs Scalaz vs Future, The Benchmark" />
-    <meta name="twitter:title" content="Monix Task vs Scalaz vs Future, The Benchmark" />
+    <!-- Open Graph Meta -->
+    <meta content="alexn.org" property="og:site_name">
+    <meta content="Monix Task vs Scalaz vs Future, The Benchmark" property="og:title">
+    <meta content="The Task in Monix has really good performance. See the benchmark." property="og:description">
+    <meta content="https://alexn.org/blog/2016/08/25/monix-task-performance.html" property="og:url">
+    <meta content="2016-08-25T00:00:00+00:00" property="article:published_time">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/monix-1024.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/monix-1024.png" />
+    <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
-      <meta name="og:image" content="https://alexn.org/assets/img/2015/monifu-square.png" />
-      <meta name="og:image:secure_url" content="https://alexn.org/assets/img/2015/monifu-square.png" />
-      <meta name="twitter:image" content="https://alexn.org/assets/img/2015/monifu-square.png" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/monix-1024.png">
+    <meta name="twitter:site" content="@alexelcu">
+    <meta name="twitter:creator" content="@alexelcu">
+    <meta name="twitter:title" content="Monix Task vs Scalaz vs Future, The Benchmark">
+    <meta name="twitter:url" content="https://alexn.org/blog/2016/08/25/monix-task-performance.html">
+    <meta name="twitter:description" content="The Task in Monix has really good performance. See the benchmark.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo/192px.png" sizes="192x192" />
+    <link rel="icon" href="/assets/logo/270px.png" sizes="270x270" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/logo/180px.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
-      <meta name="og:description" content="The Task in Monix has really good performance. See the benchmark." />
-      <meta name="twitter:description" content="The Task in Monix has really good performance. See the benchmark." />
-      <meta name="description" content="The Task in Monix has really good performance. See the benchmark." />
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="alexn.org" href="https://feed.alexn.org/" />
 
-  <link href="/assets/css/fonts-8b37e535.css" rel="stylesheet" />
-  <link href="/assets/css/all-242873bd.css" rel="stylesheet" />
-  <!--[if lt IE 9]>
-  <link href="/assets/css/ie-hacks-f1291769.css" rel="stylesheet" />
-  <![endif]-->
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="https://alexn.org/blog/2016/08/25/monix-task-performance.html">
+
+    <!-- Modernizr -->
+    <script src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
 </head>
+
+
 <body>
-  <div id="header-container">
-    <header>
-      <h1 id="title">alexn.org</h1>
 
-      <meta itemprop="lastReviewed" content="2019-11-22"/>
-      <div itemprop="reviewedBy" itemscope itemtype="https://schema.org/Person">
-        <meta itemprop="name" content="Alexandru Nedelcu">
-        <meta itemprop="url" content="https://alexn.org/about.html">
-      </div>
-
-      <div class="github-fork-ribbon-wrapper right">
-        <div class="github-fork-ribbon">
-          <a href="https://github.com/alexandru" itemprop="relatedLink">Fork me on GitHub</a>
-        </div>
-      </div>
-
-      <nav>
-    	  <a href="/">alexn.org</a>
-    	  <a class="extra" href="/about.html" itemprop="significantLink">About</a>
-      </nav>
-    </header>
-  </div>
-
-  <div id="main-container">
-    <div id="main">
-      <article id="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    <h1 itemprop="headline">Monix Task vs Scalaz vs Future, The Benchmark</h1>
-
-    <div id="meta">
-      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2016/08/25/monix-task-performance.html"/>
-      <meta itemprop="datePublished" content="2016-08-25"/>
-      <meta itemprop="dateModified" content="2016-08-25"/>
-
-      <time class="post-date" itemprop="dateCreated" datetime="2016-08-25">
-        Aug 25, 2016
-      </time>
-
-      <span class="twitter-link">
-        • <a href="https://twitter.com/alexelcu">@alexelcu</a>
-      </span>
-
-        <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/2015/monifu-square.png">
-          <meta itemprop="width" content="500">
-          <meta itemprop="height" content="303">
-        </div>
-
-      <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-        <meta itemprop="name" content="Alexandru Nedelcu">
-        <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-          <meta itemprop="url" content="https://alexn.org/assets/img/alex-big-version-72ppi.jpg">
-          <meta itemprop="width" content="585">
-          <meta itemprop="height" content="585">
-        </div>
-      </div>
+    <div class="header">
+    <div class="container">
+        <h1 class="logo"><a href="/">AlexN =&lt;&lt; org</a></h1>
+        <nav class="nav-collapse">
+            <ul class="noList">
+                
+                <li class="element first  ">
+                    <a href="/">Home</a>
+                </li>
+                
+                <li class="element   ">
+                    <a href="/about.html">About</a>
+                </li>
+                
+                <li class="element   last">
+                    <a href="/subscribe.html">Subscribe</a>
+                </li>
+                
+            </ul>
+        </nav>
     </div>
-  </header>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <h1 class="postTitle" itemprop="headline">Monix Task vs Scalaz vs Future, The Benchmark</h1>
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2016/08/25/monix-task-performance.html"/>
+    <meta itemprop="datePublished" content="2016-08-25T00:00:00+0000"/>
+    
+    <time itemprop="dateCreated" datetime="2016-08-25T00:00:00+0000">August 25, 2016</time>
+    | <nobr><span class="time">4</span> minute</nobr>
+  </p>
+
+  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/media/articles/monix-1024.png" />
+      <img src="/assets/media/articles/monix-1024.png" alt="" />
+      
+    </figure>
+    
+  
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="alexn.org">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    </div>
+  </div>
+  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu" />
+      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+      <meta itemprop="url" content="https://twitter.com/alexelcu" />
+      <meta itemprop="url" content="https://www.facebook.com/alexelcu" />
+      <meta itemprop="url" content="https://github.com/alexandru" />
+    </div>
+  
 
   <div id="content" itemprop="articleBody">
-    <p><img src="/assets/img/2015/monifu-square.png" class="right" width="200" alt="Monifu square" /></p>
-
-<p>The Monix <a href="https://monix.io/docs/2x/eval/task.html">Task</a> was heavily
-inspired by <code class="highlighter-rouge">scalaz.concurrent.Task</code> and by
-<code class="highlighter-rouge">scala.concurrent.Future</code>. That's not a secret and I'll be forever
-grateful to their authors. I've ran a benchmark and I'm glad to report
-that the Monix <a href="https://monix.io/docs/2x/eval/task.html">Task</a> beats
-in performance both.</p>
+    <p class="intro withcap">The Monix <a href="https://monix.io/docs/2x/eval/task.html">Task</a> was heavily inspired by <code class="highlighter-rouge">scalaz.concurrent.Task</code> and by <code class="highlighter-rouge">scala.concurrent.Future</code>. That’s not a secret and I’ll be forever grateful to their authors. I’ve ran a benchmark and I’m glad to report that the Monix <a href="https://monix.io/docs/2x/eval/task.html">Task</a> beats in performance both.</p>
 
 <p>Such results are actually unexpected, because the Monix <code class="highlighter-rouge">Task</code> has to
-do tricks in order to be "<em>cancelable</em>", a trait that allows it to
+do tricks in order to be “<em>cancelable</em>”, a trait that allows it to
 close opened resources when race conditions happen, which really means
 extra footwork. But no, right now, it beats both in performance and by
 quite the margin.</p>
@@ -134,14 +143,16 @@ words the performance of the run-loop, on both normal/synchronous
 tasks and tasks that are forked in separate (logical) threads. So in
 other words:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nv">Task</span><span class="o">.</span><span class="py">sequence</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
-</code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nv">Task</span><span class="o">.</span><span class="py">sequence</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
+</code></pre></div></div>
+
 <p>Which is translated more or less into this:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nv">tasks</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">init</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">et</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">acc</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="n">b</span> <span class="k">=&gt;</span> <span class="nv">et</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">e</span> <span class="k">=&gt;</span> <span class="n">b</span> <span class="o">+=</span> <span class="n">e</span><span class="o">)))</span>
-</code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nv">tasks</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="n">init</span><span class="o">)((</span><span class="n">acc</span><span class="o">,</span><span class="n">et</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">acc</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="n">b</span> <span class="k">=&gt;</span> <span class="nv">et</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="n">e</span> <span class="k">=&gt;</span> <span class="n">b</span> <span class="o">+=</span> <span class="n">e</span><span class="o">)))</span>
+</code></pre></div></div>
+
 <p>So for synchronous tasks (that evaluate immediately), and note here
-that Scala's <code class="highlighter-rouge">Future</code> is not applicable since <code class="highlighter-rouge">Future</code> is not
+that Scala’s <code class="highlighter-rouge">Future</code> is not applicable since <code class="highlighter-rouge">Future</code> is not
 trampolined:</p>
 
 <table>
@@ -217,14 +228,15 @@ trampolined:</p>
 </table>
 
 <p>As you can see, the Monix <code class="highlighter-rouge">Task</code> has twice the throughput of Scalaz
-and fares quite better compared with Scala's standard <code class="highlighter-rouge">Future</code>.</p>
+and fares quite better compared with Scala’s standard <code class="highlighter-rouge">Future</code>.</p>
 
 <h3 id="gather">Gather</h3>
 
 <p>The gather operation would be:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nv">Task</span><span class="o">.</span><span class="py">gather</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
-</code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nv">Task</span><span class="o">.</span><span class="py">gather</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
+</code></pre></div></div>
+
 <p>This works like <code class="highlighter-rouge">sequence</code>, except that the evaluation has non-ordered
 effects. What this means is that, if the tasks are forking threads,
 then they get executed in parallel.</p>
@@ -322,11 +334,12 @@ better.</p>
 
 <p>The <code class="highlighter-rouge">gatherUnordered</code> operation would be:</p>
 
-<div class="highlight"><pre class="highlight scala"><code><span class="nv">Task</span><span class="o">.</span><span class="py">gatherUnordered</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
-</code></pre></div>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nv">Task</span><span class="o">.</span><span class="py">gatherUnordered</span><span class="o">(</span><span class="n">tasks</span><span class="o">)</span>
+</code></pre></div></div>
+
 <p>This behaves like <code class="highlighter-rouge">gather</code>, except that it does not care for the order
 in which the results are served. Can have much better performance if
-you don't care about order.</p>
+you don’t care about order.</p>
 
 <p>For synchronous/immediate tasks:</p>
 
@@ -415,7 +428,7 @@ forked tasks it evens out with the performance of <code class="highlighter-rouge
 
 <h3 id="raw-output">Raw output</h3>
 
-<div class="highlight"><pre class="highlight plaintext"><code>[info] # Run complete. Total time: 00:04:28
+<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] # Run complete. Total time: 00:04:28
 [info]
 [info] Benchmark                              Mode  Cnt     Score     Error  Units
 [info] TaskGatherBenchmark.gatherMonixA      thrpt   10  1396.797 ±  17.098  ops/s
@@ -431,138 +444,280 @@ forked tasks it evens out with the performance of <code class="highlighter-rouge
 [info] TaskGatherBenchmark.unorderedMonixS   thrpt   10  5654.462 ± 150.792  ops/s
 [info] TaskGatherBenchmark.unorderedScalazA  thrpt   10  1657.454 ±  35.218  ops/s
 [info] TaskGatherBenchmark.unorderedScalazS  thrpt   10  3340.645 ± 244.145  ops/s
-</code></pre></div>
+</code></pre></div></div>
+
 <p>Cheers!</p>
 
+  </div>
 
-    <div class="authorship" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu">
-      Written by <a href="https://alexn.org/about.html" itemprop="url" rel="author">
-        Alexandru Nedelcu</a> |
-      <a href="https://twitter.com/alexelcu" itemprop="url" rel="author">
-        Twitter</a> |
-      <a href="https://github.com/alexandru" itemprop="url" rel="author">
-        GitHub</a>
+  <div id="article-details">
+    
+    <time itemprop="dateModified" content="2016-08-25T00:00:00+0000">
+        Published: August 25, 2016
+    </time>
+    
+      | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
+    
+
+    <div id="all-categories">
+      Tags:
+      
+        
+        <a href="/tag/functional/" class="category">functional</a>
+      
+         | 
+        <a href="/tag/code/" class="category">code</a>
+      
+         | 
+        <a href="/tag/scala/" class="category">scala</a>
+      
+         | 
+        <a href="/tag/monix/" class="category">monix</a>
+      
+         | 
+        <a href="/tag/scalaz/" class="category">scalaz</a>
+      
+         | 
+        <a href="/tag/typelevel/" class="category">typelevel</a>
+      
     </div>
   </div>
 
-  <footer>
-    <div id="other-articles">
-      <h2>Recent Articles</h2>
+  
+  <div class="related">
+    <h2>Similar Articles</h2>
+    <div class="container">
+      
+      
 
-      <ul class="posts">
-      	<li>
-      	  <time datetime="2019-11-22">
-      	    2019-11-22 &raquo;
-      	  </time>
-      	  <a href="/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html" rel="prefetch related">Regexp Replacement via Function in Java/Scala</a>
-      	</li>
-      	<li>
-      	  <time datetime="2019-08-11">
-      	    2019-08-11 &raquo;
-      	  </time>
-      	  <a href="/blog/2019/08/11/isinstanceof-anti-pattern.html" rel="prefetch related">Scala's isInstanceOf is an Anti-Pattern</a>
-      	</li>
-      	<li>
-      	  <time datetime="2018-05-06">
-      	    2018-05-06 &raquo;
-      	  </time>
-      	  <a href="/blog/2018/05/06/bifunctor-io.html" rel="prefetch related">On Bifunctor IO and Java's Checked Exceptions</a>
-      	</li>
-      	<li>
-      	  <time datetime="2018-02-12">
-      	    2018-02-12 &raquo;
-      	  </time>
-      	  <a href="/blog/2018/02/12/in-defense-oofp.html" rel="prefetch related">In Defense of OOFP</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-11-10">
-      	    2017-11-10 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html" rel="prefetch related">Minitest: Zero Crap Scala Testing Library</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-10-15">
-      	    2017-10-15 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/10/15/functional-programming.html" rel="prefetch related">What is Functional Programming?</a>
-      	</li>
-      	<li>
-      	  <time datetime="2017-10-13">
-      	    2017-10-13 &raquo;
-      	  </time>
-      	  <a href="/blog/2017/10/13/scaladays-copenhagen.html" rel="prefetch related">Scala Days 2017 — Monix Task</a>
-      	</li>
-      </ul>
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html">
+          Regexp Replacement via Function in Java/Scala
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/ruby" class="tag">ruby</a>
+                        
+          </div>
+          <time>November 22, 2019</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2019/08/11/isinstanceof-anti-pattern.html">
+          Scala's isInstanceOf is an Anti-Pattern
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>August 11, 2019</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/05/06/bifunctor-io.html">
+          On Bifunctor IO and Java's Checked Exceptions
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/typelevel" class="tag">typelevel</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+                        
+          </div>
+          <time>May 6, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/02/12/in-defense-oofp.html">
+          In Defense of OOFP
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/programming" class="tag">programming</a>
+            
+               | <a href="/tag/oop" class="tag">oop</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>February 12, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      <div class="clearfix"></div>
     </div>
+  </div>
+  
 
-    <div id="contributions">
-      <script data-isso="/comments/alexn/"
-              data-isso-css="true"
-              data-isso-lang="en"
-              data-isso-reply-to-self="true"
-              data-isso-require-author="true"
-              data-isso-require-email="false"
-              data-isso-reply-notifications="true"
-              data-isso-max-comments-top="10"
-              data-isso-max-comments-nested="5"
-              data-isso-reveal-on-click="5"
-              data-isso-gravatar="true"
-              data-isso-avatar="false"
-              data-isso-vote="true"
-              data-vote-levels=""
-              src="https://alexn.org/comments/alexn/js/embed.min.js"></script>
-      <section id="isso-thread" data-title="Monix Task vs Scalaz vs Future, The Benchmark">
-      </section>
-    </div>
-  </footer>
+  
 </article>
 
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      <h2>Feedback?</h2>
+
+<p>
+  If you wish to discus this article, an email would be most welcome:
+  <script>
+    (function () {
+      var lhs = "comments";
+      var rhs = "m9.alexn.org";
+      var subject = "Comment on `Monix Task vs Scalaz vs Future, The Benchmark`";
+      document.write("<a href=\"mailto");
+      document.write(":" + lhs + "@");
+      document.write(rhs);
+      if (subject) { document.write("?subject=" + subject); }
+      document.write("\">" + lhs + "@" + rhs + "<\/a>");
+    })()
+  </script>
+  <noscript>
+    <em>Email address is protected by JavaScript, activate it to see it!</em>
+  </noscript>
+</p>
+
+<p>
+  If you noticed a typo, help me by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2016-08-25-monix-task-performance.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+    </div>  
+  </div>
+  
+
+  <div class="bottom">
+    <div class="container">
+      <span class="copy">
+          Alexn.org &copy; 2020
+      </span>
+      <span class="links">
+        <a href="/docs/privacy-policy.html">Privacy Policy</a> |
+        <a href="/about.html#contact">Contact</a>
+      </span>
     </div>
   </div>
+</div><!-- end .footer -->
 
-  <div id="footer-container">
-    <footer>
-      <div class="rss">
-      	<a href="https://twitter.com/alexelcu" target="_blank" title="Follow me on Twitter (@alexelcu)">
-      	  <img src="/assets/img/twitter-logo.png" width="60" height="60" alt="Follow me on Twitter (@alexelcu)" />
-      	</a>
-      </div>
+   <script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js" type="text/javascript"></script>
 
-      <div class="links">
-        <a href="/docs/privacy-policy.html">Privacy policy</a> |
-        <a href="https://twitter.com/alexelcu" target="_blank">Twitter</a> |
-        <a href="https://github.com/alexandru" target="_blank">GitHub</a>
-      </div>
 
-      <div class="contact">
-      	&copy; 2019 Alexandru Nedelcu
-      	<br>
-      	Some rights reserved (<a href="http://creativecommons.org/licenses/by-nc/3.0/" rel="license">CC BY-NC 3.0</a>)
-      </div>
-    </footer>
-  </div>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script type="text/javascript">
+function _gaLoad() {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  <!-- Analytics -->
-  <script>
-    function loadAnalytics() {
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-84530423-1', {
+    'cookieName': '_gaAlexNOrg',
+    'cookieExpires': 60 * 60 * 24 * 30 * 3  // 3 months, in seconds
+  });
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
 
-      ga('create', 'UA-84530423-1', 'auto');
-      ga('set', 'anonymizeIp', true);
-      ga('send', 'pageview');
+  // Click handler
+  $(function () {
+    $('a[href]').each(function (idx, elem) {
+      var it = $(elem);
+      var href = it.attr('href');
+
+      if (href.match(/^https?[:]\/\//) && !href.match(/alexn\.org/)) {
+        it.click(_gaEvent('general', 'click', 'external-link', href));
+      } else if (href.match(/^#/)) {
+        it.click(_gaEvent('general', 'click', 'page-anchor', href));
+      } else {
+        it.click(_gaEvent('general', 'click', 'internal-link', href));
+      }
+    })
+  })
+}
+
+function _gaEvent(category, action, label, value) {
+  return function () {
+    if (_doNotTrack || typeof ga !== 'function') {
+      return;
     }
-    // Checks DO-NOT-TRACK status
-    if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
-      var dnd = window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.external.msTrackingProtectionEnabled();
-      if (!dnd) loadAnalytics();
-    } else {
-      loadAnalytics();
-    }
-  </script>
-  <!-- End Analytics -->  
+    ga(function () {
+      ga('send', 'event', category, action, label, value);
+    });
+   }
+}
+
+// Checks DO-NOT-TRACK status
+window._doNotTrack = false;
+if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
+  window._doNotTrack = window.doNotTrack == "1" || navigator.doNotTrack == "yes" ||
+    navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" ||
+    ('msTrackingProtectionEnabled' in window.external && window.external.msTrackingProtectionEnabled());
+}
+if (!_doNotTrack) {
+  console.log("Analytics are loading.")
+  _gaLoad();
+} else if (typeof(console) !== "undefined") {
+  console.log("Analytics are off due to Do Not Track setting!");
+}
+</script>
+
+
+
+   
+   <!-- <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"6c8297e886b517d8535e8410e","lid":"a3391a44b0","uniqueMethods":true}) })</script> -->
+   
 </body>
+
 </html>
