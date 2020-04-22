@@ -43,7 +43,7 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202004220103">
+    <link rel="stylesheet" href="/assets/css/style.css?202004220113">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html">
 
@@ -87,7 +87,7 @@
     <meta itemprop="datePublished" content="2017-10-11T00:00:00+0000"/>
     
     <time itemprop="dateCreated" datetime="2017-10-11T00:00:00+0000">October 11, 2017</time>
-    | <nobr><span class="time">12</span> minute</nobr>
+    | <nobr><span class="time">13</span> minute</nobr>
   </p>
 
   
@@ -129,7 +129,12 @@
       <li><a href="#6-no-use-cases-this-is-a-niche">6. No Use-cases, This is a Niche</a></li>
     </ul>
   </li>
-  <li><a href="#funfix">Funfix</a></li>
+  <li><a href="#alternatives">Alternatives</a>
+    <ul>
+      <li><a href="#fluture">Fluture</a></li>
+      <li><a href="#funfix">Funfix</a></li>
+    </ul>
+  </li>
   <li><a href="#final-words">Final Words</a></li>
 </ul>
 
@@ -394,13 +399,19 @@ something like this in the future, even if you don’t like it ;-)</p>
 
 <p>Alas, with the <code class="highlighter-rouge">Promise</code> implementation leaking, this doesn’t work ;-)</p>
 
-<h2 id="funfix">Funfix</h2>
+<h2 id="alternatives">Alternatives</h2>
 
-<figure>
-  <a href="https://funfix.org">
-    <img src="/assets/media/articles/funfix-1024.png" />
-  </a>
-</figure>
+<h3 id="fluture">Fluture</h3>
+
+<p>Project Page: <a href="https://github.com/fluture-js/Fluture">github.com/fluture-js/Fluture</a></p>
+
+<p>This is the most popular <code class="highlighter-rouge">Promise</code> alternative that I know of.</p>
+
+<p>It isn’t a direct replacement however because it has lazy behavior, being meant for suspending side effects. This is more like an <code class="highlighter-rouge">IO</code> data type. Which is cool, you should use something like it, but it’s also apples vs oranges.</p>
+
+<p>I don’t have enough experience with it, making this recommendation solely based on its popularity and I double checked that it indeed preserves stack safety.</p>
+
+<h3 id="funfix">Funfix</h3>
 
 <p>I’ve been building a new project, <a href="https://funfix.org/">Funfix</a>,
 a JavaScript library for functional programming (capital FP), supporting
