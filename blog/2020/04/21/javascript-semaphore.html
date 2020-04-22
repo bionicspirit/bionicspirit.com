@@ -44,7 +44,7 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202004220716">
+    <link rel="stylesheet" href="/assets/css/style.css?202004220921">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/04/21/javascript-semaphore.html">
 
@@ -145,7 +145,7 @@
 
 <p>But this will be very slow, taking ~2.8 hours to finish.</p>
 
-<p>On the other hand, if we try a naive solution via <code class="highlighter-rouge">Promise.race</code>, this can easily overwhelm your database and your script can crash with out of memory or out of available file handles errors:</p>
+<p>On the other hand, if we try a naive solution via <code class="highlighter-rouge">Promise.race</code>, this can easily overwhelm your database and your script can crash with “<em>out of memory</em>” or “<em>out of available file handles</em>” errors. This is also not adequate in case producing those items in the first place is an expensive process (e.g. going over an async iterator). We can certainly hold 100,000 items in memory, but talk about 100 million or more and things start to fall apart.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="kd">const</span> <span class="nx">promises</span><span class="p">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -170,7 +170,7 @@
 
 <p>Execution time will be ~1.7 minutes (compared with 2.8 hours for the first sample).</p>
 
-<p>The line with <code class="highlighter-rouge">withLockRunAndForget</code> only waits in case the semaphore doesn’t have handles available. And when the loop is finished, we need <code class="highlighter-rouge">awaitTerminate</code> to wait for all active tasks to finish.</p>
+<p>The method <code class="highlighter-rouge">withLockRunAndForget</code> only waits in case the semaphore doesn’t have handles available. And when the loop is finished, we need <code class="highlighter-rouge">awaitTerminate</code> to wait for all active tasks to finish.</p>
 
 <p>Implementation, which can be copy/pasted in your project:</p>
 
@@ -259,7 +259,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Enjoy.</p>
+<p>Enjoy~</p>
 
   </div>
 
