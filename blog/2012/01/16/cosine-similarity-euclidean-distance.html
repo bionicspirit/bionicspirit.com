@@ -45,7 +45,7 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202004251917">
+    <link rel="stylesheet" href="/assets/css/style.css?202004252219">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html">
 
@@ -215,7 +215,7 @@ like:</p>
 simple. Considering 2 points, A and B, with their associated
 coordinates, the distance is defined as:</p>
 
-<script type="math/tex; mode=display">distance(A, B) = \sqrt{(a_1-b_1)^2 + (a_2-b_2)^2 + \ldots + (a_n-b_n)^2}</script>
+\[distance(A, B) = \sqrt{(a_1-b_1)^2 + (a_2-b_2)^2 + \ldots + (a_n-b_n)^2}\]
 
 <p>The lower the distance between 2 points, then the higher the
 similarity. Here’s some Ruby code:</p>
@@ -350,7 +350,7 @@ my purpose here, this is not good - because articles with more tags
 slightly different results, because this one actually measures
 similarity instead of dissimilarity. Here’s the formula:</p>
 
-<script type="math/tex; mode=display">similarity=
+\[similarity=
   cos(\theta)=
   \frac{A \cdot B}{\|A\| \|B\|}=
   \frac{
@@ -358,7 +358,7 @@ similarity instead of dissimilarity. Here’s the formula:</p>
   }{
     \sqrt{ \displaystyle\sum_{i=1}^{n} A_i^2 }
     \sqrt{ \displaystyle\sum_{i=1}^{n} B_i^2 }
-  }</script>
+  }\]
 
 <p>If you look at the visual with the 2 axis and 2 points, we need the
 cosine of the angle <em>theta</em> that’s between the vectors associated with
@@ -452,7 +452,7 @@ as there is a perfect linear correlation between them, since Mary just
 gives the same rankings as John plus 3. The formula itself or the
 theory is not very intuitive though. But it is simple to calculate:</p>
 
-<script type="math/tex; mode=display">r = \frac{
+\[r = \frac{
   \displaystyle\sum_{i=1}^{n} a_i b_i -
   \frac{
     \displaystyle\sum_{i=1}^{n} a_i \displaystyle\sum_{i=1}^{n} b_i
@@ -464,7 +464,7 @@ theory is not very intuitive though. But it is simple to calculate:</p>
     (\displaystyle\sum_{i=1}^{n} b_i^2 -
       \frac{(\displaystyle\sum_{i=1}^{n} b_i)^2}{n})
   }
-}</script>
+}\]
 
 <p>Here’s the code:</p>
 

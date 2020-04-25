@@ -45,7 +45,7 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202004251917">
+    <link rel="stylesheet" href="/assets/css/style.css?202004252219">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html">
 
@@ -164,7 +164,7 @@ purposes. Don’t abuse it.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">AndroidMarketCrawler</span><span class="p">(</span><span class="n">concurrency</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="c1"># app is at this point a dictionary with the details needed, like
 </span>    <span class="c1">#  id, name, developer name, number of installs, etc...
-</span>    <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
+</span>    <span class="n">fh</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="si">\</span><span class="se">n</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>I used the Python programming language, along with

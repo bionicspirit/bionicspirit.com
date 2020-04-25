@@ -45,7 +45,7 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202004251917">
+    <link rel="stylesheet" href="/assets/css/style.css?202004252219">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html">
 
@@ -89,7 +89,7 @@
     <meta itemprop="datePublished" content="2012-02-09T00:00:00+0000"/>
     
     <time itemprop="dateCreated" datetime="2012-02-09T00:00:00+0000">February 9, 2012</time>
-    | <nobr><span class="time">12</span> minute</nobr>
+    | <nobr><span class="time">11</span> minute</nobr>
   </p>
 
   
@@ -224,7 +224,7 @@ independent events, because calculating the intersection (both
 happening at the same time) depends on it. So for independent events,
 calculating the intersection is easy:</p>
 
-<script type="math/tex; mode=display">P(A \cap B) = P(A) \cdot P(B)</script>
+\[P(A \cap B) = P(A) \cdot P(B)\]
 
 <p>Some examples:</p>
 
@@ -255,7 +255,7 @@ email is a spam message, given that it contains the word “penis”?</p>
 <p>So these 2 events are clearly dependent, which is why you must use the
 simple form of the Bayes Theorem:</p>
 
-<script type="math/tex; mode=display">P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B|A) P(A)}{P(B)}</script>
+\[P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{P(B|A) P(A)}{P(B)}\]
 
 <p>Or visually:</p>
 
@@ -265,13 +265,12 @@ simple form of the Bayes Theorem:</p>
 
 <p>With the solution being:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{eqnarray}
-r &=& P(spam|penis) \\[6pt]
-  &=& \frac{P(penis|spam) \cdot P(spam)}{ P(penis) } \\[6pt]
-  &=& \frac{\frac{20}{30} \cdot \frac{30}{74}}{\frac{51}{74}}
+\[\begin{eqnarray}
+r &amp;=&amp; P(spam|penis) \\[6pt]
+  &amp;=&amp; \frac{P(penis|spam) \cdot P(spam)}{ P(penis) } \\[6pt]
+  &amp;=&amp; \frac{\frac{20}{30} \cdot \frac{30}{74}}{\frac{51}{74}}
   = \frac{20}{51} = 0.39
-\end{eqnarray} %]]></script>
+\end{eqnarray}\]
 
 <p>This was a simple one, you could definitely see the result without
 complicating yourself with the Bayes formula.</p>
@@ -289,31 +288,30 @@ contains both “viagra” and “penis”?</li>
 
 <p>Shit just got more complicated, because now the formula is this one:</p>
 
-<script type="math/tex; mode=display">\frac{
+\[\frac{
   P(penis|spam \cap viagra) \cdot P(viagra|spam) \cdot P(spam)
 }{
   P(penis|viagra) \cdot P(viagra)
-}</script>
+}\]
 
 <p>And you definitely don’t want to bother with it if we keep adding
 words. But what if we simplified our assumptions and just say that the
 occurrence of <em>penis</em> is totally independent from the occurrence of
 <em>viagra</em>? Then the formula just got much simpler:</p>
 
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{eqnarray}
-r &=& P(spam|penis,viagra) \\[6pt]
-&=& \frac{
+\[\begin{eqnarray}
+r &amp;=&amp; P(spam|penis,viagra) \\[6pt]
+&amp;=&amp; \frac{
   P(penis|spam) \cdot P(viagra|spam) \cdot P(spam)
 }{
   P(penis)\cdot P(viagra)
 } \\[6pt]
-&=& \frac{
+&amp;=&amp; \frac{
   \frac{24}{30} \cdot \frac{20}{30} \cdot \frac{30}{74}
 }{
   \frac{25}{74} \cdot \frac{51}{74}
 } = 0.928
-\end{eqnarray} %]]></script>
+\end{eqnarray}\]
 
 <p>To classify an email as spam, you’ll have to calculate the conditional
 probability by taking hints from the words contained. And the Naive
@@ -339,8 +337,8 @@ at
 categories you test against. The category with the highest probability
 for the given text wins:</p>
 
-<script type="math/tex; mode=display">classify(word_1, word_2 \ldots word_n) = \\[6pt]
-  \operatorname*{argmax}_{cat} P(cat)  \cdot \prod_{i=1}^{n} P(word_i|cat)</script>
+\[classify(word_1, word_2 \ldots word_n) = \\[6pt]
+  \operatorname*{argmax}_{cat} P(cat)  \cdot \prod_{i=1}^{n} P(word_i|cat)\]
 
 <p>Do note that above I also eliminated the <em>denominator</em> from our original
 formula, because it is a constant that we do not need (called
@@ -361,8 +359,8 @@ logarithms of those probabilities</li>
 <p>So instead of the above formula, if you need this optimization, then
 use this one:</p>
 
-<script type="math/tex; mode=display">classify(word_1, word_2 \ldots word_n) = \\[6pt]
-  \operatorname*{argmax}_{cat} log_{e} (P(cat))  + \sum_{i=1}^{n} log_{e} (P(word_i|cat))</script>
+\[classify(word_1, word_2 \ldots word_n) = \\[6pt]
+  \operatorname*{argmax}_{cat} log_{e} (P(cat))  + \sum_{i=1}^{n} log_{e} (P(word_i|cat))\]
 
 <h3 id="23-training">2.3. Training</h3>
 

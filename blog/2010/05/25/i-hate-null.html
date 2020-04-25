@@ -47,7 +47,7 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202004251917">
+    <link rel="stylesheet" href="/assets/css/style.css?202004252219">
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2010/05/25/i-hate-null.html">
 
@@ -123,11 +123,11 @@
     How many times have you had a chain of methods like this (example showing <a href="https://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> in action) …
 </p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'table'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span><span class="s">'search-params'</span><span class="p">})</span>\
-    <span class="o">.</span><span class="n">findParent</span><span class="p">(</span><span class="s">'form'</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'td'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span> <span class="s">'elem'</span><span class="p">})</span>\
-    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'input'</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'table'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span><span class="s">'search-params'</span><span class="p">})</span>\
+    <span class="p">.</span><span class="n">findParent</span><span class="p">(</span><span class="s">'form'</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'td'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span> <span class="s">'elem'</span><span class="p">})</span>\
+    <span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'input'</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>BeautifulSoup is not JQuery, and when it doesn’t find an element on find actions, it just returns None or an empty list. Then you get a beautiful index error or a method not available on NoneType kind of error, with the result being that the error itself doesn’t say anything useful about what happened (except the source-code line number) … whereas in the case above I would probably prefer a WebUIError or something.</p>
@@ -155,16 +155,16 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">class</span> <span class="nc">Proxy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">on_error_callback</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">_chain</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">_memo</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_wrapped_inst</span> <span class="o">=</span> <span class="n">instance</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_chain</span> <span class="o">=</span> <span class="n">_chain</span> <span class="ow">or</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_on_error_callback</span> <span class="o">=</span> <span class="n">on_error_callback</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_memo</span> <span class="o">=</span> <span class="n">_memo</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_wrapped_inst</span> <span class="o">=</span> <span class="n">instance</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span> <span class="o">=</span> <span class="n">_chain</span> <span class="ow">or</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span> <span class="o">=</span> <span class="n">on_error_callback</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span> <span class="o">=</span> <span class="n">_memo</span> <span class="ow">or</span> <span class="p">[]</span>
 
     <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyAttribute</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyAttribute</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
 
     <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyInvoke</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyInvoke</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span>
 </code></pre></div></div>
 
 <p>As you can see, there’s an <em>instance</em> of an object getting wrapped (<code class="highlighter-rouge">_wrapped_instance</code>), there’s a <code class="highlighter-rouge">_chain</code> of expressions memorized, there’s an <code class="highlighter-rouge">_on_error_callback</code> that gets executed in case of error, and there’s a <code class="highlighter-rouge">_memo</code> that keeps the result of the last execution (libraries like BeautifulSoup are slow).</p>
@@ -175,18 +175,18 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">class</span> <span class="nc">ProxyAttribute</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
 
     <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">"."</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">return</span> <span class="s">"."</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span>
 
     <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>And when I want the result of such invocation, if the intermediate result is stored in <code class="highlighter-rouge">obj</code>, then it would look like …</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">obj</span> <span class="o">=</span> <span class="n">proxy_attribute_instance</span><span class="o">.</span><span class="n">do</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">obj</span> <span class="o">=</span> <span class="n">proxy_attribute_instance</span><span class="p">.</span><span class="n">do</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>Now, for how it would look in practice …</p>
@@ -196,24 +196,24 @@
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">Proxy</span><span class="p">(</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">document</span><span class="p">),</span> <span class="n">handler_soup_error</span><span class="p">)</span>
 
-<span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'table'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span><span class="s">'search-params'</span><span class="p">})</span><span class="o">.</span><span class="n">findParent</span><span class="p">(</span><span class="s">'form'</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'td'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span> <span class="s">'elem'</span><span class="p">})</span>\
-    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'input'</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">do</span><span class="p">()</span>
+<span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'table'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span><span class="s">'search-params'</span><span class="p">}).</span><span class="n">findParent</span><span class="p">(</span><span class="s">'form'</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'td'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span> <span class="s">'elem'</span><span class="p">})</span>\
+    <span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'input'</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">do</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>So at the actual call site, the only difference is that <code class="highlighter-rouge">do()</code> call. If the error handler wouldn’t be specified, the result returned would be <code class="highlighter-rouge">None</code>. Simple as that.</p>
 
 <p>I also needed an utility, because I want to capture a partial evaluation to not rerun it for multiple special cases (like in the above case capturing all “td” elements) …</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">all_td_elems</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'table'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span><span class="s">'search-params'</span><span class="p">})</span>\
-    <span class="o">.</span><span class="n">findParent</span><span class="p">(</span><span class="s">'form'</span><span class="p">)</span>\
-    <span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'td'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span> <span class="s">'elem'</span><span class="p">})</span>\
-    <span class="o">.</span><span class="n">do_cache</span><span class="p">()</span> <span class="c1"># not an inspiring name unfortunately
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">all_td_elems</span> <span class="o">=</span> <span class="n">soup</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'table'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span><span class="s">'search-params'</span><span class="p">})</span>\
+    <span class="p">.</span><span class="n">findParent</span><span class="p">(</span><span class="s">'form'</span><span class="p">)</span>\
+    <span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'td'</span><span class="p">,</span> <span class="p">{</span><span class="s">'class'</span><span class="p">:</span> <span class="s">'elem'</span><span class="p">})</span>\
+    <span class="p">.</span><span class="n">do_cache</span><span class="p">()</span> <span class="c1"># not an inspiring name unfortunately
 </span>
     <span class="c1"># and then resume with the same behavior ...
-</span>    <span class="n">all_td_elements</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">'input'</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">)</span><span class="o">.</span><span class="n">do</span><span class="p">()</span>
+</span>    <span class="n">all_td_elements</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">'input'</span><span class="p">).</span><span class="n">get</span><span class="p">(</span><span class="s">'name'</span><span class="p">).</span><span class="n">do</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Yeah, it’s just a small hack, but it’s so damn useful sometimes. Full source code is posted here: <a href="/snippets/python-proxy.py.html">python-proxy.py</a></p>
