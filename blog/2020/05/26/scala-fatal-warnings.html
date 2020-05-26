@@ -44,8 +44,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202005261817">
-    <link rel="preload" as="style" href="/assets/css/style.css?202005261817">
+    <link rel="stylesheet" href="/assets/css/style.css?202005261835">
+    <link rel="preload" as="style" href="/assets/css/style.css?202005261835">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -315,7 +315,7 @@
 
 <p>That error will then look like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[error] .../Example.scala:10:5: [other-match-analysis @ size] match may not be exhaustive.
+<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[error] ... [other-match-analysis @ size] match may not be exhaustive.
 </code></pre></div></div>
 
 <p>The category is “<code class="highlighter-rouge">other-match-analysis</code>”, so we can silence it like this:</p>
@@ -326,6 +326,10 @@
     <span class="k">case</span> <span class="k">_</span> <span class="o">::</span> <span class="n">rest</span> <span class="k">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">size</span><span class="o">(</span><span class="n">rest</span><span class="o">)</span>
   <span class="o">}</span>
 </code></pre></div></div>
+
+<p class="info-bubble">
+  <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#41-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
+</p>
 
 <h2 id="5-other-linters">5. Other linters</h2>
 
