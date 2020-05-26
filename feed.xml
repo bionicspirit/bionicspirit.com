@@ -9,8 +9,8 @@
     <description>On programming and personal projects</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://feed.alexn.org/" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 May 2020 17:14:44 +0000</pubDate>
-    <lastBuildDate>Tue, 26 May 2020 17:14:44 +0000</lastBuildDate>
+    <pubDate>Tue, 26 May 2020 17:26:26 +0000</pubDate>
+    <lastBuildDate>Tue, 26 May 2020 17:26:26 +0000</lastBuildDate>
   	<language>ro</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -24,11 +24,11 @@
           
           
           <a href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
-            <img src="https://alexn.org/assets/media/articles/scala.png" align="middle" style="display: block; max-width:100%; margin: 0 auto;" />
+            <img src="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" align="middle" style="display: block; max-width:100%; margin: 0 auto;" />
           </a>
           <br />
           
-          <p>Strengthen your code via <code class="highlighter-rouge">-Xfatal-warnings</code>, linting and piss off your colleagues.</p>
+          <p>Strengthen your code via <code class="highlighter-rouge">-Xfatal-warnings</code>, linting and piss off your colleagues with useful compiler errors.</p>
 
           <p>
             <a href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">Read article →</a>
@@ -37,38 +37,6 @@
         <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html</link>
         <guid isPermaLink="true">https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html</guid>
-        
-        
-        <dc:creator>Alexandru Nedelcu</dc:creator>
-        
-        
-        <category>Scala</category>
-        
-        <category>Code</category>
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Fatal Warnings and Linting in Scala</title>
-        <description><![CDATA[
-          
-          
-          <a href="https://alexn.org/blog/2020/05/26/fatal-warnings.html">
-            <img src="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" align="middle" style="display: block; max-width:100%; margin: 0 auto;" />
-          </a>
-          <br />
-          
-          <p>Strengthen your code via <code class="highlighter-rouge">-Xfatal-warnings</code>, linting and piss off your colleagues with useful compiler errors.</p>
-
-          <p>
-            <a href="https://alexn.org/blog/2020/05/26/fatal-warnings.html">Read article →</a>
-          </p>
-        ]]></description>
-        <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
-        <link>https://alexn.org/blog/2020/05/26/fatal-warnings.html</link>
-        <guid isPermaLink="true">https://alexn.org/blog/2020/05/26/fatal-warnings.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>

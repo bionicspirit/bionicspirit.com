@@ -15,23 +15,23 @@
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
     <meta content="Fatal Warnings and Linting in Scala" property="og:title">
-    <meta content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues." property="og:description">
+    <meta content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues with useful compiler errors." property="og:description">
     <meta content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html" property="og:url">
     <meta content="2020-05-26T00:00:00+00:00" property="article:published_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala.png" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala.png">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Fatal Warnings and Linting in Scala">
     <meta name="twitter:url" content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
-    <meta name="twitter:description" content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues.">
+    <meta name="twitter:description" content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues with useful compiler errors.">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
     <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
@@ -44,8 +44,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202005261722">
-    <link rel="preload" as="style" href="/assets/css/style.css?202005261722">
+    <link rel="stylesheet" href="/assets/css/style.css?202005261733">
+    <link rel="preload" as="style" href="/assets/css/style.css?202005261733">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -91,8 +91,8 @@
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala.png" />
-      <img src="/assets/media/articles/scala.png" alt="" />
+      <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
+      <img src="/assets/media/articles/scala-xfatal-warnings.png" alt="" />
       
     </figure>
     
@@ -116,7 +116,7 @@
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">
-  The best best practices are those enforced by the build tools, as part of the build process. Don’t annoy your colleagues in code reviews, let the build tools do that for your.
+  The best best practices are those enforced by the build tools, as part of the build process. Don’t annoy your colleagues in code reviews, let the build tools do that for you.
 </p>
 
 <p>The Scala compiler has multiple linting options available and emits certain warnings out of the box that would be more useful as errors. Let’s see how we can rely on the Scala compiler to strengthen our code and piss off your colleagues with clean code requirements.</p>
@@ -158,7 +158,7 @@
 <span class="c1">// scala.MatchError: List() (of class scala.collection.immutable.Nil$)</span>
 </code></pre></div></div>
 
-<p>It shouldn’t be just a warning. Even if you’re diligent, this warning can get lost in a sea of other warnings, like it often does.</p>
+<p>It shouldn’t be just a warning. Even if you’re diligent, this warning can get lost in a sea of other warnings, like it often does. And here we were lucky, because the runtime exception was triggered on the happy path, but our luck would eventually run out and end up with such exceptions in production.</p>
 
 <h2 id="1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</h2>
 
@@ -379,26 +379,6 @@
       
       
       <div class="item">
-        <a class="related-link" href="/blog/2020/05/26/fatal-warnings.html">
-          Fatal Warnings and Linting in Scala
-        </a>
-        <div class="related-meta">
-          <div class="tags">
-            
-            
-              <a href="/tag/scala" class="tag">scala</a>
-            
-               | <a href="/tag/code" class="tag">code</a>
-                        
-          </div>
-          <time>May 26, 2020</time>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      
-      
-      
-      <div class="item">
         <a class="related-link" href="/blog/2012/11/02/scala-functional-programming-type-classes.html">
           On Scala, Functional Programming and Type-Classes
         </a>
@@ -468,6 +448,32 @@
                         
           </div>
           <time>February 12, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/05/06/bifunctor-io.html">
+          On Bifunctor IO and Java's Checked Exceptions
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/typelevel" class="tag">typelevel</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+                        
+          </div>
+          <time>May 6, 2018</time>
         </div>
         <div class="clearfix"></div>
       </div>
