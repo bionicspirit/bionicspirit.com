@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Fatal Warnings and Linting in Scala &#8211; Alexandru Nedelcu's Blog</title>
+    
+
+    <!-- Open Graph Meta -->
+    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Fatal Warnings and Linting in Scala" property="og:title">
+    <meta content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues." property="og:description">
+    <meta content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html" property="og:url">
+    <meta content="2020-05-26T00:00:00+00:00" property="article:published_time">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala.png" />
+    <meta content="https://www.facebook.com/alexelcu" property="article:author">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala.png">
+    <meta name="twitter:site" content="@alexelcu">
+    <meta name="twitter:creator" content="@alexelcu">
+    <meta name="twitter:title" content="Fatal Warnings and Linting in Scala">
+    <meta name="twitter:url" content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
+    <meta name="twitter:description" content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo/192px.png" sizes="192x192" />
+    <link rel="icon" href="/assets/logo/270px.png" sizes="270x270" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/logo/180px.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
+
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css?202005261722">
+    <link rel="preload" as="style" href="/assets/css/style.css?202005261722">
+    
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
+</head>
+
+
+<body>
+
+   <div class="header">
+  <div class="container">
+    <h1 class="logo"><a href="/">Alex<span class="wide">andru</span> Nedelcu =&lt;&lt; Blog</a></h1>
+    <nav class="nav-collapse">
+      <ul class="noList">
+        
+        <li class="element first  ">
+          <a href="/">Home</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/about.html">About</a>
+        </li>
+        
+        <li class="element   last">
+          <a href="/subscribe.html">Subscribe</a>
+        </li>
+        
+      </ul>
+    </nav>
+  </div>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <h1 class="postTitle" itemprop="headline">Fatal Warnings and Linting in Scala</h1>
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html"/>
+    <meta itemprop="datePublished" content="2020-05-26T00:00:00+0000"/>
+    
+    <time itemprop="dateCreated" datetime="2020-05-26T00:00:00+0000">May 26, 2020</time>
+    | <nobr><span class="time">7</span> minute</nobr>
+  </p>
+
+  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala.png" />
+      <img src="/assets/media/articles/scala.png" alt="" />
+      
+    </figure>
+    
+  
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    </div>
+  </div>
+  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu" />
+      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+      <meta itemprop="url" content="https://twitter.com/alexelcu" />
+      <meta itemprop="url" content="https://www.facebook.com/alexelcu" />
+      <meta itemprop="url" content="https://github.com/alexandru" />
+    </div>
+  
+
+  <div id="content" itemprop="articleBody">
+    <p class="intro withcap">
+  The best best practices are those enforced by the build tools, as part of the build process. Don’t annoy your colleagues in code reviews, let the build tools do that for your.
+</p>
+
+<p>The Scala compiler has multiple linting options available and emits certain warnings out of the box that would be more useful as errors. Let’s see how we can rely on the Scala compiler to strengthen our code and piss off your colleagues with clean code requirements.</p>
+
+<ul>
+  <li><a href="#best-practice-stop-ignoring-warnings">Best Practice: Stop Ignoring Warnings!</a></li>
+  <li><a href="#1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</a></li>
+  <li><a href="#2-activate-all-linting-options">2. Activate All Linting Options</a>
+    <ul>
+      <li><a href="#21-use-the-sbt-tpolecat-plugin">2.1. Use the sbt-tpolecat plugin</a></li>
+    </ul>
+  </li>
+  <li><a href="#3-exclude-annoying-linting-warnings-project-wide">3. Exclude annoying linting warnings, project wide</a></li>
+  <li><a href="#4-silence-warnings">4. Silence warnings</a>
+    <ul>
+      <li><a href="#41-silencer-plugin-scala--213">4.1. Silencer plugin (Scala &lt; 2.13)</a></li>
+      <li><a href="#42-using-nowarn-in-scala-2132">4.2. Using @nowarn in Scala 2.13.2</a></li>
+    </ul>
+  </li>
+  <li><a href="#5-other-linters">5. Other linters</a></li>
+  <li><a href="#final-words">Final words</a></li>
+</ul>
+
+<h2 id="best-practice-stop-ignoring-warnings">Best Practice: Stop Ignoring Warnings!</h2>
+
+<p>Some of it might be noise, however in that noise some real gems might be missed, warnings that signal bugs. For example the compiler can do exhaustiveness checks when pattern matching:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">size</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+  <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="o">::</span> <span class="n">rest</span> <span class="k">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">size</span><span class="o">(</span><span class="n">rest</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="c1">// On line 2: warning: match may not be exhaustive.</span>
+<span class="c1">//        It would fail on the following input: Nil  </span>
+</code></pre></div></div>
+
+<p>Here’s what happens next:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nf">size</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="mi">2</span><span class="o">,</span><span class="mi">3</span><span class="o">))</span>
+<span class="c1">// scala.MatchError: List() (of class scala.collection.immutable.Nil$)</span>
+</code></pre></div></div>
+
+<p>It shouldn’t be just a warning. Even if you’re diligent, this warning can get lost in a sea of other warnings, like it often does.</p>
+
+<h2 id="1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</h2>
+
+<p>To turn all compiler warnings into errors, you can activate <code class="highlighter-rouge">-Xfatal-warnings</code>. In <a href="https://www.scala-sbt.org/1.x/docs/Basic-Def.html">build.sbt</a>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
+  <span class="s">"-Xfatal-warnings"</span><span class="o">,</span>
+  <span class="c1">//...</span>
+<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Now if we try out the code above, we get an error like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[error] .../Example.scala:10:5: match may not be exhaustive.
+[error] It would fail on the following input: Nil
+[error]     list match {
+[error]     ^
+[error] one error found
+</code></pre></div></div>
+
+<p>Thus we can no longer ignore it.</p>
+
+<h2 id="2-activate-all-linting-options">2. Activate All Linting Options</h2>
+
+<p>There are many useful compiler options that you could activate. You can find a (possibly non-complete) list on <a href="https://docs.scala-lang.org/overviews/compiler-options/index.html">docs.scala-lang.org</a>.</p>
+
+<p class="info-bubble">
+  <strong>WARNING:</strong> the compiler evolves and it's good to keep this list up to date (see next tip)!
+</p>
+
+<p>For Scala 2.13 at the time of writing, here’s my list of <code class="highlighter-rouge">scalac</code> options:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
+  <span class="c1">// Feature options</span>
+  <span class="s">"-encoding"</span><span class="o">,</span> <span class="s">"utf-8"</span><span class="o">,</span>
+  <span class="s">"-explaintypes"</span><span class="o">,</span>
+  <span class="s">"-feature"</span><span class="o">,</span>
+  <span class="s">"-language:existentials"</span><span class="o">,</span>
+  <span class="s">"-language:experimental.macros"</span><span class="o">,</span>
+  <span class="s">"-language:higherKinds"</span><span class="o">,</span>
+  <span class="s">"-language:implicitConversions"</span><span class="o">,</span>
+  <span class="s">"-Ymacro-annotations"</span><span class="o">,</span>
+
+  <span class="c1">// Warnings as errors!</span>
+  <span class="s">"-Xfatal-warnings"</span><span class="o">,</span>
+
+  <span class="c1">// Linting options</span>
+  <span class="s">"-unchecked"</span><span class="o">,</span>
+  <span class="s">"-Xcheckinit"</span><span class="o">,</span>
+  <span class="s">"-Xlint:adapted-args"</span><span class="o">,</span>
+  <span class="s">"-Xlint:constant"</span><span class="o">,</span>
+  <span class="s">"-Xlint:delayedinit-select"</span><span class="o">,</span>
+  <span class="s">"-Xlint:deprecation"</span><span class="o">,</span>
+  <span class="s">"-Xlint:doc-detached"</span><span class="o">,</span>
+  <span class="s">"-Xlint:inaccessible"</span><span class="o">,</span>
+  <span class="s">"-Xlint:infer-any"</span><span class="o">,</span>
+  <span class="s">"-Xlint:missing-interpolator"</span><span class="o">,</span>
+  <span class="s">"-Xlint:nullary-override"</span><span class="o">,</span>
+  <span class="s">"-Xlint:nullary-unit"</span><span class="o">,</span>
+  <span class="s">"-Xlint:option-implicit"</span><span class="o">,</span>
+  <span class="s">"-Xlint:package-object-classes"</span><span class="o">,</span>
+  <span class="s">"-Xlint:poly-implicit-overload"</span><span class="o">,</span>
+  <span class="s">"-Xlint:private-shadow"</span><span class="o">,</span>
+  <span class="s">"-Xlint:stars-align"</span><span class="o">,</span>
+  <span class="s">"-Xlint:type-parameter-shadow"</span><span class="o">,</span>
+  <span class="s">"-Wdead-code"</span><span class="o">,</span>
+  <span class="s">"-Wextra-implicit"</span><span class="o">,</span>
+  <span class="s">"-Wnumeric-widen"</span><span class="o">,</span>
+  <span class="s">"-Wunused:implicits"</span><span class="o">,</span>
+  <span class="s">"-Wunused:imports"</span><span class="o">,</span>
+  <span class="s">"-Wunused:locals"</span><span class="o">,</span>
+  <span class="s">"-Wunused:params"</span><span class="o">,</span>
+  <span class="s">"-Wunused:patvars"</span><span class="o">,</span>
+  <span class="s">"-Wunused:privates"</span><span class="o">,</span>
+  <span class="s">"-Wvalue-discard"</span><span class="o">,</span>
+<span class="o">)</span>
+</code></pre></div></div>
+
+<p>There are many useful options in there, from disallowing “adapted args”, detecting inaccessible code, inferred <code class="highlighter-rouge">Any</code>, shadowing of values, to unused imports and params and others.</p>
+
+<h3 id="21-use-the-sbt-tpolecat-plugin">2.1. Use the sbt-tpolecat plugin</h3>
+
+<p>Keeping that list of compiler options up to date is exhausting, new useful options get added all the time, others are deprecated and especially for libraries you have to deal with multiple Scala versions in the same project.</p>
+
+<p>A better option is to include <a href="https://github.com/DavidGregory084/sbt-tpolecat">sbt-tpolecat</a> in your project.</p>
+
+<h2 id="3-exclude-annoying-linting-warnings-project-wide">3. Exclude annoying linting warnings, project wide</h2>
+
+<p>Some linting options can trigger false positives that are too annoying. It’s fine to remove them from your project, or from certain configurations (e.g. <code class="highlighter-rouge">Test</code>, <code class="highlighter-rouge">Console</code>).</p>
+
+<p>For example I do not like the <code class="highlighter-rouge">-Wunused:privates</code> option, because it triggers an annoying false positive when defining (unused) default values in <code class="highlighter-rouge">case class</code> definitions.</p>
+
+<p>If using <code class="highlighter-rouge">sbt-tpolecat</code>, as mentioned above, you can include something like this in your build definition:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">~=</span> <span class="o">{</span> <span class="n">options</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=&gt;</span>
+  <span class="nv">options</span><span class="o">.</span><span class="py">filterNot</span><span class="o">(</span>
+    <span class="nc">Set</span><span class="o">(</span>
+      <span class="s">"-Wunused:privates"</span>
+    <span class="o">)</span>
+  <span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="4-silence-warnings">4. Silence warnings</h2>
+
+<p>Sometimes you want to ignore a certain warning:</p>
+
+<ul>
+  <li>maybe it’s a false positive</li>
+  <li>maybe you want something “unused”, as a placeholder, etc</li>
+</ul>
+
+<h3 id="41-silencer-plugin-scala--213">4.1. Silencer plugin (Scala &lt; 2.13)</h3>
+
+<p>You can use the <a href="https://github.com/ghik/silencer">ghik/silencer</a> compiler plugin.</p>
+
+<p>For our sample above, if we want to silence that exhaustiveness check:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">com.github.ghik.silencer.silent</span>
+
+<span class="nd">@silence</span><span class="o">(</span><span class="s">"not.*?exhaustive"</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">size</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+  <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="o">::</span> <span class="n">rest</span> <span class="k">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">size</span><span class="o">(</span><span class="n">rest</span><span class="o">)</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>The annotation can be given a regular expression that should match the warning being silenced.</p>
+
+<p>We can also silence the source files on a path using a compiler option in <code class="highlighter-rouge">build.sbt</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">+=</span> <span class="s">"-P:silencer:pathFilters=.*[/]src_managed[/].*"</span>
+</code></pre></div></div>
+
+<h3 id="42-using-nowarn-in-scala-2132">4.2. Using @nowarn in Scala 2.13.2</h3>
+
+<p>Scala 2.13 has added the <a href="https://github.com/scala/scala/pull/8373">@nowarn annotation for local suppression</a>.</p>
+
+<p><code class="highlighter-rouge">@nowarn</code> can be more fine grained. We could do just like the above and silence with a pattern matcher:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">scala.annotation.nowarn</span>
+
+<span class="nd">@nowarn</span><span class="o">(</span><span class="s">"msg=not.*?exhaustive"</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">size</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+  <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="o">::</span> <span class="n">rest</span> <span class="k">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">size</span><span class="o">(</span><span class="n">rest</span><span class="o">)</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>But we can do better, because the actual error messages are brittle. We can silence based on the “category” of the warning. To find the category of a warning, we can (temporarily) enable extra verbosity in these messages via this compiler option in <code class="highlighter-rouge">build.sbt</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">+=</span> <span class="s">"-Wconf:any:warning-verbose"</span>
+</code></pre></div></div>
+
+<p>That error will then look like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[error] .../Example.scala:10:5: [other-match-analysis @ size] match may not be exhaustive.
+</code></pre></div></div>
+
+<p>The category is “<code class="highlighter-rouge">other-match-analysis</code>”, so we can silence it like this:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nd">@nowarn</span><span class="o">(</span><span class="s">"cat=other-match-analysis"</span><span class="o">)</span>
+<span class="k">def</span> <span class="nf">size</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+  <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="o">::</span> <span class="n">rest</span> <span class="k">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">size</span><span class="o">(</span><span class="n">rest</span><span class="o">)</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="5-other-linters">5. Other linters</h2>
+
+<p>You shouldn’t stop at Scala’s linting options. There are other sbt plugins available that can enforce certain best practices. Off the top of my head:</p>
+
+<ul>
+  <li><a href="https://github.com/scalacenter/scalafix">Scalafix</a> (this one can even rewrite the code for you 😉)</li>
+  <li><a href="https://github.com/wartremover/wartremover">Wartremover</a></li>
+</ul>
+
+<p>With these you could ban <code class="highlighter-rouge">null</code> or <code class="highlighter-rouge">Any</code> from your project, among other very useful options.</p>
+
+<p>Any useful plugins that I’m missing?</p>
+
+<h2 id="final-words">Final words</h2>
+
+<p>Scala is a static language, but sometimes it isn’t static or opinionated enough. The more you can prove about your code at compile time, the less defects you can have at runtime.</p>
+
+<p>Now go forth and annoy your colleagues with actually useful compiler errors!</p>
+
+  </div>
+
+  <div id="article-details">
+    
+    <time itemprop="dateModified" content="2020-05-26T00:00:00+0000">
+        Published: May 26, 2020
+    </time>
+    
+      | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
+    
+
+    <div id="all-categories">
+      Tags:
+      
+        
+        <a href="/tag/scala/" class="category">scala</a>
+      
+         | 
+        <a href="/tag/code/" class="category">code</a>
+      
+    </div>
+  </div>
+
+  
+  <div class="related">
+    <h2>Related Articles</h2>
+    <div class="container">
+      
+      
+
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2020/05/26/fatal-warnings.html">
+          Fatal Warnings and Linting in Scala
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/code" class="tag">code</a>
+                        
+          </div>
+          <time>May 26, 2020</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2012/11/02/scala-functional-programming-type-classes.html">
+          On Scala, Functional Programming and Type-Classes
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/languages" class="tag">languages</a>
+            
+               | <a href="/tag/functional" class="tag">functional</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/clojure" class="tag">clojure</a>
+            
+               | <a href="/tag/java" class="tag">java</a>
+                        
+          </div>
+          <time>November 2, 2012</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2017/01/30/asynchronous-programming-scala.html">
+          Asynchronous Programming and Scala
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/asynchrony" class="tag">asynchrony</a>
+            
+               | <a href="/tag/concurrency" class="tag">concurrency</a>
+                        
+          </div>
+          <time>January 30, 2017</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/02/12/in-defense-oofp.html">
+          In Defense of OOFP
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/oop" class="tag">oop</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>February 12, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+
+  
+</article>
+
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      <h2>Feedback?</h2>
+
+<p>
+  If you wish to discus this article, an email would be most welcome:
+  <!--sse-->
+  <script>
+    (function () {
+      var lhs = "y20+comments";
+      var rhs = "alexn.org";
+      var subject = "Comment on `Fatal Warnings and Linting in Scala`";
+      document.write("<a href=\"mailto");
+      document.write(":" + lhs + "@");
+      document.write(rhs);
+      if (subject) { document.write("?subject=" + subject); }
+      document.write("\">" + lhs + "@" + rhs + "<\/a>");
+    })()
+  </script>
+  <noscript>
+    <em>Email address is protected by JavaScript, activate it to see it!</em>
+  </noscript>
+  <!--/sse-->
+</p>
+
+<p>
+  If you noticed a typo, help me by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2020-05-26-scala-fatal-warnings.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+    </div>  
+  </div>
+  
+
+  <div class="bottom">
+    <div class="container">
+      <span class="copy">
+          &copy; 2020
+      </span>
+      <span class="links">
+        <a href="/docs/license.html">License</a> |
+        <a href="/docs/privacy-policy.html">Privacy Policy</a> |
+        <a href="/about.html#contact">Contact</a>
+      </span>
+    </div>
+  </div>
+</div><!-- end .footer -->
+
+   <script async src="/assets/js/modernizr.custom.15390.js" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js" type="text/javascript"></script>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script type="text/javascript">
+function _gaLoad() {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84530423-1', {
+    'cookieName': '_gaAlexNOrg',
+    'cookieExpires': 60 * 60 * 24 * 30 * 3  // 3 months, in seconds
+  });
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+
+  // Click handler
+  $(function () {
+    $('a[href]').each(function (idx, elem) {
+      var it = $(elem);
+      var href = it.attr('href');
+
+      if (href.match(/^https?[:]\/\//) && !href.match(/alexn\.org/)) {
+        it.click(_gaEvent('general', 'click', 'external-link', href));
+      } else if (href.match(/^#/)) {
+        it.click(_gaEvent('general', 'click', 'page-anchor', href));
+      } else {
+        it.click(_gaEvent('general', 'click', 'internal-link', href));
+      }
+    })
+  })
+}
+
+function _gaEvent(category, action, label, value) {
+  return function () {
+    if (_doNotTrack || typeof ga !== 'function') {
+      return;
+    }
+    ga(function () {
+      ga('send', 'event', category, action, label, value);
+    });
+   }
+}
+
+// Checks DO-NOT-TRACK status
+window._doNotTrack = false;
+if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
+  window._doNotTrack = window.doNotTrack == "1" || navigator.doNotTrack == "yes" ||
+    navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" ||
+    ('msTrackingProtectionEnabled' in window.external && window.external.msTrackingProtectionEnabled());
+}
+if (!_doNotTrack) {
+  console.log("Analytics are loading.")
+  _gaLoad();
+} else if (typeof(console) !== "undefined") {
+  console.log("Analytics are off due to Do Not Track setting!");
+}
+</script>
+
+
+
+   
+   <!-- <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"6c8297e886b517d8535e8410e","lid":"a3391a44b0","uniqueMethods":true}) })</script> -->
+   
+</body>
+
+</html>
