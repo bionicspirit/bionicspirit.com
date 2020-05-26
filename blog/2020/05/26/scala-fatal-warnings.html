@@ -44,8 +44,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202005261733">
-    <link rel="preload" as="style" href="/assets/css/style.css?202005261733">
+    <link rel="stylesheet" href="/assets/css/style.css?202005261817">
+    <link rel="preload" as="style" href="/assets/css/style.css?202005261817">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -279,7 +279,7 @@
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">com.github.ghik.silencer.silent</span>
 
-<span class="nd">@silence</span><span class="o">(</span><span class="s">"not.*?exhaustive"</span><span class="o">)</span>
+<span class="nd">@silent</span><span class="o">(</span><span class="s">"not.*?exhaustive"</span><span class="o">)</span>
 <span class="k">def</span> <span class="nf">size</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
   <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
     <span class="k">case</span> <span class="k">_</span> <span class="o">::</span> <span class="n">rest</span> <span class="k">=&gt;</span> <span class="mi">1</span> <span class="o">+</span> <span class="nf">size</span><span class="o">(</span><span class="n">rest</span><span class="o">)</span>
@@ -334,6 +334,8 @@
 <ul>
   <li><a href="https://github.com/scalacenter/scalafix">Scalafix</a> (this one can even rewrite the code for you 😉)</li>
   <li><a href="https://github.com/wartremover/wartremover">Wartremover</a></li>
+  <li><a href="https://github.com/sksamuel/scapegoat">Scapegoat</a></li>
+  <li><a href="https://github.com/scalastyle/scalastyle">Scalastyle</a></li>
 </ul>
 
 <p>With these you could ban <code class="highlighter-rouge">null</code> or <code class="highlighter-rouge">Any</code> from your project, among other very useful options.</p>
