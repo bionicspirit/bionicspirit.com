@@ -44,8 +44,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202005261852">
-    <link rel="preload" as="style" href="/assets/css/style.css?202005261852">
+    <link rel="stylesheet" href="/assets/css/style.css?202005262047">
+    <link rel="preload" as="style" href="/assets/css/style.css?202005262047">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -87,7 +87,7 @@
     <meta itemprop="datePublished" content="2020-05-26T00:00:00+0000"/>
     
     <time itemprop="dateCreated" datetime="2020-05-26T00:00:00+0000">May 26, 2020</time>
-    | <nobr><span class="time">7</span> minute</nobr>
+    | <nobr><span class="time">8</span> minute</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -123,20 +123,24 @@
 
 <ul>
   <li><a href="#best-practice-stop-ignoring-warnings">Best Practice: Stop Ignoring Warnings!</a></li>
-  <li><a href="#1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</a></li>
+  <li><a href="#1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</a>
+    <ul>
+      <li><a href="#11-make-only-some-warnings-fatal-scala-213">1.1. Make only some warnings fatal (Scala 2.13)</a></li>
+    </ul>
+  </li>
   <li><a href="#2-activate-all-linting-options">2. Activate All Linting Options</a>
     <ul>
       <li><a href="#21-use-the-sbt-tpolecat-plugin">2.1. Use the sbt-tpolecat plugin</a></li>
+      <li><a href="#22-exclude-annoying-linting-options-project-wide">2.2. Exclude annoying linting options, project wide</a></li>
     </ul>
   </li>
-  <li><a href="#3-exclude-annoying-linting-warnings-project-wide">3. Exclude annoying linting warnings, project wide</a></li>
-  <li><a href="#4-silence-warnings">4. Silence warnings</a>
+  <li><a href="#3-silence-warnings-locally">3. Silence warnings locally</a>
     <ul>
-      <li><a href="#41-silencer-plugin-scala--213">4.1. Silencer plugin (Scala &lt; 2.13)</a></li>
-      <li><a href="#42-using-nowarn-in-scala-2132">4.2. Using @nowarn in Scala 2.13.2</a></li>
+      <li><a href="#31-silencer-plugin-scala--213">3.1. Silencer plugin (Scala &lt; 2.13)</a></li>
+      <li><a href="#32-using-nowarn-in-scala-2132">3.2. Using @nowarn in Scala 2.13.2</a></li>
     </ul>
   </li>
-  <li><a href="#5-other-linters">5. Other linters</a></li>
+  <li><a href="#4-other-linters">4. Other linters</a></li>
   <li><a href="#final-words">Final words</a></li>
 </ul>
 
@@ -180,6 +184,30 @@
 </code></pre></div></div>
 
 <p>Thus we can no longer ignore it.</p>
+
+<h3 id="11-make-only-some-warnings-fatal-scala-213">1.1. Make only some warnings fatal (Scala 2.13)</h3>
+
+<p>There’s a new <code class="highlighter-rouge">-Wconf</code> option in Scala 2.13.2 (<a href="https://github.com/scala/scala/pull/8373">see PR</a>). With it we can still keep some warnings as warnings.</p>
+
+<p>Use-case: say you’re upgrading an Akka project. It’s going to have a ton of <code class="highlighter-rouge">@deprecated</code> warnings that you may not want to fix right now, but you still want to keep the exhaustiveness checks as errors.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
+  <span class="c1">// "-Xfatal-warnings",</span>
+  <span class="s">"-Wconf:cat=deprecation:ws,any:e"</span><span class="o">,</span>
+<span class="o">)</span>
+</code></pre></div></div>
+
+<p>What this does is to turn all warnings into errors, <em>except for deprecation</em> messages, which are still left as warnings. To break it down:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">cat=deprecation</code> refers to deprecation messages (classes/methods marked with <code class="highlighter-rouge">@deprecated</code> being called) and <code class="highlighter-rouge">:ws</code> says that for these warnings a “warning summary” should be shown</li>
+  <li><code class="highlighter-rouge">any:e</code> says that for any other kind of warning, signal it via an error</li>
+</ul>
+
+<p>Run this in a terminal for more help:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>scalac <span class="nt">-Wconf</span>:help
+</code></pre></div></div>
 
 <h2 id="2-activate-all-linting-options">2. Activate All Linting Options</h2>
 
@@ -245,7 +273,7 @@
 
 <p>A better option is to include <a href="https://github.com/DavidGregory084/sbt-tpolecat">sbt-tpolecat</a> in your project.</p>
 
-<h2 id="3-exclude-annoying-linting-warnings-project-wide">3. Exclude annoying linting warnings, project wide</h2>
+<h3 id="22-exclude-annoying-linting-options-project-wide">2.2. Exclude annoying linting options, project wide</h3>
 
 <p>Some linting options can trigger false positives that are too annoying. It’s fine to remove them from your project, or from certain configurations (e.g. <code class="highlighter-rouge">Test</code>, <code class="highlighter-rouge">Console</code>).</p>
 
@@ -262,7 +290,7 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
-<h2 id="4-silence-warnings">4. Silence warnings</h2>
+<h2 id="3-silence-warnings-locally">3. Silence warnings locally</h2>
 
 <p>Sometimes you want to ignore a certain warning:</p>
 
@@ -271,7 +299,7 @@
   <li>maybe you want something “unused”, as a placeholder, etc</li>
 </ul>
 
-<h3 id="41-silencer-plugin-scala--213">4.1. Silencer plugin (Scala &lt; 2.13)</h3>
+<h3 id="31-silencer-plugin-scala--213">3.1. Silencer plugin (Scala &lt; 2.13)</h3>
 
 <p>You can use the <a href="https://github.com/ghik/silencer">ghik/silencer</a> compiler plugin.</p>
 
@@ -293,7 +321,7 @@
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">+=</span> <span class="s">"-P:silencer:pathFilters=.*[/]src_managed[/].*"</span>
 </code></pre></div></div>
 
-<h3 id="42-using-nowarn-in-scala-2132">4.2. Using @nowarn in Scala 2.13.2</h3>
+<h3 id="32-using-nowarn-in-scala-2132">3.2. Using @nowarn in Scala 2.13.2</h3>
 
 <p>Scala 2.13 has added the <a href="https://github.com/scala/scala/pull/8373">@nowarn annotation for local suppression</a>.</p>
 
@@ -328,10 +356,10 @@
 </code></pre></div></div>
 
 <p class="info-bubble">
-  <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#41-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
+  <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#31-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
 </p>
 
-<h2 id="5-other-linters">5. Other linters</h2>
+<h2 id="4-other-linters">4. Other linters</h2>
 
 <p>You shouldn’t stop at Scala’s linting options. There are other sbt plugins available that can enforce certain best practices. Off the top of my head:</p>
 
