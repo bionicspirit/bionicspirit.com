@@ -44,8 +44,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202005262047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202005262047">
+    <link rel="stylesheet" href="/assets/css/style.css?202005270658">
+    <link rel="preload" as="style" href="/assets/css/style.css?202005270658">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -87,7 +87,7 @@
     <meta itemprop="datePublished" content="2020-05-26T00:00:00+0000"/>
     
     <time itemprop="dateCreated" datetime="2020-05-26T00:00:00+0000">May 26, 2020</time>
-    | <nobr><span class="time">8</span> minute</nobr>
+    | <nobr><span class="time">9</span> minute</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -126,6 +126,7 @@
   <li><a href="#1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</a>
     <ul>
       <li><a href="#11-make-only-some-warnings-fatal-scala-213">1.1. Make only some warnings fatal (Scala 2.13)</a></li>
+      <li><a href="#12-deactivate-warnings-in-console">1.2. Deactivate warnings in console</a></li>
     </ul>
   </li>
   <li><a href="#2-activate-all-linting-options">2. Activate All Linting Options</a>
@@ -208,6 +209,31 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>scalac <span class="nt">-Wconf</span>:help
 </code></pre></div></div>
+
+<h3 id="12-deactivate-warnings-in-console">1.2. Deactivate warnings in console</h3>
+
+<p>When playing around in the console, it’s a good idea to deactivate <code class="highlighter-rouge">Xfatal-warnings</code>, along with some of the more annoying warnings.</p>
+
+<p>You could <a href="#21-use-the-sbt-tpolecat-plugin">use sbt-tpolecat</a>, or could add this to <code class="highlighter-rouge">build.sbt</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">val</span> <span class="nv">filterConsoleScalacOptions</span> <span class="k">=</span> <span class="o">{</span> <span class="n">options</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=&gt;</span>
+  <span class="nv">options</span><span class="o">.</span><span class="py">filterNot</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span>
+    <span class="s">"-Werror"</span><span class="o">,</span>
+    <span class="s">"-Wdead-code"</span><span class="o">,</span>
+    <span class="s">"-Wunused:imports"</span><span class="o">,</span>
+    <span class="s">"-Ywarn-unused:imports"</span><span class="o">,</span>
+    <span class="s">"-Ywarn-unused-import"</span><span class="o">,</span>
+    <span class="s">"-Ywarn-dead-code"</span><span class="o">,</span>
+    <span class="s">"-Xfatal-warnings"</span>
+  <span class="o">))</span>
+<span class="o">}</span>
+
+<span class="c1">// ...</span>
+<span class="nv">scalacOptions</span><span class="o">.</span><span class="py">in</span><span class="o">(</span><span class="nc">Compile</span><span class="o">,</span> <span class="n">console</span><span class="o">)</span> <span class="o">~=</span> <span class="n">filterConsoleScalacOptions</span><span class="o">,</span>
+<span class="nv">scalacOptions</span><span class="o">.</span><span class="py">in</span><span class="o">(</span><span class="nc">Test</span><span class="o">,</span> <span class="n">console</span><span class="o">)</span> <span class="o">~=</span> <span class="n">filterConsoleScalacOptions</span>
+</code></pre></div></div>
+
+<p>Credit for this snippet: <a href="https://github.com/DavidGregory084/sbt-tpolecat/blob/v0.1.11/src/main/scala/io/github/davidgregory084/TpolecatPlugin.scala#L109">DavidGregory084/sbt-tpolecat</a>.</p>
 
 <h2 id="2-activate-all-linting-options">2. Activate All Linting Options</h2>
 
