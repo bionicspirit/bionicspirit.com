@@ -46,8 +46,10 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://feed.alexn.org/" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006011217">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006011217">
+    <link rel="stylesheet" href="/assets/css/style.css?202006011923">
+    <link rel="preload" as="style" href="/assets/css/style.css?202006011923">
+    <!-- Cookie consent bar -->
+    <link rel="stylesheet" type="text/css" href="/assets/js-managed/cookieconsent/build/cookieconsent.min.css" />
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/subscribe.html">
@@ -85,10 +87,46 @@
          <div id="abonament" class="post">
   <h1 class="pageTitle">Subscribe</h1>
 
+  <h2>Email</h2>
+
+  <p>
+    Subscribe to the email newsletter and receive notifications whenever new articles get published. No spam, just content.
+  </p>
+
+  <!-- Begin Mailchimp Signup Form -->
+  <div id="mc_embed_signup">
+    <form action="https://alexn.us4.list-manage.com/subscribe/post?u=5bffa2af025192a58345bd5dc&amp;id=1c9005b255"
+      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank"
+      novalidate>
+      <div id="mc_embed_signup_scroll">
+        <div class="mc-field-group field">
+          <label for="mce-EMAIL">Email Address <sup class="asterisk">*</sup></label>
+          <input type="email" value="" name="EMAIL" class="required email full-width" id="mce-EMAIL" placeholder="user@domain.com" required>
+        </div>
+        <div class="mc-field-group field">
+          <label for="mce-FULLNAME">Name</label>
+          <input type="text" value="" name="FULLNAME" class="full-width" id="mce-FULLNAME" placeholder="John Doe">
+        </div>
+        <div id="mce-responses" class="clear">
+          <div class="response" id="mce-error-response" style="display:none"></div>
+          <div class="response" id="mce-success-response" style="display:none"></div>
+        </div>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+            name="b_5bffa2af025192a58345bd5dc_1c9005b255" tabindex="-1" value=""></div>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"
+            class="button"></div>
+      </div>
+    </form>
+  </div>
+  <!--End mc_embed_signup-->
+
+  <p>Powered by <a href="https://mailchimp.com/" rel="nofollow" target="_blank">Mailchimp</a>. Also read the <a href="/docs/privacy-policy.html">privacy policy</a>.</p>
+
   <h2>RSS Web Feed</h2>
 
   <p>
-    Follow the website's RSS feed. You can do this with various applications, that run both locally or online, out of which the recommended ones would be:
+    Follow the website's RSS feed. You can do this with various applications, that run both locally or online, the recommended clients being:
   </p>
   <ul>
     <li><a href="https://newsblur.com/" target="_blank">Newsblur</a> (web, open-source)</li>
@@ -129,65 +167,6 @@
 <script async src="/assets/js/dropcap.min.js" type="text/javascript"></script>
 <script async src="/assets/js/responsive-nav.min.js" type="text/javascript"></script>
 <script async src="/assets/js/scripts.js" type="text/javascript"></script>
-
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<script type="text/javascript">
-function _gaLoad() {
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84530423-1', {
-    'cookieName': '_gaAlexNOrg',
-    'cookieExpires': 60 * 60 * 24 * 30 * 3  // 3 months, in seconds
-  });
-  ga('set', 'anonymizeIp', true);
-  ga('send', 'pageview');
-
-  // Click handler
-  $(function () {
-    $('a[href]').each(function (idx, elem) {
-      var it = $(elem);
-      var href = it.attr('href');
-
-      if (href.match(/^https?[:]\/\//) && !href.match(/alexn\.org/)) {
-        it.click(_gaEvent('general', 'click', 'external-link', href));
-      } else if (href.match(/^#/)) {
-        it.click(_gaEvent('general', 'click', 'page-anchor', href));
-      } else {
-        it.click(_gaEvent('general', 'click', 'internal-link', href));
-      }
-    })
-  })
-}
-
-function _gaEvent(category, action, label, value) {
-  return function () {
-    if (_doNotTrack || typeof ga !== 'function') {
-      return;
-    }
-    ga(function () {
-      ga('send', 'event', category, action, label, value);
-    });
-   }
-}
-
-// Checks DO-NOT-TRACK status
-window._doNotTrack = false;
-if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
-  window._doNotTrack = window.doNotTrack == "1" || navigator.doNotTrack == "yes" ||
-    navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" ||
-    ('msTrackingProtectionEnabled' in window.external && window.external.msTrackingProtectionEnabled());
-}
-if (!_doNotTrack) {
-  console.log("Analytics are loading.")
-  _gaLoad();
-} else if (typeof(console) !== "undefined") {
-  console.log("Analytics are off due to Do Not Track setting!");
-}
-</script>
 
 
 
