@@ -19,7 +19,7 @@
 In this article I’m describing my impressions of the Scala programming language and why I fel in love with it." property="og:description">
     <meta content="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html" property="og:url">
     <meta content="2012-11-02T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png" />
@@ -47,8 +47,8 @@ In this article I’m describing my impressions of the Scala programming languag
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html">
@@ -88,7 +88,13 @@ In this article I’m describing my impressions of the Scala programming languag
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">On Scala, Functional Programming and Type-Classes</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          On Scala, Functional Programming and Type-Classes
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html"/>
     <meta itemprop="datePublished" content="2012-11-02T00:00:00+0000"/>
@@ -140,8 +146,14 @@ the intellectual masturbation of a fool.</p>
 
 <p><strong>UPDATE:</strong> as if the article wasn’t long enough, I’ve added to it some
 more stuff (like a couple of times :-)</p>
-
-<h2 id="1-functional-programming-for-the-win">1. Functional Programming for the Win</h2>
+    
+      <h2 id="1-functional-programming-for-the-win">
+        
+        
+          1. Functional Programming for the Win <a href="#1-functional-programming-for-the-win" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>It’s not a silver bullet, but on the whole it’s awesome. You really
 have to experience it, while leaving aside the preconceptions and
@@ -193,16 +205,28 @@ Rich Hickey calls this “<em>polymorphism a la carte</em>”</li>
 <p>You can also go to the extreme of specifying that all side-effects
 must be modeled with monadic types, but that’s a little too much IMHO,
 as only one mostly-mainstream language fits that bill (Haskell).</p>
-
-<h2 id="2-is-scala-a-functional-programming-language">2. Is Scala a Functional Programming Language?</h2>
+    
+      <h2 id="2-is-scala-a-functional-programming-language">
+        
+        
+          2. Is Scala a Functional Programming Language? <a href="#2-is-scala-a-functional-programming-language" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Yes it is. You only need to follow the excellent (I mentioned above)
 <a href="https://www.coursera.org/course/progfun">Coursera course</a> and solve
 the assignments to realize that Scala is indeed a very FP
 language. The course was a little short, but a follow-up is
 planned. Now move along …</p>
-
-<h2 id="3-polymorphism-à-la-carte">3. Polymorphism À la Carte</h2>
+    
+      <h2 id="3-polymorphism-à-la-carte">
+        
+        
+          3. Polymorphism À la Carte <a href="#3-polymorphism-à-la-carte" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>This is a term that I’ve been hearing from Rich Hickey, when he talks
 about open type-systems, referring primarily to Clojure’s Protocols
@@ -224,8 +248,14 @@ with this through
 <a href="http://en.wikipedia.org/wiki/Multiple_dispatch">Multi-Methods</a> and
 protocols, protocols being the dynamic equivalent for type-classes in
 a dynamic type-system.</p>
-
-<h2 id="4-yes-virginia-scala-has-type-classes">4. Yes Virginia, Scala has Type-Classes</h2>
+    
+      <h2 id="4-yes-virginia-scala-has-type-classes">
+        
+        
+          4. Yes Virginia, Scala has Type-Classes <a href="#4-yes-virginia-scala-has-type-classes" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>So what’s a type class? It’s like an interface in Java, except that
 you can make any existing types conform to it without modifying the
@@ -419,8 +449,14 @@ likes so:</p>
 means you have to have specific knowledge about how these implicits
 are prioritized. In essence, this is heavy stuff already and a little
 complex too. Good design can make for kick-ass libraries though.</p>
-
-<h2 id="5-scalas-collections-library-is-awesome">5. Scala’s Collections Library is Awesome</h2>
+    
+      <h2 id="5-scalas-collections-library-is-awesome">
+        
+        
+          5. Scala’s Collections Library is Awesome <a href="#5-scalas-collections-library-is-awesome" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>So what does the above buy you anyway? The following are some examples
 from Scala’s own collections library.</p>
@@ -561,8 +597,14 @@ calculate it by putting those extra cores at work:</p>
 </code></pre></div></div>
 
 <p>Notice the difference?</p>
-
-<h2 id="6-is-this-complex">6. Is this complex?</h2>
+    
+      <h2 id="6-is-this-complex">
+        
+        
+          6. Is this complex? <a href="#6-is-this-complex" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I mentioned above that this stuff is not complex, it’s just
 hard. Scala does have complexities when it comes to really advanced
@@ -573,8 +615,14 @@ use-cases, as can be seen in this article:
 Hacker News thread of that article, the author tries to accomplish
 something that’s not possible in most languages out there, while a
 solution is still possible in Scala (albeit with small limitations).</p>
-
-<h2 id="7-are-oop-features-getting-in-the-way">7. Are OOP Features Getting in the Way?</h2>
+    
+      <h2 id="7-are-oop-features-getting-in-the-way">
+        
+        
+          7. Are OOP Features Getting in the Way? <a href="#7-are-oop-features-getting-in-the-way" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I happen to disagree and I actually love the blend of OOP with
 functional features. Martin Odersky claims that OOP is orthogonal to
@@ -632,8 +680,14 @@ just feels right … I like this principle of “<em>turtles all the way
 down</em>”, even if you could probably point to things that aren’t
 “turtles”, but this also happens in languages that are the epitome of
 kick-ass turtles-recursion, like Scheme or Smalltalk.</p>
-
-<h2 id="8-scala-versus-haskell">8. Scala versus Haskell</h2>
+    
+      <h2 id="8-scala-versus-haskell">
+        
+        
+          8. Scala versus Haskell <a href="#8-scala-versus-haskell" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Scala’s static type-system is sometimes less expressive than that of
 Haskell. In particular Haskell supports
@@ -683,8 +737,14 @@ anything, other times - well, profiling and fixing performance issues
 in Haskell is not for mortals. Scala is more predictable, being strict
 and lazy when needed. It also has at its disposal the awesome JVM
 ecosystem for profiling and monitoring.</p>
-
-<h2 id="9-scala-versus-f--ocaml">9. Scala versus F# / Ocaml</h2>
+    
+      <h2 id="9-scala-versus-f--ocaml">
+        
+        
+          9. Scala versus F# / Ocaml <a href="#9-scala-versus-f--ocaml" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>F# is good if you want to use C# 2020. But F# has rough edges
 inherited from Ocaml, while it has not inherited all the benefits. F#
@@ -854,8 +914,14 @@ capable of and it’s mostly based on runtime reflection):</p>
 issues that Scala does really well. Ocaml is great, however I
 personally find it limiting and awkward at the edges of the 2 type
 systems it contains. Or maybe I’m just a spoiled brat.</p>
-
-<h2 id="10-static-type-versus-dynamic-type-systems">10. Static-type versus Dynamic-type Systems</h2>
+    
+      <h2 id="10-static-type-versus-dynamic-type-systems">
+        
+        
+          10. Static-type versus Dynamic-type Systems <a href="#10-static-type-versus-dynamic-type-systems" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Static versus dynamic is what polarizes developers most in separate
 camps. It’s like a never-ending flamewar, with healthy dosages of
@@ -914,8 +980,14 @@ brings. On the other hand Clojure, because of its support for
 multi-methods and protocols and macros, is a dynamic language that’s
 more expressive than most other languages, including dynamic ones,
 especially the mainstream, like Python, Ruby, Perl, Javascript or PHP.</p>
-
-<h2 id="11-performance">11. Performance</h2>
+    
+      <h2 id="11-performance">
+        
+        
+          11. Performance <a href="#11-performance" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I don’t have any experience or proof on this, just personal feelings :-)</p>
 
@@ -950,8 +1022,14 @@ whole chucks of memory at once instead of individual references
 of Android, as Android does not have a JVM - but even there, Scala
 is workable (or so I’ve heard)</li>
 </ul>
-
-<h2 id="12-tools-of-the-trade">12. Tools of the Trade</h2>
+    
+      <h2 id="12-tools-of-the-trade">
+        
+        
+          12. Tools of the Trade <a href="#12-tools-of-the-trade" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I have a love/hate relationship with SBT, the defacto builds manager
 for Scala, the replacement for Maven, the slayer of XML files.</p>
@@ -1007,8 +1085,14 @@ what you get by picking other functional languages, except maybe F#.</p>
 <p>With Scala you can use all the profiling and monitoring tools and
 classpath reloading tricks that you can use with Java. Nothing’s
 stopping you, as every tool meant for the JVM also works with Scala.</p>
-
-<h2 id="13-concurrency-and-parallelism">13. Concurrency and Parallelism</h2>
+    
+      <h2 id="13-concurrency-and-parallelism">
+        
+        
+          13. Concurrency and Parallelism <a href="#13-concurrency-and-parallelism" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>It’s enough to say that Scala doesn’t restrict you in any way:</p>
 
@@ -1031,8 +1115,14 @@ in Akka Promises which you can combine in for-comprehensions)</li>
 <p>Basically Scala has it all. This may seem like a curse, but what other
 languages define as built-in / hard to change / hard to evolve
 features, Scala defines as libraries. So there are definitely upsides ;-)</p>
-
-<h2 id="14-learning-resources">14. Learning Resources</h2>
+    
+      <h2 id="14-learning-resources">
+        
+        
+          14. Learning Resources <a href="#14-learning-resources" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I’ve found the following to be good resources for learning Scala (note
 that Amazon links have my affiliate tag, but if you want the eBook
@@ -1089,8 +1179,14 @@ reading, as it’s not really an easy lecture. But it’s a good book. Get
 the eBook straight from <a href="http://www.manning.com/suereth/">Manning</a>.</p>
 
 <div class="clear"></div>
-
-<h2 id="the-end-finally">The End, Finally</h2>
+    
+      <h2 id="the-end-finally">
+        
+        
+          The End, Finally <a href="#the-end-finally" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>A sequel on what makes Clojure great will follow when I have the time
 or patience for it (or once I finish reading the
@@ -1100,7 +1196,7 @@ or patience for it (or once I finish reading the
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -1130,7 +1226,14 @@ or patience for it (or once I finish reading the
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -1247,7 +1350,6 @@ or patience for it (or once I finish reading the
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -1309,12 +1411,12 @@ or patience for it (or once I finish reading the
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

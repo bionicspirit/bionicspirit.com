@@ -18,7 +18,7 @@
     <meta content="Enabling automatic releases for your open source Scala project with Travis and SBT." property="og:description">
     <meta content="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html" property="og:url">
     <meta content="2017-08-16T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/sbt.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Automatic Releases to Maven Central with Travis and SBT</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Automatic Releases to Maven Central with Travis and SBT
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html"/>
     <meta itemprop="datePublished" content="2017-08-16T00:00:00+0000"/>
@@ -147,8 +153,14 @@ for inspiration:</p>
 trust <a href="https://travis-ci.org/">Travis-ci.org</a> with your PGP private
 key for signing the published binaries. If that’s an acceptable risk
 or not, that’s up to you. See below.</p>
-
-<h2 id="generating-a-pgp-key-pair">Generating a PGP Key Pair</h2>
+    
+      <h2 id="generating-a-pgp-key-pair">
+        
+        
+          Generating a PGP Key Pair <a href="#generating-a-pgp-key-pair" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>For deployments to Sonatype / Maven Central the built packages need to
 be signed. If you don’t have an existing PGP key, one can be easily
@@ -239,8 +251,14 @@ directory and then:</p>
 tools might generate junk. We only want those 2 files (<code class="language-plaintext highlighter-rouge">pubring.gpg</code>
 and <code class="language-plaintext highlighter-rouge">secring.gpg</code>), so check your project directory with <code class="language-plaintext highlighter-rouge">git status</code>
 and delete anything extra.</p>
-
-<h2 id="configuring-sbt">Configuring SBT</h2>
+    
+      <h2 id="configuring-sbt">
+        
+        
+          Configuring SBT <a href="#configuring-sbt" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Curently in <a href="https://monix.io">monix.io</a> I’m using the following plugins:</p>
 
@@ -360,8 +378,14 @@ you can do:</p>
 
 <p>Replace <code class="language-plaintext highlighter-rouge">xxxxxx</code> with your passphrase. If this command works, then we
 are good thus far.</p>
-
-<h2 id="configuring-travis">Configuring Travis</h2>
+    
+      <h2 id="configuring-travis">
+        
+        
+          Configuring Travis <a href="#configuring-travis" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>In <code class="language-plaintext highlighter-rouge">build.sbt</code> I configured these 2 commands:</p>
 
@@ -445,8 +469,14 @@ are good thus far.</p>
 $ git commit -am 'Build changes for automatic releases'
 $ git push
 </code></pre></div></div>
-
-<h3 id="setting-environment-variables">Setting environment variables</h3>
+    
+      <h3 id="setting-environment-variables">
+        
+        
+          Setting environment variables <a href="#setting-environment-variables" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>As a final step we need to set the following environment variables in Travis:</p>
 
@@ -468,8 +498,14 @@ and access the “<em>User Token</em>”, or generate a new one.</p>
 <figure>
   <img src="/assets/media/articles/travis-env-vars.png" />
 </figure>
-
-<h3 id="alternative-env-with-travis-encryption">Alternative Env with Travis Encryption</h3>
+    
+      <h3 id="alternative-env-with-travis-encryption">
+        
+        
+          Alternative Env with Travis Encryption <a href="#alternative-env-with-travis-encryption" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>As an alternative to setting those environment variables in Travis’s
 UI, you can use Travis’s mechanism for encrypting stuff to set these
@@ -506,8 +542,14 @@ that resembles the following:</p>
 
 <p>Now this can be committed in your repository and Travis will take care
 of decrypting those values.</p>
-
-<h2 id="publishing">Publishing</h2>
+    
+      <h2 id="publishing">
+        
+        
+          Publishing <a href="#publishing" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>For publishing hashed snapshot versions, we need a <code class="language-plaintext highlighter-rouge">snapshot</code> branch,
 as that’s what the script above looks for.</p>
@@ -522,8 +564,14 @@ $ git push --set-upstream origin snapshot
 
 <p>If everything goes well, we should have a new hashed version published,
 but watch the output of Travis for any problems.</p>
-
-<h2 id="extra-resources">Extra Resources</h2>
+    
+      <h2 id="extra-resources">
+        
+        
+          Extra Resources <a href="#extra-resources" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I’ve written this document while preparing the Shade project for
 automatic deployments. So here’s for inspiration:</p>
@@ -535,8 +583,14 @@ automatic deployments. So here’s for inspiration:</p>
   <li><a href="https://travis-ci.org/monix/shade/jobs/265221087">release of v1.10.0</a>
 (that published the final <code class="language-plaintext highlighter-rouge">1.10.0</code> on Maven Central)</li>
 </ul>
-
-<h2 id="in-closing">In Closing</h2>
+    
+      <h2 id="in-closing">
+        
+        
+          In Closing <a href="#in-closing" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>So that’s about it. Pretty painful if you ask me, but hopefully we
 don’t have to do this too often.</p>
@@ -548,7 +602,7 @@ forgetting what I did the first time.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -575,7 +629,14 @@ forgetting what I did the first time.</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -692,7 +753,6 @@ forgetting what I did the first time.</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -754,12 +814,12 @@ forgetting what I did the first time.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

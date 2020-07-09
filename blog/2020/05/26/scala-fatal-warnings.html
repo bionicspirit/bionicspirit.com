@@ -18,7 +18,7 @@
     <meta content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues with useful compiler errors." property="og:description">
     <meta content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html" property="og:url">
     <meta content="2020-05-26T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Fatal Warnings and Linting in Scala</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Fatal Warnings and Linting in Scala
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html"/>
     <meta itemprop="datePublished" content="2020-05-26T00:00:00+0000"/>
@@ -149,8 +155,14 @@
   <li><a href="#4-other-linters">4. Other linters</a></li>
   <li><a href="#final-words">Final words</a></li>
 </ul>
-
-<h2 id="best-practice-stop-ignoring-warnings">Best Practice: Stop Ignoring Warnings!</h2>
+    
+      <h2 id="best-practice-stop-ignoring-warnings">
+        
+        
+          Best Practice: Stop Ignoring Warnings! <a href="#best-practice-stop-ignoring-warnings" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Some of it might be noise, however in that noise some real gems might be missed, warnings that signal bugs. For example the compiler can do exhaustiveness checks when pattern matching:</p>
 
@@ -169,8 +181,14 @@
 </code></pre></div></div>
 
 <p>It shouldn’t be just a warning. Even if you’re diligent, this warning can get lost in a sea of other warnings, like it often does. And here we were lucky, because the runtime exception was triggered on the happy path, but our luck would eventually run out and end up with such exceptions in production.</p>
-
-<h2 id="1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</h2>
+    
+      <h2 id="1-activate--xfatal-warnings">
+        
+        
+          1. Activate -Xfatal-warnings <a href="#1-activate--xfatal-warnings" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>To turn all compiler warnings into errors, you can activate <code class="language-plaintext highlighter-rouge">-Xfatal-warnings</code>. In <a href="https://www.scala-sbt.org/1.x/docs/Basic-Def.html">build.sbt</a>:</p>
 
@@ -194,8 +212,14 @@
 </code></pre></div></div>
 
 <p>Thus we can no longer ignore it.</p>
-
-<h3 id="11-make-only-some-warnings-fatal-scala-213">1.1. Make only some warnings fatal (Scala 2.13)</h3>
+    
+      <h3 id="11-make-only-some-warnings-fatal-scala-213">
+        
+        
+          1.1. Make only some warnings fatal (Scala 2.13) <a href="#11-make-only-some-warnings-fatal-scala-213" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>There’s a new <code class="language-plaintext highlighter-rouge">-Wconf</code> option in Scala 2.13.2 (<a href="https://github.com/scala/scala/pull/8373">see PR</a>). With it we can still keep some warnings as warnings.</p>
 
@@ -218,8 +242,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>scalac <span class="nt">-Wconf</span>:help
 </code></pre></div></div>
-
-<h2 id="2-activate-all-linting-options">2. Activate All Linting Options</h2>
+    
+      <h2 id="2-activate-all-linting-options">
+        
+        
+          2. Activate All Linting Options <a href="#2-activate-all-linting-options" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>There are many useful compiler options that you could activate. You can find a (possibly non-complete) list on <a href="https://docs.scala-lang.org/overviews/compiler-options/index.html">docs.scala-lang.org</a>.</p>
 
@@ -276,14 +306,26 @@
 </code></pre></div></div>
 
 <p>There are many useful options in there, from disallowing “adapted args”, detecting inaccessible code, inferred <code class="language-plaintext highlighter-rouge">Any</code>, shadowing of values, to unused imports and params and others.</p>
-
-<h3 id="21-use-the-sbt-tpolecat-plugin">2.1. Use the sbt-tpolecat plugin</h3>
+    
+      <h3 id="21-use-the-sbt-tpolecat-plugin">
+        
+        
+          2.1. Use the sbt-tpolecat plugin <a href="#21-use-the-sbt-tpolecat-plugin" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Keeping that list of compiler options up to date is exhausting, new useful options get added all the time, others are deprecated and especially for libraries you have to deal with multiple Scala versions in the same project.</p>
 
 <p>A better option is to include <a href="https://github.com/DavidGregory084/sbt-tpolecat">sbt-tpolecat</a> in your project.</p>
-
-<h3 id="22-exclude-annoying-linting-options">2.2. Exclude annoying linting options</h3>
+    
+      <h3 id="22-exclude-annoying-linting-options">
+        
+        
+          2.2. Exclude annoying linting options <a href="#22-exclude-annoying-linting-options" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Some linting options can trigger false positives that are too annoying. It’s fine to remove them from your project, or from certain configurations (e.g. <code class="language-plaintext highlighter-rouge">Test</code>, <code class="language-plaintext highlighter-rouge">Console</code>).</p>
 
@@ -299,8 +341,14 @@
   <span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div></div>
-
-<h3 id="23-relax-the-console-configuration">2.3. Relax the console configuration</h3>
+    
+      <h3 id="23-relax-the-console-configuration">
+        
+        
+          2.3. Relax the console configuration <a href="#23-relax-the-console-configuration" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>When playing around in the console, it’s a good idea to deactivate <code class="language-plaintext highlighter-rouge">Xfatal-warnings</code>, along with some of the more annoying warnings.</p>
 
@@ -324,8 +372,14 @@
 </code></pre></div></div>
 
 <p>Credit for this snippet: <a href="https://github.com/DavidGregory084/sbt-tpolecat/blob/v0.1.11/src/main/scala/io/github/davidgregory084/TpolecatPlugin.scala#L109">DavidGregory084/sbt-tpolecat</a>.</p>
-
-<h2 id="3-silence-warnings-locally">3. Silence warnings locally</h2>
+    
+      <h2 id="3-silence-warnings-locally">
+        
+        
+          3. Silence warnings locally <a href="#3-silence-warnings-locally" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Sometimes you want to ignore a certain warning:</p>
 
@@ -333,8 +387,14 @@
   <li>maybe it’s a false positive</li>
   <li>maybe you want something “unused”, as a placeholder, etc</li>
 </ul>
-
-<h3 id="31-silencer-plugin-scala--213">3.1. Silencer plugin (Scala &lt; 2.13)</h3>
+    
+      <h3 id="31-silencer-plugin-scala--213">
+        
+        
+          3.1. Silencer plugin (Scala &lt; 2.13) <a href="#31-silencer-plugin-scala--213" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>You can use the <a href="https://github.com/ghik/silencer">ghik/silencer</a> compiler plugin.</p>
 
@@ -355,8 +415,14 @@
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">+=</span> <span class="s">"-P:silencer:pathFilters=.*[/]src_managed[/].*"</span>
 </code></pre></div></div>
-
-<h3 id="32-using-nowarn-in-scala-2132">3.2. Using @nowarn in Scala 2.13.2</h3>
+    
+      <h3 id="32-using-nowarn-in-scala-2132">
+        
+        
+          3.2. Using @nowarn in Scala 2.13.2 <a href="#32-using-nowarn-in-scala-2132" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Scala 2.13 has added the <a href="https://github.com/scala/scala/pull/8373">@nowarn annotation for local suppression</a>.</p>
 
@@ -393,8 +459,14 @@
 <p class="info-bubble">
   <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#31-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="language-plaintext highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="language-plaintext highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
 </p>
-
-<h2 id="4-other-linters">4. Other linters</h2>
+    
+      <h2 id="4-other-linters">
+        
+        
+          4. Other linters <a href="#4-other-linters" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>You shouldn’t stop at Scala’s linting options. There are other sbt plugins available that can enforce certain best practices. Off the top of my head:</p>
 
@@ -408,8 +480,14 @@
 <p>With these you could ban <code class="language-plaintext highlighter-rouge">null</code> or <code class="language-plaintext highlighter-rouge">Any</code> from your project, among other very useful options.</p>
 
 <p>Any useful plugins that I’m missing?</p>
-
-<h2 id="final-words">Final words</h2>
+    
+      <h2 id="final-words">
+        
+        
+          Final words <a href="#final-words" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Scala is a static language, but sometimes it isn’t static or opinionated enough. The more you can prove about your code at compile time, the less defects you can have at runtime.</p>
 
@@ -419,7 +497,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -440,7 +518,14 @@
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -555,7 +640,6 @@
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -617,12 +701,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

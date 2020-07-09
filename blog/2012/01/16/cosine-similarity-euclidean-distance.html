@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Data Mining: Finding Similar Items and Users</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Data Mining: Finding Similar Items and Users
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html"/>
     <meta itemprop="datePublished" content="2012-01-16T00:00:00+0000"/>
@@ -148,8 +154,14 @@ understanding the process, at least intuitively.</p>
   <li><a href="#pearson-correlation-coefficient">Pearson Correlation Coefficient</a></li>
   <li><a href="#manhattan-distance">Manhattan Distance</a></li>
 </ul>
-
-<h2 id="defining-the-problem">Defining the Problem</h2>
+    
+      <h2 id="defining-the-problem">
+        
+        
+          Defining the Problem <a href="#defining-the-problem" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p><img src="/assets/media/articles/amazon-recommended-items.png" alt="Amazon gives kick-ass suggestions to their customers" /></p>
 
@@ -172,8 +184,14 @@ thus giving you suggestions on movies you’d like to watch in the future</li>
 whether it is tags, or items purchased, or movies reviewed. We’ll be
 using tags, as it is simpler, but the formula holds for more
 complicated instances.</p>
-
-<h2 id="redefining-the-problem-in-terms-of-geometry">Redefining the Problem in Terms of Geometry</h2>
+    
+      <h2 id="redefining-the-problem-in-terms-of-geometry">
+        
+        
+          Redefining the Problem in Terms of Geometry <a href="#redefining-the-problem-in-terms-of-geometry" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>We’ll be using my blog as sample. Let’s take some tags:</p>
 
@@ -211,8 +229,14 @@ like:</p>
 <figure>
   <img src="/assets/media/articles/similarity-graphic.png" />
 </figure>
-
-<h2 id="euclidean-distance">Euclidean Distance</h2>
+    
+      <h2 id="euclidean-distance">
+        
+        
+          Euclidean Distance <a href="#euclidean-distance" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>The mathematical formula for the Euclidean distance is really
 simple. Considering 2 points, A and B, with their associated
@@ -319,8 +343,14 @@ the bellow script and run it directly:</p>
 <span class="nb">require</span> <span class="s1">'yaml'</span>
 <span class="nb">puts</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">sorted</span><span class="p">)</span>
 </code></pre></div></div>
-
-<h3 id="the-problem-or-strength-of-euclidean-distance">The Problem (or Strength) of Euclidean Distance</h3>
+    
+      <h3 id="the-problem-or-strength-of-euclidean-distance">
+        
+        
+          The Problem (or Strength) of Euclidean Distance <a href="#the-problem-or-strength-of-euclidean-distance" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Can you see one flaw with it for our chosen data-set and intention? I
 think you can - the first 2 articles have the same Euclidean distance
@@ -346,8 +376,14 @@ distance: it measures <em>dissimilarity</em>. The coordinates that are the
 same are less important than the coordinates that are different. For
 my purpose here, this is not good - because articles with more tags
 (or less) tags than the average are going to be disadvantaged.</p>
-
-<h2 id="cosine-similarity">Cosine Similarity</h2>
+    
+      <h2 id="cosine-similarity">
+        
+        
+          Cosine Similarity <a href="#cosine-similarity" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>This method is very similar to the one above, but does tend to give
 slightly different results, because this one actually measures
@@ -414,8 +450,14 @@ that as an exercise):</p>
 
 <p>Right, so much better for this chosen sample and usage. Ain’t this
 fun? BUT, you guessed it, there’s a problem with this too …</p>
-
-<h3 id="the-problem-with-our-sample-the-tf-idf-weight">The Problem with Our Sample; The Tf-Idf Weight</h3>
+    
+      <h3 id="the-problem-with-our-sample-the-tf-idf-weight">
+        
+        
+          The Problem with Our Sample; The Tf-Idf Weight <a href="#the-problem-with-our-sample-the-tf-idf-weight" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Our data sample is so simple that we could have simply counted the
 number of common tags and use that as a metric. The result would be
@@ -438,8 +480,14 @@ zeros. But I’ll leave that for another day.</p>
 metric, like the
 <a href="http://en.wikipedia.org/wiki/Jaccard_index">Jaccard index</a> would be
 better.</p>
-
-<h2 id="pearson-correlation-coefficient">Pearson Correlation Coefficient</h2>
+    
+      <h2 id="pearson-correlation-coefficient">
+        
+        
+          Pearson Correlation Coefficient <a href="#pearson-correlation-coefficient" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>The
 <a href="http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient">Pearson Correlation Coefficient</a>
@@ -502,8 +550,14 @@ theory is not very intuitive though. But it is simple to calculate:</p>
 <span class="nb">puts</span> <span class="n">pearson_score</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="c1"># =&gt; -1</span>
 </code></pre></div></div>
-
-<h2 id="manhattan-distance">Manhattan Distance</h2>
+    
+      <h2 id="manhattan-distance">
+        
+        
+          Manhattan Distance <a href="#manhattan-distance" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>There is no one size fits all and the formula you’re going to use
 depends on your data and what you want out of it.</p>
@@ -564,7 +618,14 @@ some text into another.</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -677,7 +738,6 @@ some text into another.</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -739,12 +799,12 @@ some text into another.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/load-mathjax.js?202007091047"></script>
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/load-mathjax.js?202007091104"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

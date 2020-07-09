@@ -19,7 +19,7 @@
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html" property="og:url">
     <meta content="2013-03-14T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/ferrari.jpg" />
@@ -47,8 +47,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html">
@@ -88,7 +88,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">JVM Multithreading: Monitor Locks and Visibility</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          JVM Multithreading: Monitor Locks and Visibility
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html"/>
     <meta itemprop="datePublished" content="2013-03-14T00:00:00+0000"/>
@@ -142,8 +148,14 @@ compare-and-set, up to high-level tools, such as Futures/Promises,
 actors and optimistic locking with shared transactional memory.</p>
 
 <!-- read more -->
-
-<h2 id="the-problem-of-atomicity">The Problem of Atomicity</h2>
+    
+      <h2 id="the-problem-of-atomicity">
+        
+        
+          The Problem of Atomicity <a href="#the-problem-of-atomicity" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Over 100,000 people can watch the same soccer game from the same
 stadium, at the same time. Those same 100,000 people cannot all take a
@@ -332,8 +344,14 @@ version), because that’s how I roll</li>
 <p>That’s better. Not perfect though, as Stacks are the easiest immutable
 data-structures to implement … so how about not using any locks at
 all? (that’s for another article)</p>
-
-<h3 id="the-big-problem-with-locks">The Big Problem with Locks</h3>
+    
+      <h3 id="the-big-problem-with-locks">
+        
+        
+          The Big Problem with Locks <a href="#the-big-problem-with-locks" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Take these 2 stacks:</p>
 
@@ -359,8 +377,14 @@ an external lock that protects both at all times.</p>
 
 <p>Code that’s thread-safe through synchronization based on locks is
 <strong>not composable</strong>.</p>
-
-<h2 id="visibility">The Problem of Visibility</h2>
+    
+      <h2 id="visibility">
+        
+        
+          The Problem of Visibility <a href="#visibility" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>When speaking of multithreading, the most obvious problem is the
 inconsistency of shared mutable state when being changed and read by
@@ -435,8 +459,14 @@ the laptop is plugged in or not, on planetary alignments and so on.</p>
   new value. On my desktop in more than 1 out of 10 cases this little
   example goes into an infinite loop.</li>
 </ol>
-
-<h3 id="happens-before-relationships-and-memory-barriers">Happens-Before Relationships and Memory Barriers</h3>
+    
+      <h3 id="happens-before-relationships-and-memory-barriers">
+        
+        
+          Happens-Before Relationships and Memory Barriers <a href="#happens-before-relationships-and-memory-barriers" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>As I was saying at point 2 above, in addition to cached values, you
 can also have reordered instructions. Say that you’ve got the
@@ -519,8 +549,14 @@ monitor lock. This gotcha could happen for a bunch of reasons, for
 instance the JVM does escape-analysis and it can get rid of locks
 completely if it decides a lock isn’t used concurrently by multiple
 threads.</p>
-
-<h3 id="volatiles">Volatiles</h3>
+    
+      <h3 id="volatiles">
+        
+        
+          Volatiles <a href="#volatiles" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>For this particular example, you actually don’t need a lock at
 all. All you need is a <code class="language-plaintext highlighter-rouge">volatile</code>:</p>
@@ -553,8 +589,14 @@ algorithms, an atomic operation that’s optimized on most CPUs today
 that you can’t do with plain volatiles.</p>
 
 <p>But that’s a topic for another article.</p>
-
-<h2 id="further-reading">Further Reading</h2>
+    
+      <h2 id="further-reading">
+        
+        
+          Further Reading <a href="#further-reading" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Checkout the following:</p>
 
@@ -568,7 +610,7 @@ that you can’t do with plain volatiles.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -601,7 +643,14 @@ that you can’t do with plain volatiles.</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -716,7 +765,6 @@ that you can’t do with plain volatiles.</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -778,12 +826,12 @@ that you can’t do with plain volatiles.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

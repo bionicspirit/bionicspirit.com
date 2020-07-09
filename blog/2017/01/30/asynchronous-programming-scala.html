@@ -18,7 +18,7 @@
     <meta content="Asynchrony is everywhere and it subsumes concurrency. This article explains what asynchronous processing is and its challenges." property="og:description">
     <meta content="https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html" property="og:url">
     <meta content="2017-01-30T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/nondet.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Asynchronous Programming and Scala</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Asynchronous Programming and Scala
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html"/>
     <meta itemprop="datePublished" content="2017-01-30T00:00:00+0000"/>
@@ -122,8 +128,14 @@
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">Asynchrony is everywhere and it subsumes concurrency. This article
 explains what asynchronous processing is and its challenges.</p>
-
-<h2 id="table-of-contents">Table of Contents</h2>
+    
+      <h2 id="table-of-contents">
+        
+        
+          Table of Contents <a href="#table-of-contents" class="anchor">#</a>
+        
+        
+      </h2>
 
 <ul>
   <li><a href="#table-of-contents">Table of Contents</a></li>
@@ -160,8 +172,14 @@ explains what asynchronous processing is and its challenges.</p>
   </li>
   <li><a href="#7-picking-the-right-tool">7. Picking the Right Tool</a></li>
 </ul>
-
-<h2 id="1-introduction">1. Introduction</h2>
+    
+      <h2 id="1-introduction">
+        
+        
+          1. Introduction <a href="#1-introduction" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>As a concept it is more general than <em>multithreading</em>, although some
 people confuse the two. If you’re looking for a relationship, you
@@ -235,8 +253,14 @@ and <a href="https://monix.io/api/2.2/monix/reactive/Observer.html">Observer</a>
 
 <p>What do all of these abstractions have in common? They provide ways to
 deal with asynchrony, some more successful than others.</p>
-
-<h2 id="2-the-big-illusion">2. The Big Illusion</h2>
+    
+      <h2 id="2-the-big-illusion">
+        
+        
+          2. The Big Illusion <a href="#2-the-big-illusion" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>We like to pretend that we can describe functions that can convert
 asynchronous results to synchronous ones:</p>
@@ -333,8 +357,14 @@ learning a new programming language is going to be the least of their
 problems. I know people that have quit the software industry because
 of the shift to concurrency.
 </p>
-
-<h2 id="3-callback-hell">3. Callback Hell</h2>
+    
+      <h2 id="3-callback-hell">
+        
+        
+          3. Callback Hell <a href="#3-callback-hell" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Let’s build an artificial example made to illustrate our challenges.
 Say we need to initiate two asynchronous processes and combine their
@@ -360,8 +390,14 @@ result.</p>
 <span class="nf">timesTwo</span><span class="o">(</span><span class="mi">20</span><span class="o">)</span> <span class="o">{</span> <span class="n">result</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Result: $result"</span><span class="o">)</span> <span class="o">}</span>
 <span class="c1">//=&gt; Result: 40</span>
 </code></pre></div></div>
-
-<h3 id="31-sequencing-purgatory-of-side-effects">3.1. Sequencing (Purgatory of Side-effects)</h3>
+    
+      <h3 id="31-sequencing-purgatory-of-side-effects">
+        
+        
+          3.1. Sequencing (Purgatory of Side-effects) <a href="#31-sequencing-purgatory-of-side-effects" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Let’s combine two asynchronous results, with the execution happening
 one after another, in a neat sequence:</p>
@@ -398,8 +434,14 @@ callbacks for the whole pipeline. And blocking for the result won’t help,
 as you’re just hiding the problem, see <a href="#2-the-big-illusion">section 2</a> for why.</p>
 
 <p>But wait, things are about to get worse 😷</p>
-
-<h3 id="32-parallelism-limbo-of-nondeterminism">3.2. Parallelism (Limbo of Nondeterminism)</h3>
+    
+      <h3 id="32-parallelism-limbo-of-nondeterminism">
+        
+        
+          3.2. Parallelism (Limbo of Nondeterminism) <a href="#32-parallelism-limbo-of-nondeterminism" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The second call we made above is not dependent on the first call,
 therefore it can run in parallel. On the JVM we can run CPU-bound
@@ -577,8 +619,14 @@ from <a href="https://monix.io/">Monix</a>.
 </p>
 
 <p>Are you getting pumped? Let’s take it up a notch 😝</p>
-
-<h3 id="33-recursivity-wrath-of-stackoverflow">3.3. Recursivity (Wrath of StackOverflow)</h3>
+    
+      <h3 id="33-recursivity-wrath-of-stackoverflow">
+        
+        
+          3.3. Recursivity (Wrath of StackOverflow) <a href="#33-recursivity-wrath-of-stackoverflow" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>What if I were to tell you that the above <code class="language-plaintext highlighter-rouge">onFinish</code> call is
 stack-unsafe and if you aren’t going to force an <em>asynchronous
@@ -691,8 +739,14 @@ this can be solved by scheduling it with <code class="language-plaintext highlig
 the JVM you need a thread-pool or a Scala <code class="language-plaintext highlighter-rouge">ExecutionContext</code>.</p>
 
 <p>Are you feeling the fire yet? 🔥</p>
-
-<h2 id="4-futures-and-promises">4. Futures and Promises</h2>
+    
+      <h2 id="4-futures-and-promises">
+        
+        
+          4. Futures and Promises <a href="#4-futures-and-promises" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>The <code class="language-plaintext highlighter-rouge">scala.concurrent.Future</code> describes strictly evaluated
 asynchronous computations, being similar to our <code class="language-plaintext highlighter-rouge">Async</code> type used
@@ -778,8 +832,14 @@ therefore all combinators and utilities must also take an
 <p>If you don’t understand why that <code class="language-plaintext highlighter-rouge">ExecutionContext</code> is needed in all
 those signatures, go back and re-read <a href="#33-recursivity-wrath-of-stackoverflow">section 3.3</a> and don’t
 come back until you do.</p>
-
-<h3 id="41-sequencing">4.1. Sequencing</h3>
+    
+      <h3 id="41-sequencing">
+        
+        
+          4.1. Sequencing <a href="#41-sequencing" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Let’s redefine our function from <a href="#3-callback-hell">section 3</a> in terms of <code class="language-plaintext highlighter-rouge">Future</code>:</p>
 
@@ -868,8 +928,14 @@ this restriction applies to C# and ECMAScript as well. Which is a
 pity, because it means <code class="language-plaintext highlighter-rouge">async</code> code will not be heavy on FP.</p>
 
 <p>Remember my rant from above about the no silver bullet? 😞</p>
-
-<h3 id="42-parallelism">4.2. Parallelism</h3>
+    
+      <h3 id="42-parallelism">
+        
+        
+          4.2. Parallelism <a href="#42-parallelism" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Just as in <a href="#32-parallelism-limbo-of-nondeterminism">section 3.2</a> those two function calls are
 independent of each other, which means that we can call them in
@@ -903,8 +969,14 @@ arbitrary collections:</p>
 going to be executed in parallel only if the collection given to
 <code class="language-plaintext highlighter-rouge">sequence</code> is strict (not like Scala’s <code class="language-plaintext highlighter-rouge">Stream</code> or some <code class="language-plaintext highlighter-rouge">Iterator</code>). And
 the name is sort of a misnomer obviously.</p>
-
-<h3 id="43-recursivity">4.3. Recursivity</h3>
+    
+      <h3 id="43-recursivity">
+        
+        
+          4.3. Recursivity <a href="#43-recursivity" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The <code class="language-plaintext highlighter-rouge">Future</code> type is entirely safe for recursive operations (because
 of the reliance on the <code class="language-plaintext highlighter-rouge">ExecutionContext</code> for executing callbacks). So
@@ -939,8 +1011,14 @@ retrying the sample in <a href="#33-recursivity-wrath-of-stackoverflow">section 
 <span class="nf">sequence</span><span class="o">(</span><span class="n">list</span><span class="o">).</span><span class="py">foreach</span><span class="o">(</span><span class="n">r</span> <span class="k">=&gt;</span> <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Sum: ${r.sum}"</span><span class="o">))</span>
 <span class="c1">//=&gt; Sum: 99990000</span>
 </code></pre></div></div>
-
-<h3 id="44-performance-considerations">4.4. Performance Considerations</h3>
+    
+      <h3 id="44-performance-considerations">
+        
+        
+          4.4. Performance Considerations <a href="#44-performance-considerations" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The trouble with <code class="language-plaintext highlighter-rouge">Future</code> is that each call to <code class="language-plaintext highlighter-rouge">onComplete</code> will use
 an <code class="language-plaintext highlighter-rouge">ExecutionContext</code> for execution and in general this means that a
@@ -994,8 +1072,14 @@ uses <code class="language-plaintext highlighter-rouge">Future</code> for back-p
 often not relevant, like when doing I/O, in which case throughput
 will not be CPU-bound.
 </p>
-
-<h2 id="5-task-scalas-io-monad">5. Task, Scala’s IO Monad</h2>
+    
+      <h2 id="5-task-scalas-io-monad">
+        
+        
+          5. Task, Scala’s IO Monad <a href="#5-task-scalas-io-monad" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p><code class="language-plaintext highlighter-rouge">Task</code> is a data type for controlling possibly lazy &amp; asynchronous computations,
 useful for controlling side-effects, avoiding nondeterminism and callback-hell.</p>
@@ -1074,8 +1158,14 @@ something to avoid, because
     </tr>
   </tbody>
 </table>
-
-<h3 id="51-sequencing">5.1. Sequencing</h3>
+    
+      <h3 id="51-sequencing">
+        
+        
+          5.1. Sequencing <a href="#51-sequencing" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Redefining our function from <a href="#3-callback-hell">section 3</a> in terms of <code class="language-plaintext highlighter-rouge">Task</code>:</p>
 
@@ -1127,8 +1217,14 @@ is translated by the Scala compiler to nothing more than calls to
     <span class="nf">timesTwo</span><span class="o">(</span><span class="n">n</span><span class="o">).</span><span class="py">map</span> <span class="o">{</span> <span class="n">b</span> <span class="k">=&gt;</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">}</span>
   <span class="o">}</span>
 </code></pre></div></div>
-
-<h3 id="52-parallelism">5.2. Parallelism</h3>
+    
+      <h3 id="52-parallelism">
+        
+        
+          5.2. Parallelism <a href="#52-parallelism" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The story for <code class="language-plaintext highlighter-rouge">Task</code> and parallelism is better than with <code class="language-plaintext highlighter-rouge">Future</code>, because
 <code class="language-plaintext highlighter-rouge">Task</code> allows fine-grained control when forking tasks, while trying
@@ -1157,8 +1253,14 @@ switches for what is in essence sequential work.</p>
 <p>Oh, does <code class="language-plaintext highlighter-rouge">mapBoth</code> seem familiar? If those two tasks fork threads on
 execution, then they will get executed in parallel as <code class="language-plaintext highlighter-rouge">mapBoth</code> starts
 them both at the same time.</p>
-
-<h3 id="53-recursivity">5.3. Recursivity</h3>
+    
+      <h3 id="53-recursivity">
+        
+        
+          5.3. Recursivity <a href="#53-recursivity" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p><code class="language-plaintext highlighter-rouge">Task</code> is recursive and stack-safe (in <code class="language-plaintext highlighter-rouge">flatMap</code>) and incredibly efficient, being powered
 by an internal trampoline. You can checkout this cool paper by Rúnar Bjarnason on
@@ -1184,8 +1286,14 @@ the signature of <code class="language-plaintext highlighter-rouge">sequence</co
   <span class="c1">// =&gt; List(20, 40, 60)</span>
 <span class="o">}</span>
 </code></pre></div></div>
-
-<h2 id="6-functional-programming-and-type-classes">6. Functional Programming and Type-classes</h2>
+    
+      <h2 id="6-functional-programming-and-type-classes">
+        
+        
+          6. Functional Programming and Type-classes <a href="#6-functional-programming-and-type-classes" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>When working with well grown functions such as <code class="language-plaintext highlighter-rouge">map</code>, <code class="language-plaintext highlighter-rouge">flatMap</code> and <code class="language-plaintext highlighter-rouge">mapBoth</code>,
 we no longer care that underlying it all is an “<code class="language-plaintext highlighter-rouge">(A =&gt; Unit) =&gt; Unit</code>”, because these
@@ -1241,8 +1349,14 @@ in Swift <code class="language-plaintext highlighter-rouge">5 == Some(5)</code> 
 people that <code class="language-plaintext highlighter-rouge">Some(null)</code> actually makes sense for as long as <code class="language-plaintext highlighter-rouge">null</code> is a valid
 value of <code class="language-plaintext highlighter-rouge">AnyRef</code> and because otherwise you can’t define <code class="language-plaintext highlighter-rouge">Applicative[Option]</code>.
 </p>
-
-<h3 id="61-monad-sequencing-and-recursivity">6.1. Monad (Sequencing and Recursivity)</h3>
+    
+      <h3 id="61-monad-sequencing-and-recursivity">
+        
+        
+          6.1. Monad (Sequencing and Recursivity) <a href="#61-monad-sequencing-and-recursivity" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>This article is not about explaining Monads. There are other great articles
 for that. But if you’re looking to build an intuition, here’s another one: in the
@@ -1323,8 +1437,14 @@ great if the <code class="language-plaintext highlighter-rouge">flatMap</code> o
 <strong>PRO-TIP:</strong> this is just a toy example. For getting serious,
 see <a href="http://typelevel.org/cats/">Typelevel’s Cats</a>
 </p>
-
-<h3 id="62-applicative-parallelism">6.2. Applicative (Parallelism)</h3>
+    
+      <h3 id="62-applicative-parallelism">
+        
+        
+          6.2. Applicative (Parallelism) <a href="#62-applicative-parallelism" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Monads define sequencing of operations, but sometimes we want to compose
 the results of computations that are independent of each other,
@@ -1396,8 +1516,14 @@ to work for <code class="language-plaintext highlighter-rouge">Future</code>, <c
 <strong>PRO-TIP:</strong> worth repeating, this is just a toy example. For getting serious,
 see <a href="http://typelevel.org/cats/">Typelevel’s Cats</a>
 </p>
-
-<h3 id="63-can-we-define-a-type-class-for-async-evaluation">6.3. Can We Define a Type-class for Async Evaluation?</h3>
+    
+      <h3 id="63-can-we-define-a-type-class-for-async-evaluation">
+        
+        
+          6.3. Can We Define a Type-class for Async Evaluation? <a href="#63-can-we-define-a-type-class-for-async-evaluation" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Missing from above is a way to actually trigger an evaluation and
 get a value out. Thinking of Scala’s <code class="language-plaintext highlighter-rouge">Future</code>, we want a way to abstract
@@ -1445,8 +1571,14 @@ not inherit from <code class="language-plaintext highlighter-rouge">Monad</code>
 introduced in <a href="http://typelevel.org/cats">Cats</a>, I’d love to hear them.</p>
 
 <p>I do hope you enjoyed this thought experiment, designing things is fun 😎</p>
-
-<h2 id="7-picking-the-right-tool">7. Picking the Right Tool</h2>
+    
+      <h2 id="7-picking-the-right-tool">
+        
+        
+          7. Picking the Right Tool <a href="#7-picking-the-right-tool" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Some abstractions are more general purpose than others and personally
 I think the mantra of “<em>picking the right tool for the job</em>” is
@@ -1479,7 +1611,7 @@ avoiding concurrency 💀</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -1506,7 +1638,14 @@ avoiding concurrency 💀</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -1625,7 +1764,6 @@ avoiding concurrency 💀</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -1687,12 +1825,12 @@ avoiding concurrency 💀</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

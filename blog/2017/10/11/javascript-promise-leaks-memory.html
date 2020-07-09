@@ -18,7 +18,7 @@
     <meta content="JavaScript’s Promise leaks memory in recursive loops and what you can do about it." property="og:description">
     <meta content="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html" property="og:url">
     <meta content="2017-10-11T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/js-then.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">JavaScript's Promise Leaks Memory</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          JavaScript's Promise Leaks Memory
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html"/>
     <meta itemprop="datePublished" content="2017-10-11T00:00:00+0000"/>
@@ -142,8 +148,14 @@
   </li>
   <li><a href="#final-words">Final Words</a></li>
 </ul>
-
-<h2 id="introduction">Introduction</h2>
+    
+      <h2 id="introduction">
+        
+        
+          Introduction <a href="#introduction" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>This piece of code will leak memory and eventually crash your Node.js
 process or browser:</p>
@@ -202,8 +214,14 @@ recursive calls, the <code class="language-plaintext highlighter-rouge">Promise<
 not chaining <code class="language-plaintext highlighter-rouge">then</code> calls correctly. And that sample should not leak,
 the <code class="language-plaintext highlighter-rouge">Promise</code> implementation should be able to do the equivalent of TCO
 and in such a case eliminate frames in the <code class="language-plaintext highlighter-rouge">then</code> chain being created.</p>
-
-<h2 id="the-spec-is-the-problem">The Spec is The Problem</h2>
+    
+      <h2 id="the-spec-is-the-problem">
+        
+        
+          The Spec is The Problem <a href="#the-spec-is-the-problem" class="anchor">#</a>
+        
+        
+      </h2>
 
 <figure>
   <a href="https://promisesaplus.com/">
@@ -223,8 +241,14 @@ Relevant links to known issues on GitHub, explaining why:</p>
 
 <p>As you’ll see, there are some reasonable arguments for why the <code class="language-plaintext highlighter-rouge">Promise</code>
 implementation is allowed to leak memory. But I can’t agree.</p>
-
-<h2 id="the-non-leaky-solution">The Non-leaky Solution</h2>
+    
+      <h2 id="the-non-leaky-solution">
+        
+        
+          The Non-leaky Solution <a href="#the-non-leaky-solution" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>The solution, if you insist on using JavaScript’s <code class="language-plaintext highlighter-rouge">Promise</code>, is to work
 with non-recursive functions:</p>
@@ -241,12 +265,24 @@ with non-recursive functions:</p>
 
 <p>But at this point any semblance of functional programming, if you ever had
 any, goes out the window, see below.</p>
-
-<h2 id="common-objections">Common Objections</h2>
+    
+      <h2 id="common-objections">
+        
+        
+          Common Objections <a href="#common-objections" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Gathering feedback from people, here are the common objections:</p>
-
-<h3 id="1-this-is-normal">1. This is Normal</h3>
+    
+      <h3 id="1-this-is-normal">
+        
+        
+          1. This is Normal <a href="#1-this-is-normal" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>No, if you judge this implementation, relative to other <code class="language-plaintext highlighter-rouge">Promise</code> / <code class="language-plaintext highlighter-rouge">Future</code>
 implementations in the industry, which are setting expectations.</p>
@@ -274,8 +310,14 @@ and Monix <a href="https://monix.io/api/3.0/monix/execution/CancelableFuture.htm
 <p>Interestingly, complaints for Scala’s <code class="language-plaintext highlighter-rouge">Future</code> happened due to usage of
 Play’s <a href="https://www.playframework.com/documentation/2.6.x/Iteratees">Iteratees</a>,
 with which people have been modeling stream processing.</p>
-
-<h3 id="2-but-it-does-unlimited-chaining-of-promises">2. But It Does Unlimited Chaining of Promises</h3>
+    
+      <h3 id="2-but-it-does-unlimited-chaining-of-promises">
+        
+        
+          2. But It Does Unlimited Chaining of Promises <a href="#2-but-it-does-unlimited-chaining-of-promises" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Yes, that’s why it’s leaking memory.</p>
 
@@ -285,8 +327,14 @@ the implementations mentioned that don’t leak.</p>
 
 <p>The fault lies with the standard <code class="language-plaintext highlighter-rouge">Promise</code> implementation, not with
 the shown sample, being a legitimate use-case.</p>
-
-<h3 id="3-that-sample-does-not-use-the-return-value">3. That Sample Does Not Use the Return Value</h3>
+    
+      <h3 id="3-that-sample-does-not-use-the-return-value">
+        
+        
+          3. That Sample Does Not Use the Return Value <a href="#3-that-sample-does-not-use-the-return-value" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The sample is kept simple for didactic purposes, however:</p>
 
@@ -296,8 +344,14 @@ aggregating information along the way, returning a result later</li>
   <li>the script does do error handling and without that inner
 <code class="language-plaintext highlighter-rouge">return</code>, the <code class="language-plaintext highlighter-rouge">.catch(console.error)</code> would have no effect</li>
 </ol>
-
-<h3 id="4-thats-the-equivalent-of-a-stack-overflow">4. That’s the Equivalent of a Stack Overflow</h3>
+    
+      <h3 id="4-thats-the-equivalent-of-a-stack-overflow">
+        
+        
+          4. That’s the Equivalent of a Stack Overflow <a href="#4-thats-the-equivalent-of-a-stack-overflow" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Yes, I’ve mentioned this above, but just to set your mind at rest on this point,
 proper Tail-Calls Optimizations are coming for normal call sites, being part of
@@ -315,8 +369,14 @@ if that sample would be synchronous, it would not trigger a stack overflow.</p>
 happening independently of the current call stack / run loop, this behavior
 is actually surprising, since one of the reasons to go async is to escape
 the limitations of the call stack.</p>
-
-<h3 id="5-you-dont-understand-how-promises-work">5. You Don’t Understand How Promises Work</h3>
+    
+      <h3 id="5-you-dont-understand-how-promises-work">
+        
+        
+          5. You Don’t Understand How Promises Work <a href="#5-you-dont-understand-how-promises-work" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>I’ve been told that I don’t understand promises. So I apologize for the
 appeal to authority that I’m about to make.</p>
@@ -343,8 +403,14 @@ Bonus — see my <a href="https://www.youtube.com/watch?v=wi97X8_JQUk">presentat
 <p>My work, good or bad, has followed a certain pattern, which is why I do
 understand promises, I do understand at least two solutions to this, hence
 this article.</p>
-
-<h3 id="6-no-use-cases-this-is-a-niche">6. No Use-cases, This is a Niche</h3>
+    
+      <h3 id="6-no-use-cases-this-is-a-niche">
+        
+        
+          6. No Use-cases, This is a Niche <a href="#6-no-use-cases-this-is-a-niche" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Functional programming might be a niche, however more and more projects, 
 including at big companies such as Facebook, are now using an 
@@ -405,10 +471,22 @@ something like this in the future, even if you don’t like it ;-)</p>
 </code></pre></div></div>
 
 <p>Alas, with the <code class="language-plaintext highlighter-rouge">Promise</code> implementation leaking, this doesn’t work ;-)</p>
-
-<h2 id="alternatives">Alternatives</h2>
-
-<h3 id="fluture">Fluture</h3>
+    
+      <h2 id="alternatives">
+        
+        
+          Alternatives <a href="#alternatives" class="anchor">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="fluture">
+        
+        
+          Fluture <a href="#fluture" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Project Page: <a href="https://github.com/fluture-js/Fluture">github.com/fluture-js/Fluture</a></p>
 
@@ -417,8 +495,14 @@ something like this in the future, even if you don’t like it ;-)</p>
 <p>It isn’t a direct replacement however because it has lazy behavior, being meant for suspending side effects. This is more like an <code class="language-plaintext highlighter-rouge">IO</code> data type. Which is cool, you should use something like it, but it’s also apples vs oranges.</p>
 
 <p>I don’t have enough experience with it, making this recommendation solely based on its popularity and I double checked that it indeed preserves stack safety.</p>
-
-<h3 id="funfix">Funfix</h3>
+    
+      <h3 id="funfix">
+        
+        
+          Funfix <a href="#funfix" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>I’ve been building a new project, <a href="https://funfix.org/">Funfix</a>,
 a JavaScript library for functional programming (capital FP), supporting
@@ -478,8 +562,14 @@ for “<em>shameless self promotion</em>”.<br /><br />
 I’m building stuff that I share with the world and I like talking about
 it on my personal blog. I’m not going to apologize for it.
 </p>
-
-<h2 id="final-words">Final Words</h2>
+    
+      <h2 id="final-words">
+        
+        
+          Final Words <a href="#final-words" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>That the current JavaScript <code class="language-plaintext highlighter-rouge">Promise</code> implementation has this leak
 is a big problem, because tail-recursive calls are the cornerstone
@@ -503,7 +593,7 @@ where people are afraid to take on dependencies.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -530,7 +620,14 @@ where people are afraid to take on dependencies.</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -645,7 +742,6 @@ where people are afraid to take on dependencies.</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -707,12 +803,12 @@ where people are afraid to take on dependencies.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

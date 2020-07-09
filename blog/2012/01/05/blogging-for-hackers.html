@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/01/05/blogging-for-hackers.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Blogging Platform for Hackers</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Blogging Platform for Hackers
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/01/05/blogging-for-hackers.html"/>
     <meta itemprop="datePublished" content="2012-01-05T00:00:00+0000"/>
@@ -146,8 +152,14 @@ blog:</p>
 fun. Also, make sure to read
 <a href="http://tom.preston-werner.com/2008/11/17/blogging-like-a-hacker.html">Blogging Like a Hacker</a>,
 by Tom Preston-Werner, GitHub’s cofounder and the author of Jekyll.</p>
-
-<h2 id="jekyll-and-heroku-sitting-in-a-tree">Jekyll and Heroku, Sitting in a Tree</h2>
+    
+      <h2 id="jekyll-and-heroku-sitting-in-a-tree">
+        
+        
+          Jekyll and Heroku, Sitting in a Tree <a href="#jekyll-and-heroku-sitting-in-a-tree" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I love <a href="https://github.com/mojombo/jekyll">Jekyll</a>, the static
 website generator. It is pure awesomeness for me:</p>
@@ -194,8 +206,14 @@ naked.</p>
 above. In Heroku the Bamboo stack features a Varnish frontend. If you
 set proper expiry headers on your content, subsequent requests will
 not hit the Ruby server.</p>
-
-<h2 id="hosting-static-content-on-heroku">Hosting Static Content on Heroku</h2>
+    
+      <h2 id="hosting-static-content-on-heroku">
+        
+        
+          Hosting Static Content on Heroku <a href="#hosting-static-content-on-heroku" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>So this tutorial is about hosting a Jekyll website, which is why I’m
 going to make some assumptions about your directory structure. However
@@ -457,8 +475,14 @@ rackup
 website for you. However you either have to use the Cedar stack, or
 generate the pages on the fly. In case of the Cedar stack, you lose
 Varnish. Just keep your generated files in Git, it’s easier.</p>
-
-<h2 id="commenting-with-disqus-facebook-or-roll-your-own">Commenting with Disqus, Facebook or Roll Your Own</h2>
+    
+      <h2 id="commenting-with-disqus-facebook-or-roll-your-own">
+        
+        
+          Commenting with Disqus, Facebook or Roll Your Own <a href="#commenting-with-disqus-facebook-or-roll-your-own" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>For commenting <a href="http://disqus.com">Disqus</a> is a really good
 service. In case you have a very popular website amongst normal
@@ -477,8 +501,14 @@ low to bother with extra development.</p>
 
 <p>I recommend Disqus, although rolling your own is fun and keeps you in
 control (which is the reason I’m using Jekyll in the first place).</p>
-
-<h2 id="using-google-app-engine-as-your-cdn-or-cron-manager">Using Google App Engine as Your CDN or Cron Manager</h2>
+    
+      <h2 id="using-google-app-engine-as-your-cdn-or-cron-manager">
+        
+        
+          Using Google App Engine as Your CDN or Cron Manager <a href="#using-google-app-engine-as-your-cdn-or-cron-manager" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>So when using Heroku’s free plan, I feel a little uncomfortable
 because relying on one dyno can get you in trouble. Having Varnish in
@@ -575,8 +605,14 @@ then run this command:</p>
   <li>Heroku URL getting requested: <a href="http://alexn.org/ping">http://alexn.org/ping</a></li>
   <li>GAE Cron Job getting executed: <a href="http://assets-bionicspirit.appspot.com/tasks/ping">http://assets-bionicspirit.appspot.com/tasks/ping</a></li>
 </ul>
-
-<h2 id="extra-tip---cloudflare">Extra Tip - CloudFlare</h2>
+    
+      <h2 id="extra-tip---cloudflare">
+        
+        
+          Extra Tip - CloudFlare <a href="#extra-tip---cloudflare" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Luigi Montanez kindly pointed out in below’s comments the availability
 of <a href="https://www.cloudflare.com/">CloudFlare</a>.</p>
@@ -608,8 +644,14 @@ cached by CloudFlare or served by GAE, has an average load time of
 CloudFlare are doing much better.</p>
 
 <p>So we’ll see.</p>
-
-<h2 id="conclusion">Conclusion</h2>
+    
+      <h2 id="conclusion">
+        
+        
+          Conclusion <a href="#conclusion" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>The result is a really responsive, scalable and kick-ass blog, for
 zero bucks spent on hosting.</p>
@@ -657,7 +699,14 @@ anyway, but this was fun.</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -776,7 +825,6 @@ anyway, but this was fun.</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -838,12 +886,12 @@ anyway, but this was fun.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

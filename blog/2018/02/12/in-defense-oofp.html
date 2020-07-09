@@ -18,7 +18,7 @@
     <meta content="OOP versus Type Classes, exemplified and in defense of the Scala collections redesign." property="og:description">
     <meta content="https://alexn.org/blog/2018/02/12/in-defense-oofp.html" property="og:url">
     <meta content="2018-02-12T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-stairs.jpg" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2018/02/12/in-defense-oofp.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">In Defense of OOFP</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          In Defense of OOFP
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2018/02/12/in-defense-oofp.html"/>
     <meta itemprop="datePublished" content="2018-02-12T00:00:00+0000"/>
@@ -159,8 +165,14 @@
   </li>
   <li><a href="#6-conclusion">6. Conclusion</a></li>
 </ul>
-
-<h2 id="1-background">1. Background</h2>
+    
+      <h2 id="1-background">
+        
+        
+          1. Background <a href="#1-background" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Scala is a hybrid language, being at the same time its greatest
 strength and weakness.</p>
@@ -184,8 +196,14 @@ upcoming changes on Scala’s blog:</p>
 <p>It’s now also receiving some criticism. This article represents my
 2¢ on why I like this redesign and on why criticism of an
 OOP hierarchy are not warranted, even if you love FP.</p>
-
-<h3 id="11-my-road-to-scala">1.1. My Road to Scala</h3>
+    
+      <h3 id="11-my-road-to-scala">
+        
+        
+          1.1. My Road to Scala <a href="#11-my-road-to-scala" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Like many others in the Scala community, I was attracted to Scala because
 it seemed to be a better, more expressive language, with stricter
@@ -205,13 +223,25 @@ written back then and to be honest, not much has changed.</p>
 internal complexity and problems being leaked at the call sites, it
 was the first time I felt my needs for standard data structures were
 met and even exceeded.</p>
-
-<h2 id="2-criticism">2. Criticism</h2>
+    
+      <h2 id="2-criticism">
+        
+        
+          2. Criticism <a href="#2-criticism" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>There’s plenty to complain about in the current implementation and
 here I’m doing my best to summarize it:</p>
-
-<h3 id="21-canbuildfrom">2.1. CanBuildFrom</h3>
+    
+      <h3 id="21-canbuildfrom">
+        
+        
+          2.1. CanBuildFrom <a href="#21-canbuildfrom" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Checkout this classic StackOverflow issue:</p>
 
@@ -275,8 +305,14 @@ years.</p>
 problem, but you’ll no longer have to worry about it. Beware of clever
 solutions to problems you don’t have!
 </p>
-
-<h3 id="22-complex-hierarchy">2.2. Complex Hierarchy</h3>
+    
+      <h3 id="22-complex-hierarchy">
+        
+        
+          2.2. Complex Hierarchy <a href="#22-complex-hierarchy" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>This is an awesome infographic, showing how complex the implementation is for
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html">List</a>,
@@ -310,8 +346,14 @@ they’ve been extra careful this time around.</p>
 brings with it complexity beyond reason and is counter-productive for
 subtype polymorphism!
 </p>
-
-<h3 id="23-seq-or-other-super-types">2.3. Seq or Other Super-types</h3>
+    
+      <h3 id="23-seq-or-other-super-types">
+        
+        
+          2.3. Seq or Other Super-types <a href="#23-seq-or-other-super-types" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p><a href="https://github.com/djspiewak">Daniel Spiewak</a> made a good attempt at a
 <a href="https://gist.github.com/djspiewak/2ae2570c8856037a7738">proposal in 2015</a>.</p>
@@ -379,8 +421,14 @@ type class and how that compares with <code class="language-plaintext highlighte
 are booby traps (e.g. <code class="language-plaintext highlighter-rouge">Seq</code> indexing), but this is not specific
 to OOP interfaces, vigilance in design is always needed!
 </p>
-
-<h3 id="24-not-using-type-classes">2.4. Not Using Type-classes</h3>
+    
+      <h3 id="24-not-using-type-classes">
+        
+        
+          2.4. Not Using Type-classes <a href="#24-not-using-type-classes" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>This is actually a separate argument that does have merit:</p>
 
@@ -439,8 +487,14 @@ but highly efficient and flexible protocol. More on that below.</p>
 parametric polymorphism, but in Scala the syntax is heavier than
 when using OOP, although this isn’t an issue with Haskell
 </p>
-
-<h2 id="3-oop-vs-constrained-parametric-polymorphism-type-classes">3. OOP vs Constrained Parametric Polymorphism (Type-classes)</h2>
+    
+      <h2 id="3-oop-vs-constrained-parametric-polymorphism-type-classes">
+        
+        
+          3. OOP vs Constrained Parametric Polymorphism (Type-classes) <a href="#3-oop-vs-constrained-parametric-polymorphism-type-classes" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Lets imagine a function that sums up numbers:</p>
 
@@ -494,8 +548,14 @@ compile time, with both the good and the bad</li>
 <b><u>TL;DR</u></b>: With Scala you can actually pick and choose the best
 approach - this can lead to choice paralysis however and lots of drama!
 </p>
-
-<h3 id="4-case-study-monix-iterant">4. Case Study: Monix Iterant</h3>
+    
+      <h3 id="4-case-study-monix-iterant">
+        
+        
+          4. Case Study: Monix Iterant <a href="#4-case-study-monix-iterant" class="anchor">#</a>
+        
+        
+      </h3>
 
 <figure>
   <a href="https://www.youtube.com/watch?v=JFbYQGG2Nb4" target="_blank" title="A Tale of Two Monix Streams, by Alexandru Nedelcu">
@@ -553,8 +613,14 @@ or Java’s
 case of interruption (by following <code class="language-plaintext highlighter-rouge">stop</code>), thus making it safer
 than plain iterators</li>
 </ol>
-
-<h3 id="41-type-classes-for-super-powers">4.1. Type-classes For Super Powers</h3>
+    
+      <h3 id="41-type-classes-for-super-powers">
+        
+        
+          4.1. Type-classes For Super Powers <a href="#41-type-classes-for-super-powers" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>So how can this simple data structure possibly have such super powers?</p>
 
@@ -621,8 +687,14 @@ can give you super powers by effectively outsourcing the processing to
 pluggable data types with various capabilities, the restrictions being on
 the operations themselves!
 </p>
-
-<h3 id="42-liskov-substitution-principle-oop-strikes-back">4.2. Liskov Substitution Principle: OOP Strikes Back</h3>
+    
+      <h3 id="42-liskov-substitution-principle-oop-strikes-back">
+        
+        
+          4.2. Liskov Substitution Principle: OOP Strikes Back <a href="#42-liskov-substitution-principle-oop-strikes-back" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>That last example should make you think - parametric polymorphism implies:</p>
 
@@ -712,8 +784,14 @@ either expose the data type as a type parameter, making types more
 complicated and saying goodbye to heterogeneity, or you end up with a
 shitty OOP substitute!
 </p>
-
-<h3 id="43-iterator-vs-foldable-and-traverse">4.3. Iterator vs Foldable and Traverse</h3>
+    
+      <h3 id="43-iterator-vs-foldable-and-traverse">
+        
+        
+          4.3. Iterator vs Foldable and Traverse <a href="#43-iterator-vs-foldable-and-traverse" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Many people are under the impression that you can substitute the classic
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterator.html">Iterator</a>
@@ -904,8 +982,14 @@ dynamic linking?</p>
 based solution in performance, flexibility or encapsulation! It’s
 also lower-level, impure and error prone, but sorely needed sometimes.
 </p>
-
-<h2 id="5-seq-my-love">5. Seq My Love</h2>
+    
+      <h2 id="5-seq-my-love">
+        
+        
+          5. Seq My Love <a href="#5-seq-my-love" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I actually like
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Seq.html">Seq</a>
@@ -928,8 +1012,14 @@ and have never regretted using it.</p>
 </blockquote>
 
 <p>Here’s why I disagree …</p>
-
-<h3 id="51-seq-on-return">5.1. Seq on Return</h3>
+    
+      <h3 id="51-seq-on-return">
+        
+        
+          5.1. Seq on Return <a href="#51-seq-on-return" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Returning <code class="language-plaintext highlighter-rouge">Seq</code> from a function gives you the freedom to change the
 implementation and this works well because:</p>
@@ -1008,8 +1098,14 @@ specific type in implementing classes (e.g.  to go from <code class="language-pl
 <p class="info-bubble">
 <b><u>TL;DR</u></b>: there are perfectly valid use-cases for <code class="language-plaintext highlighter-rouge">Seq</code> as the return type!
 </p>
-
-<h3 id="52-seq-on-input">5.2. Seq on Input</h3>
+    
+      <h3 id="52-seq-on-input">
+        
+        
+          5.2. Seq on Input <a href="#52-seq-on-input" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The necessity for <code class="language-plaintext highlighter-rouge">Seq</code> is the same as for
 <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Foldable.scala">Foldable</a>,
@@ -1047,8 +1143,14 @@ an <code class="language-plaintext highlighter-rouge">Iterator</code> loop.</p>
 <p class="info-bubble">
 <b><u>TL;DR</u></b>: yes, there are perfectly valid use-cases for <code class="language-plaintext highlighter-rouge">Seq</code> as the input!
 </p>
-
-<h2 id="6-conclusion">6. Conclusion</h2>
+    
+      <h2 id="6-conclusion">
+        
+        
+          6. Conclusion <a href="#6-conclusion" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Here’s a summary:</p>
 
@@ -1094,7 +1196,7 @@ Scala’s OOP and the new collections.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -1124,7 +1226,14 @@ Scala’s OOP and the new collections.</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -1241,7 +1350,6 @@ Scala’s OOP and the new collections.</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -1303,12 +1411,12 @@ Scala’s OOP and the new collections.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

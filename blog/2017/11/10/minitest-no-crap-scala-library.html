@@ -19,7 +19,7 @@
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html" property="og:url">
     <meta content="2017-11-10T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png" />
@@ -47,8 +47,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html">
@@ -88,7 +88,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Minitest: Zero Crap Scala Testing Library</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Minitest: Zero Crap Scala Testing Library
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html"/>
     <meta itemprop="datePublished" content="2017-11-10T00:00:00+0000"/>
@@ -123,8 +129,14 @@
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap"><a href="https://github.com/monix/minitest">Minitest</a> is my minimal testing library that I’ve been using for developing <a href="https://monix.io">Monix</a>.</p>
-
-<h2 id="raison-dêtre">Raison d’être</h2>
+    
+      <h2 id="raison-dêtre">
+        
+        
+          Raison d’être <a href="#raison-dêtre" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I dislike most testing frameworks, because of bloat and of heavy DSLs
 trying to mimic the English language. When I created Minitest, I
@@ -144,8 +156,14 @@ choices of popular testing libraries. I know that libraries like
 are because people want them that way. And those are awesome
 projects, having awesome authors. They are just not for me.
 </p>
-
-<h3 id="portability">Portability</h3>
+    
+      <h3 id="portability">
+        
+        
+          Portability <a href="#portability" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The natural tendency of testing frameworks is to grow beyond all
 imagination in order to accommodate the various testing styles that
@@ -172,8 +190,14 @@ expressions or statements that I don’t immediately understand. That,
 and I wanted an easy transition in Monix from ScalaTest’s
 <a href="http://www.scalatest.org/getting_started_with_fun_suite">FunSuite</a>,
 which is what I was using.</p>
-
-<h3 id="say-no-to-dsls">Say No to DSLs</h3>
+    
+      <h3 id="say-no-to-dsls">
+        
+        
+          Say No to DSLs <a href="#say-no-to-dsls" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>I do not want to write <code class="language-plaintext highlighter-rouge">x shouldBe greaterThan(y)</code> or other such
 nonsense. I do not have the memory for that, I always forget the API
@@ -221,8 +245,14 @@ objects, so <code class="language-plaintext highlighter-rouge">it</code> is a ba
 almost never happens and if they are inclined to do that (like once in
 a million), then they can just learn programming. It’s not like an
 English-like DSL is any closer to natural language.</p>
-
-<h3 id="minimal-implementation-less-is-more">Minimal Implementation, Less is More</h3>
+    
+      <h3 id="minimal-implementation-less-is-more">
+        
+        
+          Minimal Implementation, Less is More <a href="#minimal-implementation-less-is-more" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Because the implementation is minimal, there’s nothing that I can’t
 fix in it, there’s nothing that I can’t implement should I need
@@ -234,8 +264,14 @@ is available for Scala 2.12 (at the moment of writing, it isn’t).</p>
 
 <p>In fact, if you want to build your own testing framework, Minitest can
 serve as a sample ;-)</p>
-
-<h2 id="hypothesis">Hypothesis</h2>
+    
+      <h2 id="hypothesis">
+        
+        
+          Hypothesis <a href="#hypothesis" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>All you need is the ability to express:</p>
 
@@ -267,8 +303,14 @@ nice error message</li>
   <li>an English-like DSL</li>
   <li>a purely functional <em>base</em> API</li>
 </ol>
-
-<h2 id="tutorial">Tutorial</h2>
+    
+      <h2 id="tutorial">
+        
+        
+          Tutorial <a href="#tutorial" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Test suites MUST BE objects, not classes. To create a simple test
 suite, it could inherit from <code class="language-plaintext highlighter-rouge">SimpleTestSuite</code>. Here’s a simple test:</p>
@@ -364,10 +406,22 @@ So for property-based testing:</p>
 </code></pre></div></div>
 
 <p>That’s everything!</p>
-
-<h2 id="common-complaints">Common Complaints</h2>
-
-<h3 id="i-do-not-like-future">I do not like Future</h3>
+    
+      <h2 id="common-complaints">
+        
+        
+          Common Complaints <a href="#common-complaints" class="anchor">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="i-do-not-like-future">
+        
+        
+          I do not like Future <a href="#i-do-not-like-future" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>That’s too bad, because the <code class="language-plaintext highlighter-rouge">Future</code> is needed by the runtime and
 regardless what alternative you use (e.g. <code class="language-plaintext highlighter-rouge">cats.effect.IO</code>,
@@ -379,8 +433,14 @@ depend on Cats or Scalaz.</p>
 
 <p>And you can always build your own <code class="language-plaintext highlighter-rouge">testTask</code>, <code class="language-plaintext highlighter-rouge">testEffect</code> or <code class="language-plaintext highlighter-rouge">testIO</code>
 utilities on top of <code class="language-plaintext highlighter-rouge">testAsync</code>.</p>
-
-<h3 id="i-want-a-purely-functional-api">I want a purely functional API</h3>
+    
+      <h3 id="i-want-a-purely-functional-api">
+        
+        
+          I want a purely functional API <a href="#i-want-a-purely-functional-api" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p><a href="https://etorreborre.github.io/specs2/">Specs2</a> has a nice functional
 API. You might like that, however I don’t like it for all the reasons
@@ -417,16 +477,28 @@ your own utilities and I recommend piggybacking on ScalaCheck, e.g:</p>
 
 <p>I don’t want that in Monix though - the integration that we have with
 ScalaCheck is minimal and enough.</p>
-
-<h3 id="it-does-not-support-maven-cbt-or-others">It does not support Maven, CBT or others</h3>
+    
+      <h3 id="it-does-not-support-maven-cbt-or-others">
+        
+        
+          It does not support Maven, CBT or others <a href="#it-does-not-support-maven-cbt-or-others" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Sorry about that, but this library is meant to be minimal and stable,
 and I don’t have the time to expand support beyond SBT right now.</p>
 
 <p>Pull requests open and only accepted if they don’t complicate the
 codebase much.</p>
-
-<h2 id="final-words">Final Words</h2>
+    
+      <h2 id="final-words">
+        
+        
+          Final Words <a href="#final-words" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Forget DSLs.</p>
 
@@ -438,7 +510,7 @@ codebase much.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -462,7 +534,14 @@ codebase much.</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -577,7 +656,6 @@ codebase much.</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -639,12 +717,12 @@ codebase much.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

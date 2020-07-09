@@ -18,7 +18,7 @@
     <meta content="Bifunctor IO is a hot topic in the Scala community. Herein I’m expressing my dislike for it, as it shares the problems of Java’s Checked Exceptions." property="og:description">
     <meta content="https://alexn.org/blog/2018/05/06/bifunctor-io.html" property="og:url">
     <meta content="2018-05-06T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/bio.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2018/05/06/bifunctor-io.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">On Bifunctor IO and Java's Checked Exceptions</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          On Bifunctor IO and Java's Checked Exceptions
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2018/05/06/bifunctor-io.html"/>
     <meta itemprop="datePublished" content="2018-05-06T00:00:00+0000"/>
@@ -123,8 +129,14 @@
     <p>The Bifunctor <code class="language-plaintext highlighter-rouge">IO</code> data type is a hot topic in the Scala community. In
 this article however I’m expressing my dislike for it because it
 shares the same problems as Java’s Checked Exceptions.</p>
-
-<h2 id="table-of-contents">Table of Contents</h2>
+    
+      <h2 id="table-of-contents">
+        
+        
+          Table of Contents <a href="#table-of-contents" class="anchor">#</a>
+        
+        
+      </h2>
 
 <ul>
   <li><a href="#table-of-contents">Table of Contents</a></li>
@@ -142,8 +154,14 @@ shares the same problems as Java’s Checked Exceptions.</p>
   <li><a href="#io-cannot-be-an-alias-of-the-bifunctor-io">IO Cannot Be an Alias of the Bifunctor IO</a></li>
   <li><a href="#final-words">Final Words</a></li>
 </ul>
-
-<h2 id="what-is-io">What is IO?</h2>
+    
+      <h2 id="what-is-io">
+        
+        
+          What is IO? <a href="#what-is-io" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Normally the <code class="language-plaintext highlighter-rouge">IO</code> data type is expressed as:</p>
 
@@ -205,8 +223,14 @@ Runtime. This means that this code is legit:</p>
 
 <p>The astute reader might notice that this isn’t a total function, as it
 could throw an <code class="language-plaintext highlighter-rouge">ArithmeticException</code>. An easy mistake to make.</p>
-
-<h2 id="whats-the-bifunctor-io">What’s the Bifunctor IO?</h2>
+    
+      <h2 id="whats-the-bifunctor-io">
+        
+        
+          What’s the Bifunctor IO? <a href="#whats-the-bifunctor-io" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I’m going to call this data type <code class="language-plaintext highlighter-rouge">BIO</code>, to differentiate it from <code class="language-plaintext highlighter-rouge">IO</code> above:</p>
 
@@ -282,8 +306,14 @@ code and give us a way to show anyone reading the code that we’ve already hand
 </ol>
 
 <p>Naturally, I disagree with the first assertion and I don’t think the second assertion is a problem 😀</p>
-
-<h2 id="the-problems-of-javas-checked-exceptions">The Problems of Java’s Checked Exceptions</h2>
+    
+      <h2 id="the-problems-of-javas-checked-exceptions">
+        
+        
+          The Problems of Java’s Checked Exceptions <a href="#the-problems-of-javas-checked-exceptions" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>While I think that the Bifunctor IO is a cool implementation, that’s pretty useful
 for certain people, or certain use cases, I believe that ultimately it’s not a good
@@ -301,8 +331,14 @@ interesting articles:</p>
 </ul>
 
 <p>But let me explain in more detail …</p>
-
-<h3 id="1-composition-destroys-specific-error-types">1. Composition Destroys Specific Error Types</h3>
+    
+      <h3 id="1-composition-destroys-specific-error-types">
+        
+        
+          1. Composition Destroys Specific Error Types <a href="#1-composition-destroys-specific-error-types" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Let’s go with a more serious example:</p>
 
@@ -361,8 +397,14 @@ improvement over the status quo, far from it, this is just noise
 polluting the code. And before you say anything in its defence, make
 sure the argument doesn’t also apply to Java and everything you
 dislike about it 😉</p>
-
-<h3 id="2-you-dont-recover-from-errors-often">2. You Don’t Recover From Errors Often</h3>
+    
+      <h3 id="2-you-dont-recover-from-errors-often">
+        
+        
+          2. You Don’t Recover From Errors Often <a href="#2-you-dont-recover-from-errors-often" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Imagine a piece of code like this:</p>
 
@@ -426,8 +468,14 @@ statements, which are like try/finally.”</em></p>
 
 <p>In other words the most important part of exceptions are the finalizers,
 recovery being less frequent.</p>
-
-<h3 id="3-the-error-type-is-an-encapsulation-leak">3. The Error Type is an Encapsulation Leak</h3>
+    
+      <h3 id="3-the-error-type-is-an-encapsulation-leak">
+        
+        
+          3. The Error Type is an Encapsulation Leak <a href="#3-the-error-type-is-an-encapsulation-leak" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Lets say that we have this function:</p>
 
@@ -463,8 +511,14 @@ libraries are known to have done</li>
 <p>NOTE: there are cases in which <em>you want</em> to break binary compatibility in
 case the error type changes.  That is precisely the use case for which the
 Bifunctor IO or <code class="language-plaintext highlighter-rouge">EitherT</code> are recommended.</p>
-
-<h3 id="4-it-pushes-complexity-to-the-user">4. It Pushes Complexity to the User</h3>
+    
+      <h3 id="4-it-pushes-complexity-to-the-user">
+        
+        
+          4. It Pushes Complexity to the User <a href="#4-it-pushes-complexity-to-the-user" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>On utility I deeply understand the need to parameterize all things. But the question is,
 what else could we parameterize and why aren’t we doing it?</p>
@@ -508,8 +562,14 @@ the current <code class="language-plaintext highlighter-rouge">IO</code> that do
 Martin Odersky already expressed his dislike for type classes of multiple type
 parameters, such as <code class="language-plaintext highlighter-rouge">MonadError</code> and it’s pretty telling that type classes with
 multiple type parameters are not part of standard Haskell.</p>
-
-<h3 id="5-the-bifunctor-io-doesnt-reflect-the-runtime">5. The Bifunctor IO Doesn’t Reflect the Runtime</h3>
+    
+      <h3 id="5-the-bifunctor-io-doesnt-reflect-the-runtime">
+        
+        
+          5. The Bifunctor IO Doesn’t Reflect the Runtime <a href="#5-the-bifunctor-io-doesnt-reflect-the-runtime" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>I gave this piece of code above and I’m fairly sure that you missed the
 bug in it:</p>
@@ -597,8 +657,14 @@ and those that don’t.</p>
 
 <p>If you’re in the former camp, I think <a href="https://twitter.com/Hillelogram">Hillel Wayne</a>
 is eager to <a href="https://hillelwayne.com/post/theorem-prover-showdown/">prove you wrong</a> 😉</p>
-
-<h2 id="io-cannot-be-an-alias-of-the-bifunctor-io">IO Cannot Be an Alias of the Bifunctor IO</h2>
+    
+      <h2 id="io-cannot-be-an-alias-of-the-bifunctor-io">
+        
+        
+          IO Cannot Be an Alias of the Bifunctor IO <a href="#io-cannot-be-an-alias-of-the-bifunctor-io" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>You might be temped to say that:</p>
 
@@ -620,8 +686,14 @@ on top of a runtime that makes this really expensive to do so
 <p>This is another great divide in mentality, although I can see the merits of
 the arguments on the other side. In such cases it’s relevant by what kind
 of problems you got burned or not in the past I guess.</p>
-
-<h2 id="final-words">Final Words</h2>
+    
+      <h2 id="final-words">
+        
+        
+          Final Words <a href="#final-words" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I am not saying that the Bifunctor <code class="language-plaintext highlighter-rouge">IO[E, A]</code> is not useful.</p>
 
@@ -649,7 +721,7 @@ the current status quo. Scala is a great environment.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -679,7 +751,14 @@ the current status quo. Scala is a great environment.</p>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -796,7 +875,6 @@ the current status quo. Scala is a great environment.</p>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -858,12 +936,12 @@ the current status quo. Scala is a great environment.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

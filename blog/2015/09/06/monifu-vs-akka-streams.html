@@ -19,7 +19,7 @@
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html" property="og:url">
     <meta content="2015-09-06T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/monifu.png" />
@@ -47,8 +47,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html">
@@ -88,7 +88,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Monifu vs Akka Streams</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Monifu vs Akka Streams
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html"/>
     <meta itemprop="datePublished" content="2015-09-06T00:00:00+0000"/>
@@ -161,8 +167,14 @@ communications, where both the server-side and the browser-side is handled
 by Monifu: <a href="https://github.com/monifu/monifu-sample">code</a> /
 <a href="http://monifu-sample.herokuapp.com/">demo</a>
 (that’s a free Heroku node, go easy on it :-)).</p>
-
-<h2 id="code">Code</h2>
+    
+      <h2 id="code">
+        
+        
+          Code <a href="#code" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I am biased, I admit. But personally I find the design of Akka Streams
 to be <em>conceptually ugly</em>.</p>
@@ -263,8 +275,14 @@ merged:</p>
 </code></pre></div></div>
 
 <p>At this point I think a pattern emerges.</p>
-
-<h2 id="design">Design</h2>
+    
+      <h2 id="design">
+        
+        
+          Design <a href="#design" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>A stream of information is like a river. Does the river care who
 observes it or who drinks from it? No, it doesn’t. And yes, sometimes
@@ -352,8 +370,14 @@ concerns, you
 
 <p>In contrast, I found the source-code and the concepts in Akka Streams
 to be very hard to read and understand. Give it a try and compare.</p>
-
-<h2 id="performance">Performance</h2>
+    
+      <h2 id="performance">
+        
+        
+          Performance <a href="#performance" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>I’ve left the best part of Monifu for last. Here’s running the Monifu
 sample:</p>
@@ -425,8 +449,14 @@ because this is Monifu’s out-of-the-box behavior, as in I haven’t even
 attempted to fine tune the buffers or the scheduler for this sample.</p>
 
 <p>But yes, Monifu was built for both ease of use and performance.</p>
-
-<h2 id="final-words">Final Words</h2>
+    
+      <h2 id="final-words">
+        
+        
+          Final Words <a href="#final-words" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Again, I’m biased, since I’m the author of an alternative, so take
 this conclusion for what it is.</p>
@@ -456,8 +486,14 @@ marching towards a 1.0 release you can rely on, which should be available
 in about two weeks from now (if everything goes well). Checkout the
 <a href="https://github.com/monifu/monifu">GitHub repo</a>, join
 <a href="https://gitter.im/monifu/monifu">our chat channel</a> and give us feedback.</p>
-
-<h3 id="update-sep-8-800-am">Update (Sep 8, 8:00 AM)</h3>
+    
+      <h3 id="update-sep-8-800-am">
+        
+        
+          Update (Sep 8, 8:00 AM) <a href="#update-sep-8-800-am" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Some interesting questions happened on
 <a href="https://www.reddit.com/r/scala/comments/3jymvw/monifu_vs_akka_streams/">the reddit thread</a>.
@@ -480,7 +516,7 @@ which is why I’m dumbfounded by claims of parallelism</li>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -507,7 +543,14 @@ which is why I’m dumbfounded by claims of parallelism</li>
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -622,7 +665,6 @@ which is why I’m dumbfounded by claims of parallelism</li>
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -684,12 +726,12 @@ which is why I’m dumbfounded by claims of parallelism</li>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

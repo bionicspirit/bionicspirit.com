@@ -18,7 +18,7 @@
     <meta content="The Task in Monix has really good performance. See the benchmark." property="og:description">
     <meta content="https://alexn.org/blog/2016/08/25/monix-task-performance.html" property="og:url">
     <meta content="2016-08-25T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/monix-1024.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2016/08/25/monix-task-performance.html">
@@ -86,7 +86,13 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <h1 class="postTitle" itemprop="headline">Monix Task vs Scalaz vs Future, The Benchmark</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Monix Task vs Scalaz vs Future, The Benchmark
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2016/08/25/monix-task-performance.html"/>
     <meta itemprop="datePublished" content="2016-08-25T00:00:00+0000"/>
@@ -140,8 +146,14 @@ in the repository</li>
   <li>Java version: <code class="language-plaintext highlighter-rouge">1.8.0_60</code></li>
   <li>OS: OS X El Captain, version <code class="language-plaintext highlighter-rouge">10.11.6</code></li>
 </ul>
-
-<h3 id="sequence">Sequence</h3>
+    
+      <h3 id="sequence">
+        
+        
+          Sequence <a href="#sequence" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The purpose of this test is the performance of <code class="language-plaintext highlighter-rouge">flatMap</code>, or in other
 words the performance of the run-loop, on both normal/synchronous
@@ -234,8 +246,14 @@ trampolined:</p>
 
 <p>As you can see, the Monix <code class="language-plaintext highlighter-rouge">Task</code> has twice the throughput of Scalaz
 and fares quite better compared with Scala’s standard <code class="language-plaintext highlighter-rouge">Future</code>.</p>
-
-<h3 id="gather">Gather</h3>
+    
+      <h3 id="gather">
+        
+        
+          Gather <a href="#gather" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The gather operation would be:</p>
 
@@ -334,8 +352,14 @@ parallel. The performance of <code class="language-plaintext highlighter-rouge">
 <code class="language-plaintext highlighter-rouge">Future.sequence</code>, because of the execution model. But if it executes
 tasks that have immediate execution, or a mixed batch, then it is much
 better.</p>
-
-<h3 id="gather-unordered">Gather Unordered</h3>
+    
+      <h3 id="gather-unordered">
+        
+        
+          Gather Unordered <a href="#gather-unordered" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>The <code class="language-plaintext highlighter-rouge">gatherUnordered</code> operation would be:</p>
 
@@ -430,8 +454,14 @@ you don’t care about order.</p>
 
 <p>Again, performance is really good for synchronous tasks, whereas for
 forked tasks it evens out with the performance of <code class="language-plaintext highlighter-rouge">Future.sequence</code>.</p>
-
-<h3 id="raw-output">Raw output</h3>
+    
+      <h3 id="raw-output">
+        
+        
+          Raw output <a href="#raw-output" class="anchor">#</a>
+        
+        
+      </h3>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] # Run complete. Total time: 00:04:28
 [info]
@@ -457,7 +487,7 @@ forked tasks it evens out with the performance of <code class="language-plaintex
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
         Updated: July 9, 2020
     </time>
     
@@ -490,7 +520,14 @@ forked tasks it evens out with the performance of <code class="language-plaintex
 
   
   <div class="related">
-    <h2>Related Articles</h2>
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
     <div class="container">
       
       
@@ -605,7 +642,6 @@ forked tasks it evens out with the performance of <code class="language-plaintex
 
   
 </article>
-
       </div>
    </div><!-- end .content -->
 
@@ -667,12 +703,12 @@ forked tasks it evens out with the performance of <code class="language-plaintex
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

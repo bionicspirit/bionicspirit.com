@@ -17,7 +17,7 @@
     <meta content="Docker cheat sheet" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/docs/docker.html" property="og:url">
-    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
+    <meta content="2020-07-09T11:03:08+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091104">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091104">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/docs/docker.html">
@@ -86,13 +86,19 @@
    <div class="content">
       <div class="container">
          <article class="post" itemscope itemtype="http://schema.org/Article">
-  <h1 class="postTitle" itemprop="headline">Docker cheat sheet</h1>
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Docker cheat sheet
+        
+        
+      </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/docker.html"/>
     
     
     
-    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
+    <time itemprop="dateModified" content="2020-07-09T11:03:08+0000">
       Updated: July 9, 2020
     </time>
     
@@ -138,16 +144,40 @@
 </ul>
 
 <!-- tocstop -->
-
-<h2 id="installation">Installation</h2>
-
-<h3 id="macos">MacOS</h3>
+    
+      <h2 id="installation">
+        
+        
+          Installation <a href="#installation" class="anchor">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="macos">
+        
+        
+          MacOS <a href="#macos" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p><code class="language-plaintext highlighter-rouge">brew cask install docker</code></p>
-
-<h2 id="basic-usage">Basic usage</h2>
-
-<h3 id="running-a-container-interactively">Running a container interactively</h3>
+    
+      <h2 id="basic-usage">
+        
+        
+          Basic usage <a href="#basic-usage" class="anchor">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="running-a-container-interactively">
+        
+        
+          Running a container interactively <a href="#running-a-container-interactively" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Pulling an existing from the repository:</p>
 
@@ -166,15 +196,27 @@
   <li><code class="language-plaintext highlighter-rouge">-i</code>: keep STDIN open even if not attached — this means <code class="language-plaintext highlighter-rouge">&lt;cmd&gt; | docker run</code> works</li>
   <li><code class="language-plaintext highlighter-rouge">-t</code>: allocates a pseudo-TTY, which in combination with <code class="language-plaintext highlighter-rouge">-i</code> means we can interact with the process</li>
 </ul>
-
-<h3 id="running-a-container-as-daemon">Running a container as daemon</h3>
+    
+      <h3 id="running-a-container-as-daemon">
+        
+        
+          Running a container as daemon <a href="#running-a-container-as-daemon" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>For this we add the <code class="language-plaintext highlighter-rouge">-d</code> option:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker run <span class="nt">-p</span> 4222:4222 <span class="nt">-d</span> <span class="nt">-ti</span> nats:latest
 </code></pre></div></div>
-
-<h3 id="list-containers">List containers</h3>
+    
+      <h3 id="list-containers">
+        
+        
+          List containers <a href="#list-containers" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>List active containers:</p>
 
@@ -185,8 +227,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker ps <span class="nt">-a</span>
 </code></pre></div></div>
-
-<h3 id="start--stop-containers">Start &amp; stop containers</h3>
+    
+      <h3 id="start--stop-containers">
+        
+        
+          Start &amp; stop containers <a href="#start--stop-containers" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>Stops container with the id <code class="language-plaintext highlighter-rouge">&lt;containerid&gt;</code>:</p>
 
@@ -202,8 +250,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker start &lt;containerid&gt;
 </code></pre></div></div>
-
-<h3 id="remove-containers">Remove containers</h3>
+    
+      <h3 id="remove-containers">
+        
+        
+          Remove containers <a href="#remove-containers" class="anchor">#</a>
+        
+        
+      </h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker <span class="nb">rm</span> &lt;container_id&gt;
 </code></pre></div></div>
@@ -217,8 +271,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> <span class="si">$(</span>docker ps <span class="nt">-a</span> <span class="nt">-q</span><span class="si">)</span>
 </code></pre></div></div>
-
-<h3 id="remove-orphan-containers">Remove orphan containers</h3>
+    
+      <h3 id="remove-orphan-containers">
+        
+        
+          Remove orphan containers <a href="#remove-orphan-containers" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>List:</p>
 
@@ -229,8 +289,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker volume <span class="nb">rm</span> <span class="si">$(</span>docker volume <span class="nb">ls</span> <span class="nt">-qf</span> <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span><span class="si">)</span>
 </code></pre></div></div>
-
-<h3 id="list-or-remove-images">List or remove images</h3>
+    
+      <h3 id="list-or-remove-images">
+        
+        
+          List or remove images <a href="#list-or-remove-images" class="anchor">#</a>
+        
+        
+      </h3>
 
 <p>List images available locally:</p>
 
@@ -241,8 +307,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker rmi <span class="si">$(</span>docker images <span class="nt">-q</span> <span class="nt">-a</span><span class="si">)</span>
 </code></pre></div></div>
-
-<h3 id="list-or-remove-volumes">List or remove volumes</h3>
+    
+      <h3 id="list-or-remove-volumes">
+        
+        
+          List or remove volumes <a href="#list-or-remove-volumes" class="anchor">#</a>
+        
+        
+      </h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker volume <span class="nb">ls</span>
 </code></pre></div></div>
@@ -256,21 +328,39 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker volume <span class="nb">rm</span> <span class="si">$(</span>docker volume <span class="nb">ls</span> <span class="nt">-q</span><span class="si">)</span>
 </code></pre></div></div>
-
-<h3 id="gain-shell-access-to-a-container">Gain shell access to a container</h3>
+    
+      <h3 id="gain-shell-access-to-a-container">
+        
+        
+          Gain shell access to a container <a href="#gain-shell-access-to-a-container" class="anchor">#</a>
+        
+        
+      </h3>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;container_id&gt; sh
 </code></pre></div></div>
-
-<h2 id="building-docker-images">Building Docker images</h2>
+    
+      <h2 id="building-docker-images">
+        
+        
+          Building Docker images <a href="#building-docker-images" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Resources:</p>
 
 <ul>
   <li><a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/">Dockerizing a Node.js web app</a></li>
 </ul>
-
-<h2 id="auto-update-containers-to-latest">Auto-update containers to latest</h2>
+    
+      <h2 id="auto-update-containers-to-latest">
+        
+        
+          Auto-update containers to latest <a href="#auto-update-containers-to-latest" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>Run watchtower container, with option to auto update only labelled containers:</p>
 
@@ -307,8 +397,14 @@
 </code></pre></div></div>
 
 <p>Watchtower will check periodically for newer images and will restart services/containers with new image.</p>
-
-<h2 id="docker-compose">Docker Compose</h2>
+    
+      <h2 id="docker-compose">
+        
+        
+          Docker Compose <a href="#docker-compose" class="anchor">#</a>
+        
+        
+      </h2>
 
 <p>See <a href="https://docs.docker.com/compose/install/">docs for installing</a>.</p>
 
@@ -324,8 +420,14 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker-compose up <span class="nt">-d</span>
 </code></pre></div></div>
-
-<h3 id="example-docker-composeyml">Example docker-compose.yml</h3>
+    
+      <h3 id="example-docker-composeyml">
+        
+        
+          Example docker-compose.yml <a href="#example-docker-composeyml" class="anchor">#</a>
+        
+        
+      </h3>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.7"</span>
 
@@ -461,12 +563,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091104" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091104" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091104" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
