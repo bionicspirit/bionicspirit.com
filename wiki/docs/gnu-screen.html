@@ -9,14 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Custom Zsh Prompt - Alexandru Nedelcu</title>
+    <title>GNU Screen - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Custom Zsh Prompt" property="og:title">
+    <meta content="GNU Screen" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
-    <meta content="https://alexn.org/wiki/snippets/zshrc-prompt.html" property="og:url">
+    <meta content="https://alexn.org/wiki/docs/gnu-screen.html" property="og:url">
     <meta content="2020-07-09T19:08:31+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
@@ -30,8 +30,8 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Custom Zsh Prompt">
-    <meta name="twitter:url" content="https://alexn.org/wiki/snippets/zshrc-prompt.html">
+    <meta name="twitter:title" content="GNU Screen">
+    <meta name="twitter:url" content="https://alexn.org/wiki/docs/gnu-screen.html">
     <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
@@ -49,7 +49,7 @@
     <link rel="preload" as="style" href="/assets/css/style.css?202007091910">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/wiki/snippets/zshrc-prompt.html">
+    <link rel="canonical" href="https://alexn.org/wiki/docs/gnu-screen.html">
 </head>
 
 
@@ -89,12 +89,12 @@
       <h1 class="postTitle" itemprop="headline">
         
         
-          Custom Zsh Prompt
+          GNU Screen
         
         
       </h1>
   <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/snippets/zshrc-prompt.html"/>
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/gnu-screen.html"/>
     
     
     
@@ -113,27 +113,102 @@
   </div>
 
   <div id="content" itemprop="articleBody">
-    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c"># ------------------------------------------------------------------------------</span>
-<span class="c"># Customize PROMPT</span>
-<span class="c">#</span>
-<span class="c"># https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/</span>
-<span class="c"># https://jonasjacek.github.io/colors/</span>
-<span class="c"># https://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html</span>
-<span class="c">#</span>
-<span class="c"># ------------------------------------------------------------------------------</span>
+    <p><a href="https://www.gnu.org/software/screen/manual/screen.html">Documentation</a></p>
+    
+      <h2 id="cheatsheet">
+        
+        
+          Cheatsheet <a href="#cheatsheet" class="anchor">#</a>
+        
+        
+      </h2>
 
-autoload <span class="nt">-Uz</span> vcs_info
-precmd_vcs_info<span class="o">()</span> <span class="o">{</span>
-  vcs_info
-<span class="o">}</span>
-precmd_functions+<span class="o">=(</span>precmd_vcs_info<span class="o">)</span>
-setopt prompt_subst
+<p>Start a new session:</p>
 
-<span class="nb">export </span><span class="nv">PROMPT</span><span class="o">=</span><span class="s2">"%F{196}%B%(?..?%? )%b%f%F{117}%2~%f%F{245} %#%f "</span>
-<span class="nb">export </span><span class="nv">RPROMPT</span><span class="o">=</span><span class="s2">"%B</span><span class="se">\$</span><span class="s2">vcs_info_msg_0_%f%b"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code>screen
+</code></pre></div></div>
 
-zstyle <span class="s1">':vcs_info:git:*'</span> formats <span class="s1">'%F{240}%b %f %F{237}%r%f'</span>
-zstyle <span class="s1">':vcs_info:*'</span> <span class="nb">enable </span>git
+<p>Start a new named session:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code>screen <span class="nt">-S</span> &lt;name&gt;
+</code></pre></div></div>
+
+<p>List sessions:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code>screen <span class="nt">-ls</span>
+</code></pre></div></div>
+
+<p>Re-attach sesion:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code>screen <span class="nt">-r</span> &lt;name&gt;
+</code></pre></div></div>
+
+<p>Main commands:</p>
+
+<ul>
+  <li>Shortcuts menu: <code class="language-plaintext highlighter-rouge">Ctrl-a ?</code></li>
+  <li>Command mode: <code class="language-plaintext highlighter-rouge">Ctrl-a :</code></li>
+  <li>Detach session: <code class="language-plaintext highlighter-rouge">Ctrl-a d</code></li>
+</ul>
+
+<p>Window management:</p>
+
+<ul>
+  <li>Create a new window: <code class="language-plaintext highlighter-rouge">Ctrl-a c</code></li>
+  <li>Kill current window: <code class="language-plaintext highlighter-rouge">Ctrl-a k</code></li>
+  <li>Next window: <code class="language-plaintext highlighter-rouge">Ctrl-a n</code></li>
+  <li>Prev window: <code class="language-plaintext highlighter-rouge">Ctrl-a p</code></li>
+  <li>Jump to window: <code class="language-plaintext highlighter-rouge">Ctrl-a 0-9</code></li>
+  <li>Split vertical: <code class="language-plaintext highlighter-rouge">Ctrl-a |</code></li>
+  <li>Split horizontal: <code class="language-plaintext highlighter-rouge">Ctrl-a S</code></li>
+  <li>Focus next region: <code class="language-plaintext highlighter-rouge">Ctrl-a ^</code></li>
+  <li>Quit split screen mode: <code class="language-plaintext highlighter-rouge">Ctrl-a Q</code></li>
+</ul>
+    
+      <h2 id="custom-screenrc">
+        
+        
+          Custom .screenrc <a href="#custom-screenrc" class="anchor">#</a>
+        
+        
+      </h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>shell -$SHELL
+
+# Buffer size
+defscrollback 50000
+
+# Allow bold colors - necessary for some reason
+attrcolor b ".I"
+
+# Tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+
+# Erase background with current bg color
+defbce "on"
+
+# Enable 256 color term
+term xterm-256color
+
+# Very nice tabbed colored hardstatus line
+hardstatus string '%{= Kd} %{= Kd}%-w%{= Kr}[%{= KW}%n %t%{= Kr}]%{= Kd}%+w %-= %{KG} %H%{KW}|%{KY}%101`%{KW}|%D %M %d %Y%{= Kc} %C%A%{-}'
+
+#
+## Control-^ (usually Control-Shift-6) is traditional and the only key not used by emacs
+escape ^^^^
+#
+## do not trash BackSpace, usually DEL
+bindkey -k kb
+bindkey -d -k kb
+#
+## do not trash Delete, usually ESC [ 3 ~
+bindkey -k kD
+bindkey -d -k kD
+  
+# Hide hardstatus: ctrl-a f 
+bind f eval "hardstatus ignore"
+# Show hardstatus: ctrl-a F
+bind F eval "hardstatus alwayslastline"
 </code></pre></div></div>
 
 
@@ -151,7 +226,7 @@ zstyle <span class="s1">':vcs_info:*'</span> <span class="nb">enable </span>git
 
 <p>
   You can fix or add to this article by submitting a pull request:
-  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/snippets/zshrc-prompt.md" target="_blank">Edit Page on GitHub</a>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/docs/gnu-screen.md" target="_blank">Edit Page on GitHub</a>
 </p>
 
 
@@ -222,7 +297,7 @@ zstyle <span class="s1">':vcs_info:*'</span> <span class="nb">enable </span>git
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Custom+Zsh+Prompt" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=GNU+Screen" style="border:0" alt="" />
 </noscript>
 
 
