@@ -9,15 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Avoid Javaisms: Mocks, Stubs, DI is Code Smell" property="og:title">
     <meta content="Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related." property="og:description">
     <meta content="https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html" property="og:url">
-    <meta content="2015-12-15T00:00:00+02:00" property="article:published_time">
+    <meta content="2015-12-15T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/skunk.jpg" />
@@ -41,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html">
@@ -56,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -84,9 +89,9 @@
   <h1 class="postTitle" itemprop="headline">Avoid Javaisms: Mocks, Stubs, DI is Code Smell</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html"/>
-    <meta itemprop="datePublished" content="2015-12-15T00:00:00+0200"/>
+    <meta itemprop="datePublished" content="2015-12-15T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2015-12-15T00:00:00+0200">December 15, 2015</time>
+    <time itemprop="dateCreated" datetime="2015-12-15T00:00:00+0000">December 15, 2015</time>
     | <nobr><span class="time">14</span> minute</nobr>
   </p>
 
@@ -99,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -181,18 +186,18 @@ as Guice, only at compile-time:</p>
 
 <p>I personally can’t stand that, being the epitome of good intentions
 gone wrong. But back to our point, if we want to test this actor, we’d
-have to mock or stub our <code class="highlighter-rouge">DBService</code>, right?</p>
+have to mock or stub our <code class="language-plaintext highlighter-rouge">DBService</code>, right?</p>
 
 <p>Well, here’s <em>the problem</em> mate: until now this actor only depends on
-<code class="highlighter-rouge">DBService.readItemConfig</code>, yet we have to mock or stub the entire
-interface of <code class="highlighter-rouge">DBService</code>. And having to mock or stub things unrelated
+<code class="language-plaintext highlighter-rouge">DBService.readItemConfig</code>, yet we have to mock or stub the entire
+interface of <code class="language-plaintext highlighter-rouge">DBService</code>. And having to mock or stub things unrelated
 to testing this functionality should indicate that this code is too
 <em>tightly coupled</em>. Right there your nose should reject the air
 emanated from this code and it’s common sense that often save us,
 even though we often can’t place our finger on the problem.</p>
 
 <p>OK, OK, lets fix this somewhat using a common Java “best practice”, by
-splitting this interface into smaller modules. Our <code class="highlighter-rouge">DBService</code>
+splitting this interface into smaller modules. Our <code class="language-plaintext highlighter-rouge">DBService</code>
 interface does too much, or so the popular wisdom would say.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">trait</span> <span class="nc">ItemConfigsRepository</span> <span class="o">{</span>
@@ -231,8 +236,8 @@ woes. Wrong! Now we’ve got two problems:</p>
 
 <p>BAM, more dependencies, more garbage, more mocks and stubs. Does this
 ring a bell? Cake makes it worse btw. But anyway, now we can see that
-our solution with <code class="highlighter-rouge">ItemConfigsRepository</code> doesn’t work, as <code class="highlighter-rouge">readItem</code>
-is often not used in the same place as <code class="highlighter-rouge">writeItem</code>, so our action had
+our solution with <code class="language-plaintext highlighter-rouge">ItemConfigsRepository</code> doesn’t work, as <code class="language-plaintext highlighter-rouge">readItem</code>
+is often not used in the same place as <code class="language-plaintext highlighter-rouge">writeItem</code>, so our action had
 an opposite effect of what we wanted.</p>
 
 <p>How can this be, our interfaces are abstract and split in small units
@@ -259,8 +264,8 @@ logic hasn’t changed, whereas with stubs that ignore those calls, both
 of those calls might as well not exist. Both outcomes are wrong.</p>
 
 <p>Here we are having a side-effect, which is persisting values in the
-database in response to that <code class="highlighter-rouge">State</code> being evolved when receiving
-<code class="highlighter-rouge">Signal</code> values.</p>
+database in response to that <code class="language-plaintext highlighter-rouge">State</code> being evolved when receiving
+<code class="language-plaintext highlighter-rouge">Signal</code> values.</p>
 
 <p>Yet we have a non-obvious <em>implementation leak</em>. From the point of
 view of this actor, those persistence calls are just signals that a
@@ -270,7 +275,7 @@ what we are doing is actual persistence in a database repository, or
 sending values over an akka remoting connection, or over web-socket,
 or dumping some logs on disk. These concerns should be totally outside
 of our component and all we should be testing is if our component is
-signaling stuff to the outside world. We tried fixing <code class="highlighter-rouge">DBService</code> but
+signaling stuff to the outside world. We tried fixing <code class="language-plaintext highlighter-rouge">DBService</code> but
 in fact our Actor is broken.</p>
 
 <p>Meet the famous and underused
@@ -348,7 +353,7 @@ logic from the actor and leave the actor to handle just the
 communication side. Should the above actor be tested? Maybe, if you’ve
 got time, but it really isn’t a priority, because it doesn’t contain
 business logic. Let’s go deeper. The business logic, exposed by
-<code class="highlighter-rouge">newState = state.evolve</code> would be something like this:</p>
+<code class="language-plaintext highlighter-rouge">newState = state.evolve</code> would be something like this:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">Event</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
 
@@ -373,7 +378,7 @@ business logic. Let’s go deeper. The business logic, exposed by
 
 <p>M’kay, so this does have business logic that would be valuable for
 testing. AND we are modeling the side-effects in a pure way, by saying
-on each <code class="highlighter-rouge">evolve</code> “<em>here’s a bunch of signals to emit Bob, I don’t care
+on each <code class="language-plaintext highlighter-rouge">evolve</code> “<em>here’s a bunch of signals to emit Bob, I don’t care
 how you do it or who reads them</em>”.</p>
 
 <p>Does this code have any dependencies whatsoever? No, it’s pure and can
@@ -441,8 +446,8 @@ initiated that’s free of Javaisms.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2015-12-15T00:00:00+0200">
-        Published: December 15, 2015
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -595,30 +600,20 @@ initiated that’s free of Javaisms.</p>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Avoid Javaisms: Mocks, Stubs, DI is Code Smell`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2015-12-15-avoid-javaisms-code-smell.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -638,12 +633,12 @@ initiated that’s free of Javaisms.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

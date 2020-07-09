@@ -9,16 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Monifu vs Akka Streams &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Monifu vs Akka Streams - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Monifu vs Akka Streams" property="og:title">
     
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html" property="og:url">
-    <meta content="2015-09-06T00:00:00+03:00" property="article:published_time">
+    <meta content="2015-09-06T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/monifu.png" />
@@ -43,11 +44,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html">
@@ -58,12 +59,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -86,10 +91,10 @@
   <h1 class="postTitle" itemprop="headline">Monifu vs Akka Streams</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html"/>
-    <meta itemprop="datePublished" content="2015-09-06T00:00:00+0300"/>
+    <meta itemprop="datePublished" content="2015-09-06T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2015-09-06T00:00:00+0300">September 6, 2015</time>
-    | <nobr><span class="time">13</span> minute</nobr>
+    <time itemprop="dateCreated" datetime="2015-09-06T00:00:00+0000">September 6, 2015</time>
+    | <nobr><span class="time">14</span> minute</nobr>
   </p>
 
   
@@ -101,7 +106,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -206,17 +211,17 @@ sampling per second:</p>
 
 <p>Both pieces of code are doing roughly the same thing. A different
 data-source is being started that generates a tick over every second
-and that data-source is being <code class="highlighter-rouge">zipped</code> with our source. Events emitted
+and that data-source is being <code class="language-plaintext highlighter-rouge">zipped</code> with our source. Events emitted
 by our source are dropped as long as the tick is silent and then when
-the tick event happens we emit whatever we’ve got. Using <code class="highlighter-rouge">zip</code> for
-sampling is actually very inefficient, as <code class="highlighter-rouge">zip</code> is a fundamentally
+the tick event happens we emit whatever we’ve got. Using <code class="language-plaintext highlighter-rouge">zip</code> for
+sampling is actually very inefficient, as <code class="language-plaintext highlighter-rouge">zip</code> is a fundamentally
 concurrent operator, but this is just for comparing apples with apples
 ;-)</p>
 
 <p>So why is the code for Akka Streams looking so complicated? Well
 that’s because of its design, but lets come back to that later.
 In the Akka Streams sample, here’s how the original data-source is
-being split in two streams (<code class="highlighter-rouge">filterInner</code> and <code class="highlighter-rouge">filterOuter</code>) and then
+being split in two streams (<code class="language-plaintext highlighter-rouge">filterInner</code> and <code class="language-plaintext highlighter-rouge">filterOuter</code>) and then
 merged:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// Akka Streams sample</span>
@@ -277,12 +282,12 @@ worse.</p>
 <p>In Monifu / Rx you’ve got hot observables (hot data sources shared
 between an unlimited number of subscribers) and cold observables (each
 subscriber gets its very own private data source). You can also
-convert any cold data source into a hot one by using the <code class="highlighter-rouge">multicast</code>
-operator, in combination with <code class="highlighter-rouge">Subjects</code> that dictate behavior
+convert any cold data source into a hot one by using the <code class="language-plaintext highlighter-rouge">multicast</code>
+operator, in combination with <code class="language-plaintext highlighter-rouge">Subjects</code> that dictate behavior
 (e.g. Publish, Behavior, Async or Replay). The
 <a href="https://monifu.org/api/1.0-RC1/index.html#monifu.reactive.observables.ConnectableObservable">ConnectableObservable</a>
 is meant for hot data sources. In our sample above, we are using
-<code class="highlighter-rouge">share()</code>, an operator that transforms our data source into a hot one
+<code class="language-plaintext highlighter-rouge">share()</code>, an operator that transforms our data source into a hot one
 and then applies reference counting on its subscribers to know when to
 stop it. This is what <em>encapsulation</em> is all about.</p>
 
@@ -299,25 +304,25 @@ people that have used Rx know that working with Subjects sucks and
 when you do, you usually encapsulate it really, really well. This
 design choice of Akka Streams has also leaked into the “Reactive
 Streams” specification, as that Processor interface is irrelevant,
-plus during the talks on what the <code class="highlighter-rouge">Producer</code> should be, the original
-design was for the <code class="highlighter-rouge">Producer</code> to be single-subscriber.</p>
+plus during the talks on what the <code class="language-plaintext highlighter-rouge">Producer</code> should be, the original
+design was for the <code class="language-plaintext highlighter-rouge">Producer</code> to be single-subscriber.</p>
 
 <p>Another thing I don’t like is that Akka Streams depends on Akka, the
-library. You need an Actor System and an <code class="highlighter-rouge">ActorFlowMaterializer</code>,
+library. You need an Actor System and an <code class="language-plaintext highlighter-rouge">ActorFlowMaterializer</code>,
 whatever that is, with the tasks being executed by actors. I think
-that’s a design mistake. One reason for why Scala’s <code class="highlighter-rouge">Future</code> and
-<code class="highlighter-rouge">ExecutionContext</code> are great is precisely because they model only
+that’s a design mistake. One reason for why Scala’s <code class="language-plaintext highlighter-rouge">Future</code> and
+<code class="language-plaintext highlighter-rouge">ExecutionContext</code> are great is precisely because they model only
 asynchronous computations, but are completely oblivious to how the
 required asynchronous execution happens. This
-is why <code class="highlighter-rouge">Future</code> works on top of Scala.js without problems.</p>
+is why <code class="language-plaintext highlighter-rouge">Future</code> works on top of Scala.js without problems.</p>
 
 <p>And again, I’m biased, but Monifu’s own implementation is conceptually
 elegant. You’ve got the
 <a href="https://github.com/monifu/monifu/blob/master/core/shared/src/main/scala/monifu/concurrent/Scheduler.scala#L34">Scheduler</a>
-that is used to execute tasks (an evolved <code class="highlighter-rouge">ExecutionContext</code>), the
+that is used to execute tasks (an evolved <code class="language-plaintext highlighter-rouge">ExecutionContext</code>), the
 <a href="https://github.com/monifu/monifu/blob/v1.0-RC1/monifu/shared/src/main/scala/monifu/reactive/Observable.scala#L379">Observable</a>
 interface which is the producer, characterized solely by its
-<code class="highlighter-rouge">onSubscribe</code> function, then you’ve got the
+<code class="language-plaintext highlighter-rouge">onSubscribe</code> function, then you’ve got the
 <a href="https://github.com/monifu/monifu/blob/v1.0-RC1/monifu/shared/src/main/scala/monifu/reactive/Observer.scala#L42">Observer</a>
 which represents the consumer and has the back-pressure protocol baked
 in its API, the
@@ -353,7 +358,7 @@ to be very hard to read and understand. Give it a try and compare.</p>
 <p>I’ve left the best part of Monifu for last. Here’s running the Monifu
 sample:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] Running swave.rsc.MonifuPi
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] Running swave.rsc.MonifuPi
 
 After  1,909,713 samples π is approximated as 3.14102
 After  4,132,610 samples π is approximated as 3.14240
@@ -371,7 +376,7 @@ After 21,752,232 samples π is approximated as 3.14170
 
 <p>Here’s Akka Streams:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] Running swave.rsc.AkkaPi
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] Running swave.rsc.AkkaPi
 
 After     59,812 samples π is approximated as 3.12807
 After    258,925 samples π is approximated as 3.13910
@@ -389,7 +394,7 @@ After  2,826,297 samples π is approximated as 3.14148
 
 <p>Here’s RxJava (RxScala):</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] Running swave.rsc.RxScalaPi
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] Running swave.rsc.RxScalaPi
 
 After    804,127 samples π is approximated as 3.11240
 After  1,747,146 samples π is approximated as 3.12848
@@ -462,7 +467,7 @@ To dispel some myths:</p>
   <li>currently Akka Streams does no more parallelism than Monifu does</li>
   <li>in our sample Monifu is not single-threaded</li>
   <li>in our sample Monifu parallelizes the portion that it can, which
-is the processing of <code class="highlighter-rouge">filterInner</code> and <code class="highlighter-rouge">filterOuter</code>, plus execution
+is the processing of <code class="language-plaintext highlighter-rouge">filterInner</code> and <code class="language-plaintext highlighter-rouge">filterOuter</code>, plus execution
 is jumping threads, because Monifu as a matter of policy never keeps
 a single thread occupied for too long</li>
   <li>you can’t parallelize concurrent operations, that being an oxymoron,
@@ -475,8 +480,8 @@ which is why I’m dumbfounded by claims of parallelism</li>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2015-09-06T00:00:00+0300">
-        Published: September 6, 2015
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -629,30 +634,20 @@ which is why I’m dumbfounded by claims of parallelism</li>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Monifu vs Akka Streams`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2015-09-06-monifu-vs-akka-streams.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -672,12 +667,12 @@ which is why I’m dumbfounded by claims of parallelism</li>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

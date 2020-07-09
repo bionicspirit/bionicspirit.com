@@ -9,16 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Crawling the Android Marketplace &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Crawling the Android Marketplace - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Crawling the Android Marketplace" property="og:title">
     <meta content="I had a very specific need for fetching the details for some apps in the Android marketplace, in an automated manner. Here I’m describing a script that I used to crawl the marketplace back in 2011." property="og:description">
     <meta content="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html" property="og:url">
-    <meta content="2011-12-15T00:00:00+02:00" property="article:published_time">
-    <meta content="2019-12-18T00:00:00+02:00" property="article:modified_time">
+    <meta content="2011-12-15T00:00:00+00:00" property="article:published_time">
+    <meta content="2019-12-18T00:00:00+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/wolf-spider.jpg" />
@@ -42,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html">
@@ -57,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -85,9 +89,9 @@
   <h1 class="postTitle" itemprop="headline">Crawling the Android Marketplace</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html"/>
-    <meta itemprop="datePublished" content="2011-12-15T00:00:00+0200"/>
+    <meta itemprop="datePublished" content="2011-12-15T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2011-12-15T00:00:00+0200">December 15, 2011</time>
+    <time itemprop="dateCreated" datetime="2011-12-15T00:00:00+0000">December 15, 2011</time>
     | <nobr><span class="time">3</span> minute</nobr>
   </p>
 
@@ -100,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -163,7 +167,7 @@ purposes. Don’t abuse it.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">for</span> <span class="n">app</span> <span class="ow">in</span> <span class="n">AndroidMarketCrawler</span><span class="p">(</span><span class="n">concurrency</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="c1"># app is at this point a dictionary with the details needed, like
 </span>    <span class="c1">#  id, name, developer name, number of installs, etc...
-</span>    <span class="n">fh</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="si">\</span><span class="se">n</span><span class="s">"</span><span class="p">)</span>
+</span>    <span class="n">fh</span><span class="p">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">app</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>I used the Python programming language, along with
@@ -374,30 +378,20 @@ distribution is freemium based.</p>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Crawling the Android Marketplace`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2011-12-15-crawling-the-android-marketplace-155200-apps.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -417,12 +411,12 @@ distribution is freemium based.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

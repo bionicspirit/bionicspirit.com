@@ -9,16 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Data Mining: Finding Similar Items and Users &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Data Mining: Finding Similar Items and Users - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Data Mining: Finding Similar Items and Users" property="og:title">
     <meta content="How to find related items? Here are recipes based on really simple formulas. If you pay attention, this technique is used all over the web (like on Amazon) to personalize the user experience and increase conversion rates. Because we want to give kick-ass product recommendations." property="og:description">
     <meta content="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html" property="og:url">
-    <meta content="2012-01-16T00:00:00+02:00" property="article:published_time">
-    <meta content="2019-12-28T00:00:00+02:00" property="article:modified_time">
+    <meta content="2012-01-16T00:00:00+00:00" property="article:published_time">
+    <meta content="2019-12-28T00:00:00+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/cosine-distance.png" />
@@ -42,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html">
@@ -57,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -85,9 +89,9 @@
   <h1 class="postTitle" itemprop="headline">Data Mining: Finding Similar Items and Users</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html"/>
-    <meta itemprop="datePublished" content="2012-01-16T00:00:00+0200"/>
+    <meta itemprop="datePublished" content="2012-01-16T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2012-01-16T00:00:00+0200">January 16, 2012</time>
+    <time itemprop="dateCreated" datetime="2012-01-16T00:00:00+0000">January 16, 2012</time>
     | <nobr><span class="time">17</span> minute</nobr>
   </p>
 
@@ -100,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -685,30 +689,20 @@ some text into another.</p>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Data Mining: Finding Similar Items and Users`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2012-01-16-cosine-similarity-euclidean-distance.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -728,12 +722,12 @@ some text into another.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/load-mathjax.js?202006061638"></script>
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/load-mathjax.js?202007090859"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

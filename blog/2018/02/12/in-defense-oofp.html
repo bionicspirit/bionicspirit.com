@@ -9,15 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>In Defense of OOFP &#8211; Alexandru Nedelcu's Blog</title>
+    <title>In Defense of OOFP - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="In Defense of OOFP" property="og:title">
     <meta content="OOP versus Type Classes, exemplified and in defense of the Scala collections redesign." property="og:description">
     <meta content="https://alexn.org/blog/2018/02/12/in-defense-oofp.html" property="og:url">
-    <meta content="2018-02-12T00:00:00+02:00" property="article:published_time">
+    <meta content="2018-02-12T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-stairs.jpg" />
@@ -41,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2018/02/12/in-defense-oofp.html">
@@ -56,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -84,10 +89,10 @@
   <h1 class="postTitle" itemprop="headline">In Defense of OOFP</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2018/02/12/in-defense-oofp.html"/>
-    <meta itemprop="datePublished" content="2018-02-12T00:00:00+0200"/>
+    <meta itemprop="datePublished" content="2018-02-12T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2018-02-12T00:00:00+0200">February 12, 2018</time>
-    | <nobr><span class="time">33</span> minute</nobr>
+    <time itemprop="dateCreated" datetime="2018-02-12T00:00:00+0000">February 12, 2018</time>
+    | <nobr><span class="time">34</span> minute</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -99,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -213,7 +218,7 @@ here I’m doing my best to summarize it:</p>
 <p><a href="https://stackoverflow.com/questions/1722726/is-the-scala-2-8-collections-library-a-case-of-the-longest-suicide-note-in-hist">Is the Scala 2.8 collections library a case of “the longest suicide note in history”?</a></p>
 
 <p>In it the author rightfully complains that this method signature for
-<code class="highlighter-rouge">List</code> is scary and he doesn’t understand it:</p>
+<code class="language-plaintext highlighter-rouge">List</code> is scary and he doesn’t understand it:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">map</span><span class="o">[</span><span class="kt">B</span>, <span class="kt">That</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">B</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">bf</span><span class="k">:</span> <span class="kt">CanBuildFrom</span><span class="o">[</span><span class="kt">Repr</span>, <span class="kt">B</span>, <span class="kt">That</span><span class="o">])</span><span class="k">:</span> <span class="kt">That</span>
 </code></pre></div></div>
@@ -225,7 +230,7 @@ you won’t see it. But that’s only a documentation trick, because
 the actual source-code (and your IDE) tells a different story, see
 <a href="https://github.com/scala/scala/blob/v2.12.4/src/library/scala/collection/immutable/List.scala#L280">List.scala#280</a>.</p>
 
-<p>In essence <code class="highlighter-rouge">CanBuildFrom</code> is a clever abstraction, as
+<p>In essence <code class="language-plaintext highlighter-rouge">CanBuildFrom</code> is a clever abstraction, as
 <a href="https://stackoverflow.com/a/1728140/3280">Martin Odersky</a> himself
 explains, however at this point we can all agree that its complexity
 is not justified. Not only because it is difficult to understand, but
@@ -266,7 +271,7 @@ that signature now looks like this:</p>
 years.</p>
 
 <p class="info-bubble">
-<b><u>TL;DR</u></b>: <code class="highlighter-rouge">CanBuildFrom</code> was a clever solution to an exaggerated
+<b><u>TL;DR</u></b>: <code class="language-plaintext highlighter-rouge">CanBuildFrom</code> was a clever solution to an exaggerated
 problem, but you’ll no longer have to worry about it. Beware of clever
 solutions to problems you don’t have!
 </p>
@@ -283,7 +288,7 @@ by <a href="https://github.com/tpolecat">Rob Norris</a>:</p>
 
 <p>This is indeed a disaster, there’s no nicer way of saying it.</p>
 
-<p>And this is <code class="highlighter-rouge">List</code>, after the <code class="highlighter-rouge">collection-strawman</code> refactoring:</p>
+<p>And this is <code class="language-plaintext highlighter-rouge">List</code>, after the <code class="language-plaintext highlighter-rouge">collection-strawman</code> refactoring:</p>
 
 <figure>
   <img src="/assets/media/articles/scala-list-strawman.jpg" />
@@ -341,7 +346,7 @@ criticism:</p>
 <blockquote>
   <p><em>“If I showed you this code and asked you what the big-O complexity of
 it was, could you tell me the answer? No, you cannot, because it
-depends on the runtime type of <code class="highlighter-rouge">is</code>!”</em></p>
+depends on the runtime type of <code class="language-plaintext highlighter-rouge">is</code>!”</em></p>
 </blockquote>
 
 <p>This is a very good example showing a very frequent booby trap for
@@ -366,12 +371,12 @@ against this is also like arguing against Haskell’s
 <a href="https://hackage.haskell.org/package/base-4.10.1.0/docs/Data-Traversable.html">Traversable</a>
 (<a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Traverse.scala">cats.Traverse</a>).</p>
 
-<p>N.B. we are not arguing against the merits of Haskell’s <code class="highlighter-rouge">Traversable</code>
-type class and how that compares with <code class="highlighter-rouge">Iterable</code>. More on that below.</p>
+<p>N.B. we are not arguing against the merits of Haskell’s <code class="language-plaintext highlighter-rouge">Traversable</code>
+type class and how that compares with <code class="language-plaintext highlighter-rouge">Iterable</code>. More on that below.</p>
 
 <p class="info-bubble">
 <b><u>TL;DR</u></b>: OOP interfaces might expose leaky operations that
-are booby traps (e.g. <code class="highlighter-rouge">Seq</code> indexing), but this is not specific
+are booby traps (e.g. <code class="language-plaintext highlighter-rouge">Seq</code> indexing), but this is not specific
 to OOP interfaces, vigilance in design is always needed!
 </p>
 
@@ -419,14 +424,14 @@ instead of an OOP hierarchy of interfaces.</p>
 </code></pre></div></div>
 
 <p>Ah, now we are getting somewhere. But the astute reader should notice at this
-point that this means exposure of an extra <code class="highlighter-rouge">F[_]</code> type parameter that
+point that this means exposure of an extra <code class="language-plaintext highlighter-rouge">F[_]</code> type parameter that
 you don’t actually need with OOP — well, OK, this syntax heaviness is
 an artifact of the Scala language, as in Haskell this wouldn’t be an
 issue.</p>
 
-<p>Also, not clearly visible here is that type-classes such as <code class="highlighter-rouge">Foldable</code>
-or <code class="highlighter-rouge">Traversable</code>, while more generic are also strictly less capable
-than <code class="highlighter-rouge">Iterable</code>. Yes, that’s because of <code class="highlighter-rouge">Iterator</code>’s side effecting,
+<p>Also, not clearly visible here is that type-classes such as <code class="language-plaintext highlighter-rouge">Foldable</code>
+or <code class="language-plaintext highlighter-rouge">Traversable</code>, while more generic are also strictly less capable
+than <code class="language-plaintext highlighter-rouge">Iterable</code>. Yes, that’s because of <code class="language-plaintext highlighter-rouge">Iterator</code>’s side effecting,
 but highly efficient and flexible protocol. More on that below.</p>
 
 <p class="info-bubble">
@@ -445,7 +450,7 @@ when using OOP, although this isn’t an issue with Haskell
   <span class="nv">list</span><span class="o">.</span><span class="py">foldLeft</span><span class="o">(</span><span class="nv">A</span><span class="o">.</span><span class="py">zero</span><span class="o">)(</span><span class="nv">A</span><span class="o">.</span><span class="py">plus</span><span class="o">)</span>
 </code></pre></div></div>
 
-<p>Note we are already using <code class="highlighter-rouge">Numeric</code>, which is a type class exposed by
+<p>Note we are already using <code class="language-plaintext highlighter-rouge">Numeric</code>, which is a type class exposed by
 Scala’s standard library. And it’s actually not the best type class we
 could use, as what we’d need here is a
 <a href="https://github.com/typelevel/cats/blob/v1.0.1/kernel/src/main/scala/cats/kernel/Monoid.scala">Monoid</a>,
@@ -468,17 +473,17 @@ also described in
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>(N.B. using <code class="highlighter-rouge">F</code> and <code class="highlighter-rouge">A</code> as the type names <em>and</em> as the name of the
+<p>(N.B. using <code class="language-plaintext highlighter-rouge">F</code> and <code class="language-plaintext highlighter-rouge">A</code> as the type names <em>and</em> as the name of the
 implicit parameters is nothing special, just a convention)</p>
 
 <p>Is this better?</p>
 
 <ul>
-  <li><strong>PRO:</strong> describing <code class="highlighter-rouge">foldLeft</code> as a method on <code class="highlighter-rouge">F[_]</code> is no longer
-required, which makes <code class="highlighter-rouge">F[_]</code> data types more generic, more reusable;
+  <li><strong>PRO:</strong> describing <code class="language-plaintext highlighter-rouge">foldLeft</code> as a method on <code class="language-plaintext highlighter-rouge">F[_]</code> is no longer
+required, which makes <code class="language-plaintext highlighter-rouge">F[_]</code> data types more generic, more reusable;
 not very clear in this case, but if you’re unfamiliar with
 type-class based design, trust me on this one</li>
-  <li><strong>CON:</strong> this method makes <code class="highlighter-rouge">F[_]</code> clearly visible, exposing it at the
+  <li><strong>CON:</strong> this method makes <code class="language-plaintext highlighter-rouge">F[_]</code> clearly visible, exposing it at the
 type system level - this is no longer subtyping, this is no longer the
 <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov substitution principle</a>,
 this is parametric polymorphism and it moves the dispatch cost at
@@ -500,7 +505,7 @@ approach - this can lead to choice paralysis however and lots of drama!
 
 <p>At <a href="https://scala.world/schedule">Scala World</a> I had a talk titled
 <a href="https://www.youtube.com/watch?v=JFbYQGG2Nb4">A Tale of Two Monix Streams</a>
-in which I described the design of the upcoming <code class="highlighter-rouge">monix.tail.Iterant</code>.</p>
+in which I described the design of the upcoming <code class="language-plaintext highlighter-rouge">monix.tail.Iterant</code>.</p>
 
 <p>It’s a wonderful data structure for modelling streams that makes use
 of type-classes defined in
@@ -514,8 +519,8 @@ the second part of the presentation.</p>
 
 <p>Here’s the gist - suppose we want a pure
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Iterator.html">Iterator</a>
-that is also capable of deferring the evaluation to a given <code class="highlighter-rouge">F[_]</code>
-(e.g. <code class="highlighter-rouge">monix.eval.Task</code>, <code class="highlighter-rouge">cats.effect.IO</code>), such that it’s also
+that is also capable of deferring the evaluation to a given <code class="language-plaintext highlighter-rouge">F[_]</code>
+(e.g. <code class="language-plaintext highlighter-rouge">monix.eval.Task</code>, <code class="language-plaintext highlighter-rouge">cats.effect.IO</code>), such that it’s also
 capable of streaming events from asynchronous sources, we could
 describe it like this:</p>
 
@@ -531,21 +536,21 @@ describe it like this:</p>
   <span class="k">extends</span> <span class="nc">ITerant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div></div>
 
-<p>This is a data structure that resembles <code class="highlighter-rouge">List</code>, but that:</p>
+<p>This is a data structure that resembles <code class="language-plaintext highlighter-rouge">List</code>, but that:</p>
 
 <ol>
-  <li>defers evaluation to an <code class="highlighter-rouge">F[_]</code> data type that’s capable of
+  <li>defers evaluation to an <code class="language-plaintext highlighter-rouge">F[_]</code> data type that’s capable of
 suspending side effects, but note that the <em>actual type class
 restrictions</em> are not defined on the data structure itself</li>
-  <li>is capable of asynchronous processing, in case <code class="highlighter-rouge">F[_]</code> is
+  <li>is capable of asynchronous processing, in case <code class="language-plaintext highlighter-rouge">F[_]</code> is
 capable of asynchronous processing (thus also being equivalent to
 the async iterators in JavaScript or Ix.NET)</li>
-  <li>is lazy, if <code class="highlighter-rouge">F[_]</code> is lazy, thus being equivalent to Scala’s
+  <li>is lazy, if <code class="language-plaintext highlighter-rouge">F[_]</code> is lazy, thus being equivalent to Scala’s
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/Stream.html">Stream</a>,
 or Java’s
 <a href="https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html">Stream</a></li>
   <li>is able to do resource handling, to close any open connections in
-case of interruption (by following <code class="highlighter-rouge">stop</code>), thus making it safer
+case of interruption (by following <code class="language-plaintext highlighter-rouge">stop</code>), thus making it safer
 than plain iterators</li>
 </ol>
 
@@ -553,7 +558,7 @@ than plain iterators</li>
 
 <p>So how can this simple data structure possibly have such super powers?</p>
 
-<p>The answer is that it defers the hard work to any <code class="highlighter-rouge">F[_]</code> data type
+<p>The answer is that it defers the hard work to any <code class="language-plaintext highlighter-rouge">F[_]</code> data type
 whose capabilities are defined via type classes.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.effect.Sync</span>
@@ -574,31 +579,31 @@ whose capabilities are defined via type classes.</p>
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>That part about “<code class="highlighter-rouge">implicit F: Sync[F]</code>”, that’s the restriction we
-have for <code class="highlighter-rouge">F[_]</code>, defining its capabilities.</p>
+<p>That part about “<code class="language-plaintext highlighter-rouge">implicit F: Sync[F]</code>”, that’s the restriction we
+have for <code class="language-plaintext highlighter-rouge">F[_]</code>, defining its capabilities.</p>
 
-<p>What we need here is for <code class="highlighter-rouge">F[_]</code> to implement a <code class="highlighter-rouge">map</code> operation and
+<p>What we need here is for <code class="language-plaintext highlighter-rouge">F[_]</code> to implement a <code class="language-plaintext highlighter-rouge">map</code> operation and
 thus it needs to have a
 <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Functor.scala">Functor</a>
-instance, however our <code class="highlighter-rouge">map</code> is used in fact recursively and due to
-Scala being a strict language, if this <code class="highlighter-rouge">map</code> were to be strictly
+instance, however our <code class="language-plaintext highlighter-rouge">map</code> is used in fact recursively and due to
+Scala being a strict language, if this <code class="language-plaintext highlighter-rouge">map</code> were to be strictly
 evaluated, then we’d
 <a href="https://github.com/typelevel/cats-effect/issues/92">end up with a stack overflow</a>.
-This is why we require <code class="highlighter-rouge">cats.effect.Sync</code>, which implies a <code class="highlighter-rouge">Functor</code>,
-because <code class="highlighter-rouge">Sync</code> now suspends evaluation in <code class="highlighter-rouge">map</code> by law.</p>
+This is why we require <code class="language-plaintext highlighter-rouge">cats.effect.Sync</code>, which implies a <code class="language-plaintext highlighter-rouge">Functor</code>,
+because <code class="language-plaintext highlighter-rouge">Sync</code> now suspends evaluation in <code class="language-plaintext highlighter-rouge">map</code> by law.</p>
 
 <p>You can see how this process goes: you only add the restrictions you
 want on the operations themselves, depending on your needs, not on
 the data structure, thus making the data structure more reusable.</p>
 
-<p><strong>IMPORTANT:</strong> <code class="highlighter-rouge">F</code> gets exposed via the type system at compile
-time. It’s should be obvious that given <code class="highlighter-rouge">F</code> and <code class="highlighter-rouge">G</code>, then an
-<code class="highlighter-rouge">Iterant[F, A]</code> cannot be composed with an <code class="highlighter-rouge">Iterant[G, A]</code>. So an
-<code class="highlighter-rouge">Iterant[Task, A]</code> (see
+<p><strong>IMPORTANT:</strong> <code class="language-plaintext highlighter-rouge">F</code> gets exposed via the type system at compile
+time. It’s should be obvious that given <code class="language-plaintext highlighter-rouge">F</code> and <code class="language-plaintext highlighter-rouge">G</code>, then an
+<code class="language-plaintext highlighter-rouge">Iterant[F, A]</code> cannot be composed with an <code class="language-plaintext highlighter-rouge">Iterant[G, A]</code>. So an
+<code class="language-plaintext highlighter-rouge">Iterant[Task, A]</code> (see
 <a href="https://monix.io/docs/2x/eval/task.html">Task</a>) cannot be composed
-with an <code class="highlighter-rouge">Iterant[Coeval, A]</code> (see
+with an <code class="language-plaintext highlighter-rouge">Iterant[Coeval, A]</code> (see
 <a href="https://monix.io/docs/2x/eval/coeval.html">Coeval</a>), or with an
-<code class="highlighter-rouge">Iterant[IO, A]</code> (see
+<code class="language-plaintext highlighter-rouge">Iterant[IO, A]</code> (see
 <a href="https://github.com/typelevel/cats-effect/blob/v0.8/core/shared/src/main/scala/cats/effect/IO.scala">IO</a>),
 unless you convert between these data types explicitly.</p>
 
@@ -622,13 +627,13 @@ the operations themselves!
 <p>That last example should make you think - parametric polymorphism implies:</p>
 
 <ol>
-  <li>exposing <code class="highlighter-rouge">F</code> type parameters at compile time</li>
+  <li>exposing <code class="language-plaintext highlighter-rouge">F</code> type parameters at compile time</li>
   <li>homogeneity</li>
 </ol>
 
 <p>Because on top of Scala we are looking for opportunities to optimize
 performance, due to the runtime not being optimized for laziness and
-<code class="highlighter-rouge">IO</code> data types (like Haskell), we want to process items in batches,
+<code class="language-plaintext highlighter-rouge">IO</code> data types (like Haskell), we want to process items in batches,
 where possible. For example we’d like to stream arrays, because arrays
 are contiguous memory blocks and if you don’t find ways to work with
 arrays, then you’re screwed in terms of throughput:</p>
@@ -640,7 +645,7 @@ arrays, then you’re screwed in terms of throughput:</p>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div></div>
 
-<p>But why only arrays? What if we allowed Scala’s <code class="highlighter-rouge">List</code> or <code class="highlighter-rouge">Vector</code> as
+<p>But why only arrays? What if we allowed Scala’s <code class="language-plaintext highlighter-rouge">List</code> or <code class="language-plaintext highlighter-rouge">Vector</code> as
 well? There’s no harm in that and it would still have better
 throughput, so might as well use Scala’s
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/Seq.html">Seq</a>:</p>
@@ -654,7 +659,7 @@ throughput, so might as well use Scala’s
 
 <p>But wait, because somebody told us that OOP sucks or that the standard
 collections should not have a hierarchy, lets use type parameters, like we
-did with <code class="highlighter-rouge">F</code>:</p>
+did with <code class="language-plaintext highlighter-rouge">F</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">case</span> <span class="k">class</span> <span class="nc">NextBatch</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span>
   <span class="n">batch</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
@@ -663,7 +668,7 @@ did with <code class="highlighter-rouge">F</code>:</p>
   <span class="k">extends</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">]</span>
 </code></pre></div></div>
 
-<p>Oh wait, this doesn’t work, unless we’d expose <code class="highlighter-rouge">Seq[_]</code> in <code class="highlighter-rouge">Iterant</code> as well:</p>
+<p>Oh wait, this doesn’t work, unless we’d expose <code class="language-plaintext highlighter-rouge">Seq[_]</code> in <code class="language-plaintext highlighter-rouge">Iterant</code> as well:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Iterant</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">Seq</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">]</span>
 
@@ -735,7 +740,7 @@ really potent, really generic, great actually.</p>
 
 <p>But that is simply <em>false</em>.</p>
 
-<p>Here’s the big difference: <code class="highlighter-rouge">Iterator</code> allows you to <em>pause</em> the
+<p>Here’s the big difference: <code class="language-plaintext highlighter-rouge">Iterator</code> allows you to <em>pause</em> the
 processing, until the current iteration cycle has finished, before
 processing the next item, being a pull-based protocol with the user
 being <em>completely in charge</em>. The user being responsible for advancing
@@ -756,9 +761,9 @@ nonetheless.</p>
 blow up your process because there’s no back-pressure in that fold.
 But I digress.</p>
 
-<p>Iterating over arrays in our <code class="highlighter-rouge">NextBatch</code> might prove tricky but is
-doable, for example in a <code class="highlighter-rouge">mapEval</code> implementation that needs to pop an
-item out of our <code class="highlighter-rouge">Array</code>, process that in the <code class="highlighter-rouge">F[_]</code> monadic context,
+<p>Iterating over arrays in our <code class="language-plaintext highlighter-rouge">NextBatch</code> might prove tricky but is
+doable, for example in a <code class="language-plaintext highlighter-rouge">mapEval</code> implementation that needs to pop an
+item out of our <code class="language-plaintext highlighter-rouge">Array</code>, process that in the <code class="language-plaintext highlighter-rouge">F[_]</code> monadic context,
 then continue from where it left off:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">mapEval</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">Iterant</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">B</span><span class="o">])</span>
@@ -782,8 +787,8 @@ then continue from where it left off:</p>
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>Well, <code class="highlighter-rouge">Array</code> can be indexed, but that indexing would be death for
-<code class="highlighter-rouge">List</code>, isn’t it?</p>
+<p>Well, <code class="language-plaintext highlighter-rouge">Array</code> can be indexed, but that indexing would be death for
+<code class="language-plaintext highlighter-rouge">List</code>, isn’t it?</p>
 
 <p>Turns out we have a perfectly capable abstraction for iterating over
 arrays, lists, vectors or what have you, the classic
@@ -822,13 +827,13 @@ arrays, lists, vectors or what have you, the classic
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>Can you do that with <code class="highlighter-rouge">Foldable</code> / <code class="highlighter-rouge">Traverse</code>? No, you can’t!</p>
+<p>Can you do that with <code class="language-plaintext highlighter-rouge">Foldable</code> / <code class="language-plaintext highlighter-rouge">Traverse</code>? No, you can’t!</p>
 
 <p class="info-bubble">
 If a tree falls in a forest and no one is around to hear it, is that a
 <a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)"><i>side effect</i></a>?
 <br /><br />
-The <code class="highlighter-rouge">Iterator</code> interface relies on side effects and is thus
+The <code class="language-plaintext highlighter-rouge">Iterator</code> interface relies on side effects and is thus
 incompatible with functional programming. However if its mutation is
 properly suspended and encapsulated, such that <i>referential
 transparency</i> is preserved, then it really doesn’t matter 😉
@@ -847,21 +852,21 @@ should be something like this:</p>
 we’ve got state to evolve.</p>
 
 <p>Here’s the performance characteristics of such a decomposition
-for the <code class="highlighter-rouge">head</code> and <code class="highlighter-rouge">tail</code> operations, needed for this type
+for the <code class="language-plaintext highlighter-rouge">head</code> and <code class="language-plaintext highlighter-rouge">tail</code> operations, needed for this type
 class:</p>
 
 <ul>
   <li><a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/Vector.html">Vector</a>,
-has “<em>effectively constant time</em>”, which is worse than <code class="highlighter-rouge">List</code></li>
+has “<em>effectively constant time</em>”, which is worse than <code class="language-plaintext highlighter-rouge">List</code></li>
   <li><a href="http://www.scala-lang.org/api/2.12.4/scala/collection/immutable/Queue.html">Queue</a>
-has “<em>amortized constant time</em>”, which is worse than <code class="highlighter-rouge">List</code></li>
+has “<em>amortized constant time</em>”, which is worse than <code class="language-plaintext highlighter-rouge">List</code></li>
   <li><a href="http://www.scala-lang.org/api/2.12.4/scala/Array.html">Array</a>
-has linear O(N) time for <code class="highlighter-rouge">tail</code>, aka you can change your job now</li>
+has linear O(N) time for <code class="language-plaintext highlighter-rouge">tail</code>, aka you can change your job now</li>
 </ul>
 
-<p>Yes, <code class="highlighter-rouge">Iterator</code> is efficient for all of them, so it wins by a wide
+<p>Yes, <code class="language-plaintext highlighter-rouge">Iterator</code> is efficient for all of them, so it wins by a wide
 margin. The above is actually horrible and why a type class like
-that isn’t popular, because it relies on <code class="highlighter-rouge">List</code>’s encoding to be
+that isn’t popular, because it relies on <code class="language-plaintext highlighter-rouge">List</code>’s encoding to be
 efficient 😉</p>
 
 <p>So that’s not it. The pure type-class equivalent is actually this:</p>
@@ -884,18 +889,18 @@ efficient 😉</p>
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>But this will leak implementation details - not bad for our <code class="highlighter-rouge">Array</code>
+<p>But this will leak implementation details - not bad for our <code class="language-plaintext highlighter-rouge">Array</code>
 instance, but what if we had some sort of
 <a href="https://en.wikipedia.org/wiki/Self-balancing_binary_search_tree">self-balancing tree</a>
 which you then changed to a
 <a href="https://en.wikipedia.org/wiki/Hash_array_mapped_trie">HAMT</a>.
-In that case our <code class="highlighter-rouge">Pointer</code> would be some sort of node with links
+In that case our <code class="language-plaintext highlighter-rouge">Pointer</code> would be some sort of node with links
 to its neighbors, so is it wise exposing it like that? How
 is Haskell’s binary compatibility anyway? Does it even support
 dynamic linking?</p>
 
 <p class="info-bubble">
-<b><u>TL;DR</u></b>: <code class="highlighter-rouge">Iterator</code> actually beats pure, type-class
+<b><u>TL;DR</u></b>: <code class="language-plaintext highlighter-rouge">Iterator</code> actually beats pure, type-class
 based solution in performance, flexibility or encapsulation! It’s
 also lower-level, impure and error prone, but sorely needed sometimes.
 </p>
@@ -926,7 +931,7 @@ and have never regretted using it.</p>
 
 <h3 id="51-seq-on-return">5.1. Seq on Return</h3>
 
-<p>Returning <code class="highlighter-rouge">Seq</code> from a function gives you the freedom to change the
+<p>Returning <code class="language-plaintext highlighter-rouge">Seq</code> from a function gives you the freedom to change the
 implementation and this works well because:</p>
 
 <ol>
@@ -978,10 +983,10 @@ as the internal buffer, emitting arrays
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/mutable/WrappedArray.html">wrapped in Seq</a></li>
   <li><a href="https://github.com/monix/monix/blob/v2.0.0/monix-reactive/shared/src/main/scala/monix/reactive/internal/operators/BufferSlidingOperator.scala#L41">version 2.0.0</a>
 used a <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/mutable/ListBuffer.html">ListBuffer</a>,
-thus emitting <code class="highlighter-rouge">List</code> chunks</li>
+thus emitting <code class="language-plaintext highlighter-rouge">List</code> chunks</li>
 </ul>
 
-<p>The change from <code class="highlighter-rouge">List</code> to <code class="highlighter-rouge">Array</code> was done:</p>
+<p>The change from <code class="language-plaintext highlighter-rouge">List</code> to <code class="language-plaintext highlighter-rouge">Array</code> was done:</p>
 
 <ul>
   <li>without breaking backwards compatibility</li>
@@ -994,27 +999,27 @@ able to traverse or fold them or to convert them into something else</li>
 mantra that OOP developers like to repeat so much. You won’t
 actually need this capability that often, but when you do, it’s golden.</p>
 
-<p>Also note that when using a super-type such as <code class="highlighter-rouge">Seq</code> in an interface, due to the
+<p>Also note that when using a super-type such as <code class="language-plaintext highlighter-rouge">Seq</code> in an interface, due to the
 <a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">covariance</a>
 of return types, you’re always allowed to override with a more
-specific type in implementing classes (e.g.  to go from <code class="highlighter-rouge">Seq</code> to
-<code class="highlighter-rouge">List</code>), and the Liskov substitution principle still applies.</p>
+specific type in implementing classes (e.g.  to go from <code class="language-plaintext highlighter-rouge">Seq</code> to
+<code class="language-plaintext highlighter-rouge">List</code>), and the Liskov substitution principle still applies.</p>
 
 <p class="info-bubble">
-<b><u>TL;DR</u></b>: there are perfectly valid use-cases for <code class="highlighter-rouge">Seq</code> as the return type!
+<b><u>TL;DR</u></b>: there are perfectly valid use-cases for <code class="language-plaintext highlighter-rouge">Seq</code> as the return type!
 </p>
 
 <h3 id="52-seq-on-input">5.2. Seq on Input</h3>
 
-<p>The necessity for <code class="highlighter-rouge">Seq</code> is the same as for
+<p>The necessity for <code class="language-plaintext highlighter-rouge">Seq</code> is the same as for
 <a href="https://github.com/typelevel/cats/blob/v1.0.1/core/src/main/scala/cats/Foldable.scala">Foldable</a>,
 the need to traverse a collection, aggregating its items into some final result.</p>
 
-<p><code class="highlighter-rouge">Seq</code> also implies that items come in a
+<p><code class="language-plaintext highlighter-rouge">Seq</code> also implies that items come in a
 <a href="https://en.wikipedia.org/wiki/Sequence">sequence</a> in which order
 matters and repetition is allowed. For example a
 <a href="https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/Set.html">Set</a>
-shouldn’t be a <code class="highlighter-rouge">Seq</code>, because <code class="highlighter-rouge">Set</code> does not allow repetition and has
+shouldn’t be a <code class="language-plaintext highlighter-rouge">Seq</code>, because <code class="language-plaintext highlighter-rouge">Set</code> does not allow repetition and has
 no ordering.</p>
 
 <p>So here’s another real-world use-case, also from Monix, the
@@ -1037,10 +1042,10 @@ is important for getting back a predictable result - after all, that ordering
 is important is implied by what this operator does.</p>
 
 <p>And note that all the implementation does is to care about traversal, via
-an <code class="highlighter-rouge">Iterator</code> loop.</p>
+an <code class="language-plaintext highlighter-rouge">Iterator</code> loop.</p>
 
 <p class="info-bubble">
-<b><u>TL;DR</u></b>: yes, there are perfectly valid use-cases for <code class="highlighter-rouge">Seq</code> as the input!
+<b><u>TL;DR</u></b>: yes, there are perfectly valid use-cases for <code class="language-plaintext highlighter-rouge">Seq</code> as the input!
 </p>
 
 <h2 id="6-conclusion">6. Conclusion</h2>
@@ -1048,14 +1053,14 @@ an <code class="highlighter-rouge">Iterator</code> loop.</p>
 <p>Here’s a summary:</p>
 
 <ul>
-  <li><a href="#21-canbuildfrom">2.1.</a> — <code class="highlighter-rouge">CanBuildFrom</code> was a clever solution to an
+  <li><a href="#21-canbuildfrom">2.1.</a> — <code class="language-plaintext highlighter-rouge">CanBuildFrom</code> was a clever solution to an
 exagerated problem, but you’ll no longer have to worry about
 it</li>
   <li><a href="#22-complex-hierarchy">2.2.</a> — a complex OOP hierarchy, as clever as it may be,
 brings with it complexity beyond reason and is counter-productive
 for subtype polymorphism</li>
   <li><a href="#23-seq-or-other-super-types">2.3.</a> — OOP interfaces might expose leaky operations that are
-booby traps (e.g. <code class="highlighter-rouge">Seq</code> indexing), but this is not specific to OOP
+booby traps (e.g. <code class="language-plaintext highlighter-rouge">Seq</code> indexing), but this is not specific to OOP
 interfaces, vigilance in design is always needed</li>
   <li><a href="#24-not-using-type-classes">2.4.</a> — type-classes are nice, playing well with
 parametric polymorphism, but in Scala the syntax is heavier than
@@ -1071,12 +1076,12 @@ being on the operations themselves</li>
 expose the data type as a type parameter, making types more
 complicated and saying goodbye to heterogeneity, or you end up with
 a shitty OOP substitute</li>
-  <li><a href="#43-iterator-vs-foldable-and-traverse">4.3.</a> — <code class="highlighter-rouge">Iterator</code> actually beats pure, type-class based
+  <li><a href="#43-iterator-vs-foldable-and-traverse">4.3.</a> — <code class="language-plaintext highlighter-rouge">Iterator</code> actually beats pure, type-class based
 solution in performance, flexibility or encapsulation. It’s also
 lower-level, impure and error prone, but sorely needed sometimes</li>
-  <li><a href="#51-seq-on-return">5.1.</a> — there are perfectly valid use-cases for <code class="highlighter-rouge">Seq</code> as
+  <li><a href="#51-seq-on-return">5.1.</a> — there are perfectly valid use-cases for <code class="language-plaintext highlighter-rouge">Seq</code> as
 the return type</li>
-  <li><a href="#52-seq-on-input">5.2.</a> — there are perfectly valid use-cases for <code class="highlighter-rouge">Seq</code> as
+  <li><a href="#52-seq-on-input">5.2.</a> — there are perfectly valid use-cases for <code class="language-plaintext highlighter-rouge">Seq</code> as
 the input</li>
 </ul>
 
@@ -1089,8 +1094,8 @@ Scala’s OOP and the new collections.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2018-02-12T00:00:00+0200">
-        Published: February 12, 2018
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -1248,30 +1253,20 @@ Scala’s OOP and the new collections.</p>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `In Defense of OOFP`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2018-02-12-in-defense-oofp.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -1291,12 +1286,12 @@ Scala’s OOP and the new collections.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

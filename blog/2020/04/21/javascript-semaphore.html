@@ -9,15 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Parallelizing Work via a JavaScript Semaphore &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Parallelizing Work via a JavaScript Semaphore - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Parallelizing Work via a JavaScript Semaphore" property="og:title">
     <meta content="Simple and very effective implementation of a Semaphore, used for easily parallelizing work in JavaScript/TypeScript." property="og:description">
     <meta content="https://alexn.org/blog/2020/04/21/javascript-semaphore.html" property="og:url">
-    <meta content="2020-04-21T19:00:00+03:00" property="article:published_time">
+    <meta content="2020-04-21T16:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/async-semaphore-typescript.png" />
@@ -41,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/04/21/javascript-semaphore.html">
@@ -56,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -84,9 +89,9 @@
   <h1 class="postTitle" itemprop="headline">Parallelizing Work via a JavaScript Semaphore</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/04/21/javascript-semaphore.html"/>
-    <meta itemprop="datePublished" content="2020-04-21T19:00:00+0300"/>
+    <meta itemprop="datePublished" content="2020-04-21T16:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2020-04-21T19:00:00+0300">April 21, 2020</time>
+    <time itemprop="dateCreated" datetime="2020-04-21T16:00:00+0000">April 21, 2020</time>
     | <nobr><span class="time">6</span> minute</nobr>
   </p>
 
@@ -99,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -116,7 +121,7 @@
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">
-  This is a simple, but very effective implementation of a <code class="highlighter-rouge">Semaphore</code>, used for easily parallelizing work in JavaScript/TypeScript. And while libraries for doing this might be available, quality varies and implementing your own stuff is fun.
+  This is a simple, but very effective implementation of a <code class="language-plaintext highlighter-rouge">Semaphore</code>, used for easily parallelizing work in JavaScript/TypeScript. And while libraries for doing this might be available, quality varies and implementing your own stuff is fun.
 </p>
 
 <p>Use-case: many times we iterate over a list of items and then do expensive network requests, like reading and writing to a database.</p>
@@ -129,7 +134,7 @@
 <p>Simple example:</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// Dummy function</span>
-<span class="kd">function</span> <span class="nx">saveToDatabase</span><span class="p">(</span><span class="nx">item</span><span class="p">:</span> <span class="nx">number</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">saveToDatabase</span><span class="p">(</span><span class="nx">item</span><span class="p">:</span> <span class="kr">number</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
  <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">f</span> <span class="o">=&gt;</span> <span class="p">{</span>
    <span class="k">if</span> <span class="p">(</span><span class="nx">item</span> <span class="o">%</span> <span class="mi">1000</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Progress: </span><span class="dl">"</span><span class="p">,</span> <span class="nx">item</span><span class="p">)</span> <span class="p">}</span>
    <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">f</span><span class="p">,</span> <span class="mi">100</span> <span class="cm">/* millis */</span><span class="p">)</span>
@@ -144,7 +149,7 @@
 
 <p>But this will be very slow, taking ~2.8 hours to finish.</p>
 
-<p>On the other hand, if we try a naive solution via <code class="highlighter-rouge">Promise.race</code>, this can easily overwhelm your database and your script can crash with “<em>out of memory</em>” or “<em>out of available file handles</em>” errors. This is also not adequate in case producing those items in the first place is an expensive process (e.g. going over an async iterator). We can certainly hold 100,000 items in memory, but talk about 100 million or more and things start to fall apart.</p>
+<p>On the other hand, if we try a naive solution via <code class="language-plaintext highlighter-rouge">Promise.race</code>, this can easily overwhelm your database and your script can crash with “<em>out of memory</em>” or “<em>out of available file handles</em>” errors. This is also not adequate in case producing those items in the first place is an expensive process (e.g. going over an async iterator). We can certainly hold 100,000 items in memory, but talk about 100 million or more and things start to fall apart.</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="kd">const</span> <span class="nx">promises</span><span class="p">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span><span class="p">[]</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -169,19 +174,19 @@
 
 <p>Execution time will be ~1.7 minutes (compared with 2.8 hours for the first sample).</p>
 
-<p>The method <code class="highlighter-rouge">withLockRunAndForget</code> only waits in case the semaphore doesn’t have handles available. And when the loop is finished, we need <code class="highlighter-rouge">awaitTerminate</code> to wait for all active tasks to finish.</p>
+<p>The method <code class="language-plaintext highlighter-rouge">withLockRunAndForget</code> only waits in case the semaphore doesn’t have handles available. And when the loop is finished, we need <code class="language-plaintext highlighter-rouge">awaitTerminate</code> to wait for all active tasks to finish.</p>
 
 <p>Implementation, which can be copy/pasted in your project:</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">AsyncSemaphore</span> <span class="p">{</span>
-  <span class="kr">private</span> <span class="nx">_available</span><span class="p">:</span> <span class="nx">number</span>
-  <span class="kr">private</span> <span class="nx">_upcoming</span><span class="p">:</span> <span class="nb">Function</span><span class="p">[]</span>
-  <span class="kr">private</span> <span class="nx">_heads</span><span class="p">:</span> <span class="nb">Function</span><span class="p">[]</span>
+  <span class="k">private</span> <span class="nx">_available</span><span class="p">:</span> <span class="kr">number</span>
+  <span class="k">private</span> <span class="nx">_upcoming</span><span class="p">:</span> <span class="nb">Function</span><span class="p">[]</span>
+  <span class="k">private</span> <span class="nx">_heads</span><span class="p">:</span> <span class="nb">Function</span><span class="p">[]</span>
 
-  <span class="kr">private</span> <span class="nx">_completeFn</span><span class="o">!</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span>
-  <span class="kr">private</span> <span class="nx">_completePr</span><span class="o">!</span><span class="p">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
+  <span class="k">private</span> <span class="nx">_completeFn</span><span class="o">!</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span>
+  <span class="k">private</span> <span class="nx">_completePr</span><span class="o">!</span><span class="p">:</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
 
-  <span class="kd">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">readonly</span> <span class="nx">workersCount</span><span class="p">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">public</span> <span class="k">readonly</span> <span class="nx">workersCount</span><span class="p">:</span> <span class="kr">number</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">workersCount</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">workersCount must be positive</span><span class="dl">"</span><span class="p">)</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_available</span> <span class="o">=</span> <span class="nx">workersCount</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_upcoming</span> <span class="o">=</span> <span class="p">[]</span>
@@ -206,7 +211,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="kr">private</span> <span class="k">async</span> <span class="nx">_execWithRelease</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">(</span><span class="na">f</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="k">async</span> <span class="nx">_execWithRelease</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">f</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">try</span> <span class="p">{</span>
       <span class="k">return</span> <span class="k">await</span> <span class="nx">f</span><span class="p">()</span>
     <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
@@ -214,7 +219,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="kr">private</span> <span class="nx">_queue</span><span class="p">():</span> <span class="nb">Function</span><span class="p">[]</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">_queue</span><span class="p">():</span> <span class="nb">Function</span><span class="p">[]</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">_heads</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">_heads</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_upcoming</span><span class="p">.</span><span class="nx">reverse</span><span class="p">()</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">_upcoming</span> <span class="o">=</span> <span class="p">[]</span>
@@ -222,7 +227,7 @@
     <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_heads</span>
   <span class="p">}</span>
 
-  <span class="kr">private</span> <span class="nx">_acquire</span><span class="p">():</span> <span class="k">void</span> <span class="o">|</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">_acquire</span><span class="p">():</span> <span class="k">void</span> <span class="o">|</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_available</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">this</span><span class="p">.</span><span class="nx">_available</span> <span class="o">-=</span> <span class="mi">1</span>
       <span class="k">return</span> <span class="kc">undefined</span>
@@ -234,7 +239,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="kr">private</span> <span class="nx">_release</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">_release</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
     <span class="kd">const</span> <span class="nx">queue</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">_queue</span><span class="p">()</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
       <span class="kd">const</span> <span class="nx">fn</span> <span class="o">=</span> <span class="nx">queue</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span>
@@ -250,7 +255,7 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-  <span class="kr">private</span> <span class="nx">_refreshComplete</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
+  <span class="k">private</span> <span class="nx">_refreshComplete</span><span class="p">():</span> <span class="k">void</span> <span class="p">{</span>
     <span class="kd">let</span> <span class="na">fn</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="k">void</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="cm">/***/</span><span class="p">}</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_completePr</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">r</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="nx">fn</span> <span class="o">=</span> <span class="nx">r</span> <span class="p">})</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">_completeFn</span> <span class="o">=</span> <span class="nx">fn</span>
@@ -264,8 +269,8 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-04-21T19:00:00+0300">
-        Published: April 21, 2020
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -416,30 +421,20 @@
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Parallelizing Work via a JavaScript Semaphore`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2020-04-21-javascript-semaphore.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -459,12 +454,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

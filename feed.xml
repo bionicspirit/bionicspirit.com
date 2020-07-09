@@ -5,16 +5,16 @@
   xmlns:dc="http://purl.org/dc/elements/1.1/">
 
   <channel>
-    <title>Alexandru Nedelcu's Blog</title>
+    <title>Alexandru Nedelcu</title>
     <description>On programming and personal projects</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 06 Jun 2020 16:38:05 +0300</pubDate>
-    <lastBuildDate>Sat, 06 Jun 2020 16:38:05 +0300</lastBuildDate>
+    <pubDate>Thu, 09 Jul 2020 08:59:06 +0000</pubDate>
+    <lastBuildDate>Thu, 09 Jul 2020 08:59:06 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
-    <generator>Jekyll v4.0.0</generator>
+    <generator>Jekyll v4.1.1</generator>
 
     
       
@@ -30,13 +30,13 @@
           </a>
           <br />
           
-          <p>Strengthen your code via <code class="highlighter-rouge">-Xfatal-warnings</code>, linting and piss off your colleagues with useful compiler errors.</p>
+          <p>Strengthen your code via <code class="language-plaintext highlighter-rouge">-Xfatal-warnings</code>, linting and piss off your colleagues with useful compiler errors.</p>
 
           <p>
             <a href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Tue, 26 May 2020 00:00:00 +0300</pubDate>
+        <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html</guid>
         
@@ -68,7 +68,7 @@
             <a href="https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Tue, 21 Apr 2020 19:00:00 +0300</pubDate>
+        <pubDate>Tue, 21 Apr 2020 16:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2020/04/21/javascript-semaphore.html</guid>
         
@@ -103,7 +103,7 @@
             <a href="https://alexn.org/blog/2020/04/21/blog-updates.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Tue, 21 Apr 2020 13:00:00 +0300</pubDate>
+        <pubDate>Tue, 21 Apr 2020 10:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2020/04/21/blog-updates.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2020/04/21/blog-updates.html</guid>
         
@@ -135,7 +135,7 @@
             <a href="https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 22 Nov 2019 00:00:00 +0200</pubDate>
+        <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html</guid>
         
@@ -167,7 +167,7 @@
             <a href="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sun, 11 Aug 2019 00:00:00 +0300</pubDate>
+        <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html</guid>
         
@@ -199,7 +199,7 @@
             <a href="https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sun, 06 May 2018 00:00:00 +0300</pubDate>
+        <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2018/05/06/bifunctor-io.html</guid>
         
@@ -237,7 +237,7 @@
             <a href="https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Mon, 12 Feb 2018 00:00:00 +0200</pubDate>
+        <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2018/02/12/in-defense-oofp.html</guid>
         
@@ -275,7 +275,7 @@
             <a href="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 10 Nov 2017 00:00:00 +0200</pubDate>
+        <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html</guid>
         
@@ -309,7 +309,7 @@
             <a href="https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sun, 15 Oct 2017 00:00:00 +0300</pubDate>
+        <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/10/15/functional-programming.html</guid>
         
@@ -346,7 +346,7 @@
             <a href="https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 13 Oct 2017 00:00:00 +0300</pubDate>
+        <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html</guid>
         
@@ -388,7 +388,7 @@
             <a href="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Wed, 11 Oct 2017 00:00:00 +0300</pubDate>
+        <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html</guid>
         
@@ -424,7 +424,7 @@
             <a href="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Wed, 16 Aug 2017 00:00:00 +0300</pubDate>
+        <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html</guid>
         
@@ -460,7 +460,7 @@
             <a href="https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Wed, 15 Mar 2017 00:00:00 +0200</pubDate>
+        <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/03/15/fp-inception.html</guid>
         
@@ -496,7 +496,7 @@
             <a href="https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Mon, 30 Jan 2017 00:00:00 +0200</pubDate>
+        <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html</guid>
         
@@ -532,7 +532,7 @@
             <a href="https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Mon, 16 Jan 2017 00:00:00 +0200</pubDate>
+        <pubDate>Mon, 16 Jan 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/01/16/iterator.html</guid>
         
@@ -566,7 +566,7 @@
             <a href="https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 13 Jan 2017 00:00:00 +0200</pubDate>
+        <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2017/01/13/traversable.html</guid>
         
@@ -600,7 +600,7 @@
             <a href="https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 11 Nov 2016 00:00:00 +0200</pubDate>
+        <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html</guid>
         
@@ -632,7 +632,7 @@
             <a href="https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Thu, 25 Aug 2016 00:00:00 +0300</pubDate>
+        <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2016/08/25/monix-task-performance.html</guid>
         
@@ -671,7 +671,7 @@
             <a href="https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sun, 15 May 2016 00:00:00 +0300</pubDate>
+        <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2016/05/15/monix-observable.html</guid>
         
@@ -706,7 +706,7 @@
             <a href="https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Tue, 10 May 2016 00:00:00 +0300</pubDate>
+        <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2016/05/10/monix-task.html</guid>
         
@@ -742,7 +742,7 @@
             <a href="https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Tue, 15 Dec 2015 00:00:00 +0200</pubDate>
+        <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html</guid>
         
@@ -784,7 +784,7 @@ but let me give you the perspective from the other side.
             <a href="https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sun, 06 Sep 2015 00:00:00 +0300</pubDate>
+        <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html</guid>
         
@@ -820,7 +820,7 @@ but let me give you the perspective from the other side.
             <a href="https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Mon, 20 Oct 2014 00:00:00 +0300</pubDate>
+        <pubDate>Mon, 20 Oct 2014 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2014/10/20/scala-best-practices.html</guid>
         
@@ -862,7 +862,7 @@ but let me give you the perspective from the other side.
             <a href="https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Mon, 13 May 2013 00:00:00 +0300</pubDate>
+        <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2013/05/13/getting-started-with-scala.html</guid>
         
@@ -905,7 +905,7 @@ but let me give you the perspective from the other side.
             <a href="https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Tue, 07 May 2013 00:00:00 +0300</pubDate>
+        <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html</guid>
         
@@ -953,7 +953,7 @@ but let me give you the perspective from the other side.
             <a href="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Thu, 14 Mar 2013 00:00:00 +0200</pubDate>
+        <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html</guid>
         
@@ -993,7 +993,7 @@ but let me give you the perspective from the other side.
             <a href="https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Wed, 07 Nov 2012 00:00:00 +0200</pubDate>
+        <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2012/11/07/notes-javascript-development.html</guid>
         
@@ -1030,7 +1030,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 02 Nov 2012 00:00:00 +0200</pubDate>
+        <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html</guid>
         
@@ -1068,7 +1068,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Thu, 09 Feb 2012 00:00:00 +0200</pubDate>
+        <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html</guid>
         
@@ -1104,7 +1104,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Mon, 16 Jan 2012 00:00:00 +0200</pubDate>
+        <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html</guid>
         
@@ -1140,7 +1140,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Thu, 05 Jan 2012 00:00:00 +0200</pubDate>
+        <pubDate>Thu, 05 Jan 2012 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2012/01/05/blogging-for-hackers.html</guid>
         
@@ -1180,7 +1180,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Thu, 15 Dec 2011 00:00:00 +0200</pubDate>
+        <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html</guid>
         
@@ -1216,7 +1216,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Mon, 12 Dec 2011 00:00:00 +0200</pubDate>
+        <pubDate>Mon, 12 Dec 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2011/12/12/android-learning-resources.html</guid>
         
@@ -1253,7 +1253,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Tue, 29 Nov 2011 00:00:00 +0200</pubDate>
+        <pubDate>Tue, 29 Nov 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html</guid>
         
@@ -1287,7 +1287,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 25 Nov 2011 00:00:00 +0200</pubDate>
+        <pubDate>Fri, 25 Nov 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html</guid>
         
@@ -1323,7 +1323,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 29 Oct 2011 00:00:00 +0300</pubDate>
+        <pubDate>Sat, 29 Oct 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2011/10/29/how-i-use-flickr.html</guid>
         
@@ -1357,7 +1357,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sun, 23 Oct 2011 00:00:00 +0300</pubDate>
+        <pubDate>Sun, 23 Oct 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html</guid>
         
@@ -1399,7 +1399,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Thu, 24 Mar 2011 00:00:00 +0200</pubDate>
+        <pubDate>Thu, 24 Mar 2011 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2011/03/24/cross-domain-requests.html</guid>
         
@@ -1434,7 +1434,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Tue, 25 May 2010 00:00:00 +0300</pubDate>
+        <pubDate>Tue, 25 May 2010 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2010/05/25/i-hate-null.html</guid>
         
@@ -1466,7 +1466,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 20 Feb 2009 00:00:00 +0200</pubDate>
+        <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html</guid>
         
@@ -1505,7 +1505,7 @@ In this article I’m describing my impressions of the Scala programming languag
             <a href="https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sun, 01 Feb 2009 00:00:00 +0200</pubDate>
+        <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
         <link>https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html</guid>
         

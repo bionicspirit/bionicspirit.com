@@ -9,15 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>JavaScript's Promise Leaks Memory &#8211; Alexandru Nedelcu's Blog</title>
+    <title>JavaScript's Promise Leaks Memory - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="JavaScript's Promise Leaks Memory" property="og:title">
     <meta content="JavaScript’s Promise leaks memory in recursive loops and what you can do about it." property="og:description">
     <meta content="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html" property="og:url">
-    <meta content="2017-10-11T00:00:00+03:00" property="article:published_time">
+    <meta content="2017-10-11T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/js-then.png" />
@@ -41,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html">
@@ -56,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -84,9 +89,9 @@
   <h1 class="postTitle" itemprop="headline">JavaScript's Promise Leaks Memory</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html"/>
-    <meta itemprop="datePublished" content="2017-10-11T00:00:00+0300"/>
+    <meta itemprop="datePublished" content="2017-10-11T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2017-10-11T00:00:00+0300">October 11, 2017</time>
+    <time itemprop="dateCreated" datetime="2017-10-11T00:00:00+0000">October 11, 2017</time>
     | <nobr><span class="time">13</span> minute</nobr>
   </p>
 
@@ -99,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -168,7 +173,7 @@ process or browser:</p>
 <p>It takes a while to fill GBs of heap, plus Node is less conservative, the GC eventually
 freezing the process trying to recover memory, so give it a few seconds.</p>
 
-<p>This is equivalent with this <code class="highlighter-rouge">async</code> function:</p>
+<p>This is equivalent with this <code class="language-plaintext highlighter-rouge">async</code> function:</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">i</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">signal</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span>
@@ -179,7 +184,7 @@ freezing the process trying to recover memory, so give it a few seconds.</p>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Of course, if this loop would be synchronous, not using <code class="highlighter-rouge">Promise</code> or <code class="highlighter-rouge">async</code> / <code class="highlighter-rouge">await</code>,
+<p>Of course, if this loop would be synchronous, not using <code class="language-plaintext highlighter-rouge">Promise</code> or <code class="language-plaintext highlighter-rouge">async</code> / <code class="language-plaintext highlighter-rouge">await</code>,
 then the process would blow up with a stack overflow error because
 at the moment of writing JavaScript does not do
 <a href="https://en.wikipedia.org/wiki/Tail_call">tail calls optimizations</a>
@@ -188,15 +193,15 @@ at the moment of writing JavaScript does not do
 <p>But before you jump to conclusions, this has nothing to do with JavaScript’s
 lack of TCO support. This is because in our recursive function it’s
 not JavaScript’s <a href="https://en.wikipedia.org/wiki/Call_stack">call stack</a>
-that’s managing that loop, but rather the <code class="highlighter-rouge">Promise</code> implementation.
+that’s managing that loop, but rather the <code class="language-plaintext highlighter-rouge">Promise</code> implementation.
 That recursive call is asynchronous and so it does not abuse the call stack
 by definition.</p>
 
 <p>Unfortunately, just like a regular function using the call stack for those
-recursive calls, the <code class="highlighter-rouge">Promise</code> implementation is abusing the heap memory,
-not chaining <code class="highlighter-rouge">then</code> calls correctly. And that sample should not leak,
-the <code class="highlighter-rouge">Promise</code> implementation should be able to do the equivalent of TCO
-and in such a case eliminate frames in the <code class="highlighter-rouge">then</code> chain being created.</p>
+recursive calls, the <code class="language-plaintext highlighter-rouge">Promise</code> implementation is abusing the heap memory,
+not chaining <code class="language-plaintext highlighter-rouge">then</code> calls correctly. And that sample should not leak,
+the <code class="language-plaintext highlighter-rouge">Promise</code> implementation should be able to do the equivalent of TCO
+and in such a case eliminate frames in the <code class="language-plaintext highlighter-rouge">then</code> chain being created.</p>
 
 <h2 id="the-spec-is-the-problem">The Spec is The Problem</h2>
 
@@ -216,12 +221,12 @@ Relevant links to known issues on GitHub, explaining why:</p>
 <strong><a href="https://github.com/promises-aplus/promises-spec/issues/179">promises-spec/#179</a></strong></li>
 </ol>
 
-<p>As you’ll see, there are some reasonable arguments for why the <code class="highlighter-rouge">Promise</code>
+<p>As you’ll see, there are some reasonable arguments for why the <code class="language-plaintext highlighter-rouge">Promise</code>
 implementation is allowed to leak memory. But I can’t agree.</p>
 
 <h2 id="the-non-leaky-solution">The Non-leaky Solution</h2>
 
-<p>The solution, if you insist on using JavaScript’s <code class="highlighter-rouge">Promise</code>, is to work
+<p>The solution, if you insist on using JavaScript’s <code class="language-plaintext highlighter-rouge">Promise</code>, is to work
 with non-recursive functions:</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">async</span> <span class="kd">function</span> <span class="nx">loop</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
@@ -243,30 +248,30 @@ any, goes out the window, see below.</p>
 
 <h3 id="1-this-is-normal">1. This is Normal</h3>
 
-<p>No, if you judge this implementation, relative to other <code class="highlighter-rouge">Promise</code> / <code class="highlighter-rouge">Future</code>
+<p>No, if you judge this implementation, relative to other <code class="language-plaintext highlighter-rouge">Promise</code> / <code class="language-plaintext highlighter-rouge">Future</code>
 implementations in the industry, which are setting expectations.</p>
 
 <p>Here are the implementations that I know about that DO NOT leak memory:</p>
 
 <ol>
   <li><a href="http://bluebirdjs.com/docs/getting-started.html">Bluebird</a>, probably
-the most popular non-standard <code class="highlighter-rouge">Promise</code> implementation for JavaScript</li>
+the most popular non-standard <code class="language-plaintext highlighter-rouge">Promise</code> implementation for JavaScript</li>
   <li><a href="https://www.scala-lang.org/">Scala</a>’s standard
 <a href="http://www.scala-lang.org/api/2.12.3/scala/concurrent/Future.html">Future</a>,
-in the wild since 2013; the fix for the leaky <code class="highlighter-rouge">flatMap</code>
+in the wild since 2013; the fix for the leaky <code class="language-plaintext highlighter-rouge">flatMap</code>
 chains was added by <a href="https://twitter.com/richdougherty">Rich Dougherty</a>
 in <a href="https://github.com/scala/scala/pull/2674">this PR</a>, inspired
-by Twitter’s <code class="highlighter-rouge">Future</code> implementation</li>
+by Twitter’s <code class="language-plaintext highlighter-rouge">Future</code> implementation</li>
   <li>Twitter’s <a href="https://twitter.github.io/util/docs/com/twitter/util/Future.html">Future</a>,
 which is used in all of Twitter’s backend infrastructure, being integrated
 in <a href="https://twitter.github.io/finagle/">Finagle</a></li>
-  <li><a href="http://trane.io/">Trane.io</a>, a Java Future implementation providing a <code class="highlighter-rouge">TailRec</code>
+  <li><a href="http://trane.io/">Trane.io</a>, a Java Future implementation providing a <code class="language-plaintext highlighter-rouge">TailRec</code>
 builder meant precissely for this use-case</li>
   <li>My very own Funfix <a href="https://funfix.org/api/exec/classes/future.html">Future</a>
 and Monix <a href="https://monix.io/api/3.0/monix/execution/CancelableFuture.html">CancelableFuture</a></li>
 </ol>
 
-<p>Interestingly, complaints for Scala’s <code class="highlighter-rouge">Future</code> happened due to usage of
+<p>Interestingly, complaints for Scala’s <code class="language-plaintext highlighter-rouge">Future</code> happened due to usage of
 Play’s <a href="https://www.playframework.com/documentation/2.6.x/Iteratees">Iteratees</a>,
 with which people have been modeling stream processing.</p>
 
@@ -278,7 +283,7 @@ with which people have been modeling stream processing.</p>
 alternative implementation is possible and well known, as evidenced by
 the implementations mentioned that don’t leak.</p>
 
-<p>The fault lies with the standard <code class="highlighter-rouge">Promise</code> implementation, not with
+<p>The fault lies with the standard <code class="language-plaintext highlighter-rouge">Promise</code> implementation, not with
 the shown sample, being a legitimate use-case.</p>
 
 <h3 id="3-that-sample-does-not-use-the-return-value">3. That Sample Does Not Use the Return Value</h3>
@@ -289,7 +294,7 @@ the shown sample, being a legitimate use-case.</p>
   <li>you can easily imagine a loop that processes a very long stream of data,
 aggregating information along the way, returning a result later</li>
   <li>the script does do error handling and without that inner
-<code class="highlighter-rouge">return</code>, the <code class="highlighter-rouge">.catch(console.error)</code> would have no effect</li>
+<code class="language-plaintext highlighter-rouge">return</code>, the <code class="language-plaintext highlighter-rouge">.catch(console.error)</code> would have no effect</li>
 </ol>
 
 <h3 id="4-thats-the-equivalent-of-a-stack-overflow">4. That’s the Equivalent of a Stack Overflow</h3>
@@ -321,14 +326,14 @@ appeal to authority that I’m about to make.</p>
 Promise-like data types:</p>
 
 <ul>
-  <li><a href="https://monix.io/">Monix</a>, which implements <code class="highlighter-rouge">Task</code>, one of the best ports
-of Haskell’s <code class="highlighter-rouge">IO</code>, along with a complementary <code class="highlighter-rouge">CancelableFuture</code> and
-what I think is the best back-pressured Rx <code class="highlighter-rouge">Observable</code> implementations
+  <li><a href="https://monix.io/">Monix</a>, which implements <code class="language-plaintext highlighter-rouge">Task</code>, one of the best ports
+of Haskell’s <code class="language-plaintext highlighter-rouge">IO</code>, along with a complementary <code class="language-plaintext highlighter-rouge">CancelableFuture</code> and
+what I think is the best back-pressured Rx <code class="language-plaintext highlighter-rouge">Observable</code> implementations
 in existence</li>
   <li><a href="https://github.com/funfix/funfix">Funfix</a>, a JavaScript library for FP,
-delivering a <code class="highlighter-rouge">Future</code> and an <code class="highlighter-rouge">IO</code> implementation, see below</li>
+delivering a <code class="language-plaintext highlighter-rouge">Future</code> and an <code class="language-plaintext highlighter-rouge">IO</code> implementation, see below</li>
   <li>have contributed to <a href="https://github.com/typelevel/cats-effect">cats-effect</a>,
-a more conservative <code class="highlighter-rouge">IO</code> port</li>
+a more conservative <code class="language-plaintext highlighter-rouge">IO</code> port</li>
 </ul>
 
 <p class="info-bubble">
@@ -363,15 +368,15 @@ structure like this:</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="kr">interface</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span>
 
-<span class="kd">class</span> <span class="nx">Next</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="kr">implements</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nx">Next</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="k">implements</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
   <span class="kd">constructor</span><span class="p">(</span>
-    <span class="kr">public</span> <span class="nx">readonly</span> <span class="na">head</span><span class="p">:</span> <span class="nx">A</span><span class="p">,</span>
-    <span class="kr">public</span> <span class="nx">readonly</span> <span class="na">next</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;&gt;</span>
+    <span class="k">public</span> <span class="k">readonly</span> <span class="na">head</span><span class="p">:</span> <span class="nx">A</span><span class="p">,</span>
+    <span class="k">public</span> <span class="k">readonly</span> <span class="na">next</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;&gt;</span>
   <span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 
-<span class="kd">class</span> <span class="nx">Halt</span> <span class="kr">implements</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="kd">constructor</span><span class="p">(</span><span class="kr">public</span> <span class="nx">readonly</span> <span class="nx">error</span><span class="p">?:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">class</span> <span class="nx">Halt</span> <span class="k">implements</span> <span class="nx">List</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="kd">constructor</span><span class="p">(</span><span class="k">public</span> <span class="k">readonly</span> <span class="nx">error</span><span class="p">?:</span> <span class="kr">any</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -399,7 +404,7 @@ something like this in the future, even if you don’t like it ;-)</p>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>Alas, with the <code class="highlighter-rouge">Promise</code> implementation leaking, this doesn’t work ;-)</p>
+<p>Alas, with the <code class="language-plaintext highlighter-rouge">Promise</code> implementation leaking, this doesn’t work ;-)</p>
 
 <h2 id="alternatives">Alternatives</h2>
 
@@ -407,9 +412,9 @@ something like this in the future, even if you don’t like it ;-)</p>
 
 <p>Project Page: <a href="https://github.com/fluture-js/Fluture">github.com/fluture-js/Fluture</a></p>
 
-<p>This is the most popular <code class="highlighter-rouge">Promise</code> alternative that I know of.</p>
+<p>This is the most popular <code class="language-plaintext highlighter-rouge">Promise</code> alternative that I know of.</p>
 
-<p>It isn’t a direct replacement however because it has lazy behavior, being meant for suspending side effects. This is more like an <code class="highlighter-rouge">IO</code> data type. Which is cool, you should use something like it, but it’s also apples vs oranges.</p>
+<p>It isn’t a direct replacement however because it has lazy behavior, being meant for suspending side effects. This is more like an <code class="language-plaintext highlighter-rouge">IO</code> data type. Which is cool, you should use something like it, but it’s also apples vs oranges.</p>
 
 <p>I don’t have enough experience with it, making this recommendation solely based on its popularity and I double checked that it indeed preserves stack safety.</p>
 
@@ -421,12 +426,12 @@ a JavaScript library for functional programming (capital FP), supporting
 types out of the box.</p>
 
 <p>Funfix exposes <a href="https://funfix.org/api/exec/classes/future.html">Future&lt;A&gt;</a>, an
-eager <code class="highlighter-rouge">Promise</code> alternative that’s safe, cancellable and filled with goodies,
+eager <code class="language-plaintext highlighter-rouge">Promise</code> alternative that’s safe, cancellable and filled with goodies,
 along with <a href="https://funfix.org/api/effect/classes/io.html">IO&lt;A&gt;</a>, a lazy, lawful,
 cancellable data type for handling all kinds of side effects, inspired by Haskell,
 the two being complementary.</p>
 
-<p>This piece of code powered by <code class="highlighter-rouge">Future</code> does not leak:</p>
+<p>This piece of code powered by <code class="language-plaintext highlighter-rouge">Future</code> does not leak:</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">Future</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">funfix</span><span class="dl">"</span>
 
@@ -440,7 +445,7 @@ the two being complementary.</p>
 <span class="nx">loop</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">recover</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>And neither does this one, powered by <code class="highlighter-rouge">IO</code>:</p>
+<p>And neither does this one, powered by <code class="language-plaintext highlighter-rouge">IO</code>:</p>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">IO</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">funfix</span><span class="dl">"</span>
 
@@ -454,17 +459,17 @@ the two being complementary.</p>
 <span class="nx">loop</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="nx">run</span><span class="p">().</span><span class="nx">recover</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>This <code class="highlighter-rouge">IO</code> is a port of <a href="https://monix.io/">Monix</a>’s
+<p>This <code class="language-plaintext highlighter-rouge">IO</code> is a port of <a href="https://monix.io/">Monix</a>’s
 <a href="https://monix.io/docs/2x/eval/task.html">Task</a>, being a better
-<code class="highlighter-rouge">IO</code> than Haskell’s <code class="highlighter-rouge">IO</code> due to its cancellable nature ;-)</p>
+<code class="language-plaintext highlighter-rouge">IO</code> than Haskell’s <code class="language-plaintext highlighter-rouge">IO</code> due to its cancellable nature ;-)</p>
 
 <p>In <a href="https://github.com/funfix/funfix/pull/57">this PR</a> I’ve also
-fixed the memory leak for <code class="highlighter-rouge">Future</code>, doing the same tricks that
+fixed the memory leak for <code class="language-plaintext highlighter-rouge">Future</code>, doing the same tricks that
 Scala’s <a href="http://www.scala-lang.org/api/2.12.3/scala/concurrent/Future.html">Future</a>
 is doing. Now released in <a href="https://github.com/funfix/funfix/releases/tag/v6.2.0">v6.2.0</a>.</p>
 
-<p>And note that this is harder to do for Funfix’s <code class="highlighter-rouge">Future</code> due to also
-having to deal with chains of <code class="highlighter-rouge">Cancelable</code> references, which can
+<p>And note that this is harder to do for Funfix’s <code class="language-plaintext highlighter-rouge">Future</code> due to also
+having to deal with chains of <code class="language-plaintext highlighter-rouge">Cancelable</code> references, which can
 also leak.</p>
 
 <p class="info-bubble">
@@ -476,18 +481,18 @@ it on my personal blog. I’m not going to apologize for it.
 
 <h2 id="final-words">Final Words</h2>
 
-<p>That the current JavaScript <code class="highlighter-rouge">Promise</code> implementation has this leak
+<p>That the current JavaScript <code class="language-plaintext highlighter-rouge">Promise</code> implementation has this leak
 is a big problem, because tail-recursive calls are the cornerstone
 of functional programming.</p>
 
-<p>Yes, it’s true that <code class="highlighter-rouge">Promise</code> is not a useful monadic type for doing FP,
+<p>Yes, it’s true that <code class="language-plaintext highlighter-rouge">Promise</code> is not a useful monadic type for doing FP,
 since it does not suspend side effects (which is why you should
 use <a href="https://funfix.org/api/effect/classes/io.html">IO</a>), but that’s
 beside the point, plus for the FP purists out there, you can always
-suspend it in a thunk, assuming that it doesn’t leak in <code class="highlighter-rouge">then</code> chains.</p>
+suspend it in a thunk, assuming that it doesn’t leak in <code class="language-plaintext highlighter-rouge">then</code> chains.</p>
 
 <p>This is also why I fear standardization by committee in general. Along with
-the totally awkward <code class="highlighter-rouge">then</code> signature that can’t be safely described with
+the totally awkward <code class="language-plaintext highlighter-rouge">then</code> signature that can’t be safely described with
 TypeScript’s or Flow’s types, this is another example of how standard
 solutions can be harmful, because by being pushed as a standard, it makes
 it hard for alternatives to exist, since most people are just going to
@@ -498,8 +503,8 @@ where people are afraid to take on dependencies.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2017-10-11T00:00:00+0300">
-        Published: October 11, 2017
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -652,30 +657,20 @@ where people are afraid to take on dependencies.</p>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `JavaScript's Promise Leaks Memory`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2017-10-11-javascript-promise-leaks-memory.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -695,12 +690,12 @@ where people are afraid to take on dependencies.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

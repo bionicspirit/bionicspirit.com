@@ -9,16 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Minitest: Zero Crap Scala Testing Library &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Minitest: Zero Crap Scala Testing Library - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Minitest: Zero Crap Scala Testing Library" property="og:title">
     
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html" property="og:url">
-    <meta content="2017-11-10T00:00:00+02:00" property="article:published_time">
+    <meta content="2017-11-10T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png" />
@@ -43,11 +44,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html">
@@ -58,12 +59,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -86,10 +91,10 @@
   <h1 class="postTitle" itemprop="headline">Minitest: Zero Crap Scala Testing Library</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html"/>
-    <meta itemprop="datePublished" content="2017-11-10T00:00:00+0200"/>
+    <meta itemprop="datePublished" content="2017-11-10T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2017-11-10T00:00:00+0200">November 10, 2017</time>
-    | <nobr><span class="time">10</span> minute</nobr>
+    <time itemprop="dateCreated" datetime="2017-11-10T00:00:00+0000">November 10, 2017</time>
+    | <nobr><span class="time">11</span> minute</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -101,7 +106,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -170,7 +175,7 @@ which is what I was using.</p>
 
 <h3 id="say-no-to-dsls">Say No to DSLs</h3>
 
-<p>I do not want to write <code class="highlighter-rouge">x shouldBe greaterThan(y)</code> or other such
+<p>I do not want to write <code class="language-plaintext highlighter-rouge">x shouldBe greaterThan(y)</code> or other such
 nonsense. I do not have the memory for that, I always forget the API
 and the IDE doesn’t help much due to the implicit conversions going on.</p>
 
@@ -179,9 +184,9 @@ general, nothing makes tests a special snowflake to warrant the abuse
 of the programming language to make it look like English.</p>
 
 <p>Yes, there are advantages to such a DSL. For example if you express
-the above with a simple <code class="highlighter-rouge">assert</code>, then you won’t get a meaningful
+the above with a simple <code class="language-plaintext highlighter-rouge">assert</code>, then you won’t get a meaningful
 error message back, depending on whether the implementation does or
-doesn’t do macros for <code class="highlighter-rouge">assert</code>, but if it does, then that’s a whole
+doesn’t do macros for <code class="language-plaintext highlighter-rouge">assert</code>, but if it does, then that’s a whole
 other can of worms:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nf">assert</span><span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span class="o">)</span>
@@ -199,7 +204,7 @@ event that I don’t want to optimize it with a special DSL or even with
 macros.</p>
 
 <p>Another thing that I absolutely hate are tests marked with English
-words like “<code class="highlighter-rouge">it</code>”, forcing you to phrase the test’s description in a
+words like “<code class="language-plaintext highlighter-rouge">it</code>”, forcing you to phrase the test’s description in a
 certain way. I frequently end up with “sentences” that makes no sense:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nf">it</span><span class="o">(</span><span class="s">"left identity"</span><span class="o">)</span> <span class="o">{</span>
@@ -210,7 +215,7 @@ certain way. I frequently end up with “sentences” that makes no sense:</p>
 <p>This tendency actually stems from Java OOP, with its “kingdom of
 nouns”, the idea being that the things you’re testing are all nouns
 that interact with the world, aka objects. Well, I’m not testing just
-objects, so <code class="highlighter-rouge">it</code> is a bad trend.</p>
+objects, so <code class="language-plaintext highlighter-rouge">it</code> is a bad trend.</p>
 
 <p>And the idea that business folks might be writing tests, hell no, that
 almost never happens and if they are inclined to do that (like once in
@@ -235,9 +240,9 @@ serve as a sample ;-)</p>
 <p>All you need is the ability to express:</p>
 
 <ol>
-  <li>synchronous tests, returning <code class="highlighter-rouge">Unit</code> (or an equivalent, as I ended
+  <li>synchronous tests, returning <code class="language-plaintext highlighter-rouge">Unit</code> (or an equivalent, as I ended
 up doing in order to avoid Scala’s annoying implicit conversion)</li>
-  <li>asynchronous tests, returning <code class="highlighter-rouge">Future</code></li>
+  <li>asynchronous tests, returning <code class="language-plaintext highlighter-rouge">Future</code></li>
   <li>the ability to setup an environment before every test, then
 tear it down after each test</li>
 </ol>
@@ -245,14 +250,14 @@ tear it down after each test</li>
 <p>All the asserts that you need:</p>
 
 <ol>
-  <li><code class="highlighter-rouge">assert(boolean, string?)</code>: general purpose assertion for any
+  <li><code class="language-plaintext highlighter-rouge">assert(boolean, string?)</code>: general purpose assertion for any
 condition</li>
-  <li><code class="highlighter-rouge">assertEquals(received, expected)</code>: for equality testing with a
+  <li><code class="language-plaintext highlighter-rouge">assertEquals(received, expected)</code>: for equality testing with a
 nice error message</li>
-  <li><code class="highlighter-rouge">intercept</code>: for testing that exceptions are thrown</li>
-  <li><code class="highlighter-rouge">fail(reason?)</code>: fails the current test</li>
-  <li><code class="highlighter-rouge">ignore(reason?)</code>: ignores the current test</li>
-  <li><code class="highlighter-rouge">cancel(reason?)</code>: cancels the current test</li>
+  <li><code class="language-plaintext highlighter-rouge">intercept</code>: for testing that exceptions are thrown</li>
+  <li><code class="language-plaintext highlighter-rouge">fail(reason?)</code>: fails the current test</li>
+  <li><code class="language-plaintext highlighter-rouge">ignore(reason?)</code>: ignores the current test</li>
+  <li><code class="language-plaintext highlighter-rouge">cancel(reason?)</code>: cancels the current test</li>
 </ol>
 
 <p>What you don’t need:</p>
@@ -266,7 +271,7 @@ nice error message</li>
 <h2 id="tutorial">Tutorial</h2>
 
 <p>Test suites MUST BE objects, not classes. To create a simple test
-suite, it could inherit from <code class="highlighter-rouge">SimpleTestSuite</code>. Here’s a simple test:</p>
+suite, it could inherit from <code class="language-plaintext highlighter-rouge">SimpleTestSuite</code>. Here’s a simple test:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">minitest.SimpleTestSuite</span>
 
@@ -303,9 +308,9 @@ suite, it could inherit from <code class="highlighter-rouge">SimpleTestSuite</co
 </code></pre></div></div>
 
 <p>In case you want to setup an environment for each test and need
-<code class="highlighter-rouge">setup</code> and <code class="highlighter-rouge">tearDown</code> semantics, you could inherit from
+<code class="language-plaintext highlighter-rouge">setup</code> and <code class="language-plaintext highlighter-rouge">tearDown</code> semantics, you could inherit from
 <a href="https://github.com/monix/minitest/blob/v2.0.0/shared/src/main/scala/minitest/TestSuite.scala">TestSuite</a>. 
-Then on each <code class="highlighter-rouge">test</code> definition, you’ll receive a fresh value:</p>
+Then on each <code class="language-plaintext highlighter-rouge">test</code> definition, you’ll receive a fresh value:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">monix.execution.schedulers.TestScheduler</span>
 <span class="k">import</span> <span class="nn">minitest.TestSuite</span>
@@ -325,8 +330,8 @@ Then on each <code class="highlighter-rouge">test</code> definition, you’ll re
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>Minitest supports asynchronous results in tests, just use <code class="highlighter-rouge">testAsync</code>
-and return a <code class="highlighter-rouge">Future[Unit]</code>:</p>
+<p>Minitest supports asynchronous results in tests, just use <code class="language-plaintext highlighter-rouge">testAsync</code>
+and return a <code class="language-plaintext highlighter-rouge">Future[Unit]</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">scala.concurrent.ExecutionContext.Implicits.global</span>
 
@@ -364,16 +369,16 @@ So for property-based testing:</p>
 
 <h3 id="i-do-not-like-future">I do not like Future</h3>
 
-<p>That’s too bad, because the <code class="highlighter-rouge">Future</code> is needed by the runtime and
-regardless what alternative you use (e.g. <code class="highlighter-rouge">cats.effect.IO</code>,
-<code class="highlighter-rouge">monix.eval.Task</code>), you’ll have to convert it into a <code class="highlighter-rouge">Future</code> anyway.</p>
+<p>That’s too bad, because the <code class="language-plaintext highlighter-rouge">Future</code> is needed by the runtime and
+regardless what alternative you use (e.g. <code class="language-plaintext highlighter-rouge">cats.effect.IO</code>,
+<code class="language-plaintext highlighter-rouge">monix.eval.Task</code>), you’ll have to convert it into a <code class="language-plaintext highlighter-rouge">Future</code> anyway.</p>
 
 <p>Besides, a good testing framework cannot have dependencies, because it
 would end in conflict with the project’s dependencies. It’s unwise to
 depend on Cats or Scalaz.</p>
 
-<p>And you can always build your own <code class="highlighter-rouge">testTask</code>, <code class="highlighter-rouge">testEffect</code> or <code class="highlighter-rouge">testIO</code>
-utilities on top of <code class="highlighter-rouge">testAsync</code>.</p>
+<p>And you can always build your own <code class="language-plaintext highlighter-rouge">testTask</code>, <code class="language-plaintext highlighter-rouge">testEffect</code> or <code class="language-plaintext highlighter-rouge">testIO</code>
+utilities on top of <code class="language-plaintext highlighter-rouge">testAsync</code>.</p>
 
 <h3 id="i-want-a-purely-functional-api">I want a purely functional API</h3>
 
@@ -433,8 +438,8 @@ codebase much.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2017-11-10T00:00:00+0200">
-        Published: November 10, 2017
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -584,30 +589,20 @@ codebase much.</p>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Minitest: Zero Crap Scala Testing Library`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2017-11-10-minitest-no-crap-scala-library.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -627,12 +622,12 @@ codebase much.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

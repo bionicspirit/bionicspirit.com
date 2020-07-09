@@ -9,16 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Fixing scala.collection.Iterator &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Fixing scala.collection.Iterator - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Fixing scala.collection.Iterator" property="og:title">
     
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2017/01/16/iterator.html" property="og:url">
-    <meta content="2017-01-16T00:00:00+02:00" property="article:published_time">
+    <meta content="2017-01-16T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png" />
@@ -43,11 +44,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/01/16/iterator.html">
@@ -58,12 +59,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -86,9 +91,9 @@
   <h1 class="postTitle" itemprop="headline">Fixing scala.collection.Iterator</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/01/16/iterator.html"/>
-    <meta itemprop="datePublished" content="2017-01-16T00:00:00+0200"/>
+    <meta itemprop="datePublished" content="2017-01-16T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2017-01-16T00:00:00+0200">January 16, 2017</time>
+    <time itemprop="dateCreated" datetime="2017-01-16T00:00:00+0000">January 16, 2017</time>
     | <nobr><span class="time">13</span> minute</nobr>
   </p>
 
@@ -101,7 +106,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -117,9 +122,9 @@
   
 
   <div id="content" itemprop="articleBody">
-    <p class="intro withcap">The venerable <code class="highlighter-rouge">Iterator</code> interface we all love and hate could use some improvements. This is a follow-up to my previous article, in which I talked about <a href="/blog/2017/01/13/traversable.html">getting rid of Traversable</a> because the <code class="highlighter-rouge">Iterable</code> and <code class="highlighter-rouge">Iterator</code> duo is enough for Scala’s standard library.</p>
+    <p class="intro withcap">The venerable <code class="language-plaintext highlighter-rouge">Iterator</code> interface we all love and hate could use some improvements. This is a follow-up to my previous article, in which I talked about <a href="/blog/2017/01/13/traversable.html">getting rid of Traversable</a> because the <code class="language-plaintext highlighter-rouge">Iterable</code> and <code class="language-plaintext highlighter-rouge">Iterator</code> duo is enough for Scala’s standard library.</p>
 
-<p>As a reminder, the <code class="highlighter-rouge">Iterator</code> interface is something like this:</p>
+<p>As a reminder, the <code class="language-plaintext highlighter-rouge">Iterator</code> interface is something like this:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">trait</span> <span class="nc">Iterator</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="o">{</span>
   <span class="k">def</span> <span class="nf">hasNext</span><span class="k">:</span> <span class="kt">Boolean</span>
@@ -127,7 +132,7 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>It’s a destructive interface that is consumed for as long as you call <code class="highlighter-rouge">next()</code>,
+<p>It’s a destructive interface that is consumed for as long as you call <code class="language-plaintext highlighter-rouge">next()</code>,
 it obviously has “identity” and you’re supposed to use it like this:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">val</span> <span class="nv">cursor</span><span class="k">:</span> <span class="kt">Iterator</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
@@ -140,12 +145,12 @@ it obviously has “identity” and you’re supposed to use it like this:</p>
 
 <h2 id="problem-1-both-methods-hasnext-next-are-side-effecting">Problem 1: Both methods (hasNext, next) are side-effecting</h2>
 
-<p>You could say that <code class="highlighter-rouge">hasNext</code> is not supposed to move the internal
+<p>You could say that <code class="language-plaintext highlighter-rouge">hasNext</code> is not supposed to move the internal
 cursor / pointer / index and thus it shouldn’t be side-effecting, but
 that’s not true, because in many cases the only way to know if there
 is a next element to be served is to trigger a side-effecting read.</p>
 
-<p>And so the problem is that both <code class="highlighter-rouge">hasNext</code> and <code class="highlighter-rouge">next()</code> are side-effecting and
+<p>And so the problem is that both <code class="language-plaintext highlighter-rouge">hasNext</code> and <code class="language-plaintext highlighter-rouge">next()</code> are side-effecting and
 in my opinion the result of the wrong method is getting cached. When you work with
 Functional Programming for a while, you start noticing when APIs have their
 side-effects screwed ;-)</p>
@@ -153,7 +158,7 @@ side-effects screwed ;-)</p>
 <p>We can’t really blame Scala though. This interface has been imported from
 Java and kept similar probably for remaining familiar.</p>
 
-<p>But let me illustrate by building an iterator for reading an <code class="highlighter-rouge">InputStream</code>:</p>
+<p>But let me illustrate by building an iterator for reading an <code class="language-plaintext highlighter-rouge">InputStream</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">class</span> <span class="nc">IteratorFromStream</span><span class="o">(</span><span class="n">in</span><span class="k">:</span> <span class="kt">InputStream</span><span class="o">,</span> <span class="n">chunkSize</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
   <span class="k">extends</span> <span class="nc">Iterator</span><span class="o">[</span><span class="kt">Array</span><span class="o">[</span><span class="kt">Byte</span><span class="o">]]</span> <span class="o">{</span>
@@ -189,9 +194,9 @@ Java and kept similar probably for remaining familiar.</p>
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>Not that particularly exciting and you can see how <code class="highlighter-rouge">next()</code> has to duplicate
-the work of <code class="highlighter-rouge">hasNext</code> and that <code class="highlighter-rouge">hasNext</code> itself is side-effecting, because
-we have to read from the <code class="highlighter-rouge">InputStream</code> before being able to answer that question.</p>
+<p>Not that particularly exciting and you can see how <code class="language-plaintext highlighter-rouge">next()</code> has to duplicate
+the work of <code class="language-plaintext highlighter-rouge">hasNext</code> and that <code class="language-plaintext highlighter-rouge">hasNext</code> itself is side-effecting, because
+we have to read from the <code class="language-plaintext highlighter-rouge">InputStream</code> before being able to answer that question.</p>
 
 <p>We can do better and we don’t have to be original about it.
 Behold the alternative inspired by
@@ -250,12 +255,12 @@ And here’s how the above implementation changes:</p>
 
 <p><strong>UPDATE:</strong> M.Odersky points out in the comments that the standard library has a
 <a href="http://www.scala-lang.org/api/current/scala/collection/BufferedIterator.html">BufferedIterator</a>
-implementation that caches the current <code class="highlighter-rouge">head</code> and can be used for convenience.</p>
+implementation that caches the current <code class="language-plaintext highlighter-rouge">head</code> and can be used for convenience.</p>
 
 <h2 id="problem-2-iterator-comes-with-operations-attached">Problem 2: Iterator comes with operations attached</h2>
 
-<p>At the beginning I gave you a simplified <code class="highlighter-rouge">Iterator</code> definition, however I lied.
-The true <code class="highlighter-rouge">scala.collection.Iterator</code> is closer to this:</p>
+<p>At the beginning I gave you a simplified <code class="language-plaintext highlighter-rouge">Iterator</code> definition, however I lied.
+The true <code class="language-plaintext highlighter-rouge">scala.collection.Iterator</code> is closer to this:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">package</span> <span class="nn">scala.collection</span>
 
@@ -307,13 +312,13 @@ The true <code class="highlighter-rouge">scala.collection.Iterator</code> is clo
 </code></pre></div></div>
 
 <p>Well, at this point you should be thinking that this violates the principles of
-OOP design. When <code class="highlighter-rouge">Iterator</code> comes with operations like <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">filter</code>,
+OOP design. When <code class="language-plaintext highlighter-rouge">Iterator</code> comes with operations like <code class="language-plaintext highlighter-rouge">map</code> and <code class="language-plaintext highlighter-rouge">filter</code>,
 that are polymorphic and can be overridden, it is no longer just a minimal
 protocol for “<em>iterating over things</em>”, but a <em>big, fat interface</em>.</p>
 
-<p>You see, there isn’t a single possible implementation for <code class="highlighter-rouge">map</code> or for <code class="highlighter-rouge">take</code>
+<p>You see, there isn’t a single possible implementation for <code class="language-plaintext highlighter-rouge">map</code> or for <code class="language-plaintext highlighter-rouge">take</code>
 and by providing such operations with a default implementation the
-<code class="highlighter-rouge">Iterator</code> is imposing to users how those operations should behave.
+<code class="language-plaintext highlighter-rouge">Iterator</code> is imposing to users how those operations should behave.
 Or more specifically:</p>
 
 <ol>
@@ -321,7 +326,7 @@ Or more specifically:</p>
   <li>assume that the protocol is set in stone</li>
 </ol>
 
-<p>But <code class="highlighter-rouge">Iterator</code> is a fine example of an OOP interface because you can add
+<p>But <code class="language-plaintext highlighter-rouge">Iterator</code> is a fine example of an OOP interface because you can add
 restrictions to it. Lo and behold how OOP inheritance is supposed to work:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">trait</span> <span class="nc">CloseableIterable</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span> <span class="nc">extends</span> <span class="nc">Iterable</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
@@ -334,15 +339,15 @@ restrictions to it. Lo and behold how OOP inheritance is supposed to work:</p>
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>BAM, we just invalidated more than 80 operations provided by Scala’s <code class="highlighter-rouge">Iterator</code>
-and <code class="highlighter-rouge">Iterable</code>. Are you going to override them all?</p>
+<p>BAM, we just invalidated more than 80 operations provided by Scala’s <code class="language-plaintext highlighter-rouge">Iterator</code>
+and <code class="language-plaintext highlighter-rouge">Iterable</code>. Are you going to override them all?</p>
 
 <p>If you say yes, then you don’t know what you’re getting yourself into,
 plus what are you going to do when Scala 2.13 (or whatever the next version is)
 comes with new operators that need to be overridden? Are you going to remember
 to do it? It’s a hard problem.</p>
 
-<p>I don’t mind having implementations of <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">filter</code> for <code class="highlighter-rouge">Iterator</code>, but
+<p>I don’t mind having implementations of <code class="language-plaintext highlighter-rouge">map</code> and <code class="language-plaintext highlighter-rouge">filter</code> for <code class="language-plaintext highlighter-rouge">Iterator</code>, but
 Scala lacks a minimal interface that provides just the raw protocol.
 There is value in simplicity. Notice Java’s <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html">Iterator</a>,
 notice C#’s <a href="https://msdn.microsoft.com/en-us/library/system.collections.ienumerator(v=vs.110).aspx">IEnumerator</a>, notice how they don’t come with operators attached.
@@ -353,14 +358,14 @@ Scala could also use <a href="http://typelevel.org/cats/">type-classes</a> which
 much better than extension methods. But instead what currently happens in
 Scala’s collection library can be seen as <em>inheritance hell</em>.</p>
 
-<p>Not everything needs <code class="highlighter-rouge">map</code> and <code class="highlighter-rouge">flatMap</code> on it.</p>
+<p>Not everything needs <code class="language-plaintext highlighter-rouge">map</code> and <code class="language-plaintext highlighter-rouge">flatMap</code> on it.</p>
 
 <p><strong>UPDATE:</strong> there is now an issue for discussing this at
 <a href="https://github.com/scala/collection-strawman/issues/17">collection-strawman/issues/#17</a>.</p>
 
 <h2 id="non-problem-early-termination--resource-handling">Non-problem: early termination &amp; resource handling</h2>
 
-<p>The <code class="highlighter-rouge">Iterator</code> interface alone is not enough to expose streams linked
+<p>The <code class="language-plaintext highlighter-rouge">Iterator</code> interface alone is not enough to expose streams linked
 to file handles, network sockets or other resources that need to be disposed
 when terminated early.</p>
 
@@ -374,14 +379,14 @@ creating possible connection leaks, because it’s easy:</p>
 
 <ol>
   <li>we don’t need to do resource handling everywhere</li>
-  <li>as demonstrated in the sample with <code class="highlighter-rouge">CloseableIterator</code> above, you can build
-proper resource handling on top of <code class="highlighter-rouge">Iterator</code></li>
-  <li>doing I/O by means of an <code class="highlighter-rouge">Iterator</code> is often a bad idea, given
-that <code class="highlighter-rouge">Iterator</code> is not capable of asynchronous boundaries, with
+  <li>as demonstrated in the sample with <code class="language-plaintext highlighter-rouge">CloseableIterator</code> above, you can build
+proper resource handling on top of <code class="language-plaintext highlighter-rouge">Iterator</code></li>
+  <li>doing I/O by means of an <code class="language-plaintext highlighter-rouge">Iterator</code> is often a bad idea, given
+that <code class="language-plaintext highlighter-rouge">Iterator</code> is not capable of asynchronous boundaries, with
 I/O operations often being asynchronous</li>
 </ol>
 
-<p>Having a <code class="highlighter-rouge">CloseableIterator</code> in the standard library wouldn’t be bad though,
+<p>Having a <code class="language-plaintext highlighter-rouge">CloseableIterator</code> in the standard library wouldn’t be bad though,
 however given the very complex inheritance hierarchy and the traversable
 grandparents, I’m afraid to wish for it.</p>
 
@@ -389,8 +394,8 @@ grandparents, I’m afraid to wish for it.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2017-01-16T00:00:00+0200">
-        Published: January 16, 2017
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -540,30 +545,20 @@ grandparents, I’m afraid to wish for it.</p>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Fixing scala.collection.Iterator`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2017-01-16-iterator.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -583,12 +578,12 @@ grandparents, I’m afraid to wish for it.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

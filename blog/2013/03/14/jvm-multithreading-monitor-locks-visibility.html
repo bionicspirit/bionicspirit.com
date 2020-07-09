@@ -9,16 +9,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>JVM Multithreading: Monitor Locks and Visibility &#8211; Alexandru Nedelcu's Blog</title>
+    <title>JVM Multithreading: Monitor Locks and Visibility - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="JVM Multithreading: Monitor Locks and Visibility" property="og:title">
     
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html" property="og:url">
-    <meta content="2013-03-14T00:00:00+02:00" property="article:published_time">
+    <meta content="2013-03-14T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/ferrari.jpg" />
@@ -43,11 +44,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html">
@@ -58,12 +59,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -86,10 +91,10 @@
   <h1 class="postTitle" itemprop="headline">JVM Multithreading: Monitor Locks and Visibility</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html"/>
-    <meta itemprop="datePublished" content="2013-03-14T00:00:00+0200"/>
+    <meta itemprop="datePublished" content="2013-03-14T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2013-03-14T00:00:00+0200">March 14, 2013</time>
-    | <nobr><span class="time">14</span> minute</nobr>
+    <time itemprop="dateCreated" datetime="2013-03-14T00:00:00+0000">March 14, 2013</time>
+    | <nobr><span class="time">15</span> minute</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -101,7 +106,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -229,7 +234,7 @@ my head.</p>
 </code></pre></div></div>
 
 <p>The standard way to fix this, as preferred by Java developers, is to
-use the <code class="highlighter-rouge">synchronize</code> keyword on all the Stack’s methods. You’ve seen
+use the <code class="language-plaintext highlighter-rouge">synchronize</code> keyword on all the Stack’s methods. You’ve seen
 this before, right?</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">()</span> <span class="o">{</span>
@@ -237,11 +242,11 @@ this before, right?</p>
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">synchronized</code> keyword creates a <em>monitor lock</em> (also called an
-<em>intrinsic lock</em>) on the implicit <code class="highlighter-rouge">this</code>. So in case of an instance,
-it creates a monitor on that instance. In the case of Java’s <code class="highlighter-rouge">static</code>
+<p>The <code class="language-plaintext highlighter-rouge">synchronized</code> keyword creates a <em>monitor lock</em> (also called an
+<em>intrinsic lock</em>) on the implicit <code class="language-plaintext highlighter-rouge">this</code>. So in case of an instance,
+it creates a monitor on that instance. In the case of Java’s <code class="language-plaintext highlighter-rouge">static</code>
 methods, it creates a monitor on the class object. It’s important to
-keep this in mind, because <code class="highlighter-rouge">synchronized</code> is not some magical tool
+keep this in mind, because <code class="language-plaintext highlighter-rouge">synchronized</code> is not some magical tool
 that solves every problem you may have and I like that Scala doesn’t
 have such a keyword ;-)</p>
 
@@ -252,9 +257,9 @@ are blocked until the lock is free again.</p>
 <p>Lets improve the above using the following:</p>
 
 <ol>
-  <li>the Monitor pattern (monitor locks on <code class="highlighter-rouge">this</code>)</li>
+  <li>the Monitor pattern (monitor locks on <code class="language-plaintext highlighter-rouge">this</code>)</li>
   <li>encapsulation of internal mutable state</li>
-  <li><code class="highlighter-rouge">Option[T]</code> instead of nulls (Guava’s <code class="highlighter-rouge">Optional&lt;T&gt;</code> for the Java
+  <li><code class="language-plaintext highlighter-rouge">Option[T]</code> instead of nulls (Guava’s <code class="language-plaintext highlighter-rouge">Optional&lt;T&gt;</code> for the Java
 version), because that’s how I roll</li>
   <li>immutable nodes for our internal linked-list</li>
 </ol>
@@ -345,11 +350,11 @@ all? (that’s for another article)</p>
 <p>Answer: No. Given that:</p>
 
 <ol>
-  <li><code class="highlighter-rouge">A</code> is thread safe</li>
-  <li><code class="highlighter-rouge">B</code> is thread safe</li>
+  <li><code class="language-plaintext highlighter-rouge">A</code> is thread safe</li>
+  <li><code class="language-plaintext highlighter-rouge">B</code> is thread safe</li>
 </ol>
 
-<p>Then using <code class="highlighter-rouge">A + B</code> is NOT thread safe, unless you make it so by using
+<p>Then using <code class="language-plaintext highlighter-rouge">A + B</code> is NOT thread safe, unless you make it so by using
 an external lock that protects both at all times.</p>
 
 <p>Code that’s thread-safe through synchronization based on locks is
@@ -422,11 +427,11 @@ the laptop is plugged in or not, on planetary alignments and so on.</p>
   before shorter ones. The processor itself may decide to execute
   instructions out of order, even if the VM/compiler is issuing the
   instructions in the right order. From the point of view of the
-  <code class="highlighter-rouge">producer</code> thread, the result is the same as if the instructions
+  <code class="language-plaintext highlighter-rouge">producer</code> thread, the result is the same as if the instructions
   are executed in the given order, but you can’t rely on it when
   viewing the results from outside threads.</li>
-  <li>The new value for <code class="highlighter-rouge">isDone</code> could be cached somewhere (like in a
-  processor register) and the <code class="highlighter-rouge">consumer</code> thread may never see this
+  <li>The new value for <code class="language-plaintext highlighter-rouge">isDone</code> could be cached somewhere (like in a
+  processor register) and the <code class="language-plaintext highlighter-rouge">consumer</code> thread may never see this
   new value. On my desktop in more than 1 out of 10 cases this little
   example goes into an infinite loop.</li>
 </ol>
@@ -442,7 +447,7 @@ following calls:</p>
 </code></pre></div></div>
 
 <p>From the point of view of the thread executing these 2 statements, the
-result of <code class="highlighter-rouge">statementA</code> is available to <code class="highlighter-rouge">statementB</code>. We call this a
+result of <code class="language-plaintext highlighter-rouge">statementA</code> is available to <code class="language-plaintext highlighter-rouge">statementB</code>. We call this a
 <em><a href="http://en.wikipedia.org/wiki/Happened-before">happens-before</a></em>
 relationship between the two statements. So from the point of view of
 the executing thread, the result is always the same as if these 2
@@ -450,11 +455,11 @@ statements are executing in order, even if these statements are
 executed in fact out of order.</p>
 
 <p>Outside of the executing thread, this <em>happens-before</em> relationship is
-not guaranteed. The result of <code class="highlighter-rouge">statementB</code> could be visible to other
-threads, while the result of <code class="highlighter-rouge">statementA</code> could be made visible later
+not guaranteed. The result of <code class="language-plaintext highlighter-rouge">statementB</code> could be visible to other
+threads, while the result of <code class="language-plaintext highlighter-rouge">statementA</code> could be made visible later
 or <em>never</em>.</p>
 
-<p>In our example, to ensure that <code class="highlighter-rouge">isDone</code> is written after <code class="highlighter-rouge">result</code> and
+<p>In our example, to ensure that <code class="language-plaintext highlighter-rouge">isDone</code> is written after <code class="language-plaintext highlighter-rouge">result</code> and
 to ensure the visibility for outside threads for both, you need to
 create what is called a
 <em><a href="http://en.wikipedia.org/wiki/Memory_barrier">memory barrier</a></em>.</p>
@@ -466,8 +471,8 @@ acquired on a certain object.</p>
 
 <ul>
   <li>all the writes that happened on other threads on variables, by using
-the monitor <code class="highlighter-rouge">X</code>, are visible to our current thread if it acquired
-<em>the same monitor</em> <code class="highlighter-rouge">X</code></li>
+the monitor <code class="language-plaintext highlighter-rouge">X</code>, are visible to our current thread if it acquired
+<em>the same monitor</em> <code class="language-plaintext highlighter-rouge">X</code></li>
   <li>at the end of the synchronization block, a memory barrier is created
 and changes made to variables inside that block will be visible to
 other threads that <em>use the same monitor</em></li>
@@ -518,7 +523,7 @@ threads.</p>
 <h3 id="volatiles">Volatiles</h3>
 
 <p>For this particular example, you actually don’t need a lock at
-all. All you need is a <code class="highlighter-rouge">volatile</code>:</p>
+all. All you need is a <code class="language-plaintext highlighter-rouge">volatile</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nd">@volatile</span>
 <span class="k">var</span> <span class="n">isDone</span> <span class="k">=</span> <span class="kc">false</span>
@@ -529,16 +534,16 @@ all. All you need is a <code class="highlighter-rouge">volatile</code>:</p>
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="kd">volatile</span> <span class="kt">boolean</span> <span class="n">isDone</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
 </code></pre></div></div>
 
-<p>A write to a <code class="highlighter-rouge">volatile</code> also creates a memory-barrier. If you need
+<p>A write to a <code class="language-plaintext highlighter-rouge">volatile</code> also creates a memory-barrier. If you need
 memory barriers, then a write to a volatile on the JVM creates a
-<em>full-fence</em>. This guarantees not only the visibility of <code class="highlighter-rouge">isDone</code>, but
+<em>full-fence</em>. This guarantees not only the visibility of <code class="language-plaintext highlighter-rouge">isDone</code>, but
 it also guarantees the visibility of all other variables written prior
-to it by the same thread, like <code class="highlighter-rouge">result</code> in our example.</p>
+to it by the same thread, like <code class="language-plaintext highlighter-rouge">result</code> in our example.</p>
 
 <p>Volatiles are useful sometimes in non-blocking algorithms. But even
 with the strong guarantee of the created memory-barrier, for most
 purposes where you need volatiles, you’ll end up using atomic
-instances from the <code class="highlighter-rouge">java.util.concurrent.atomic</code> package, like
+instances from the <code class="language-plaintext highlighter-rouge">java.util.concurrent.atomic</code> package, like
 <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/atomic/AtomicReference.html">AtomicReference</a>
 or
 <a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/atomic/AtomicInteger.html">AtomicInteger</a>.</p>
@@ -563,8 +568,8 @@ that you can’t do with plain volatiles.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2013-03-14T00:00:00+0200">
-        Published: March 14, 2013
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -723,30 +728,20 @@ that you can’t do with plain volatiles.</p>
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `JVM Multithreading: Monitor Locks and Visibility`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2013-03-14-jvm-multithreading-monitor-locks-visibility.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -766,12 +761,12 @@ that you can’t do with plain volatiles.</p>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

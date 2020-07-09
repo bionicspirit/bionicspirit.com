@@ -9,15 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Fatal Warnings and Linting in Scala &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Fatal Warnings and Linting in Scala - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Fatal Warnings and Linting in Scala" property="og:title">
     <meta content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues with useful compiler errors." property="og:description">
     <meta content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html" property="og:url">
-    <meta content="2020-05-26T00:00:00+03:00" property="article:published_time">
+    <meta content="2020-05-26T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
@@ -41,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -56,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -84,9 +89,9 @@
   <h1 class="postTitle" itemprop="headline">Fatal Warnings and Linting in Scala</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html"/>
-    <meta itemprop="datePublished" content="2020-05-26T00:00:00+0300"/>
+    <meta itemprop="datePublished" content="2020-05-26T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2020-05-26T00:00:00+0300">May 26, 2020</time>
+    <time itemprop="dateCreated" datetime="2020-05-26T00:00:00+0000">May 26, 2020</time>
     | <nobr><span class="time">9</span> minute</nobr>
   </p>
 
@@ -99,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -167,7 +172,7 @@
 
 <h2 id="1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</h2>
 
-<p>To turn all compiler warnings into errors, you can activate <code class="highlighter-rouge">-Xfatal-warnings</code>. In <a href="https://www.scala-sbt.org/1.x/docs/Basic-Def.html">build.sbt</a>:</p>
+<p>To turn all compiler warnings into errors, you can activate <code class="language-plaintext highlighter-rouge">-Xfatal-warnings</code>. In <a href="https://www.scala-sbt.org/1.x/docs/Basic-Def.html">build.sbt</a>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="s">"-Xfatal-warnings"</span><span class="o">,</span>
@@ -176,12 +181,12 @@
 </code></pre></div></div>
 
 <p class="info-bubble">
-  <strong>NOTE:</strong> it’s probably a good idea to exclude this from the <code class="highlighter-rouge">console</code> configuration, see <a href="#23-relax-the-console-configuration">section 2.3</a>.
+  <strong>NOTE:</strong> it’s probably a good idea to exclude this from the <code class="language-plaintext highlighter-rouge">console</code> configuration, see <a href="#23-relax-the-console-configuration">section 2.3</a>.
 </p>
 
 <p>Now if we try out the code above, we get an error like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[error] .../Example.scala:10:5: match may not be exhaustive.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>[error] .../Example.scala:10:5: match may not be exhaustive.
 [error] It would fail on the following input: Nil
 [error]     list match {
 [error]     ^
@@ -192,9 +197,9 @@
 
 <h3 id="11-make-only-some-warnings-fatal-scala-213">1.1. Make only some warnings fatal (Scala 2.13)</h3>
 
-<p>There’s a new <code class="highlighter-rouge">-Wconf</code> option in Scala 2.13.2 (<a href="https://github.com/scala/scala/pull/8373">see PR</a>). With it we can still keep some warnings as warnings.</p>
+<p>There’s a new <code class="language-plaintext highlighter-rouge">-Wconf</code> option in Scala 2.13.2 (<a href="https://github.com/scala/scala/pull/8373">see PR</a>). With it we can still keep some warnings as warnings.</p>
 
-<p>Use-case: say you’re upgrading an Akka project. It’s going to have a ton of <code class="highlighter-rouge">@deprecated</code> warnings that you may not want to fix right now, but you still want to keep the exhaustiveness checks as errors.</p>
+<p>Use-case: say you’re upgrading an Akka project. It’s going to have a ton of <code class="language-plaintext highlighter-rouge">@deprecated</code> warnings that you may not want to fix right now, but you still want to keep the exhaustiveness checks as errors.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="c1">// "-Xfatal-warnings",</span>
@@ -205,8 +210,8 @@
 <p>What this does is to turn all warnings into errors, <em>except for deprecation</em> messages, which are still left as warnings. To break it down:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">cat=deprecation</code> refers to deprecation messages (classes/methods marked with <code class="highlighter-rouge">@deprecated</code> being called) and <code class="highlighter-rouge">:ws</code> says that for these warnings a “warning summary” should be shown</li>
-  <li><code class="highlighter-rouge">any:e</code> says that for any other kind of warning, signal it via an error</li>
+  <li><code class="language-plaintext highlighter-rouge">cat=deprecation</code> refers to deprecation messages (classes/methods marked with <code class="language-plaintext highlighter-rouge">@deprecated</code> being called) and <code class="language-plaintext highlighter-rouge">:ws</code> says that for these warnings a “warning summary” should be shown</li>
+  <li><code class="language-plaintext highlighter-rouge">any:e</code> says that for any other kind of warning, signal it via an error</li>
 </ul>
 
 <p>Run this in a terminal for more help:</p>
@@ -222,7 +227,7 @@
   <strong>WARNING:</strong> the compiler evolves and it's good to keep this list up to date (see next tip)!
 </p>
 
-<p>For Scala 2.13 at the time of writing, here’s my list of <code class="highlighter-rouge">scalac</code> options:</p>
+<p>For Scala 2.13 at the time of writing, here’s my list of <code class="language-plaintext highlighter-rouge">scalac</code> options:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">:=</span> <span class="nc">Seq</span><span class="o">(</span>
   <span class="c1">// Feature options</span>
@@ -270,7 +275,7 @@
 <span class="o">)</span>
 </code></pre></div></div>
 
-<p>There are many useful options in there, from disallowing “adapted args”, detecting inaccessible code, inferred <code class="highlighter-rouge">Any</code>, shadowing of values, to unused imports and params and others.</p>
+<p>There are many useful options in there, from disallowing “adapted args”, detecting inaccessible code, inferred <code class="language-plaintext highlighter-rouge">Any</code>, shadowing of values, to unused imports and params and others.</p>
 
 <h3 id="21-use-the-sbt-tpolecat-plugin">2.1. Use the sbt-tpolecat plugin</h3>
 
@@ -280,11 +285,11 @@
 
 <h3 id="22-exclude-annoying-linting-options">2.2. Exclude annoying linting options</h3>
 
-<p>Some linting options can trigger false positives that are too annoying. It’s fine to remove them from your project, or from certain configurations (e.g. <code class="highlighter-rouge">Test</code>, <code class="highlighter-rouge">Console</code>).</p>
+<p>Some linting options can trigger false positives that are too annoying. It’s fine to remove them from your project, or from certain configurations (e.g. <code class="language-plaintext highlighter-rouge">Test</code>, <code class="language-plaintext highlighter-rouge">Console</code>).</p>
 
-<p>For example I do not like the <code class="highlighter-rouge">-Wunused:privates</code> option, because it triggers an annoying false positive when defining (unused) default values in <code class="highlighter-rouge">case class</code> definitions.</p>
+<p>For example I do not like the <code class="language-plaintext highlighter-rouge">-Wunused:privates</code> option, because it triggers an annoying false positive when defining (unused) default values in <code class="language-plaintext highlighter-rouge">case class</code> definitions.</p>
 
-<p>If using <code class="highlighter-rouge">sbt-tpolecat</code>, as mentioned above, you can include something like this in your build definition:</p>
+<p>If using <code class="language-plaintext highlighter-rouge">sbt-tpolecat</code>, as mentioned above, you can include something like this in your build definition:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="n">in</span> <span class="nc">Compile</span> <span class="o">~=</span> <span class="o">{</span> <span class="n">options</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=&gt;</span>
   <span class="nv">options</span><span class="o">.</span><span class="py">filterNot</span><span class="o">(</span>
@@ -297,9 +302,9 @@
 
 <h3 id="23-relax-the-console-configuration">2.3. Relax the console configuration</h3>
 
-<p>When playing around in the console, it’s a good idea to deactivate <code class="highlighter-rouge">Xfatal-warnings</code>, along with some of the more annoying warnings.</p>
+<p>When playing around in the console, it’s a good idea to deactivate <code class="language-plaintext highlighter-rouge">Xfatal-warnings</code>, along with some of the more annoying warnings.</p>
 
-<p>You could <a href="#21-use-the-sbt-tpolecat-plugin">use sbt-tpolecat</a>, which already does this automatically, or you could add this to <code class="highlighter-rouge">build.sbt</code>:</p>
+<p>You could <a href="#21-use-the-sbt-tpolecat-plugin">use sbt-tpolecat</a>, which already does this automatically, or you could add this to <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">val</span> <span class="nv">filterConsoleScalacOptions</span> <span class="k">=</span> <span class="o">{</span> <span class="n">options</span><span class="k">:</span> <span class="kt">Seq</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=&gt;</span>
   <span class="nv">options</span><span class="o">.</span><span class="py">filterNot</span><span class="o">(</span><span class="nc">Set</span><span class="o">(</span>
@@ -346,7 +351,7 @@
 
 <p>The annotation can be given a regular expression that should match the warning being silenced.</p>
 
-<p>We can also silence the source files on a path using a compiler option in <code class="highlighter-rouge">build.sbt</code>:</p>
+<p>We can also silence the source files on a path using a compiler option in <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">+=</span> <span class="s">"-P:silencer:pathFilters=.*[/]src_managed[/].*"</span>
 </code></pre></div></div>
@@ -355,7 +360,7 @@
 
 <p>Scala 2.13 has added the <a href="https://github.com/scala/scala/pull/8373">@nowarn annotation for local suppression</a>.</p>
 
-<p><code class="highlighter-rouge">@nowarn</code> can be more fine grained. We could do just like the above and silence with a pattern matcher:</p>
+<p><code class="language-plaintext highlighter-rouge">@nowarn</code> can be more fine grained. We could do just like the above and silence with a pattern matcher:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">scala.annotation.nowarn</span>
 
@@ -366,17 +371,17 @@
   <span class="o">}</span>
 </code></pre></div></div>
 
-<p>But we can do better, because the actual error messages are brittle. We can silence based on the “category” of the warning. To find the category of a warning, we can (temporarily) enable extra verbosity in these messages via this compiler option in <code class="highlighter-rouge">build.sbt</code>:</p>
+<p>But we can do better, because the actual error messages are brittle. We can silence based on the “category” of the warning. To find the category of a warning, we can (temporarily) enable extra verbosity in these messages via this compiler option in <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">scalacOptions</span> <span class="o">+=</span> <span class="s">"-Wconf:any:warning-verbose"</span>
 </code></pre></div></div>
 
 <p>That error will then look like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>[error] ... [other-match-analysis @ size] match may not be exhaustive.
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>[error] ... [other-match-analysis @ size] match may not be exhaustive.
 </code></pre></div></div>
 
-<p>The category is “<code class="highlighter-rouge">other-match-analysis</code>”, so we can silence it like this:</p>
+<p>The category is “<code class="language-plaintext highlighter-rouge">other-match-analysis</code>”, so we can silence it like this:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nd">@nowarn</span><span class="o">(</span><span class="s">"cat=other-match-analysis"</span><span class="o">)</span>
 <span class="k">def</span> <span class="nf">size</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
@@ -386,7 +391,7 @@
 </code></pre></div></div>
 
 <p class="info-bubble">
-  <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#31-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
+  <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#31-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="language-plaintext highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="language-plaintext highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
 </p>
 
 <h2 id="4-other-linters">4. Other linters</h2>
@@ -400,7 +405,7 @@
   <li><a href="https://github.com/scalastyle/scalastyle">Scalastyle</a></li>
 </ul>
 
-<p>With these you could ban <code class="highlighter-rouge">null</code> or <code class="highlighter-rouge">Any</code> from your project, among other very useful options.</p>
+<p>With these you could ban <code class="language-plaintext highlighter-rouge">null</code> or <code class="language-plaintext highlighter-rouge">Any</code> from your project, among other very useful options.</p>
 
 <p>Any useful plugins that I’m missing?</p>
 
@@ -414,8 +419,8 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-05-26T00:00:00+0300">
-        Published: May 26, 2020
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -562,30 +567,20 @@
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Fatal Warnings and Linting in Scala`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2020-05-26-scala-fatal-warnings.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -605,12 +600,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

@@ -9,15 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Scala's isInstanceOf is an Anti-Pattern &#8211; Alexandru Nedelcu's Blog</title>
+    <title>Scala's isInstanceOf is an Anti-Pattern - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Scala's isInstanceOf is an Anti-Pattern" property="og:title">
     <meta content="Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe type classes." property="og:description">
     <meta content="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html" property="og:url">
-    <meta content="2019-08-11T00:00:00+03:00" property="article:published_time">
+    <meta content="2019-08-11T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-07-09T08:53:20+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png" />
@@ -41,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html">
@@ -56,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -84,9 +89,9 @@
   <h1 class="postTitle" itemprop="headline">Scala's isInstanceOf is an Anti-Pattern</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html"/>
-    <meta itemprop="datePublished" content="2019-08-11T00:00:00+0300"/>
+    <meta itemprop="datePublished" content="2019-08-11T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2019-08-11T00:00:00+0300">August 11, 2019</time>
+    <time itemprop="dateCreated" datetime="2019-08-11T00:00:00+0000">August 11, 2019</time>
     | <nobr><span class="time">9</span> minute</nobr>
   </p>
 
@@ -99,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -115,12 +120,12 @@
   
 
   <div id="content" itemprop="articleBody">
-    <p>When you use <code class="highlighter-rouge">isInstanceOf[Class]</code> checks, that’s an anti-pattern, as Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe <a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>.</p>
+    <p>When you use <code class="language-plaintext highlighter-rouge">isInstanceOf[Class]</code> checks, that’s an anti-pattern, as Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe <a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>.</p>
 
 <p class="info-bubble">
-  When C# developers try Java, one primary complaint is about the lack of reification for Java’s generics and by that they mean the ability to discriminate between different type parameters, so to differentiate between <code class="highlighter-rouge">List[Int]</code> and <code class="highlighter-rouge">List[String]</code> via <code class="highlighter-rouge">isInstanceOf</code> checks. Java and Scala do type erasure so a <code class="highlighter-rouge">List[String]</code> at runtime becomes a <code class="highlighter-rouge">List[Any]</code>.
+  When C# developers try Java, one primary complaint is about the lack of reification for Java’s generics and by that they mean the ability to discriminate between different type parameters, so to differentiate between <code class="language-plaintext highlighter-rouge">List[Int]</code> and <code class="language-plaintext highlighter-rouge">List[String]</code> via <code class="language-plaintext highlighter-rouge">isInstanceOf</code> checks. Java and Scala do type erasure so a <code class="language-plaintext highlighter-rouge">List[String]</code> at runtime becomes a <code class="language-plaintext highlighter-rouge">List[Any]</code>.
   <br /><br />
-  Interestingly this complaint is not valid for Scala. Because of Scala’s expressiveness, you shouldn’t need to do <code class="highlighter-rouge">isInstanceOf</code> checks, unless it’s for interoperability or for awkward micro optimizations that have no place in high level code. Reification is a runtime construct and Scala solves the associated use cases by moving all of that at compile time, via implicit parameters.
+  Interestingly this complaint is not valid for Scala. Because of Scala’s expressiveness, you shouldn’t need to do <code class="language-plaintext highlighter-rouge">isInstanceOf</code> checks, unless it’s for interoperability or for awkward micro optimizations that have no place in high level code. Reification is a runtime construct and Scala solves the associated use cases by moving all of that at compile time, via implicit parameters.
 </p>
 
 <p>Let’s do an exercise …</p>
@@ -143,7 +148,7 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>Then one of your colleagues comes along and tries it with <code class="highlighter-rouge">Future</code>:</p>
+<p>Then one of your colleagues comes along and tries it with <code class="language-plaintext highlighter-rouge">Future</code>:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">scala.concurrent.Future</span>
 <span class="k">import</span> <span class="nn">scala.concurrent.ExecutionContext.Implicits.global</span>
@@ -183,11 +188,11 @@
   <span class="o">}</span>
 </code></pre></div></div>
 
-<p>This logic isn’t extensible — What happens when you’ll want to introduce logic for Java’s <code class="highlighter-rouge">CompletableFuture</code>, Monix’s <code class="highlighter-rouge">Task</code>, Cats-Effect’s <code class="highlighter-rouge">IO</code> and so on? Each type gets its own branch?</p>
+<p>This logic isn’t extensible — What happens when you’ll want to introduce logic for Java’s <code class="language-plaintext highlighter-rouge">CompletableFuture</code>, Monix’s <code class="language-plaintext highlighter-rouge">Task</code>, Cats-Effect’s <code class="language-plaintext highlighter-rouge">IO</code> and so on? Each type gets its own branch?</p>
 
-<p>We’ve run into the <a href="https://en.wikipedia.org/wiki/Expression_problem">expression problem</a> and yet our <code class="highlighter-rouge">R</code> data type is not a <a href="https://en.wikipedia.org/wiki/Tagged_union">tagged union</a>, meaning that the set of possible values in that pattern match is endless.</p>
+<p>We’ve run into the <a href="https://en.wikipedia.org/wiki/Expression_problem">expression problem</a> and yet our <code class="language-plaintext highlighter-rouge">R</code> data type is not a <a href="https://en.wikipedia.org/wiki/Tagged_union">tagged union</a>, meaning that the set of possible values in that pattern match is endless.</p>
 
-<p>The second problem is the default branch. We are assuming that, in case <code class="highlighter-rouge">R</code> is not a <code class="highlighter-rouge">Future</code>, then we are dealing with a side effectful function that executes synchronously. So one of your colleagues comes along and does this:</p>
+<p>The second problem is the default branch. We are assuming that, in case <code class="language-plaintext highlighter-rouge">R</code> is not a <code class="language-plaintext highlighter-rouge">Future</code>, then we are dealing with a side effectful function that executes synchronously. So one of your colleagues comes along and does this:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">monix.eval.Task</span>
 
@@ -261,7 +266,7 @@
 
 <h2 id="the-problem-with-defaults">The problem with defaults</h2>
 
-<p>What happens in case you don’t define <code class="highlighter-rouge">CanGuarantee[Thunk[A]]</code>?</p>
+<p>What happens in case you don’t define <code class="language-plaintext highlighter-rouge">CanGuarantee[Thunk[A]]</code>?</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">guarantee</span> <span class="o">{</span>
   <span class="k">new</span> <span class="nc">Thunk</span> <span class="o">{</span> <span class="o">()</span> <span class="k">=&gt;</span>
@@ -273,7 +278,7 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">syncInstance</code> that we defined above is incorrect for <code class="highlighter-rouge">Thunk</code>. This means that we can introduce silent bugs. What should happen here?</p>
+<p>The <code class="language-plaintext highlighter-rouge">syncInstance</code> that we defined above is incorrect for <code class="language-plaintext highlighter-rouge">Thunk</code>. This means that we can introduce silent bugs. What should happen here?</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">java.util.concurrent.CompletableFuture</span>
 
@@ -323,16 +328,16 @@ then use CanGuarantee.synchronous to create one."""</span><span class="o">)</spa
 
 <p>Notice the usage of Scala’s <a href="https://www.scala-lang.org/api/current/scala/annotation/implicitNotFound.html">@implicitNotFound</a> annotation for providing a nice error message.</p>
 
-<p>Let’s see what happens now when we try running the <code class="highlighter-rouge">CompletableFuture</code> code again:</p>
+<p>Let’s see what happens now when we try running the <code class="language-plaintext highlighter-rouge">CompletableFuture</code> code again:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>error: Cannot find implicit value for CanGuarantee[CompletableFuture[Void]].
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>error: Cannot find implicit value for CanGuarantee[CompletableFuture[Void]].
 If this value is synchronously calculated via an effectful function,
 then use CanGuarantee.synchronous to create one.
 </code></pre></div></div>
 
-<p>That’s better. This now goes for <code class="highlighter-rouge">Unit</code> as well:</p>
+<p>That’s better. This now goes for <code class="language-plaintext highlighter-rouge">Unit</code> as well:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="code"><code>scala&gt; guarantee { println("Executing!") } { println("Done!") }
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>scala&gt; guarantee { println("Executing!") } { println("Done!") }
 
 error: Cannot find implicit value for CanGuarantee[Unit].
 If this value is synchronously calculated via an effectful function,
@@ -341,7 +346,7 @@ then use CanGuarantee.synchronous[Unit] to create one.
                                            ^
 </code></pre></div></div>
 
-<p>If you want to work with <code class="highlighter-rouge">Unit</code>, you have to create an instance for it, but notice how the error message tells you exactly what to do:</p>
+<p>If you want to work with <code class="language-plaintext highlighter-rouge">Unit</code>, you have to create an instance for it, but notice how the error message tells you exactly what to do:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">implicit</span> <span class="k">val</span> <span class="nv">ev</span> <span class="k">=</span> <span class="nv">CanGuarantee</span><span class="o">.</span><span class="py">synchronous</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 
@@ -350,7 +355,7 @@ then use CanGuarantee.synchronous[Unit] to create one.
 
 <h2 id="in-conclusion">In conclusion</h2>
 
-<p>Friends don’t let friends use <code class="highlighter-rouge">isInstanceOf</code> checks, because Scala has better ways of handling the related use cases.</p>
+<p>Friends don’t let friends use <code class="language-plaintext highlighter-rouge">isInstanceOf</code> checks, because Scala has better ways of handling the related use cases.</p>
 
 <p>Enjoy~</p>
 
@@ -358,8 +363,8 @@ then use CanGuarantee.synchronous[Unit] to create one.
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2019-08-11T00:00:00+0300">
-        Published: August 11, 2019
+    <time itemprop="dateModified" content="2020-07-09T08:53:20+0000">
+        Updated: July 9, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -506,30 +511,20 @@ then use CanGuarantee.synchronous[Unit] to create one.
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `Scala's isInstanceOf is an Anti-Pattern`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2019-08-11-isinstanceof-anti-pattern.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -549,12 +544,12 @@ then use CanGuarantee.synchronous[Unit] to create one.
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

@@ -9,16 +9,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>FreeSWITCH - Tips for Creating a Dialer &#8211; Alexandru Nedelcu's Blog</title>
+    <title>FreeSWITCH - Tips for Creating a Dialer - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
-    <meta content="Alexandru Nedelcu's Blog" property="og:site_name">
+    <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="FreeSWITCH - Tips for Creating a Dialer" property="og:title">
     <meta content="FreeSWITCH is a free and open source application server for real-time communication, WebRTC, telecommunications, video and Voice over Internet Protocol. Let’s build a VoIP dialer with it." property="og:description">
     <meta content="https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html" property="og:url">
-    <meta content="2009-02-20T00:00:00+02:00" property="article:published_time">
-    <meta content="2019-12-14T00:00:00+02:00" property="article:modified_time">
+    <meta content="2009-02-20T00:00:00+00:00" property="article:published_time">
+    <meta content="2019-12-14T00:00:00+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/freeswitch1.png" />
@@ -42,11 +42,11 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu's Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202006061638">
-    <link rel="preload" as="style" href="/assets/css/style.css?202006061638">
+    <link rel="stylesheet" href="/assets/css/style.css?202007090859">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007090859">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html">
@@ -57,12 +57,16 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt; Blog</span></a></h1>
+    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first  ">
-          <a href="/">Home</a>
+        <li class="element first current ">
+          <a href="/">Blog</a>
+        </li>
+        
+        <li class="element   ">
+          <a href="/wiki/">Wiki</a>
         </li>
         
         <li class="element   ">
@@ -85,9 +89,9 @@
   <h1 class="postTitle" itemprop="headline">FreeSWITCH - Tips for Creating a Dialer</h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html"/>
-    <meta itemprop="datePublished" content="2009-02-20T00:00:00+0200"/>
+    <meta itemprop="datePublished" content="2009-02-20T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2009-02-20T00:00:00+0200">February 20, 2009</time>
+    <time itemprop="dateCreated" datetime="2009-02-20T00:00:00+0000">February 20, 2009</time>
     | <nobr><span class="time">13</span> minute</nobr>
   </p>
 
@@ -100,7 +104,7 @@
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu's Blog">
+    <meta itemprop="name" content="Alexandru Nedelcu">
     <meta itemprop="url" content="https://alexn.org/about.html">
     <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
@@ -141,7 +145,7 @@
 <p class="intro withcap">FreeSWITCH is a free and open source application server for real-time communication, WebRTC, telecommunications, video and Voice over Internet Protocol. Let's build a VoIP dialer with it.</p>
 
 <p class="info-bubble">
-  This article also refers to FreeSWITCH Revision <code class="highlighter-rouge">10694</code>. Things could have changed since then, there might be better ways for doing what’s described in this article; ask on their mailing list.
+  This article also refers to FreeSWITCH Revision <code class="language-plaintext highlighter-rouge">10694</code>. Things could have changed since then, there might be better ways for doing what’s described in this article; ask on their mailing list.
 </p>
 
 <p>We are trying to migrate one of our existing Asterisk setups to FreeSWITCH. These are some tips to walk you thorough the hard part of learning the inners of FreeSWITCH for creating a simple dialer.</p>
@@ -164,7 +168,7 @@
 
 <p>Our setups are based on Debian, and there are also instructions for <a href="http://wiki.freeswitch.org/wiki/Installation_Guide#Debian_Linux">building Debian packages</a>.</p>
 
-<p>If you build Debian packages, the default instalation path is <code class="highlighter-rouge">/opt/freeswitch</code> (revision 10694). You can change that by modifying debian/rules in the sources directory (search for “<code class="highlighter-rouge">/opt/freeswitch</code>”, you’ll find a “<code class="highlighter-rouge">./configure</code>” section), once you download it. But this tutorial is based on the default settings.</p>
+<p>If you build Debian packages, the default instalation path is <code class="language-plaintext highlighter-rouge">/opt/freeswitch</code> (revision 10694). You can change that by modifying debian/rules in the sources directory (search for “<code class="language-plaintext highlighter-rouge">/opt/freeswitch</code>”, you’ll find a “<code class="language-plaintext highlighter-rouge">./configure</code>” section), once you download it. But this tutorial is based on the default settings.</p>
 
 <h2 id="step-2-configuration">Step 2: Configuration</h2>
 
@@ -188,7 +192,7 @@
 
 <p>Calls can be initiated by using the <a href="http://wiki.freeswitch.org/wiki/Mod_commands#originate">originate command</a>. You’ll need a “call url” with the syntax described on the wiki: <a href="http://wiki.freeswitch.org/wiki/Sofia#Syntax">Sofia#Syntax</a>.</p>
 
-<p>To make a simple call, let’s setup a simple dialplan. Also, let’s also play a simple audio file, according <a href="http://wiki.freeswitch.org/wiki/Playing_recording_external_media#Play_wav">to the wiki example</a>.To do that, create a dialplan extension by creating a file named <code class="highlighter-rouge">/opt/freeswitch/conf/dialplan/default/2009_play.xml</code> with the following text:</p>
+<p>To make a simple call, let’s setup a simple dialplan. Also, let’s also play a simple audio file, according <a href="http://wiki.freeswitch.org/wiki/Playing_recording_external_media#Play_wav">to the wiki example</a>.To do that, create a dialplan extension by creating a file named <code class="language-plaintext highlighter-rouge">/opt/freeswitch/conf/dialplan/default/2009_play.xml</code> with the following text:</p>
 
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nt">&lt;include&gt;</span>
   <span class="nt">&lt;extension</span> <span class="na">name=</span><span class="s">"wavs"</span><span class="nt">&gt;</span>
@@ -269,7 +273,7 @@
 <span class="p">);</span>
 </code></pre></div></div>
 
-<p>For the B-leg of a bridged connection, you either set “<code class="highlighter-rouge">origination_caller_id_(name/number)</code>” on the new connection, or, as a shortcut, on the A-leg you can specify the channel variables <em>effective_caller_id_number</em> and <em>effective_caller_id_name</em> which are passed to any B-leg call initiated. Try it in a console:</p>
+<p>For the B-leg of a bridged connection, you either set “<code class="language-plaintext highlighter-rouge">origination_caller_id_(name/number)</code>” on the new connection, or, as a shortcut, on the A-leg you can specify the channel variables <em>effective_caller_id_number</em> and <em>effective_caller_id_name</em> which are passed to any B-leg call initiated. Try it in a console:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code>originate <span class="o">{</span><span class="nv">origination_caller_id_number</span><span class="o">=</span>1111111111, <span class="se">\</span>
            <span class="nv">effective_caller_id_number</span><span class="o">=</span>222222222, <span class="se">\</span>
@@ -328,7 +332,7 @@
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nx">session</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span><span class="dl">"</span><span class="s2">start_dtmf</span><span class="dl">"</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>Now, when you play an audio file, the <code class="highlighter-rouge">streamFile</code> function accepts as parameter an event handler, which can be used to detect keys pressed. So, lets say than when you press “1”, you want to repeat your message, and when you press “2”, you want to play another audio file:</p>
+<p>Now, when you play an audio file, the <code class="language-plaintext highlighter-rouge">streamFile</code> function accepts as parameter an event handler, which can be used to detect keys pressed. So, lets say than when you press “1”, you want to repeat your message, and when you press “2”, you want to play another audio file:</p>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="kd">var</span> <span class="nx">session</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Session</span><span class="p">(</span><span class="cm">/*... params ... */</span><span class="p">);</span>
 <span class="c1">// The following line is a deprecated method</span>
@@ -409,9 +413,9 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code>/etc/init.d/freeswitch start
 </code></pre></div></div>
 
-<p>Next, copy your work thus far (which I assume it’s located in <code class="highlighter-rouge">dialer.js</code>) to <code class="highlighter-rouge">/opt/freeswitch/scripts</code>. That’s where scripts are usually deployed in FreeSWITCH.</p>
+<p>Next, copy your work thus far (which I assume it’s located in <code class="language-plaintext highlighter-rouge">dialer.js</code>) to <code class="language-plaintext highlighter-rouge">/opt/freeswitch/scripts</code>. That’s where scripts are usually deployed in FreeSWITCH.</p>
 
-<p>FreeSWITCH can communicate through <a href="http://wiki.freeswitch.org/wiki/Mod_event_socket">mod_event_socket</a>. You can communicate using a simple telnet connection, but I’m lazy, and <a href="http://search.cpan.org/~jrogers/Net-Telnet-3.03/lib/Net/Telnet.pm">Net::Telnet</a> is complaining about a missing login prompt. Luckily, in the FreeSWITCH sources directory, you’ll find a sample <a href="http://wiki.freeswitch.org/wiki/Mod_event_socket#perl_command_client">perl command client</a>. The source code is located in <code class="highlighter-rouge">freeswitch_src/scripts/socket</code> and in there you’ll find the perl package <em>FreeSWITCH::Client</em>. Copy it to your project’s location, and create a script called <code class="highlighter-rouge">dialer.pl</code> with the following code:</p>
+<p>FreeSWITCH can communicate through <a href="http://wiki.freeswitch.org/wiki/Mod_event_socket">mod_event_socket</a>. You can communicate using a simple telnet connection, but I’m lazy, and <a href="http://search.cpan.org/~jrogers/Net-Telnet-3.03/lib/Net/Telnet.pm">Net::Telnet</a> is complaining about a missing login prompt. Luckily, in the FreeSWITCH sources directory, you’ll find a sample <a href="http://wiki.freeswitch.org/wiki/Mod_event_socket#perl_command_client">perl command client</a>. The source code is located in <code class="language-plaintext highlighter-rouge">freeswitch_src/scripts/socket</code> and in there you’ll find the perl package <em>FreeSWITCH::Client</em>. Copy it to your project’s location, and create a script called <code class="language-plaintext highlighter-rouge">dialer.pl</code> with the following code:</p>
 
 <div class="language-perl highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">#!/usr/bin/perl</span>
 <span class="k">use</span> <span class="nv">strict</span><span class="p">;</span>
@@ -607,30 +611,20 @@
 <h2>Contribute</h2>
 
 <p>
-  If you wish to discus this article, an email would be most welcome:
-  <!--sse-->
-  <script>
-    (function () {
-      var lhs = "y20+comments";
-      var rhs = "alexn.org";
-      var subject = "Comment on `FreeSWITCH - Tips for Creating a Dialer`";
-      document.write("<a href=\"mailto");
-      document.write(":" + lhs + "@");
-      document.write(rhs);
-      if (subject) { document.write("?subject=" + subject); }
-      document.write("\">" + lhs + "@" + rhs + "<\/a>");
-    })()
-  </script>
-  <noscript>
-    <em>Email address is protected by JavaScript, activate it to see it!</em>
-  </noscript>
-  <!--/sse-->
-</p>
-
-<p>
-  If you noticed a typo, help me by submitting a pull request:
+  You can fix or add to this article by submitting a pull request:
   <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2009-02-20-tips-for-creating-voip-dialer.md" target="_blank">Edit Page on GitHub</a>
 </p>
+
+<h3 id="comments">Comments</h3>
+
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
 
     </div>  
   </div>
@@ -650,12 +644,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202006061638" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202006061638" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007090859" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007090859" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202006061638" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007090859" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
