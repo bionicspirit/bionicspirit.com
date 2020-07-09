@@ -17,7 +17,7 @@
     <meta content="Dropbox" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/docs/dropbox.html" property="og:url">
-    <meta content="2020-07-09T10:33:39+00:00" property="article:modified_time">
+    <meta content="2020-07-09T10:46:55+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091034">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091034">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091047">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091047">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/docs/dropbox.html">
@@ -92,7 +92,7 @@
     
     
     
-    <time itemprop="dateModified" content="2020-07-09T10:33:39+0000">
+    <time itemprop="dateModified" content="2020-07-09T10:46:55+0000">
       Updated: July 9, 2020
     </time>
     
@@ -107,7 +107,17 @@
   </div>
 
   <div id="content" itemprop="articleBody">
-    <h2 id="remove-all-shared-links">Remove all shared links</h2>
+    <ul>
+  <li><a href="#remove-all-shared-links">Remove all shared links</a></li>
+  <li><a href="#screenshots">Screenshots</a>
+    <ul>
+      <li><a href="#solution-1-configure-macoss-screen-capture">Solution 1: Configure MacOS’s Screen Capture</a></li>
+      <li><a href="#solution-2-sync-via-script">Solution 2: Sync via Script</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="remove-all-shared-links">Remove all shared links</h2>
 
 <p>Go to <a href="https://www.dropbox.com/share/links">https://www.dropbox.com/share/links</a>, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:</p>
 
@@ -117,6 +127,75 @@
   <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.delete-link</span><span class="dl">"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
   <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.button-primary</span><span class="dl">"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
 <span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="screenshots">Screenshots</h2>
+
+<p>In case Dropbox’s “Share Screenshots” option isn’t working …</p>
+
+<h3 id="solution-1-configure-macoss-screen-capture">Solution 1: Configure MacOS’s Screen Capture</h3>
+
+<p>Change the filename prefix:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>defaults write com.apple.screencapture name "Screenshot"
+</code></pre></div></div>
+
+<p>Change the location:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>defaults write com.apple.screencapture location /Users/alex/Dropbox/Screenshots/
+</code></pre></div></div>
+
+<p>Finally, refresh settings:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>killall SystemUIServer
+</code></pre></div></div>
+
+<h3 id="solution-2-sync-via-script">Solution 2: Sync via Script</h3>
+
+<p>Have a script in <code class="language-plaintext highlighter-rouge">/usr/local/bin/detect-screenshots.rb</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">#!/usr/bin/env ruby</span>
+
+<span class="no">Dir</span><span class="p">[</span><span class="s2">"/Users/alex/Desktop/Screen*at*.png"</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">f</span><span class="o">|</span>
+  <span class="k">if</span> <span class="n">f</span> <span class="o">=~</span> <span class="sr">/(\d{4}-\d{2}-\d{2})\s+at\s+(\d{2}\.\d{2}\.\d{2})/</span>
+    <span class="n">cmd</span> <span class="o">=</span> <span class="s2">"mv </span><span class="se">\"</span><span class="si">#{</span><span class="n">f</span><span class="si">}</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">/Users/alex/Dropbox/Screenshots/Screenshot </span><span class="si">#{</span><span class="vg">$1</span><span class="si">}</span><span class="s2"> </span><span class="si">#{</span><span class="vg">$2</span><span class="si">}</span><span class="se">\.</span><span class="s2">png</span><span class="se">\"</span><span class="s2">"</span>
+    <span class="nb">puts</span> <span class="n">cmd</span>
+    <span class="sb">`</span><span class="si">#{</span><span class="n">cmd</span><span class="si">}</span><span class="sb">`</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>Then add this file in <code class="language-plaintext highlighter-rouge">~/Library/LaunchAgents/alex.screenshot.detect.plist</code></p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;</span>
+<span class="nt">&lt;plist</span> <span class="na">version=</span><span class="s">"1.0"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;dict&gt;</span>
+    <span class="nt">&lt;key&gt;</span>Label<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>alex.screenshot.detect<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>EnableGlobbing<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;true</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;key&gt;</span>ProgramArguments<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;array&gt;</span>
+        <span class="nt">&lt;string&gt;</span>/usr/local/bin/detect-screenshots<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/array&gt;</span>
+    <span class="nt">&lt;key&gt;</span>WatchPaths<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;array&gt;</span>
+        <span class="nt">&lt;string&gt;</span>/Users/alex/Desktop/<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/array&gt;</span>
+    <span class="nt">&lt;key&gt;</span>ThrottleInterval<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;integer&gt;</span>5<span class="nt">&lt;/integer&gt;</span>
+    <span class="nt">&lt;key&gt;</span>StandardOutPath<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>/Users/alex/Library/Logs/detect-screenshots.log<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;key&gt;</span>StandardErrorPath<span class="nt">&lt;/key&gt;</span>
+    <span class="nt">&lt;string&gt;</span>/Users/alex/Library/Logs/detect-screenshots.log<span class="nt">&lt;/string&gt;</span>
+<span class="nt">&lt;/dict&gt;</span>
+<span class="nt">&lt;/plist&gt;</span>
+</code></pre></div></div>
+
+<p>Then load it:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>launchctl load -w ~/Library/LaunchAgents/alex.screenshot.detect.plist
 </code></pre></div></div>
 
 
@@ -183,12 +262,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091034" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091034" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091034" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091034" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091047" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091047" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091034" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091047" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
