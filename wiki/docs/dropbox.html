@@ -9,15 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Alexandru Nedelcu - pagina 3</title>
+    <title>Dropbox - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Alexandru Nedelcu - pagina 3" property="og:title">
-    
-      <meta content="On programming and personal projects" property="og:description">
-    <meta content="https://alexn.org/page/3/index.html" property="og:url">
+    <meta content="Dropbox" property="og:title">
+    <meta content="Personal, volatile wiki documentation" property="og:description">
+    <meta content="https://alexn.org/wiki/docs/dropbox.html" property="og:url">
     <meta content="2020-07-09T10:33:39+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
@@ -31,10 +30,9 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Alexandru Nedelcu - pagina 3">
-    <meta name="twitter:url" content="https://alexn.org/page/3/index.html">
-    
-      <meta name="twitter:description" content="On programming and personal projects">
+    <meta name="twitter:title" content="Dropbox">
+    <meta name="twitter:url" content="https://alexn.org/wiki/docs/dropbox.html">
+    <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
     <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
@@ -51,7 +49,7 @@
     <link rel="preload" as="style" href="/assets/css/style.css?202007091034">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/page/3/">
+    <link rel="canonical" href="https://alexn.org/wiki/docs/dropbox.html">
 </head>
 
 
@@ -63,11 +61,11 @@
     <nav class="nav-collapse">
       <ul class="noList">
         
-        <li class="element first current ">
+        <li class="element first  ">
           <a href="/">Blog</a>
         </li>
         
-        <li class="element   ">
+        <li class="element  current ">
           <a href="/wiki/">Wiki</a>
         </li>
         
@@ -87,61 +85,88 @@
 
    <div class="content">
       <div class="container">
-         <div class="home" id="home">
-  
-  <div class="archive_list">
-    <h2>Archive</h2>
-  
-    <div class="container">
-      
-      <div class="item">
-        <a class="related-link" href="/blog/2009/02/01/using-best-tools-programming-not-doable.html">
-          Using the Best Tools in Programming: Not Really Doable
-        </a>
-        <div class="related-meta">
-          <div class="tags">
-            
-            
-              <a href="/tag/languages" class="tag">languages</a>
-            
-               | <a href="/tag/rant" class="tag">rant</a>
-            
-               | <a href="/tag/perl" class="tag">perl</a>
-            
-               | <a href="/tag/python" class="tag">python</a>
-            
-               | <a href="/tag/java" class="tag">java</a>
-                        
-          </div>
-          <time>February 1, 2009</time>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      
-      <div class="clearfix"></div>
+         <article class="post" itemscope itemtype="http://schema.org/Article">
+  <h1 class="postTitle" itemprop="headline">Dropbox</h1>
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/dropbox.html"/>
+    
+    
+    
+    <time itemprop="dateModified" content="2020-07-09T10:33:39+0000">
+      Updated: July 9, 2020
+    </time>
+    
+  </p>
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Alexandru Nedelcu">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
     </div>
   </div>
 
-  <!-- Pagination links -->
-  
-  <div class="pagination">
-    <div class="page_number ">
-      Page: 3 of 3
-    </div>
+  <div id="content" itemprop="articleBody">
+    <h2 id="remove-all-shared-links">Remove all shared links</h2>
 
-    
-    <a href="/page/2/" class="previous button__outline">
-      Newer Articles ➡
-    </a>
-    
-    
-  </div>
-  </div>
+<p>Go to <a href="https://www.dropbox.com/share/links">https://www.dropbox.com/share/links</a>, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:</p>
 
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nx">$$</span><span class="p">(</span><span class="dl">"</span><span class="s2">#links-list .mc-popover-trigger</span><span class="dl">"</span><span class="p">).</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">n</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">delete</span><span class="dl">"</span><span class="p">,</span> <span class="nx">n</span><span class="p">);</span>
+  <span class="nx">n</span><span class="p">.</span><span class="nx">click</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.delete-link</span><span class="dl">"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="dl">"</span><span class="s2">.button-primary</span><span class="dl">"</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+
+  </div>
+</article>
       </div>
    </div><!-- end .content -->
 
    <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      
+<h2>Contribute</h2>
+
+<p>
+  You can fix or add to this article by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/wiki/docs/dropbox.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+
+<h3 id="comments">Comments</h3>
+
+<script>
+  document.write('<div class="note">Be nice!<br><span class="extra">If you don\'t see the commenting widget, it might be blocked (see this <a href="https://github.com/utterance/utterances/issues/341" target="_blank">Privacy Badger issue</a>).</span></div>');
+</script>
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+<noscript>
+  <div class="note">
+    <strong>Enable JavaScript to see comments!</strong>
+    <br>
+    <span class="extra">
+      Commenting widget is powered by GitHub's API and 
+      <a href="https://utteranc.es" target="_blank">utteranc.es</a>. This website does not
+      track visitors or log personally identifiable information, see our 
+      <a href="/docs/privacy-policy.html">privacy policy</a>.
+    </span>
+  </div>
+</noscript>
+
+
+    </div>  
+  </div>
   
 
   <div class="bottom">
@@ -180,7 +205,7 @@
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Alexandru+Nedelcu+-+pagina+3" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Dropbox" style="border:0" alt="" />
 </noscript>
 
 
