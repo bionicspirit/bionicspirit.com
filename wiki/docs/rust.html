@@ -9,14 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Configure DNS settings - Alexandru Nedelcu</title>
+    <title>Rust - Getting Started - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Configure DNS settings" property="og:title">
+    <meta content="Rust - Getting Started" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
-    <meta content="https://alexn.org/wiki/docs/configure-dns-settings.html" property="og:url">
+    <meta content="https://alexn.org/wiki/docs/rust.html" property="og:url">
     <meta content="2020-07-09T15:43:09+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
@@ -30,8 +30,8 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Configure DNS settings">
-    <meta name="twitter:url" content="https://alexn.org/wiki/docs/configure-dns-settings.html">
+    <meta name="twitter:title" content="Rust - Getting Started">
+    <meta name="twitter:url" content="https://alexn.org/wiki/docs/rust.html">
     <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
@@ -49,7 +49,7 @@
     <link rel="preload" as="style" href="/assets/css/style.css?202007091550">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/wiki/docs/configure-dns-settings.html">
+    <link rel="canonical" href="https://alexn.org/wiki/docs/rust.html">
 </head>
 
 
@@ -89,12 +89,12 @@
       <h1 class="postTitle" itemprop="headline">
         
         
-          Configure DNS settings
+          Rust - Getting Started
         
         
       </h1>
   <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/configure-dns-settings.html"/>
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/rust.html"/>
     
     
     
@@ -113,38 +113,113 @@
   </div>
 
   <div id="content" itemprop="articleBody">
+    <!-- toc -->
+
+<ul>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#tools">Tools</a>
+    <ul>
+      <li><a href="#cargo">Cargo</a></li>
+      <li><a href="#language-server">Language Server</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- tocstop -->
     
-      <h2 id="macos">
+      <h2 id="installation">
         
         
-          MacOS <a href="#macos" class="anchor">#</a>
+          Installation <a href="#installation" class="anchor">#</a>
         
         
       </h2>
 
-<p>To set the DNS to Cloudflare’s 1.1.1.1:</p>
+<p>See <a href="https://www.rust-lang.org/tools/install">documentation</a>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>sudo networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
+<p>To update Rust:</p>
 
-sudo networksetup -setdnsservers "USB 10/100/1000 LAN" 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup update
 </code></pre></div></div>
 
-<p>To revert the setup:</p>
+<p>To uninstall:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>sudo networksetup -setdnsservers "Wi-Fi" empty
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup self uninstall
+</code></pre></div></div>
+    
+      <h2 id="documentation">
+        
+        
+          Documentation <a href="#documentation" class="anchor">#</a>
+        
+        
+      </h2>
 
-sudo networksetup -setdnsservers "USB 10/100/1000 LAN" empty
+<ul>
+  <li><a href="https://doc.rust-lang.org/">The Rust Programming Language</a></li>
+  <li><a href="https://rust-unofficial.github.io/too-many-lists/">Learn Rust With Entirely Too Many Linked Lists</a></li>
+  <li><a href="https://rust-lang.github.io/async-book/">Asynchronous Programming in Rust</a></li>
+</ul>
+    
+      <h2 id="tools">
+        
+        
+          Tools <a href="#tools" class="anchor">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="cargo">
+        
+        
+          Cargo <a href="#cargo" class="anchor">#</a>
+        
+        
+      </h3>
+
+<p>To start a new project:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo new hello_world
 </code></pre></div></div>
 
-<p>To see what DNS service the connection is using:</p>
+<p>To build:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>$ nslookup google.com
-Server:		1.1.1.1
-Address:	1.1.1.1#53
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>carbo build
 
-Non-authoritative answer:
-Name:	google.com
-Address: 172.217.21.238
+<span class="c"># To build for release:</span>
+
+cargo build <span class="nt">--release</span>
+
+<span class="c"># Type checks (faster than "build"):</span>
+
+cargo check
+</code></pre></div></div>
+
+<p>To compile and execute the project:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo run
+</code></pre></div></div>
+
+<p>To update dependencies:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo update
+</code></pre></div></div>
+
+<p>To generate and show the documentation of all dependencies:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo doc <span class="nt">--open</span>
+</code></pre></div></div>
+    
+      <h3 id="language-server">
+        
+        
+          Language Server <a href="#language-server" class="anchor">#</a>
+        
+        
+      </h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup component add rls
 </code></pre></div></div>
 
 
@@ -162,7 +237,7 @@ Address: 172.217.21.238
 
 <p>
   You can fix or add to this article by submitting a pull request:
-  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/docs/configure-dns-settings.md" target="_blank">Edit Page on GitHub</a>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/docs/rust.md" target="_blank">Edit Page on GitHub</a>
 </p>
 
 
@@ -233,7 +308,7 @@ Address: 172.217.21.238
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Configure+DNS+settings" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Rust+-+Getting+Started" style="border:0" alt="" />
 </noscript>
 
 
