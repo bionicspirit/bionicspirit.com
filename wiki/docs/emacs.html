@@ -17,7 +17,7 @@
     <meta content="Emacs Setup" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/docs/emacs.html" property="og:url">
-    <meta content="2020-07-09T14:43:52+00:00" property="article:modified_time">
+    <meta content="2020-07-09T14:49:41+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007091447">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007091447">
+    <link rel="stylesheet" href="/assets/css/style.css?202007091451">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007091451">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/docs/emacs.html">
@@ -98,7 +98,7 @@
     
     
     
-    <time itemprop="dateModified" content="2020-07-09T14:43:52+0000">
+    <time itemprop="dateModified" content="2020-07-09T14:49:41+0000">
       Updated: July 9, 2020
     </time>
     
@@ -210,19 +210,19 @@ Binary '/usr/local/bin/etags'.
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c">#!/usr/bin/env bash</span>
 
 <span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$EMACSCLIENT_OPTS</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
-    </span><span class="nv">EMACSCLIENT_OPTS</span><span class="o">=</span><span class="s2">"-nc"</span>
+  </span><span class="nv">EMACSCLIENT_OPTS</span><span class="o">=</span><span class="s2">"-nc"</span>
 <span class="k">fi
 
 if</span> <span class="o">[</span> <span class="nv">$# </span><span class="nt">-eq</span> 0 <span class="o">]</span><span class="p">;</span> <span class="k">then
-    </span><span class="nv">COMMAND</span><span class="o">=</span><span class="s1">'/usr/local/bin/emacsclient '</span><span class="nv">$EMACSCLIENT_OPTS</span><span class="s1">' -e "(if (display-graphic-p) (x-focus-frame nil))"'</span>
+  </span><span class="nv">COMMAND</span><span class="o">=</span><span class="s1">'/usr/local/bin/emacsclient '</span><span class="nv">$EMACSCLIENT_OPTS</span><span class="s1">' -e "(if (display-graphic-p) (x-focus-frame nil))"'</span>
 <span class="k">else
-    </span><span class="nv">COMMAND</span><span class="o">=</span><span class="s1">'/usr/local/bin/emacsclient '</span><span class="nv">$EMACSCLIENT_OPTS</span><span class="s1">' "$@"'</span>
+  </span><span class="nv">COMMAND</span><span class="o">=</span><span class="s1">'/usr/local/bin/emacsclient '</span><span class="nv">$EMACSCLIENT_OPTS</span><span class="s1">' "$@"'</span>
 <span class="k">fi
 
 if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">shopt</span> | <span class="nb">grep </span>login_shell<span class="si">)</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
-    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$COMMAND</span><span class="s2">"</span> | <span class="nb">exec </span>bash <span class="nt">--login</span> <span class="nt">-s</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+  </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$COMMAND</span><span class="s2">"</span> | <span class="nb">exec </span>bash <span class="nt">--login</span> <span class="nt">-s</span> <span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
 <span class="k">else
-    </span><span class="nb">eval</span> <span class="s2">"exec </span><span class="nv">$COMMAND</span><span class="s2">"</span>
+  </span><span class="nb">eval</span> <span class="s2">"exec </span><span class="nv">$COMMAND</span><span class="s2">"</span>
 <span class="k">fi</span>
 </code></pre></div></div>
 
@@ -329,12 +329,12 @@ emacs_open_buffer<span class="o">()</span>
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007091447" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091447" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007091447" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007091447" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007091451" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007091451" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007091451" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007091451" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007091447" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007091451" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
