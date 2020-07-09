@@ -9,14 +9,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Check Domain’s DNS Records - Alexandru Nedelcu</title>
+    <title>Teach Kids to Program - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Check Domain’s DNS Records" property="og:title">
+    <meta content="Teach Kids to Program" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
-    <meta content="https://alexn.org/wiki/docs/check-domain-dns-records.html" property="og:url">
+    <meta content="https://alexn.org/wiki/docs/teach-kids.html" property="og:url">
     <meta content="2020-07-09T20:06:13+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
@@ -30,8 +30,8 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Check Domain’s DNS Records">
-    <meta name="twitter:url" content="https://alexn.org/wiki/docs/check-domain-dns-records.html">
+    <meta name="twitter:title" content="Teach Kids to Program">
+    <meta name="twitter:url" content="https://alexn.org/wiki/docs/teach-kids.html">
     <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
@@ -49,7 +49,7 @@
     <link rel="preload" as="style" href="/assets/css/style.css?202007092007">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/wiki/docs/check-domain-dns-records.html">
+    <link rel="canonical" href="https://alexn.org/wiki/docs/teach-kids.html">
 </head>
 
 
@@ -89,12 +89,12 @@
       <h1 class="postTitle" itemprop="headline">
         
         
-          Check Domain’s DNS Records
+          Teach Kids to Program
         
         
       </h1>
   <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/check-domain-dns-records.html"/>
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/teach-kids.html"/>
     
     
     
@@ -113,35 +113,53 @@
   </div>
 
   <div id="content" itemprop="articleBody">
-    <p>For MX records (email):</p>
+    <p>Platforms, engines, toys:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>dig mydomain.com MX
-</code></pre></div></div>
+<ul>
+  <li><a href="http://worrydream.com/AlligatorEggs/">Alligator Eggs</a>: offline games</li>
+  <li><a href="https://codecombat.com/">Code Combat</a>: learn typed code through a programming game, learn Python, JavaScript, and HTML as you solve puzzles</li>
+  <li><a href="https://code.world/#">Code World</a> (from Google): educational computer programming environment using Haskell (<a href="https://youtu.be/mFSeyhkPTAs">intro video</a>)</li>
+  <li><a href="https://www.codingame.com/">CodinGame</a>: challenge-based training platform for programmers where you can improve your coding skills with fun exercises</li>
+  <li><a href="https://godotengine.org/">Godot game engine</a>: provides a huge set of common tools, so you can just focus on making your game without reinventing the wheel</li>
+  <li><a href="http://kogics.net/kojo">Kojo</a>: open source learning environment, Scala programs</li>
+  <li><a href="https://www.cmu.edu/roboticsacademy/roboticscurriculum/Lego%20Curriculum/EV3-Intro.html">Lego Mindstorms EV3</a>: programmable robotics kit</li>
+  <li><a href="https://lightbot.com/">Lightbot</a>: solve puzzles using programming</li>
+  <li><a href="https://www.mecabricks.com/">MecaBricks</a>: publish and display 3D models made with LEGO bricks</li>
+  <li><a href="https://www.microsoft.com/en-us/makecode?rtc=1">Microsoft MakeCode</a> / <a href="https://arcade.makecode.com/">MakeCode Arcade</a>: brings computer science to life for all students with fun projects, immediate results, and both block and text editors for learners at different levels</li>
+  <li><a href="https://ozobot.com/">Ozobot</a>: makes desk-friendly coding robots that come with infinite ways to create, learn, and share</li>
+  <li><a href="https://www.puzzlescript.net/">PuzzleScript</a>: open-source HTML5 puzzle game engine</li>
+  <li><a href="https://www.pygame.org/">PyGame</a>: cross-platform set of Python modules designed for writing video games</li>
+  <li><a href="https://scratch.mit.edu/">Scratch</a>: Create stories, games, and animations</li>
+  <li><a href="https://sonic-pi.net/">Sonic Pi</a>: code-based music creation and performance tool</li>
+  <li><a href="https://sphero.com/products/sphero-bolt">Sphero BOLT</a>: programmable robot ball</li>
+  <li><a href="https://www.apple.com/swift/playgrounds/">Swift Playgrounds</a>: revolutionary app for iPad and Mac that makes learning Swift interactive and fun</li>
+  <li><a href="https://tidalcycles.org/index.php/Welcome">TidalCycles</a>: make patterns with code, whether live coding music at algoraves or composing in the studio</li>
+  <li><a href="https://www.turingtumble.com/">Turing Tumble</a>: game where players build marble-powered computers to solve logic puzzles</li>
+</ul>
 
-<p>Checking records using different resolvers:</p>
+<p>Books:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>dig @1.1.1.1 mydomain.com MX <span class="c"># Cloudflare</span>
+<ul>
+  <li><a href="http://landoflisp.com/">Land of Lisp</a>: Learn to Program in Lisp, One Game at a Time</li>
+  <li><a href="https://nostarch.com/realmofracket.htm">Realm of Racket</a>: Learn to Program, One Game at a Time</li>
+  <li><a href="http://teachyourkidstocode.com/">Teach Your Kids to Code</a></li>
+</ul>
 
-dig @8.26.56.26 mydomain.com MX <span class="c"># Comodo</span>
+<p>Articles &amp; Videos:</p>
 
-dig @8.8.8.8 mydomain.com MX <span class="c"># Google</span>
+<ul>
+  <li><a href="https://youtu.be/g1ib43q3uXQ">How to teach programming (and other things)?</a> by Felienne Hermans</li>
+  <li><a href="https://www.snoyman.com/blog/2018/12/kids-coding-interlude-the-function-game">Kids Coding Interlude</a></li>
+  <li><a href="https://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">Scratch Ted Talk</a></li>
+  <li><a href="https://www.itworld.com/article/2978142/why-john-carmack-thinks-racket-is-aces-for-beginning-programmers.html">Why John Carmack thinks Racket is aces for beginning programmers</a></li>
+</ul>
 
-dig @9.9.9.9 mydomain.com MX <span class="c"># Quad</span>
+<p>Courses:</p>
 
-dig @64.6.65.6 mydomain.com MX <span class="c"># Verisign</span>
-
-dig @192.71.245.208 mydomain.com MX <span class="c"># OpenNIC</span>
-
-dig @91.239.100.100 mydomain.com MX <span class="c"># UncensoredDNS</span>
-
-dig @77.88.8.7 mydomain.com MX <span class="c"># Yandex</span>
-
-dig @156.154.70.1 mydomain.com MX <span class="c"># Ultrarecursive DNS</span>
-
-dig @198.101.242.72 mydomain.com MX <span class="c"># Alternate DNS</span>
-
-dig @176.103.130.130 mydomain.com MX
-</code></pre></div></div>
+<ul>
+  <li><a href="https://www.coderdojo.ro/">Coder Dojo</a>: volunteer-led community of free programming workshops for young people between 7 and 17</li>
+  <li><a href="https://www.edx.org/course/scratch-programming-for-kids-8">Scratch: Programming for Kids (8+)</a>: MOOC from EdX</li>
+</ul>
 
 
   </div>
@@ -158,7 +176,7 @@ dig @176.103.130.130 mydomain.com MX
 
 <p>
   You can fix or add to this article by submitting a pull request:
-  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/docs/check-domain-dns-records.md" target="_blank">Edit Page on GitHub</a>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/docs/teach-kids.md" target="_blank">Edit Page on GitHub</a>
 </p>
 
 
@@ -229,7 +247,7 @@ dig @176.103.130.130 mydomain.com MX
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Check+Domain%E2%80%99s+DNS+Records" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Teach+Kids+to+Program" style="border:0" alt="" />
 </noscript>
 
 
