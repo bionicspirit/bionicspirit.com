@@ -9,15 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>F# - Alexandru Nedelcu</title>
+    <title>Rust - Getting Started - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="F#" property="og:title">
+    <meta content="Rust - Getting Started" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
-    <meta content="https://alexn.org/wiki/docs/fsharp.html" property="og:url">
-    <meta content="2020-07-12T21:30:22+00:00" property="article:modified_time">
+    <meta content="https://alexn.org/wiki/rust.html" property="og:url">
+    <meta content="2020-07-13T08:41:42+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -30,8 +30,8 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="F#">
-    <meta name="twitter:url" content="https://alexn.org/wiki/docs/fsharp.html">
+    <meta name="twitter:title" content="Rust - Getting Started">
+    <meta name="twitter:url" content="https://alexn.org/wiki/rust.html">
     <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
@@ -45,11 +45,11 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007122132">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007122132">
+    <link rel="stylesheet" href="/assets/css/style.css?202007130843">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007130843">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/wiki/docs/fsharp.html">
+    <link rel="canonical" href="https://alexn.org/wiki/rust.html">
 </head>
 
 
@@ -89,17 +89,17 @@
       <h1 class="postTitle" itemprop="headline">
         
         
-          F#
+          Rust - Getting Started
         
         
       </h1>
   <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/fsharp.html"/>
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/rust.html"/>
     
     
     
-    <time itemprop="dateModified" content="2020-07-12T21:30:22+0000">
-      Updated: July 12, 2020
+    <time itemprop="dateModified" content="2020-07-13T08:41:42+0000">
+      Updated: July 13, 2020
     </time>
     
   </p>
@@ -113,45 +113,55 @@
   </div>
 
   <div id="content" itemprop="articleBody">
-    
-      <h2 id="articles">
-        
-        
-          Articles <a href="#articles" class="anchor">#</a>
-        
-        
-      </h2>
+    <!-- toc -->
 
 <ul>
-  <li><a href="https://docs.microsoft.com/en-us/dotnet/fsharp/get-started/get-started-command-line">Get started with F# with the .NET Core CLI</a></li>
-  <li><a href="https://docs.microsoft.com/en-us/dotnet/fsharp/style-guide/">F# Style Guide</a></li>
-  <li><a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/">.NET Core application deployment</a></li>
-  <li><a href="https://fsprojects.github.io/Paket/paket-generate-load-scripts.html">paket generate-load-scripts</a></li>
+  <li><a href="#installation">Installation</a></li>
+  <li><a href="#documentation">Documentation</a></li>
+  <li><a href="#tools">Tools</a>
+    <ul>
+      <li><a href="#cargo">Cargo</a></li>
+      <li><a href="#language-server">Language Server</a></li>
+    </ul>
+  </li>
 </ul>
+
+<!-- tocstop -->
     
-      <h2 id="presentations">
+      <h2 id="installation">
         
         
-          Presentations <a href="#presentations" class="anchor">#</a>
+          Installation <a href="#installation" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>See <a href="https://www.rust-lang.org/tools/install">documentation</a>.</p>
+
+<p>To update Rust:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup update
+</code></pre></div></div>
+
+<p>To uninstall:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup self uninstall
+</code></pre></div></div>
+    
+      <h2 id="documentation">
+        
+        
+          Documentation <a href="#documentation" class="anchor">#</a>
         
         
       </h2>
 
 <ul>
-  <li><a href="https://www.youtube.com/watch?v=MGLxyyTF3OM">Don Syme - Keynote - F# Code I Love</a></li>
-</ul>
-    
-      <h2 id="templates">
-        
-        
-          Templates <a href="#templates" class="anchor">#</a>
-        
-        
-      </h2>
-
-<ul>
-  <li><a href="https://github.com/fsprojects/ProjectScaffold">ProjectScaffold</a>: template for new projects</li>
-  <li><a href="https://github.com/TheAngryByrd/MiniScaffold">MiniScaffold</a></li>
+  <li><a href="https://doc.rust-lang.org/">The Rust Programming Language</a></li>
+  <li><a href="https://rust-unofficial.github.io/too-many-lists/">Learn Rust With Entirely Too Many Linked Lists</a></li>
+  <li><a href="https://rust-lang.github.io/async-book/">Asynchronous Programming in Rust</a></li>
+  <li><a href="https://sokoban.iolivia.me/">Rust Sokoban</a></li>
+  <li><a href="https://tourofrust.com/">Tour of Rust</a></li>
 </ul>
     
       <h2 id="tools">
@@ -161,24 +171,58 @@
         
         
       </h2>
-
-<ul>
-  <li><a href="https://github.com/ionide/Forge/">Forge</a>: for creating projects</li>
-  <li><a href="https://fsprojects.github.io/Paket/">Paket</a>: for Nuget dependencies management</li>
-  <li><a href="https://fake.build/">FAKE</a>: build management</li>
-</ul>
     
-      <h2 id="libraries">
+      <h3 id="cargo">
         
         
-          Libraries <a href="#libraries" class="anchor">#</a>
+          Cargo <a href="#cargo" class="anchor">#</a>
         
         
-      </h2>
+      </h3>
 
-<ul>
-  <li><a href="https://github.com/haf/expecto#installing">Expecto</a>: unit testing</li>
-</ul>
+<p>To start a new project:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo new hello_world
+</code></pre></div></div>
+
+<p>To build:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>carbo build
+
+<span class="c"># To build for release:</span>
+
+cargo build <span class="nt">--release</span>
+
+<span class="c"># Type checks (faster than "build"):</span>
+
+cargo check
+</code></pre></div></div>
+
+<p>To compile and execute the project:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo run
+</code></pre></div></div>
+
+<p>To update dependencies:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo update
+</code></pre></div></div>
+
+<p>To generate and show the documentation of all dependencies:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo doc <span class="nt">--open</span>
+</code></pre></div></div>
+    
+      <h3 id="language-server">
+        
+        
+          Language Server <a href="#language-server" class="anchor">#</a>
+        
+        
+      </h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup component add rls
+</code></pre></div></div>
 
 
   </div>
@@ -195,7 +239,7 @@
 
 <p>
   You can fix or add to this article by submitting a pull request:
-  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/docs/fsharp.md" target="_blank">Edit Page on GitHub</a>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/rust.md" target="_blank">Edit Page on GitHub</a>
 </p>
 
 
@@ -244,12 +288,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007122132" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007130843" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007122132" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007130843" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -266,7 +310,7 @@
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=F%23" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Rust+-+Getting+Started" style="border:0" alt="" />
 </noscript>
 
 

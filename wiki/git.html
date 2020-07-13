@@ -9,15 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Haskell - Alexandru Nedelcu</title>
+    <title>Git Tips - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Haskell" property="og:title">
+    <meta content="Git Tips" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
-    <meta content="https://alexn.org/wiki/docs/haskell.html" property="og:url">
-    <meta content="2020-07-12T21:30:22+00:00" property="article:modified_time">
+    <meta content="https://alexn.org/wiki/git.html" property="og:url">
+    <meta content="2020-07-13T08:41:42+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -30,8 +30,8 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Haskell">
-    <meta name="twitter:url" content="https://alexn.org/wiki/docs/haskell.html">
+    <meta name="twitter:title" content="Git Tips">
+    <meta name="twitter:url" content="https://alexn.org/wiki/git.html">
     <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
@@ -45,11 +45,11 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007122132">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007122132">
+    <link rel="stylesheet" href="/assets/css/style.css?202007130843">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007130843">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/wiki/docs/haskell.html">
+    <link rel="canonical" href="https://alexn.org/wiki/git.html">
 </head>
 
 
@@ -89,17 +89,17 @@
       <h1 class="postTitle" itemprop="headline">
         
         
-          Haskell
+          Git Tips
         
         
       </h1>
   <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/haskell.html"/>
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/git.html"/>
     
     
     
-    <time itemprop="dateModified" content="2020-07-12T21:30:22+0000">
-      Updated: July 12, 2020
+    <time itemprop="dateModified" content="2020-07-13T08:41:42+0000">
+      Updated: July 13, 2020
     </time>
     
   </p>
@@ -113,68 +113,52 @@
   </div>
 
   <div id="content" itemprop="articleBody">
-    
-      <h2 id="educational-resources">
-        
-        
-          Educational Resources <a href="#educational-resources" class="anchor">#</a>
-        
-        
-      </h2>
-
-<ul>
-  <li><a href="https://github.com/Gabriel439/post-rfc/blob/master/sotu.md">State of the Haskell ecosystem</a> — describes the best tools available and such</li>
-  <li><a href="http://dev.stephendiehl.com/hask/">What I Wish I Knew When Learning Haskell</a></li>
-  <li><a href="https://www.vacationlabs.com/haskell/index.html">Haskell without the theory</a></li>
-  <li><a href="https://kowainik.github.io/posts/2018-06-21-haskell-build-tools">Haskell: Build Tools</a></li>
-  <li><a href="https://github.com/soupi/haskell-study-plan/blob/master/README.org">Haskell Study Plan</a></li>
-  <li><a href="https://typeclasses.com/">Type Classes</a></li>
+    <ul>
+  <li><a href="#large-files-support">Large files support</a></li>
+  <li><a href="#git-sync">git-sync</a></li>
 </ul>
     
-      <h2 id="books">
+      <h2 id="large-files-support">
         
         
-          Books <a href="#books" class="anchor">#</a>
+          Large files support <a href="#large-files-support" class="anchor">#</a>
         
         
       </h2>
 
+<p>Resources:</p>
+
 <ul>
-  <li><a href="https://haskellbook.com/">Haskell Programming from First Principles</a></li>
-  <li><a href="https://simonmar.github.io/pages/pcph.html">Concurrent Parallel and Concurrent Programming in Haskell</a></li>
-  <li><a href="https://www.apress.com/gp/book/9781484244791">Practical Haskell</a></li>
-  <li><a href="https://www.apress.com/gp/book/9781484237380">Practical Web Development with Haskell</a></li>
-  <li><a href="https://atypeofprogramming.com/">A Type of Programming</a></li>
-  <li><a href="https://www.cs.yale.edu/homes/hudak/Papers/HSoM.pdf">Haskell School of Music</a></li>
-  <li><a href="https://leanpub.com/finding-success-in-haskell/">Finding Success (and Failure) in Haskell</a></li>
-  <li><a href="https://www.manning.com/books/get-programming-with-haskell">Get Programming in Haskell</a></li>
+  <li><a href="https://git-lfs.github.com/">Project homepage</a></li>
+  <li><a href="https://docs.github.com/en/github/managing-large-files/versioning-large-files">Versioning large files</a></li>
 </ul>
+
+<p>Installation:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>brew install git-lfs
+</code></pre></div></div>
+
+<p>In the git repository:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>git lfs install
+</code></pre></div></div>
+
+<p>To add file extensions to track via lfs:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>git lfs track "*.psd"
+</code></pre></div></div>
     
-      <h2 id="blog-articles">
+      <h2 id="git-sync">
         
         
-          Blog articles <a href="#blog-articles" class="anchor">#</a>
+          git-sync <a href="#git-sync" class="anchor">#</a>
         
         
       </h2>
 
 <ul>
-  <li><a href="https://jacobstanley.io/help-my-haskell-program-consumes-more-memory-the-longer-it-runs/">Help! My Haskell program consumes more memory the longer it runs</a></li>
-</ul>
-    
-      <h2 id="tools">
-        
-        
-          Tools <a href="#tools" class="anchor">#</a>
-        
-        
-      </h2>
-
-<ul>
-  <li><a href="https://hackage.haskell.org/package/hlint">hlint</a></li>
-  <li><a href="https://github.com/ndmitchell/ghcid">ghcid</a>: very basic IDE engine based on <code class="language-plaintext highlighter-rouge">ghci</code></li>
-  <li><a href="https://github.com/rikvdkleij/intellij-haskell">IntelliJ-Haskell</a></li>
-  <li><a href="http://haskellformac.com/">Haskell for Mac</a></li>
+  <li><a href="https://worthe-it.co.za/programming/2016/08/13/automated-syncing-with-git.html">Automated Syncing with Git</a></li>
+  <li><a href="https://github.com/simonthum/git-sync">github.com/simonthum/git-sync</a></li>
 </ul>
 
 
@@ -192,7 +176,7 @@
 
 <p>
   You can fix or add to this article by submitting a pull request:
-  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/docs/haskell.md" target="_blank">Edit Page on GitHub</a>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/git.md" target="_blank">Edit Page on GitHub</a>
 </p>
 
 
@@ -241,12 +225,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007122132" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007130843" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007122132" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007130843" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -263,7 +247,7 @@
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Haskell" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Git+Tips" style="border:0" alt="" />
 </noscript>
 
 

@@ -9,15 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Rust - Getting Started - Alexandru Nedelcu</title>
+    <title>Teach Kids to Code - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Rust - Getting Started" property="og:title">
+    <meta content="Teach Kids to Code" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
-    <meta content="https://alexn.org/wiki/docs/rust.html" property="og:url">
-    <meta content="2020-07-12T21:30:22+00:00" property="article:modified_time">
+    <meta content="https://alexn.org/wiki/teach-kids.html" property="og:url">
+    <meta content="2020-07-13T08:41:42+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -30,8 +30,8 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Rust - Getting Started">
-    <meta name="twitter:url" content="https://alexn.org/wiki/docs/rust.html">
+    <meta name="twitter:title" content="Teach Kids to Code">
+    <meta name="twitter:url" content="https://alexn.org/wiki/teach-kids.html">
     <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
@@ -45,11 +45,11 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007122132">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007122132">
+    <link rel="stylesheet" href="/assets/css/style.css?202007130843">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007130843">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/wiki/docs/rust.html">
+    <link rel="canonical" href="https://alexn.org/wiki/teach-kids.html">
 </head>
 
 
@@ -89,17 +89,17 @@
       <h1 class="postTitle" itemprop="headline">
         
         
-          Rust - Getting Started
+          Teach Kids to Code
         
         
       </h1>
   <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docs/rust.html"/>
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/teach-kids.html"/>
     
     
     
-    <time itemprop="dateModified" content="2020-07-12T21:30:22+0000">
-      Updated: July 12, 2020
+    <time itemprop="dateModified" content="2020-07-13T08:41:42+0000">
+      Updated: July 13, 2020
     </time>
     
   </p>
@@ -113,116 +113,53 @@
   </div>
 
   <div id="content" itemprop="articleBody">
-    <!-- toc -->
+    <p>Platforms, engines, toys:</p>
 
 <ul>
-  <li><a href="#installation">Installation</a></li>
-  <li><a href="#documentation">Documentation</a></li>
-  <li><a href="#tools">Tools</a>
-    <ul>
-      <li><a href="#cargo">Cargo</a></li>
-      <li><a href="#language-server">Language Server</a></li>
-    </ul>
-  </li>
+  <li><a href="http://worrydream.com/AlligatorEggs/">Alligator Eggs</a>: offline games</li>
+  <li><a href="https://codecombat.com/">Code Combat</a>: learn typed code through a programming game, learn Python, JavaScript, and HTML as you solve puzzles</li>
+  <li><a href="https://code.world/#">Code World</a> (from Google): educational computer programming environment using Haskell (<a href="https://youtu.be/mFSeyhkPTAs">intro video</a>)</li>
+  <li><a href="https://www.codingame.com/">CodinGame</a>: challenge-based training platform for programmers where you can improve your coding skills with fun exercises</li>
+  <li><a href="https://godotengine.org/">Godot game engine</a>: provides a huge set of common tools, so you can just focus on making your game without reinventing the wheel</li>
+  <li><a href="http://kogics.net/kojo">Kojo</a>: open source learning environment, Scala programs</li>
+  <li><a href="https://www.cmu.edu/roboticsacademy/roboticscurriculum/Lego%20Curriculum/EV3-Intro.html">Lego Mindstorms EV3</a>: programmable robotics kit</li>
+  <li><a href="https://lightbot.com/">Lightbot</a>: solve puzzles using programming</li>
+  <li><a href="https://www.mecabricks.com/">MecaBricks</a>: publish and display 3D models made with LEGO bricks</li>
+  <li><a href="https://www.microsoft.com/en-us/makecode?rtc=1">Microsoft MakeCode</a> / <a href="https://arcade.makecode.com/">MakeCode Arcade</a>: brings computer science to life for all students with fun projects, immediate results, and both block and text editors for learners at different levels</li>
+  <li><a href="https://ozobot.com/">Ozobot</a>: makes desk-friendly coding robots that come with infinite ways to create, learn, and share</li>
+  <li><a href="https://www.puzzlescript.net/">PuzzleScript</a>: open-source HTML5 puzzle game engine</li>
+  <li><a href="https://www.pygame.org/">PyGame</a>: cross-platform set of Python modules designed for writing video games</li>
+  <li><a href="https://scratch.mit.edu/">Scratch</a>: Create stories, games, and animations</li>
+  <li><a href="https://sonic-pi.net/">Sonic Pi</a>: code-based music creation and performance tool</li>
+  <li><a href="https://sphero.com/products/sphero-bolt">Sphero BOLT</a>: programmable robot ball</li>
+  <li><a href="https://www.apple.com/swift/playgrounds/">Swift Playgrounds</a>: revolutionary app for iPad and Mac that makes learning Swift interactive and fun</li>
+  <li><a href="https://tidalcycles.org/index.php/Welcome">TidalCycles</a>: make patterns with code, whether live coding music at algoraves or composing in the studio</li>
+  <li><a href="https://www.turingtumble.com/">Turing Tumble</a>: game where players build marble-powered computers to solve logic puzzles</li>
 </ul>
 
-<!-- tocstop -->
-    
-      <h2 id="installation">
-        
-        
-          Installation <a href="#installation" class="anchor">#</a>
-        
-        
-      </h2>
-
-<p>See <a href="https://www.rust-lang.org/tools/install">documentation</a>.</p>
-
-<p>To update Rust:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup update
-</code></pre></div></div>
-
-<p>To uninstall:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup self uninstall
-</code></pre></div></div>
-    
-      <h2 id="documentation">
-        
-        
-          Documentation <a href="#documentation" class="anchor">#</a>
-        
-        
-      </h2>
+<p>Books:</p>
 
 <ul>
-  <li><a href="https://doc.rust-lang.org/">The Rust Programming Language</a></li>
-  <li><a href="https://rust-unofficial.github.io/too-many-lists/">Learn Rust With Entirely Too Many Linked Lists</a></li>
-  <li><a href="https://rust-lang.github.io/async-book/">Asynchronous Programming in Rust</a></li>
-  <li><a href="https://sokoban.iolivia.me/">Rust Sokoban</a></li>
-  <li><a href="https://tourofrust.com/">Tour of Rust</a></li>
+  <li><a href="http://landoflisp.com/">Land of Lisp</a>: “learn to program in Lisp, one game at a time”</li>
+  <li><a href="https://nostarch.com/realmofracket.htm">Realm of Racket</a>: “learn to program in Racket, one game at a time”</li>
+  <li><a href="http://teachyourkidstocode.com/">Teach Your Kids to Code</a>: book and Udemy online course teaching to build apps and games in Python</li>
 </ul>
-    
-      <h2 id="tools">
-        
-        
-          Tools <a href="#tools" class="anchor">#</a>
-        
-        
-      </h2>
-    
-      <h3 id="cargo">
-        
-        
-          Cargo <a href="#cargo" class="anchor">#</a>
-        
-        
-      </h3>
 
-<p>To start a new project:</p>
+<p>Articles &amp; Videos:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo new hello_world
-</code></pre></div></div>
+<ul>
+  <li><a href="https://youtu.be/g1ib43q3uXQ">How to teach programming (and other things)?</a> by Felienne Hermans</li>
+  <li><a href="https://www.snoyman.com/blog/2018/12/kids-coding-interlude-the-function-game">Kids Coding Interlude</a></li>
+  <li><a href="https://www.ted.com/talks/mitch_resnick_let_s_teach_kids_to_code">Scratch Ted Talk</a></li>
+  <li><a href="https://www.itworld.com/article/2978142/why-john-carmack-thinks-racket-is-aces-for-beginning-programmers.html">Why John Carmack thinks Racket is aces for beginning programmers</a></li>
+</ul>
 
-<p>To build:</p>
+<p>Courses:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>carbo build
-
-<span class="c"># To build for release:</span>
-
-cargo build <span class="nt">--release</span>
-
-<span class="c"># Type checks (faster than "build"):</span>
-
-cargo check
-</code></pre></div></div>
-
-<p>To compile and execute the project:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo run
-</code></pre></div></div>
-
-<p>To update dependencies:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo update
-</code></pre></div></div>
-
-<p>To generate and show the documentation of all dependencies:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>cargo doc <span class="nt">--open</span>
-</code></pre></div></div>
-    
-      <h3 id="language-server">
-        
-        
-          Language Server <a href="#language-server" class="anchor">#</a>
-        
-        
-      </h3>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>rustup component add rls
-</code></pre></div></div>
+<ul>
+  <li><a href="https://www.coderdojo.ro/">Coder Dojo</a>: volunteer-led community of free programming workshops for young people between 7 and 17</li>
+  <li><a href="https://www.edx.org/course/scratch-programming-for-kids-8">Scratch: Programming for Kids (8+)</a>: MOOC from EdX</li>
+</ul>
 
 
   </div>
@@ -239,7 +176,7 @@ cargo check
 
 <p>
   You can fix or add to this article by submitting a pull request:
-  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/docs/rust.md" target="_blank">Edit Page on GitHub</a>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/teach-kids.md" target="_blank">Edit Page on GitHub</a>
 </p>
 
 
@@ -288,12 +225,12 @@ cargo check
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007122132" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007122132" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007130843" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007130843" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007122132" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007130843" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -310,7 +247,7 @@ cargo check
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Rust+-+Getting+Started" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Teach+Kids+to+Code" style="border:0" alt="" />
 </noscript>
 
 
