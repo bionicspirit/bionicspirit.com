@@ -9,15 +9,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>clojure - Alexandru Nedelcu</title>
+    <title>Nix - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="clojure" property="og:title">
-    
-      <meta content="On programming and personal projects" property="og:description">
-    <meta content="https://alexn.org/tag/clojure/index.html" property="og:url">
+    <meta content="Nix" property="og:title">
+    <meta content="Personal, volatile wiki documentation" property="og:description">
+    <meta content="https://alexn.org/wiki/nix.html" property="og:url">
+    <meta content="2020-07-14T16:46:35+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -30,10 +30,9 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="clojure">
-    <meta name="twitter:url" content="https://alexn.org/tag/clojure/index.html">
-    
-      <meta name="twitter:description" content="On programming and personal projects">
+    <meta name="twitter:title" content="Nix">
+    <meta name="twitter:url" content="https://alexn.org/wiki/nix.html">
+    <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
     <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
@@ -50,7 +49,7 @@
     <link rel="preload" as="style" href="/assets/css/style.css?202007141648">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/tag/clojure/">
+    <link rel="canonical" href="https://alexn.org/wiki/nix.html">
 </head>
 
 
@@ -66,7 +65,7 @@
           <a href="/">Blog</a>
         </li>
         
-        <li class="element   ">
+        <li class="element  current ">
           <a href="/wiki/">Wiki</a>
         </li>
         
@@ -86,53 +85,116 @@
 
    <div class="content">
       <div class="container">
-         <div class="home" id="home">
-      <h1 class="pageTitle">
+         <article class="post" itemscope itemtype="http://schema.org/Article">
+      <h1 class="postTitle" itemprop="headline">
         
         
-          <span class="type">Tag:</span> Clojure
+          Nix
         
         
       </h1>
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/nix.html"/>
+    
+    
+    
+    <time itemprop="dateModified" content="2020-07-14T16:46:35+0000">
+      Updated: July 14, 2020
+    </time>
+    
+  </p>
 
-  <div class="archive_list">
-    <div class="container">
-      
-      <div class="item">
-        <a class="related-link" href="/blog/2012/11/02/scala-functional-programming-type-classes.html">
-          On Scala, Functional Programming and Type-Classes
-        </a>
-        <div class="related-meta">
-          <div class="tags">
-            
-            
-            <a href="/tag/languages" class="tag">languages</a>
-            
-             | <a href="/tag/functional" class="tag">functional</a>
-            
-             | <a href="/tag/scala" class="tag">scala</a>
-            
-             | <a href="/tag/clojure" class="tag">clojure</a>
-            
-             | <a href="/tag/java" class="tag">java</a>
-                        
-          </div>
-          <time>November 2, 2012</time>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      
-      <div class="clearfix"></div>
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Alexandru Nedelcu">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
     </div>
   </div>
 
-  <!-- Pagination links -->
-  
-</div>
+  <div id="content" itemprop="articleBody">
+    
+      <h2 id="installuninstall-instructions">
+        
+        
+          Install/Uninstall instructions <a href="#installuninstall-instructions" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>Install with:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>sh &lt;<span class="o">(</span>curl https://nixos.org/nix/install<span class="o">)</span> <span class="nt">--darwin-use-unencrypted-nix-store-volume</span>
+</code></pre></div></div>
+
+<p>To uninstall:</p>
+
+<ol>
+  <li>Remove the entry from <code class="language-plaintext highlighter-rouge">fstab</code> using <code class="language-plaintext highlighter-rouge">sudo vifs</code></li>
+  <li>Destroy the data volume using <code class="language-plaintext highlighter-rouge">diskutil apfs deleteVolume</code></li>
+  <li>Remove the <code class="language-plaintext highlighter-rouge">nix</code> line from <code class="language-plaintext highlighter-rouge">/etc/synthetic.conf</code> or the file</li>
+</ol>
+    
+      <h2 id="resources">
+        
+        
+          Resources <a href="#resources" class="anchor">#</a>
+        
+        
+      </h2>
+
+<ul>
+  <li><a href="https://github.com/functional-streams-for-scala/fs2/blob/main/shell.nix">Nix configuration for a Scala project</a></li>
+</ul>
+
+
+  </div>
+</article>
       </div>
    </div><!-- end .content -->
 
    <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      
+<h2>Contribute</h2>
+
+<p>
+  You can fix or add to this article by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/wiki/blob/master/nix.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+
+<h3 id="comments">Comments</h3>
+
+<script>
+  document.write('<div class="note">Be nice!<br><span class="extra">If you don\'t see the commenting widget, it might be blocked (see this <a href="https://github.com/utterance/utterances/issues/341" target="_blank">Privacy Badger issue</a>).</span></div>');
+</script>
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+<noscript>
+  <div class="note">
+    <strong>Enable JavaScript to see comments!</strong>
+    <br>
+    <span class="extra">
+      Commenting widget is powered by GitHub's API and 
+      <a href="https://utteranc.es" target="_blank">utteranc.es</a>. This website does not
+      track visitors or log personally identifiable information, see our 
+      <a href="/docs/privacy-policy.html">privacy policy</a>.
+    </span>
+  </div>
+</noscript>
+
+
+    </div>  
+  </div>
   
 
   <div class="bottom">
@@ -171,7 +233,7 @@
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=clojure" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Nix" style="border:0" alt="" />
 </noscript>
 
 
