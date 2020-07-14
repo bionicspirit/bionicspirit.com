@@ -18,7 +18,7 @@
     <meta content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues with useful compiler errors." property="og:description">
     <meta content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html" property="og:url">
     <meta content="2020-05-26T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-07-14T11:59:49+00:00" property="article:modified_time">
+    <meta content="2020-07-14T12:14:10+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007141201">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007141201">
+    <link rel="stylesheet" href="/assets/css/style.css?202007141216">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007141216">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -127,10 +127,10 @@
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">
-  The best best practices are those enforced by the build tools, as part of the build process. Don’t annoy your colleagues in code reviews, let the build tools do that for you.
+  The best practices are those enforced by the build tools, as part of the build process. Don’t annoy your colleagues in code reviews; let the build tools do that for you.
 </p>
 
-<p>The Scala compiler has multiple linting options available and emits certain warnings out of the box that would be more useful as errors. Let’s see how we can rely on the Scala compiler to strengthen our code and piss off your colleagues with clean code requirements.</p>
+<p>The Scala compiler has multiple linting options available and emits some warnings out of the box that would be more useful as errors. Let’s see how we can rely on the Scala compiler to strengthen our code and piss off your colleagues with clean code requirements.</p>
 
 <ul>
   <li><a href="#best-practice-stop-ignoring-warnings">Best Practice: Stop Ignoring Warnings!</a></li>
@@ -164,7 +164,7 @@
         
       </h2>
 
-<p>Some of it might be noise, however in that noise some real gems might be missed, warnings that signal bugs. For example the compiler can do exhaustiveness checks when pattern matching:</p>
+<p>Some of it might be noise; however, in that noise, some real gems might be missed, warnings that signal bugs. For example, the compiler can do exhaustiveness checks when pattern matching:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">size</span><span class="o">(</span><span class="n">list</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
   <span class="n">list</span> <span class="k">match</span> <span class="o">{</span>
@@ -221,7 +221,7 @@
         
       </h3>
 
-<p>There’s a new <code class="language-plaintext highlighter-rouge">-Wconf</code> option in Scala 2.13.2 (<a href="https://github.com/scala/scala/pull/8373">see PR</a>). With it we can still keep some warnings as warnings.</p>
+<p>There’s a new <code class="language-plaintext highlighter-rouge">-Wconf</code> option in Scala 2.13.2 (<a href="https://github.com/scala/scala/pull/8373">see PR</a>). With it, we can still keep some warnings as warnings.</p>
 
 <p>Use-case: say you’re upgrading an Akka project. It’s going to have a ton of <code class="language-plaintext highlighter-rouge">@deprecated</code> warnings that you may not want to fix right now, but you still want to keep the exhaustiveness checks as errors.</p>
 
@@ -315,7 +315,7 @@
         
       </h3>
 
-<p>Keeping that list of compiler options up to date is exhausting, new useful options get added all the time, others are deprecated and especially for libraries you have to deal with multiple Scala versions in the same project.</p>
+<p>Keeping that list of compiler options up to date is exhausting, new useful options get added all the time, others are deprecated, and especially for libraries, you have to deal with multiple Scala versions in the same project.</p>
 
 <p>A better option is to include <a href="https://github.com/DavidGregory084/sbt-tpolecat">sbt-tpolecat</a> in your project.</p>
     
@@ -327,9 +327,9 @@
         
       </h3>
 
-<p>Some linting options can trigger false positives that are too annoying. It’s fine to remove them from your project, or from certain configurations (e.g. <code class="language-plaintext highlighter-rouge">Test</code>, <code class="language-plaintext highlighter-rouge">Console</code>).</p>
+<p>Some linting options can trigger false positives that are too annoying. It’s fine to remove them from your project or specific configurations (e.g. <code class="language-plaintext highlighter-rouge">Test</code>, <code class="language-plaintext highlighter-rouge">Console</code>).</p>
 
-<p>For example I do not like the <code class="language-plaintext highlighter-rouge">-Wunused:privates</code> option, because it triggers an annoying false positive when defining (unused) default values in <code class="language-plaintext highlighter-rouge">case class</code> definitions.</p>
+<p>For example, I do not like the <code class="language-plaintext highlighter-rouge">-Wunused:privates</code> option because it triggers an annoying false positive when defining (unused) default values in <code class="language-plaintext highlighter-rouge">case class</code> definitions.</p>
 
 <p>If using <code class="language-plaintext highlighter-rouge">sbt-tpolecat</code>, as mentioned above, you can include something like this in your build definition:</p>
 
@@ -385,7 +385,7 @@
 
 <ul>
   <li>maybe it’s a false positive</li>
-  <li>maybe you want something “unused”, as a placeholder, etc</li>
+  <li>maybe you want something “unused”, as a placeholder</li>
 </ul>
     
       <h3 id="31-silencer-plugin-scala--213">
@@ -409,7 +409,7 @@
   <span class="o">}</span>
 </code></pre></div></div>
 
-<p>The annotation can be given a regular expression that should match the warning being silenced.</p>
+<p>You can give via this annotation a regular expression that matches the warning being silenced.</p>
 
 <p>We can also silence the source files on a path using a compiler option in <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
 
@@ -477,7 +477,7 @@
   <li><a href="https://github.com/scalastyle/scalastyle">Scalastyle</a></li>
 </ul>
 
-<p>With these you could ban <code class="language-plaintext highlighter-rouge">null</code> or <code class="language-plaintext highlighter-rouge">Any</code> from your project, among other very useful options.</p>
+<p>With these, you could ban <code class="language-plaintext highlighter-rouge">null</code> or <code class="language-plaintext highlighter-rouge">Any</code> from your project, among other beneficial options.</p>
 
 <p>Any useful plugins that I’m missing?</p>
     
@@ -489,7 +489,7 @@
         
       </h2>
 
-<p>Scala is a static language, but sometimes it isn’t static or opinionated enough. The more you can prove about your code at compile time, the less defects you can have at runtime.</p>
+<p>Scala is a static language, but sometimes it isn’t static or opinionated enough. The more you can prove about your code at compile-time, the less defects you can have at runtime.</p>
 
 <p>Now go forth and annoy your colleagues with actually useful compiler errors!</p>
 
@@ -497,7 +497,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-07-14T11:59:49+0000">
+    <time itemprop="dateModified" content="2020-07-14T12:14:10+0000">
         Updated: July 14, 2020
     </time>
     
@@ -701,12 +701,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007141201" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007141201" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007141201" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007141201" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007141216" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007141216" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007141216" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007141216" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007141201" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007141216" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
