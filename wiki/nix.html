@@ -17,7 +17,7 @@
     <meta content="Nix" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/nix.html" property="og:url">
-    <meta content="2020-07-14T16:46:35+00:00" property="article:modified_time">
+    <meta content="2020-07-28T07:43:23+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007210622">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007210622">
+    <link rel="stylesheet" href="/assets/css/style.css?202007280745">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007280745">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/nix.html">
@@ -98,8 +98,8 @@
     
     
     
-    <time itemprop="dateModified" content="2020-07-14T16:46:35+0000">
-      Updated: July 14, 2020
+    <time itemprop="dateModified" content="2020-07-28T07:43:23+0000">
+      Updated: July 28, 2020
     </time>
     
   </p>
@@ -145,7 +145,66 @@
 
 <ul>
   <li><a href="https://github.com/functional-streams-for-scala/fs2/blob/main/shell.nix">Nix configuration for a Scala project</a></li>
+  <li><a href="https://www.softinio.com/post/moving-from-homebrew-to-nix-package-manager/">Moving from Homebrew to Nix Package Manager</a></li>
+  <li><a href="https://github.com/gvolpe/nix-config">Nix sample config</a></li>
 </ul>
+    
+      <h2 id="aliases">
+        
+        
+          Aliases <a href="#aliases" class="anchor">#</a>
+        
+        
+      </h2>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nb">alias </span>nix-env-search<span class="o">=</span><span class="s2">"nix-env -qaP"</span>
+<span class="nb">alias </span>nix-env-install<span class="o">=</span><span class="s2">"nix-env -iA"</span>
+
+<span class="nb">alias </span>nix-upgrade<span class="o">=</span><span class="s2">"nix-channel --update &amp;&amp; nix-env -iA nixpkgs.nix"</span>
+<span class="nb">alias </span>nix-up<span class="o">=</span><span class="s2">"nix-env -u"</span>
+</code></pre></div></div>
+    
+      <h2 id="cheatsheet">
+        
+        
+          Cheatsheet <a href="#cheatsheet" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>List installed packages:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nix-env --query --installed
+</code></pre></div></div>
+
+<p>To search for packages:</p>
+
+<p>https://nixos.org/nixos/packages.html?channel=nixpkgs-unstable</p>
+
+<p>To install a certain package:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nix-env -iA nixpkgs.ripgrep
+</code></pre></div></div>
+
+<p>Uninstall:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nix-env -e tree ripgrep
+</code></pre></div></div>
+
+<p>List generations (all of the different versions of the nix-env profile):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nix-env --list-generations
+</code></pre></div></div>
+
+<p>To rollback to a previous version of the profile:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nix-env --rollback
+</code></pre></div></div>
+
+<p>Or pick a specific generation:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nix-env --switch-generation 2
+</code></pre></div></div>
 
 
   </div>
@@ -211,12 +270,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007210622" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007210622" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007210622" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007210622" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007280745" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007280745" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007280745" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007280745" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007210622" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007280745" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

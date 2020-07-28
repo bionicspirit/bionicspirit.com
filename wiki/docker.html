@@ -17,7 +17,7 @@
     <meta content="Docker cheat sheet" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/docker.html" property="og:url">
-    <meta content="2020-07-14T16:46:35+00:00" property="article:modified_time">
+    <meta content="2020-07-28T07:43:23+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007210622">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007210622">
+    <link rel="stylesheet" href="/assets/css/style.css?202007280745">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007280745">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/docker.html">
@@ -98,8 +98,8 @@
     
     
     
-    <time itemprop="dateModified" content="2020-07-14T16:46:35+0000">
-      Updated: July 14, 2020
+    <time itemprop="dateModified" content="2020-07-28T07:43:23+0000">
+      Updated: July 28, 2020
     </time>
     
   </p>
@@ -372,28 +372,35 @@
   <span class="nt">--label-enable</span>
 </code></pre></div></div>
 
-<p>Run sample deployment (note label section) with the following <code class="language-plaintext highlighter-rouge">docker-compose.yaml</code>:</p>
+<p>If using <code class="language-plaintext highlighter-rouge">docker-compose</code>:</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="na">watchtower</span><span class="pi">:</span>
+  <span class="na">container_name</span><span class="pi">:</span> <span class="s">watchtower</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">containrrr/watchtower:latest'</span>
+  <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
+  <span class="na">volumes</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">/var/run/docker.sock:/var/run/docker.sock</span>
+  <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
+  <span class="na">networks</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">main</span>
+  <span class="na">command</span><span class="pi">:</span> <span class="s">--label-enable</span>
+</code></pre></div></div>
+
+<p>To mark images for auto-updating:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker run <span class="nt">-d</span> <span class="nt">--label</span><span class="o">=</span>com.centurylinklabs.watchtower.enable<span class="o">=</span><span class="nb">true </span>someimage
+</code></pre></div></div>
+
+<p>Or if using <code class="language-plaintext highlighter-rouge">docker-compose</code>:</p>
 
 <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3'</span>
 
 <span class="na">services</span><span class="pi">:</span>
   <span class="na">app</span><span class="pi">:</span>
-    <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">gitlab/gitlab-ee:latest'</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">someimage'</span>
     <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>
-    <span class="na">ports</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">80:80"</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">22:22"</span>
-    <span class="na">volumes</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s1">'</span><span class="s">/volume2/docker/gitlab/config:/etc/gitlab'</span>
-      <span class="pi">-</span> <span class="s1">'</span><span class="s">/volume2/docker/gitlab/logs:/var/log/gitlab'</span>
-      <span class="pi">-</span> <span class="s1">'</span><span class="s">/volume2/docker/gitlab/data:/var/opt/gitlab'</span>
     <span class="na">labels</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">com.centurylinklabs.watchtower.enable=true"</span>
-</code></pre></div></div>
-
-<p>Or if you use docker run:</p>
-
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker run <span class="nt">-d</span> <span class="nt">--label</span><span class="o">=</span>com.centurylinklabs.watchtower.enable<span class="o">=</span><span class="nb">true </span>someimage
 </code></pre></div></div>
 
 <p>Watchtower will check periodically for newer images and will restart services/containers with new image.</p>
@@ -563,12 +570,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007210622" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007210622" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007210622" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007210622" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007280745" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007280745" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007280745" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007280745" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007210622" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007280745" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
