@@ -15,7 +15,7 @@
     
       <meta content="Code snippet" property="og:description">
     <meta content="https://alexn.org/snippets/from-resource-to-reactivestreams.scala.html" property="og:url">
-    <meta content="2020-07-29T09:57:48+00:00" property="article:modified_time">
+    <meta content="2020-07-29T10:54:42+00:00" property="article:modified_time">
     <meta property="og:type" content="article" />
     
     <meta property="og:image" content="https://alexn.org/assets/media/snippets/from-resource-to-reactivestreams.png" />
@@ -28,7 +28,7 @@
     <meta name="twitter:title" content="from-resource-to-reactivestreams.scala">
     <meta name="twitter:url" content="https://alexn.org/snippets/from-resource-to-reactivestreams.scala.html">
     
-      <meta name="twitter:description" content="On programming and personal projects">
+      <meta name="twitter:description" content="Code snippet">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
     <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
@@ -41,13 +41,61 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
   </head>
   <body>
-    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.effect.Resource</span>
+    <article>
+      <h1><a href="/">alexn.org</a> <span class="path">/ snippets /</span> from-resource-to-reactivestreams.scala</h1>
+      <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.effect.Resource</span>
 <span class="k">import</span> <span class="nn">org.reactivestreams.Publisher</span>
+<span class="k">import</span> <span class="nn">scala.concurrent.Future</span>
 
-<span class="k">type</span> <span class="kt">Ack</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="k">=</span> <span class="n">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
+<span class="k">type</span> <span class="kt">Ack</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="k">=</span> <span class="o">()</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
 
+<span class="c1">// This leaks</span>
+<span class="k">def</span> <span class="nf">fromResource</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">res</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Publisher</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span>
+
+<span class="c1">// Explicit acknowledgement logic is required</span>
 <span class="k">def</span> <span class="nf">fromResource</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">res</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Publisher</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">Ack</span><span class="o">[</span><span class="kt">F</span><span class="o">])]]</span>
+
+<span class="c1">//-------------</span>
+
+<span class="c1">// Similarly for concrete resources, this leaks!</span>
+<span class="k">def</span> <span class="nf">fromFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">)</span><span class="k">:</span> <span class="kt">Publisher</span><span class="o">[</span><span class="kt">InputStream</span><span class="o">]</span>
+
+<span class="c1">// Explicit acknowledgement logic is required</span>
+<span class="k">def</span> <span class="nf">fromFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">)</span><span class="k">:</span> <span class="kt">Publisher</span><span class="o">[(</span><span class="kt">InputStream</span>, <span class="kt">Ack</span><span class="o">[</span><span class="kt">Future</span><span class="o">])]</span>
 </code></pre></div></div>
 
+    </article>
+
+    <footer>
+      <div class="contributions">
+        
+<h3 id="comments">Comments</h3>
+
+<script>
+  document.write('<div class="note">Be nice!<br><span class="extra">If you don\'t see the commenting widget, it might be blocked (see this <a href="https://github.com/utterance/utterances/issues/341" target="_blank">Privacy Badger issue</a>).</span></div>');
+</script>
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+<noscript>
+  <div class="note">
+    <strong>Enable JavaScript to see comments!</strong>
+    <br>
+    <span class="extra">
+      Commenting widget is powered by GitHub's API and 
+      <a href="https://utteranc.es" target="_blank">utteranc.es</a>. This website does not
+      track visitors or log personally identifiable information, see our 
+      <a href="/docs/privacy-policy.html">privacy policy</a>.
+    </span>
+  </div>
+</noscript>
+
+      </div>
+    </footer>
   </body>
 </html>
