@@ -19,7 +19,7 @@
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2010/05/25/i-hate-null.html" property="og:url">
     <meta content="2010-05-25T00:00:00+00:00" property="article:published_time">
-    <meta content="2019-12-14T00:00:00+00:00" property="article:modified_time">
+    <meta content="2020-07-30T10:00:27+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/articles/beautiful-soup.png" />
@@ -47,8 +47,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202007291544">
-    <link rel="preload" as="style" href="/assets/css/style.css?202007291544">
+    <link rel="stylesheet" href="/assets/css/style.css?202007301001">
+    <link rel="preload" as="style" href="/assets/css/style.css?202007301001">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2010/05/25/i-hate-null.html">
@@ -59,28 +59,34 @@
 
    <div class="header">
   <div class="container">
-    <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
-    <nav class="nav-collapse">
-      <ul class="noList">
-        
-        <li class="element first current ">
-          <a href="/">Blog</a>
-        </li>
-        
-        <li class="element   ">
-          <a href="/wiki/">Wiki</a>
-        </li>
-        
-        <li class="element   ">
-          <a href="/about.html">About</a>
-        </li>
-        
-        <li class="element   last">
-          <a href="/subscribe.html">Subscribe</a>
-        </li>
-        
-      </ul>
-    </nav>
+    <div class="inner-container">
+      <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
+      <nav class="nav-collapse">
+        <ul class="noList">
+          
+          <li class="element first current ">
+            <a href="/">Blog</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/wiki/">Wiki</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/snippets/">Snippets</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/about.html">About</a>
+          </li>
+          
+          <li class="element   last">
+            <a href="/subscribe.html">Subscribe</a>
+          </li>
+          
+        </ul>
+      </nav>  
+    </div>
   </div>
 </div><!-- end .header -->
 
@@ -100,7 +106,7 @@
     <meta itemprop="datePublished" content="2010-05-25T00:00:00+0000"/>
     
     <time itemprop="dateCreated" datetime="2010-05-25T00:00:00+0000">May 25, 2010</time>
-    | <nobr><span class="time">10</span> minute</nobr>
+    | <nobr><span class="time">5</span> minute</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -227,115 +233,14 @@
 
 <p>Yeah, it’s just a small hack, but it’s so damn useful sometimes.</p>
 
-<p>Full code for copy/pasting:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">class</span> <span class="nc">ProxyAttribute</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s">"."</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span>
-
-    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">ProxyInvoke</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
-
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">args_str</span>   <span class="o">=</span> <span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">args</span><span class="p">)</span>
-        <span class="n">kwargs_str</span> <span class="o">=</span> <span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">([</span> <span class="s">"%s=%s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">])</span>
-
-        <span class="n">args_list</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">if</span> <span class="n">args_str</span><span class="p">:</span> <span class="n">args_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">args_str</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">kwargs_str</span><span class="p">:</span> <span class="n">args_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">kwargs_str</span><span class="p">)</span>
-
-        <span class="k">return</span> <span class="s">"  invoke(%s)"</span> <span class="o">%</span> <span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">args_list</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">obj</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">ProxyInvokeIndex</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">set_value</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">set_value</span> <span class="o">=</span> <span class="n">set_value</span>
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">.</span><span class="n">set_value</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">"  __getitem__(%s)"</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="s">"  __setitem__(%s, %s)"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">value</span><span class="p">))</span>
-    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">.</span><span class="n">set_value</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">obj</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">]</span>
-        <span class="n">obj</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">value</span>
-
-<span class="k">class</span> <span class="nc">Proxy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">on_error_callback</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">_chain</span><span class="o">=</span><span class="p">[],</span> <span class="n">_memo</span><span class="o">=</span><span class="p">[]):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">_wrapped_inst</span> <span class="o">=</span> <span class="n">instance</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span> <span class="o">=</span> <span class="n">_chain</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span> <span class="o">=</span> <span class="n">on_error_callback</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span> <span class="o">=</span> <span class="n">_memo</span>
-
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyAttribute</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyInvoke</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyInvokeIndex</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
-    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyInvokeIndex</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">_new_proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">appended</span><span class="p">):</span>
-        <span class="n">newc</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span> <span class="p">]</span>
-        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">appended</span><span class="p">:</span> <span class="n">newc</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">newm</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">]</span>
-        <span class="k">return</span> <span class="n">Proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_wrapped_inst</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span><span class="p">,</span> <span class="n">newc</span><span class="p">,</span> <span class="n">newm</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">do_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">should_exist</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="bp">self</span><span class="p">.</span><span class="n">do</span><span class="p">(</span><span class="n">should_exist</span><span class="p">)</span>
-        <span class="k">return</span> <span class="bp">self</span>
-
-    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">should_exist</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_wrapped_inst</span>
-
-        <span class="n">step_idx</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">step_idx</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">step_idx</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">):</span>
-                    <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">[</span><span class="n">step_idx</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">try</span><span class="p">:</span>
-                    <span class="n">ret</span> <span class="o">=</span> <span class="n">step</span><span class="p">.</span><span class="n">do</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">should_exist</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
-                        <span class="k">raise</span> <span class="nb">TypeError</span><span class="p">(</span><span class="s">"returned value was nulls"</span><span class="p">)</span>
-                    <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
-                <span class="k">except</span> <span class="nb">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span><span class="p">:</span>
-                        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">ret</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="k">raise</span>
-            <span class="n">step_idx</span> <span class="o">+=</span> <span class="mi">1</span>
-
-        <span class="k">return</span> <span class="n">ret</span>
-
-    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">str</span> <span class="o">=</span> <span class="s">"[Proxy Invocation: </span><span class="se">\n</span><span class="s">"</span>
-        <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span><span class="p">:</span>
-            <span class="nb">str</span> <span class="o">+=</span> <span class="s">'  '</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
-        <span class="k">return</span> <span class="nb">str</span> <span class="o">+</span> <span class="s">']'</span>
-</code></pre></div></div>
+<p>See <a href="/snippets/2020/07/30/python-proxy.py.html">full code snippet</a> for copy/pasting.</p>
 
   </div>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2019-12-14T00:00:00+0000">
-        Updated: December 14, 2019
+    <time itemprop="dateModified" content="2020-07-30T10:00:27+0000">
+        Updated: July 30, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -538,12 +443,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202007291544" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007291544" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202007291544" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202007291544" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202007301001" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202007301001" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202007301001" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202007301001" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202007291544" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202007301001" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -564,9 +469,6 @@
 </noscript>
 
 
-   
-   <!-- <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"6c8297e886b517d8535e8410e","lid":"a3391a44b0","uniqueMethods":true}) })</script> -->
-   
 </body>
 
 </html>
