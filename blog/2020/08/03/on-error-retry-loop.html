@@ -18,16 +18,16 @@
     <meta content="Retry actions ending in failure via simple functions and Typelevel Cats type-classes." property="og:description">
     <meta content="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html" property="og:url">
     <meta content="2020-08-03T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-08-03T14:52:28+00:00" property="article:modified_time">
+    <meta content="2020-08-03T15:25:01+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031454" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031454" />
+    <meta property="og:image" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031527" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031527" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031454">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031527">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Retry Failing Tasks with Cats and Scala">
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202008031454">
-    <link rel="preload" as="style" href="/assets/css/style.css?202008031454">
+    <link rel="stylesheet" href="/assets/css/style.css?202008031527">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008031527">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html">
@@ -109,7 +109,7 @@
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png" />
-      <img src="/assets/media/snippets/on-error-retry-loop.png?202008031454" alt="" />
+      <img src="/assets/media/snippets/on-error-retry-loop.png?202008031527" alt="" />
       
     </figure>
     
@@ -132,9 +132,9 @@
   
 
   <div id="content" itemprop="articleBody">
-    <p>In the face of errors, we could interrupt what we are doing and log the incident for debugging purposes. Some errors are temporary, for example network connection errors, the web service becoming unavailable for whatever reason, etc, in which case it might be appropriate to do one or multiple retries.</p>
+    <p>In the face of errors, we could interrupt what we are doing and log the incident for debugging purposes. Some errors are temporary, for example, network connection errors, the web service becoming unavailable for whatever reason, etc. It might be appropriate to do one or multiple retries, as it might not be acceptable to drop a valuable transaction on the floor.</p>
 
-<p>There are libraries with DSLs for specifying complex retry logic, e.g. <a href="https://github.com/cb372/cats-retry">cats-retry</a>. In this article, I am not talking about such libraries, for one because implementing your functions is fun, is educational, and also because you might not need a library where a simple function could do just fine.</p>
+<p>Libraries with DSLs for specifying complex retry logic exist, e.g., <a href="https://github.com/cb372/cats-retry">cats-retry</a>. In this article, I am not talking about such libraries because implementing your functions is fun, educational, and because you might not need a library where a simple function could do just fine.</p>
 
 <p>Here’s how …</p>
 
@@ -155,7 +155,7 @@
         
       </h2>
 
-<p>We are going to use <a href="https://typelevel.org/cats-effect/datatypes/io.html">cats.effect.IO</a> for exemplification, but this can work just as well with the <a href="https://monix.io/docs/3x/eval/task.html">Monix Task</a>, <a href="https://monix.io/docs/3x/eval/coeval.html">Monix Coeval</a> or any data type that implements the Cats or Cats Effect type classes.</p>
+<p>We are going to use <a href="https://typelevel.org/cats-effect/datatypes/io.html">cats.effect.IO</a> for exemplification, but this can work just as well with the <a href="https://monix.io/docs/3x/eval/task.html">Monix Task</a>, <a href="https://monix.io/docs/3x/eval/coeval.html">Monix Coeval</a> or any data type that implements the necessary <a href="https://typelevel.org/cats/">Typelevel Cats</a> and <a href="https://typelevel.org/cats-effect/">Cats Effect</a> type classes.</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.effect.IO</span>
 <span class="k">import</span> <span class="nn">java.io._</span>
@@ -190,7 +190,7 @@
         
       </h2>
 
-<p>The <a href="https://github.com/typelevel/cats/blob/v2.1.1/core/src/main/scala/cats/ApplicativeError.scala">ApplicativeError</a> type class from Typelevel Cats defines this function:</p>
+<p>The <a href="https://github.com/typelevel/cats/blob/v2.1.1/core/src/main/scala/cats/ApplicativeError.scala">ApplicativeError</a> type class from Cats defines these functions:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">trait</span> <span class="nc">ApplicativeError</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span><span class="o">]</span> <span class="nc">extends</span> <span class="nc">Applicative</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="o">{</span>
   <span class="c1">// ...</span>
@@ -200,15 +200,15 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">handleErrorWith</code> function works like a <code class="language-plaintext highlighter-rouge">flatMap</code> operation, but for errors. And the <code class="language-plaintext highlighter-rouge">raiseError</code> function lifts an <code class="language-plaintext highlighter-rouge">E</code> error into the <code class="language-plaintext highlighter-rouge">F[A]</code> context (the equivalent of Java’s and Scala’s <code class="language-plaintext highlighter-rouge">throw</code> for exceptions).</p>
+<p>The <code class="language-plaintext highlighter-rouge">handleErrorWith</code> function works like a <code class="language-plaintext highlighter-rouge">flatMap</code> operation, but for errors (the equivalent of Java/Scala’s <code class="language-plaintext highlighter-rouge">catch</code> statement). And the <code class="language-plaintext highlighter-rouge">raiseError</code> function lifts an <code class="language-plaintext highlighter-rouge">E</code> error into the <code class="language-plaintext highlighter-rouge">F[A]</code> context (the equivalent of Java’s and Scala’s <code class="language-plaintext highlighter-rouge">throw</code> for exceptions).</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.implicits._</span>
 <span class="k">import</span> <span class="nn">cats.</span><span class="o">{</span><span class="nc">ApplicativeError</span><span class="o">,</span> <span class="nc">Defer</span><span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
   <span class="c1">// WARN: not OK, because we don't have an end condition!</span>
-  <span class="k">def</span> <span class="nf">adInfinitum</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
-    <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">E</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">adInfinitum</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+    <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
 
     <span class="nv">fa</span><span class="o">.</span><span class="py">handleErrorWith</span> <span class="o">{</span> <span class="k">_</span> <span class="k">=&gt;</span>
       <span class="c1">// Recursive call describing infinite loop</span>
@@ -224,9 +224,9 @@
 <p>Note the usage of <code class="language-plaintext highlighter-rouge">ApplicativeError</code> and <code class="language-plaintext highlighter-rouge">Defer</code> type classes, added as restrictions for our <code class="language-plaintext highlighter-rouge">F[_]</code>.</p>
 
 <p class="info-bubble">
-  There’s a caveat with the way we’re using <code>handleErrorWith</code> in such recursive loops. The type we use might not have a <em>memory safe</em> implementation, which is always a concern in Scala, due to the JVM lacking TCO. The data types that can throw errors, errors based on runtime conditions that can be retried, usually implement a memory-safe <code>handleErrorWith</code>, but it’s better if we can ensure this via type restrictions.
+  There’s a caveat with the way we’re using <code>handleErrorWith</code> in such recursive loops. The type we use might not have a <em>memory-safe</em> implementation, which is always a concern in Scala, due to the JVM lacking TCO. The data types that can throw errors, errors based on runtime conditions that can be retried, usually implement a memory-safe <code>handleErrorWith</code>. Still, it’s better if we can ensure this via type restrictions.
   <br /><br />
-  We use the <a href="https://typelevel.org/cats/api/cats/Defer.html">Defer</a> type class to force usage of memory safe (trampolined) implementations.
+  We use the <a href="https://typelevel.org/cats/api/cats/Defer.html">Defer</a> type class to force usage of memory-safe (trampolined) implementations, although, between you and me, its laws are probably not strong enough. Still, this restriction will do just fine in practice.
 </p>
 
 <p>This sample has several problems that we’ll have to address:</p>
@@ -359,7 +359,7 @@
         
       </h2>
 
-<p>We might also want to introduce <a href="https://en.wikipedia.org/wiki/Exponential_backoff">exponential backoff</a>, because if the resource is busy, the last thing we want to do is to overwhelm it with retry requests. And we are are going to use <a href="https://typelevel.org/cats-effect/datatypes/timer.html">Timer</a> for introducing delays.</p>
+<p>We might also want to introduce <a href="https://en.wikipedia.org/wiki/Exponential_backoff">exponential backoff</a> because if the resource is busy, the last thing we want to do is to overwhelm it with retry requests. And we are are going to use <a href="https://typelevel.org/cats-effect/datatypes/timer.html">Timer</a> for introducing delays.</p>
 
 <p>At this point, the state and the configuration are more complicated, so let’s introduce a reusable data structure too, that should be self-explanatory:</p>
 
@@ -485,7 +485,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-08-03T14:52:28+0000">
+    <time itemprop="dateModified" content="2020-08-03T15:25:01+0000">
         Updated: August 3, 2020
     </time>
     
@@ -692,12 +692,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202008031454" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031454" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202008031454" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202008031454" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202008031527" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031527" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008031527" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008031527" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202008031454" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202008031527" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
