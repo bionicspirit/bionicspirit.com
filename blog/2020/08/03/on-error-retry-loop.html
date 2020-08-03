@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Retry Failing Tasks with Cats and Scala - Alexandru Nedelcu</title>
+    
+
+    <!-- Open Graph Meta -->
+    <meta content="Alexandru Nedelcu" property="og:site_name">
+    <meta content="Retry Failing Tasks with Cats and Scala" property="og:title">
+    <meta content="Retry actions ending in failure via simple functions and Typelevel Cats type-classes." property="og:description">
+    <meta content="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html" property="og:url">
+    <meta content="2020-08-03T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-08-03T10:03:40+00:00" property="article:modified_time">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png" />
+    <meta content="https://www.facebook.com/alexelcu" property="article:author">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png">
+    <meta name="twitter:site" content="@alexelcu">
+    <meta name="twitter:creator" content="@alexelcu">
+    <meta name="twitter:title" content="Retry Failing Tasks with Cats and Scala">
+    <meta name="twitter:url" content="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html">
+    <meta name="twitter:description" content="Retry actions ending in failure via simple functions and Typelevel Cats type-classes.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo/192px.png" sizes="192x192" />
+    <link rel="icon" href="/assets/logo/270px.png" sizes="270x270" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/logo/180px.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
+
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css?202008031005">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008031005">
+    
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html">
+</head>
+
+
+<body>
+
+   <div class="header">
+  <div class="container">
+    <div class="inner-container">
+      <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
+      <nav class="nav-collapse">
+        <ul class="noList">
+          
+          <li class="element first current ">
+            <a href="/">Blog</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/wiki/">Wiki</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/snippets/">Snippets</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/about.html">About</a>
+          </li>
+          
+          <li class="element   last">
+            <a href="/subscribe.html">Subscribe</a>
+          </li>
+          
+        </ul>
+      </nav>  
+    </div>
+  </div>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Retry Failing Tasks with Cats and Scala
+        
+        
+      </h1>
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html"/>
+    <meta itemprop="datePublished" content="2020-08-03T00:00:00+0000"/>
+    
+    <time itemprop="dateCreated" datetime="2020-08-03T00:00:00+0000">August 3, 2020</time>
+    | <nobr><span class="time">12</span> minute</nobr>
+  </p>
+
+  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png" />
+      <img src="/assets/media/snippets/on-error-retry-loop.png" alt="" />
+      
+    </figure>
+    
+  
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Alexandru Nedelcu">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    </div>
+  </div>
+  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alexandru Nedelcu" />
+      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+      <meta itemprop="url" content="https://twitter.com/alexelcu" />
+      <meta itemprop="url" content="https://www.facebook.com/alexelcu" />
+      <meta itemprop="url" content="https://github.com/alexandru" />
+    </div>
+  
+
+  <div id="content" itemprop="articleBody">
+    <p>In the face of errors, we could interrupt what we are doing and log the incident for debugging purposes. Some errors are temporary, for example network connection errors, the web service becoming unavailable for whatever reason, etc, in which case it might be appropriate to do one or multiple retries.</p>
+
+<p>There are libraries with DSLs for specifying complex retry logic, e.g. <a href="https://github.com/cb372/cats-retry">cats-retry</a>. In this article, I am not talking about such libraries, for one because implementing your functions is fun, is educational, and also because you might not need a library where a simple function could do just fine.</p>
+
+<p>Here’s how …</p>
+
+<ul>
+  <li><a href="#task-example">Task Example</a></li>
+  <li><a href="#naive-implementation">Naive Implementation</a></li>
+  <li><a href="#filtering-and-end-condition">Filtering and End Condition</a></li>
+  <li><a href="#building-a-generic-retry-loop">Building a Generic Retry Loop</a></li>
+  <li><a href="#exponential-backoff">Exponential Backoff</a></li>
+  <li><a href="#tldr-full-code-sample">TL;DR Full Code Sample</a></li>
+</ul>
+    
+      <h2 id="task-example">
+        
+        
+          Task Example <a href="#task-example" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>We are going to use <a href="https://typelevel.org/cats-effect/datatypes/io.html">cats.effect.IO</a> for exemplification, but this can work just as well with the <a href="https://monix.io/docs/3x/eval/task.html">Monix Task</a>, <a href="https://monix.io/docs/3x/eval/coeval.html">Monix Coeval</a> or any data type that implements the Cats or Cats Effect type classes.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.effect.IO</span>
+<span class="k">import</span> <span class="nn">java.io._</span>
+
+<span class="c1">// Not very motivating example, but let's go with it</span>
+<span class="k">def</span> <span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">,</span> <span class="n">charset</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nc">IO</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">in</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span>
+      <span class="k">new</span> <span class="nc">InputStreamReader</span><span class="o">(</span>
+        <span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">charset</span>
+      <span class="o">))</span>
+
+    <span class="k">val</span> <span class="nv">builder</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">()</span>
+    <span class="k">var</span> <span class="n">line</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kc">null</span>
+    <span class="k">do</span> <span class="o">{</span>
+      <span class="n">line</span> <span class="k">=</span> <span class="nv">in</span><span class="o">.</span><span class="py">readLine</span><span class="o">()</span>
+      <span class="nf">if</span> <span class="o">(</span><span class="n">line</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> 
+        <span class="nv">builder</span><span class="o">.</span><span class="py">append</span><span class="o">(</span><span class="n">line</span><span class="o">).</span><span class="py">append</span><span class="o">(</span><span class="s">"\n"</span><span class="o">)</span>
+    <span class="o">}</span> <span class="nf">while</span> <span class="o">(</span><span class="n">line</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+
+    <span class="nv">builder</span><span class="o">.</span><span class="py">toString</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>This operation is doing I/O, the file we are looking for could be missing, but only temporarily, or we might have an IOPS capacity problem. In some cases, we might want to keep retrying the task.</p>
+    
+      <h2 id="naive-implementation">
+        
+        
+          Naive Implementation <a href="#naive-implementation" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>The <a href="https://github.com/typelevel/cats/blob/v2.1.1/core/src/main/scala/cats/ApplicativeError.scala">ApplicativeError</a> type class from Typelevel Cats defines this function:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">trait</span> <span class="nc">ApplicativeError</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span><span class="o">]</span> <span class="nc">extends</span> <span class="nc">Applicative</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="o">{</span>
+  <span class="c1">// ...</span>
+  <span class="k">def</span> <span class="nf">handleErrorWith</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">E</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">handleErrorWith</code> function works like a <code class="language-plaintext highlighter-rouge">flatMap</code> operation, but for errors.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.implicits._</span>
+<span class="k">import</span> <span class="nn">cats.</span><span class="o">{</span><span class="nc">ApplicativeError</span><span class="o">,</span> <span class="nc">Defer</span><span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
+  <span class="c1">// WARN: not OK, because we don't have an end condition!</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+    <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">E</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+
+    <span class="nv">fa</span><span class="o">.</span><span class="py">handleErrorWith</span> <span class="o">{</span> <span class="k">_</span> <span class="k">=&gt;</span>
+      <span class="c1">// Recursive call</span>
+      <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">))</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">//...</span>
+<span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">loop</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">))</span>
+</code></pre></div></div>
+
+<p>Note the usage of <code class="language-plaintext highlighter-rouge">ApplicativeError</code> and <code class="language-plaintext highlighter-rouge">Defer</code> type classes, added as restrictions for our <code class="language-plaintext highlighter-rouge">F[_]</code>.</p>
+
+<p class="info-bubble">
+  There’s a caveat with the way we’re using <code>handleErrorWith</code> in such recursive loops. The type we use might not have a <em>memory safe</em> implementation, which is always a concern in Scala, due to the JVM lacking TCO. The data types that can throw errors, errors based on runtime conditions that can be retried, usually implement a memory-safe <code>handleErrorWith</code>, but it’s better if we can ensure this via type restrictions.
+  <br /><br />
+  We use the <a href="https://typelevel.org/cats/api/cats/Defer.html">Defer</a> type class to force usage of memory safe (trampolined) implementations.
+</p>
+
+<p>This sample has several problems that we’ll have to address:</p>
+
+<ol>
+  <li>no end condition</li>
+  <li>no filtering of errors, since not all errors are recoverable</li>
+  <li>no protections, like “<em>exponential backoff</em>”</li>
+</ol>
+    
+      <h2 id="filtering-and-end-condition">
+        
+        
+          Filtering and End Condition <a href="#filtering-and-end-condition" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>We must only retry the task in situations in which it can be retried. For example if the task throws a <a href="https://docs.oracle.com/javase/8/docs/api/java/nio/charset/CharacterCodingException.html" target="_blank">CharacterCodingException</a>, that’s not a task that can be retried, that’s a bug. It’s not always clear when the task can be retried or not, but we can try our best.</p>
+
+<p>And we want to retry, but not forever. So there has to be an end condition in that loop.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="cm">/** 
+  * Signaling desired outcomes via Boolean is very confusing,
+  * having our own ADT for this is better.
+  */</span>
+<span class="k">sealed</span> <span class="k">trait</span> <span class="nc">RetryOutcome</span>
+
+<span class="k">object</span> <span class="nc">RetryOutcome</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Next</span> <span class="k">extends</span> <span class="nc">RetryOutcome</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Raise</span> <span class="k">extends</span> <span class="nc">RetryOutcome</span>
+<span class="o">}</span>
+
+<span class="cm">/** Module grouping our retry helpers. */</span>
+<span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
+
+  <span class="k">def</span> <span class="nf">withConfig</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">maxRetries</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+    <span class="o">(</span><span class="n">p</span><span class="k">:</span> <span class="kt">E</span> <span class="o">=&gt;</span> <span class="nc">RetryOutcome</span><span class="o">)</span>
+    <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">E</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+
+    <span class="nv">fa</span><span class="o">.</span><span class="py">handleErrorWith</span> <span class="o">{</span> <span class="n">error</span> <span class="k">=&gt;</span>
+      <span class="nf">if</span> <span class="o">(</span><span class="n">maxRetries</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="nf">p</span><span class="o">(</span><span class="n">error</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span> <span class="k">=&gt;</span>
+            <span class="c1">// Recursive call</span>
+            <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">withConfig</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">maxRetries</span><span class="o">)(</span><span class="n">p</span><span class="o">))</span>
+          <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span> <span class="k">=&gt;</span>
+            <span class="c1">// Cannot recover from error</span>
+            <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
+        <span class="o">}</span>
+      <span class="k">else</span>
+        <span class="c1">// Maximum retries reached, triggering error</span>
+        <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
+    <span class="o">}</span>
+  <span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>And usage:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">withConfig</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">maxRetries</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="o">=&gt;</span>
+    <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Throw</span>
+  <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
+    <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span>
+<span class="o">}</span>
+</code></pre></div></div>
+    
+      <h2 id="building-a-generic-retry-loop">
+        
+        
+          Building a Generic Retry Loop <a href="#building-a-generic-retry-loop" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>Inspired by Monix’s <a href="https://github.com/monix/monix/pull/507">onErrorRestartLoop</a>, we can describe this function in a generic fashion:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
+  <span class="cm">/** 
+    * Saves us from describing recursive functions that accumulate state.
+    */</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span>, <span class="kt">S</span><span class="o">](</span>
+    <span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+    <span class="n">initial</span><span class="k">:</span> <span class="kt">S</span>
+  <span class="o">)(</span>
+    <span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Throwable</span><span class="o">,</span> <span class="kt">S</span><span class="o">,</span> <span class="n">S</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="o">)(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nv">fa</span><span class="o">.</span><span class="py">handleErrorWith</span> <span class="o">{</span> <span class="n">err</span> <span class="k">=&gt;</span>
+      <span class="nf">f</span><span class="o">(</span><span class="n">err</span><span class="o">,</span> <span class="n">initial</span><span class="o">,</span> <span class="n">state</span> <span class="k">=&gt;</span> <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">state</span><span class="o">)(</span><span class="n">f</span><span class="o">)))</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// Retrying 10 times at most</span>
+<span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">loop</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>  <span class="o">(</span><span class="n">e</span><span class="o">,</span> <span class="n">retriesLeft</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
+  <span class="k">val</span> <span class="nv">canRetry</span> <span class="k">=</span> <span class="n">e</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="o">=&gt;</span>
+      <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Throw</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
+      <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span>
+  <span class="o">}</span>
+  <span class="nf">if</span> <span class="o">(</span><span class="n">canRetry</span> <span class="o">&amp;&amp;</span> <span class="n">retriesLeft</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+    <span class="nf">retry</span><span class="o">(</span><span class="n">retriesLeft</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">// again</span>
+  <span class="k">else</span>
+    <span class="nv">IO</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>  
+<span class="o">}</span>
+</code></pre></div></div>
+    
+      <h2 id="exponential-backoff">
+        
+        
+          Exponential Backoff <a href="#exponential-backoff" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>We might also want to introduce <a href="https://en.wikipedia.org/wiki/Exponential_backoff">exponential backoff</a>, because if the resource is busy, the last thing we want to do is to overwhelm it with retry requests. And we are are going to use <a href="https://typelevel.org/cats-effect/datatypes/timer.html">Timer</a> for introducing delays.</p>
+
+<p>At this point, the state and the configuration are more complicated, so let’s introduce a reusable data structure too, that should be self-explanatory:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">scala.concurrent.duration._</span>
+
+<span class="cm">/**
+  * Configuration for retry logic, could be read from a config file, via
+  * something like [[https://github.com/pureconfig/pureconfig PureConfig]].
+  */</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">RetryConfig</span><span class="o">(</span>
+  <span class="n">maxRetries</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="n">initialDelay</span><span class="k">:</span> <span class="kt">FiniteDuration</span><span class="o">,</span>
+  <span class="n">maxDelay</span><span class="k">:</span> <span class="kt">FiniteDuration</span><span class="o">,</span>
+  <span class="n">backoffFactor</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span>
+  <span class="k">private</span> <span class="k">val</span> <span class="nv">evolvedDelay</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">FiniteDuration</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">,</span>
+<span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">canRetry</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="n">maxRetries</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">delay</span><span class="k">:</span> <span class="kt">FiniteDuration</span> <span class="o">=</span>
+    <span class="nv">evolvedDelay</span><span class="o">.</span><span class="py">getOrElse</span><span class="o">(</span><span class="n">initialDelay</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="nf">evolve</span><span class="k">:</span> <span class="kt">RetryConfig</span> <span class="o">=</span>
+    <span class="nf">copy</span><span class="o">(</span>
+      <span class="n">maxRetries</span> <span class="k">=</span> <span class="nv">math</span><span class="o">.</span><span class="py">max</span><span class="o">(</span><span class="n">maxRetries</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">),</span>
+      <span class="n">evolvedDelay</span> <span class="k">=</span> <span class="nc">Some</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="nv">nextDelay</span> <span class="k">=</span> <span class="nv">evolvedDelay</span><span class="o">.</span><span class="py">getOrElse</span><span class="o">(</span><span class="n">initialDelay</span><span class="o">)</span> <span class="o">*</span> <span class="n">backoffFactor</span>
+        <span class="nv">maxDelay</span><span class="o">.</span><span class="py">min</span><span class="o">(</span><span class="n">nextDelay</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="n">ref</span><span class="k">:</span> <span class="kt">FiniteDuration</span> <span class="o">=&gt;</span> <span class="n">ref</span>
+          <span class="k">case</span> <span class="k">_:</span> <span class="kt">Duration.Infinite</span> <span class="o">=&gt;</span> <span class="n">maxDelay</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>All together now:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span>, <span class="kt">S</span><span class="o">](</span>
+    <span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+    <span class="n">initial</span><span class="k">:</span> <span class="kt">S</span>
+  <span class="o">)(</span>
+    <span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Throwable</span><span class="o">,</span> <span class="kt">S</span><span class="o">,</span> <span class="n">S</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="o">)(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nv">fa</span><span class="o">.</span><span class="py">handleErrorWith</span> <span class="o">{</span> <span class="n">err</span> <span class="k">=&gt;</span>
+      <span class="nf">f</span><span class="o">(</span><span class="n">err</span><span class="o">,</span> <span class="n">initial</span><span class="o">,</span> <span class="n">state</span> <span class="k">=&gt;</span> <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">state</span><span class="o">)(</span><span class="n">f</span><span class="o">)))</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="nf">withConfig</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">retry</span><span class="k">:</span> <span class="kt">RetryConfig</span><span class="o">)(</span>
+    <span class="n">p</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">RetryOutcome</span><span class="o">]</span>
+  <span class="o">)(</span><span class="k">implicit</span> 
+    <span class="n">F</span><span class="k">:</span> <span class="kt">MonadError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span> 
+    <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">],</span> 
+    <span class="n">timer</span><span class="k">:</span> <span class="kt">Timer</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span>
+  <span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="n">error</span><span class="o">,</span> <span class="n">state</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="nf">if</span> <span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">canRetry</span><span class="o">)</span>
+        <span class="nf">p</span><span class="o">(</span><span class="n">error</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span> <span class="k">=&gt;</span>
+            <span class="nv">timer</span><span class="o">.</span><span class="py">sleep</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">delay</span><span class="o">)</span> <span class="o">*&gt;</span> <span class="nf">retry</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">evolve</span><span class="o">)</span>
+          <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span> <span class="k">=&gt;</span>
+            <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
+        <span class="o">}</span>
+      <span class="k">else</span>
+        <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>In our predicate we take an <code class="language-plaintext highlighter-rouge">F[RetryOutcome]</code> instead of a <code class="language-plaintext highlighter-rouge">RetryOutcome</code>. That’s because we might want to trigger additional side effects, like logging.</p>
+
+<p>So to build our final sample, let’s introduce a dependency on <a href="https://github.com/lightbend/config">typesafe-config</a> in <code class="language-plaintext highlighter-rouge">build.sbt</code>, which you probably have anyway:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">libraryDependencies</span> <span class="o">+=</span> <span class="s">"com.typesafe"</span> <span class="o">%</span> <span class="s">"config"</span> <span class="o">%</span> <span class="s">"1.4.0"</span>
+</code></pre></div></div>
+
+<p>And usage:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">object</span> <span class="nc">Playground</span> <span class="k">extends</span> <span class="nc">LazyLogging</span> <span class="k">with</span> <span class="nc">IOApp</span> <span class="o">{</span>
+  <span class="c1">// Motivating example</span>
+  <span class="k">def</span> <span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">,</span> <span class="n">charset</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span> <span class="o">???</span>
+
+  <span class="k">override</span> <span class="k">def</span> <span class="nf">run</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">ExitCode</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">config</span> <span class="k">=</span> <span class="nc">RetryConfig</span><span class="o">(</span>
+      <span class="n">maxRetries</span> <span class="k">=</span> <span class="mi">10</span><span class="o">,</span>
+      <span class="n">initialDelay</span> <span class="k">=</span> <span class="mf">10.</span><span class="n">millis</span><span class="o">,</span>
+      <span class="n">maxDelay</span> <span class="k">=</span> <span class="mf">2.</span><span class="n">seconds</span><span class="o">,</span>
+      <span class="n">backoffFactor</span> <span class="k">=</span> <span class="mf">1.5</span>
+    <span class="o">)</span>
+    <span class="k">val</span> <span class="nv">text</span> <span class="k">=</span> <span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">withConfig</span><span class="o">(</span>
+      <span class="nf">readTextFromFile</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="nv">args</span><span class="o">.</span><span class="py">head</span><span class="o">),</span> <span class="s">"UTF-8"</span><span class="o">),</span>
+      <span class="n">config</span>
+    <span class="o">)</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="o">=&gt;</span>
+        <span class="nv">IO</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span><span class="o">)</span>
+      <span class="k">case</span> <span class="n">e</span> <span class="k">=&gt;</span>
+        <span class="nc">IO</span><span class="o">(</span><span class="nv">logger</span><span class="o">.</span><span class="py">warn</span><span class="o">(</span><span class="s">"Unexpected error, retrying"</span><span class="o">,</span> <span class="n">e</span><span class="o">))</span>
+          <span class="o">.</span><span class="py">as</span><span class="o">(</span><span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="k">for</span> <span class="o">{</span>
+      <span class="n">t</span> <span class="k">&lt;-</span> <span class="n">text</span>
+      <span class="k">_</span> <span class="k">&lt;-</span> <span class="nc">IO</span><span class="o">(</span><span class="nf">println</span><span class="o">(</span><span class="n">t</span><span class="o">))</span>
+    <span class="o">}</span> <span class="k">yield</span> <span class="nv">ExitCode</span><span class="o">.</span><span class="py">Success</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+    
+      <h2 id="tldr-full-code-sample">
+        
+        
+          TL;DR Full Code Sample <a href="#tldr-full-code-sample" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>See here for the full code sample:<br />
+<a href="/snippets/2020/08/03/on-error-retry-loop.scala.html">on-error-retry-loop.scala</a></p>
+
+<p>Enjoy~</p>
+
+  </div>
+
+  <div id="article-details">
+    
+    <time itemprop="dateModified" content="2020-08-03T10:03:40+0000">
+        Updated: August 3, 2020
+    </time>
+    
+      | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
+    
+
+    <div id="all-categories">
+      Tags:
+      
+        
+        <a href="/tag/scala/" class="category">scala</a>
+      
+         | 
+        <a href="/tag/fp/" class="category">fp</a>
+      
+         | 
+        <a href="/tag/code/" class="category">code</a>
+      
+    </div>
+  </div>
+
+  
+  <div class="related">
+    
+      <h2>
+        
+        
+          Related Articles
+        
+        
+      </h2>
+    <div class="container">
+      
+      
+
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2017/01/30/asynchronous-programming-scala.html">
+          Asynchronous Programming and Scala
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/asynchrony" class="tag">asynchrony</a>
+            
+               | <a href="/tag/concurrency" class="tag">concurrency</a>
+                        
+          </div>
+          <time>January 30, 2017</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2012/11/02/scala-functional-programming-type-classes.html">
+          On Scala, Functional Programming and Type-Classes
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/languages" class="tag">languages</a>
+            
+               | <a href="/tag/functional" class="tag">functional</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/clojure" class="tag">clojure</a>
+            
+               | <a href="/tag/java" class="tag">java</a>
+                        
+          </div>
+          <time>November 2, 2012</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/02/12/in-defense-oofp.html">
+          In Defense of OOFP
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/oop" class="tag">oop</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+                        
+          </div>
+          <time>February 12, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2018/05/06/bifunctor-io.html">
+          On Bifunctor IO and Java's Checked Exceptions
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/tag/best of" class="tag">best of</a>
+            
+               | <a href="/tag/fp" class="tag">fp</a>
+            
+               | <a href="/tag/typelevel" class="tag">typelevel</a>
+            
+               | <a href="/tag/scala" class="tag">scala</a>
+            
+               | <a href="/tag/haskell" class="tag">haskell</a>
+                        
+          </div>
+          <time>May 6, 2018</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  
+
+  
+</article>
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      
+<h2>Contribute</h2>
+
+<p>
+  You can fix or add to this article by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_posts/2020-08-03-on-error-retry-loop.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+
+<h3 id="comments">Comments</h3>
+
+<script>
+  document.write('<div class="note">Be nice!<br><span class="extra">If you don\'t see the commenting widget, it might be blocked (see this <a href="https://github.com/utterance/utterances/issues/341" target="_blank">Privacy Badger issue</a>).</span></div>');
+</script>
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+<noscript>
+  <div class="note">
+    <strong>Enable JavaScript to see comments!</strong>
+    <br>
+    <span class="extra">
+      Commenting widget is powered by GitHub's API and 
+      <a href="https://utteranc.es" target="_blank">utteranc.es</a>. This website does not
+      track visitors or log personally identifiable information, see our 
+      <a href="/docs/privacy-policy.html">privacy policy</a>.
+    </span>
+  </div>
+</noscript>
+
+
+    </div>  
+  </div>
+  
+
+  <div class="bottom">
+    <div class="container">
+      <span class="copy">
+          &copy; 2020
+      </span>
+      <span class="links">
+        <a href="/docs/license.html">License</a> |
+        <a href="/docs/privacy-policy.html">Privacy Policy</a> |
+        <a href="/about.html#contact">Contact</a>
+      </span>
+    </div>
+  </div>
+</div><!-- end .footer -->
+
+   <script async src="/assets/js/modernizr.custom.15390.js?202008031005" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031005" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008031005" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008031005" type="text/javascript"></script>
+
+<script async src="/assets/js/scripts.js?202008031005" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ly.alexn.org/";
+    _paq.push(['setTrackerUrl', u+'m.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript>
+  
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Retry+Failing+Tasks+with+Cats+and+Scala" style="border:0" alt="" />
+</noscript>
+
+
+</body>
+
+</html>

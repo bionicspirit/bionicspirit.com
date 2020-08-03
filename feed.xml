@@ -9,8 +9,8 @@
     <description>On programming and personal projects</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 30 Jul 2020 11:50:39 +0000</pubDate>
-    <lastBuildDate>Thu, 30 Jul 2020 11:50:39 +0000</lastBuildDate>
+    <pubDate>Mon, 03 Aug 2020 10:05:07 +0000</pubDate>
+    <lastBuildDate>Mon, 03 Aug 2020 10:05:07 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -19,10 +19,44 @@
     
       
       <item>
-        <title>Fatal Warnings and Linting in Scala</title>
+        <title>Retry Failing Tasks with Cats and Scala</title>
         <description><![CDATA[
           
           <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=RSS+Feed" style="border:0" alt="" />
+          
+          
+          <a href="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&pk_kwd=image">
+            <img src="https://alexn.org/assets/media/snippets/on-error-retry-loop.png" align="middle" style="display: block; max-width:100%; margin: 0 auto;" />
+          </a>
+          <br />
+          
+          <p>Retry actions ending in failure via simple functions and Typelevel Cats type-classes.</p>
+
+          <p>
+            <a href="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
+          </p>
+        ]]></description>
+        <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/blog/2020/08/03/on-error-retry-loop.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+        <category>Scala</category>
+        
+        <category>FP</category>
+        
+        <category>Code</category>
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Fatal Warnings and Linting in Scala</title>
+        <description><![CDATA[
           
           
           <a href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&pk_kwd=image">
