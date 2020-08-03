@@ -18,16 +18,16 @@
     <meta content="Retry actions ending in failure via simple functions and Typelevel Cats type-classes." property="og:description">
     <meta content="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html" property="og:url">
     <meta content="2020-08-03T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-08-03T15:25:01+00:00" property="article:modified_time">
+    <meta content="2020-08-03T15:31:40+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031527" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031527" />
+    <meta property="og:image" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031533" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031533" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031527">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202008031533">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Retry Failing Tasks with Cats and Scala">
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202008031527">
-    <link rel="preload" as="style" href="/assets/css/style.css?202008031527">
+    <link rel="stylesheet" href="/assets/css/style.css?202008031533">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008031533">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html">
@@ -109,7 +109,7 @@
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png" />
-      <img src="/assets/media/snippets/on-error-retry-loop.png?202008031527" alt="" />
+      <img src="/assets/media/snippets/on-error-retry-loop.png?202008031533" alt="" />
       
     </figure>
     
@@ -224,9 +224,9 @@
 <p>Note the usage of <code class="language-plaintext highlighter-rouge">ApplicativeError</code> and <code class="language-plaintext highlighter-rouge">Defer</code> type classes, added as restrictions for our <code class="language-plaintext highlighter-rouge">F[_]</code>.</p>
 
 <p class="info-bubble">
-  There’s a caveat with the way we’re using <code>handleErrorWith</code> in such recursive loops. The type we use might not have a <em>memory-safe</em> implementation, which is always a concern in Scala, due to the JVM lacking TCO. The data types that can throw errors, errors based on runtime conditions that can be retried, usually implement a memory-safe <code>handleErrorWith</code>. Still, it’s better if we can ensure this via type restrictions.
+  <b><em>NOTE:</em></b> There’s a caveat with the way we’re using <code>handleErrorWith</code> in such recursive loops. The type we use might not have a <em>memory-safe</em> implementation, which is always a concern in Scala, due to the JVM lacking TCO. The data types that can throw errors, errors based on runtime conditions that can be retried, usually implement a memory-safe <code>handleErrorWith</code>. Still, it’s better if we can ensure this via type restrictions.
   <br /><br />
-  We use the <a href="https://typelevel.org/cats/api/cats/Defer.html">Defer</a> type class to force usage of memory-safe (trampolined) implementations, although, between you and me, its laws are probably not strong enough. Still, this restriction will do just fine in practice.
+  We use the <a href="https://typelevel.org/cats/api/cats/Defer.html">Defer</a> type class to force usage of memory-safe (trampolined) implementations, although its laws are probably not strong enough. Still, this restriction will do just fine in practice. The alternative would have been to not put a restriction for memory safety, or to use <a href="https://typelevel.org/cats-effect/typeclasses/sync.html">Cats Effect’s Sync</a>, but this type class is too restricted, to the point that the signature becomes opaque, as it might as well launch missiles.
 </p>
 
 <p>This sample has several problems that we’ll have to address:</p>
@@ -485,7 +485,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-08-03T15:25:01+0000">
+    <time itemprop="dateModified" content="2020-08-03T15:31:40+0000">
         Updated: August 3, 2020
     </time>
     
@@ -692,12 +692,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202008031527" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031527" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202008031527" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202008031527" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202008031533" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031533" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008031533" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008031533" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202008031527" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202008031533" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
