@@ -18,7 +18,7 @@
     <meta content="Retry actions ending in failure via simple functions and Typelevel Cats type-classes." property="og:description">
     <meta content="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html" property="og:url">
     <meta content="2020-08-03T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-08-03T10:18:02+00:00" property="article:modified_time">
+    <meta content="2020-08-03T10:19:56+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202008031019">
-    <link rel="preload" as="style" href="/assets/css/style.css?202008031019">
+    <link rel="stylesheet" href="/assets/css/style.css?202008031021">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008031021">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html">
@@ -104,7 +104,7 @@
     <meta itemprop="datePublished" content="2020-08-03T00:00:00+0000"/>
     
     <time itemprop="dateCreated" datetime="2020-08-03T00:00:00+0000">August 3, 2020</time>
-    | <nobr><span class="time">12</span> minute</nobr>
+    | <nobr><span class="time">11</span> minute</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -378,20 +378,10 @@
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>All together now:</p>
+<p>Finally, we can do this:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="nf">loop</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span>, <span class="kt">S</span><span class="o">](</span>
-    <span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
-    <span class="n">initial</span><span class="k">:</span> <span class="kt">S</span>
-  <span class="o">)(</span>
-    <span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Throwable</span><span class="o">,</span> <span class="kt">S</span><span class="o">,</span> <span class="n">S</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
-  <span class="o">)(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
-    <span class="nv">fa</span><span class="o">.</span><span class="py">handleErrorWith</span> <span class="o">{</span> <span class="n">err</span> <span class="k">=&gt;</span>
-      <span class="nf">f</span><span class="o">(</span><span class="n">err</span><span class="o">,</span> <span class="n">initial</span><span class="o">,</span> <span class="n">state</span> <span class="k">=&gt;</span> <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">state</span><span class="o">)(</span><span class="n">f</span><span class="o">)))</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-
+  <span class="c1">// ...</span>
   <span class="k">def</span> <span class="nf">withConfig</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">retry</span><span class="k">:</span> <span class="kt">RetryConfig</span><span class="o">)(</span>
     <span class="n">p</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">RetryOutcome</span><span class="o">]</span>
   <span class="o">)(</span><span class="k">implicit</span> 
@@ -399,7 +389,7 @@
     <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">],</span> 
     <span class="n">timer</span><span class="k">:</span> <span class="kt">Timer</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span>
   <span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
-    <span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="n">error</span><span class="o">,</span> <span class="n">state</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="n">error</span><span class="o">,</span> <span class="n">state</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
       <span class="nf">if</span> <span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">canRetry</span><span class="o">)</span>
         <span class="nf">p</span><span class="o">(</span><span class="n">error</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span>
           <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span> <span class="k">=&gt;</span>
@@ -469,7 +459,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-08-03T10:18:02+0000">
+    <time itemprop="dateModified" content="2020-08-03T10:19:56+0000">
         Updated: August 3, 2020
     </time>
     
@@ -676,12 +666,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202008031019" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031019" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202008031019" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202008031019" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202008031021" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031021" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008031021" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008031021" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202008031019" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202008031021" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
