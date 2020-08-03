@@ -18,7 +18,7 @@
     <meta content="Retry actions ending in failure via simple functions and Typelevel Cats type-classes." property="og:description">
     <meta content="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html" property="og:url">
     <meta content="2020-08-03T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-08-03T10:21:35+00:00" property="article:modified_time">
+    <meta content="2020-08-03T12:16:34+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://alexn.org/assets/media/snippets/on-error-retry-loop.png" />
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202008031023">
-    <link rel="preload" as="style" href="/assets/css/style.css?202008031023">
+    <link rel="stylesheet" href="/assets/css/style.css?202008031218">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008031218">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/08/03/on-error-retry-loop.html">
@@ -104,7 +104,7 @@
     <meta itemprop="datePublished" content="2020-08-03T00:00:00+0000"/>
     
     <time itemprop="dateCreated" datetime="2020-08-03T00:00:00+0000">August 3, 2020</time>
-    | <nobr><span class="time">12</span> minute</nobr>
+    | <nobr><span class="time">13</span> minute</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
@@ -195,28 +195,30 @@
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">trait</span> <span class="nc">ApplicativeError</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span><span class="o">]</span> <span class="nc">extends</span> <span class="nc">Applicative</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="o">{</span>
   <span class="c1">// ...</span>
   <span class="k">def</span> <span class="nf">handleErrorWith</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])(</span><span class="n">f</span><span class="k">:</span> <span class="kt">E</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+
+  <span class="k">def</span> <span class="nf">raiseError</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">e</span><span class="k">:</span> <span class="kt">E</span><span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
-<p>The <code class="language-plaintext highlighter-rouge">handleErrorWith</code> function works like a <code class="language-plaintext highlighter-rouge">flatMap</code> operation, but for errors.</p>
+<p>The <code class="language-plaintext highlighter-rouge">handleErrorWith</code> function works like a <code class="language-plaintext highlighter-rouge">flatMap</code> operation, but for errors. And the <code class="language-plaintext highlighter-rouge">raiseError</code> function lifts an <code class="language-plaintext highlighter-rouge">E</code> error into the <code class="language-plaintext highlighter-rouge">F[A]</code> context (the equivalent of Java’s and Scala’s <code class="language-plaintext highlighter-rouge">throw</code> for exceptions).</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.implicits._</span>
 <span class="k">import</span> <span class="nn">cats.</span><span class="o">{</span><span class="nc">ApplicativeError</span><span class="o">,</span> <span class="nc">Defer</span><span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
   <span class="c1">// WARN: not OK, because we don't have an end condition!</span>
-  <span class="k">def</span> <span class="nf">loop</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+  <span class="k">def</span> <span class="nf">adInfinitum</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
     <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">E</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
 
     <span class="nv">fa</span><span class="o">.</span><span class="py">handleErrorWith</span> <span class="o">{</span> <span class="k">_</span> <span class="k">=&gt;</span>
-      <span class="c1">// Recursive call</span>
+      <span class="c1">// Recursive call describing infinite loop</span>
       <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">))</span>
     <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="c1">//...</span>
-<span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">loop</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">))</span>
+<span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">adInfinitum</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">))</span>
 </code></pre></div></div>
 
 <p>Note the usage of <code class="language-plaintext highlighter-rouge">ApplicativeError</code> and <code class="language-plaintext highlighter-rouge">Defer</code> type classes, added as restrictions for our <code class="language-plaintext highlighter-rouge">F[_]</code>.</p>
@@ -261,7 +263,7 @@
 <span class="cm">/** Module grouping our retry helpers. */</span>
 <span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
 
-  <span class="k">def</span> <span class="nf">withConfig</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">maxRetries</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">withAtMost</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">E</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">maxRetries</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span>
     <span class="o">(</span><span class="n">p</span><span class="k">:</span> <span class="kt">E</span> <span class="o">=&gt;</span> <span class="nc">RetryOutcome</span><span class="o">)</span>
     <span class="o">(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">E</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
 
@@ -270,14 +272,14 @@
         <span class="nf">p</span><span class="o">(</span><span class="n">error</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
           <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span> <span class="k">=&gt;</span>
             <span class="c1">// Recursive call</span>
-            <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">withConfig</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">maxRetries</span><span class="o">)(</span><span class="n">p</span><span class="o">))</span>
+            <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">withAtMost</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">maxRetries</span><span class="o">)(</span><span class="n">p</span><span class="o">))</span>
           <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span> <span class="k">=&gt;</span>
             <span class="c1">// Cannot recover from error</span>
-            <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
+            <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
         <span class="o">}</span>
       <span class="k">else</span>
         <span class="c1">// Maximum retries reached, triggering error</span>
-        <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
+        <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
     <span class="o">}</span>
   <span class="o">}</span> 
 <span class="o">}</span>
@@ -285,7 +287,7 @@
 
 <p>And usage:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">withConfig</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">maxRetries</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">withAtMost</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">maxRetries</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
   <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="o">=&gt;</span>
     <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span>
   <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
@@ -317,20 +319,35 @@
       <span class="nf">f</span><span class="o">(</span><span class="n">err</span><span class="o">,</span> <span class="n">initial</span><span class="o">,</span> <span class="n">state</span> <span class="k">=&gt;</span> <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">state</span><span class="o">)(</span><span class="n">f</span><span class="o">)))</span>
     <span class="o">}</span>
   <span class="o">}</span>
+
+  <span class="k">def</span> <span class="nf">withAtMost</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">maxRetries</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)(</span>
+    <span class="n">p</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span> <span class="nc">RetryOutcome</span>
+  <span class="o">)(</span><span class="k">implicit</span>
+    <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span>
+    <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span>
+  <span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">maxRetries</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="n">error</span><span class="o">,</span> <span class="n">retriesLeft</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="nf">if</span> <span class="o">(</span><span class="n">retriesLeft</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
+        <span class="nf">p</span><span class="o">(</span><span class="n">error</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span> <span class="k">=&gt;</span>
+            <span class="nf">retry</span><span class="o">(</span><span class="n">retriesLeft</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+          <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span> <span class="k">=&gt;</span>
+            <span class="c1">// Cannot recover from error</span>
+            <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
+        <span class="o">}</span>
+      <span class="k">else</span>
+        <span class="c1">// Maximum retries reached, triggering error</span>
+        <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
 <span class="o">}</span>
 
 <span class="c1">// Retrying 10 times at most</span>
-<span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">loop</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>  <span class="o">(</span><span class="n">e</span><span class="o">,</span> <span class="n">retriesLeft</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
-  <span class="k">val</span> <span class="nv">canRetry</span> <span class="k">=</span> <span class="n">e</span> <span class="k">match</span> <span class="o">{</span>
-    <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="o">=&gt;</span>
-      <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span>
-    <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
-      <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span>
-  <span class="o">}</span>
-  <span class="nf">if</span> <span class="o">(</span><span class="n">canRetry</span> <span class="o">&amp;&amp;</span> <span class="n">retriesLeft</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span>
-    <span class="nf">retry</span><span class="o">(</span><span class="n">retriesLeft</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="c1">// again</span>
-  <span class="k">else</span>
-    <span class="nv">IO</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>  
+<span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">withAtMost</span><span class="o">(</span><span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">maxRetries</span> <span class="k">=</span> <span class="mi">10</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="o">=&gt;</span>
+    <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span>
+  <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
+    <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span>
 <span class="o">}</span>
 </code></pre></div></div>
     
@@ -382,14 +399,14 @@
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
   <span class="c1">// ...</span>
-  <span class="k">def</span> <span class="nf">withConfig</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">retry</span><span class="k">:</span> <span class="kt">RetryConfig</span><span class="o">)(</span>
+  <span class="k">def</span> <span class="nf">withBackoff</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">config</span><span class="k">:</span> <span class="kt">RetryConfig</span><span class="o">)(</span>
     <span class="n">p</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">RetryOutcome</span><span class="o">]</span>
   <span class="o">)(</span><span class="k">implicit</span> 
     <span class="n">F</span><span class="k">:</span> <span class="kt">MonadError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span> 
     <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">],</span> 
     <span class="n">timer</span><span class="k">:</span> <span class="kt">Timer</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span>
   <span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
-    <span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="n">error</span><span class="o">,</span> <span class="n">state</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">config</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="n">error</span><span class="o">,</span> <span class="n">state</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
       <span class="nf">if</span> <span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">canRetry</span><span class="o">)</span>
         <span class="nf">p</span><span class="o">(</span><span class="n">error</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span>
           <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span> <span class="k">=&gt;</span>
@@ -426,18 +443,21 @@
       <span class="n">maxDelay</span> <span class="k">=</span> <span class="mf">2.</span><span class="n">seconds</span><span class="o">,</span>
       <span class="n">backoffFactor</span> <span class="k">=</span> <span class="mf">1.5</span>
     <span class="o">)</span>
-    <span class="k">val</span> <span class="nv">text</span> <span class="k">=</span> <span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">withConfig</span><span class="o">(</span>
-      <span class="nf">readTextFromFile</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="nv">args</span><span class="o">.</span><span class="py">head</span><span class="o">),</span> <span class="s">"UTF-8"</span><span class="o">),</span>
-      <span class="n">config</span>
-    <span class="o">)</span> <span class="o">{</span>
-      <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="o">=&gt;</span>
+    <span class="k">val</span> <span class="nv">task</span> <span class="k">=</span> <span class="nv">IO</span><span class="o">.</span><span class="py">suspend</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="nv">path</span> <span class="k">=</span> <span class="nv">args</span><span class="o">.</span><span class="py">headOption</span><span class="o">.</span><span class="py">getOrElse</span><span class="o">(</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"File path expected in main's args"</span><span class="o">)</span>
+      <span class="o">)</span>
+      <span class="nf">readTextFromFile</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">path</span><span class="o">),</span> <span class="s">"UTF-8"</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="k">val</span> <span class="nv">taskWithRetries</span> <span class="k">=</span> <span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">withBackoff</span><span class="o">(</span><span class="n">task</span><span class="o">,</span> <span class="n">config</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="kt">|</span> <span class="k">_</span><span class="kt">:</span> <span class="kt">IllegalArgumentException</span> <span class="o">=&gt;</span>
         <span class="nv">IO</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span><span class="o">)</span>
       <span class="k">case</span> <span class="n">e</span> <span class="k">=&gt;</span>
         <span class="nc">IO</span><span class="o">(</span><span class="nv">logger</span><span class="o">.</span><span class="py">warn</span><span class="o">(</span><span class="s">"Unexpected error, retrying"</span><span class="o">,</span> <span class="n">e</span><span class="o">))</span>
           <span class="o">.</span><span class="py">as</span><span class="o">(</span><span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span><span class="o">)</span>
     <span class="o">}</span>
     <span class="k">for</span> <span class="o">{</span>
-      <span class="n">t</span> <span class="k">&lt;-</span> <span class="n">text</span>
+      <span class="n">t</span> <span class="k">&lt;-</span> <span class="n">taskWithRetries</span>
       <span class="k">_</span> <span class="k">&lt;-</span> <span class="nc">IO</span><span class="o">(</span><span class="nf">println</span><span class="o">(</span><span class="n">t</span><span class="o">))</span>
     <span class="o">}</span> <span class="k">yield</span> <span class="nv">ExitCode</span><span class="o">.</span><span class="py">Success</span>
   <span class="o">}</span>
@@ -461,7 +481,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-08-03T10:21:35+0000">
+    <time itemprop="dateModified" content="2020-08-03T12:16:34+0000">
         Updated: August 3, 2020
     </time>
     
@@ -668,12 +688,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202008031023" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031023" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202008031023" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202008031023" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202008031218" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008031218" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008031218" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008031218" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202008031023" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202008031218" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
