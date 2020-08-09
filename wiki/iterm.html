@@ -17,8 +17,8 @@
     <meta content="iTerm" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/iterm.html" property="og:url">
-    <meta content="2020-08-09T07:52:45+00:00" property="article:published_time">
-    <meta content="2020-08-08T08:17:40+00:00" property="article:modified_time">
+    <meta content="2020-08-09T08:40:17+00:00" property="article:published_time">
+    <meta content="2020-08-09T08:39:36+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -46,8 +46,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202008090752">
-    <link rel="preload" as="style" href="/assets/css/style.css?202008090752">
+    <link rel="stylesheet" href="/assets/css/style.css?202008090840">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008090840">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/iterm.html">
@@ -103,11 +103,11 @@
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/iterm.html"/>
     
-    <meta itemprop="datePublished" content="2020-08-09T07:52:45+0000"/>
+    <meta itemprop="datePublished" content="2020-08-09T08:40:17+0000"/>
     
     
-    <time itemprop="dateModified" content="2020-08-08T08:17:40+0000">
-      Updated: August 8, 2020
+    <time itemprop="dateModified" content="2020-08-09T08:39:36+0000">
+      Updated: August 9, 2020
     </time>
     
     
@@ -142,9 +142,15 @@ History</code>.</p>
         
       </h3>
 
-<p>The <code class="language-plaintext highlighter-rouge">idea</code> command line utility isn’t compatible with iTerm’s
-settings, an extra script is needed. Save this in
-<code class="language-plaintext highlighter-rouge">$HOME/bin/idea-goto</code>:</p>
+<p>First create IntelliJ IDEA’s command line launcher.</p>
+
+<p>Press ⇧ Shift ⇧ Shift (twice) to bring up the <a href="https://www.jetbrains.com/help/idea/searching-everywhere.html#search_all" target="_blank">Navigate -&gt; Search Everywhere</a> dialog. Then write “<em>create command-line launcher</em>” in the search box, to select the desired action, then press ⏎ Enter:</p>
+
+<p><img src="/wiki/assets/intellij-idea-create-cmd-line-launcher.png" alt="Screenshot of Search Everywhere dialog" /></p>
+
+<p>Now <code class="language-plaintext highlighter-rouge">idea</code> is installed on the command line, on MacOS this is tipically in <code class="language-plaintext highlighter-rouge">/usr/local/bin/idea</code>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">idea</code> command line utility isn’t compatible with iTerm’s settings, an extra script is needed to disambiguate between executions with or without a line number. Save this in <code class="language-plaintext highlighter-rouge">$HOME/bin/idea-goto</code>:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c">#!/bin/sh</span>
 
@@ -170,6 +176,8 @@ History</code>, and set <code class="language-plaintext highlighter-rouge">Run c
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nv">$HOME</span>/bin/idea-goto <span class="se">\1</span> <span class="se">\2</span>
 </code></pre></div></div>
+
+<p><img src="/wiki/assets/iterm-semantic-history-setting.png" alt="Screenshot of iTerm's Semantic History setting" /></p>
 
 
   </div>
@@ -235,12 +243,12 @@ History</code>, and set <code class="language-plaintext highlighter-rouge">Run c
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202008090752" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008090752" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202008090752" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202008090752" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202008090840" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008090840" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008090840" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008090840" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202008090752" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202008090840" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
