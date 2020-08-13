@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="/assets/css/snippet.css?202008131211">
+
+    <title>Sbt Fork Debug.sbt - Alexandru Nedelcu</title>
+
+    <meta content="Alexandru Nedelcu" property="og:site_name">
+    <meta content="Sbt Fork Debug.sbt" property="og:title">
+    
+      <meta content="Code snippet" property="og:description">
+    <meta content="https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html" property="og:url">
+    <meta content="2020-08-13T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-08-13T12:10:38+00:00" property="article:modified_time">
+    <meta property="og:type" content="article" />
+    
+    <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/logo/800px.png" />
+    <!-- Twitter Cards -->
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
+    <meta name="twitter:site" content="@alexelcu">
+    <meta name="twitter:creator" content="@alexelcu">
+    <meta name="twitter:title" content="Sbt Fork Debug.sbt">
+    <meta name="twitter:url" content="https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html">
+    
+      <meta name="twitter:description" content="Code snippet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo/192px.png" sizes="192x192" />
+    <link rel="icon" href="/assets/logo/270px.png" sizes="270x270" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/logo/180px.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
+
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
+  </head>
+  <body>
+    <article>
+      <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">fork</span> <span class="o">:=</span> <span class="kc">true</span>
+
+<span class="n">javaOptions</span> <span class="o">++=</span> <span class="o">{</span>
+  <span class="nv">sys</span><span class="o">.</span><span class="py">env</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="s">"JVM_DEBUG"</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"true"</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="nc">Seq</span><span class="o">(</span><span class="s">"-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"</span><span class="o">)</span>
+    <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="n">value</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="nc">Seq</span><span class="o">(</span><span class="n">s</span><span class="s">"-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=$port"</span><span class="o">)</span>
+    <span class="k">case</span> <span class="nc">None</span> <span class="k">=&gt;</span>
+      <span class="nv">Seq</span><span class="o">.</span><span class="py">empty</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+      
+    </article>
+  </body>
+</html>
