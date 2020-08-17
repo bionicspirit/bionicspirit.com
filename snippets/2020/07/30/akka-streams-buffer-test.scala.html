@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 
-    <link rel="stylesheet" href="/assets/css/snippet.css?202008170621">
-
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
     <title>Akka Streams Buffer Test.scala - Alexandru Nedelcu</title>
+    
 
+    <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Akka Streams Buffer Test.scala" property="og:title">
     
-      <meta content="Code snippet" property="og:description">
+      <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html" property="og:url">
     <meta content="2020-07-30T00:00:00+00:00" property="article:published_time">
     <meta content="2020-07-30T10:00:27+00:00" property="article:modified_time">
-    <meta property="og:type" content="article" />
     
+    <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
     <meta property="og:image:secure_url" content="https://alexn.org/assets/logo/800px.png" />
+    <meta content="https://www.facebook.com/alexelcu" property="article:author">
+
     <!-- Twitter Cards -->
     
     <meta name="twitter:card" content="summary">
@@ -29,7 +35,7 @@
     <meta name="twitter:title" content="Akka Streams Buffer Test.scala">
     <meta name="twitter:url" content="https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html">
     
-      <meta name="twitter:description" content="Code snippet">
+      <meta name="twitter:description" content="On programming and personal projects">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
     <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
@@ -39,11 +45,88 @@
     <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
 
     <!-- Come and get me RSS readers -->
-    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
-  </head>
-  <body>
-    <article>
-      <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="cm">/**
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu - Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu - Snippets" href="https://alexn.org/feed-snippets.xml" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css?202008170848">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008170848">
+    
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html">
+</head>
+
+
+<body>
+
+   <div class="header">
+  <div class="container">
+    <div class="inner-container">
+      <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
+      <nav class="nav-collapse">
+        <ul class="noList">
+          
+          <li class="element first  ">
+            <a href="/">Blog</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/wiki/">Wiki</a>
+          </li>
+          
+          <li class="element  current ">
+            <a href="/snippets/">Snippets</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/about.html">About</a>
+          </li>
+          
+          <li class="element   last">
+            <a href="/subscribe.html">Subscribe</a>
+          </li>
+          
+        </ul>
+      </nav>  
+    </div>
+  </div>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <article class="post " itemscope itemtype="http://schema.org/Article">
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Akka Streams Buffer Test.scala
+        
+        
+      </h1>
+  
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html"/>
+    
+      <meta itemprop="datePublished" content="2020-07-30T00:00:00+0000"/>
+      
+      
+      <time itemprop="dateModified" content="2020-07-30T10:00:27+0000">
+        Updated: July 30, 2020
+      </time>
+      
+    
+  </p>
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Alexandru Nedelcu">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    </div>
+  </div>
+
+  <div id="content" itemprop="articleBody">
+    <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="cm">/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/23e102b4891cda37ab41ffa74d40e390]]
   */</span>
@@ -104,7 +187,97 @@
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
+
+
+  </div>
+</article>
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
       
-    </article>
-  </body>
+<h2>Contribute</h2>
+
+<p>
+  You can fix or add to this article by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_snippets/2020-07-30-akka-streams-buffer-test.scala.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+
+<h3 id="comments">Comments</h3>
+
+<script>
+  document.write('<div class="note">Be nice!<br><span class="extra">If you don\'t see the commenting widget, it might be blocked (see this <a href="https://github.com/utterance/utterances/issues/341" target="_blank">Privacy Badger issue</a>).</span></div>');
+</script>
+<script src="https://utteranc.es/client.js"
+        repo="alexandru/alexn.org"
+        issue-term="pathname"
+        label="discussion"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+<noscript>
+  <div class="note">
+    <strong>Enable JavaScript to see comments!</strong>
+    <br>
+    <span class="extra">
+      Commenting widget is powered by GitHub's API and 
+      <a href="https://utteranc.es" target="_blank">utteranc.es</a>. This website does not
+      track visitors or log personally identifiable information, see our 
+      <a href="/docs/privacy-policy.html">privacy policy</a>.
+    </span>
+  </div>
+</noscript>
+
+
+    </div>  
+  </div>
+  
+
+  <div class="bottom">
+    <div class="container">
+      <span class="copy">
+          &copy; 2020
+      </span>
+      <span class="links">
+        <a href="/docs/license.html">License</a> |
+        <a href="/docs/privacy-policy.html">Privacy Policy</a> |
+        <a href="/about.html#contact">Contact</a>
+      </span>
+    </div>
+  </div>
+</div><!-- end .footer -->
+
+   <script async src="/assets/js/modernizr.custom.15390.js?202008170848" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008170848" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008170848" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008170848" type="text/javascript"></script>
+
+<script async src="/assets/js/scripts.js?202008170848" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ly.alexn.org/";
+    _paq.push(['setTrackerUrl', u+'m.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript>
+  
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Akka+Streams+Buffer+Test.scala" style="border:0" alt="" />
+</noscript>
+
+
+</body>
+
 </html>

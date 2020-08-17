@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+  <channel>
+    <title>Alexandru Nedelcu - Snippets</title>
+    <description>Feed of snippets, published at https://alexn.org/snippets/</description>
+    <link>https://alexn.org/snippets/</link>
+    <atom:link href="https://alexn.org/feed-snippets.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 17 Aug 2020 08:48:32 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Aug 2020 08:48:32 +0000</lastBuildDate>
+  	<language>en</language>
+    <sy:updatePeriod>hourly</sy:updatePeriod>
+	  <sy:updateFrequency>1</sy:updateFrequency>
+    <generator>Jekyll v4.1.1</generator>
+
+    
+      
+      <item>
+        <title>Error Hierarchy.scala</title>
+        <description><![CDATA[
+          <figure style="max-width: 100%; ">
+  <a href="https://alexn.org/assets/media/snippets/error-hierarchy.svg" target="_blank">
+    <img src="https://alexn.org/assets/media/snippets/error-hierarchy.svg" alt="Error hierarchy graph" title="Error hierarchy graph" style="max-width: 100%; ">
+  </a>
+</figure>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">KnownException</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+  <span class="k">extends</span> <span class="nc">RuntimeException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+
+<span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">InputException</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+  <span class="k">extends</span> <span class="nc">KnownException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+
+<span class="k">object</span> <span class="nc">InputException</span> <span class="o">{</span>
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Validation</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">InputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">BadInput</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">InputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Forbidden</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">InputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">NotFound</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">InputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Conflict</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">InputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+<span class="o">}</span>
+
+<span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">OutputException</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+  <span class="k">extends</span> <span class="nc">KnownException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+
+<span class="k">object</span> <span class="nc">OutputException</span> <span class="o">{</span>
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Timeout</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">OutputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">TooManyRequests</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">OutputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">ResourceUnavailable</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">OutputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+
+  <span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">Unknown</span><span class="o">(</span><span class="n">message</span><span class="k">:</span> <span class="kt">String</span><span class="o">,</span> <span class="n">cause</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span>
+    <span class="k">extends</span> <span class="nc">OutputException</span><span class="o">(</span><span class="n">message</span><span class="o">,</span> <span class="n">cause</span><span class="o">)</span>
+    <span class="k">with</span> <span class="nc">ExceptionCaseClassEquality</span>
+<span class="o">}</span>
+
+<span class="k">trait</span> <span class="nc">ExceptionCaseClassEquality</span> <span class="o">{</span> <span class="n">self</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="kt">with</span> <span class="kt">Product</span> <span class="o">=&gt;</span>
+  <span class="k">override</span> <span class="k">def</span> <span class="nf">equals</span><span class="o">(</span><span class="n">other</span><span class="k">:</span> <span class="kt">Any</span><span class="o">)</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="n">other</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="n">refTh</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span>
+        <span class="n">refTh</span> <span class="k">match</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="n">refProd</span><span class="k">:</span> <span class="kt">Product</span> <span class="o">=&gt;</span>
+            <span class="nv">productIterator</span><span class="o">.</span><span class="py">toSeq</span><span class="o">.</span><span class="py">equals</span><span class="o">(</span><span class="nv">refProd</span><span class="o">.</span><span class="py">productIterator</span><span class="o">.</span><span class="py">toSeq</span><span class="o">)</span> <span class="o">&amp;&amp;</span>
+              <span class="nv">getStackTrace</span><span class="o">.</span><span class="py">toSeq</span><span class="o">.</span><span class="py">equals</span><span class="o">(</span><span class="nv">refTh</span><span class="o">.</span><span class="py">getStackTrace</span><span class="o">.</span><span class="py">toSeq</span><span class="o">)</span>
+          <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
+            <span class="kc">false</span>
+        <span class="o">}</span>
+      <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
+        <span class="kc">false</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Sbt Fork Debug.sbt</title>
+        <description><![CDATA[
+          <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">fork</span> <span class="o">:=</span> <span class="kc">true</span>
+
+<span class="n">javaOptions</span> <span class="o">++=</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">Digits</span> <span class="k">=</span> <span class="s">"^(\\d+)$"</span><span class="o">.</span><span class="py">r</span>
+  <span class="nv">sys</span><span class="o">.</span><span class="py">env</span><span class="o">.</span><span class="py">get</span><span class="o">(</span><span class="s">"JVM_DEBUG"</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="s">"true"</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="nc">Seq</span><span class="o">(</span><span class="s">"-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"</span><span class="o">)</span>
+    <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="nc">Digits</span><span class="o">(</span><span class="n">port</span><span class="o">))</span> <span class="k">=&gt;</span>
+      <span class="nc">Seq</span><span class="o">(</span><span class="n">s</span><span class="s">"-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=$port"</span><span class="o">)</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="k">=&gt;</span>
+      <span class="nv">Seq</span><span class="o">.</span><span class="py">empty</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Flow Sensitive Typing.ts</title>
+        <description><![CDATA[
+          <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="kd">type</span> <span class="nx">Left</span><span class="o">&lt;</span><span class="nx">L</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">either</span><span class="p">:</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span>
+  <span class="na">value</span><span class="p">:</span> <span class="nx">L</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Right</span><span class="o">&lt;</span><span class="nx">R</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">either</span><span class="p">:</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">value</span><span class="p">:</span> <span class="nx">R</span>
+<span class="p">}</span>
+
+<span class="kd">type</span> <span class="nx">Either</span><span class="o">&lt;</span><span class="nx">L</span><span class="p">,</span> <span class="nx">R</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">Left</span><span class="o">&lt;</span><span class="nx">L</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">Right</span><span class="o">&lt;</span><span class="nx">R</span><span class="o">&gt;</span>
+
+<span class="kd">function</span> <span class="nx">left</span><span class="o">&lt;</span><span class="nx">L</span><span class="p">,</span> <span class="nx">R</span><span class="o">=</span><span class="nx">never</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="nx">L</span><span class="p">):</span> <span class="nx">Either</span><span class="o">&lt;</span><span class="nx">L</span><span class="p">,</span> <span class="nx">R</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">either</span><span class="p">:</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">right</span><span class="o">&lt;</span><span class="nx">R</span><span class="p">,</span> <span class="nx">L</span><span class="o">=</span><span class="nx">never</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">value</span><span class="p">:</span> <span class="nx">R</span><span class="p">):</span> <span class="nx">Either</span><span class="o">&lt;</span><span class="nx">L</span><span class="p">,</span> <span class="nx">R</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span> <span class="na">either</span><span class="p">:</span> <span class="dl">"</span><span class="s2">right</span><span class="dl">"</span><span class="p">,</span> <span class="nx">value</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// ----</span>
+<span class="kd">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">left</span><span class="o">&lt;</span><span class="kr">string</span><span class="p">,</span> <span class="kr">number</span><span class="o">&gt;</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello!</span><span class="dl">"</span><span class="p">)</span>
+
+<span class="c1">// Flow-sensitive typing in action</span>
+<span class="k">if</span> <span class="p">(</span><span class="nx">value</span><span class="p">.</span><span class="nx">either</span> <span class="o">==</span> <span class="dl">"</span><span class="s2">left</span><span class="dl">"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">l</span><span class="p">:</span> <span class="kr">string</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nx">value</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">string: </span><span class="dl">"</span><span class="p">,</span> <span class="nx">l</span><span class="p">)</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="na">r</span><span class="p">:</span> <span class="kr">number</span> <span class="o">=</span> <span class="nx">value</span><span class="p">.</span><span class="nx">value</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">number</span><span class="dl">"</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>On Error Retry Loop.scala</title>
+        <description><![CDATA[
+          <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">java.io._</span>
+<span class="k">import</span> <span class="nn">java.nio.charset.CharacterCodingException</span>
+
+<span class="k">import</span> <span class="nn">cats.</span><span class="o">{</span> <span class="nc">ApplicativeError</span><span class="o">,</span> <span class="nc">Defer</span><span class="o">,</span> <span class="nc">MonadError</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">cats.effect._</span>
+<span class="k">import</span> <span class="nn">cats.implicits._</span>
+<span class="k">import</span> <span class="nn">com.typesafe.scalalogging.LazyLogging</span>
+
+<span class="k">import</span> <span class="nn">scala.concurrent.duration._</span>
+
+<span class="cm">/**
+  * Configuration for retry logic, could be read from a config file, via
+  * something like [[https://github.com/pureconfig/pureconfig PureConfig]].
+  */</span>
+<span class="k">final</span> <span class="k">case</span> <span class="k">class</span> <span class="nc">RetryConfig</span><span class="o">(</span>
+  <span class="n">maxRetries</span><span class="k">:</span> <span class="kt">Int</span><span class="o">,</span>
+  <span class="n">initialDelay</span><span class="k">:</span> <span class="kt">FiniteDuration</span><span class="o">,</span>
+  <span class="n">maxDelay</span><span class="k">:</span> <span class="kt">FiniteDuration</span><span class="o">,</span>
+  <span class="n">backoffFactor</span><span class="k">:</span> <span class="kt">Double</span><span class="o">,</span>
+  <span class="k">private</span> <span class="k">val</span> <span class="nv">evolvedDelay</span><span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">FiniteDuration</span><span class="o">]</span> <span class="k">=</span> <span class="nc">None</span><span class="o">,</span>
+<span class="o">)</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">canRetry</span><span class="k">:</span> <span class="kt">Boolean</span> <span class="o">=</span> <span class="n">maxRetries</span> <span class="o">&gt;</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">delay</span><span class="k">:</span> <span class="kt">FiniteDuration</span> <span class="o">=</span>
+    <span class="nv">evolvedDelay</span><span class="o">.</span><span class="py">getOrElse</span><span class="o">(</span><span class="n">initialDelay</span><span class="o">)</span>
+
+  <span class="k">def</span> <span class="nf">evolve</span><span class="k">:</span> <span class="kt">RetryConfig</span> <span class="o">=</span>
+    <span class="nf">copy</span><span class="o">(</span>
+      <span class="n">maxRetries</span> <span class="k">=</span> <span class="nv">math</span><span class="o">.</span><span class="py">max</span><span class="o">(</span><span class="n">maxRetries</span> <span class="o">-</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">0</span><span class="o">),</span>
+      <span class="n">evolvedDelay</span> <span class="k">=</span> <span class="nc">Some</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="nv">nextDelay</span> <span class="k">=</span> <span class="nv">evolvedDelay</span><span class="o">.</span><span class="py">getOrElse</span><span class="o">(</span><span class="n">initialDelay</span><span class="o">)</span> <span class="o">*</span> <span class="n">backoffFactor</span>
+        <span class="nv">maxDelay</span><span class="o">.</span><span class="py">min</span><span class="o">(</span><span class="n">nextDelay</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="n">ref</span><span class="k">:</span> <span class="kt">FiniteDuration</span> <span class="o">=&gt;</span> <span class="n">ref</span>
+          <span class="k">case</span> <span class="k">_:</span> <span class="kt">Duration.Infinite</span> <span class="o">=&gt;</span> <span class="n">maxDelay</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">)</span>
+<span class="o">}</span>
+
+<span class="cm">/**
+  * Signaling desired outcomes via Boolean is very confusing,
+  * having our own ADT for this is better.
+  */</span>
+<span class="k">sealed</span> <span class="k">trait</span> <span class="nc">RetryOutcome</span>
+
+<span class="k">object</span> <span class="nc">RetryOutcome</span> <span class="o">{</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Next</span> <span class="k">extends</span> <span class="nc">RetryOutcome</span>
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Raise</span> <span class="k">extends</span> <span class="nc">RetryOutcome</span>
+<span class="o">}</span>
+
+<span class="cm">/** Module grouping our retry helpers. */</span>
+<span class="k">object</span> <span class="nc">OnErrorRetry</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span>, <span class="kt">S</span><span class="o">](</span>
+    <span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span>
+    <span class="n">initial</span><span class="k">:</span> <span class="kt">S</span>
+  <span class="o">)(</span>
+    <span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">Throwable</span><span class="o">,</span> <span class="kt">S</span><span class="o">,</span> <span class="n">S</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+  <span class="o">)(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">ApplicativeError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span> <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nv">fa</span><span class="o">.</span><span class="py">handleErrorWith</span> <span class="o">{</span> <span class="n">err</span> <span class="k">=&gt;</span>
+      <span class="nf">f</span><span class="o">(</span><span class="n">err</span><span class="o">,</span> <span class="n">initial</span><span class="o">,</span> <span class="n">state</span> <span class="k">=&gt;</span> <span class="nv">D</span><span class="o">.</span><span class="py">defer</span><span class="o">(</span><span class="nf">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">state</span><span class="o">)(</span><span class="n">f</span><span class="o">)))</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="nf">withBackoff</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">fa</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">config</span><span class="k">:</span> <span class="kt">RetryConfig</span><span class="o">)(</span>
+    <span class="n">p</span><span class="k">:</span> <span class="kt">Throwable</span> <span class="o">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">RetryOutcome</span><span class="o">]</span>
+  <span class="o">)(</span><span class="k">implicit</span>
+    <span class="n">F</span><span class="k">:</span> <span class="kt">MonadError</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">Throwable</span><span class="o">],</span>
+    <span class="n">D</span><span class="k">:</span> <span class="kt">Defer</span><span class="o">[</span><span class="kt">F</span><span class="o">],</span>
+    <span class="n">timer</span><span class="k">:</span> <span class="kt">Timer</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span>
+  <span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">loop</span><span class="o">(</span><span class="n">fa</span><span class="o">,</span> <span class="n">config</span><span class="o">)</span> <span class="o">{</span> <span class="o">(</span><span class="n">error</span><span class="o">,</span> <span class="n">state</span><span class="o">,</span> <span class="n">retry</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="nf">if</span> <span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">canRetry</span><span class="o">)</span>
+        <span class="nf">p</span><span class="o">(</span><span class="n">error</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span> <span class="k">=&gt;</span>
+            <span class="nv">timer</span><span class="o">.</span><span class="py">sleep</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">delay</span><span class="o">)</span> <span class="o">*&gt;</span> <span class="nf">retry</span><span class="o">(</span><span class="nv">state</span><span class="o">.</span><span class="py">evolve</span><span class="o">)</span>
+          <span class="k">case</span> <span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span> <span class="k">=&gt;</span>
+            <span class="c1">// Cannot recover from error</span>
+            <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
+        <span class="o">}</span>
+      <span class="k">else</span>
+        <span class="c1">// No retries left</span>
+        <span class="nv">F</span><span class="o">.</span><span class="py">raiseError</span><span class="o">(</span><span class="n">error</span><span class="o">)</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">Playground</span> <span class="k">extends</span> <span class="nc">LazyLogging</span> <span class="k">with</span> <span class="nc">IOApp</span> <span class="o">{</span>
+  <span class="c1">// Motivating example, not very good, but go with it</span>
+  <span class="k">def</span> <span class="nf">readTextFromFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">,</span> <span class="n">charset</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">String</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nc">IO</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="nv">in</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">InputStreamReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">),</span> <span class="n">charset</span><span class="o">))</span>
+      <span class="k">val</span> <span class="nv">builder</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">()</span>
+
+      <span class="k">var</span> <span class="n">line</span><span class="k">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="kc">null</span>
+      <span class="k">do</span> <span class="o">{</span>
+        <span class="n">line</span> <span class="k">=</span> <span class="nv">in</span><span class="o">.</span><span class="py">readLine</span><span class="o">()</span>
+        <span class="nf">if</span> <span class="o">(</span><span class="n">line</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+          <span class="nv">builder</span><span class="o">.</span><span class="py">append</span><span class="o">(</span><span class="n">line</span><span class="o">).</span><span class="py">append</span><span class="o">(</span><span class="s">"\n"</span><span class="o">)</span>
+      <span class="o">}</span> <span class="nf">while</span> <span class="o">(</span><span class="n">line</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span>
+
+      <span class="nv">builder</span><span class="o">.</span><span class="py">toString</span>
+    <span class="o">}</span>
+
+  <span class="k">override</span> <span class="k">def</span> <span class="nf">run</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">ExitCode</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">config</span> <span class="k">=</span> <span class="nc">RetryConfig</span><span class="o">(</span>
+      <span class="n">maxRetries</span> <span class="k">=</span> <span class="mi">10</span><span class="o">,</span>
+      <span class="n">initialDelay</span> <span class="k">=</span> <span class="mf">10.</span><span class="n">millis</span><span class="o">,</span>
+      <span class="n">maxDelay</span> <span class="k">=</span> <span class="mf">2.</span><span class="n">seconds</span><span class="o">,</span>
+      <span class="n">backoffFactor</span> <span class="k">=</span> <span class="mf">1.5</span>
+    <span class="o">)</span>
+    <span class="k">val</span> <span class="nv">task</span> <span class="k">=</span> <span class="nv">IO</span><span class="o">.</span><span class="py">suspend</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="nv">path</span> <span class="k">=</span> <span class="nv">args</span><span class="o">.</span><span class="py">headOption</span><span class="o">.</span><span class="py">getOrElse</span><span class="o">(</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"File path expected in main's args"</span><span class="o">)</span>
+      <span class="o">)</span>
+      <span class="nf">readTextFromFile</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="n">path</span><span class="o">),</span> <span class="s">"UTF-8"</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="k">val</span> <span class="nv">text</span> <span class="k">=</span> <span class="nv">OnErrorRetry</span><span class="o">.</span><span class="py">withBackoff</span><span class="o">(</span><span class="n">task</span><span class="o">,</span> <span class="n">config</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">case</span> <span class="k">_:</span> <span class="kt">CharacterCodingException</span> <span class="kt">|</span> <span class="k">_</span><span class="kt">:</span> <span class="kt">IllegalArgumentException</span> <span class="o">=&gt;</span>
+        <span class="nv">IO</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Raise</span><span class="o">)</span>
+      <span class="k">case</span> <span class="n">e</span> <span class="k">=&gt;</span>
+        <span class="nc">IO</span><span class="o">(</span><span class="nv">logger</span><span class="o">.</span><span class="py">warn</span><span class="o">(</span><span class="s">"Unexpected error, retrying"</span><span class="o">,</span> <span class="n">e</span><span class="o">))</span>
+          <span class="o">.</span><span class="py">as</span><span class="o">(</span><span class="nv">RetryOutcome</span><span class="o">.</span><span class="py">Next</span><span class="o">)</span>
+    <span class="o">}</span>
+    <span class="k">for</span> <span class="o">{</span>
+      <span class="n">t</span> <span class="k">&lt;-</span> <span class="n">text</span>
+      <span class="k">_</span> <span class="k">&lt;-</span> <span class="nc">IO</span><span class="o">(</span><span class="nf">println</span><span class="o">(</span><span class="n">t</span><span class="o">))</span>
+    <span class="o">}</span> <span class="k">yield</span> <span class="nv">ExitCode</span><span class="o">.</span><span class="py">Success</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Resource As Publisher.scala</title>
+        <description><![CDATA[
+          <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="cm">/**
+  * Imported from Gist:
+  * [[https://gist.github.com/alexandru/b258f67ab1e21d61d06dcfd6ec73557a]]
+  */</span>
+
+<span class="k">import</span> <span class="nn">java.util.concurrent.atomic.AtomicReference</span>
+<span class="k">import</span> <span class="nn">cats.effect.</span><span class="o">{</span> <span class="nc">IO</span><span class="o">,</span> <span class="nc">Resource</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">com.ing.raptor.common.UnlawfulEffect</span>
+<span class="k">import</span> <span class="nn">org.reactivestreams.</span><span class="o">{</span> <span class="nc">Publisher</span><span class="o">,</span> <span class="nc">Subscriber</span><span class="o">,</span> <span class="nc">Subscription</span> <span class="o">}</span>
+
+<span class="cm">/**
+  * WARN: broken example, this cannot work, as it leaks, DO NOT USE!
+  */</span>
+<span class="k">def</span> <span class="nf">resourceAsPublisher</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">r</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Publisher</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">new</span> <span class="nc">Publisher</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">subscribe</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">Subscriber</span><span class="o">[</span><span class="k">_</span> <span class="k">&gt;:</span> <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="nv">s</span><span class="o">.</span><span class="py">onSubscribe</span><span class="o">(</span><span class="k">new</span> <span class="nc">Subscription</span> <span class="o">{</span>
+        <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">var</span> <span class="n">phase</span><span class="k">:</span> <span class="kt">Long</span> <span class="o">=</span> <span class="mi">2</span>
+        <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="nv">cancelable</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">AtomicReference</span><span class="o">(</span><span class="nv">IO</span><span class="o">.</span><span class="py">unit</span><span class="o">)</span>
+
+        <span class="k">override</span> <span class="k">def</span> <span class="nf">request</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+          <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nv">s</span><span class="o">.</span><span class="py">onError</span><span class="o">(</span><span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"n must be strictly positive"</span><span class="o">))</span>
+            <span class="k">return</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// Oops!!!</span>
+            <span class="nv">s</span><span class="o">.</span><span class="py">onError</span><span class="o">(</span><span class="k">new</span> <span class="nc">IllegalArgumentException</span><span class="o">(</span><span class="s">"resource will be closed immediately if buffered"</span><span class="o">))</span>
+            <span class="k">return</span>
+          <span class="o">}</span>
+
+          <span class="n">phase</span> <span class="k">=</span> <span class="nv">math</span><span class="o">.</span><span class="py">max</span><span class="o">(</span><span class="n">phase</span> <span class="o">-</span> <span class="n">n</span><span class="o">,</span> <span class="mi">0</span><span class="o">)</span>
+          <span class="n">phase</span> <span class="k">match</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="mi">1</span> <span class="k">=&gt;</span>
+              <span class="nv">r</span><span class="o">.</span><span class="py">allocated</span><span class="o">.</span><span class="py">flatMap</span> <span class="o">{</span>
+                <span class="nf">case</span> <span class="o">(</span><span class="n">res</span><span class="o">,</span> <span class="n">cancel</span><span class="o">)</span> <span class="k">=&gt;</span>
+                  <span class="nf">if</span> <span class="o">(!</span><span class="nv">cancelable</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="nv">IO</span><span class="o">.</span><span class="py">unit</span><span class="o">,</span> <span class="n">cancel</span><span class="o">))</span> <span class="o">{</span>
+                    <span class="n">cancel</span> <span class="o">*&gt;</span> <span class="nc">IO</span><span class="o">(</span><span class="nv">s</span><span class="o">.</span><span class="py">onComplete</span><span class="o">())</span>
+                  <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                    <span class="nc">IO</span><span class="o">(</span><span class="nv">s</span><span class="o">.</span><span class="py">onNext</span><span class="o">(</span><span class="n">res</span><span class="o">))</span>
+                  <span class="o">}</span>
+              <span class="o">}.</span><span class="py">unsafeToFuture</span>
+            <span class="k">case</span> <span class="mi">0</span> <span class="k">=&gt;</span>
+              <span class="nv">closeAndSignal</span><span class="o">.</span><span class="py">unsafeToFuture</span>
+          <span class="o">}</span>
+          <span class="o">()</span>
+        <span class="o">}</span>
+
+        <span class="k">override</span> <span class="k">def</span> <span class="nf">cancel</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+          <span class="nv">UnlawfulEffect</span><span class="o">.</span><span class="py">unsafeToFuture</span><span class="o">(</span><span class="n">closeAndSignal</span><span class="o">)</span>
+          <span class="o">()</span>
+        <span class="o">}</span>
+
+        <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="nv">closeAndSignal</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span> <span class="k">=</span>
+          <span class="nv">IO</span><span class="o">.</span><span class="py">suspend</span> <span class="o">{</span>
+            <span class="k">val</span> <span class="nv">cancel</span> <span class="k">=</span> <span class="nv">cancelable</span><span class="o">.</span><span class="py">getAndSet</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span>
+            <span class="nf">if</span> <span class="o">(</span><span class="n">cancel</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">cancel</span> <span class="o">*&gt;</span> <span class="nc">IO</span><span class="o">(</span><span class="nv">s</span><span class="o">.</span><span class="py">onComplete</span><span class="o">())</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+              <span class="nv">IO</span><span class="o">.</span><span class="py">unit</span>
+            <span class="o">}</span>
+          <span class="o">}</span>
+      <span class="o">})</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Python Proxy.py</title>
+        <description><![CDATA[
+          <div class="language-py highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">class</span> <span class="nc">ProxyAttribute</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">"."</span> <span class="o">+</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ProxyInvoke</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">args_str</span>   <span class="o">=</span> <span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">args</span><span class="p">)</span>
+        <span class="n">kwargs_str</span> <span class="o">=</span> <span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">([</span> <span class="s">"%s=%s"</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span><span class="p">[</span><span class="n">k</span><span class="p">])</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">])</span>
+
+        <span class="n">args_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">args_str</span><span class="p">:</span> <span class="n">args_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">args_str</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">kwargs_str</span><span class="p">:</span> <span class="n">args_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">kwargs_str</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="s">"  invoke(%s)"</span> <span class="o">%</span> <span class="s">', '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">args_list</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">obj</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="p">.</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="p">.</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ProxyInvokeIndex</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">set_value</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">key</span> <span class="o">=</span> <span class="n">key</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">set_value</span> <span class="o">=</span> <span class="n">set_value</span>
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">.</span><span class="n">set_value</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">"  __getitem__(%s)"</span> <span class="o">%</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s">"  __setitem__(%s, %s)"</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">value</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="p">.</span><span class="n">set_value</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">obj</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">]</span>
+        <span class="n">obj</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">value</span>
+
+<span class="k">class</span> <span class="nc">Proxy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance</span><span class="p">,</span> <span class="n">on_error_callback</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">_chain</span><span class="o">=</span><span class="p">[],</span> <span class="n">_memo</span><span class="o">=</span><span class="p">[]):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_wrapped_inst</span> <span class="o">=</span> <span class="n">instance</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span> <span class="o">=</span> <span class="n">_chain</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span> <span class="o">=</span> <span class="n">on_error_callback</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span> <span class="o">=</span> <span class="n">_memo</span>
+
+    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyAttribute</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyInvoke</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyInvokeIndex</span><span class="p">(</span><span class="n">key</span><span class="p">))</span>
+    <span class="k">def</span> <span class="nf">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_new_proxy</span><span class="p">(</span><span class="n">ProxyInvokeIndex</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="bp">True</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_new_proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">appended</span><span class="p">):</span>
+        <span class="n">newc</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span> <span class="p">]</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">appended</span><span class="p">:</span> <span class="n">newc</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">newm</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">Proxy</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_wrapped_inst</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span><span class="p">,</span> <span class="n">newc</span><span class="p">,</span> <span class="n">newm</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">do_cache</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">should_exist</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">do</span><span class="p">(</span><span class="n">should_exist</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">do</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">should_exist</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_wrapped_inst</span>
+
+        <span class="n">step_idx</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">step_idx</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">step_idx</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">):</span>
+                    <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">[</span><span class="n">step_idx</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">ret</span> <span class="o">=</span> <span class="n">step</span><span class="p">.</span><span class="n">do</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">should_exist</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ret</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="nb">TypeError</span><span class="p">(</span><span class="s">"returned value was nulls"</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="p">.</span><span class="n">_memo</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+                <span class="k">except</span> <span class="nb">Exception</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span><span class="p">:</span>
+                        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">_on_error_callback</span><span class="p">(</span><span class="n">exc</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="n">ret</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="n">step</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">raise</span>
+            <span class="n">step_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">return</span> <span class="n">ret</span>
+
+    <span class="k">def</span> <span class="nf">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">str</span> <span class="o">=</span> <span class="s">"[Proxy Invocation: </span><span class="se">\n</span><span class="s">"</span>
+        <span class="k">for</span> <span class="n">o</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">_chain</span><span class="p">:</span>
+            <span class="nb">str</span> <span class="o">+=</span> <span class="s">'  '</span> <span class="o">+</span> <span class="nb">repr</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="o">+</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span>
+        <span class="k">return</span> <span class="nb">str</span> <span class="o">+</span> <span class="s">']'</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/python-proxy.py.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>From Resource To Reactivestreams.scala</title>
+        <description><![CDATA[
+          <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">cats.effect.Resource</span>
+<span class="k">import</span> <span class="nn">org.reactivestreams.Publisher</span>
+<span class="k">import</span> <span class="nn">scala.concurrent.Future</span>
+
+<span class="k">type</span> <span class="kt">Ack</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span> <span class="k">=</span> <span class="o">()</span> <span class="k">=&gt;</span> <span class="n">F</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>
+
+<span class="c1">// This leaks</span>
+<span class="k">def</span> <span class="nf">fromResource</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">res</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Publisher</span><span class="o">[</span><span class="kt">A</span><span class="o">]]</span>
+
+<span class="c1">// Explicit acknowledgement logic is required</span>
+<span class="k">def</span> <span class="nf">fromResource</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]</span>, <span class="kt">A</span><span class="o">](</span><span class="n">res</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">F</span>, <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">Publisher</span><span class="o">[(</span><span class="kt">A</span>, <span class="kt">Ack</span><span class="o">[</span><span class="kt">F</span><span class="o">])]]</span>
+
+<span class="c1">//-------------</span>
+
+<span class="c1">// Similarly for concrete resources, this leaks!</span>
+<span class="k">def</span> <span class="nf">fromFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">)</span><span class="k">:</span> <span class="kt">Publisher</span><span class="o">[</span><span class="kt">InputStream</span><span class="o">]</span>
+
+<span class="c1">// Explicit acknowledgement logic is required</span>
+<span class="k">def</span> <span class="nf">fromFile</span><span class="o">(</span><span class="n">file</span><span class="k">:</span> <span class="kt">File</span><span class="o">)</span><span class="k">:</span> <span class="kt">Publisher</span><span class="o">[(</span><span class="kt">InputStream</span>, <span class="kt">Ack</span><span class="o">[</span><span class="kt">Future</span><span class="o">])]</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Enumeratum.scala</title>
+        <description><![CDATA[
+          <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="cm">/**
+  * Imported from Gist:
+  * [[https://gist.github.com/alexandru/3df8116f1c85f69612143b3b1884e1ed]]
+  */</span>
+
+<span class="k">import</span> <span class="nn">enumeratum.</span><span class="o">{</span> <span class="nc">CatsEnum</span><span class="o">,</span> <span class="nc">Enum</span><span class="o">,</span> <span class="nc">EnumEntry</span> <span class="o">}</span>
+
+<span class="k">sealed</span> <span class="k">abstract</span> <span class="k">class</span> <span class="nc">AcknowledgeMode</span><span class="o">(</span><span class="k">override</span> <span class="k">val</span> <span class="nv">entryName</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span>
+  <span class="k">extends</span> <span class="nc">Product</span>
+  <span class="k">with</span> <span class="nc">Serializable</span>
+  <span class="k">with</span> <span class="nc">EnumEntry</span>
+
+<span class="k">object</span> <span class="nc">AcknowledgeMode</span> <span class="k">extends</span> <span class="nc">Enum</span><span class="o">[</span><span class="kt">AcknowledgeMode</span><span class="o">]</span> <span class="k">with</span> <span class="nc">CatsEnum</span><span class="o">[</span><span class="kt">AcknowledgeMode</span><span class="o">]</span> <span class="o">{</span>
+  <span class="k">val</span> <span class="nv">values</span> <span class="k">=</span> <span class="n">findValues</span>
+
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Off</span> <span class="k">extends</span> <span class="nc">AcknowledgeMode</span><span class="o">(</span><span class="s">"off"</span><span class="o">)</span>
+
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Auto</span> <span class="k">extends</span> <span class="nc">AcknowledgeMode</span><span class="o">(</span><span class="s">"auto"</span><span class="o">)</span>
+
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Client</span> <span class="k">extends</span> <span class="nc">AcknowledgeMode</span><span class="o">(</span><span class="s">"client"</span><span class="o">)</span>
+
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">DuplicatesOk</span> <span class="k">extends</span> <span class="nc">AcknowledgeMode</span><span class="o">(</span><span class="s">"duplicates-ok"</span><span class="o">)</span>
+
+  <span class="k">case</span> <span class="k">object</span> <span class="nc">Session</span> <span class="k">extends</span> <span class="nc">AcknowledgeMode</span><span class="o">(</span><span class="s">"session"</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/enumeratum.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Akka Streams Buffer Test.scala</title>
+        <description><![CDATA[
+          <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="cm">/**
+  * Imported from Gist:
+  * [[https://gist.github.com/alexandru/23e102b4891cda37ab41ffa74d40e390]]
+  */</span>
+
+<span class="k">import</span> <span class="nn">akka.actor.ActorSystem</span>
+<span class="k">import</span> <span class="nn">akka.stream.Attributes</span>
+<span class="k">import</span> <span class="nn">akka.stream.scaladsl.Source</span>
+<span class="k">import</span> <span class="nn">monix.execution.rstreams.Subscription</span>
+<span class="k">import</span> <span class="nn">org.reactivestreams.</span><span class="o">{</span> <span class="nc">Publisher</span><span class="o">,</span> <span class="nc">Subscriber</span> <span class="o">}</span>
+
+<span class="k">import</span> <span class="nn">scala.concurrent.</span><span class="o">{</span> <span class="nc">Await</span><span class="o">,</span> <span class="nc">ExecutionContext</span><span class="o">,</span> <span class="nc">Future</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">scala.concurrent.duration._</span>
+
+<span class="k">def</span> <span class="nf">repeated</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">x</span><span class="k">:</span> <span class="kt">A</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="kt">A</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span><span class="o">)</span><span class="k">:</span> <span class="kt">Publisher</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+  <span class="k">new</span> <span class="nc">Publisher</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">subscribe</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">Subscriber</span><span class="o">[</span><span class="k">_</span> <span class="k">&gt;:</span> <span class="kt">A</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+      <span class="nv">s</span><span class="o">.</span><span class="py">onSubscribe</span><span class="o">(</span><span class="k">new</span> <span class="nc">Subscription</span> <span class="o">{</span>
+        <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">var</span> <span class="n">current</span> <span class="k">=</span> <span class="n">x</span>
+        <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">var</span> <span class="n">requestCount</span> <span class="k">=</span> <span class="mi">0</span>
+
+        <span class="k">override</span> <span class="k">def</span> <span class="nf">cancel</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">()</span>
+        <span class="k">override</span> <span class="k">def</span> <span class="nf">request</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+          <span class="n">requestCount</span> <span class="o">+=</span> <span class="mi">1</span>
+          <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Request ($requestCount): $n"</span><span class="o">)</span>
+
+          <span class="nv">ec</span><span class="o">.</span><span class="py">execute</span><span class="o">(()</span> <span class="k">=&gt;</span> <span class="o">{</span>
+            <span class="k">var</span> <span class="n">i</span> <span class="k">=</span> <span class="mi">0L</span>
+            <span class="nf">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+              <span class="k">val</span> <span class="nv">c</span> <span class="k">=</span> <span class="n">current</span>
+              <span class="n">current</span> <span class="k">=</span> <span class="nf">f</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
+              <span class="nv">s</span><span class="o">.</span><span class="py">onNext</span><span class="o">(</span><span class="n">c</span><span class="o">)</span>
+              <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="o">}</span>
+          <span class="o">})</span>
+        <span class="o">}</span>
+      <span class="o">})</span>
+  <span class="o">}</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">implicit</span> <span class="k">val</span> <span class="nv">system</span> <span class="k">=</span> <span class="nc">ActorSystem</span><span class="o">(</span><span class="s">"test"</span><span class="o">)</span>
+  <span class="k">implicit</span> <span class="k">val</span> <span class="nv">ec</span> <span class="k">=</span> <span class="nv">system</span><span class="o">.</span><span class="py">dispatcher</span>
+  <span class="k">try</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">f</span> <span class="k">=</span> <span class="nc">Source</span>
+      <span class="o">.</span><span class="py">fromPublisher</span><span class="o">(</span><span class="nf">repeated</span><span class="o">(</span><span class="mi">1</span><span class="o">)(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span>
+      <span class="o">.</span><span class="py">mapAsync</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="n">x</span> <span class="k">=&gt;</span>
+        <span class="nc">Future</span> <span class="o">{</span>
+          <span class="nv">Thread</span><span class="o">.</span><span class="py">sleep</span><span class="o">(</span><span class="mi">2000</span><span class="o">)</span>
+          <span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Received: $x"</span><span class="o">)</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="o">.</span><span class="py">withAttributes</span><span class="o">(</span><span class="nv">Attributes</span><span class="o">.</span><span class="py">inputBuffer</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">))</span>
+      <span class="o">.</span><span class="py">take</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
+      <span class="o">.</span><span class="py">run</span><span class="o">()</span>
+
+    <span class="nv">Await</span><span class="o">.</span><span class="py">result</span><span class="o">(</span><span class="n">f</span><span class="o">,</span> <span class="nv">Duration</span><span class="o">.</span><span class="py">Inf</span><span class="o">);</span> <span class="o">()</span>
+  <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+    <span class="nv">Await</span><span class="o">.</span><span class="py">result</span><span class="o">(</span><span class="nv">system</span><span class="o">.</span><span class="py">terminate</span><span class="o">(),</span> <span class="mf">10.</span><span class="n">seconds</span><span class="o">);</span> <span class="o">()</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+  </channel>
+</rss>
