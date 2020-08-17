@@ -18,16 +18,16 @@
     <meta content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues with useful compiler errors." property="og:description">
     <meta content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html" property="og:url">
     <meta content="2020-05-26T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-08-09T07:51:57+00:00" property="article:modified_time">
+    <meta content="2020-08-17T06:21:04+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202008140932" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202008140932" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202008170621" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202008170621" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202008140932">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202008170621">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Fatal Warnings and Linting in Scala">
@@ -45,8 +45,8 @@
     <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu" href="https://alexn.org/feed.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202008140932">
-    <link rel="preload" as="style" href="/assets/css/style.css?202008140932">
+    <link rel="stylesheet" href="/assets/css/style.css?202008170621">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008170621">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -104,12 +104,12 @@
     <meta itemprop="datePublished" content="2020-05-26T00:00:00+0000"/>
     
     <time itemprop="dateCreated" datetime="2020-05-26T00:00:00+0000">May 26, 2020</time>
-    | <nobr><span class="time">10</span> minute</nobr>
+    | <nobr><span class="time">10</span> minutes</nobr>
   </p>
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
-      <img src="/assets/media/articles/scala-xfatal-warnings.png?202008140932" alt="" />
+      <img src="/assets/media/articles/scala-xfatal-warnings.png?202008170621" alt="" />
       
     </figure>
     
@@ -152,11 +152,10 @@
       <li><a href="#23-relax-the-console-configuration">2.3. Relax the console configuration</a></li>
     </ul>
   </li>
-  <li><a href="#3-silence-warnings-locally">3. Silence warnings locally</a>
+  <li><a href="#3-silence-some-warnings">3. Silence some warnings</a>
     <ul>
       <li><a href="#31-silencer-plugin-scala--213">3.1. Silencer plugin (Scala &lt; 2.13)</a></li>
-      <li><a href="#32-using-nowarn-in-scala-2132">3.2. Using @nowarn in Scala 2.13.2</a></li>
-      <li><a href="#33-silence-warnings-for-entire-folders">3.3. Silence warnings for entire folders</a></li>
+      <li><a href="#32-using-nowarn-and--wconf-in-scala-2132">3.2. Using @nowarn and -Wconf in Scala 2.13.2</a></li>
     </ul>
   </li>
   <li><a href="#4-other-linters">4. Other linters</a>
@@ -384,10 +383,10 @@
 
 <p>Credit for this snippet: <a href="https://github.com/DavidGregory084/sbt-tpolecat/blob/v0.1.11/src/main/scala/io/github/davidgregory084/TpolecatPlugin.scala#L109">DavidGregory084/sbt-tpolecat</a>.</p>
     
-      <h2 id="3-silence-warnings-locally">
+      <h2 id="3-silence-some-warnings">
         
         
-          3. Silence warnings locally <a href="#3-silence-warnings-locally" class="anchor">#</a>
+          3. Silence some warnings <a href="#3-silence-some-warnings" class="anchor">#</a>
         
         
       </h2>
@@ -420,17 +419,25 @@
   <span class="o">}</span>
 </code></pre></div></div>
 
-<p>You can give via this annotation a regular expression that matches the warning being silenced.</p>
+<p>The annotation accepts a regular expression that matches the warning being silenced.</p>
+
+<p>You can also use silence warnings for an entire folder, useful if you have auto-generated source files:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// Alternative, if using the silencer plugin</span>
+<span class="n">scalacOptions</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
+  <span class="s">"-P:silencer:pathFilters=.*[/]src_managed[/].*"</span><span class="o">,</span>
+<span class="o">)</span>
+</code></pre></div></div>
     
-      <h3 id="32-using-nowarn-in-scala-2132">
+      <h3 id="32-using-nowarn-and--wconf-in-scala-2132">
         
         
-          3.2. Using @nowarn in Scala 2.13.2 <a href="#32-using-nowarn-in-scala-2132" class="anchor">#</a>
+          3.2. Using @nowarn and -Wconf in Scala 2.13.2 <a href="#32-using-nowarn-and--wconf-in-scala-2132" class="anchor">#</a>
         
         
       </h3>
 
-<p>Scala 2.13 has added the <a href="https://github.com/scala/scala/pull/8373">@nowarn annotation for local suppression</a>.</p>
+<p>Scala 2.13 has added the <a href="https://github.com/scala/scala/pull/8373">-Wconf flag for configurable warnings, @nowarn annotation for local suppression</a>.</p>
 
 <p><code class="language-plaintext highlighter-rouge">@nowarn</code> can be more fine grained. We could do just like the above and silence with a pattern matcher:</p>
 
@@ -462,19 +469,7 @@
   <span class="o">}</span>
 </code></pre></div></div>
 
-<p class="info-bubble">
-  <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#31-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="language-plaintext highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="language-plaintext highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
-</p>
-    
-      <h3 id="33-silence-warnings-for-entire-folders">
-        
-        
-          3.3. Silence warnings for entire folders <a href="#33-silence-warnings-for-entire-folders" class="anchor">#</a>
-        
-        
-      </h3>
-
-<p>The same <code class="language-plaintext highlighter-rouge">-Wconf</code> option, from Scala 2.13, allows us to skip warnings for files in certain directories, e.g. here’s how silence warnings for auto-generated files, for templates, etc…</p>
+<p>You can also silence warnings for entire folders, via <code class="language-plaintext highlighter-rouge">-Wconf</code>, useful if you have auto-generated files (e.g. from templates):</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// Turns off warnings for generated files and for templates</span>
 <span class="n">scalacOptions</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
@@ -482,13 +477,9 @@
 <span class="o">)</span>
 </code></pre></div></div>
 
-<p>Of if using the <a href="#31-silencer-plugin-scala--213">silencer plugin</a>:</p>
-
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// Alternative, if using the silencer plugin</span>
-<span class="n">scalacOptions</span> <span class="o">++=</span> <span class="nc">Seq</span><span class="o">(</span>
-  <span class="s">"-P:silencer:pathFilters=.*[/]src_managed[/].*"</span><span class="o">,</span>
-<span class="o">)</span>
-</code></pre></div></div>
+<p class="info-bubble">
+  <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#31-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="language-plaintext highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="language-plaintext highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
+</p>
     
       <h2 id="4-other-linters">
         
@@ -543,8 +534,8 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-08-09T07:51:57+0000">
-        Updated: August 9, 2020
+    <time itemprop="dateModified" content="2020-08-17T06:21:04+0000">
+        Updated: August 17, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -747,12 +738,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202008140932" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008140932" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202008140932" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202008140932" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202008170621" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008170621" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008170621" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008170621" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202008140932" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202008170621" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
