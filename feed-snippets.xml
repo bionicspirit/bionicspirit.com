@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at https://alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feed-snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Aug 2020 08:48:32 +0000</pubDate>
-    <lastBuildDate>Mon, 17 Aug 2020 08:48:32 +0000</lastBuildDate>
+    <pubDate>Mon, 17 Aug 2020 08:54:08 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Aug 2020 08:54:08 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -23,7 +23,7 @@
         <description><![CDATA[
           <figure style="max-width: 100%; ">
   <a href="https://alexn.org/assets/media/snippets/error-hierarchy.svg" target="_blank">
-    <img src="https://alexn.org/assets/media/snippets/error-hierarchy.svg" alt="Error hierarchy graph" title="Error hierarchy graph" style="max-width: 100%; ">
+    <img src="https://alexn.org/assets/media/snippets/error-hierarchy.svg" alt="Error hierarchy graph" title="Error hierarchy graph" width="100%" style="max-width: 100%; ">
   </a>
 </figure>
 
