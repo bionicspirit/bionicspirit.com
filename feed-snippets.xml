@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at https://alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feed-snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 17 Aug 2020 11:40:00 +0000</pubDate>
-    <lastBuildDate>Mon, 17 Aug 2020 11:40:00 +0000</lastBuildDate>
+    <pubDate>Tue, 18 Aug 2020 11:54:16 +0000</pubDate>
+    <lastBuildDate>Tue, 18 Aug 2020 11:54:16 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -683,6 +683,197 @@
         <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
         <link>https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Future Stack Overflow.scala</title>
+        <description><![CDATA[
+          <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// Demonstrating that directly executing runnables in your </span>
+<span class="c1">// ExecutionContext is a really bad idea</span>
+
+<span class="k">def</span> <span class="nf">trigger</span><span class="o">(</span><span class="n">cycles</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Future</span><span class="o">[</span><span class="kt">Int</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+  <span class="k">implicit</span> <span class="k">val</span> <span class="nv">directEC</span> <span class="k">=</span>
+    <span class="k">new</span> <span class="nc">ExecutionContext</span> <span class="o">{</span>
+      <span class="k">def</span> <span class="nf">execute</span><span class="o">(</span><span class="n">r</span><span class="k">:</span> <span class="kt">Runnable</span><span class="o">)</span> <span class="k">=</span> <span class="nv">r</span><span class="o">.</span><span class="py">run</span><span class="o">()</span>
+      <span class="k">def</span> <span class="nf">reportFailure</span><span class="o">(</span><span class="n">e</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span> <span class="k">=</span> <span class="k">throw</span> <span class="n">e</span>
+    <span class="o">}</span>
+
+  <span class="k">val</span> <span class="nv">p</span> <span class="k">=</span> <span class="nc">Promise</span><span class="o">[</span><span class="kt">Int</span><span class="o">]()</span>
+  <span class="k">val</span> <span class="nv">f</span> <span class="k">=</span> <span class="o">(</span><span class="mi">0</span> <span class="n">until</span> <span class="n">cycles</span><span class="o">).</span><span class="py">foldLeft</span><span class="o">(</span><span class="nv">p</span><span class="o">.</span><span class="py">future</span><span class="o">)((</span><span class="n">f</span><span class="o">,</span> <span class="k">_</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="nv">f</span><span class="o">.</span><span class="py">map</span><span class="o">(</span><span class="k">_</span> <span class="o">+</span> <span class="mi">1</span><span class="o">))</span>
+  <span class="nv">p</span><span class="o">.</span><span class="py">success</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span>
+  <span class="n">f</span>
+<span class="o">}</span>
+
+<span class="c1">// Throws StackOverflowError</span>
+<span class="nf">trigger</span><span class="o">(</span><span class="mi">5000</span><span class="o">)</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Send Mail.py</title>
+        <description><![CDATA[
+          <div class="language-python highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">#!/usr/bin/env python
+</span>
+<span class="kn">import</span> <span class="nn">smtplib</span>
+<span class="kn">import</span> <span class="nn">argparse</span>
+
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span> <span class="nn">email.message</span> <span class="kn">import</span> <span class="n">EmailMessage</span>
+
+<span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="p">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s">'Send email'</span><span class="p">)</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span>
+  <span class="s">'--smtp-host'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">'smtp_host'</span><span class="p">,</span>
+  <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"SMTP host and port"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span>
+  <span class="s">'--smtp-user'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">'smtp_user'</span><span class="p">,</span>
+  <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"SMTP user for login"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span>
+  <span class="s">'--smtp-pass'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">'smtp_pass'</span><span class="p">,</span>
+  <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"SMTP password for login"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span>
+  <span class="s">'--to'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">'to_address'</span><span class="p">,</span>
+  <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"TO address"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span>
+  <span class="s">'--from'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">'from_address'</span><span class="p">,</span>
+  <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"FROM address"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span>
+  <span class="s">'--title'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">'title'</span><span class="p">,</span>
+  <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"Mail title"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">parser</span><span class="p">.</span><span class="n">add_argument</span><span class="p">(</span>
+  <span class="s">'--body'</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">'body'</span><span class="p">,</span>
+  <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"Mail body"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="p">.</span><span class="n">parse_args</span><span class="p">()</span>
+
+<span class="n">msg</span> <span class="o">=</span> <span class="n">EmailMessage</span><span class="p">()</span>
+<span class="n">msg</span><span class="p">.</span><span class="n">set_content</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">body</span><span class="p">)</span>
+
+<span class="n">msg</span><span class="p">[</span><span class="s">'Subject'</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">title</span>
+<span class="n">msg</span><span class="p">[</span><span class="s">'From'</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">from_address</span>
+<span class="n">msg</span><span class="p">[</span><span class="s">'To'</span><span class="p">]</span> <span class="o">=</span> <span class="n">args</span><span class="p">.</span><span class="n">to_address</span>
+
+<span class="n">service</span> <span class="o">=</span> <span class="n">smtplib</span><span class="p">.</span><span class="n">SMTP_SSL</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">smtp_host</span><span class="p">)</span>
+<span class="c1"># service.starttls()
+</span><span class="n">service</span><span class="p">.</span><span class="n">login</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">smtp_user</span><span class="p">,</span> <span class="n">args</span><span class="p">.</span><span class="n">smtp_pass</span><span class="p">)</span>
+<span class="n">service</span><span class="p">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="n">service</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/03/18/send-mail.py.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Encrypt.sh</title>
+        <description><![CDATA[
+          <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="c">#</span>
+<span class="c"># Quickly encrypt a message or a file for sending to</span>
+<span class="c"># your colleagues over unsecure messengers (Slack, etc)...</span>
+<span class="c">#</span>
+<span class="c">#     echo "secret message" | encrypt</span>
+<span class="c">#</span>
+<span class="c"># Or to encrypt a file:</span>
+<span class="c">#</span>
+<span class="c">#     encrypt ./path/to/file</span>
+<span class="c">#</span>
+<span class="c"># -----------------------------------------------------------------------------</span>
+
+<span class="nv">FILEPATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$FILEPATH</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nv">BASE64</span><span class="o">=</span><span class="si">$(</span>openssl enc <span class="nt">-A</span> <span class="nt">-aes256</span> <span class="nt">-base64</span> <span class="nt">-md</span> md5<span class="si">)</span>
+
+    <span class="nb">echo
+    echo</span> <span class="se">\#</span> Decrypt this message by running:
+    <span class="nb">echo</span> <span class="se">\#</span> <span class="o">================================</span>
+    <span class="nb">echo 
+    echo echo</span> <span class="se">\"</span><span class="s2">"</span><span class="nv">$BASE64</span><span class="s2">"</span><span class="se">\"</span> <span class="se">\|</span> openssl enc <span class="nt">-d</span> <span class="nt">-aes256</span> <span class="nt">-base64</span> <span class="nt">-md</span> md5 <span class="nt">-A</span>
+    <span class="nb">echo 
+    echo</span> <span class="se">\#</span> <span class="o">================================</span>    
+    <span class="nb">echo
+</span><span class="k">elif</span> <span class="o">[</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$FILEPATH</span><span class="s2">"</span> <span class="o">]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nv">RPATH</span><span class="o">=</span><span class="si">$(</span><span class="nb">realpath</span> <span class="nt">--relative-base</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">"</span> <span class="s2">"</span><span class="nv">$FILEPATH</span><span class="s2">"</span><span class="si">)</span>
+    <span class="nv">BASE64</span><span class="o">=</span><span class="si">$(</span>openssl enc <span class="nt">-A</span> <span class="nt">-aes256</span> <span class="nt">-base64</span> <span class="nt">-md</span> md5 &lt; <span class="s2">"</span><span class="nv">$FILEPATH</span><span class="s2">"</span><span class="si">)</span>
+
+    <span class="nb">echo
+    echo</span> <span class="se">\#</span> Decrypt this file by running:
+    <span class="nb">echo</span> <span class="se">\#</span> <span class="o">================================</span>
+    <span class="nb">echo 
+    echo echo</span> <span class="se">\"</span><span class="s2">"</span><span class="nv">$BASE64</span><span class="s2">"</span><span class="se">\"</span> <span class="se">\|</span> openssl enc <span class="nt">-d</span> <span class="nt">-aes256</span> <span class="nt">-base64</span> <span class="nt">-md</span> md5 <span class="nt">-A</span> <span class="se">\&gt;</span> <span class="se">\"</span><span class="s2">"~/</span><span class="nv">$RPATH</span><span class="s2">"</span><span class="se">\"</span>
+    <span class="nb">echo 
+    echo</span> <span class="se">\#</span> <span class="o">================================</span>
+    <span class="nb">echo
+</span><span class="k">else
+    </span><span class="nb">echo</span> <span class="o">&gt;</span>&amp;2
+    <span class="nb">echo</span> <span class="s2">"ERROR - file not found: </span><span class="nv">$FILEPATH</span><span class="s2">"</span> <span class="o">&gt;</span>&amp;2
+    <span class="nb">echo</span> <span class="o">&gt;</span>&amp;2
+    <span class="nb">exit </span>1
+<span class="k">fi</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/02/18/encrypt.sh.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Sierpinski.hs</title>
+        <description><![CDATA[
+          <div class="language-haskell highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="o">#!/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">env</span> <span class="n">stack</span>
+<span class="c1">-- stack --resolver lts-14.14 script</span>
+<span class="kr">import</span> <span class="nn">Data.Bits</span>
+
+<span class="n">main</span> <span class="o">::</span> <span class="kt">IO</span> <span class="nb">()</span>
+<span class="n">main</span> <span class="o">=</span> <span class="n">mapM_</span> <span class="n">putStrLn</span> <span class="n">lines</span>
+  <span class="kr">where</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">32</span> <span class="o">::</span> <span class="kt">Int</span>
+    <span class="n">line</span> <span class="n">i</span> <span class="o">=</span>
+      <span class="p">[</span> <span class="kr">if</span> <span class="n">i</span> <span class="o">.&amp;.</span> <span class="n">j</span> <span class="o">/=</span> <span class="mi">0</span> <span class="kr">then</span> <span class="sc">' '</span> <span class="kr">else</span> <span class="sc">'*'</span>
+      <span class="o">|</span> <span class="n">j</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="mi">0</span> <span class="o">..</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="p">]</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span> <span class="n">i</span> <span class="o">|</span> <span class="n">i</span> <span class="o">&lt;-</span> <span class="p">[</span><span class="mi">0</span> <span class="o">..</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2019/11/29/sierpinski.hs.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>
