@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at https://alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feed-snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Aug 2020 12:03:20 +0000</pubDate>
-    <lastBuildDate>Tue, 18 Aug 2020 12:03:20 +0000</lastBuildDate>
+    <pubDate>Tue, 18 Aug 2020 12:48:19 +0000</pubDate>
+    <lastBuildDate>Tue, 18 Aug 2020 12:48:19 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -1030,6 +1030,85 @@
         <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
         <link>https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/snippets/2019/10/07/async-queue.ts.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Blocking Task.scala</title>
+        <description><![CDATA[
+          <p>Imported from <a href="https://gist.github.com/alexandru/d04c23e3ebd918c6144b5ad33c69f48f">gist.github.com</a>.</p>
+
+<p>WARN: not sure if this code is correct.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">monix.eval._</span>
+<span class="k">import</span> <span class="nn">monix.execution.atomic.Atomic</span>
+<span class="k">import</span> <span class="nn">scala.util.control.NonFatal</span>
+
+<span class="k">def</span> <span class="nf">blocking</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">Task</span><span class="o">.</span><span class="py">cancelable0</span> <span class="o">{</span> <span class="o">(</span><span class="n">scheduler</span><span class="o">,</span> <span class="n">cb</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="c1">// For capturing the executing thread</span>
+    <span class="k">val</span> <span class="nv">thread</span> <span class="k">=</span> <span class="nc">Atomic</span><span class="o">(</span><span class="nc">None</span> <span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Thread</span><span class="o">])</span>
+    <span class="c1">// For synchronizing cancellation, ensuring the</span>
+    <span class="c1">// interrupted flag is reset, in case it is our fault</span>
+    <span class="k">val</span> <span class="nv">wasInterrupted</span> <span class="k">=</span> <span class="nc">Atomic</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+
+    <span class="c1">// Executing on top of thread-pool</span>
+    <span class="nv">scheduler</span><span class="o">.</span><span class="py">execute</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+      <span class="k">def</span> <span class="nf">run</span><span class="o">()</span> <span class="k">=</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="nv">th</span> <span class="k">=</span> <span class="nv">Thread</span><span class="o">.</span><span class="py">currentThread</span><span class="o">()</span>
+        <span class="k">val</span> <span class="nv">update</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="n">th</span><span class="o">)</span>
+        <span class="k">var</span> <span class="n">started</span> <span class="k">=</span> <span class="kc">false</span>
+
+        <span class="k">try</span> <span class="o">{</span>
+          <span class="nf">if</span> <span class="o">(</span><span class="nv">thread</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="nc">None</span><span class="o">,</span> <span class="n">update</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">started</span> <span class="k">=</span> <span class="kc">true</span>
+            <span class="nv">scala</span><span class="o">.</span><span class="py">concurrent</span><span class="o">.</span><span class="py">blocking</span> <span class="o">{</span>
+              <span class="nv">cb</span><span class="o">.</span><span class="py">onSuccess</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
+            <span class="o">}</span>
+          <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">InterruptedException</span> <span class="o">=&gt;</span>
+            <span class="o">()</span>
+          <span class="k">case</span> <span class="nc">NonFatal</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span>
+            <span class="nv">cb</span><span class="o">.</span><span class="py">onError</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+          <span class="c1">// If true, then cancellation logic is guaranteed to</span>
+          <span class="c1">// interrupt or to have interrupted current thread</span>
+          <span class="nf">if</span> <span class="o">(</span><span class="n">started</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nv">thread</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="n">update</span><span class="o">,</span> <span class="kc">null</span><span class="o">))</span> <span class="o">{</span>
+            <span class="c1">// Waits for cancellation logic to finish</span>
+            <span class="nf">while</span> <span class="o">(!</span><span class="nv">wasInterrupted</span><span class="o">.</span><span class="py">get</span><span class="o">)</span> <span class="o">{</span>
+              <span class="c1">// Thread.onSpinWait() on Java 9</span>
+              <span class="nc">Thread</span><span class="o">.</span><span class="n">`yield`</span><span class="o">()</span>
+            <span class="o">}</span>
+            <span class="c1">// Clear interruption flag</span>
+            <span class="nv">Thread</span><span class="o">.</span><span class="py">interrupted</span><span class="o">()</span>
+          <span class="o">}</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">})</span>
+
+    <span class="c1">// Cancellation logic</span>
+    <span class="nc">Task</span> <span class="o">{</span>
+      <span class="nv">thread</span><span class="o">.</span><span class="py">getAndSet</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="nc">None</span> <span class="o">|</span> <span class="kc">null</span> <span class="k">=&gt;</span> <span class="o">()</span>
+        <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="n">th</span><span class="o">)</span> <span class="k">=&gt;</span>
+          <span class="nv">th</span><span class="o">.</span><span class="py">interrupt</span><span class="o">()</span>
+          <span class="nv">wasInterrupted</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+        ]]></description>
+        <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2019/09/02/blocking-task.scala.html</guid>
         
         
         <dc:creator>Alexandru Nedelcu</dc:creator>

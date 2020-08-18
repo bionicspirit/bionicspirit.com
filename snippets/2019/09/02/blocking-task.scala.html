@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Blocking Task.scala - Alexandru Nedelcu</title>
+    
+
+    <!-- Open Graph Meta -->
+    <meta content="Alexandru Nedelcu" property="og:site_name">
+    <meta content="Blocking Task.scala" property="og:title">
+    
+      <meta content="On programming and personal projects" property="og:description">
+    <meta content="https://alexn.org/snippets/2019/09/02/blocking-task.scala.html" property="og:url">
+    <meta content="2019-09-02T00:00:00+00:00" property="article:published_time">
+    <meta content="2020-08-18T12:47:22+00:00" property="article:modified_time">
+    
+    <meta content="website" property="og:type">
+    <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/logo/800px.png" />
+    <meta content="https://www.facebook.com/alexelcu" property="article:author">
+
+    <!-- Twitter Cards -->
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
+    <meta name="twitter:site" content="@alexelcu">
+    <meta name="twitter:creator" content="@alexelcu">
+    <meta name="twitter:title" content="Blocking Task.scala">
+    <meta name="twitter:url" content="https://alexn.org/snippets/2019/09/02/blocking-task.scala.html">
+    
+      <meta name="twitter:description" content="On programming and personal projects">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
+    <link rel="icon" href="/assets/logo/32px.png" sizes="32x32" />
+    <link rel="icon" href="/assets/logo/192px.png" sizes="192x192" />
+    <link rel="icon" href="/assets/logo/270px.png" sizes="270x270" />
+    <link rel="apple-touch-icon-precomposed" href="/assets/logo/180px.png" />
+    <meta name="msapplication-TileImage" content="/assets/logo/270px.png" />
+
+    <!-- Come and get me RSS readers -->
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu - Blog" href="https://alexn.org/feed.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Alexandru Nedelcu - Snippets" href="https://alexn.org/feed-snippets.xml" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/css/style.css?202008181248">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008181248">
+    
+    <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
+    <link rel="canonical" href="https://alexn.org/snippets/2019/09/02/blocking-task.scala.html">
+</head>
+
+
+<body>
+
+   <div class="header">
+  <div class="container">
+    <div class="inner-container">
+      <h1 class="logo"><a href="/">Alex<span class="wide2">andru</span> Nedelcu<span class="wide1"> =&lt;&lt;</span></a></h1>
+      <nav class="nav-collapse">
+        <ul class="noList">
+          
+          <li class="element first  ">
+            <a href="/">Blog</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/wiki/">Wiki</a>
+          </li>
+          
+          <li class="element  current ">
+            <a href="/snippets/">Snippets</a>
+          </li>
+          
+          <li class="element   ">
+            <a href="/about.html">About</a>
+          </li>
+          
+          <li class="element   last">
+            <a href="/subscribe.html">Subscribe</a>
+          </li>
+          
+        </ul>
+      </nav>  
+    </div>
+  </div>
+</div><!-- end .header -->
+
+
+   <div class="content">
+      <div class="container">
+         <article class="post " itemscope itemtype="http://schema.org/Article">
+      <h1 class="postTitle" itemprop="headline">
+        
+        
+          Blocking Task.scala
+        
+        
+      </h1>
+  
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/snippets/2019/09/02/blocking-task.scala.html"/>
+    
+      <meta itemprop="datePublished" content="2019-09-02T00:00:00+0000"/>
+      
+      
+      <time itemprop="dateModified" content="2020-08-18T12:47:22+0000">
+        Updated: August 18, 2020
+      </time>
+      
+    
+  </p>
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Alexandru Nedelcu">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    </div>
+  </div>
+
+  <div id="content" itemprop="articleBody">
+    <p>Imported from <a href="https://gist.github.com/alexandru/d04c23e3ebd918c6144b5ad33c69f48f">gist.github.com</a>.</p>
+
+<p>WARN: not sure if this code is correct.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">monix.eval._</span>
+<span class="k">import</span> <span class="nn">monix.execution.atomic.Atomic</span>
+<span class="k">import</span> <span class="nn">scala.util.control.NonFatal</span>
+
+<span class="k">def</span> <span class="nf">blocking</span><span class="o">[</span><span class="kt">A</span><span class="o">](</span><span class="n">f</span><span class="k">:</span> <span class="o">=&gt;</span> <span class="n">A</span><span class="o">)</span><span class="k">:</span> <span class="kt">Task</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span> <span class="k">=</span>
+  <span class="nv">Task</span><span class="o">.</span><span class="py">cancelable0</span> <span class="o">{</span> <span class="o">(</span><span class="n">scheduler</span><span class="o">,</span> <span class="n">cb</span><span class="o">)</span> <span class="k">=&gt;</span>
+    <span class="c1">// For capturing the executing thread</span>
+    <span class="k">val</span> <span class="nv">thread</span> <span class="k">=</span> <span class="nc">Atomic</span><span class="o">(</span><span class="nc">None</span> <span class="k">:</span> <span class="kt">Option</span><span class="o">[</span><span class="kt">Thread</span><span class="o">])</span>
+    <span class="c1">// For synchronizing cancellation, ensuring the</span>
+    <span class="c1">// interrupted flag is reset, in case it is our fault</span>
+    <span class="k">val</span> <span class="nv">wasInterrupted</span> <span class="k">=</span> <span class="nc">Atomic</span><span class="o">(</span><span class="kc">false</span><span class="o">)</span>
+
+    <span class="c1">// Executing on top of thread-pool</span>
+    <span class="nv">scheduler</span><span class="o">.</span><span class="py">execute</span><span class="o">(</span><span class="k">new</span> <span class="nc">Runnable</span> <span class="o">{</span>
+      <span class="k">def</span> <span class="nf">run</span><span class="o">()</span> <span class="k">=</span> <span class="o">{</span>
+        <span class="k">val</span> <span class="nv">th</span> <span class="k">=</span> <span class="nv">Thread</span><span class="o">.</span><span class="py">currentThread</span><span class="o">()</span>
+        <span class="k">val</span> <span class="nv">update</span> <span class="k">=</span> <span class="nc">Some</span><span class="o">(</span><span class="n">th</span><span class="o">)</span>
+        <span class="k">var</span> <span class="n">started</span> <span class="k">=</span> <span class="kc">false</span>
+
+        <span class="k">try</span> <span class="o">{</span>
+          <span class="nf">if</span> <span class="o">(</span><span class="nv">thread</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="nc">None</span><span class="o">,</span> <span class="n">update</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">started</span> <span class="k">=</span> <span class="kc">true</span>
+            <span class="nv">scala</span><span class="o">.</span><span class="py">concurrent</span><span class="o">.</span><span class="py">blocking</span> <span class="o">{</span>
+              <span class="nv">cb</span><span class="o">.</span><span class="py">onSuccess</span><span class="o">(</span><span class="n">f</span><span class="o">)</span>
+            <span class="o">}</span>
+          <span class="o">}</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">{</span>
+          <span class="k">case</span> <span class="n">e</span><span class="k">:</span> <span class="kt">InterruptedException</span> <span class="o">=&gt;</span>
+            <span class="o">()</span>
+          <span class="k">case</span> <span class="nc">NonFatal</span><span class="o">(</span><span class="n">e</span><span class="o">)</span> <span class="k">=&gt;</span>
+            <span class="nv">cb</span><span class="o">.</span><span class="py">onError</span><span class="o">(</span><span class="n">e</span><span class="o">)</span>
+        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+          <span class="c1">// If true, then cancellation logic is guaranteed to</span>
+          <span class="c1">// interrupt or to have interrupted current thread</span>
+          <span class="nf">if</span> <span class="o">(</span><span class="n">started</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nv">thread</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="n">update</span><span class="o">,</span> <span class="kc">null</span><span class="o">))</span> <span class="o">{</span>
+            <span class="c1">// Waits for cancellation logic to finish</span>
+            <span class="nf">while</span> <span class="o">(!</span><span class="nv">wasInterrupted</span><span class="o">.</span><span class="py">get</span><span class="o">)</span> <span class="o">{</span>
+              <span class="c1">// Thread.onSpinWait() on Java 9</span>
+              <span class="nc">Thread</span><span class="o">.</span><span class="n">`yield`</span><span class="o">()</span>
+            <span class="o">}</span>
+            <span class="c1">// Clear interruption flag</span>
+            <span class="nv">Thread</span><span class="o">.</span><span class="py">interrupted</span><span class="o">()</span>
+          <span class="o">}</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">})</span>
+
+    <span class="c1">// Cancellation logic</span>
+    <span class="nc">Task</span> <span class="o">{</span>
+      <span class="nv">thread</span><span class="o">.</span><span class="py">getAndSet</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span> <span class="k">match</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="nc">None</span> <span class="o">|</span> <span class="kc">null</span> <span class="k">=&gt;</span> <span class="o">()</span>
+        <span class="k">case</span> <span class="nc">Some</span><span class="o">(</span><span class="n">th</span><span class="o">)</span> <span class="k">=&gt;</span>
+          <span class="nv">th</span><span class="o">.</span><span class="py">interrupt</span><span class="o">()</span>
+          <span class="nv">wasInterrupted</span><span class="o">.</span><span class="py">set</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+
+  </div>
+</article>
+      </div>
+   </div><!-- end .content -->
+
+   <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      
+<h2>Contribute</h2>
+
+<p>
+  Fix or add to this article by submitting a pull request:
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_snippets/2019-09-02-blocking-task.scala.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+<p>
+  Send an email if you wish to discuss this article in private:<br>
+  <!--sse-->
+  <script>
+    (function () {
+      var lhs = "comments";
+      var rhs = "y20.alexn.org";
+      var subject = "Comment on `Blocking Task.scala`";
+      document.write("<a href=\"mailto");
+      document.write(":" + lhs + "@");
+      document.write(rhs);
+      if (subject) { document.write("?subject=" + subject); }
+      document.write("\">" + lhs + "@" + rhs + "<\/a>");
+    })()
+  </script>
+  <noscript>
+    <div class="note">
+      <em>Email address is protected by JavaScript, activate JavaScript in this page to see it!</em>
+    </div>
+  </noscript>
+  <!--/sse-->
+</p>
+
+
+    </div>  
+  </div>
+  
+
+  <div class="bottom">
+    <div class="container">
+      <span class="copy">
+          &copy; 2020
+      </span>
+      <span class="links">
+        <a href="/docs/license.html">License</a> |
+        <a href="/docs/privacy-policy.html">Privacy Policy</a> |
+        <a href="/about.html#contact">Contact</a>
+      </span>
+    </div>
+  </div>
+</div><!-- end .footer -->
+
+   <script async src="/assets/js/modernizr.custom.15390.js?202008181248" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008181248" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008181248" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008181248" type="text/javascript"></script>
+
+<script async src="/assets/js/scripts.js?202008181248" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  _paq.push(['disableCookies']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ly.alexn.org/";
+    _paq.push(['setTrackerUrl', u+'m.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript>
+  
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Blocking+Task.scala" style="border:0" alt="" />
+</noscript>
+
+
+</body>
+
+</html>
