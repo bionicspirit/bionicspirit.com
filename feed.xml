@@ -9,8 +9,8 @@
     <description>Feed of blog articles, published at https://alexn.org</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Aug 2020 13:29:33 +0000</pubDate>
-    <lastBuildDate>Mon, 24 Aug 2020 13:29:33 +0000</lastBuildDate>
+    <pubDate>Mon, 24 Aug 2020 13:29:56 +0000</pubDate>
+    <lastBuildDate>Mon, 24 Aug 2020 13:29:56 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -1528,7 +1528,7 @@ In this article I’m describing my impressions of the Scala programming languag
           
           
           <a href="https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&pk_kwd=image">
-            <img src="https://alexn.org/assets/media/articles/tools.png?202008241329" align="middle" style="display: block; max-width:100%; margin: 0 auto;" />
+            <img src="https://alexn.org/assets/media/articles/tools.png?202008241330" align="middle" style="display: block; max-width:100%; margin: 0 auto;" />
           </a>
           <br />
           
