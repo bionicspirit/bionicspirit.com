@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feed-wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Aug 2020 18:38:45 +0000</pubDate>
-    <lastBuildDate>Mon, 24 Aug 2020 18:38:45 +0000</lastBuildDate>
+    <pubDate>Mon, 24 Aug 2020 18:40:15 +0000</pubDate>
+    <lastBuildDate>Mon, 24 Aug 2020 18:40:15 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
