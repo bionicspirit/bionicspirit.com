@@ -6,11 +6,11 @@
 
   <channel>
     <title>Alexandru Nedelcu - Wiki</title>
-    <description>Feed of wiki articles, published at https://alexn.org/wiki/</description>
+    <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feed-wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Aug 2020 13:34:22 +0000</pubDate>
-    <lastBuildDate>Mon, 24 Aug 2020 13:34:22 +0000</lastBuildDate>
+    <pubDate>Mon, 24 Aug 2020 14:45:04 +0000</pubDate>
+    <lastBuildDate>Mon, 24 Aug 2020 14:45:04 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
