@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at https://alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feed-wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 24 Aug 2020 12:55:12 +0000</pubDate>
-    <lastBuildDate>Mon, 24 Aug 2020 12:55:12 +0000</lastBuildDate>
+    <pubDate>Mon, 24 Aug 2020 13:25:42 +0000</pubDate>
+    <lastBuildDate>Mon, 24 Aug 2020 13:25:42 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,14 +21,14 @@
       <item>
         <title>Custom Zsh Prompt</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/zshrc-prompt.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/zshrc-prompt.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/zshrc-prompt.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/zshrc-prompt.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -38,14 +38,14 @@
       <item>
         <title>Windows 10</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/windows.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/windows.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/windows.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/windows.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -55,14 +55,14 @@
       <item>
         <title>Web Apps</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/web-apps.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/web-apps.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/web-apps.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/web-apps.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -72,14 +72,14 @@
       <item>
         <title>tmux shortcuts &amp;amp; cheatsheet</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/tmux.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/tmux.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/tmux.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/tmux.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -89,14 +89,14 @@
       <item>
         <title>Teach Kids to Code</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/teach-kids.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/teach-kids.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/teach-kids.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/teach-kids.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -106,14 +106,14 @@
       <item>
         <title>Rust - Getting Started</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/rust.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/rust.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/rust.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/rust.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -123,14 +123,14 @@
       <item>
         <title>RSS / Atom feeds</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/rss-feeds.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/rss-feeds.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/rss-feeds.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/rss-feeds.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -140,14 +140,14 @@
       <item>
         <title>Wiki</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/index.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/index.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/index.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/index.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -157,14 +157,14 @@
       <item>
         <title>Python</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/python.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/python.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/python.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/python.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -174,14 +174,14 @@
       <item>
         <title>Project Management</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/project-management.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/project-management.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/project-management.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/project-management.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -191,14 +191,14 @@
       <item>
         <title>PostgreSQL</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/postgresql.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/postgresql.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/postgresql.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/postgresql.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -208,14 +208,14 @@
       <item>
         <title>Org-mode</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/org-mode.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/org-mode.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/org-mode.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/org-mode.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -225,14 +225,14 @@
       <item>
         <title>Nix</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/nix.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/nix.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/nix.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/nix.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -242,14 +242,14 @@
       <item>
         <title>MySQL / MariaDB</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/mysql.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/mysql.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/mysql.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/mysql.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -259,14 +259,14 @@
       <item>
         <title>MacOS</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/macos.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/macos.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/macos.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/macos.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -276,14 +276,14 @@
       <item>
         <title>Lorem Ipsum</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/lorem-ipsum.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/lorem-ipsum.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/lorem-ipsum.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/lorem-ipsum.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -293,14 +293,14 @@
       <item>
         <title>Kanban</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/kanban.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/kanban.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/kanban.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/kanban.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -310,14 +310,14 @@
       <item>
         <title>JSON</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/json.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/json.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/json.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/json.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -327,14 +327,14 @@
       <item>
         <title>iTerm2</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/iterm.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/iterm.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/iterm.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/iterm.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -344,14 +344,14 @@
       <item>
         <title>Haskell</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/haskell.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/haskell.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/haskell.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/haskell.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -361,14 +361,14 @@
       <item>
         <title>GNU Screen</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/gnu-screen.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/gnu-screen.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/gnu-screen.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/gnu-screen.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -378,14 +378,14 @@
       <item>
         <title>GitHub</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/github.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/github.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/github.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/github.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -395,14 +395,14 @@
       <item>
         <title>Git Tips</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/git.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/git.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/git.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/git.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -412,14 +412,14 @@
       <item>
         <title>F#</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/fsharp.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/fsharp.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/fsharp.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/fsharp.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -429,14 +429,14 @@
       <item>
         <title>Firefox</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/firefox.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/firefox.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/firefox.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/firefox.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -446,14 +446,14 @@
       <item>
         <title>Email Tips</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/email.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/email.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/email.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/email.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -463,14 +463,14 @@
       <item>
         <title>Emacs Setup</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/emacs.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/emacs.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/emacs.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/emacs.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -480,14 +480,14 @@
       <item>
         <title>Dropbox</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/dropbox.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/dropbox.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/dropbox.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/dropbox.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -497,14 +497,14 @@
       <item>
         <title>Docker cheat sheet</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/docker.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/docker.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/docker.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/docker.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -514,14 +514,14 @@
       <item>
         <title>DNS settings</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/dns-settings.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/dns-settings.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/dns-settings.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/dns-settings.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -531,14 +531,14 @@
       <item>
         <title>DNS Lookup - Check Domain’s DNS Records</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/dns-lookup.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/dns-lookup.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/dns-lookup.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/dns-lookup.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -548,14 +548,14 @@
       <item>
         <title>DeDRM Ebooks</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/dedrm-ebooks.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/dedrm-ebooks.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/dedrm-ebooks.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/dedrm-ebooks.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -565,14 +565,14 @@
       <item>
         <title>Debian Packages (deb)</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/debian-packages-deb.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/debian-packages-deb.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/debian-packages-deb.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/debian-packages-deb.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -582,14 +582,14 @@
       <item>
         <title>Cloudflare</title>
         <description><![CDATA[
-          <p>Wiki article, modified at August 22, 2020.</p>
+          <p>Wiki article, modified at August 24, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/cloudflare.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Sat, 22 Aug 2020 08:16:59 +0000</pubDate>
+        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/cloudflare.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="false">https://alexn.org/wiki/cloudflare.html?ts=Sat%2C+22+Aug+2020+08%3A16%3A59+%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/cloudflare.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
