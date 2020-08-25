@@ -18,7 +18,7 @@
     <meta content="The privacy policy for developed extensions and applications" property="og:description">
     <meta content="https://alexn.org/docs/privacy-policy.html" property="og:url">
     <meta content="2017-01-16T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-08-23T10:00:25+00:00" property="article:modified_time">
+    <meta content="2020-08-25T10:57:41+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -50,8 +50,8 @@
     
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202008241907">
-    <link rel="preload" as="style" href="/assets/css/style.css?202008241907">
+    <link rel="stylesheet" href="/assets/css/style.css?202008251058">
+    <link rel="preload" as="style" href="/assets/css/style.css?202008251058">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/docs/privacy-policy.html">
@@ -111,8 +111,8 @@
       <meta itemprop="datePublished" content="2017-01-16T00:00:00+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-08-23T10:00:25+0000">
-        Updated: August 23, 2020
+      <time itemprop="dateModified" content="2020-08-25T10:57:41+0000">
+        Updated: August 25, 2020
       </time>
       
     
@@ -128,8 +128,10 @@
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">
-  This website does not collect personally identifiable information and no cookies are installed that could be used to track visitors.
+  This website does not collect personally identifiable information, and no cookies are installed that could be used to track visitors.
 </p>
+
+<p>Third-party services are used that may set cookies</p>
     
       <h2 id="analytics">
         
@@ -142,9 +144,17 @@
 <p>This website uses a self-hosted (first party) <a href="https://matomo.org/">Matomo</a> instance for tracking users’ visits, with these characteristics:</p>
 
 <ol>
-  <li>no cookies are being set — and no cookies will be set in the future without explicit permission</li>
+  <li>no cookies are being set (unless you choose to opt-out, in which case cookies must be set to remember the preference)</li>
+  <li>no cookies will be set in the future without explicit permission</li>
   <li>IPs are anonymized</li>
 </ol>
+
+<p>You can opt-out of all tracking:</p>
+
+<div class="content">
+  <iframe style="border: 1px solid gray; border-radius: 10px; height: 200px; width: 100%;" src="https://ly.alexn.org/index.php?module=CoreAdminHome&amp;action=optOut&amp;language=en&amp;backgroundColor=&amp;fontColor=&amp;fontSize=0.9em&amp;fontFamily=%22PT%20Serif%22%2CGeorgia%2CTimes%2Cserif">
+  </iframe>
+</div>
     
       <h2 id="email-newsletter">
         
@@ -159,6 +169,35 @@
 <p>The collected email addresses are used solely for the purpose of delivering notifications on new articles being published.</p>
 
 <p>Read: <a href="https://mailchimp.com/legal/privacy/#3._Privacy_for_Contacts" target="_blank&quot;,rel=&quot;nofollow">Mailchimp’s Privacy Policy</a>.</p>
+    
+      <h2 id="cloudflare">
+        
+        
+          Cloudflare <a href="#cloudflare" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>This website uses <a href="https://www.cloudflare.com/" target="_blank&quot;,rel=&quot;nofollow">Cloudflare</a> as a proxy, for caching content, and for protecting against DDoS attacks.</p>
+
+<p>Cloudflare sets a cookie named <code class="language-plaintext highlighter-rouge">__cfduid</code> that’s <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#Restrict_access_to_cookies" target="_blank&quot;,rel=&quot;nofollow">restricted</a> with <code class="language-plaintext highlighter-rouge">HttpOnly</code> and <code class="language-plaintext highlighter-rouge">Secure</code> attributes, meaning that in-page scripts cannot access it. Cloudflare can identify users via this cookie, but they consider it to be a technical cookie that’s “<em>strictly necessary to provide the service</em>” (see <a href="https://support.cloudflare.com/hc/en-us/articles/200170156-Understanding-the-Cloudflare-Cookies" target="_blank&quot;,rel=&quot;nofollow">Understanding the Cloudflare Cookies</a>).</p>
+
+<p>Read their <a href="https://www.cloudflare.com/privacypolicy/">privacy policy</a>.</p>
+    
+      <h2 id="video-players">
+        
+        
+          Video Players <a href="#video-players" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>Some embedded third-party services might drop cookies (e.g. YouTube, Vimeo players), however the website’s implementation activates their “do not track” options whenever possible.</p>
+
+<ul>
+  <li>Read <a href="https://policies.google.com/privacy" rel="nofollow&quot;,target=&quot;_blank">Google’s Privacy Policy</a>; note this website uses <code class="language-plaintext highlighter-rouge">youtube-nocookie.com</code> for activating YouTube’s “privacy enhanced mode”, see <a href="https://support.google.com/youtube/answer/171780?hl=en" rel="nofollow&quot;,target=&quot;_blank">embedding options</a></li>
+  <li>Read <a href="https://vimeo.com/privacy" rel="nofollow&quot;,target=&quot;_blank">Vimeo’s Privacy Policy</a>; note we <a href="https://vimeo.zendesk.com/hc/en-us/articles/360001494447-Using-Player-Parameters" rel="nofollow&quot;,target=&quot;_blank">embed the player</a> with a <code class="language-plaintext highlighter-rouge">dnt=1</code> flag that deactivates session cookies and tracking</li>
+</ul>
 
 <!--sse-->
     
@@ -214,12 +253,12 @@
   </div>
 </div><!-- end .footer -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202008241907" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008241907" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202008241907" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202008241907" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202008251058" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202008251058" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202008251058" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202008251058" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202008241907" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202008251058" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
