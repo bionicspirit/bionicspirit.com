@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feed-snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Aug 2020 09:26:56 +0000</pubDate>
-    <lastBuildDate>Thu, 27 Aug 2020 09:26:56 +0000</lastBuildDate>
+    <pubDate>Thu, 27 Aug 2020 09:35:58 +0000</pubDate>
+    <lastBuildDate>Thu, 27 Aug 2020 09:35:58 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -82,18 +82,21 @@
 <span class="o">}</span>
 
 <span class="k">object</span> <span class="nc">SafePassword</span> <span class="o">{</span>
-  <span class="k">def</span> <span class="nf">apply</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">SafePassword</span> <span class="o">=</span>
+  <span class="k">def</span> <span class="nf">apply</span><span class="o">[</span><span class="kt">F</span><span class="o">[</span><span class="k">_</span><span class="o">]](</span><span class="n">value</span><span class="k">:</span> <span class="kt">String</span><span class="o">)(</span><span class="k">implicit</span> <span class="n">F</span><span class="k">:</span> <span class="kt">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">])</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">SafePassword</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">F</span><span class="o">.</span><span class="py">delay</span><span class="o">(</span><span class="k">new</span> <span class="nc">SafePassword</span><span class="o">(</span><span class="n">value</span><span class="o">))</span>
+
+  <span class="k">def</span> <span class="nf">unsafe</span><span class="o">(</span><span class="n">value</span><span class="k">:</span> <span class="kt">String</span><span class="o">)</span><span class="k">:</span> <span class="kt">SafePassword</span> <span class="o">=</span>
     <span class="k">new</span> <span class="nc">SafePassword</span><span class="o">(</span><span class="nv">value</span><span class="o">.</span><span class="py">toCharArray</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div></div>
 
 <p>And usage:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">val</span> <span class="nv">pass</span> <span class="k">=</span> <span class="nc">SafePassword</span><span class="o">(</span><span class="s">"My password"</span><span class="o">)</span>
-
-<span class="nv">pass</span><span class="o">.</span><span class="py">onceThenNullify</span><span class="o">[</span><span class="kt">IO</span><span class="o">].</span><span class="py">use</span> <span class="o">{</span> <span class="n">p</span> <span class="k">=&gt;</span>
-  <span class="nc">IO</span> <span class="o">{</span>
-    <span class="nf">println</span><span class="o">(</span><span class="nv">p</span><span class="o">.</span><span class="py">value</span><span class="o">)</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nc">SafePassword</span><span class="o">(</span><span class="s">"My password"</span><span class="o">).</span><span class="py">flatMap</span> <span class="o">{</span> <span class="n">pass</span> <span class="k">=&gt;</span>
+  <span class="nv">pass</span><span class="o">.</span><span class="py">onceThenNullify</span><span class="o">[</span><span class="kt">IO</span><span class="o">].</span><span class="py">use</span> <span class="o">{</span> <span class="n">p</span> <span class="k">=&gt;</span>
+    <span class="nc">IO</span> <span class="o">{</span>
+      <span class="nf">println</span><span class="o">(</span><span class="nv">p</span><span class="o">.</span><span class="py">value</span><span class="o">)</span>
+    <span class="o">}</span>
   <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
