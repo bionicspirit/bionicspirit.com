@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feed-wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Sep 2020 07:31:09 +0000</pubDate>
-    <lastBuildDate>Fri, 04 Sep 2020 07:31:09 +0000</lastBuildDate>
+    <pubDate>Thu, 10 Sep 2020 13:52:08 +0000</pubDate>
+    <lastBuildDate>Thu, 10 Sep 2020 13:52:08 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -216,23 +216,6 @@
         <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
         <link>https://alexn.org/wiki/postgresql.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/wiki/postgresql.html?ts=20200824132431%2B0000</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Org-mode</title>
-        <description><![CDATA[
-          <p>Wiki article, modified at August 24, 2020.</p>
-          <p>
-            <a href="https://alexn.org/wiki/org-mode.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
-          </p>
-        ]]></description>
-        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-        <link>https://alexn.org/wiki/org-mode.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="true">https://alexn.org/wiki/org-mode.html?ts=20200824132431%2B0000</guid>
         
         
       </item>
@@ -478,23 +461,6 @@
     
       
       <item>
-        <title>Docker cheat sheet</title>
-        <description><![CDATA[
-          <p>Wiki article, modified at August 24, 2020.</p>
-          <p>
-            <a href="https://alexn.org/wiki/docker.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
-          </p>
-        ]]></description>
-        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-        <link>https://alexn.org/wiki/docker.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="true">https://alexn.org/wiki/docker.html?ts=20200824132431%2B0000</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
         <title>DNS settings</title>
         <description><![CDATA[
           <p>Wiki article, modified at August 24, 2020.</p>
@@ -582,14 +548,48 @@
       <item>
         <title>Wiki</title>
         <description><![CDATA[
-          <p>Wiki article, modified at September 4, 2020.</p>
+          <p>Wiki article, modified at September 10, 2020.</p>
           <p>
             <a href="https://alexn.org/wiki/index.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
           </p>
         ]]></description>
-        <pubDate>Fri, 04 Sep 2020 07:30:08 +0000</pubDate>
+        <pubDate>Thu, 10 Sep 2020 13:49:47 +0000</pubDate>
         <link>https://alexn.org/wiki/index.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="true">https://alexn.org/wiki/index.html?ts=20200904073008%2B0000</guid>
+        <guid isPermaLink="true">https://alexn.org/wiki/index.html?ts=20200910134947%2B0000</guid>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Org-mode</title>
+        <description><![CDATA[
+          <p>Wiki article, modified at September 10, 2020.</p>
+          <p>
+            <a href="https://alexn.org/wiki/org-mode.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
+          </p>
+        ]]></description>
+        <pubDate>Thu, 10 Sep 2020 13:49:47 +0000</pubDate>
+        <link>https://alexn.org/wiki/org-mode.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/wiki/org-mode.html?ts=20200910134947%2B0000</guid>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Docker</title>
+        <description><![CDATA[
+          <p>Wiki article, modified at September 10, 2020.</p>
+          <p>
+            <a href="https://alexn.org/wiki/docker.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
+          </p>
+        ]]></description>
+        <pubDate>Thu, 10 Sep 2020 13:49:47 +0000</pubDate>
+        <link>https://alexn.org/wiki/docker.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/wiki/docker.html?ts=20200910134947%2B0000</guid>
         
         
       </item>
