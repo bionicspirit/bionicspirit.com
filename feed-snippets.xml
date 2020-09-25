@@ -9,13 +9,207 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feed-snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 21 Sep 2020 13:21:49 +0000</pubDate>
-    <lastBuildDate>Mon, 21 Sep 2020 13:21:49 +0000</lastBuildDate>
+    <pubDate>Fri, 25 Sep 2020 12:54:23 +0000</pubDate>
+    <lastBuildDate>Fri, 25 Sep 2020 12:54:23 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
+    
+      
+      <item>
+        <title>Flow/Processor to Effect</title>
+        <description><![CDATA[          
+          <style type="text/css">
+            #alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlighter-rouge .highlight{background-color:#f0f0f0;color:#333;padding:10px}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight{white-space:pre;overflow:auto;word-wrap:normal;background:#f0f0f0;color:#333;border-radius:4px;border:1px solid #bbb;padding:20px 0;line-height:1.3;font-size:.9em}#alexn_post__snippets_2020_09_25_flow_processor_to_effect code.highlighter-rouge{background-color:rgba(27,31,35,0.05);padding:.2em .4em;margin:0;font-size:85%;border-radius:3px}#alexn_post__snippets_2020_09_25_flow_processor_to_effect div.formula-code{white-space:pre;overflow:auto;word-wrap:normal;background:#f0f0f0;color:#333;border-radius:4px;border:1px solid #bbb;padding:20px 0;margin:0 0 20px 0}#alexn_post__snippets_2020_09_25_flow_processor_to_effect div.formula-code .MathJax_Display{margin:0 !important}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .hll{background-color:#ffc}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .c{color:#999}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .err{color:#a00;background-color:#faa}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .k{color:#069}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .o{color:#555}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .cm{color:#09f;font-style:italic}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .cp{color:#099}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .c1{color:#999}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .cs{color:#999}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .gd{background-color:#fcc;border:1px solid #c00}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .ge{font-style:italic}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .gr{color:#f00}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .gh{color:#030}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .gi{background-color:#cfc;border:1px solid #0c0}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .go{color:#aaa}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .gp{color:#009}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .gu{color:#030}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .gt{color:#9c6}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .kc{color:#069}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .kd{color:#069}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .kn{color:#069}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .kp{color:#069}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .kr{color:#069}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .kt{color:#078}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .m{color:#f60}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .s{color:#d44950}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .na{color:#4f9fcf}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .nb{color:#366}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .nc{color:#0a8}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .no{color:#360}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .nd{color:#99f}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .ni{color:#999}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .ne{color:#c00}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .nf{color:#c0f}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .nl{color:#99f}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .nn{color:#0cf}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .nt{color:#2f6f9f}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .nv{color:#033}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .ow{color:#000}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .w{color:#bbb}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .mf{color:#f60}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .mh{color:#f60}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .mi{color:#f60}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .mo{color:#f60}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .sb{color:#c30}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .sc{color:#c30}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .sd{color:#c30;font-style:italic}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .s2{color:#c30}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .se{color:#c30}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .sh{color:#c30}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .si{color:#a00}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .sx{color:#c30}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .sr{color:#3aa}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .s1{color:#c30}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .ss{color:#fc3}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .bp{color:#366}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .vc{color:#033}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .vg{color:#033}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .vi{color:#033}#alexn_post__snippets_2020_09_25_flow_processor_to_effect .highlight .il{color:#f60}
+
+          </style>
+          <article id="alexn_post__snippets_2020_09_25_flow_processor_to_effect"><div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">akka.actor.ActorSystem</span>
+<span class="k">import</span> <span class="nn">akka.stream.Materializer</span>
+<span class="k">import</span> <span class="nn">akka.stream.scaladsl.Flow</span>
+<span class="k">import</span> <span class="nn">cats.effect.</span><span class="o">{</span> <span class="nc">ContextShift</span><span class="o">,</span> <span class="nc">IO</span><span class="o">,</span> <span class="nc">Resource</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">cats.implicits._</span>
+<span class="k">import</span> <span class="nn">monix.execution.AsyncSemaphore</span>
+<span class="k">import</span> <span class="nn">monix.execution.atomic.Atomic</span>
+<span class="k">import</span> <span class="nn">org.reactivestreams.</span><span class="o">{</span> <span class="nc">Processor</span><span class="o">,</span> <span class="nc">Publisher</span><span class="o">,</span> <span class="nc">Subscriber</span><span class="o">,</span> <span class="nc">Subscription</span> <span class="o">}</span>
+
+<span class="k">import</span> <span class="nn">scala.annotation.</span><span class="o">{</span> <span class="n">nowarn</span><span class="o">,</span> <span class="n">tailrec</span> <span class="o">}</span>
+<span class="k">import</span> <span class="nn">scala.concurrent.duration.Duration</span>
+<span class="k">import</span> <span class="nn">scala.concurrent.</span><span class="o">{</span> <span class="nc">Await</span><span class="o">,</span> <span class="nc">ExecutionContext</span><span class="o">,</span> <span class="nc">Future</span><span class="o">,</span> <span class="nc">Promise</span> <span class="o">}</span>
+
+<span class="k">final</span> <span class="k">class</span> <span class="nc">FlowToEffect</span><span class="o">[</span><span class="kt">In</span>, <span class="kt">Out</span><span class="o">]</span> <span class="nc">private</span> <span class="o">(</span>
+  <span class="n">processor</span><span class="k">:</span> <span class="kt">Processor</span><span class="o">[</span><span class="kt">In</span>, <span class="kt">Out</span><span class="o">]</span>
+<span class="o">)(</span><span class="k">implicit</span>
+  <span class="n">cs</span><span class="k">:</span> <span class="kt">ContextShift</span><span class="o">[</span><span class="kt">IO</span><span class="o">],</span>
+  <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span>
+<span class="o">)</span> <span class="o">{</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="nf">val</span> <span class="o">(</span><span class="n">producer</span><span class="k">:</span> <span class="kt">Publisher</span><span class="o">[</span><span class="kt">Out</span><span class="o">],</span> <span class="n">subscriber</span><span class="k">:</span> <span class="kt">Subscriber</span><span class="o">[</span><span class="kt">In</span><span class="o">])</span> <span class="k">=</span>
+    <span class="o">(</span><span class="n">processor</span><span class="o">,</span> <span class="n">processor</span><span class="o">)</span>
+
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="nv">awaitCallLatch</span> <span class="k">=</span> <span class="nc">AsyncSemaphore</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">var</span> <span class="n">publisherResponsePromise</span><span class="k">:</span> <span class="kt">Promise</span><span class="o">[</span><span class="kt">Out</span><span class="o">]</span> <span class="k">=</span> <span class="k">_</span>
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="nv">requested</span> <span class="k">=</span>
+    <span class="nc">Atomic</span><span class="o">(</span><span class="nc">Left</span><span class="o">(</span><span class="nc">Promise</span><span class="o">())</span><span class="k">:</span> <span class="kt">Either</span><span class="o">[</span><span class="kt">Promise</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span>, <span class="kt">Long</span><span class="o">])</span>
+
+  <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">val</span> <span class="nv">connectionClosed</span> <span class="k">=</span> <span class="nc">Promise</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]()</span>
+
+  <span class="nv">subscriber</span><span class="o">.</span><span class="py">onSubscribe</span><span class="o">(</span><span class="k">new</span> <span class="nc">Subscription</span> <span class="o">{</span>
+    <span class="c1">// Called by Akka Streams</span>
+    <span class="nd">@tailrec</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">request</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Long</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="nf">assert</span><span class="o">(</span><span class="n">n</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">)</span>
+      <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span>
+      <span class="k">val</span> <span class="nv">update</span> <span class="k">=</span>
+        <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="nc">Right</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+        <span class="k">else</span> <span class="nc">Left</span><span class="o">(</span><span class="nc">Promise</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]())</span>
+
+      <span class="nv">requested</span><span class="o">.</span><span class="py">get</span><span class="o">()</span> <span class="k">match</span> <span class="o">{</span>
+        <span class="k">case</span> <span class="n">current</span> <span class="k">@</span> <span class="nc">Left</span><span class="o">(</span><span class="n">promise</span><span class="o">)</span> <span class="k">=&gt;</span>
+          <span class="nf">if</span> <span class="o">(!</span><span class="nv">requested</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="n">current</span><span class="o">,</span> <span class="n">update</span><span class="o">))</span>
+            <span class="nf">request</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
+          <span class="k">else</span>
+            <span class="nv">promise</span><span class="o">.</span><span class="py">success</span><span class="o">(())</span>
+
+        <span class="k">case</span> <span class="n">current</span> <span class="k">@</span> <span class="nc">Right</span><span class="o">(</span><span class="n">n0</span><span class="o">)</span> <span class="k">=&gt;</span>
+          <span class="nf">if</span> <span class="o">(!</span><span class="nv">requested</span><span class="o">.</span><span class="py">compareAndSet</span><span class="o">(</span><span class="n">current</span><span class="o">,</span> <span class="nc">Right</span><span class="o">(</span><span class="n">n</span> <span class="o">+</span> <span class="n">n0</span><span class="o">)))</span>
+            <span class="nf">request</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Called by Akka Streams</span>
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">cancel</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nc">IllegalStateException</span><span class="o">()</span>
+  <span class="o">})</span>
+
+  <span class="nv">producer</span><span class="o">.</span><span class="py">subscribe</span><span class="o">(</span><span class="k">new</span> <span class="nc">Subscriber</span><span class="o">[</span><span class="kt">Out</span><span class="o">]</span> <span class="o">{</span>
+    <span class="k">private</span><span class="o">[</span><span class="kt">this</span><span class="o">]</span> <span class="k">var</span> <span class="n">sub</span><span class="k">:</span> <span class="kt">Subscription</span> <span class="o">=</span> <span class="k">_</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">onSubscribe</span><span class="o">(</span><span class="n">s</span><span class="k">:</span> <span class="kt">Subscription</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="n">sub</span> <span class="k">=</span> <span class="n">s</span>
+      <span class="nv">connectionClosed</span><span class="o">.</span><span class="py">future</span><span class="o">.</span><span class="py">onComplete</span> <span class="o">{</span> <span class="k">_</span> <span class="k">=&gt;</span>
+        <span class="nf">println</span><span class="o">(</span><span class="s">"Cancelling connection"</span><span class="o">)</span>
+        <span class="nv">sub</span><span class="o">.</span><span class="py">cancel</span><span class="o">()</span>
+      <span class="o">}</span>
+      <span class="nv">sub</span><span class="o">.</span><span class="py">request</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+    <span class="o">}</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">onNext</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">Out</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="nv">publisherResponsePromise</span><span class="o">.</span><span class="py">success</span><span class="o">(</span><span class="n">t</span><span class="o">)</span>
+      <span class="nv">sub</span><span class="o">.</span><span class="py">request</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+      <span class="nv">awaitCallLatch</span><span class="o">.</span><span class="py">release</span><span class="o">()</span>
+    <span class="o">}</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">onError</span><span class="o">(</span><span class="n">t</span><span class="k">:</span> <span class="kt">Throwable</span><span class="o">)</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+      <span class="nv">publisherResponsePromise</span><span class="o">.</span><span class="py">failure</span><span class="o">(</span><span class="n">t</span><span class="o">)</span>
+      <span class="c1">// TODO: signal future requests that stream ended in error</span>
+      <span class="nv">awaitCallLatch</span><span class="o">.</span><span class="py">release</span><span class="o">()</span>
+    <span class="o">}</span>
+
+    <span class="k">override</span> <span class="k">def</span> <span class="nf">onComplete</span><span class="o">()</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">()</span>
+  <span class="o">})</span>
+
+  <span class="k">private</span> <span class="k">val</span> <span class="nv">cancelIO</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">Unit</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nc">IO</span> <span class="o">{</span>
+      <span class="nv">connectionClosed</span><span class="o">.</span><span class="py">success</span><span class="o">(())</span>
+      <span class="o">()</span>
+    <span class="o">}</span>
+
+  <span class="nd">@nowarn</span><span class="o">(</span><span class="s">"cat=deprecation"</span><span class="o">)</span>
+  <span class="k">def</span> <span class="nf">pushEvent</span><span class="o">(</span><span class="n">in</span><span class="k">:</span> <span class="kt">In</span><span class="o">)</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">Out</span><span class="o">]</span> <span class="k">=</span>
+    <span class="nv">IO</span><span class="o">.</span><span class="py">fromFuture</span><span class="o">(</span><span class="nc">IO</span> <span class="o">{</span>
+      <span class="nv">awaitCallLatch</span><span class="o">.</span><span class="py">acquire</span><span class="o">().</span><span class="py">flatMap</span> <span class="o">{</span>
+        <span class="k">_</span> <span class="k">=&gt;</span>
+          <span class="k">val</span> <span class="nv">promise</span> <span class="k">=</span> <span class="nc">Promise</span><span class="o">[</span><span class="kt">Out</span><span class="o">]()</span>
+          <span class="n">publisherResponsePromise</span> <span class="k">=</span> <span class="n">promise</span>
+
+          <span class="k">val</span> <span class="nv">backpressurePermission</span> <span class="k">=</span>
+            <span class="nv">requested</span><span class="o">.</span><span class="py">transformAndExtract</span> <span class="o">{</span>
+              <span class="k">case</span> <span class="nc">Right</span><span class="o">(</span><span class="n">n</span><span class="o">)</span> <span class="k">=&gt;</span>
+                <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span>
+                  <span class="o">(</span><span class="nv">Future</span><span class="o">.</span><span class="py">successful</span><span class="o">(()),</span> <span class="nc">Right</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">))</span>
+                <span class="nf">else</span>
+                  <span class="o">(</span><span class="nv">Future</span><span class="o">.</span><span class="py">successful</span><span class="o">(()),</span> <span class="nc">Left</span><span class="o">(</span><span class="nc">Promise</span><span class="o">()))</span>
+
+              <span class="k">case</span> <span class="n">current</span> <span class="k">@</span> <span class="nc">Left</span><span class="o">(</span><span class="n">promise</span><span class="o">)</span> <span class="k">=&gt;</span>
+                <span class="o">(</span><span class="nv">promise</span><span class="o">.</span><span class="py">future</span><span class="o">,</span> <span class="n">current</span><span class="o">)</span>
+            <span class="o">}</span>
+
+          <span class="nv">backpressurePermission</span><span class="o">.</span><span class="py">flatMap</span> <span class="o">{</span> <span class="k">_</span> <span class="k">=&gt;</span>
+            <span class="nv">subscriber</span><span class="o">.</span><span class="py">onNext</span><span class="o">(</span><span class="n">in</span><span class="o">)</span>
+            <span class="nv">promise</span><span class="o">.</span><span class="py">future</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">})</span>
+<span class="o">}</span>
+
+<span class="k">object</span> <span class="nc">FlowToEffect</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="nf">apply</span><span class="o">[</span><span class="kt">I</span>, <span class="kt">O</span><span class="o">](</span>
+    <span class="n">f</span><span class="k">:</span> <span class="kt">IO</span><span class="o">[</span><span class="kt">Processor</span><span class="o">[</span><span class="kt">I</span>, <span class="kt">O</span><span class="o">]]</span>
+  <span class="o">)(</span><span class="k">implicit</span>
+    <span class="n">cs</span><span class="k">:</span> <span class="kt">ContextShift</span><span class="o">[</span><span class="kt">IO</span><span class="o">],</span>
+    <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span>
+  <span class="o">)</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">FlowToEffect</span><span class="o">[</span><span class="kt">I</span>, <span class="kt">O</span><span class="o">]]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="nc">Resource</span><span class="o">(</span><span class="nv">f</span><span class="o">.</span><span class="py">map</span> <span class="o">{</span> <span class="n">processor</span> <span class="k">=&gt;</span>
+      <span class="k">val</span> <span class="nv">ref</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">FlowToEffect</span><span class="o">(</span><span class="n">processor</span><span class="o">)</span>
+      <span class="o">(</span><span class="n">ref</span><span class="o">,</span> <span class="nv">ref</span><span class="o">.</span><span class="py">cancelIO</span><span class="o">)</span>
+    <span class="o">})</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="nf">apply</span><span class="o">[</span><span class="kt">I</span>, <span class="kt">O</span>, <span class="kt">Mat</span><span class="o">](</span>
+    <span class="n">flow</span><span class="k">:</span> <span class="kt">Flow</span><span class="o">[</span><span class="kt">I</span>, <span class="kt">O</span>, <span class="kt">Mat</span><span class="o">]</span>
+  <span class="o">)(</span><span class="k">implicit</span>
+    <span class="n">cs</span><span class="k">:</span> <span class="kt">ContextShift</span><span class="o">[</span><span class="kt">IO</span><span class="o">],</span>
+    <span class="n">m</span><span class="k">:</span> <span class="kt">Materializer</span><span class="o">,</span>
+    <span class="n">ec</span><span class="k">:</span> <span class="kt">ExecutionContext</span>
+  <span class="o">)</span><span class="k">:</span> <span class="kt">Resource</span><span class="o">[</span><span class="kt">IO</span>, <span class="kt">FlowToEffect</span><span class="o">[</span><span class="kt">I</span>, <span class="kt">O</span><span class="o">]]</span> <span class="k">=</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">res</span> <span class="k">=</span> <span class="nv">Resource</span><span class="o">.</span><span class="py">liftF</span><span class="o">(</span><span class="nc">IO</span> <span class="o">{</span>
+      <span class="nv">flow</span><span class="o">.</span><span class="py">toProcessor</span><span class="o">.</span><span class="py">run</span><span class="o">()</span>
+    <span class="o">})</span>
+    <span class="nv">res</span><span class="o">.</span><span class="py">flatMap</span><span class="o">(</span><span class="n">proc</span> <span class="k">=&gt;</span> <span class="nf">apply</span><span class="o">(</span><span class="nv">IO</span><span class="o">.</span><span class="py">pure</span><span class="o">(</span><span class="n">proc</span><span class="o">)))</span>
+  <span class="o">}</span>
+
+  <span class="k">def</span> <span class="nf">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span><span class="k">:</span> <span class="kt">Unit</span> <span class="o">=</span> <span class="o">{</span>
+    <span class="k">import</span> <span class="nn">ExecutionContext.Implicits.global</span>
+    <span class="k">implicit</span> <span class="k">val</span> <span class="nv">as</span> <span class="k">=</span> <span class="nc">ActorSystem</span><span class="o">(</span><span class="s">"test"</span><span class="o">)</span>
+    <span class="k">implicit</span> <span class="k">val</span> <span class="nv">cs</span> <span class="k">=</span> <span class="nv">IO</span><span class="o">.</span><span class="py">contextShift</span><span class="o">(</span><span class="n">global</span><span class="o">)</span>
+
+    <span class="k">val</span> <span class="nv">flow</span> <span class="k">=</span> <span class="nv">Flow</span><span class="o">.</span><span class="py">fromFunction</span><span class="o">[</span><span class="kt">Int</span>, <span class="kt">String</span><span class="o">]</span> <span class="o">{</span> <span class="n">int</span> <span class="k">=&gt;</span>
+      <span class="n">show</span><span class="s">"Received number: $int"</span>
+    <span class="o">}</span>
+
+    <span class="nf">val</span> <span class="o">(</span><span class="n">res</span><span class="o">,</span> <span class="n">cancelRes</span><span class="o">)</span> <span class="k">=</span> <span class="nc">FlowToEffect</span><span class="o">(</span><span class="n">flow</span><span class="o">).</span><span class="py">allocated</span><span class="o">.</span><span class="py">unsafeRunSync</span><span class="o">()</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="k">val</span> <span class="nv">f1</span> <span class="k">=</span> <span class="nv">res</span><span class="o">.</span><span class="py">pushEvent</span><span class="o">(</span><span class="mi">1</span><span class="o">).</span><span class="py">unsafeToFuture</span><span class="o">()</span>
+      <span class="k">val</span> <span class="nv">f2</span> <span class="k">=</span> <span class="nv">res</span><span class="o">.</span><span class="py">pushEvent</span><span class="o">(</span><span class="mi">2</span><span class="o">).</span><span class="py">unsafeToFuture</span><span class="o">()</span>
+      <span class="k">val</span> <span class="nv">f3</span> <span class="k">=</span> <span class="nv">res</span><span class="o">.</span><span class="py">pushEvent</span><span class="o">(</span><span class="mi">3</span><span class="o">).</span><span class="py">unsafeToFuture</span><span class="o">()</span>
+
+      <span class="k">val</span> <span class="nv">r1</span> <span class="k">=</span> <span class="nv">Await</span><span class="o">.</span><span class="py">result</span><span class="o">(</span><span class="n">f1</span><span class="o">,</span> <span class="nv">Duration</span><span class="o">.</span><span class="py">Inf</span><span class="o">)</span>
+      <span class="nf">println</span><span class="o">(</span><span class="n">show</span><span class="s">"Received: $r1"</span><span class="o">)</span>
+      <span class="k">val</span> <span class="nv">r2</span> <span class="k">=</span> <span class="nv">Await</span><span class="o">.</span><span class="py">result</span><span class="o">(</span><span class="n">f2</span><span class="o">,</span> <span class="nv">Duration</span><span class="o">.</span><span class="py">Inf</span><span class="o">)</span>
+      <span class="nf">println</span><span class="o">(</span><span class="n">show</span><span class="s">"Received: $r2"</span><span class="o">)</span>
+      <span class="k">val</span> <span class="nv">r3</span> <span class="k">=</span> <span class="nv">Await</span><span class="o">.</span><span class="py">result</span><span class="o">(</span><span class="n">f3</span><span class="o">,</span> <span class="nv">Duration</span><span class="o">.</span><span class="py">Inf</span><span class="o">)</span>
+      <span class="nf">println</span><span class="o">(</span><span class="n">show</span><span class="s">"Received: $r3"</span><span class="o">)</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+      <span class="nv">cancelRes</span><span class="o">.</span><span class="py">unsafeRunSync</span><span class="o">()</span>
+      <span class="nv">Await</span><span class="o">.</span><span class="py">result</span><span class="o">(</span><span class="nv">as</span><span class="o">.</span><span class="py">terminate</span><span class="o">(),</span> <span class="nv">Duration</span><span class="o">.</span><span class="py">Inf</span><span class="o">)</span>
+      <span class="o">()</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+</article>
+        ]]></description>
+        <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
     
       
       <item>
