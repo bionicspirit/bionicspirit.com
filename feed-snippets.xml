@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feed-snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Oct 2020 16:09:24 +0000</pubDate>
-    <lastBuildDate>Mon, 05 Oct 2020 16:09:24 +0000</lastBuildDate>
+    <pubDate>Mon, 05 Oct 2020 16:10:15 +0000</pubDate>
+    <lastBuildDate>Mon, 05 Oct 2020 16:10:15 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -50,6 +50,7 @@
 <p>Then in your tests:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">org.scalatest.Tag</span>
+<span class="k">import</span> <span class="nn">org.scalatest.funsuite.AsyncFunSuite</span>
 
 <span class="k">object</span> <span class="nc">IntegrationTest</span> <span class="k">extends</span> <span class="nc">Tag</span><span class="o">(</span><span class="s">"integrationTest"</span><span class="o">)</span>
 
