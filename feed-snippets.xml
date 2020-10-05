@@ -9,13 +9,74 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feed-snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Oct 2020 08:42:08 +0000</pubDate>
-    <lastBuildDate>Sun, 04 Oct 2020 08:42:08 +0000</lastBuildDate>
+    <pubDate>Mon, 05 Oct 2020 16:07:18 +0000</pubDate>
+    <lastBuildDate>Mon, 05 Oct 2020 16:07:18 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
+    
+      
+      <item>
+        <title>Running integration tess in Scala, with sbt</title>
+        <description><![CDATA[          
+          <style type="text/css">
+            #alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlighter-rouge .highlight{background-color:#f0f0f0;color:#333;padding:10px}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight{white-space:pre;overflow:auto;word-wrap:normal;background:#f0f0f0;color:#333;border-radius:4px;border:1px solid #bbb;padding:20px 0;line-height:1.3;font-size:.9em}#alexn_post__snippets_2020_10_05_running_integration_tests_scala code.highlighter-rouge{background-color:rgba(27,31,35,0.05);padding:.2em .4em;margin:0;font-size:85%;border-radius:3px}#alexn_post__snippets_2020_10_05_running_integration_tests_scala div.formula-code{white-space:pre;overflow:auto;word-wrap:normal;background:#f0f0f0;color:#333;border-radius:4px;border:1px solid #bbb;padding:20px 0;margin:0 0 20px 0}#alexn_post__snippets_2020_10_05_running_integration_tests_scala div.formula-code .MathJax_Display{margin:0 !important}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .hll{background-color:#ffc}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .c{color:#999}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .err{color:#a00;background-color:#faa}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .k{color:#069}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .o{color:#555}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .cm{color:#09f;font-style:italic}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .cp{color:#099}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .c1{color:#999}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .cs{color:#999}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .gd{background-color:#fcc;border:1px solid #c00}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .ge{font-style:italic}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .gr{color:#f00}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .gh{color:#030}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .gi{background-color:#cfc;border:1px solid #0c0}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .go{color:#aaa}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .gp{color:#009}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .gu{color:#030}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .gt{color:#9c6}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .kc{color:#069}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .kd{color:#069}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .kn{color:#069}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .kp{color:#069}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .kr{color:#069}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .kt{color:#078}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .m{color:#f60}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .s{color:#d44950}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .na{color:#4f9fcf}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .nb{color:#366}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .nc{color:#0a8}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .no{color:#360}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .nd{color:#99f}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .ni{color:#999}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .ne{color:#c00}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .nf{color:#c0f}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .nl{color:#99f}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .nn{color:#0cf}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .nt{color:#2f6f9f}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .nv{color:#033}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .ow{color:#000}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .w{color:#bbb}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .mf{color:#f60}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .mh{color:#f60}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .mi{color:#f60}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .mo{color:#f60}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .sb{color:#c30}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .sc{color:#c30}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .sd{color:#c30;font-style:italic}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .s2{color:#c30}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .se{color:#c30}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .sh{color:#c30}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .si{color:#a00}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .sx{color:#c30}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .sr{color:#3aa}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .s1{color:#c30}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .ss{color:#fc3}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .bp{color:#366}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .vc{color:#033}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .vg{color:#033}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .vi{color:#033}#alexn_post__snippets_2020_10_05_running_integration_tests_scala .highlight .il{color:#f60}
+
+          </style>
+          <article id="alexn_post__snippets_2020_10_05_running_integration_tests_scala"><p>For separating integration tests, from unit tests, in <code class="language-plaintext highlighter-rouge">build.sbt</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// sbt command-line shortcut</span>
+<span class="nf">addCommandAlias</span><span class="o">(</span><span class="s">"ci-integration"</span><span class="o">,</span> <span class="s">"Integration/testOnly -- -n integrationTest"</span><span class="o">)</span>
+
+<span class="k">lazy</span> <span class="k">val</span> <span class="nv">IntegrationTest</span> <span class="k">=</span> <span class="nf">config</span><span class="o">(</span><span class="s">"integration"</span><span class="o">).</span><span class="py">extend</span><span class="o">(</span><span class="nc">Test</span><span class="o">)</span>
+
+<span class="c1">//...</span>
+<span class="k">lazy</span> <span class="k">val</span> <span class="nv">root</span> <span class="k">=</span> <span class="nc">Project</span><span class="o">(</span><span class="n">base</span> <span class="k">=</span> <span class="nf">file</span><span class="o">(</span><span class="s">"."</span><span class="o">))</span>
+  <span class="o">.</span><span class="py">configs</span><span class="o">(</span><span class="nc">IntegrationTest</span><span class="o">)</span>
+  <span class="o">.</span><span class="py">settings</span><span class="o">(</span>
+    <span class="c1">// Exclude integration tests by default (in ScalaTest)</span>
+    <span class="nc">Test</span> <span class="o">/</span> <span class="n">testOptions</span> <span class="o">+=</span> <span class="nv">Tests</span><span class="o">.</span><span class="py">Argument</span><span class="o">(</span><span class="nv">TestFrameworks</span><span class="o">.</span><span class="py">ScalaTest</span><span class="o">,</span> <span class="s">"-l"</span><span class="o">,</span> <span class="s">"integrationTest"</span><span class="o">),</span>
+    <span class="c1">// Include integration tests, by nullifying the above option</span>
+    <span class="nc">IntegrationTest</span> <span class="o">/</span> <span class="n">testOptions</span> <span class="o">:=</span> <span class="nv">Seq</span><span class="o">.</span><span class="py">empty</span><span class="o">,</span>
+  <span class="o">)</span>
+  <span class="o">.</span><span class="py">settings</span><span class="o">(</span>
+    <span class="c1">// Enable integration tests</span>
+    <span class="nf">inConfig</span><span class="o">(</span><span class="nc">IntegrationTest</span><span class="o">)(</span><span class="nv">Defaults</span><span class="o">.</span><span class="py">testTasks</span><span class="o">)</span>
+  <span class="o">)</span>
+</code></pre></div></div>
+
+<p>Then in your tests:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">import</span> <span class="nn">org.scalatest.Tag</span>
+
+<span class="k">object</span> <span class="nc">IntegrationTest</span> <span class="k">extends</span> <span class="nc">Tag</span><span class="o">(</span><span class="s">"integrationTest"</span><span class="o">)</span>
+
+<span class="k">class</span> <span class="nc">MyTestSuite</span> <span class="k">extends</span> <span class="nc">AsyncFunSuite</span> <span class="o">{</span>
+  <span class="c1">// Tagging this test as an integration test</span>
+  <span class="nf">test</span><span class="o">(</span><span class="s">"integration works"</span><span class="o">,</span> <span class="nc">IntegrationTest</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">???</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Then run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>sbt ci-integration
+</code></pre></div></div>
+</article>
+        ]]></description>
+        <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+        <link>https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html</guid>
+        
+        
+        <dc:creator>Alexandru Nedelcu</dc:creator>
+        
+        
+      </item>
+      
     
       
       <item>
