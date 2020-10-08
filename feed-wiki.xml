@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feed-wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Oct 2020 16:14:27 +0000</pubDate>
-    <lastBuildDate>Mon, 05 Oct 2020 16:14:27 +0000</lastBuildDate>
+    <pubDate>Thu, 08 Oct 2020 05:33:17 +0000</pubDate>
+    <lastBuildDate>Thu, 08 Oct 2020 05:33:17 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -29,23 +29,6 @@
         <pubDate>Mon, 31 Aug 2020 09:18:21 +0000</pubDate>
         <link>https://alexn.org/wiki/haskell.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/wiki/haskell.html?ts=20200831091821%2B0000</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
-        <title>Privacy</title>
-        <description><![CDATA[
-          <p>Wiki article, modified at September 25, 2020.</p>
-          <p>
-            <a href="https://alexn.org/wiki/privacy.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
-          </p>
-        ]]></description>
-        <pubDate>Fri, 25 Sep 2020 12:53:15 +0000</pubDate>
-        <link>https://alexn.org/wiki/privacy.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="true">https://alexn.org/wiki/privacy.html?ts=20200925125315%2B0000</guid>
         
         
       </item>
@@ -376,23 +359,6 @@
     
       
       <item>
-        <title>F#</title>
-        <description><![CDATA[
-          <p>Wiki article, modified at August 24, 2020.</p>
-          <p>
-            <a href="https://alexn.org/wiki/fsharp.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
-          </p>
-        ]]></description>
-        <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-        <link>https://alexn.org/wiki/fsharp.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="true">https://alexn.org/wiki/fsharp.html?ts=20200824132431%2B0000</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
         <title>Email Tips</title>
         <description><![CDATA[
           <p>Wiki article, modified at August 24, 2020.</p>
@@ -512,23 +478,6 @@
     
       
       <item>
-        <title>Wiki</title>
-        <description><![CDATA[
-          <p>Wiki article, modified at September 21, 2020.</p>
-          <p>
-            <a href="https://alexn.org/wiki/index.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
-          </p>
-        ]]></description>
-        <pubDate>Mon, 21 Sep 2020 13:20:35 +0000</pubDate>
-        <link>https://alexn.org/wiki/index.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
-        <guid isPermaLink="true">https://alexn.org/wiki/index.html?ts=20200921132035%2B0000</guid>
-        
-        
-      </item>
-      
-    
-      
-      <item>
         <title>Python</title>
         <description><![CDATA[
           <p>Wiki article, modified at September 21, 2020.</p>
@@ -624,6 +573,57 @@
         <pubDate>Thu, 10 Sep 2020 13:49:47 +0000</pubDate>
         <link>https://alexn.org/wiki/docker.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
         <guid isPermaLink="true">https://alexn.org/wiki/docker.html?ts=20200910134947%2B0000</guid>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Wiki</title>
+        <description><![CDATA[
+          <p>Wiki article, modified at October 8, 2020.</p>
+          <p>
+            <a href="https://alexn.org/wiki/index.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
+          </p>
+        ]]></description>
+        <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
+        <link>https://alexn.org/wiki/index.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/wiki/index.html?ts=20201008053140%2B0000</guid>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>Privacy</title>
+        <description><![CDATA[
+          <p>Wiki article, modified at October 8, 2020.</p>
+          <p>
+            <a href="https://alexn.org/wiki/privacy.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
+          </p>
+        ]]></description>
+        <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
+        <link>https://alexn.org/wiki/privacy.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/wiki/privacy.html?ts=20201008053140%2B0000</guid>
+        
+        
+      </item>
+      
+    
+      
+      <item>
+        <title>.NET</title>
+        <description><![CDATA[
+          <p>Wiki article, modified at October 8, 2020.</p>
+          <p>
+            <a href="https://alexn.org/wiki/dotnet.html?pk_campaign=rss&pk_kwd=read-more">Read article →</a>
+          </p>
+        ]]></description>
+        <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
+        <link>https://alexn.org/wiki/dotnet.html?pk_campaign=rss&amp;pk_kwd=rss-link</link>
+        <guid isPermaLink="true">https://alexn.org/wiki/dotnet.html?ts=20201008053140%2B0000</guid>
         
         
       </item>
