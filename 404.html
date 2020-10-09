@@ -49,7 +49,7 @@ has_full_title: true
     <h2>Recent Snippets</h2>
 
     <div class="container">
-      {% assign snippets = site.snippets | rss_sort_all | slice: 0, 3 -%}
+      {% assign snippets = site.snippets | sort_by_date_desc | slice: 0, 3 -%}
       {% for post in snippets %}
       <div class="item">
         <a class="related-link" href="{{ site.baseurl }}{{ post.url }}">
@@ -69,7 +69,7 @@ has_full_title: true
     <h2>Recent Wiki Articles</h2>
 
     <div class="container">
-      {% assign wikis = site.wiki | rss_sort_all | slice: 0, 3 -%}
+      {% assign wikis = site.wiki | sort_by_last_modified_at_desc | slice: 0, 3 -%}
       {% for post in wikis %}
       <div class="item">
         <a class="related-link" href="{{ site.baseurl }}{{ post.url }}">
@@ -89,7 +89,7 @@ has_full_title: true
     <h2>Recent Shared Links</h2>
 
     <div class="container">
-      {% assign links = site.links | rss_sort_all | slice: 0, 3 -%}
+      {% assign links = site.links | sort_by_date_desc | slice: 0, 3 -%}
       {% for post in links %}
       <div class="item">
         <a class="related-link" href="{{ site.baseurl }}{{ post.url }}">

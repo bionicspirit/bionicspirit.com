@@ -48,7 +48,7 @@ has_subscribe: true
     </p>
   </div>
 
-  {% assign all_links = site.links | rss_sort_all -%}
+  {% assign all_links = site.links | sort_by_date_desc -%}
   {% assign links_count = all_links | size -%}
   {% if links_count > 1 %}
   <div class="related">

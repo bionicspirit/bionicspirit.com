@@ -44,7 +44,7 @@ has_full_title: true
   <div class="archive_list">
     <h3>Recent Snippets</h3>
   
-    {% assign all_snippets = site.snippets | rss_sort_all -%}
+    {% assign all_snippets = site.snippets | sort_by_date_desc -%}
     <div class="container">
       {% for post in all_snippets offset:0 limit:3 %}
       <div class="item">
@@ -67,7 +67,7 @@ has_full_title: true
   <div class="archive_list">
     <h3>Recent Wiki Articles</h3>
   
-    {% assign all_wiki = site.wiki | rss_sort_all -%}
+    {% assign all_wiki = site.wiki | sort_by_last_modified_at_desc -%}
     <div class="container">
       {% for post in all_wiki offset:0 limit:3 %}
       <div class="item">
@@ -90,7 +90,7 @@ has_full_title: true
   <div class="archive_list">
     <h3>Recent Shared Links</h3>
   
-    {% assign all_links = site.links | rss_sort_all -%}
+    {% assign all_links = site.links | sort_by_date_desc -%}
     <div class="container">
       {% for post in all_links offset:0 limit:3 %}
       <div class="item">

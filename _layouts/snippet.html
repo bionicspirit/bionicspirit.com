@@ -5,7 +5,7 @@ has_subscribe: true
 
 {{ content }}
 
-{% assign all_snippets = site.snippets | rss_sort_all -%}
+{% assign all_snippets = site.snippets | sort_by_date_desc -%}
 {% assign snippets_count = all_snippets | size -%}
 {% if snippets_count > 1 %}
 <div class="related">

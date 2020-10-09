@@ -46,6 +46,25 @@ module Jekyll
         str
       end
     end
+
+    def sort_by_date_desc(posts)
+      posts.sort { |a, b| 
+        -1 * (
+          a['date'] <=> b['date'] ||
+          a['slug'] <=> b['slug']
+        )
+      }
+    end
+
+    def sort_by_last_modified_at_desc(posts)
+      posts.sort { |a, b| 
+        -1 * (
+          a['last_modified_at'] <=> b['last_modified_at'] ||
+          a['date'] <=> b['date'] ||
+          a['slug'] <=> b['slug']
+        )
+      }
+    end
   end
 
   module MyRSSFilter
@@ -61,15 +80,6 @@ module Jekyll
       l = l + "pk_campaign=#{campaign}"
       l = l + "&pk_kwd=" + keyword if keyword
       l
-    end
-
-    def rss_sort_all(posts)
-      posts.sort { |a, b| 
-        -1 * (
-          a['date'] <=> b['date'] ||
-          a['slug'] <=> b['slug']
-        )
-      }
     end
 
     def rss_process(html, styles=nil)
