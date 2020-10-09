@@ -51,13 +51,6 @@
     <meta property="og:image:secure_url" content="{{ '/assets/logo/800px.png' | prepend: site.url }}" />
     {% endif -%}
   
-    {% if page.author -%}
-      {% assign author_facebook = site.authors | map: page.author | map: "facebook" -%}
-    {% else %}
-      {% assign author_facebook = site.authors.alexelcu.facebook -%}
-    {% endif -%}
-    <meta content="https://www.facebook.com/{{ author_facebook }}" property="article:author">
-
     <!-- Twitter Cards -->
     {% if page.vimeo -%}
     <meta name="twitter:card" content="player" />
@@ -79,11 +72,7 @@
     <meta name="twitter:image:src" content="{{ '/assets/logo/800px.png' | prepend: site.url }}">
     {% endif -%}
   
-    {% if page.author -%}
-      {% assign author_twitter = site.authors | map: page.author | map: "twitter" -%}
-    {% else %}
-      {% assign author_twitter = site.authors.alexelcu.twitter %}
-    {% endif -%}
+    {% assign author_twitter = page.author_twitter | default: site.authors | map: "alexelcu" | map: "twitter" -%}
     <meta name="twitter:site" content="@{{ author_twitter }}">
     <meta name="twitter:creator" content="@{{ author_twitter }}">
     <meta name="twitter:title" content="{{ page_or_site_title }}">
