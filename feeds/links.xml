@@ -9,8 +9,8 @@
     <description>Feed of recommended links from around the web, published at alexn.org/links/</description>
     <link>https://alexn.org/links/</link>
     <atom:link href="https://alexn.org/feeds/links.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Oct 2020 12:10:23 +0000</pubDate>
-    <lastBuildDate>Sat, 10 Oct 2020 12:10:23 +0000</lastBuildDate>
+    <pubDate>Sat, 10 Oct 2020 12:50:48 +0000</pubDate>
+    <lastBuildDate>Sat, 10 Oct 2020 12:50:48 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -19,19 +19,19 @@
     
       
         <item>
-  <title>State of the Haskell ecosystem, by Dmitrii Kovanikov</title>
+  <title>State of the Haskell ecosystem, by Gabriel Gonzalez</title>
   <description>&lt;p&gt;&lt;em&gt;“In this post I will describe the current state of the Haskell ecosystem to the best of my knowledge and its suitability for various programming domains and tasks. The purpose of this post is to discuss both the good and the bad by advertising where Haskell shines while highlighting where I believe there is room for improvement.”&lt;/em&gt;&lt;/p&gt;
 
   &lt;p&gt;
     &lt;a href=&quot;https://github.com/Gabriel439/post-rfc/blob/master/sotu.md&quot;&gt;Read article ...&lt;/a&gt;
   &lt;/p&gt;</description>
   <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 10 Oct 2020 12:50:00 +0000</dc:modified>
+  <atom:modified>Sat, 10 Oct 2020 12:50:00 +0000</atom:modified>
   <link>https://github.com/Gabriel439/post-rfc/blob/master/sotu.md</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/09/state-of-the-haskell-ecosystem.html</guid>
   
-  <dc:creator>Dmitrii Kovanikov</dc:creator>
+  <dc:creator>Gabriel Gonzalez</dc:creator>
   
   <category>Shared link</category>
   
