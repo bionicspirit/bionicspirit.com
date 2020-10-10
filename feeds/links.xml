@@ -9,13 +9,40 @@
     <description>Feed of recommended links from around the web, published at alexn.org/links/</description>
     <link>https://alexn.org/links/</link>
     <atom:link href="https://alexn.org/feeds/links.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Oct 2020 12:50:48 +0000</pubDate>
-    <lastBuildDate>Sat, 10 Oct 2020 12:50:48 +0000</lastBuildDate>
+    <pubDate>Sat, 10 Oct 2020 12:55:54 +0000</pubDate>
+    <lastBuildDate>Sat, 10 Oct 2020 12:55:54 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
+    
+      
+        <item>
+  <title>Countdown to Scala 3, by Martin Odersky</title>
+  <description>&lt;a href=&quot;https://www.youtube.com/watch?v=n9LPwOPACj4&quot;&gt;
+    &lt;img src=&quot;https://img.youtube.com/vi/n9LPwOPACj4/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+  &lt;/a&gt;
+  &lt;p&gt;&lt;em&gt;“I give a quick status report where we are with Scala 3. What is the current status? What remains to be done? Who is contributing to the effort? I’ll also give some initial thoughts about how Scala will evolve after 3.0 is out.”&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Martin Odersky - Inventor of the Scala language, a professor at EPFL in Lausanne, Switzerland, and a founder of Lightbend. ACM fellow, co-designer of Java generics, and original author of the current javac reference Compiler.&lt;/p&gt;
+
+  &lt;p&gt;
+    &lt;a href=&quot;https://www.youtube.com/watch?v=n9LPwOPACj4&quot;&gt;Read article ...&lt;/a&gt;
+  &lt;/p&gt;</description>
+  <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Sat, 10 Oct 2020 12:55:14 +0000</dc:modified>
+  <atom:modified>Sat, 10 Oct 2020 12:55:14 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=n9LPwOPACj4</link>
+  <guid isPermaLink="false">https://alexn.org/links/2020/10/10/countdown-to-scala-3.html</guid>
+  
+  <dc:creator>Martin Odersky</dc:creator>
+  
+  <category>Shared link</category>
+  
+</item>
+
+      
     
       
         <item>
