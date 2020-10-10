@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Oct 2020 01:26:53 +0000</pubDate>
-    <lastBuildDate>Sat, 10 Oct 2020 01:26:53 +0000</lastBuildDate>
+    <pubDate>Sat, 10 Oct 2020 07:02:23 +0000</pubDate>
+    <lastBuildDate>Sat, 10 Oct 2020 07:02:23 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -19,9 +19,9 @@
     
       
         <item>
-  <title>.NET</title>
+  <title>Microsoft .NET</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
+    Article updated at October 10, 2020, 
     created at October 8, 2020.
   &lt;/p&gt;
   &lt;hr&gt;
@@ -79,8 +79,8 @@
 &lt;a href=&quot;https://github.com/haf/expecto#installing&quot;&gt;Expecto&lt;/a&gt;: unit testing&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 10 Oct 2020 07:00:47 +0000</dc:modified>
+  <atom:modified>Sat, 10 Oct 2020 07:00:47 +0000</atom:modified>
   <link>https://alexn.org/wiki/dotnet.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dotnet.html</guid>
   
