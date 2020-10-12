@@ -9,8 +9,8 @@
     <description>Feed of blog articles, snippets, wiki, shared links, published at alexn.org</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/all.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Oct 2020 19:34:23 +0000</pubDate>
-    <lastBuildDate>Sat, 10 Oct 2020 19:34:23 +0000</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2020 14:01:10 +0000</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2020 14:01:10 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -20,21 +20,27 @@
       <item>
   <title>Shared Link — Typelevel Cats Effect 3.0.0-M1</title>
   <description>&lt;a href=&quot;https://github.com/typelevel/cats-effect/releases/tag/v3.0.0-M1&quot;&gt;
-    &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-  &lt;/a&gt;
-  &lt;br /&gt;
-  &lt;p&gt;&lt;em&gt;“Cats Effect 3.0.0-M1 is the very first milestone release in the 3.0.0 line. We are expecting to follow this milestone with subsequent ones as necessary to further refine functionality and features, prior to some number of release candidates leading to a final release. The designation “M1” is meant to indicate our relative confidence in the functionality and API of the library, but it by no means indicates completeness or final compatibility. Neither binary compatibility nor source compatibility with anything are assured prior to 3.0.0, though major breakage is unlikely at this point.”&lt;/em&gt;&lt;/p&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+    &lt;/a&gt;
+    &lt;br /&gt;
+    &lt;p&gt;&lt;em&gt;“Cats Effect 3.0.0-M1 is the very first milestone release in the 3.0.0 line. We are expecting to follow this milestone with subsequent ones as necessary to further refine functionality and features, prior to some number of release candidates leading to a final release. The designation “M1” is meant to indicate our relative confidence in the functionality and API of the library, but it by no means indicates completeness or final compatibility. Neither binary compatibility nor source compatibility with anything are assured prior to 3.0.0, though major breakage is unlikely at this point.”&lt;/em&gt;&lt;/p&gt;
 
-  &lt;p&gt;
-    &lt;a href=&quot;https://github.com/typelevel/cats-effect/releases/tag/v3.0.0-M1&quot;&gt;Read article ...&lt;/a&gt;
-  &lt;/p&gt;</description>
+    &lt;p&gt;
+      &lt;a href=&quot;https://github.com/typelevel/cats-effect/releases/tag/v3.0.0-M1&quot;&gt;Read article ...&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sat, 10 Oct 2020 19:28:07 +0000</pubDate>
-  <dc:modified>Sat, 10 Oct 2020 19:33:37 +0000</dc:modified>
-  <atom:modified>Sat, 10 Oct 2020 19:33:37 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>https://github.com/typelevel/cats-effect/releases/tag/v3.0.0-M1</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/10/cats-effect-3-0-0-m1.html</guid>
   
   <category>Shared link</category>
+  
+  <category>Programming</category>
+  
+  <category>Scala</category>
+  
+  <category>Typelevel</category>
   
 </item>
 
@@ -42,23 +48,25 @@
       <item>
   <title>Shared Link — Practice typing by retyping ENTIRE classic novels</title>
   <description>&lt;a href=&quot;https://www.typelit.io/&quot;&gt;
-    &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-  &lt;/a&gt;
-  &lt;br /&gt;
-  &lt;p&gt;&lt;em&gt;“Improve your typing for free online by practicing on classic literature.”&lt;/em&gt;&lt;/p&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+    &lt;/a&gt;
+    &lt;br /&gt;
+    &lt;p&gt;&lt;em&gt;“Improve your typing for free online by practicing on classic literature.”&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This looks like fun.&lt;/p&gt;
 
-  &lt;p&gt;
-    &lt;a href=&quot;https://www.typelit.io/&quot;&gt;Read article ...&lt;/a&gt;
-  &lt;/p&gt;</description>
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.typelit.io/&quot;&gt;Read article ...&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sat, 10 Oct 2020 19:13:12 +0000</pubDate>
-  <dc:modified>Sat, 10 Oct 2020 19:33:37 +0000</dc:modified>
-  <atom:modified>Sat, 10 Oct 2020 19:33:37 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>https://www.typelit.io/</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/10/practice-typing-by-retyping-entire-classic-novels.html</guid>
   
   <category>Shared link</category>
+  
+  <category>Tech Skills</category>
   
 </item>
 
@@ -66,13 +74,13 @@
       <item>
   <title>When My World Vanishes</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/earth.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;It’s me, facing a hard to solve problem. It’s a difficult one, and I’m having problems focusing. I make some coffee, I move to another room, and I’m already thinking of running to some coffee shop, forgetting that we’re still in a pandemic.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/earth.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;It’s me, facing a hard to solve problem. It’s a difficult one, and I’m having problems focusing. I make some coffee, I move to another room, and I’m already thinking of running to some coffee shop, forgetting that we’re still in a pandemic.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 10 Oct 2020 01:25:39 +0000</dc:modified>
   <atom:modified>Sat, 10 Oct 2020 01:25:39 +0000</atom:modified>
@@ -92,24 +100,28 @@
       <item>
   <title>Shared Link — Countdown to Scala 3, by Martin Odersky</title>
   <description>&lt;a href=&quot;https://www.youtube.com/watch?v=n9LPwOPACj4&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/n9LPwOPACj4/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-  &lt;/a&gt;
-  &lt;p&gt;&lt;em&gt;“I give a quick status report where we are with Scala 3. What is the current status? What remains to be done? Who is contributing to the effort? I’ll also give some initial thoughts about how Scala will evolve after 3.0 is out.”&lt;/em&gt;&lt;/p&gt;
+      &lt;img src=&quot;https://img.youtube.com/vi/n9LPwOPACj4/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+    &lt;/a&gt;
+    &lt;p&gt;&lt;em&gt;“I give a quick status report where we are with Scala 3. What is the current status? What remains to be done? Who is contributing to the effort? I’ll also give some initial thoughts about how Scala will evolve after 3.0 is out.”&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Martin Odersky - Inventor of the Scala language, a professor at EPFL in Lausanne, Switzerland, and a founder of Lightbend. ACM fellow, co-designer of Java generics, and original author of the current javac reference Compiler.&lt;/p&gt;
 
-  &lt;p&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=n9LPwOPACj4&quot;&gt;Read article ...&lt;/a&gt;
-  &lt;/p&gt;</description>
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=n9LPwOPACj4&quot;&gt;Read article ...&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Sat, 10 Oct 2020 12:55:14 +0000</dc:modified>
-  <atom:modified>Sat, 10 Oct 2020 12:55:14 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=n9LPwOPACj4</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/10/countdown-to-scala-3.html</guid>
   
   <dc:creator>Martin Odersky</dc:creator>
   
   <category>Shared link</category>
+  
+  <category>Programming</category>
+  
+  <category>Scala</category>
   
 </item>
 
@@ -118,18 +130,22 @@
   <title>Shared Link — State of the Haskell ecosystem, by Gabriel Gonzalez</title>
   <description>&lt;p&gt;&lt;em&gt;“In this post I will describe the current state of the Haskell ecosystem to the best of my knowledge and its suitability for various programming domains and tasks. The purpose of this post is to discuss both the good and the bad by advertising where Haskell shines while highlighting where I believe there is room for improvement.”&lt;/em&gt;&lt;/p&gt;
 
-  &lt;p&gt;
-    &lt;a href=&quot;https://github.com/Gabriel439/post-rfc/blob/master/sotu.md&quot;&gt;Read article ...&lt;/a&gt;
-  &lt;/p&gt;</description>
+    &lt;p&gt;
+      &lt;a href=&quot;https://github.com/Gabriel439/post-rfc/blob/master/sotu.md&quot;&gt;Read article ...&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Sat, 10 Oct 2020 12:50:00 +0000</dc:modified>
-  <atom:modified>Sat, 10 Oct 2020 12:50:00 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>https://github.com/Gabriel439/post-rfc/blob/master/sotu.md</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/09/state-of-the-haskell-ecosystem.html</guid>
   
   <dc:creator>Gabriel Gonzalez</dc:creator>
   
   <category>Shared link</category>
+  
+  <category>Programming</category>
+  
+  <category>Haskell</category>
   
 </item>
 
@@ -138,11 +154,11 @@
             <item>
   <title>Wiki — Microsoft .NET</title>
   <description>&lt;p&gt;
-    Article updated at October 10, 2020, 
-    created at October 8, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;csharp&quot;&gt;CSharp&lt;/h2&gt;
+      Article updated at October 10, 2020, 
+      created at October 8, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;csharp&quot;&gt;CSharp&lt;/h2&gt;
 
 &lt;h3 id=&quot;game-development&quot;&gt;Game Development&lt;/h3&gt;
 
@@ -209,19 +225,6 @@
         
       <item>
   <title>Snippet — Unlawful Effect.scala</title>
-  <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 08 Oct 2020 09:59:23 +0000</dc:modified>
-  <atom:modified>Thu, 08 Oct 2020 09:59:23 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;p&gt;Unlawful version of &lt;a href=&quot;https://typelevel.org/cats-effect/typeclasses/effect.html&quot;&gt;cats.effect.Effect&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.ApplicativeError&lt;/span&gt;
@@ -314,24 +317,40 @@
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This is similar to usage of &lt;a href=&quot;https://monix.io/api/current/monix/eval/TaskLike.html&quot;&gt;TaskLike&lt;/a&gt; in &lt;a href=&quot;https://monix.io&quot;&gt;Monix&lt;/a&gt;.&lt;/p&gt;
-</description>
+&lt;p&gt;This is similar to usage of &lt;a href=&quot;https://monix.io/api/current/monix/eval/TaskLike.html&quot;&gt;TaskLike&lt;/a&gt; in &lt;a href=&quot;https://monix.io&quot;&gt;Monix&lt;/a&gt;.&lt;/p&gt;</description>
+  <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Scala</category>
+  
 </item>
   
         
       <item>
   <title>Shared Link — Category Theory for the Working Hacker, by Philip Wadler</title>
   <description>&lt;a href=&quot;https://www.youtube.com/watch?v=V10hzjgoklA&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/V10hzjgoklA/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-  &lt;/a&gt;
-  &lt;p&gt;&lt;em&gt;“The talk will explain why category theory is of interest for developers. The principle of Propositions as Types describes a correspondence between propositions and proofs in logic, on the one hand, and types and programs in computing, on the other. Category theory constitutes a third leg of this correspondence. Assuming only enough familiarity with functional programming that you know why ‘Lambda World’ has that name, the talk will explain how to model products (logical and), sums (logical or), and functions (logical implication), and why you already learned the most important stuff in high school.”&lt;/em&gt;&lt;/p&gt;
+      &lt;img src=&quot;https://img.youtube.com/vi/V10hzjgoklA/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+    &lt;/a&gt;
+    &lt;p&gt;&lt;em&gt;“The talk will explain why category theory is of interest for developers. The principle of Propositions as Types describes a correspondence between propositions and proofs in logic, on the one hand, and types and programs in computing, on the other. Category theory constitutes a third leg of this correspondence. Assuming only enough familiarity with functional programming that you know why ‘Lambda World’ has that name, the talk will explain how to model products (logical and), sums (logical or), and functions (logical implication), and why you already learned the most important stuff in high school.”&lt;/em&gt;&lt;/p&gt;
 
-  &lt;p&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=V10hzjgoklA&quot;&gt;Read article ...&lt;/a&gt;
-  &lt;/p&gt;</description>
+    &lt;p&gt;
+      &lt;a href=&quot;https://www.youtube.com/watch?v=V10hzjgoklA&quot;&gt;Read article ...&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=V10hzjgoklA</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/08/category-theory-for-the-working-hacker.html</guid>
   
@@ -339,24 +358,19 @@
   
   <category>Shared link</category>
   
+  <category>Programming</category>
+  
+  <category>Category Theory</category>
+  
+  <category>FP</category>
+  
+  <category>Haskell</category>
+  
 </item>
 
         
       <item>
   <title>Snippet — Running integration tests, with Scala + sbt</title>
-  <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 05 Oct 2020 16:13:38 +0000</dc:modified>
-  <atom:modified>Mon, 05 Oct 2020 16:13:38 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;p&gt;For separating integration tests, from unit tests, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build.sbt&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// sbt command-line shortcut&lt;/span&gt;
@@ -397,26 +411,31 @@
 &lt;p&gt;Then run:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;sbt ci-integration
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Flow/Processor to Effect</title>
-  <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 25 Sep 2020 12:55:42 +0000</dc:modified>
-  <atom:modified>Fri, 25 Sep 2020 12:55:42 +0000</atom:modified>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>sbt</category>
+  
+  <category>Scala</category>
+  
+  <category>Testing</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Flow/Processor to Effect</title>
   <description>&lt;p&gt;Possibly broken implementation, take it with a grain of salt:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;akka.actor.ActorSystem&lt;/span&gt;
@@ -591,8 +610,28 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Akka</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Reactive Streams</category>
+  
+  <category>Scala</category>
+  
 </item>
   
         
@@ -600,11 +639,11 @@
             <item>
   <title>Wiki — Privacy</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at September 21, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;firefox-extensions&quot;&gt;Firefox Extensions&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at September 21, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;firefox-extensions&quot;&gt;Firefox Extensions&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/clearurls/&quot;&gt;CleanURLs&lt;/a&gt;&lt;/li&gt;
@@ -664,11 +703,11 @@
             <item>
   <title>Wiki — De-DRM</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at September 17, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;ebooks&quot;&gt;eBooks&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at September 17, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;ebooks&quot;&gt;eBooks&lt;/h2&gt;
 
 &lt;p&gt;Tools:&lt;/p&gt;
 
@@ -715,11 +754,11 @@
             <item>
   <title>Wiki — Image Formats</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at September 15, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;convert-heic-to-jpeg-in-a-directory&quot;&gt;Convert HEIC to JPEG in a directory&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at September 15, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;convert-heic-to-jpeg-in-a-directory&quot;&gt;Convert HEIC to JPEG in a directory&lt;/h2&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
@@ -754,13 +793,13 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
       <item>
   <title>Privilege</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/fi-miu.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Today it’s my 38ᵗʰ birthday. I was born into privilege. Other people aren’t as lucky.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/fi-miu.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Today it’s my 38ᵗʰ birthday. I was born into privilege. Other people aren’t as lucky.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
   <dc:modified>Thu, 10 Sep 2020 14:04:28 +0000</dc:modified>
   <atom:modified>Thu, 10 Sep 2020 14:04:28 +0000</atom:modified>
@@ -781,11 +820,11 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
             <item>
   <title>Wiki — Apache Kafka</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at September 4, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;docker-setup&quot;&gt;Docker Setup&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at September 4, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;docker-setup&quot;&gt;Docker Setup&lt;/h2&gt;
 
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# Kafka config taken from:&lt;/span&gt;
@@ -861,19 +900,6 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
         
       <item>
   <title>Snippet — Safe Password.scala</title>
-  <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 04 Sep 2020 05:49:29 +0000</dc:modified>
-  <atom:modified>Fri, 04 Sep 2020 05:49:29 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/27/safe-password.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;p&gt;See: &lt;a href=&quot;https://books.nowsecure.com/secure-mobile-development/en/coding-practices/securely-store-sensitive-data-in-ram.html&quot;&gt;Securely Store Sensitive Data in RAM&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Resource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Sync&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -950,8 +976,24 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/27/safe-password.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>JVM</category>
+  
+  <category>Scala</category>
+  
 </item>
   
         
@@ -959,11 +1001,11 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
             <item>
   <title>Wiki — Agile software development</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;kanban&quot;&gt;Kanban&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;kanban&quot;&gt;Kanban&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CD0y-aU1sXo&quot;&gt;Eric Brechner: “Agile Project Management with Kanban”&lt;/a&gt;&lt;/p&gt;
 
@@ -999,11 +1041,11 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
             <item>
   <title>Wiki — Cloudflare</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;invalidate-cache&quot;&gt;Invalidate cache&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;invalidate-cache&quot;&gt;Invalidate cache&lt;/h2&gt;
 
 &lt;p&gt;Create an API token:&lt;/p&gt;
 
@@ -1068,11 +1110,11 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
             <item>
   <title>Wiki — Debian Packages (deb)</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;ul&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.debian.org/doc/manuals/debmake-doc/ch04.en.html&quot;&gt;https://www.debian.org/doc/manuals/debmake-doc/ch04.en.html&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://wiki.opf-labs.org/display/SP/The+Hello+World+Debian+Package&quot;&gt;http://wiki.opf-labs.org/display/SP/The+Hello+World+Debian+Package&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://santi-bassett.blogspot.com/2014/07/how-to-create-debian-package.html&quot;&gt;https://santi-bassett.blogspot.com/2014/07/how-to-create-debian-package.html&lt;/a&gt;&lt;/li&gt;
@@ -1093,11 +1135,11 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
             <item>
   <title>Wiki — DNS settings</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;macos&quot;&gt;MacOS&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;macos&quot;&gt;MacOS&lt;/h2&gt;
 
 &lt;h3 id=&quot;refresh-dns&quot;&gt;Refresh DNS&lt;/h3&gt;
 
@@ -1203,11 +1245,11 @@ brew uninstall dnsmasq
             <item>
   <title>Wiki — Docker</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
 
@@ -1490,11 +1532,11 @@ brew uninstall dnsmasq
             <item>
   <title>Wiki — Dropbox</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;remove-all-shared-links&quot;&gt;Remove all shared links&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;remove-all-shared-links&quot;&gt;Remove all shared links&lt;/h2&gt;
 
 &lt;p&gt;Go to &lt;a href=&quot;https://www.dropbox.com/share/links&quot;&gt;https://www.dropbox.com/share/links&lt;/a&gt;, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:&lt;/p&gt;
 
@@ -1590,11 +1632,11 @@ brew uninstall dnsmasq
             <item>
   <title>Wiki — Emacs Setup</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
 
@@ -1729,11 +1771,11 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
             <item>
   <title>Wiki — Email Tips</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;send-email-from-localhost&quot;&gt;Send email from localhost&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;send-email-from-localhost&quot;&gt;Send email from localhost&lt;/h2&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swaks
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1767,11 +1809,11 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
             <item>
   <title>Wiki — Firefox</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;cool-extensions&quot;&gt;Cool Extensions&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;cool-extensions&quot;&gt;Cool Extensions&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/&quot;&gt;Auto Tab Discard&lt;/a&gt;&lt;/li&gt;
@@ -1921,11 +1963,11 @@ services.sync.prefs.media.hardwaremediakeys.enabled
             <item>
   <title>Wiki — Git Tips</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;large-files-support&quot;&gt;Large files support&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;large-files-support&quot;&gt;Large files support&lt;/h2&gt;
 
 &lt;p&gt;Resources:&lt;/p&gt;
 
@@ -1971,11 +2013,11 @@ services.sync.prefs.media.hardwaremediakeys.enabled
             <item>
   <title>Wiki — GitHub</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;For creating labels: &lt;a href=&quot;https://github.com/integratedexperts/github-labels/&quot;&gt;https://github.com/integratedexperts/github-labels/&lt;/a&gt;
@@ -2018,11 +2060,11 @@ services.sync.prefs.media.hardwaremediakeys.enabled
             <item>
   <title>Wiki — GNU Screen</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;&lt;a href=&quot;https://www.gnu.org/software/screen/manual/screen.html&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.gnu.org/software/screen/manual/screen.html&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;cheatsheet&quot;&gt;Cheatsheet&lt;/h2&gt;
 
@@ -2135,11 +2177,11 @@ bind F eval &quot;hardstatus alwayslastline&quot;
             <item>
   <title>Wiki — Haskell</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;educational-resources&quot;&gt;Educational Resources&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;educational-resources&quot;&gt;Educational Resources&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -2198,11 +2240,11 @@ bind F eval &quot;hardstatus alwayslastline&quot;
             <item>
   <title>Wiki — iTerm2</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;Tips for &lt;a href=&quot;https://www.iterm2.com/&quot; target=&quot;_blank&quot;&gt;iTerm2&lt;/a&gt;.&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Tips for &lt;a href=&quot;https://www.iterm2.com/&quot; target=&quot;_blank&quot;&gt;iTerm2&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;configure-opening-of-file-paths-semantic-history&quot;&gt;Configure opening of file paths (semantic history)&lt;/h2&gt;
 
@@ -2287,11 +2329,11 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
             <item>
   <title>Wiki — JSON</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;command-line-parsing&quot;&gt;Command-line parsing&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;command-line-parsing&quot;&gt;Command-line parsing&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt; — command-line JSON processor.&lt;/p&gt;
 
@@ -2320,11 +2362,11 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
             <item>
   <title>Wiki — MacOS</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;finder-shortcuts&quot;&gt;Finder Shortcuts&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;finder-shortcuts&quot;&gt;Finder Shortcuts&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -2378,11 +2420,11 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
             <item>
   <title>Wiki — MySQL / MariaDB</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;create-user&quot;&gt;Create user&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;create-user&quot;&gt;Create user&lt;/h2&gt;
 
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'myuser'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
@@ -2423,11 +2465,11 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
             <item>
   <title>Wiki — Nix</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;installuninstall-instructions&quot;&gt;Install/Uninstall instructions&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;installuninstall-instructions&quot;&gt;Install/Uninstall instructions&lt;/h2&gt;
 
 &lt;p&gt;Install with:&lt;/p&gt;
 
@@ -2550,11 +2592,11 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
             <item>
   <title>Wiki — Org-mode</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;shortcuts&quot;&gt;Shortcuts&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;shortcuts&quot;&gt;Shortcuts&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -2638,11 +2680,11 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
             <item>
   <title>Wiki — PostgreSQL</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;creating-new-database-and-user&quot;&gt;Creating new database and user&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;creating-new-database-and-user&quot;&gt;Creating new database and user&lt;/h2&gt;
 
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;youruser&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ENCRYPTED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'yourpass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -2664,11 +2706,11 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
             <item>
   <title>Wiki — Python</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;pyenv--virtualenv&quot;&gt;Pyenv + Virtualenv&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;pyenv--virtualenv&quot;&gt;Pyenv + Virtualenv&lt;/h2&gt;
 
 &lt;p&gt;Requirements:&lt;/p&gt;
 
@@ -2723,11 +2765,11 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
             <item>
   <title>Wiki — RSS / Atom feeds</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;readers&quot;&gt;Readers&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;readers&quot;&gt;Readers&lt;/h2&gt;
 
 &lt;p&gt;Native, MacOS:&lt;/p&gt;
 
@@ -2778,11 +2820,11 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
             <item>
   <title>Wiki — Rust</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;See &lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
 
@@ -2889,11 +2931,11 @@ cargo check
             <item>
   <title>Wiki — Teach Kids to Code</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;Platforms, engines, toys:&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Platforms, engines, toys:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -2981,11 +3023,11 @@ cargo check
             <item>
   <title>Wiki — tmux shortcuts &amp; cheatsheet</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;start new:&lt;/p&gt;
 
@@ -3188,11 +3230,11 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
             <item>
   <title>Wiki — Web Apps</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://web.dev/progressive-web-apps/&quot;&gt;https://web.dev/progressive-web-apps/&lt;/a&gt;&lt;/li&gt;
@@ -3242,11 +3284,11 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
             <item>
   <title>Wiki — Windows 10</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;macbook-drivers-for-windows&quot;&gt;Macbook drivers for Windows&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;macbook-drivers-for-windows&quot;&gt;Macbook drivers for Windows&lt;/h2&gt;
 
 &lt;p&gt;Can be downloaded via:&lt;/p&gt;
 
@@ -3282,11 +3324,11 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
             <item>
   <title>Wiki — Custom Zsh Prompt</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;References:&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;References:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/&quot;&gt;Moving to zsh, part 6 – Customizing the zsh Prompt&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jonasjacek.github.io/colors/&quot;&gt;256 COLORS - CHEAT SHEET&lt;/a&gt;&lt;/li&gt;
@@ -3331,19 +3373,6 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
         
       <item>
   <title>Snippet — Error Hierarchy.scala</title>
-  <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 24 Aug 2020 11:27:47 +0000</dc:modified>
-  <atom:modified>Mon, 24 Aug 2020 11:27:47 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;figure style=&quot;max-width: 100%; &quot;&gt;
   &lt;a href=&quot;https://alexn.org/assets/media/snippets/error-hierarchy.svg&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/snippets/error-hierarchy.svg&quot; alt=&quot;Error hierarchy graph&quot; title=&quot;Error hierarchy graph&quot; style=&quot;max-width: 100%; width:100%;&quot;&gt;
@@ -3415,26 +3444,27 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Sbt Fork Debug.sbt</title>
-  <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 13 Aug 2020 13:06:47 +0000</dc:modified>
-  <atom:modified>Thu, 13 Aug 2020 13:06:47 +0000</atom:modified>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>Scala</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Sbt Fork Debug.sbt</title>
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;javaOptions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -3448,26 +3478,29 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
       &lt;span class=&quot;nv&quot;&gt;Seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;empty&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Flow Sensitive Typing.ts</title>
-  <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 11 Aug 2020 12:29:46 +0000</dc:modified>
-  <atom:modified>Tue, 11 Aug 2020 12:29:46 +0000</atom:modified>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>sbt</category>
+  
+  <category>Scala</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Flow Sensitive Typing.ts</title>
   <description>&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;either&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;
@@ -3499,21 +3532,35 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>TypeScript</category>
+  
 </item>
   
         
       <item>
   <title>Retry Failing Tasks with Cats and Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Retry actions ending in failure via simple functions and Typelevel Cats type-classes.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Retry actions ending in failure via simple functions and Typelevel Cats type-classes.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 04 Aug 2020 06:39:51 +0000</dc:modified>
   <atom:modified>Tue, 04 Aug 2020 06:39:51 +0000</atom:modified>
@@ -3536,19 +3583,6 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
         
       <item>
   <title>Snippet — On Error Retry Loop.scala</title>
-  <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 04 Aug 2020 06:39:51 +0000</dc:modified>
-  <atom:modified>Tue, 04 Aug 2020 06:39:51 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io._&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.nio.charset.CharacterCodingException&lt;/span&gt;
 
@@ -3678,8 +3712,24 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ExitCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;Success&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Scala</category>
+  
 </item>
   
         
@@ -3687,11 +3737,11 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
             <item>
   <title>Wiki — DNS Lookup - Check Domain’s DNS Records</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at July 30, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;For MX records (email):&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at July 30, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;For MX records (email):&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;dig mydomain.com MX
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -3734,19 +3784,6 @@ dig @176.103.130.130 mydomain.com MX
         
       <item>
   <title>Snippet — Akka Streams Buffer Test.scala</title>
-  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/23e102b4891cda37ab41ffa74d40e390]]
@@ -3807,26 +3844,31 @@ dig @176.103.130.130 mydomain.com MX
     &lt;span class=&quot;nv&quot;&gt;Await&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;terminate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Enumeratum.scala</title>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/enumeratum.scala.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>Akka</category>
+  
+  <category>Scala</category>
+  
+  <category>Reactive Streams</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Enumeratum.scala</title>
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/3df8116f1c85f69612143b3b1884e1ed]]
@@ -3852,26 +3894,27 @@ dig @176.103.130.130 mydomain.com MX
 
   &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Session&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AcknowledgeMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;session&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — From Resource To Reactivestreams.scala</title>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/enumeratum.scala.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>Scala</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — From Resource To Reactivestreams.scala</title>
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect.Resource&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.reactivestreams.Publisher&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scala.concurrent.Future&lt;/span&gt;
@@ -3891,26 +3934,33 @@ dig @176.103.130.130 mydomain.com MX
 
 &lt;span class=&quot;c1&quot;&gt;// Explicit acknowledgement logic is required&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fromFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Publisher&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;InputStream&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;Ack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Python Proxy.py</title>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/python-proxy.py.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>Akka</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Reactive Streams</category>
+  
+  <category>Scala</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Python Proxy.py</title>
   <description>&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProxyAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
@@ -4010,26 +4060,27 @@ dig @176.103.130.130 mydomain.com MX
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_chain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'  '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;']'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Resource As Publisher.scala</title>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/python-proxy.py.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>Python</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Resource As Publisher.scala</title>
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/b258f67ab1e21d61d06dcfd6ec73557a]]
@@ -4095,26 +4146,33 @@ dig @176.103.130.130 mydomain.com MX
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Future Stack Overflow.scala</title>
-  <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 11:53:09 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 11:53:09 +0000</atom:modified>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>Akka</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Reactive Streams</category>
+  
+  <category>Scala</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Future Stack Overflow.scala</title>
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Demonstrating that directly executing runnables in your &lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// ExecutionContext is a really bad idea&lt;/span&gt;
 
@@ -4133,21 +4191,37 @@ dig @176.103.130.130 mydomain.com MX
 
 &lt;span class=&quot;c1&quot;&gt;// Throws StackOverflowError&lt;/span&gt;
 &lt;span class=&quot;nf&quot;&gt;trigger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Async</category>
+  
+  <category>Scala</category>
+  
 </item>
   
         
       <item>
   <title>Fatal Warnings and Linting in Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Strengthen your code via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-Xfatal-warnings&lt;/code&gt;, linting and piss off your colleagues with useful compiler errors.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Strengthen your code via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-Xfatal-warnings&lt;/code&gt;, linting and piss off your colleagues with useful compiler errors.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 17 Aug 2020 06:21:04 +0000</dc:modified>
   <atom:modified>Mon, 17 Aug 2020 06:21:04 +0000</atom:modified>
@@ -4169,13 +4243,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Parallelizing Work via a JavaScript Semaphore</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/async-semaphore-typescript.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Simple and very effective implementation of a Semaphore, used for easily parallelizing work in JavaScript/TypeScript.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/async-semaphore-typescript.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Simple and very effective implementation of a Semaphore, used for easily parallelizing work in JavaScript/TypeScript.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Tue, 21 Apr 2020 16:00:00 +0000</pubDate>
   <dc:modified>Wed, 22 Apr 2020 09:12:30 +0000</dc:modified>
   <atom:modified>Wed, 22 Apr 2020 09:12:30 +0000</atom:modified>
@@ -4201,12 +4275,12 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Blog Updates</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/04/21/blog-updates.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://img.youtube.com/vi/RYmGT905Skc/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-  &lt;p&gt;Dusted off my website, with big plans ahead.&lt;/p&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/RYmGT905Skc/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+    &lt;p&gt;Dusted off my website, with big plans ahead.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2020/04/21/blog-updates.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2020/04/21/blog-updates.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Tue, 21 Apr 2020 10:00:00 +0000</pubDate>
   <dc:modified>Wed, 26 Aug 2020 06:02:40 +0000</dc:modified>
   <atom:modified>Wed, 26 Aug 2020 06:02:40 +0000</atom:modified>
@@ -4227,19 +4301,6 @@ dig @176.103.130.130 mydomain.com MX
         
       <item>
   <title>Snippet — Send Mail.py</title>
-  <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 11:53:24 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 11:53:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/03/18/send-mail.py.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python
 &lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;smtplib&lt;/span&gt;
@@ -4285,26 +4346,29 @@ dig @176.103.130.130 mydomain.com MX
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smtp_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smtp_pass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Encrypt.sh</title>
-  <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 11:53:24 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 11:53:24 +0000</atom:modified>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/02/18/encrypt.sh.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/03/18/send-mail.py.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>CLI</category>
+  
+  <category>Python</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Encrypt.sh</title>
   <description>&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Quickly encrypt a message or a file for sending to&lt;/span&gt;
@@ -4349,26 +4413,29 @@ dig @176.103.130.130 mydomain.com MX
     &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&amp;amp;2
     &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Sierpinski.hs</title>
-  <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 11:53:24 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 11:53:24 +0000</atom:modified>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2019/11/29/sierpinski.hs.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/02/18/encrypt.sh.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>CLI</category>
+  
+  <category>Bash</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Sierpinski.hs</title>
   <description>&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;-- stack --resolver lts-14.14 script&lt;/span&gt;
 &lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Data.Bits&lt;/span&gt;
@@ -4381,21 +4448,37 @@ dig @176.103.130.130 mydomain.com MX
       &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&amp;amp;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'*'&lt;/span&gt;
       &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2019/11/29/sierpinski.hs.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Fun</category>
+  
+  <category>Haskell</category>
+  
 </item>
   
         
       <item>
   <title>Regexp Replacement via Function in Java/Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-replace-all-function.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Replace in strings via regexp, with the replacement being calculated via a function.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-replace-all-function.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Replace in strings via regexp, with the replacement being calculated via a function.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
@@ -4416,19 +4499,6 @@ dig @176.103.130.130 mydomain.com MX
         
       <item>
   <title>Snippet — Async Queue.ts</title>
-  <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 12:02:31 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 12:02:31 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2019/10/07/async-queue.ts.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;cm&quot;&gt;/**
@@ -4567,26 +4637,31 @@ dig @176.103.130.130 mydomain.com MX
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-</item>
-  
-        
-      <item>
-  <title>Snippet — Blocking Task.scala</title>
-  <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 12:47:22 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 12:47:22 +0000</atom:modified>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
   <link>
-    https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=link
+    https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=link
   </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2019/09/02/blocking-task.scala.html</guid>
+  <guid isPermaLink="true">https://alexn.org/snippets/2019/10/07/async-queue.ts.html</guid>
   
   
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Snippet</category>
   
+  <category>Async</category>
+  
+  <category>JavaScript</category>
+  
+  <category>TypeScript</category>
+  
+</item>
+  
+        
+      <item>
+  <title>Snippet — Blocking Task.scala</title>
   <description>&lt;p&gt;Imported from &lt;a href=&quot;https://gist.github.com/alexandru/d04c23e3ebd918c6144b5ad33c69f48f&quot;&gt;gist.github.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;WARN: not sure if this code is correct.&lt;/p&gt;
@@ -4648,21 +4723,39 @@ dig @176.103.130.130 mydomain.com MX
       &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2019/09/02/blocking-task.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Async</category>
+  
+  <category>Monix</category>
+  
+  <category>Scala</category>
+  
 </item>
   
         
       <item>
   <title>Scala&#39;s isInstanceOf is an Anti-Pattern</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe type classes.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe type classes.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 23:15:01 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 23:15:01 +0000</atom:modified>
@@ -4684,13 +4777,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>On Bifunctor IO and Java&#39;s Checked Exceptions</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/bio.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Bifunctor IO is a hot topic in the Scala community. Herein I’m expressing my dislike for it, as it shares the problems of Java’s Checked Exceptions.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/bio.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Bifunctor IO is a hot topic in the Scala community. Herein I’m expressing my dislike for it, as it shares the problems of Java’s Checked Exceptions.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
@@ -4718,13 +4811,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>In Defense of OOFP</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-stairs.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;OOP versus Type Classes, exemplified and in defense of the Scala collections redesign.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-stairs.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;OOP versus Type Classes, exemplified and in defense of the Scala collections redesign.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
@@ -4752,13 +4845,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Minitest: Zero Crap Scala Testing Library</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Minitest is my minimal testing library that I’ve been using for developing Monix.
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Minitest is my minimal testing library that I’ve been using for developing Monix.
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -4782,13 +4875,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>What is Functional Programming?</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/functions.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;FP is programming with (mathematical) functions, there’s no room for interpretation.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/functions.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;FP is programming with (mathematical) functions, there’s no room for interpretation.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 22 Apr 2020 01:16:57 +0000</dc:modified>
   <atom:modified>Wed, 22 Apr 2020 01:16:57 +0000</atom:modified>
@@ -4816,12 +4909,12 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Scala Days 2017 — Monix Task</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://img.youtube.com/vi/wi97X8_JQUk/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-  &lt;p&gt;My presentation from Scala Days 2017, Chicago (April) and Copenhagen (June), on the design of Monix’s Task.&lt;/p&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/wi97X8_JQUk/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+    &lt;p&gt;My presentation from Scala Days 2017, Chicago (April) and Copenhagen (June), on the design of Monix’s Task.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -4853,13 +4946,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>JavaScript&#39;s Promise Leaks Memory</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/js-then.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;JavaScript’s Promise leaks memory in recursive loops and what you can do about it.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/js-then.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;JavaScript’s Promise leaks memory in recursive loops and what you can do about it.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 22 Apr 2020 01:15:09 +0000</dc:modified>
   <atom:modified>Wed, 22 Apr 2020 01:15:09 +0000</atom:modified>
@@ -4885,13 +4978,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Automatic Releases to Maven Central with Travis and SBT</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/sbt.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Enabling automatic releases for your open source Scala project with Travis and SBT.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/sbt.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Enabling automatic releases for your open source Scala project with Travis and SBT.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -4917,13 +5010,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Functional Programming Inception (Presentation)</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/2017-fp-inception.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;My presentation from the Bucharest FP meetup.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/2017-fp-inception.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;My presentation from the Bucharest FP meetup.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -4949,13 +5042,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Asynchronous Programming and Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/nondet.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Asynchrony is everywhere and it subsumes concurrency. This article explains what asynchronous processing is and its challenges.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/nondet.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Asynchrony is everywhere and it subsumes concurrency. This article explains what asynchronous processing is and its challenges.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
@@ -4981,13 +5074,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Fixing scala.collection.Iterator</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;The venerable Iterator interface we all love and hate could use some improvements. This is a follow-up to my previous article, in which I talked about getting rid of Traversable because the Iterable and Iterator duo is enough for Scala’s standard library.
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;The venerable Iterator interface we all love and hate could use some improvements. This is a follow-up to my previous article, in which I talked about getting rid of Traversable because the Iterable and Iterator duo is enough for Scala’s standard library.
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Mon, 16 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5011,13 +5104,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Why Scala&#39;s Traversable Is Bad Design</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Traversable was a design mistake, is redundant and we should remove it.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Traversable was a design mistake, is redundant and we should remove it.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5041,13 +5134,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Add to NewsBlur Bookmarklet</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/newsblur.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;An Add to NewsBlur bookmarklet that you can copy-paste for iPhone/iPad/Android usage&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/newsblur.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;An Add to NewsBlur bookmarklet that you can copy-paste for iPhone/iPad/Android usage&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5069,13 +5162,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Monix Task vs Scalaz vs Future, The Benchmark</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/monix-1024.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;The Task in Monix has really good performance. See the benchmark.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/monix-1024.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;The Task in Monix has really good performance. See the benchmark.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5105,12 +5198,12 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Akka &amp; Monix - Typelevel Summit, Oslo 2016</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://img.youtube.com/vi/CQxviYlAKaY/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-  &lt;p&gt;Presentation from Typelevel Summit, Oslo, 2016, about my experience in dealing with modeling behavior by processing asynchronous soft-real time signals using Akka &amp;amp; Monix.&lt;/p&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/CQxviYlAKaY/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+    &lt;p&gt;Presentation from Typelevel Summit, Oslo, 2016, about my experience in dealing with modeling behavior by processing asynchronous soft-real time signals using Akka &amp;amp; Monix.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 01 Jun 2020 19:22:20 +0000</dc:modified>
   <atom:modified>Mon, 01 Jun 2020 19:22:20 +0000</atom:modified>
@@ -5136,12 +5229,12 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Monix Task - flatMap(Oslo) 2016</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://img.youtube.com/vi/rftcbxj7et0/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-  &lt;p&gt;My presentation from flatMap(Oslo) 2016. It’s about the Monix Task, a new type for dealing with asynchronous processing on top of Scala and Scala.js.&lt;/p&gt;
+        &lt;img src=&quot;https://img.youtube.com/vi/rftcbxj7et0/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+    &lt;p&gt;My presentation from flatMap(Oslo) 2016. It’s about the Monix Task, a new type for dealing with asynchronous processing on top of Scala and Scala.js.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 26 Aug 2020 06:02:40 +0000</dc:modified>
   <atom:modified>Wed, 26 Aug 2020 06:02:40 +0000</atom:modified>
@@ -5167,13 +5260,13 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/skunk.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/skunk.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5199,10 +5292,10 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Monifu vs Akka Streams</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/monifu.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Back in June I attended
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/monifu.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Back in June I attended
 Scala Days in
 Amsterdam and participated at a talk by Mathias Doenitz on
 The Reactive Streams Implementation Landscape.
@@ -5210,8 +5303,8 @@ It was a good talk, yet I felt a little bias towards Akka Streams,
 which is natural coming from somebody that is contributing to Akka,
 but let me give you the perspective from the other side.
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5237,13 +5330,13 @@ but let me give you the perspective from the other side.
       <item>
   <title>Scala Best Practices</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;This is a collection of best practices for Scala, something to get you started.
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;This is a collection of best practices for Scala, something to get you started.
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Mon, 20 Oct 2014 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5269,10 +5362,10 @@ but let me give you the perspective from the other side.
       <item>
   <title>Resources for Learning Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Getting started with a new programming language shouldn't be hard,
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Getting started with a new programming language shouldn't be hard,
   however navigating the web for resources on getting started with Scala
   can be a doubting experience, as many such resources are either out of
   date, or wrong, or both. This post is intended to reduce the noise for
@@ -5280,8 +5373,8 @@ but let me give you the perspective from the other side.
   development.
 
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5320,8 +5413,8 @@ but let me give you the perspective from the other side.
   Michael-Scott non-blocking queues.
 
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5351,10 +5444,10 @@ but let me give you the perspective from the other side.
       <item>
   <title>JVM Multithreading: Monitor Locks and Visibility</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/ferrari.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Multithreading is a pain to deal with. While interviewing developers,
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/ferrari.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Multithreading is a pain to deal with. While interviewing developers,
   I noticed that surprisingly many don't have knowledge about this topic
   and I can't blame them really. However, in this day and age, for some
   problem domains building highly-concurrent architectures may be
@@ -5364,8 +5457,8 @@ but let me give you the perspective from the other side.
   understanding the problem is always the first step to real solutions.
 
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5395,13 +5488,13 @@ but let me give you the perspective from the other side.
       <item>
   <title>Notes On JavaScript Client-side Development</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/javascript.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Client-side JavaScript development can be quite overwhelming, even for senior developers. I’m describing here what I did in a recent piece of client-side functionality to keep my sanity. This interface I’m talking about is served on mobile-phones, so it must be pretty bloat-free, adding salt over injury.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/javascript.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Client-side JavaScript development can be quite overwhelming, even for senior developers. I’m describing here what I did in a recent piece of client-side functionality to keep my sanity. This interface I’m talking about is served on mobile-phones, so it must be pretty bloat-free, adding salt over injury.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -5427,14 +5520,14 @@ but let me give you the perspective from the other side.
       <item>
   <title>On Scala, Functional Programming and Type-Classes</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;I’ve been following the excellent Coursera course on &lt;a href=&quot;https://www.coursera.org/course/progfun&quot;&gt;Functional Programming Principles in Scala&lt;/a&gt; led by Martin Odersky. This was not my first encounter with Scala as I’ve been using it including for my day job.
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;I’ve been following the excellent Coursera course on &lt;a href=&quot;https://www.coursera.org/course/progfun&quot;&gt;Functional Programming Principles in Scala&lt;/a&gt; led by Martin Odersky. This was not my first encounter with Scala as I’ve been using it including for my day job.
 In this article I’m describing my impressions of the Scala programming language and why I fel in love with it.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 26 May 2020 18:43:44 +0000</dc:modified>
   <atom:modified>Tue, 26 May 2020 18:43:44 +0000</atom:modified>
@@ -5462,13 +5555,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>How To Build a Naive Bayes Classifier</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/conditional-prob.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;In machine learning a classifier is able to predict, given an input, a probability distribution over a set of categories. Some use-cases for building a classifier: spam detection, for example you could build your own Akismet API, automatic assignment of categories to a set of items, automatic detection of the primary language (e.g. Google Translate), sentiment analysis, which in simple terms refers to discovering if an opinion is about love or hate about a certain topic.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/conditional-prob.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;In machine learning a classifier is able to predict, given an input, a probability distribution over a set of categories. Some use-cases for building a classifier: spam detection, for example you could build your own Akismet API, automatic assignment of categories to a set of items, automatic detection of the primary language (e.g. Google Translate), sentiment analysis, which in simple terms refers to discovering if an opinion is about love or hate about a certain topic.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 25 Jan 2020 00:00:00 +0000</dc:modified>
   <atom:modified>Sat, 25 Jan 2020 00:00:00 +0000</atom:modified>
@@ -5494,13 +5587,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Data Mining: Finding Similar Items and Users</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/cosine-distance.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;How to find related items? Here are recipes based on really simple formulas. If you pay attention, this technique is used all over the web (like on Amazon) to personalize the user experience and increase conversion rates. Because we want to give kick-ass product recommendations.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/cosine-distance.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;How to find related items? Here are recipes based on really simple formulas. If you pay attention, this technique is used all over the web (like on Amazon) to personalize the user experience and increase conversion rates. Because we want to give kick-ass product recommendations.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 28 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Sat, 28 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5526,13 +5619,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Blogging Platform for Hackers</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/jekyll.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Host your own static website on Heroku’s free plan, use Google’s App Engine as a CDN, keep Heroku’s free dyno alive, generate the website via Jekyll.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/jekyll.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Host your own static website on Heroku’s free plan, use Google’s App Engine as a CDN, keep Heroku’s free dyno alive, generate the website via Jekyll.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Thu, 05 Jan 2012 00:00:00 +0000</pubDate>
   <dc:modified>Thu, 19 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Thu, 19 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5562,13 +5655,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Crawling the Android Marketplace</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/wolf-spider.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;I had a very specific need for fetching the details for some apps in the Android marketplace, in an automated manner. Here I’m describing a script that I used to crawl the marketplace back in 2011.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/wolf-spider.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;I had a very specific need for fetching the details for some apps in the Android marketplace, in an automated manner. Here I’m describing a script that I used to crawl the marketplace back in 2011.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5594,13 +5687,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Android Learning Resources</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/android-development.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Starting out learning Android development may be intimidating at first, as with any new platform of reasonable complexity you’ll have a lot to learn. However the learning process is fun. So here are some learning resources that I’m currently following.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/android-development.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Starting out learning Android development may be intimidating at first, as with any new platform of reasonable complexity you’ll have a lot to learn. However the learning process is fun. So here are some learning resources that I’m currently following.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Mon, 12 Dec 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5622,18 +5715,18 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Earning Money as an Amazon Affiliate</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/amazon-associates.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;I published an article that I've meant to publish for a long
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/amazon-associates.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;I published an article that I've meant to publish for a long
   time. I'm usually lazy to not bother writing many articles, however
   this time I also thought about doing an experiment - you see I'm (1)
   on a tight budget and (2) a cheap bastard - so what if I could get
   enough money to pay for my monthly hosting on Linode, while
   satisfying my urge to write from time to time?
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Tue, 29 Nov 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5657,13 +5750,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>4 Books For Learning to Design, The Hard Way</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-all.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;I present some books I enjoyed, which is the path I’m taking to get better at design and user experience.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-all.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;I present some books I enjoyed, which is the path I’m taking to get better at design and user experience.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 25 Nov 2011 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 16 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Mon, 16 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5689,13 +5782,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>How I Use Flickr: For Backup</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/flickr.jpg?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;I’ve got a growing number of personal pictures and the collection is growing since 2003 … Pro accounts on Flickr have unlimited storage and can upload and access full-resolution pictures.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/flickr.jpg?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;I’ve got a growing number of personal pictures and the collection is growing since 2003 … Pro accounts on Flickr have unlimited storage and can upload and access full-resolution pictures.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sat, 29 Oct 2011 00:00:00 +0000</pubDate>
   <dc:modified>Sun, 15 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Sun, 15 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5719,13 +5812,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Why I Find Heroku Suboptimal</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/heroku.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;Heroku is great. It basically allows you to avoid growing-up. The deployment itself couldn’t be simpler, and when browsing their web interface for available add-ons, I feel like a child in a candy-store. But I’ve outgrown it.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/heroku.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;Heroku is great. It basically allows you to avoid growing-up. The deployment itself couldn’t be simpler, and when browsing their web interface for available add-ons, I feel like a child in a candy-store. But I’ve outgrown it.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sun, 23 Oct 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5757,13 +5850,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Cross-Domain, Cross-Browser AJAX Requests</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/cors-ajax.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;This article describes how to make cross-browser requests, in all browsers (including IExplorer 6), using web standards along with fallbacks and without using a proxy or JSONP (which is limited and awkward) – as long as you control the destination server, or if the destination server allows.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/cors-ajax.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;This article describes how to make cross-browser requests, in all browsers (including IExplorer 6), using web standards along with fallbacks and without using a proxy or JSONP (which is limited and awkward) – as long as you control the destination server, or if the destination server allows.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Thu, 24 Mar 2011 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 14 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Sat, 14 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5787,14 +5880,14 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>I hate NULL and all its variants!</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/beautiful-soup.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;How many times have you had a chain of methods like this (example showing BeautifulSoup in action) …
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/beautiful-soup.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;How many times have you had a chain of methods like this (example showing BeautifulSoup in action) …
 
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Tue, 25 May 2010 00:00:00 +0000</pubDate>
   <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
   <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
@@ -5816,13 +5909,13 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>FreeSWITCH - Tips for Creating a Dialer</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/freeswitch1.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;FreeSWITCH is a free and open source application server for real-time communication, WebRTC, telecommunications, video and Voice over Internet Protocol. Let’s build a VoIP dialer with it.&lt;/p&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/freeswitch1.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;FreeSWITCH is a free and open source application server for real-time communication, WebRTC, telecommunications, video and Voice over Internet Protocol. Let’s build a VoIP dialer with it.&lt;/p&gt;
 &lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 14 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Sat, 14 Dec 2019 00:00:00 +0000</atom:modified>
@@ -5850,14 +5943,14 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Using the Best Tools in Programming: Not Really Doable</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/tools.png?202010101934&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
-    &lt;/a&gt;
-    &lt;br /&gt;
-  &lt;p&gt;There's something that bothers me when it comes to starting a new project. You can't really use the best tool for a certain job, if that tool is not integrated with the rest of your platform. Let me explain.
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/tools.png?202010121401&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;There's something that bothers me when it comes to starting a new project. You can't really use the best tool for a certain job, if that tool is not integrated with the rest of your platform. Let me explain.
 
 &lt;/p&gt;&lt;p&gt;
-    &lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
-  &lt;/p&gt;</description>
+      &lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
   <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
   <dc:modified>Sun, 01 Feb 2009 00:00:00 +0000</dc:modified>
   <atom:modified>Sun, 01 Feb 2009 00:00:00 +0000</atom:modified>

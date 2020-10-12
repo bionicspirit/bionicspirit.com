@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Oct 2020 19:34:23 +0000</pubDate>
-    <lastBuildDate>Sat, 10 Oct 2020 19:34:23 +0000</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2020 14:01:10 +0000</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2020 14:01:10 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,11 +21,11 @@
         <item>
   <title>Microsoft .NET</title>
   <description>&lt;p&gt;
-    Article updated at October 10, 2020, 
-    created at October 8, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;csharp&quot;&gt;CSharp&lt;/h2&gt;
+      Article updated at October 10, 2020, 
+      created at October 8, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;csharp&quot;&gt;CSharp&lt;/h2&gt;
 
 &lt;h3 id=&quot;game-development&quot;&gt;Game Development&lt;/h3&gt;
 
@@ -94,11 +94,11 @@
         <item>
   <title>Privacy</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at September 21, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;firefox-extensions&quot;&gt;Firefox Extensions&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at September 21, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;firefox-extensions&quot;&gt;Firefox Extensions&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/clearurls/&quot;&gt;CleanURLs&lt;/a&gt;&lt;/li&gt;
@@ -158,11 +158,11 @@
         <item>
   <title>De-DRM</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at September 17, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;ebooks&quot;&gt;eBooks&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at September 17, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;ebooks&quot;&gt;eBooks&lt;/h2&gt;
 
 &lt;p&gt;Tools:&lt;/p&gt;
 
@@ -209,11 +209,11 @@
         <item>
   <title>Image Formats</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at September 15, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;convert-heic-to-jpeg-in-a-directory&quot;&gt;Convert HEIC to JPEG in a directory&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at September 15, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;convert-heic-to-jpeg-in-a-directory&quot;&gt;Convert HEIC to JPEG in a directory&lt;/h2&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
@@ -249,11 +249,11 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
         <item>
   <title>Apache Kafka</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at September 4, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;docker-setup&quot;&gt;Docker Setup&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at September 4, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;docker-setup&quot;&gt;Docker Setup&lt;/h2&gt;
 
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# Kafka config taken from:&lt;/span&gt;
@@ -331,11 +331,11 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
         <item>
   <title>Custom Zsh Prompt</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;References:&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;References:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://scriptingosx.com/2019/07/moving-to-zsh-06-customizing-the-zsh-prompt/&quot;&gt;Moving to zsh, part 6 – Customizing the zsh Prompt&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jonasjacek.github.io/colors/&quot;&gt;256 COLORS - CHEAT SHEET&lt;/a&gt;&lt;/li&gt;
@@ -382,11 +382,11 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
         <item>
   <title>Windows 10</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;macbook-drivers-for-windows&quot;&gt;Macbook drivers for Windows&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;macbook-drivers-for-windows&quot;&gt;Macbook drivers for Windows&lt;/h2&gt;
 
 &lt;p&gt;Can be downloaded via:&lt;/p&gt;
 
@@ -422,11 +422,11 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
         <item>
   <title>Web Apps</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://web.dev/progressive-web-apps/&quot;&gt;https://web.dev/progressive-web-apps/&lt;/a&gt;&lt;/li&gt;
@@ -476,11 +476,11 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
         <item>
   <title>tmux shortcuts &amp; cheatsheet</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;start new:&lt;/p&gt;
 
@@ -683,11 +683,11 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
         <item>
   <title>Teach Kids to Code</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;Platforms, engines, toys:&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Platforms, engines, toys:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -775,11 +775,11 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
         <item>
   <title>Rust</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;See &lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
 
@@ -886,11 +886,11 @@ cargo check
         <item>
   <title>RSS / Atom feeds</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;readers&quot;&gt;Readers&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;readers&quot;&gt;Readers&lt;/h2&gt;
 
 &lt;p&gt;Native, MacOS:&lt;/p&gt;
 
@@ -941,11 +941,11 @@ cargo check
         <item>
   <title>Python</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;pyenv--virtualenv&quot;&gt;Pyenv + Virtualenv&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;pyenv--virtualenv&quot;&gt;Pyenv + Virtualenv&lt;/h2&gt;
 
 &lt;p&gt;Requirements:&lt;/p&gt;
 
@@ -1000,11 +1000,11 @@ cargo check
         <item>
   <title>PostgreSQL</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;creating-new-database-and-user&quot;&gt;Creating new database and user&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;creating-new-database-and-user&quot;&gt;Creating new database and user&lt;/h2&gt;
 
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;youruser&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ENCRYPTED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'yourpass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -1026,11 +1026,11 @@ cargo check
         <item>
   <title>Org-mode</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;shortcuts&quot;&gt;Shortcuts&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;shortcuts&quot;&gt;Shortcuts&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1114,11 +1114,11 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
         <item>
   <title>Nix</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;installuninstall-instructions&quot;&gt;Install/Uninstall instructions&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;installuninstall-instructions&quot;&gt;Install/Uninstall instructions&lt;/h2&gt;
 
 &lt;p&gt;Install with:&lt;/p&gt;
 
@@ -1241,11 +1241,11 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
         <item>
   <title>MySQL / MariaDB</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;create-user&quot;&gt;Create user&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;create-user&quot;&gt;Create user&lt;/h2&gt;
 
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'myuser'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
@@ -1286,11 +1286,11 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
         <item>
   <title>MacOS</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;finder-shortcuts&quot;&gt;Finder Shortcuts&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;finder-shortcuts&quot;&gt;Finder Shortcuts&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1344,11 +1344,11 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
         <item>
   <title>JSON</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;command-line-parsing&quot;&gt;Command-line parsing&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;command-line-parsing&quot;&gt;Command-line parsing&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt; — command-line JSON processor.&lt;/p&gt;
 
@@ -1377,11 +1377,11 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
         <item>
   <title>iTerm2</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;Tips for &lt;a href=&quot;https://www.iterm2.com/&quot; target=&quot;_blank&quot;&gt;iTerm2&lt;/a&gt;.&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Tips for &lt;a href=&quot;https://www.iterm2.com/&quot; target=&quot;_blank&quot;&gt;iTerm2&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;configure-opening-of-file-paths-semantic-history&quot;&gt;Configure opening of file paths (semantic history)&lt;/h2&gt;
 
@@ -1466,11 +1466,11 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
         <item>
   <title>Haskell</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;educational-resources&quot;&gt;Educational Resources&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;educational-resources&quot;&gt;Educational Resources&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1529,11 +1529,11 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
         <item>
   <title>GNU Screen</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;&lt;a href=&quot;https://www.gnu.org/software/screen/manual/screen.html&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.gnu.org/software/screen/manual/screen.html&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;cheatsheet&quot;&gt;Cheatsheet&lt;/h2&gt;
 
@@ -1646,11 +1646,11 @@ bind F eval &quot;hardstatus alwayslastline&quot;
         <item>
   <title>GitHub</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;For creating labels: &lt;a href=&quot;https://github.com/integratedexperts/github-labels/&quot;&gt;https://github.com/integratedexperts/github-labels/&lt;/a&gt;
@@ -1693,11 +1693,11 @@ bind F eval &quot;hardstatus alwayslastline&quot;
         <item>
   <title>Git Tips</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;large-files-support&quot;&gt;Large files support&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;large-files-support&quot;&gt;Large files support&lt;/h2&gt;
 
 &lt;p&gt;Resources:&lt;/p&gt;
 
@@ -1743,11 +1743,11 @@ bind F eval &quot;hardstatus alwayslastline&quot;
         <item>
   <title>Firefox</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;cool-extensions&quot;&gt;Cool Extensions&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;cool-extensions&quot;&gt;Cool Extensions&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/&quot;&gt;Auto Tab Discard&lt;/a&gt;&lt;/li&gt;
@@ -1897,11 +1897,11 @@ services.sync.prefs.media.hardwaremediakeys.enabled
         <item>
   <title>Email Tips</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;send-email-from-localhost&quot;&gt;Send email from localhost&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;send-email-from-localhost&quot;&gt;Send email from localhost&lt;/h2&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swaks
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1935,11 +1935,11 @@ services.sync.prefs.media.hardwaremediakeys.enabled
         <item>
   <title>Emacs Setup</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
 
@@ -2074,11 +2074,11 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
         <item>
   <title>Dropbox</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;remove-all-shared-links&quot;&gt;Remove all shared links&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;remove-all-shared-links&quot;&gt;Remove all shared links&lt;/h2&gt;
 
 &lt;p&gt;Go to &lt;a href=&quot;https://www.dropbox.com/share/links&quot;&gt;https://www.dropbox.com/share/links&lt;/a&gt;, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:&lt;/p&gt;
 
@@ -2174,11 +2174,11 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
         <item>
   <title>Docker</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
 
@@ -2461,11 +2461,11 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
         <item>
   <title>DNS settings</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;macos&quot;&gt;MacOS&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;macos&quot;&gt;MacOS&lt;/h2&gt;
 
 &lt;h3 id=&quot;refresh-dns&quot;&gt;Refresh DNS&lt;/h3&gt;
 
@@ -2571,11 +2571,11 @@ brew uninstall dnsmasq
         <item>
   <title>Debian Packages (deb)</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;ul&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.debian.org/doc/manuals/debmake-doc/ch04.en.html&quot;&gt;https://www.debian.org/doc/manuals/debmake-doc/ch04.en.html&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://wiki.opf-labs.org/display/SP/The+Hello+World+Debian+Package&quot;&gt;http://wiki.opf-labs.org/display/SP/The+Hello+World+Debian+Package&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://santi-bassett.blogspot.com/2014/07/how-to-create-debian-package.html&quot;&gt;https://santi-bassett.blogspot.com/2014/07/how-to-create-debian-package.html&lt;/a&gt;&lt;/li&gt;
@@ -2596,11 +2596,11 @@ brew uninstall dnsmasq
         <item>
   <title>Cloudflare</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;invalidate-cache&quot;&gt;Invalidate cache&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;invalidate-cache&quot;&gt;Invalidate cache&lt;/h2&gt;
 
 &lt;p&gt;Create an API token:&lt;/p&gt;
 
@@ -2665,11 +2665,11 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
         <item>
   <title>Agile software development</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at August 24, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;h2 id=&quot;kanban&quot;&gt;Kanban&lt;/h2&gt;
+      Article updated at October 9, 2020, 
+      created at August 24, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;kanban&quot;&gt;Kanban&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CD0y-aU1sXo&quot;&gt;Eric Brechner: “Agile Project Management with Kanban”&lt;/a&gt;&lt;/p&gt;
 
@@ -2705,11 +2705,11 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
         <item>
   <title>DNS Lookup - Check Domain’s DNS Records</title>
   <description>&lt;p&gt;
-    Article updated at October 9, 2020, 
-    created at July 30, 2020.
-  &lt;/p&gt;
-  &lt;hr&gt;
-  &lt;p&gt;For MX records (email):&lt;/p&gt;
+      Article updated at October 9, 2020, 
+      created at July 30, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;For MX records (email):&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;dig mydomain.com MX
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;

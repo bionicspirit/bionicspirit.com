@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Oct 2020 19:34:23 +0000</pubDate>
-    <lastBuildDate>Sat, 10 Oct 2020 19:34:23 +0000</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2020 14:01:10 +0000</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2020 14:01:10 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -20,19 +20,6 @@
       
         <item>
   <title>Unlawful Effect.scala</title>
-  <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 08 Oct 2020 09:59:23 +0000</dc:modified>
-  <atom:modified>Thu, 08 Oct 2020 09:59:23 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;p&gt;Unlawful version of &lt;a href=&quot;https://typelevel.org/cats-effect/typeclasses/effect.html&quot;&gt;cats.effect.Effect&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.ApplicativeError&lt;/span&gt;
@@ -125,8 +112,24 @@
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This is similar to usage of &lt;a href=&quot;https://monix.io/api/current/monix/eval/TaskLike.html&quot;&gt;TaskLike&lt;/a&gt; in &lt;a href=&quot;https://monix.io&quot;&gt;Monix&lt;/a&gt;.&lt;/p&gt;
-</description>
+&lt;p&gt;This is similar to usage of &lt;a href=&quot;https://monix.io/api/current/monix/eval/TaskLike.html&quot;&gt;TaskLike&lt;/a&gt; in &lt;a href=&quot;https://monix.io&quot;&gt;Monix&lt;/a&gt;.&lt;/p&gt;</description>
+  <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -134,19 +137,6 @@
       
         <item>
   <title>Running integration tests, with Scala + sbt</title>
-  <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 05 Oct 2020 16:13:38 +0000</dc:modified>
-  <atom:modified>Mon, 05 Oct 2020 16:13:38 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;p&gt;For separating integration tests, from unit tests, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build.sbt&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// sbt command-line shortcut&lt;/span&gt;
@@ -187,8 +177,26 @@
 &lt;p&gt;Then run:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;sbt ci-integration
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>sbt</category>
+  
+  <category>Scala</category>
+  
+  <category>Testing</category>
+  
 </item>
 
       
@@ -196,19 +204,6 @@
       
         <item>
   <title>Flow/Processor to Effect</title>
-  <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 25 Sep 2020 12:55:42 +0000</dc:modified>
-  <atom:modified>Fri, 25 Sep 2020 12:55:42 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;p&gt;Possibly broken implementation, take it with a grain of salt:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;akka.actor.ActorSystem&lt;/span&gt;
@@ -383,8 +378,28 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Akka</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Reactive Streams</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -392,19 +407,6 @@
       
         <item>
   <title>Safe Password.scala</title>
-  <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 04 Sep 2020 05:49:29 +0000</dc:modified>
-  <atom:modified>Fri, 04 Sep 2020 05:49:29 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/27/safe-password.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;p&gt;See: &lt;a href=&quot;https://books.nowsecure.com/secure-mobile-development/en/coding-practices/securely-store-sensitive-data-in-ram.html&quot;&gt;Securely Store Sensitive Data in RAM&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Resource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Sync&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -481,8 +483,24 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/27/safe-password.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>JVM</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -490,19 +508,6 @@
       
         <item>
   <title>Error Hierarchy.scala</title>
-  <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 24 Aug 2020 11:27:47 +0000</dc:modified>
-  <atom:modified>Mon, 24 Aug 2020 11:27:47 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;figure style=&quot;max-width: 100%; &quot;&gt;
   &lt;a href=&quot;https://alexn.org/assets/media/snippets/error-hierarchy.svg&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/snippets/error-hierarchy.svg&quot; alt=&quot;Error hierarchy graph&quot; title=&quot;Error hierarchy graph&quot; style=&quot;max-width: 100%; width:100%;&quot;&gt;
@@ -574,8 +579,22 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -583,19 +602,6 @@
       
         <item>
   <title>Sbt Fork Debug.sbt</title>
-  <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 13 Aug 2020 13:06:47 +0000</dc:modified>
-  <atom:modified>Thu, 13 Aug 2020 13:06:47 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;javaOptions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -609,8 +615,24 @@
       &lt;span class=&quot;nv&quot;&gt;Seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;empty&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>sbt</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -618,19 +640,6 @@
       
         <item>
   <title>Flow Sensitive Typing.ts</title>
-  <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 11 Aug 2020 12:29:46 +0000</dc:modified>
-  <atom:modified>Tue, 11 Aug 2020 12:29:46 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;either&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;
@@ -662,8 +671,22 @@
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>TypeScript</category>
+  
 </item>
 
       
@@ -671,19 +694,6 @@
       
         <item>
   <title>On Error Retry Loop.scala</title>
-  <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 04 Aug 2020 06:39:51 +0000</dc:modified>
-  <atom:modified>Tue, 04 Aug 2020 06:39:51 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io._&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.nio.charset.CharacterCodingException&lt;/span&gt;
 
@@ -813,8 +823,24 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ExitCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;Success&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -822,19 +848,6 @@
       
         <item>
   <title>Resource As Publisher.scala</title>
-  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/b258f67ab1e21d61d06dcfd6ec73557a]]
@@ -900,8 +913,28 @@
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Akka</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Reactive Streams</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -909,19 +942,6 @@
       
         <item>
   <title>Python Proxy.py</title>
-  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/python-proxy.py.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProxyAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
@@ -1021,8 +1041,22 @@
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_chain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'  '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;']'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/python-proxy.py.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Python</category>
+  
 </item>
 
       
@@ -1030,19 +1064,6 @@
       
         <item>
   <title>From Resource To Reactivestreams.scala</title>
-  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect.Resource&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.reactivestreams.Publisher&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scala.concurrent.Future&lt;/span&gt;
@@ -1062,8 +1083,28 @@
 
 &lt;span class=&quot;c1&quot;&gt;// Explicit acknowledgement logic is required&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fromFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Publisher&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;InputStream&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;Ack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Akka</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>Reactive Streams</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -1071,19 +1112,6 @@
       
         <item>
   <title>Enumeratum.scala</title>
-  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/enumeratum.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/3df8116f1c85f69612143b3b1884e1ed]]
@@ -1109,8 +1137,22 @@
 
   &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Session&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AcknowledgeMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;session&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/enumeratum.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -1118,19 +1160,6 @@
       
         <item>
   <title>Akka Streams Buffer Test.scala</title>
-  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/23e102b4891cda37ab41ffa74d40e390]]
@@ -1191,8 +1220,26 @@
     &lt;span class=&quot;nv&quot;&gt;Await&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;terminate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Akka</category>
+  
+  <category>Scala</category>
+  
+  <category>Reactive Streams</category>
+  
 </item>
 
       
@@ -1200,19 +1247,6 @@
       
         <item>
   <title>Future Stack Overflow.scala</title>
-  <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 11:53:09 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 11:53:09 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Demonstrating that directly executing runnables in your &lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// ExecutionContext is a really bad idea&lt;/span&gt;
 
@@ -1231,8 +1265,24 @@
 
 &lt;span class=&quot;c1&quot;&gt;// Throws StackOverflowError&lt;/span&gt;
 &lt;span class=&quot;nf&quot;&gt;trigger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Async</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
@@ -1240,19 +1290,6 @@
       
         <item>
   <title>Send Mail.py</title>
-  <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 11:53:24 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 11:53:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/03/18/send-mail.py.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python
 &lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;smtplib&lt;/span&gt;
@@ -1298,8 +1335,24 @@
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smtp_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smtp_pass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/03/18/send-mail.py.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>CLI</category>
+  
+  <category>Python</category>
+  
 </item>
 
       
@@ -1307,19 +1360,6 @@
       
         <item>
   <title>Encrypt.sh</title>
-  <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 11:53:24 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 11:53:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2020/02/18/encrypt.sh.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Quickly encrypt a message or a file for sending to&lt;/span&gt;
@@ -1364,8 +1404,24 @@
     &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&amp;amp;2
     &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/02/18/encrypt.sh.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>CLI</category>
+  
+  <category>Bash</category>
+  
 </item>
 
       
@@ -1373,19 +1429,6 @@
       
         <item>
   <title>Sierpinski.hs</title>
-  <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 11:53:24 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 11:53:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2019/11/29/sierpinski.hs.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;-- stack --resolver lts-14.14 script&lt;/span&gt;
 &lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Data.Bits&lt;/span&gt;
@@ -1398,8 +1441,24 @@
       &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&amp;amp;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'*'&lt;/span&gt;
       &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2019/11/29/sierpinski.hs.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Fun</category>
+  
+  <category>Haskell</category>
+  
 </item>
 
       
@@ -1407,19 +1466,6 @@
       
         <item>
   <title>Async Queue.ts</title>
-  <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 12:02:31 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 12:02:31 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2019/10/07/async-queue.ts.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;cm&quot;&gt;/**
@@ -1558,8 +1604,26 @@
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2019/10/07/async-queue.ts.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Async</category>
+  
+  <category>JavaScript</category>
+  
+  <category>TypeScript</category>
+  
 </item>
 
       
@@ -1567,19 +1631,6 @@
       
         <item>
   <title>Blocking Task.scala</title>
-  <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 18 Aug 2020 12:47:22 +0000</dc:modified>
-  <atom:modified>Tue, 18 Aug 2020 12:47:22 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
-  <guid isPermaLink="true">https://alexn.org/snippets/2019/09/02/blocking-task.scala.html</guid>
-  
-  
-  <dc:creator>Alexandru Nedelcu</dc:creator>
-  
-  <category>Snippet</category>
-  
   <description>&lt;p&gt;Imported from &lt;a href=&quot;https://gist.github.com/alexandru/d04c23e3ebd918c6144b5ad33c69f48f&quot;&gt;gist.github.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;WARN: not sure if this code is correct.&lt;/p&gt;
@@ -1641,8 +1692,26 @@
       &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2019/09/02/blocking-task.scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Async</category>
+  
+  <category>Monix</category>
+  
+  <category>Scala</category>
+  
 </item>
 
       
