@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Oct 2020 14:52:04 +0000</pubDate>
-    <lastBuildDate>Mon, 12 Oct 2020 14:52:04 +0000</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2020 17:01:12 +0000</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2020 17:01:12 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,8 +21,8 @@
   <title>Effect Runtime</title>
   <description>Code snippet: #CatsEffect #FP #Scala</description>
   <pubDate>Mon, 12 Oct 2020 14:17:42 +0000</pubDate>
-  <dc:modified>Mon, 12 Oct 2020 14:49:49 +0000</dc:modified>
-  <atom:modified>Mon, 12 Oct 2020 14:49:49 +0000</atom:modified>
+  <dc:modified>Mon, 12 Oct 2020 17:00:34 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 17:00:34 +0000</atom:modified>
   <link>https://alexn.org/snippets/2020/10/12/effect-runtime.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/10/12/effect-runtime.html</guid>
   
