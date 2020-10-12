@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Oct 2020 14:32:31 +0000</pubDate>
-    <lastBuildDate>Mon, 12 Oct 2020 14:32:31 +0000</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2020 14:36:28 +0000</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2020 14:36:28 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -116,9 +116,7 @@
   <pubDate>Mon, 12 Oct 2020 14:17:42 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:31:42 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:31:42 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/10/12/effect-runtime.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/10/12/effect-runtime.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/10/12/effect-runtime.html</guid>
   
   
@@ -235,9 +233,7 @@
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html</guid>
   
   
@@ -300,9 +296,7 @@
   <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html</guid>
   
   
@@ -501,9 +495,7 @@
   <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html</guid>
   
   
@@ -606,9 +598,7 @@
   <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/08/27/safe-password.scala.html</guid>
   
   
@@ -702,9 +692,7 @@
   <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html</guid>
   
   
@@ -738,9 +726,7 @@
   <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html</guid>
   
   
@@ -794,9 +780,7 @@
   <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html</guid>
   
   
@@ -946,9 +930,7 @@
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html</guid>
   
   
@@ -1036,9 +1018,7 @@
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html</guid>
   
   
@@ -1164,9 +1144,7 @@
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/python-proxy.py.html</guid>
   
   
@@ -1206,9 +1184,7 @@
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html</guid>
   
   
@@ -1260,9 +1236,7 @@
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/enumeratum.scala.html</guid>
   
   
@@ -1343,9 +1317,7 @@
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html</guid>
   
   
@@ -1388,9 +1360,7 @@
   <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html</guid>
   
   
@@ -1458,9 +1428,7 @@
   <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/03/18/send-mail.py.html</guid>
   
   
@@ -1527,9 +1495,7 @@
   <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/02/18/encrypt.sh.html</guid>
   
   
@@ -1564,9 +1530,7 @@
   <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2019/11/29/sierpinski.hs.html</guid>
   
   
@@ -1727,9 +1691,7 @@
   <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2019/10/07/async-queue.ts.html</guid>
   
   
@@ -1815,9 +1777,7 @@
   <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>
-    https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=link
-  </link>
+  <link>https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2019/09/02/blocking-task.scala.html</guid>
   
   
