@@ -9,13 +9,130 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Oct 2020 14:12:03 +0000</pubDate>
-    <lastBuildDate>Mon, 12 Oct 2020 14:12:03 +0000</lastBuildDate>
+    <pubDate>Mon, 12 Oct 2020 14:28:02 +0000</pubDate>
+    <lastBuildDate>Mon, 12 Oct 2020 14:28:02 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
+    
+      
+        <item>
+  <title>Effect Runtime</title>
+  <description>&lt;p&gt;Defining an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EffectRuntime&lt;/code&gt; that is used to run effects. This would be a replacement for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cats.effect.ContextShift&lt;/code&gt;, with an integrated &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Logger&lt;/code&gt;, &lt;a href=&quot;https://monix.io/docs/current/execution/scheduler.html&quot;&gt;Scheduler&lt;/a&gt;, and utilities for monitoring.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UnsafeLogger&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SafeLogger&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UnsafeMonitoring&lt;/code&gt; interfaces are left as an exercise for the reader.&lt;/p&gt;
+
+&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.implicits._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;monix.catnap.SchedulerEffect&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;monix.execution._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scala.concurrent.duration._&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scala.concurrent.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ExecutionContext&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;TimeoutException&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**
+  * Slice of [[EffectRuntime]], to be used only when a dependency on
+  * [[logging.UnsafeLogger]] is needed.
+  */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntimeLogger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unsafe&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UnsafeLoggerRef&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeLoggerRef&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UnsafeLogger&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**
+  * Slice of [[EffectRuntime]], to be used only when a dependency on
+  * `ExecutionContext` / `monix.execution.Scheduler` is needed.
+  */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntimeScheduler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unsafe&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UnsafeSchedulerRef&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeSchedulerRef&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scheduler&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Scheduler&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**
+  * Slice of [[EffectRuntime]], to be used only when a reference
+  * to [[UnsafeMonitoring]] is needed.
+  */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntimeMonitoring&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unsafe&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UnsafeMonitoringRef&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeMonitoringRef&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;monitoring&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;UnsafeMonitoring&lt;/span&gt;
+  &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**
+  * Slice of [[EffectRuntime]], to be used only in an &quot;unsafe&quot; context
+  * (where side effects are not suspended in `F[_]`).
+  */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntime&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntimeLogger&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntimeScheduler&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntimeMonitoring&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;unsafe&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Unsafe&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Unsafe&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeLoggerRef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeSchedulerRef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeMonitoringRef&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**
+  * Slice of [[EffectRuntime]], to be used only when a reference
+  * to [[logging.SafeLogger]] is needed.
+  */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;trait&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EffectRuntimeLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntimeLogger&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Sync&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SafeLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**
+  * Our evolved `cats.effect.ContextShift` that has everything we need in it
+  * to execute effects.
+  */&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EffectRuntime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ContextShift&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EffectRuntimeLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;UnsafeRuntime&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Async&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;logger&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;SafeLogger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;scheduler&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Scheduler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;blocker&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Blocker&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Concurrent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;deferAction&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;](&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Scheduler&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;scheduler&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;flatMap&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Mon, 12 Oct 2020 14:17:42 +0000</pubDate>
+  <dc:modified>Mon, 12 Oct 2020 14:27:09 +0000</dc:modified>
+  <atom:modified>Mon, 12 Oct 2020 14:27:09 +0000</atom:modified>
+  <link>
+    https://alexn.org/snippets/2020/10/12/effect-runtime.html?pk_campaign=rss&amp;pk_kwd=link
+  </link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/10/12/effect-runtime.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>FP</category>
+  
+  <category>Scala</category>
+  
+</item>
+
+      
     
       
         <item>
