@@ -9,14 +9,36 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Oct 2020 06:25:31 +0000</pubDate>
-    <lastBuildDate>Tue, 13 Oct 2020 06:25:31 +0000</lastBuildDate>
+    <pubDate>Tue, 13 Oct 2020 07:54:08 +0000</pubDate>
+    <lastBuildDate>Tue, 13 Oct 2020 07:54:08 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Haskell: Monads. A 5-minute introduction, by Stephen Edwards</title>
+  <description>Shared link: #FP #Haskell #Programming</description>
+  <pubDate>Tue, 13 Oct 2020 07:50:16 +0000</pubDate>
+  <dc:modified>Tue, 13 Oct 2020 07:53:14 +0000</dc:modified>
+  <atom:modified>Tue, 13 Oct 2020 07:53:14 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=_Gk_lwhJMzk</link>
+  <guid isPermaLink="false">https://alexn.org/links/2020/10/13/haskell-monads-a-5-minute-introduction.html</guid>
+  
+  <dc:creator>Stephen Edwards</dc:creator>
+  
+  <category>Shared link</category>
+  
+  <category>FP</category>
+  
+  <category>Haskell</category>
+  
+  <category>Programming</category>
+  
+</item>
+
+        
       <item>
   <title>Effect Runtime</title>
   <description>Code snippet: #CatsEffect #FP #Scala</description>
