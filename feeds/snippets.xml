@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 12 Oct 2020 17:01:12 +0000</pubDate>
-    <lastBuildDate>Mon, 12 Oct 2020 17:01:12 +0000</lastBuildDate>
+    <pubDate>Tue, 13 Oct 2020 06:25:31 +0000</pubDate>
+    <lastBuildDate>Tue, 13 Oct 2020 06:25:31 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -144,8 +144,8 @@
 &lt;p&gt;WARN: the retry logic isn’t a good one. For a better implementation,
 see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&quot;&gt;Retry Failing Tasks with Cats and Scala&lt;/a&gt;.&lt;/p&gt;</description>
   <pubDate>Mon, 12 Oct 2020 14:17:42 +0000</pubDate>
-  <dc:modified>Mon, 12 Oct 2020 17:00:34 +0000</dc:modified>
-  <atom:modified>Mon, 12 Oct 2020 17:00:34 +0000</atom:modified>
+  <dc:modified>Tue, 13 Oct 2020 06:24:33 +0000</dc:modified>
+  <atom:modified>Tue, 13 Oct 2020 06:24:33 +0000</atom:modified>
   <link>https://alexn.org/snippets/2020/10/12/effect-runtime.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/10/12/effect-runtime.html</guid>
   
