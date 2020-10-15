@@ -19,16 +19,16 @@
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/snippets/2020/10/15/generic-ioapp-alternative.html" property="og:url">
     <meta content="2020-10-15T07:05:19+00:00" property="article:published_time">
-    <meta content="2020-10-15T07:21:31+00:00" property="article:modified_time">
+    <meta content="2020-10-15T07:26:11+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/links/pureapp.png?202010150722" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/links/pureapp.png?202010150722" />
+    <meta property="og:image" content="https://alexn.org/assets/media/links/pureapp.png?202010150727" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/links/pureapp.png?202010150727" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/links/pureapp.png?202010150722">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/links/pureapp.png?202010150727">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Generic IOApp alternative">
@@ -51,8 +51,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202010150722">
-    <link rel="preload" as="style" href="/assets/css/style.css?202010150722">
+    <link rel="stylesheet" href="/assets/css/style.css?202010150727">
+    <link rel="preload" as="style" href="/assets/css/style.css?202010150727">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/snippets/2020/10/15/generic-ioapp-alternative.html">
@@ -116,7 +116,7 @@
       <meta itemprop="datePublished" content="2020-10-15T07:05:19+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-10-15T07:21:31+0000">
+      <time itemprop="dateModified" content="2020-10-15T07:26:11+0000">
         Updated: October 15, 2020
       </time>
       
@@ -195,10 +195,10 @@
     <span class="n">F</span><span class="k">:</span> <span class="kt">ConcurrentEffect</span><span class="o">[</span><span class="kt">F</span><span class="o">],</span>
     <span class="n">r</span><span class="k">:</span> <span class="kt">EffectRuntime</span><span class="o">[</span><span class="kt">F</span><span class="o">]</span>
   <span class="o">)</span><span class="k">:</span> <span class="kt">F</span><span class="o">[</span><span class="kt">ExitCode</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
-
     <span class="k">for</span> <span class="o">{</span>
       <span class="n">name</span> <span class="k">&lt;-</span> <span class="nc">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">].</span><span class="py">delay</span><span class="o">(</span><span class="nv">scala</span><span class="o">.</span><span class="py">io</span><span class="o">.</span><span class="py">StdIn</span><span class="o">.</span><span class="py">readLine</span><span class="o">())</span>
-      <span class="k">_</span> <span class="k">&lt;-</span> <span class="nc">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">].</span><span class="py">delay</span><span class="o">(</span><span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Hello, $name"</span><span class="o">))</span>
+      <span class="k">_</span>    <span class="k">&lt;-</span> <span class="nc">Timer</span><span class="o">[</span><span class="kt">F</span><span class="o">].</span><span class="py">sleep</span><span class="o">(</span><span class="mf">1.</span><span class="n">second</span><span class="o">)</span>
+      <span class="k">_</span>    <span class="k">&lt;-</span> <span class="nc">Sync</span><span class="o">[</span><span class="kt">F</span><span class="o">].</span><span class="py">delay</span><span class="o">(</span><span class="nf">println</span><span class="o">(</span><span class="n">s</span><span class="s">"Hello, $name"</span><span class="o">))</span>
     <span class="o">}</span> <span class="k">yield</span> <span class="o">{</span>
       <span class="nv">ExitCode</span><span class="o">.</span><span class="py">Success</span>
     <span class="o">}</span>
@@ -219,7 +219,7 @@
 
 <div id="article-details">
   
-  <time itemprop="dateModified" content="2020-10-15T07:21:31+0000">
+  <time itemprop="dateModified" content="2020-10-15T07:26:11+0000">
       Updated: October 15, 2020
   </time>
   
@@ -316,12 +316,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202010150722" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202010150722" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202010150722" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202010150722" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202010150727" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202010150727" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202010150727" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202010150727" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202010150722" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202010150727" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
