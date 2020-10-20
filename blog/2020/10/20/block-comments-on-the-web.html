@@ -18,16 +18,16 @@
     <meta content="Comments on the web can be toxic, and a waste of time. Here’s how to block them." property="og:description">
     <meta content="https://alexn.org/blog/2020/10/20/block-comments-on-the-web.html" property="og:url">
     <meta content="2020-10-20T19:51:45+00:00" property="article:published_time">
-    <meta content="2020-10-20T20:55:37+00:00" property="article:modified_time">
+    <meta content="2020-10-20T21:01:40+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/block-comments.png?202010202057" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/block-comments.png?202010202057" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/block-comments.png?202010202102" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/block-comments.png?202010202102" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/block-comments.png?202010202057">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/block-comments.png?202010202102">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Block comments on the web">
@@ -49,8 +49,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202010202057">
-    <link rel="preload" as="style" href="/assets/css/style.css?202010202057">
+    <link rel="stylesheet" href="/assets/css/style.css?202010202102">
+    <link rel="preload" as="style" href="/assets/css/style.css?202010202102">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/10/20/block-comments-on-the-web.html">
@@ -195,11 +195,16 @@ facebook.com
 <p>A short primer on the syntax …</p>
 
 <ul>
-  <li>Prefix CSS selectors with <code class="language-plaintext highlighter-rouge">##</code>; so <code class="language-plaintext highlighter-rouge">##.dsq-brlink</code> will block HTML elements with a <code class="language-plaintext highlighter-rouge">.dsq-brlink</code> class, and <code class="language-plaintext highlighter-rouge">###disqus_thread</code> will block HTML elements with a <code class="language-plaintext highlighter-rouge">#disqus_thread</code> ID</li>
-  <li>These CSS selectors can be “generic”, meaning they apply to all websites (in the case of Disqus), or they can apply to a specific domain: e.g. <code class="language-plaintext highlighter-rouge">###disqus_thread</code> is a cosmetic filter that applies to all websites, whereas <code class="language-plaintext highlighter-rouge">youtube.com###comments</code> filters HTML elements with a <code class="language-plaintext highlighter-rouge">#comments</code> ID that are shown on <code class="language-plaintext highlighter-rouge">youtube.com</code></li>
+  <li>Prefix CSS selectors with <code class="language-plaintext highlighter-rouge">##</code>; so <code class="language-plaintext highlighter-rouge">##.dsq-brlink</code> will block HTML elements with a <code class="language-plaintext highlighter-rouge">.dsq-brlink</code> class, and <code class="language-plaintext highlighter-rouge">###disqus_thread</code> will block HTML elements with a <code class="language-plaintext highlighter-rouge">#disqus_thread</code> ID
+    <ul>
+      <li>These CSS selectors can be “generic”, meaning they apply to all websites (in the case of Disqus), or they can apply to a specific domain: e.g. <code class="language-plaintext highlighter-rouge">###disqus_thread</code> is a cosmetic filter that applies to all websites, whereas <code class="language-plaintext highlighter-rouge">youtube.com###comments</code> filters HTML elements with a <code class="language-plaintext highlighter-rouge">#comments</code> ID that are shown on <code class="language-plaintext highlighter-rouge">youtube.com</code></li>
+      <li>See relevant <a href="https://adblockplus.org/filter-cheatsheet#elementhiding" target="_blank">cheat sheet section</a></li>
+    </ul>
+  </li>
   <li>You can block specific resources from loading; a <code class="language-plaintext highlighter-rouge">||</code> prefix means that a domain name follows, until a separator such as <code class="language-plaintext highlighter-rouge">/</code>
     <ul>
-      <li>a rule such as <code class="language-plaintext highlighter-rouge">||disqus.com/embed.js</code> will block <code class="language-plaintext highlighter-rouge">embed.js</code> on all subdomains of <code class="language-plaintext highlighter-rouge">disqus.com</code></li>
+      <li>A rule such as <code class="language-plaintext highlighter-rouge">||disqus.com/embed.js</code> will block <code class="language-plaintext highlighter-rouge">/embed.js</code> on all subdomains of <code class="language-plaintext highlighter-rouge">disqus.com</code></li>
+      <li>See relevant <a href="https://adblockplus.org/filter-cheatsheet#blocking2" target="_blank">cheat sheet section</a></li>
     </ul>
   </li>
 </ul>
@@ -240,7 +245,7 @@ facebook.com
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-10-20T20:55:37+0000">
+    <time itemprop="dateModified" content="2020-10-20T21:01:40+0000">
         Updated: October 20, 2020
     </time>
     
@@ -374,12 +379,12 @@ facebook.com
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202010202057" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202010202057" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202010202057" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202010202057" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202010202102" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202010202102" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202010202102" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202010202102" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202010202057" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202010202102" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
