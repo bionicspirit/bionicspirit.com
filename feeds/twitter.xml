@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Oct 2020 20:48:58 +0000</pubDate>
-    <lastBuildDate>Tue, 20 Oct 2020 20:48:58 +0000</lastBuildDate>
+    <pubDate>Tue, 20 Oct 2020 20:49:45 +0000</pubDate>
+    <lastBuildDate>Tue, 20 Oct 2020 20:49:45 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -19,10 +19,10 @@
     
       <item>
   <title>Block comments on the web</title>
-  <description>Blog article: #Privacy #Web</description>
+  <description>Blog article: #Browser #Privacy #Web</description>
   <pubDate>Tue, 20 Oct 2020 19:51:45 +0000</pubDate>
-  <dc:modified>Tue, 20 Oct 2020 20:48:00 +0000</dc:modified>
-  <atom:modified>Tue, 20 Oct 2020 20:48:00 +0000</atom:modified>
+  <dc:modified>Tue, 20 Oct 2020 20:48:52 +0000</dc:modified>
+  <atom:modified>Tue, 20 Oct 2020 20:48:52 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/10/20/block-comments-on-the-web.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/10/20/block-comments-on-the-web.html</guid>
   
@@ -30,6 +30,8 @@
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Blog</category>
+  
+  <category>Browser</category>
   
   <category>Privacy</category>
   
