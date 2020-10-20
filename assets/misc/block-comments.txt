@@ -12,3 +12,6 @@ youtube.com###comments
 ###disqus_thread
 ##.dsq-brlink
 ##.disqus-container
+
+||twitter.com
+||facebook.com
