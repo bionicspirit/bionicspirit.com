@@ -9,8 +9,8 @@
     <description>Feed of recommended links from around the web, published at alexn.org/links/</description>
     <link>https://alexn.org/links/</link>
     <atom:link href="https://alexn.org/feeds/links.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Oct 2020 20:49:46 +0000</pubDate>
-    <lastBuildDate>Sat, 24 Oct 2020 20:49:46 +0000</lastBuildDate>
+    <pubDate>Sat, 24 Oct 2020 20:53:45 +0000</pubDate>
+    <lastBuildDate>Sat, 24 Oct 2020 20:53:45 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -23,14 +23,14 @@
   <description>&lt;a href=&quot;https://www.youtube.com/watch?v=FkGK7bitav0&quot;&gt;
       &lt;img src=&quot;https://img.youtube.com/vi/FkGK7bitav0/maxresdefault.jpg&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
-    &lt;p&gt;Now you know the US presidential elections are close 🤡&lt;/p&gt;
+    &lt;p&gt;Now you know the US presidential election is close 🤡&lt;/p&gt;
 
     &lt;p&gt;
       &lt;a href=&quot;https://www.youtube.com/watch?v=FkGK7bitav0&quot;&gt;Read article ...&lt;/a&gt;
     &lt;/p&gt;</description>
   <pubDate>Sat, 24 Oct 2020 20:41:03 +0000</pubDate>
-  <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
-  <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
+  <dc:modified>Sat, 24 Oct 2020 20:52:54 +0000</dc:modified>
+  <atom:modified>Sat, 24 Oct 2020 20:52:54 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=FkGK7bitav0</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/24/donald-trump-vs-joe-biden.html</guid>
   
@@ -84,7 +84,7 @@ tags:&lt;/p&gt;
         <item>
   <title>Typelevel Cats Effect 3.0.0-M1</title>
   <description>&lt;a href=&quot;https://github.com/typelevel/cats-effect/releases/tag/v3.0.0-M1&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202010242049&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202010242053&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Cats Effect 3.0.0-M1 is the very first milestone release in the 3.0.0 line. We are expecting to follow this milestone with subsequent ones as necessary to further refine functionality and features, prior to some number of release candidates leading to a final release. The designation “M1” is meant to indicate our relative confidence in the functionality and API of the library, but it by no means indicates completeness or final compatibility. Neither binary compatibility nor source compatibility with anything are assured prior to 3.0.0, though major breakage is unlikely at this point.”&lt;/em&gt;&lt;/p&gt;
@@ -114,7 +114,7 @@ tags:&lt;/p&gt;
         <item>
   <title>Practice typing by retyping ENTIRE classic novels</title>
   <description>&lt;a href=&quot;https://www.typelit.io/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202010242049&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202010242053&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Improve your typing for free online by practicing on classic literature.”&lt;/em&gt;&lt;/p&gt;
