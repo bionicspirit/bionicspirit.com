@@ -9,14 +9,32 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Oct 2020 22:02:41 +0000</pubDate>
-    <lastBuildDate>Tue, 20 Oct 2020 22:02:41 +0000</lastBuildDate>
+    <pubDate>Sat, 24 Oct 2020 20:49:46 +0000</pubDate>
+    <lastBuildDate>Sat, 24 Oct 2020 20:49:46 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Donald Trump vs Joe Biden — Epic Rap Battles Of History</title>
+  <description>Shared link: #Politics #YouTube</description>
+  <pubDate>Sat, 24 Oct 2020 20:41:03 +0000</pubDate>
+  <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
+  <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=FkGK7bitav0</link>
+  <guid isPermaLink="false">https://alexn.org/links/2020/10/24/donald-trump-vs-joe-biden.html</guid>
+  
+  <category>Shared link</category>
+  
+  <category>Politics</category>
+  
+  <category>YouTube</category>
+  
+</item>
+
+        
       <item>
   <title>Block comments on the web</title>
   <description>Blog article: #Browser #Privacy #Web</description>
@@ -64,23 +82,15 @@
   
         
       <item>
-  <title>Haskell: Monads. A 5-minute introduction, by Stephen Edwards</title>
-  <description>Shared link: #FP #Haskell #Programming</description>
-  <pubDate>Tue, 13 Oct 2020 07:50:16 +0000</pubDate>
-  <dc:modified>Tue, 13 Oct 2020 07:53:14 +0000</dc:modified>
-  <atom:modified>Tue, 13 Oct 2020 07:53:14 +0000</atom:modified>
-  <link>https://www.youtube.com/watch?v=_Gk_lwhJMzk</link>
+  <title>Haskell Monads A 5 Minute Introduction</title>
+  <description>Shared link:</description>
+  <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
+  <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
+  <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
+  <link></link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/13/haskell-monads-a-5-minute-introduction.html</guid>
   
-  <dc:creator>Stephen Edwards</dc:creator>
-  
   <category>Shared link</category>
-  
-  <category>FP</category>
-  
-  <category>Haskell</category>
-  
-  <category>Programming</category>
   
 </item>
 
@@ -164,21 +174,15 @@
 
         
       <item>
-  <title>Countdown to Scala 3, by Martin Odersky</title>
-  <description>Shared link: #Programming #Scala</description>
+  <title>Countdown To Scala 3</title>
+  <description>Shared link:</description>
   <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
-  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
-  <link>https://www.youtube.com/watch?v=n9LPwOPACj4</link>
+  <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
+  <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
+  <link></link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/10/countdown-to-scala-3.html</guid>
   
-  <dc:creator>Martin Odersky</dc:creator>
-  
   <category>Shared link</category>
-  
-  <category>Programming</category>
-  
-  <category>Scala</category>
   
 </item>
 
@@ -242,10 +246,10 @@
         
       <item>
   <title>Category Theory for the Working Hacker, by Philip Wadler</title>
-  <description>Shared link: #Programming #CategoryTheory #FP #Haskell</description>
+  <description>Shared link: #Programming #CategoryTheory #FP #Haskell #YouTube</description>
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
-  <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
+  <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
+  <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=V10hzjgoklA</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/08/category-theory-for-the-working-hacker.html</guid>
   
@@ -260,6 +264,8 @@
   <category>FP</category>
   
   <category>Haskell</category>
+  
+  <category>YouTube</category>
   
 </item>
 
