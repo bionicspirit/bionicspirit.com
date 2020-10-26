@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Oct 2020 13:33:06 +0000</pubDate>
-    <lastBuildDate>Mon, 26 Oct 2020 13:33:06 +0000</lastBuildDate>
+    <pubDate>Mon, 26 Oct 2020 13:51:26 +0000</pubDate>
+    <lastBuildDate>Mon, 26 Oct 2020 13:51:26 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -2066,14 +2066,21 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 
 &lt;p&gt;Afterwards starting Emacs from the command line might be a good idea.&lt;/p&gt;
 
+&lt;h3 id=&quot;general-unhappiness&quot;&gt;General unhappiness&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew uninstall emacs
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then download &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;VS Code&lt;/a&gt;.&lt;/p&gt;
+
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/bbatsov/emacs-lisp-style-guide&quot;&gt;The Emacs Lisp Style Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Mon, 26 Oct 2020 13:31:30 +0000</dc:modified>
-  <atom:modified>Mon, 26 Oct 2020 13:31:30 +0000</atom:modified>
+  <dc:modified>Mon, 26 Oct 2020 13:49:43 +0000</dc:modified>
+  <atom:modified>Mon, 26 Oct 2020 13:49:43 +0000</atom:modified>
   <link>https://alexn.org/wiki/emacs.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/emacs.html</guid>
   
