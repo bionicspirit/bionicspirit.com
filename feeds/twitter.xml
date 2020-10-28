@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Oct 2020 07:42:08 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Oct 2020 07:42:08 +0000</lastBuildDate>
+    <pubDate>Wed, 28 Oct 2020 07:47:05 +0000</pubDate>
+    <lastBuildDate>Wed, 28 Oct 2020 07:47:05 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,12 +21,12 @@
   <title>BSP Support in sbt 1.4</title>
   <description>Shared link #Programming #Scala</description>
   <pubDate>Wed, 28 Oct 2020 06:53:18 +0000</pubDate>
-  <dc:modified>Wed, 28 Oct 2020 07:07:52 +0000</dc:modified>
-  <atom:modified>Wed, 28 Oct 2020 07:07:52 +0000</atom:modified>
+  <dc:modified>Wed, 28 Oct 2020 07:46:19 +0000</dc:modified>
+  <atom:modified>Wed, 28 Oct 2020 07:46:19 +0000</atom:modified>
   <link>https://www.scala-lang.org/blog/2020/10/27/bsp-in-sbt.html</link>
-  <guid isPermaLink="false">https://alexn.org/links/2020/10/28/bsp-support-in-sbt-1-4.html</guid>
+  <guid isPermaLink="false">https://alexn.org/links/2020/10/28/bsp-support-sbt.html</guid>
   
-  <dc:creator>Adrien Piquerez, Scala Center</dc:creator>
+  <dc:creator>Scala Center</dc:creator>
   
   <category>Shared link</category>
   
