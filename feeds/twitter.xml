@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Oct 2020 07:08:56 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Oct 2020 07:08:56 +0000</lastBuildDate>
+    <pubDate>Wed, 28 Oct 2020 07:30:58 +0000</pubDate>
+    <lastBuildDate>Wed, 28 Oct 2020 07:30:58 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -19,7 +19,7 @@
     
       <item>
   <title>BSP Support in sbt 1.4, by Adrien Piquerez, Scala Center</title>
-  <description>Shared link: #Programming #Scala</description>
+  <description>Shared link #Programming #Scala</description>
   <pubDate>Wed, 28 Oct 2020 06:53:18 +0000</pubDate>
   <dc:modified>Wed, 28 Oct 2020 07:07:52 +0000</dc:modified>
   <atom:modified>Wed, 28 Oct 2020 07:07:52 +0000</atom:modified>
@@ -39,7 +39,7 @@
         
       <item>
   <title>Donald Trump vs Joe Biden — Epic Rap Battles Of History</title>
-  <description>Shared link: #Politics #YouTube</description>
+  <description>Shared link #Politics #YouTube</description>
   <pubDate>Sat, 24 Oct 2020 20:41:03 +0000</pubDate>
   <dc:modified>Sat, 24 Oct 2020 20:52:54 +0000</dc:modified>
   <atom:modified>Sat, 24 Oct 2020 20:52:54 +0000</atom:modified>
@@ -57,7 +57,7 @@
         
       <item>
   <title>Block comments on the web</title>
-  <description>Blog article: #Browser #Privacy #Web</description>
+  <description>Blog article #Browser #Privacy #Web</description>
   <pubDate>Tue, 20 Oct 2020 19:51:45 +0000</pubDate>
   <dc:modified>Tue, 20 Oct 2020 22:01:46 +0000</dc:modified>
   <atom:modified>Tue, 20 Oct 2020 22:01:46 +0000</atom:modified>
@@ -80,7 +80,7 @@
         
       <item>
   <title>Generic IOApp alternative</title>
-  <description>Code snippet: #CatsEffect #FP #Scala</description>
+  <description>Code snippet #CatsEffect #FP #Scala</description>
   <pubDate>Thu, 15 Oct 2020 07:05:19 +0000</pubDate>
   <dc:modified>Thu, 15 Oct 2020 07:50:24 +0000</dc:modified>
   <atom:modified>Thu, 15 Oct 2020 07:50:24 +0000</atom:modified>
@@ -103,7 +103,7 @@
         
       <item>
   <title>Haskell Monads A 5 Minute Introduction</title>
-  <description>Shared link:</description>
+  <description>Shared link</description>
   <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
   <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
@@ -117,7 +117,7 @@
         
       <item>
   <title>Effect Runtime</title>
-  <description>Code snippet: #CatsEffect #FP #Scala</description>
+  <description>Code snippet #CatsEffect #FP #Scala</description>
   <pubDate>Mon, 12 Oct 2020 14:17:42 +0000</pubDate>
   <dc:modified>Tue, 13 Oct 2020 06:24:33 +0000</dc:modified>
   <atom:modified>Tue, 13 Oct 2020 06:24:33 +0000</atom:modified>
@@ -140,7 +140,7 @@
         
       <item>
   <title>Typelevel Cats Effect 3.0.0-M1</title>
-  <description>Shared link: #Programming #Scala #Typelevel</description>
+  <description>Shared link #Programming #Scala #Typelevel</description>
   <pubDate>Sat, 10 Oct 2020 19:28:07 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -160,7 +160,7 @@
         
       <item>
   <title>Practice typing by retyping ENTIRE classic novels</title>
-  <description>Shared link: #TechSkills</description>
+  <description>Shared link #TechSkills</description>
   <pubDate>Sat, 10 Oct 2020 19:13:12 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -176,7 +176,7 @@
         
       <item>
   <title>When My World Vanishes</title>
-  <description>Blog article: #Personal</description>
+  <description>Blog article #Personal</description>
   <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 20 Oct 2020 21:50:16 +0000</dc:modified>
   <atom:modified>Tue, 20 Oct 2020 21:50:16 +0000</atom:modified>
@@ -195,7 +195,7 @@
         
       <item>
   <title>Countdown To Scala 3</title>
-  <description>Shared link:</description>
+  <description>Shared link</description>
   <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
   <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
@@ -209,7 +209,7 @@
         
       <item>
   <title>State of the Haskell ecosystem, by Gabriel Gonzalez</title>
-  <description>Shared link: #Programming #Haskell</description>
+  <description>Shared link #Programming #Haskell</description>
   <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -230,7 +230,7 @@
                 
             <item>
   <title>Microsoft .NET</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
   <dc:modified>Sat, 10 Oct 2020 07:00:47 +0000</dc:modified>
   <atom:modified>Sat, 10 Oct 2020 07:00:47 +0000</atom:modified>
@@ -245,7 +245,7 @@
         
       <item>
   <title>Unlawful Effect.scala</title>
-  <description>Code snippet: #CatsEffect #Scala</description>
+  <description>Code snippet #CatsEffect #Scala</description>
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -266,7 +266,7 @@
         
       <item>
   <title>Category Theory for the Working Hacker, by Philip Wadler</title>
-  <description>Shared link: #Programming #CategoryTheory #FP #Haskell #YouTube</description>
+  <description>Shared link #Programming #CategoryTheory #FP #Haskell #YouTube</description>
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
   <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
@@ -292,7 +292,7 @@
         
       <item>
   <title>Running integration tests, with Scala + sbt</title>
-  <description>Code snippet: #sbt #Scala #Testing</description>
+  <description>Code snippet #sbt #Scala #Testing</description>
   <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -315,7 +315,7 @@
         
       <item>
   <title>Flow/Processor to Effect</title>
-  <description>Code snippet: #Akka #CatsEffect #ReactiveStreams #Scala</description>
+  <description>Code snippet #Akka #CatsEffect #ReactiveStreams #Scala</description>
   <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -341,7 +341,7 @@
                 
             <item>
   <title>Privacy</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 21 Sep 2020 13:20:35 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -357,7 +357,7 @@
                 
             <item>
   <title>De-DRM</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Thu, 17 Sep 2020 09:02:43 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -373,7 +373,7 @@
                 
             <item>
   <title>Image Formats</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Tue, 15 Sep 2020 18:48:09 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -388,7 +388,7 @@
         
       <item>
   <title>Privilege</title>
-  <description>Blog article: #Personal</description>
+  <description>Blog article #Personal</description>
   <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
   <dc:modified>Thu, 10 Sep 2020 14:04:28 +0000</dc:modified>
   <atom:modified>Thu, 10 Sep 2020 14:04:28 +0000</atom:modified>
@@ -408,7 +408,7 @@
                 
             <item>
   <title>Apache Kafka</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Fri, 04 Sep 2020 07:30:08 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -423,7 +423,7 @@
         
       <item>
   <title>Safe Password.scala</title>
-  <description>Code snippet: #JVM #Scala</description>
+  <description>Code snippet #JVM #Scala</description>
   <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -445,7 +445,7 @@
                 
             <item>
   <title>Agile software development</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -461,7 +461,7 @@
                 
             <item>
   <title>Cloudflare</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -477,7 +477,7 @@
                 
             <item>
   <title>Debian Packages (deb)</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -493,7 +493,7 @@
                 
             <item>
   <title>DNS settings</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -509,7 +509,7 @@
                 
             <item>
   <title>Docker</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -525,7 +525,7 @@
                 
             <item>
   <title>Dropbox</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -541,7 +541,7 @@
                 
             <item>
   <title>Emacs Setup</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Mon, 26 Oct 2020 13:49:43 +0000</dc:modified>
   <atom:modified>Mon, 26 Oct 2020 13:49:43 +0000</atom:modified>
@@ -557,7 +557,7 @@
                 
             <item>
   <title>Email Tips</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -573,7 +573,7 @@
                 
             <item>
   <title>Firefox</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -589,7 +589,7 @@
                 
             <item>
   <title>Git Tips</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -605,7 +605,7 @@
                 
             <item>
   <title>GitHub</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -621,7 +621,7 @@
                 
             <item>
   <title>GNU Screen</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -637,7 +637,7 @@
                 
             <item>
   <title>Haskell</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -653,7 +653,7 @@
                 
             <item>
   <title>iTerm2</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -669,7 +669,7 @@
                 
             <item>
   <title>JSON</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -685,7 +685,7 @@
                 
             <item>
   <title>MacOS</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -701,7 +701,7 @@
                 
             <item>
   <title>MySQL / MariaDB</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -717,7 +717,7 @@
                 
             <item>
   <title>Nix</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -733,7 +733,7 @@
                 
             <item>
   <title>Org-mode</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -749,7 +749,7 @@
                 
             <item>
   <title>PostgreSQL</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -765,7 +765,7 @@
                 
             <item>
   <title>Python</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -781,7 +781,7 @@
                 
             <item>
   <title>RSS / Atom feeds</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -797,7 +797,7 @@
                 
             <item>
   <title>Rust</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -813,7 +813,7 @@
                 
             <item>
   <title>Teach Kids to Code</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -829,7 +829,7 @@
                 
             <item>
   <title>tmux shortcuts &amp; cheatsheet</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -845,7 +845,7 @@
                 
             <item>
   <title>Web Apps</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -861,7 +861,7 @@
                 
             <item>
   <title>Windows 10</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -877,7 +877,7 @@
                 
             <item>
   <title>Custom Zsh Prompt</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -892,7 +892,7 @@
         
       <item>
   <title>Error Hierarchy.scala</title>
-  <description>Code snippet: #Scala</description>
+  <description>Code snippet #Scala</description>
   <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -911,7 +911,7 @@
         
       <item>
   <title>Sbt Fork Debug.sbt</title>
-  <description>Code snippet: #sbt #Scala</description>
+  <description>Code snippet #sbt #Scala</description>
   <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -932,7 +932,7 @@
         
       <item>
   <title>Flow Sensitive Typing.ts</title>
-  <description>Code snippet: #TypeScript</description>
+  <description>Code snippet #TypeScript</description>
   <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -951,7 +951,7 @@
         
       <item>
   <title>Retry Failing Tasks with Cats and Scala</title>
-  <description>Blog article: #Scala #FP #Code</description>
+  <description>Blog article #Scala #FP #Code</description>
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 04 Aug 2020 06:39:51 +0000</dc:modified>
   <atom:modified>Tue, 04 Aug 2020 06:39:51 +0000</atom:modified>
@@ -974,7 +974,7 @@
         
       <item>
   <title>On Error Retry Loop.scala</title>
-  <description>Code snippet: #CatsEffect #Scala</description>
+  <description>Code snippet #CatsEffect #Scala</description>
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -996,7 +996,7 @@
                 
             <item>
   <title>DNS Lookup - Check Domain’s DNS Records</title>
-  <description>Wiki article:</description>
+  <description>Wiki article</description>
   <pubDate>Thu, 30 Jul 2020 10:00:27 +0000</pubDate>
   <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
   <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
@@ -1011,7 +1011,7 @@
         
       <item>
   <title>Akka Streams Buffer Test.scala</title>
-  <description>Code snippet: #Akka #Scala #ReactiveStreams</description>
+  <description>Code snippet #Akka #Scala #ReactiveStreams</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1034,7 +1034,7 @@
         
       <item>
   <title>Enumeratum.scala</title>
-  <description>Code snippet: #Scala</description>
+  <description>Code snippet #Scala</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1053,7 +1053,7 @@
         
       <item>
   <title>From Resource To Reactivestreams.scala</title>
-  <description>Code snippet: #Akka #CatsEffect #ReactiveStreams #Scala</description>
+  <description>Code snippet #Akka #CatsEffect #ReactiveStreams #Scala</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1078,7 +1078,7 @@
         
       <item>
   <title>Python Proxy.py</title>
-  <description>Code snippet: #Python</description>
+  <description>Code snippet #Python</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1097,7 +1097,7 @@
         
       <item>
   <title>Resource As Publisher.scala</title>
-  <description>Code snippet: #Akka #CatsEffect #ReactiveStreams #Scala</description>
+  <description>Code snippet #Akka #CatsEffect #ReactiveStreams #Scala</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1122,7 +1122,7 @@
         
       <item>
   <title>Future Stack Overflow.scala</title>
-  <description>Code snippet: #Async #Scala</description>
+  <description>Code snippet #Async #Scala</description>
   <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1143,7 +1143,7 @@
         
       <item>
   <title>Fatal Warnings and Linting in Scala</title>
-  <description>Blog article: #Scala #Code</description>
+  <description>Blog article #Scala #Code</description>
   <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 17 Aug 2020 06:21:04 +0000</dc:modified>
   <atom:modified>Mon, 17 Aug 2020 06:21:04 +0000</atom:modified>
@@ -1164,7 +1164,7 @@
         
       <item>
   <title>Parallelizing Work via a JavaScript Semaphore</title>
-  <description>Blog article: #Asynchrony #Concurrency #JavaScript #TypeScript</description>
+  <description>Blog article #Asynchrony #Concurrency #JavaScript #TypeScript</description>
   <pubDate>Tue, 21 Apr 2020 16:00:00 +0000</pubDate>
   <dc:modified>Wed, 22 Apr 2020 09:12:30 +0000</dc:modified>
   <atom:modified>Wed, 22 Apr 2020 09:12:30 +0000</atom:modified>
@@ -1189,7 +1189,7 @@
         
       <item>
   <title>Blog Updates</title>
-  <description>Blog article: #Blogging #Personal</description>
+  <description>Blog article #Blogging #Personal</description>
   <pubDate>Tue, 21 Apr 2020 10:00:00 +0000</pubDate>
   <dc:modified>Wed, 26 Aug 2020 06:02:40 +0000</dc:modified>
   <atom:modified>Wed, 26 Aug 2020 06:02:40 +0000</atom:modified>
@@ -1210,7 +1210,7 @@
         
       <item>
   <title>Send Mail.py</title>
-  <description>Code snippet: #CLI #Python</description>
+  <description>Code snippet #CLI #Python</description>
   <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1231,7 +1231,7 @@
         
       <item>
   <title>Encrypt.sh</title>
-  <description>Code snippet: #CLI #Bash</description>
+  <description>Code snippet #CLI #Bash</description>
   <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1252,7 +1252,7 @@
         
       <item>
   <title>Sierpinski.hs</title>
-  <description>Code snippet: #Fun #Haskell</description>
+  <description>Code snippet #Fun #Haskell</description>
   <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1273,7 +1273,7 @@
         
       <item>
   <title>Regexp Replacement via Function in Java/Scala</title>
-  <description>Blog article: #Scala #Ruby</description>
+  <description>Blog article #Scala #Ruby</description>
   <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
@@ -1294,7 +1294,7 @@
         
       <item>
   <title>Async Queue.ts</title>
-  <description>Code snippet: #Async #JavaScript #TypeScript</description>
+  <description>Code snippet #Async #JavaScript #TypeScript</description>
   <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1317,7 +1317,7 @@
         
       <item>
   <title>Blocking Task.scala</title>
-  <description>Code snippet: #Async #Monix #Scala</description>
+  <description>Code snippet #Async #Monix #Scala</description>
   <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1340,7 +1340,7 @@
         
       <item>
   <title>Scala&#39;s isInstanceOf is an Anti-Pattern</title>
-  <description>Blog article: #BestOf #Scala</description>
+  <description>Blog article #BestOf #Scala</description>
   <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 23:15:01 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 23:15:01 +0000</atom:modified>
@@ -1361,7 +1361,7 @@
         
       <item>
   <title>On Bifunctor IO and Java&#39;s Checked Exceptions</title>
-  <description>Blog article: #BestOf #FP #Typelevel #Scala #Haskell</description>
+  <description>Blog article #BestOf #FP #Typelevel #Scala #Haskell</description>
   <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
@@ -1388,7 +1388,7 @@
         
       <item>
   <title>In Defense of OOFP</title>
-  <description>Blog article: #BestOf #OOP #FP #Haskell #Scala</description>
+  <description>Blog article #BestOf #OOP #FP #Haskell #Scala</description>
   <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
@@ -1415,7 +1415,7 @@
         
       <item>
   <title>Minitest: Zero Crap Scala Testing Library</title>
-  <description>Blog article: #Code #Testing #Scala</description>
+  <description>Blog article #Code #Testing #Scala</description>
   <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1438,7 +1438,7 @@
         
       <item>
   <title>What is Functional Programming?</title>
-  <description>Blog article: #BestOf #FP #Haskell #Scala #JavaScript</description>
+  <description>Blog article #BestOf #FP #Haskell #Scala #JavaScript</description>
   <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 22 Apr 2020 01:16:57 +0000</dc:modified>
   <atom:modified>Wed, 22 Apr 2020 01:16:57 +0000</atom:modified>
@@ -1465,7 +1465,7 @@
         
       <item>
   <title>Scala Days 2017 — Monix Task</title>
-  <description>Blog article: #Functional #Code #Scala #Monix #Presentation #Video #Slides</description>
+  <description>Blog article #Functional #Code #Scala #Monix #Presentation #Video #Slides</description>
   <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1496,7 +1496,7 @@
         
       <item>
   <title>JavaScript&#39;s Promise Leaks Memory</title>
-  <description>Blog article: #JavaScript #Promise #Funfix #Functional</description>
+  <description>Blog article #JavaScript #Promise #Funfix #Functional</description>
   <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 22 Apr 2020 01:15:09 +0000</dc:modified>
   <atom:modified>Wed, 22 Apr 2020 01:15:09 +0000</atom:modified>
@@ -1521,7 +1521,7 @@
         
       <item>
   <title>Automatic Releases to Maven Central with Travis and SBT</title>
-  <description>Blog article: #SBT #Scala #Sonatype #Travis</description>
+  <description>Blog article #SBT #Scala #Sonatype #Travis</description>
   <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1546,7 +1546,7 @@
         
       <item>
   <title>Functional Programming Inception (Presentation)</title>
-  <description>Blog article: #Functional #Code #Scala #Monix</description>
+  <description>Blog article #Functional #Code #Scala #Monix</description>
   <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1571,7 +1571,7 @@
         
       <item>
   <title>Asynchronous Programming and Scala</title>
-  <description>Blog article: #BestOf #Scala #Asynchrony #Concurrency</description>
+  <description>Blog article #BestOf #Scala #Asynchrony #Concurrency</description>
   <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
@@ -1596,7 +1596,7 @@
         
       <item>
   <title>Fixing scala.collection.Iterator</title>
-  <description>Blog article: #Functional #Code #Scala</description>
+  <description>Blog article #Functional #Code #Scala</description>
   <pubDate>Mon, 16 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1619,7 +1619,7 @@
         
       <item>
   <title>Why Scala&#39;s Traversable Is Bad Design</title>
-  <description>Blog article: #Functional #Code #Scala</description>
+  <description>Blog article #Functional #Code #Scala</description>
   <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1642,7 +1642,7 @@
         
       <item>
   <title>Add to NewsBlur Bookmarklet</title>
-  <description>Blog article: #Utils #Web</description>
+  <description>Blog article #Utils #Web</description>
   <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1663,7 +1663,7 @@
         
       <item>
   <title>Monix Task vs Scalaz vs Future, The Benchmark</title>
-  <description>Blog article: #Functional #Code #Scala #Monix #Scalaz #Typelevel</description>
+  <description>Blog article #Functional #Code #Scala #Monix #Scalaz #Typelevel</description>
   <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1692,7 +1692,7 @@
         
       <item>
   <title>Akka &amp; Monix - Typelevel Summit, Oslo 2016</title>
-  <description>Blog article: #Functional #Code #Scala #Monix</description>
+  <description>Blog article #Functional #Code #Scala #Monix</description>
   <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 01 Jun 2020 19:22:20 +0000</dc:modified>
   <atom:modified>Mon, 01 Jun 2020 19:22:20 +0000</atom:modified>
@@ -1717,7 +1717,7 @@
         
       <item>
   <title>Monix Task - flatMap(Oslo) 2016</title>
-  <description>Blog article: #Functional #Code #Scala #Monix</description>
+  <description>Blog article #Functional #Code #Scala #Monix</description>
   <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 26 Aug 2020 06:02:40 +0000</dc:modified>
   <atom:modified>Wed, 26 Aug 2020 06:02:40 +0000</atom:modified>
@@ -1742,7 +1742,7 @@
         
       <item>
   <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell</title>
-  <description>Blog article: #Functional #Code #Scala #Rx</description>
+  <description>Blog article #Functional #Code #Scala #Rx</description>
   <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1767,7 +1767,7 @@
         
       <item>
   <title>Monifu vs Akka Streams</title>
-  <description>Blog article: #Functional #Scala #Rx #ReactiveStreams</description>
+  <description>Blog article #Functional #Scala #Rx #ReactiveStreams</description>
   <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1792,7 +1792,7 @@
         
       <item>
   <title>Scala Best Practices</title>
-  <description>Blog article: #Languages #Functional #Scala #BestPractices</description>
+  <description>Blog article #Languages #Functional #Scala #BestPractices</description>
   <pubDate>Mon, 20 Oct 2014 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1817,7 +1817,7 @@
         
       <item>
   <title>Resources for Learning Scala</title>
-  <description>Blog article: #Languages #Functional #Scala #Books</description>
+  <description>Blog article #Languages #Functional #Scala #Books</description>
   <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1842,7 +1842,7 @@
         
       <item>
   <title>Towards a Better AtomicReference</title>
-  <description>Blog article: #Languages #Functional #Scala #Java #Multithreading #Concurrency</description>
+  <description>Blog article #Languages #Functional #Scala #Java #Multithreading #Concurrency</description>
   <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1871,7 +1871,7 @@
         
       <item>
   <title>JVM Multithreading: Monitor Locks and Visibility</title>
-  <description>Blog article: #Languages #Functional #Scala #Java #Multithreading #Concurrency</description>
+  <description>Blog article #Languages #Functional #Scala #Java #Multithreading #Concurrency</description>
   <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1900,7 +1900,7 @@
         
       <item>
   <title>Notes On JavaScript Client-side Development</title>
-  <description>Blog article: #JavaScript #Functional #Browser #Web</description>
+  <description>Blog article #JavaScript #Functional #Browser #Web</description>
   <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
   <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
@@ -1925,7 +1925,7 @@
         
       <item>
   <title>On Scala, Functional Programming and Type-Classes</title>
-  <description>Blog article: #Languages #Functional #Scala #Clojure #Java</description>
+  <description>Blog article #Languages #Functional #Scala #Clojure #Java</description>
   <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 26 May 2020 18:43:44 +0000</dc:modified>
   <atom:modified>Tue, 26 May 2020 18:43:44 +0000</atom:modified>
@@ -1952,7 +1952,7 @@
         
       <item>
   <title>How To Build a Naive Bayes Classifier</title>
-  <description>Blog article: #BestOf #Algorithms #Mining #Ruby</description>
+  <description>Blog article #BestOf #Algorithms #Mining #Ruby</description>
   <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 25 Jan 2020 00:00:00 +0000</dc:modified>
   <atom:modified>Sat, 25 Jan 2020 00:00:00 +0000</atom:modified>
@@ -1977,7 +1977,7 @@
         
       <item>
   <title>Data Mining: Finding Similar Items and Users</title>
-  <description>Blog article: #BestOf #Algorithms #Mining #Ruby</description>
+  <description>Blog article #BestOf #Algorithms #Mining #Ruby</description>
   <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 28 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Sat, 28 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2002,7 +2002,7 @@
         
       <item>
   <title>Blogging Platform for Hackers</title>
-  <description>Blog article: #Blogging #Server #Cloud #Heroku #Ruby #Jekyll</description>
+  <description>Blog article #Blogging #Server #Cloud #Heroku #Ruby #Jekyll</description>
   <pubDate>Thu, 05 Jan 2012 00:00:00 +0000</pubDate>
   <dc:modified>Thu, 19 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Thu, 19 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2031,7 +2031,7 @@
         
       <item>
   <title>Crawling the Android Marketplace</title>
-  <description>Blog article: #Python #Android #Web #API</description>
+  <description>Blog article #Python #Android #Web #API</description>
   <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2056,7 +2056,7 @@
         
       <item>
   <title>Android Learning Resources</title>
-  <description>Blog article: #Books #Android</description>
+  <description>Blog article #Books #Android</description>
   <pubDate>Mon, 12 Dec 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2077,7 +2077,7 @@
         
       <item>
   <title>Earning Money as an Amazon Affiliate</title>
-  <description>Blog article: #Publishing #Income #Amazon</description>
+  <description>Blog article #Publishing #Income #Amazon</description>
   <pubDate>Tue, 29 Nov 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2100,7 +2100,7 @@
         
       <item>
   <title>4 Books For Learning to Design, The Hard Way</title>
-  <description>Blog article: #BestOf #Design #UX #Books</description>
+  <description>Blog article #BestOf #Design #UX #Books</description>
   <pubDate>Fri, 25 Nov 2011 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 16 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Mon, 16 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2125,7 +2125,7 @@
         
       <item>
   <title>How I Use Flickr: For Backup</title>
-  <description>Blog article: #Cloud #API #Ruby</description>
+  <description>Blog article #Cloud #API #Ruby</description>
   <pubDate>Sat, 29 Oct 2011 00:00:00 +0000</pubDate>
   <dc:modified>Sun, 15 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Sun, 15 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2148,7 +2148,7 @@
         
       <item>
   <title>Why I Find Heroku Suboptimal</title>
-  <description>Blog article: #DevOps #Rant #Heroku #Server #Cloud #Nginx #Varnish</description>
+  <description>Blog article #DevOps #Rant #Heroku #Server #Cloud #Nginx #Varnish</description>
   <pubDate>Sun, 23 Oct 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2179,7 +2179,7 @@
         
       <item>
   <title>Cross-Domain, Cross-Browser AJAX Requests</title>
-  <description>Blog article: #JavaScript #Browser #Web</description>
+  <description>Blog article #JavaScript #Browser #Web</description>
   <pubDate>Thu, 24 Mar 2011 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 14 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Sat, 14 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2202,7 +2202,7 @@
         
       <item>
   <title>I hate NULL and all its variants!</title>
-  <description>Blog article: #Rant #Python</description>
+  <description>Blog article #Rant #Python</description>
   <pubDate>Tue, 25 May 2010 00:00:00 +0000</pubDate>
   <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
   <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
@@ -2223,7 +2223,7 @@
         
       <item>
   <title>FreeSWITCH - Tips for Creating a Dialer</title>
-  <description>Blog article: #BestOf #VoIP #FreeSWITCH #JavaScript #Perl</description>
+  <description>Blog article #BestOf #VoIP #FreeSWITCH #JavaScript #Perl</description>
   <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 14 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Sat, 14 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2250,7 +2250,7 @@
         
       <item>
   <title>Using the Best Tools in Programming: Not Really Doable</title>
-  <description>Blog article: #Languages #Rant #Perl #Python #Java</description>
+  <description>Blog article #Languages #Rant #Perl #Python #Java</description>
   <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
   <dc:modified>Sun, 01 Feb 2009 00:00:00 +0000</dc:modified>
   <atom:modified>Sun, 01 Feb 2009 00:00:00 +0000</atom:modified>
