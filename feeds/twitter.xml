@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Oct 2020 07:30:58 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Oct 2020 07:30:58 +0000</lastBuildDate>
+    <pubDate>Wed, 28 Oct 2020 07:42:08 +0000</pubDate>
+    <lastBuildDate>Wed, 28 Oct 2020 07:42:08 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -18,7 +18,7 @@
 
     
       <item>
-  <title>BSP Support in sbt 1.4, by Adrien Piquerez, Scala Center</title>
+  <title>BSP Support in sbt 1.4</title>
   <description>Shared link #Programming #Scala</description>
   <pubDate>Wed, 28 Oct 2020 06:53:18 +0000</pubDate>
   <dc:modified>Wed, 28 Oct 2020 07:07:52 +0000</dc:modified>
@@ -102,15 +102,25 @@
   
         
       <item>
-  <title>Haskell Monads A 5 Minute Introduction</title>
-  <description>Shared link</description>
-  <pubDate>Tue, 13 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
-  <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
-  <link></link>
+  <title>Haskell: Monads. A 5-minute introduction</title>
+  <description>Shared link #FP #Haskell #Programming #YouTube</description>
+  <pubDate>Tue, 13 Oct 2020 07:50:16 +0000</pubDate>
+  <dc:modified>Wed, 28 Oct 2020 07:40:46 +0000</dc:modified>
+  <atom:modified>Wed, 28 Oct 2020 07:40:46 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=_Gk_lwhJMzk</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/13/haskell-monads-a-5-minute-introduction.html</guid>
   
+  <dc:creator>Stephen Edwards</dc:creator>
+  
   <category>Shared link</category>
+  
+  <category>FP</category>
+  
+  <category>Haskell</category>
+  
+  <category>Programming</category>
+  
+  <category>YouTube</category>
   
 </item>
 
@@ -194,21 +204,29 @@
 
         
       <item>
-  <title>Countdown To Scala 3</title>
-  <description>Shared link</description>
+  <title>Countdown to Scala 3</title>
+  <description>Shared link #Programming #Scala #YouTube</description>
   <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
-  <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
-  <link></link>
+  <dc:modified>Wed, 28 Oct 2020 07:40:46 +0000</dc:modified>
+  <atom:modified>Wed, 28 Oct 2020 07:40:46 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=n9LPwOPACj4</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/10/countdown-to-scala-3.html</guid>
   
+  <dc:creator>Martin Odersky</dc:creator>
+  
   <category>Shared link</category>
+  
+  <category>Programming</category>
+  
+  <category>Scala</category>
+  
+  <category>YouTube</category>
   
 </item>
 
         
       <item>
-  <title>State of the Haskell ecosystem, by Gabriel Gonzalez</title>
+  <title>State of the Haskell ecosystem</title>
   <description>Shared link #Programming #Haskell</description>
   <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -265,7 +283,7 @@
   
         
       <item>
-  <title>Category Theory for the Working Hacker, by Philip Wadler</title>
+  <title>Category Theory for the Working Hacker</title>
   <description>Shared link #Programming #CategoryTheory #FP #Haskell #YouTube</description>
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>

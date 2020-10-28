@@ -9,30 +9,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Haskell Monads A 5 Minute Introduction - Alexandru Nedelcu</title>
+    <title>Haskell: Monads. A 5-minute introduction - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Haskell Monads A 5 Minute Introduction" property="og:title">
+    <meta content="Haskell: Monads. A 5-minute introduction" property="og:title">
     
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/links/2020/10/13/haskell-monads-a-5-minute-introduction.html" property="og:url">
-    <meta content="2020-10-13T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-10-24T20:48:55+00:00" property="article:modified_time">
-    
-    <meta content="website" property="og:type">
-    <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/logo/800px.png" />
-    <meta content="https://www.facebook.com/alexelcu" property="article:author">
+    <meta content="2020-10-13T07:50:16+00:00" property="article:published_time">
+    <meta content="2020-10-28T07:40:46+00:00" property="article:modified_time">
+    <meta property="og:type" content="video.other" />
+    <meta property="og:video:url" content="https://www.youtube-nocookie.com/embed/_Gk_lwhJMzk" />
+    <meta property="og:video:secure_url" content="https://www.youtube-nocookie.com/embed/_Gk_lwhJMzk" />
+    <meta property="og:video:type" content="text/html" />
+    <meta property="og:video:width" content="560" />
+    <meta property="og:video:height" content="315" /> 
+    <meta property="og:image" content="https://img.youtube.com/vi/_Gk_lwhJMzk/maxresdefault.jpg" />
+    <meta property="og:image:secure_url" content="https://img.youtube.com/vi//maxresdefault.jpg" />
+    <meta content="https://www.facebook.com/" property="article:author">
 
     <!-- Twitter Cards -->
-    
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
-    <meta name="twitter:site" content="@alexelcu">
-    <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Haskell Monads A 5 Minute Introduction">
+    <meta name="twitter:card" content="player" />
+    <meta name="twitter:player" content="https://www.youtube-nocookie.com/embed/_Gk_lwhJMzk">
+    <meta name="twitter:player:width" content="560">
+    <meta name="twitter:player:height" content="315">
+    <meta name="twitter:image" content="https://img.youtube.com/vi/_Gk_lwhJMzk/maxresdefault.jpg" />
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+    <meta name="twitter:title" content="Haskell: Monads. A 5-minute introduction">
     <meta name="twitter:url" content="https://alexn.org/links/2020/10/13/haskell-monads-a-5-minute-introduction.html">
     
       <meta name="twitter:description" content="On programming and personal projects">
@@ -52,8 +58,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202010280731">
-    <link rel="preload" as="style" href="/assets/css/style.css?202010280731">
+    <link rel="stylesheet" href="/assets/css/style.css?202010280742">
+    <link rel="preload" as="style" href="/assets/css/style.css?202010280742">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/links/2020/10/13/haskell-monads-a-5-minute-introduction.html">
@@ -107,19 +113,46 @@
         
         
           
-    <a href="" target="_blank">Haskell Monads A 5 Minute Introduction</a>
+    <a href="https://www.youtube.com/watch?v=_Gk_lwhJMzk" target="_blank">Haskell: Monads. A 5-minute introduction</a>
   
         
         
       </h1>
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/links/2020/10/13/haskell-monads-a-5-minute-introduction.html"/>
-    <meta itemprop="datePublished" content="2020-10-13T00:00:00+0000"/>
-    <time itemprop="dateCreated" datetime="2020-10-13T00:00:00+0000">October 13, 2020</time>
+    <meta itemprop="datePublished" content="2020-10-13T07:50:16+0000"/>
+    <time itemprop="dateCreated" datetime="2020-10-13T07:50:16+0000">October 13, 2020</time>
     
     | <a href="/links/2020/10/13/haskell-monads-a-5-minute-introduction.html#isso-thread">comments</a>
             
 </p>
+
+  
+    <figure class="video">
+  <div class="video-container">
+    <span class="embed-youtube" style="text-align:center; display: block;">
+      <iframe width="1100" height="619"
+              src="https://www.youtube-nocookie.com/embed/_Gk_lwhJMzk"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </span>
+  </div>
+  <noscript>
+    <a href="https://www.youtube.com/watch?v=_Gk_lwhJMzk" target="_blank">
+      <img src="https://img.youtube.com/vi/_Gk_lwhJMzk/maxresdefault.jpg" />
+    </a>
+  </noscript>
+  <figcaption>
+    <noscript>
+      <em>JavaScript is disabled, embedding not possible, but you can still view this video on YouTube.</em><br>
+    </noscript>
+    <a href="https://www.youtube.com/watch?v=_Gk_lwhJMzk" target="_blank">
+      Link
+      (YouTube)
+    </a>
+  </figcaption>
+</figure>
 
   
 
@@ -132,43 +165,36 @@
   </div>
 
   <div id="content" itemprop="articleBody">
-    <hr />
-<p>link: “https://www.youtube.com/watch?v=_Gk_lwhJMzk”
-title: “Haskell: Monads. A 5-minute introduction”
-author: “Stephen Edwards”
-date: 2020-10-13 10:50:16+0300
-youtube: _Gk_lwhJMzk
-tags:</p>
-<ul>
-  <li>FP</li>
-  <li>Haskell</li>
-  <li>Programming</li>
-  <li>
-      <h2 id="youtube">
-        
-        
-          YouTube <a href="#youtube" class="anchor">#</a>
-        
-        
-      </h2>
-  </li>
-</ul>
-
-<p>Just what the world needed, another monads tutorial 🙂</p>
+    <p>
+      <strong>Author:</strong> Stephen Edwards
+    </p>
+    <p>Just what the world needed, another monads tutorial 🙂</p>
 
 
     <p>
-      <a href="" target="_blank"></a>
+      <a href="https://www.youtube.com/watch?v=_Gk_lwhJMzk" target="_blank">https://www.youtube.com/watch?v=_Gk_lwhJMzk</a>
     </p>
   </div>
 
 <div id="article-details">
-  <time itemprop="dateModified" content="2020-10-24T20:48:55+0000">
-      Updated: October 24, 2020
+  <time itemprop="dateModified" content="2020-10-28T07:40:46+0000">
+      Updated: October 28, 2020
   </time>
 
   <div id="all-categories">
     Tags:
+    
+      
+      <a href="/links/tag/fp/" class="category">FP</a>
+    
+       | 
+      <a href="/links/tag/haskell/" class="category">Haskell</a>
+    
+       | 
+      <a href="/links/tag/programming/" class="category">Programming</a>
+    
+       | 
+      <a href="/links/tag/youtube/" class="category">YouTube</a>
     
   </div>
 </div>
@@ -246,12 +272,12 @@ tags:</p>
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202010280731" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202010280731" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202010280731" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202010280731" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202010280742" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202010280742" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202010280742" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202010280742" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202010280731" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202010280742" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -268,7 +294,7 @@ tags:</p>
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Haskell+Monads+A+5+Minute+Introduction" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Haskell%3A+Monads.+A+5-minute+introduction" style="border:0" alt="" />
 </noscript>
 
    <div class="footer">
@@ -301,7 +327,7 @@ tags:</p>
           data-isso-vote="false"
           data-vote-levels=""
           src="https://alexn.org/comments/alexn/js/embed.min.js"></script>
-  <section id="isso-thread" data-title="Haskell Monads A 5 Minute Introduction">
+  <section id="isso-thread" data-title="Haskell: Monads. A 5-minute introduction">
   </section>
 </div>
 <noscript>
