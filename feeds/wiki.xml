@@ -9,13 +9,92 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 28 Oct 2020 08:30:13 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Oct 2020 08:30:13 +0000</lastBuildDate>
+    <pubDate>Tue, 03 Nov 2020 09:04:07 +0000</pubDate>
+    <lastBuildDate>Tue, 03 Nov 2020 09:04:07 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
+    
+      
+        <item>
+  <title>Android</title>
+  <description>&lt;p&gt;
+      Article updated at November 2, 2020, 
+      created at November 2, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.davx5.com/&quot;&gt;DAVx5&lt;/a&gt;: CalDAV/CardDAV for Android&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://f-droid.org&quot;&gt;F-Droid&lt;/a&gt;: FOSS app store&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.seazon.feedme&quot;&gt;FeedMe RSS Reader&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/firefox/mobile/&quot;&gt;Firefox for Android&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.foxit.mobile.pdf.lite&quot;&gt;Foxit PDF Reader&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://gitlab.com/proninyaroslav/libretorrent&quot;&gt;LibreTorrent&lt;/a&gt;: open-source torrent client&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp&quot;&gt;Moon+ Reader Pro&lt;/a&gt;: e-book reader&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.newsblur.com/android&quot;&gt;Newsblur&lt;/a&gt;: RSS reader service&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;http://www.orgzly.com/&quot;&gt;Orgzly&lt;/a&gt;: notes and to-do lists, Org-Mode&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://osmand.net/&quot;&gt;OsmAnd&lt;/a&gt;: maps based on OpenStreetMap and Wikipedia&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.pocketcasts.com/&quot;&gt;Pocket Casts&lt;/a&gt;: podcasts&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.resilio.com/platforms/mobile/&quot;&gt;Resilio Sync&lt;/a&gt;: local files sync&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://tasker.joaoapps.com/&quot;&gt;Tasker&lt;/a&gt;: automation&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://termux.com/&quot;&gt;Termux&lt;/a&gt;: terminal emulator and Linux environment&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.videolan.org/vlc/download-android.html&quot;&gt;VLC&lt;/a&gt;: video player&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://github.com/PaulWoitaschek/Voice&quot;&gt;Voice&lt;/a&gt;: open-source audiobook player&lt;/li&gt;
+&lt;/ul&gt;</description>
+  <pubDate>Mon, 02 Nov 2020 19:09:46 +0000</pubDate>
+  <dc:modified>Mon, 02 Nov 2020 21:35:15 +0000</dc:modified>
+  <atom:modified>Mon, 02 Nov 2020 21:35:15 +0000</atom:modified>
+  <link>https://alexn.org/wiki/android.html?pk_campaign=rss&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/wiki/android.html</guid>
+  
+  <category>Wiki</category>
+  
+</item>
+
+      
+    
+      
+        <item>
+  <title>Web Tricks</title>
+  <description>&lt;p&gt;
+      Article updated at October 29, 2020, 
+      created at October 29, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;detect-the-brave-browser&quot;&gt;Detect the Brave Browser&lt;/h2&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Credit: &lt;a href=&quot;https://stackoverflow.com/a/60954062&quot;&gt;https://stackoverflow.com/a/60954062&lt;/a&gt;&lt;/p&gt;</description>
+  <pubDate>Thu, 29 Oct 2020 09:48:21 +0000</pubDate>
+  <dc:modified>Thu, 29 Oct 2020 10:49:10 +0000</dc:modified>
+  <atom:modified>Thu, 29 Oct 2020 10:49:10 +0000</atom:modified>
+  <link>https://alexn.org/wiki/web-tricks.html?pk_campaign=rss&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/wiki/web-tricks.html</guid>
+  
+  <category>Wiki</category>
+  
+</item>
+
+      
     
       
         <item>
