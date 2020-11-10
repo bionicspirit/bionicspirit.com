@@ -9,14 +9,54 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 Nov 2020 20:11:34 +0000</pubDate>
-    <lastBuildDate>Tue, 03 Nov 2020 20:11:34 +0000</lastBuildDate>
+    <pubDate>Tue, 10 Nov 2020 08:55:06 +0000</pubDate>
+    <lastBuildDate>Tue, 10 Nov 2020 08:55:06 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>TIMELAPSE OF THE FUTURE: A Journey to the End of Time</title>
+  <description>Shared link #Entertainment #YouTube</description>
+  <pubDate>Tue, 10 Nov 2020 08:51:12 +0000</pubDate>
+  <dc:modified>Tue, 10 Nov 2020 08:53:37 +0000</dc:modified>
+  <atom:modified>Tue, 10 Nov 2020 08:53:37 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=uD4izuDMUQA</link>
+  <guid isPermaLink="false">https://alexn.org/links/2020/11/10/timelapse-of-the-future-a-journey-to-the-end-of-time.html</guid>
+  
+  <dc:creator>melodysheep</dc:creator>
+  
+  <category>Shared link</category>
+  
+  <category>Entertainment</category>
+  
+  <category>YouTube</category>
+  
+</item>
+
+        
+      <item>
+  <title>Explicit term inference with Scala 3</title>
+  <description>Shared link #Programming #Scala</description>
+  <pubDate>Tue, 10 Nov 2020 08:35:46 +0000</pubDate>
+  <dc:modified>Tue, 10 Nov 2020 08:53:37 +0000</dc:modified>
+  <atom:modified>Tue, 10 Nov 2020 08:53:37 +0000</atom:modified>
+  <link>https://www.scala-lang.org/2020/11/06/explicit-term-inference-in-scala-3.html</link>
+  <guid isPermaLink="false">https://alexn.org/links/2020/11/10/explicit-term-inference-with-scala-3.html</guid>
+  
+  <dc:creator>Meriam Lachkar, Vincenzo Bazzucchi, Scala Center</dc:creator>
+  
+  <category>Shared link</category>
+  
+  <category>Programming</category>
+  
+  <category>Scala</category>
+  
+</item>
+
+        
                 
             <item>
   <title>Android</title>
@@ -71,14 +111,16 @@
         
       <item>
   <title>Donald Trump vs Joe Biden — Epic Rap Battles Of History</title>
-  <description>Shared link #Politics #YouTube</description>
+  <description>Shared link #Entertainment #Politics #YouTube</description>
   <pubDate>Sat, 24 Oct 2020 20:41:03 +0000</pubDate>
-  <dc:modified>Sat, 24 Oct 2020 20:52:54 +0000</dc:modified>
-  <atom:modified>Sat, 24 Oct 2020 20:52:54 +0000</atom:modified>
+  <dc:modified>Tue, 10 Nov 2020 08:53:37 +0000</dc:modified>
+  <atom:modified>Tue, 10 Nov 2020 08:53:37 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=FkGK7bitav0</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/24/donald-trump-vs-joe-biden.html</guid>
   
   <category>Shared link</category>
+  
+  <category>Entertainment</category>
   
   <category>Politics</category>
   
