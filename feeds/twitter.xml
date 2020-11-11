@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 11 Nov 2020 14:08:30 +0000</pubDate>
-    <lastBuildDate>Wed, 11 Nov 2020 14:08:30 +0000</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2020 14:14:01 +0000</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2020 14:14:01 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,8 +21,8 @@
   <title>Announcing .NET 5.0, C# 9, F# 5</title>
   <description>Shared link #Programming #dotNET #CSharp #FSharp</description>
   <pubDate>Wed, 11 Nov 2020 13:56:50 +0000</pubDate>
-  <dc:modified>Wed, 11 Nov 2020 14:06:23 +0000</dc:modified>
-  <atom:modified>Wed, 11 Nov 2020 14:06:23 +0000</atom:modified>
+  <dc:modified>Wed, 11 Nov 2020 14:13:11 +0000</dc:modified>
+  <atom:modified>Wed, 11 Nov 2020 14:13:11 +0000</atom:modified>
   <link>https://devblogs.microsoft.com/dotnet/announcing-net-5-0/</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/11/11/announcing-dotnet-5.html</guid>
   
