@@ -9,14 +9,39 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 10 Nov 2020 08:55:06 +0000</pubDate>
-    <lastBuildDate>Tue, 10 Nov 2020 08:55:06 +0000</lastBuildDate>
+    <pubDate>Wed, 11 Nov 2020 12:55:14 +0000</pubDate>
+    <lastBuildDate>Wed, 11 Nov 2020 12:55:14 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Organize and Index Your Screenshots (OCR) on macOS</title>
+  <description>Blog article #Cloud #Code #macOS #Ruby</description>
+  <pubDate>Wed, 11 Nov 2020 12:43:46 +0000</pubDate>
+  <dc:modified>Wed, 11 Nov 2020 12:54:34 +0000</dc:modified>
+  <atom:modified>Wed, 11 Nov 2020 12:54:34 +0000</atom:modified>
+  <link>https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=twitter&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Blog</category>
+  
+  <category>Cloud</category>
+  
+  <category>Code</category>
+  
+  <category>macOS</category>
+  
+  <category>Ruby</category>
+  
+</item>
+
+        
       <item>
   <title>TIMELAPSE OF THE FUTURE: A Journey to the End of Time</title>
   <description>Shared link #Entertainment #YouTube</description>
