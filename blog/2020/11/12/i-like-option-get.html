@@ -18,16 +18,16 @@
     <meta content="We should strive to make illegal states unrepresentable. Option.get is a partial function that, according to many, shouldn’t be in the standard library. Yet it doesn’t bother me; the inability of Scala to make it safe is the problem." property="og:description">
     <meta content="https://alexn.org/blog/2020/11/12/i-like-option-get.html" property="og:url">
     <meta content="2020-11-12T18:02:46+00:00" property="article:published_time">
-    <meta content="2020-11-12T19:50:31+00:00" property="article:modified_time">
+    <meta content="2020-11-12T20:07:50+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/option.get.png?202011121951" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/option.get.png?202011121951" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/option.get.png?202011122008" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/option.get.png?202011122008" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/option.get.png?202011121951">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/option.get.png?202011122008">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="I like Option.get">
@@ -49,8 +49,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202011121951">
-    <link rel="preload" as="style" href="/assets/css/style.css?202011121951">
+    <link rel="stylesheet" href="/assets/css/style.css?202011122008">
+    <link rel="preload" as="style" href="/assets/css/style.css?202011122008">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/11/12/i-like-option-get.html">
@@ -112,7 +112,7 @@
     <meta itemprop="datePublished" content="2020-11-12T18:02:46+0000"/>
     
     <time itemprop="dateCreated" datetime="2020-11-12T18:02:46+0000">November 12, 2020</time>
-    | <nobr><span class="time">5</span> minutes</nobr>
+    | <nobr><span class="time">4</span> minutes</nobr>
     
     | <a href="/blog/2020/11/12/i-like-option-get.html#isso-thread">comments</a>
     
@@ -120,7 +120,7 @@
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/media/articles/option.get.png" />
-      <img src="/assets/media/articles/option.get.png?202011121951" alt="" />
+      <img src="/assets/media/articles/option.get.png?202011122008" alt="" />
       
     </figure>
     
@@ -216,17 +216,10 @@
 
 <span class="kd">type</span> <span class="nx">Option</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">Some</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="o">|</span> <span class="nx">None</span>
 
-<span class="kd">function</span> <span class="nx">none</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">=</span><span class="nx">never</span><span class="o">&gt;</span><span class="p">():</span> <span class="nx">Option</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span> <span class="na">nonEmpty</span><span class="p">:</span> <span class="kc">false</span> <span class="p">}</span>
-<span class="p">}</span>
+<span class="c1">// ----------------------------------</span>
 
-<span class="kd">function</span> <span class="nx">some</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">a</span><span class="p">:</span> <span class="nx">A</span><span class="p">):</span> <span class="nx">Option</span><span class="o">&lt;</span><span class="nx">A</span><span class="o">&gt;</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">{</span> <span class="na">nonEmpty</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span> <span class="na">value</span><span class="p">:</span> <span class="nx">a</span> <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="c1">//--------------------</span>
-
-<span class="kd">const</span> <span class="nx">sample</span><span class="p">:</span> <span class="nx">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nx">none</span><span class="p">()</span>
+<span class="kd">const</span> <span class="nx">sample</span><span class="p">:</span> <span class="nx">Option</span><span class="o">&lt;</span><span class="nb">String</span><span class="o">&gt;</span> <span class="o">=</span> 
+  <span class="p">{</span> <span class="na">nonEmpty</span><span class="p">:</span> <span class="kc">true</span> <span class="p">}</span> <span class="c1">// None</span>
 
 <span class="nx">sample</span><span class="p">.</span><span class="nx">value</span>
 <span class="c1">//=&gt; error TS2339: Property 'value' does not exist on type 'Option&lt;String&gt;'.</span>
@@ -240,13 +233,13 @@
 
 <p>This is called <a href="https://en.wikipedia.org/wiki/Flow-sensitive_typing">Flow-sensitive typing</a>. And minus some limitations and gotchas, it works just fine.</p>
 
-<p>I hope Scala will evolve to do it too, because Kotlin already does this 🙂 and it would be a shame for Scala to not evolve such abilities, along with its brand new <a href="https://dotty.epfl.ch/docs/reference/new-types/union-types.html">untagged union types</a>.</p>
+<p>I hope Scala will evolve to do it too, because TypeScript, and Kotlin can already do this 🙂 and it would be a shame for Scala to not evolve such abilities, to go along with its brand new <a href="https://dotty.epfl.ch/docs/reference/new-types/union-types.html">untagged union types</a>.</p>
 
   </div>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-11-12T19:50:31+0000">
+    <time itemprop="dateModified" content="2020-11-12T20:07:50+0000">
         Updated: November 12, 2020
     </time>
     
@@ -390,12 +383,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202011121951" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011121951" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202011121951" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202011121951" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202011122008" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011122008" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202011122008" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202011122008" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202011121951" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202011122008" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
