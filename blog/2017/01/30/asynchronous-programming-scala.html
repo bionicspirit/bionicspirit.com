@@ -18,16 +18,16 @@
     <meta content="Asynchrony is everywhere and it subsumes concurrency. This article explains what asynchronous processing is and its challenges." property="og:description">
     <meta content="https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html" property="og:url">
     <meta content="2017-01-30T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-04-21T18:05:28+00:00" property="article:modified_time">
+    <meta content="2020-11-13T14:50:48+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/nondet.png?202011122009" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/nondet.png?202011122009" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/nondet.png?202011131451" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/nondet.png?202011131451" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/nondet.png?202011122009">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/nondet.png?202011131451">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Asynchronous Programming and Scala">
@@ -49,8 +49,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202011122009">
-    <link rel="preload" as="style" href="/assets/css/style.css?202011122009">
+    <link rel="stylesheet" href="/assets/css/style.css?202011131451">
+    <link rel="preload" as="style" href="/assets/css/style.css?202011131451">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html">
@@ -1628,8 +1628,8 @@ avoiding concurrency 💀</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-04-21T18:05:28+0000">
-        Updated: April 21, 2020
+    <time itemprop="dateModified" content="2020-11-13T14:50:48+0000">
+        Updated: November 13, 2020
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -1639,16 +1639,19 @@ avoiding concurrency 💀</p>
       Tags:
       
         
-        <a href="/blog/tag/best%20of/" class="category">Best Of</a>
-      
-         | 
-        <a href="/blog/tag/scala/" class="category">Scala</a>
-      
-         | 
         <a href="/blog/tag/asynchrony/" class="category">Asynchrony</a>
       
          | 
+        <a href="/blog/tag/best%20of/" class="category">Best Of</a>
+      
+         | 
         <a href="/blog/tag/concurrency/" class="category">Concurrency</a>
+      
+         | 
+        <a href="/blog/tag/multithreading/" class="category">Multithreading</a>
+      
+         | 
+        <a href="/blog/tag/scala/" class="category">Scala</a>
       
     </div>
   </div>
@@ -1664,6 +1667,62 @@ avoiding concurrency 💀</p>
         
       </h2>
     <div class="container">
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2013/05/07/towards-better-atomicreference-scala.html">
+          Towards a Better AtomicReference
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/blog/tag/Languages" class="tag">Languages</a>
+            
+               | <a href="/blog/tag/FP" class="tag">FP</a>
+            
+               | <a href="/blog/tag/Scala" class="tag">Scala</a>
+            
+               | <a href="/blog/tag/Java" class="tag">Java</a>
+            
+               | <a href="/blog/tag/Multithreading" class="tag">Multithreading</a>
+            
+               | <a href="/blog/tag/Concurrency" class="tag">Concurrency</a>
+                        
+          </div>
+          <time>May 7, 2013</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
+        <a class="related-link" href="/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html">
+          JVM Multithreading: Monitor Locks and Visibility
+        </a>
+        <div class="related-meta">
+          <div class="tags">
+            
+            
+              <a href="/blog/tag/Languages" class="tag">Languages</a>
+            
+               | <a href="/blog/tag/FP" class="tag">FP</a>
+            
+               | <a href="/blog/tag/Scala" class="tag">Scala</a>
+            
+               | <a href="/blog/tag/Java" class="tag">Java</a>
+            
+               | <a href="/blog/tag/Multithreading" class="tag">Multithreading</a>
+            
+               | <a href="/blog/tag/Concurrency" class="tag">Concurrency</a>
+                        
+          </div>
+          <time>March 14, 2013</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
       
       
       <div class="item">
@@ -1709,58 +1768,6 @@ avoiding concurrency 💀</p>
       </div>
       
       
-      
-      <div class="item">
-        <a class="related-link" href="/blog/2018/05/06/bifunctor-io.html">
-          On Bifunctor IO and Java&#39;s Checked Exceptions
-        </a>
-        <div class="related-meta">
-          <div class="tags">
-            
-            
-              <a href="/blog/tag/Best%20Of" class="tag">Best Of</a>
-            
-               | <a href="/blog/tag/FP" class="tag">FP</a>
-            
-               | <a href="/blog/tag/Typelevel" class="tag">Typelevel</a>
-            
-               | <a href="/blog/tag/Scala" class="tag">Scala</a>
-            
-               | <a href="/blog/tag/Haskell" class="tag">Haskell</a>
-                        
-          </div>
-          <time>May 6, 2018</time>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      
-      
-      
-      <div class="item">
-        <a class="related-link" href="/blog/2018/02/12/in-defense-oofp.html">
-          In Defense of OOFP
-        </a>
-        <div class="related-meta">
-          <div class="tags">
-            
-            
-              <a href="/blog/tag/Best%20Of" class="tag">Best Of</a>
-            
-               | <a href="/blog/tag/OOP" class="tag">OOP</a>
-            
-               | <a href="/blog/tag/FP" class="tag">FP</a>
-            
-               | <a href="/blog/tag/Haskell" class="tag">Haskell</a>
-            
-               | <a href="/blog/tag/Scala" class="tag">Scala</a>
-                        
-          </div>
-          <time>February 12, 2018</time>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      
-      
       <div class="clearfix"></div>
     </div>
   </div>
@@ -1771,12 +1778,12 @@ avoiding concurrency 💀</p>
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202011122009" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011122009" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202011122009" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202011122009" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202011131451" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011131451" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202011131451" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202011131451" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202011122009" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202011131451" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];

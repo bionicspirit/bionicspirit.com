@@ -9,14 +9,37 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 12 Nov 2020 20:09:27 +0000</pubDate>
-    <lastBuildDate>Thu, 12 Nov 2020 20:09:27 +0000</lastBuildDate>
+    <pubDate>Fri, 13 Nov 2020 14:51:38 +0000</pubDate>
+    <lastBuildDate>Fri, 13 Nov 2020 14:51:38 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>List static blog tags in folder (Jekyll, etc)</title>
+  <description>Code snippet #Blogging #Jekyll #Ruby</description>
+  <pubDate>Fri, 13 Nov 2020 13:59:43 +0000</pubDate>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
+  <link>https://alexn.org/snippets/2020/11/13/list-blog-tags-in-folder.html?pk_campaign=twitter&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/11/13/list-blog-tags-in-folder.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Blogging</category>
+  
+  <category>Jekyll</category>
+  
+  <category>Ruby</category>
+  
+</item>
+  
+        
       <item>
   <title>I like Option.get</title>
   <description>Blog article #FP #Scala #TypeScript</description>
@@ -1629,10 +1652,10 @@
         
       <item>
   <title>Scala Days 2017 — Monix Task</title>
-  <description>Blog article #Functional #Code #Scala #Monix #Presentation #Video #Slides</description>
+  <description>Blog article #FP #Code #Scala #Monix #Presentation</description>
   <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html</guid>
   
@@ -1641,7 +1664,7 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Code</category>
   
@@ -1651,19 +1674,15 @@
   
   <category>Presentation</category>
   
-  <category>Video</category>
-  
-  <category>Slides</category>
-  
 </item>
 
         
       <item>
   <title>JavaScript&#39;s Promise Leaks Memory</title>
-  <description>Blog article #JavaScript #Promise #Funfix #Functional</description>
+  <description>Blog article #Concurrency #FP #Funfix #JavaScript</description>
   <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Wed, 22 Apr 2020 01:15:09 +0000</dc:modified>
-  <atom:modified>Wed, 22 Apr 2020 01:15:09 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html</guid>
   
@@ -1672,13 +1691,13 @@
   
   <category>Blog</category>
   
-  <category>JavaScript</category>
+  <category>Concurrency</category>
   
-  <category>Promise</category>
+  <category>FP</category>
   
   <category>Funfix</category>
   
-  <category>Functional</category>
+  <category>JavaScript</category>
   
 </item>
 
@@ -1710,10 +1729,10 @@
         
       <item>
   <title>Functional Programming Inception (Presentation)</title>
-  <description>Blog article #Functional #Code #Scala #Monix</description>
+  <description>Blog article #FP #Code #Scala #Monix</description>
   <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/03/15/fp-inception.html</guid>
   
@@ -1722,7 +1741,7 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Code</category>
   
@@ -1735,10 +1754,10 @@
         
       <item>
   <title>Asynchronous Programming and Scala</title>
-  <description>Blog article #BestOf #Scala #Asynchrony #Concurrency</description>
+  <description>Blog article #Asynchrony #BestOf #Concurrency #Multithreading #Scala</description>
   <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html</guid>
   
@@ -1747,23 +1766,25 @@
   
   <category>Blog</category>
   
-  <category>Best Of</category>
-  
-  <category>Scala</category>
-  
   <category>Asynchrony</category>
   
+  <category>Best Of</category>
+  
   <category>Concurrency</category>
+  
+  <category>Multithreading</category>
+  
+  <category>Scala</category>
   
 </item>
 
         
       <item>
   <title>Fixing scala.collection.Iterator</title>
-  <description>Blog article #Functional #Code #Scala</description>
+  <description>Blog article #FP #Code #Scala</description>
   <pubDate>Mon, 16 Jan 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/01/16/iterator.html</guid>
   
@@ -1772,7 +1793,7 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Code</category>
   
@@ -1783,10 +1804,10 @@
         
       <item>
   <title>Why Scala&#39;s Traversable Is Bad Design</title>
-  <description>Blog article #Functional #Code #Scala</description>
+  <description>Blog article #FP #Code #Scala</description>
   <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/01/13/traversable.html</guid>
   
@@ -1795,7 +1816,7 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Code</category>
   
@@ -1827,10 +1848,10 @@
         
       <item>
   <title>Monix Task vs Scalaz vs Future, The Benchmark</title>
-  <description>Blog article #Functional #Code #Scala #Monix #Scalaz #Typelevel</description>
+  <description>Blog article #FP #Code #Scala #Monix #Typelevel</description>
   <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2016/08/25/monix-task-performance.html</guid>
   
@@ -1839,15 +1860,13 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Code</category>
   
   <category>Scala</category>
   
   <category>Monix</category>
-  
-  <category>Scalaz</category>
   
   <category>Typelevel</category>
   
@@ -1856,10 +1875,10 @@
         
       <item>
   <title>Akka &amp; Monix - Typelevel Summit, Oslo 2016</title>
-  <description>Blog article #Functional #Code #Scala #Monix</description>
+  <description>Blog article #FP #Code #Scala #Monix</description>
   <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 01 Jun 2020 19:22:20 +0000</dc:modified>
-  <atom:modified>Mon, 01 Jun 2020 19:22:20 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2016/05/15/monix-observable.html</guid>
   
@@ -1868,7 +1887,7 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Code</category>
   
@@ -1881,10 +1900,10 @@
         
       <item>
   <title>Monix Task - flatMap(Oslo) 2016</title>
-  <description>Blog article #Functional #Code #Scala #Monix</description>
+  <description>Blog article #Code #FP #Monix #Presentation #Scala</description>
   <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
-  <dc:modified>Wed, 26 Aug 2020 06:02:40 +0000</dc:modified>
-  <atom:modified>Wed, 26 Aug 2020 06:02:40 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2016/05/10/monix-task.html</guid>
   
@@ -1893,23 +1912,25 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
-  
   <category>Code</category>
   
-  <category>Scala</category>
+  <category>FP</category>
   
   <category>Monix</category>
+  
+  <category>Presentation</category>
+  
+  <category>Scala</category>
   
 </item>
 
         
       <item>
   <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell</title>
-  <description>Blog article #Functional #Code #Scala #Rx</description>
+  <description>Blog article #FP #Code #Scala #Rx</description>
   <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html</guid>
   
@@ -1918,7 +1939,7 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Code</category>
   
@@ -1931,10 +1952,10 @@
         
       <item>
   <title>Monifu vs Akka Streams</title>
-  <description>Blog article #Functional #Scala #Rx #ReactiveStreams</description>
+  <description>Blog article #FP #Scala #Rx #ReactiveStreams</description>
   <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html</guid>
   
@@ -1943,7 +1964,7 @@
   
   <category>Blog</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Scala</category>
   
@@ -1956,10 +1977,10 @@
         
       <item>
   <title>Scala Best Practices</title>
-  <description>Blog article #Languages #Functional #Scala #BestPractices</description>
+  <description>Blog article #Languages #FP #Scala #BestPractices</description>
   <pubDate>Mon, 20 Oct 2014 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2014/10/20/scala-best-practices.html</guid>
   
@@ -1970,7 +1991,7 @@
   
   <category>Languages</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Scala</category>
   
@@ -1981,10 +2002,10 @@
         
       <item>
   <title>Resources for Learning Scala</title>
-  <description>Blog article #Languages #Functional #Scala #Books</description>
+  <description>Blog article #Languages #FP #Scala #Books</description>
   <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2013/05/13/getting-started-with-scala.html</guid>
   
@@ -1995,7 +2016,7 @@
   
   <category>Languages</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Scala</category>
   
@@ -2006,10 +2027,10 @@
         
       <item>
   <title>Towards a Better AtomicReference</title>
-  <description>Blog article #Languages #Functional #Scala #Java #Multithreading #Concurrency</description>
+  <description>Blog article #Languages #FP #Scala #Java #Multithreading #Concurrency</description>
   <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html</guid>
   
@@ -2020,7 +2041,7 @@
   
   <category>Languages</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Scala</category>
   
@@ -2035,10 +2056,10 @@
         
       <item>
   <title>JVM Multithreading: Monitor Locks and Visibility</title>
-  <description>Blog article #Languages #Functional #Scala #Java #Multithreading #Concurrency</description>
+  <description>Blog article #Languages #FP #Scala #Java #Multithreading #Concurrency</description>
   <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html</guid>
   
@@ -2049,7 +2070,7 @@
   
   <category>Languages</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Scala</category>
   
@@ -2064,10 +2085,10 @@
         
       <item>
   <title>Notes On JavaScript Client-side Development</title>
-  <description>Blog article #JavaScript #Functional #Browser #Web</description>
+  <description>Blog article #JavaScript #FP #Browser #Web</description>
   <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 13:06:57 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2012/11/07/notes-javascript-development.html</guid>
   
@@ -2078,7 +2099,7 @@
   
   <category>JavaScript</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Browser</category>
   
@@ -2089,10 +2110,10 @@
         
       <item>
   <title>On Scala, Functional Programming and Type-Classes</title>
-  <description>Blog article #Languages #Functional #Scala #Clojure #Java</description>
+  <description>Blog article #Languages #FP #Scala #Clojure #Java</description>
   <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 26 May 2020 18:43:44 +0000</dc:modified>
-  <atom:modified>Tue, 26 May 2020 18:43:44 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html</guid>
   
@@ -2103,7 +2124,7 @@
   
   <category>Languages</category>
   
-  <category>Functional</category>
+  <category>FP</category>
   
   <category>Scala</category>
   
@@ -2312,7 +2333,7 @@
         
       <item>
   <title>Why I Find Heroku Suboptimal</title>
-  <description>Blog article #DevOps #Rant #Heroku #Server #Cloud #Nginx #Varnish</description>
+  <description>Blog article #DevOps #Heroku #Server #Cloud #Nginx #Varnish</description>
   <pubDate>Sun, 23 Oct 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
   <atom:modified>Wed, 18 Dec 2019 00:00:00 +0000</atom:modified>
@@ -2325,8 +2346,6 @@
   <category>Blog</category>
   
   <category>DevOps</category>
-  
-  <category>Rant</category>
   
   <category>Heroku</category>
   
@@ -2366,10 +2385,10 @@
         
       <item>
   <title>I hate NULL and all its variants!</title>
-  <description>Blog article #Rant #Python</description>
+  <description>Blog article #Python</description>
   <pubDate>Tue, 25 May 2010 00:00:00 +0000</pubDate>
-  <dc:modified>Thu, 30 Jul 2020 10:00:27 +0000</dc:modified>
-  <atom:modified>Thu, 30 Jul 2020 10:00:27 +0000</atom:modified>
+  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
+  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2010/05/25/i-hate-null.html</guid>
   
@@ -2377,8 +2396,6 @@
   <dc:creator>Alexandru Nedelcu</dc:creator>
   
   <category>Blog</category>
-  
-  <category>Rant</category>
   
   <category>Python</category>
   
@@ -2414,7 +2431,7 @@
         
       <item>
   <title>Using the Best Tools in Programming: Not Really Doable</title>
-  <description>Blog article #Languages #Rant #Perl #Python #Java</description>
+  <description>Blog article #Java #Perl #Python #Ruby</description>
   <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
   <dc:modified>Sun, 01 Feb 2009 00:00:00 +0000</dc:modified>
   <atom:modified>Sun, 01 Feb 2009 00:00:00 +0000</atom:modified>
@@ -2426,15 +2443,13 @@
   
   <category>Blog</category>
   
-  <category>Languages</category>
-  
-  <category>Rant</category>
+  <category>Java</category>
   
   <category>Perl</category>
   
   <category>Python</category>
   
-  <category>Java</category>
+  <category>Ruby</category>
   
 </item>
 
