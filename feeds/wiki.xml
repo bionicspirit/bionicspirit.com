@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 13 Nov 2020 15:22:33 +0000</pubDate>
-    <lastBuildDate>Fri, 13 Nov 2020 15:22:33 +0000</lastBuildDate>
+    <pubDate>Sun, 15 Nov 2020 09:50:48 +0000</pubDate>
+    <lastBuildDate>Sun, 15 Nov 2020 09:50:48 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -1320,11 +1320,23 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
         <item>
   <title>MySQL / MariaDB</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 15, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;create-user&quot;&gt;Create user&lt;/h2&gt;
+    &lt;h2 id=&quot;start-a-docker-instance&quot;&gt;Start a Docker Instance&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mariadb &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pass &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3306:3306 mariadb:10.5 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Note &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--rm&lt;/code&gt; deletes the container after stop. Also add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-d&lt;/code&gt; to detach (daemon mode).&lt;/p&gt;
+
+&lt;p&gt;To connect to it:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; mariadb mysql &lt;span class=&quot;nt&quot;&gt;-uroot&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-ppass&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;create-user&quot;&gt;Create user&lt;/h2&gt;
 
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'myuser'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;IDENTIFIED&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;BY&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'password'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
@@ -1350,8 +1362,8 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mydatabase&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_general_ci&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sun, 15 Nov 2020 09:49:57 +0000</dc:modified>
+  <atom:modified>Sun, 15 Nov 2020 09:49:57 +0000</atom:modified>
   <link>https://alexn.org/wiki/mysql.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/mysql.html</guid>
   
