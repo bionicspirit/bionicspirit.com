@@ -18,16 +18,16 @@
     <meta content="The database schema should be described as code, in your repository. And you should be able to semi-automatically update your database schema on new deployments." property="og:description">
     <meta content="https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html" property="og:url">
     <meta content="2020-11-15T16:17:25+00:00" property="article:published_time">
-    <meta content="2020-11-16T10:06:48+00:00" property="article:modified_time">
+    <meta content="2020-11-16T10:18:34+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/db-migrations-scala.png?202011161007" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/db-migrations-scala.png?202011161007" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/db-migrations-scala.png?202011161019" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/db-migrations-scala.png?202011161019" />
     <meta content="https://www.facebook.com/alexelcu" property="article:author">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/db-migrations-scala.png?202011161007">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/db-migrations-scala.png?202011161019">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Managing Database Migrations in Scala">
@@ -49,8 +49,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202011161007">
-    <link rel="preload" as="style" href="/assets/css/style.css?202011161007">
+    <link rel="stylesheet" href="/assets/css/style.css?202011161019">
+    <link rel="preload" as="style" href="/assets/css/style.css?202011161019">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html">
@@ -120,7 +120,7 @@
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/media/articles/db-migrations-scala.png" />
-      <img src="/assets/media/articles/db-migrations-scala.png?202011161007" alt="" />
+      <img src="/assets/media/articles/db-migrations-scala.png?202011161019" alt="" />
       
     </figure>
     
@@ -415,7 +415,8 @@ docker run <span class="nt">--rm</span> <span class="se">\</span>
 
 <p>Define a command, such that we can apply all migrations like:</p>
 
-<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="n">sbt</span> <span class="n">run</span><span class="o">-</span><span class="n">db</span><span class="o">-</span><span class="n">migrations</span>
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c1">// TBD, does not work yet</span>
+<span class="n">sbt</span> <span class="n">run</span><span class="o">-</span><span class="n">db</span><span class="o">-</span><span class="n">migrations</span>
 </code></pre></div></div>
 
 <p>First define an “app” that can run all migrations:</p>
@@ -559,7 +560,7 @@ docker run <span class="nt">--rm</span> <span class="se">\</span>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-11-16T10:06:48+0000">
+    <time itemprop="dateModified" content="2020-11-16T10:18:34+0000">
         Updated: November 16, 2020
     </time>
     
@@ -695,12 +696,12 @@ docker run <span class="nt">--rm</span> <span class="se">\</span>
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202011161007" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011161007" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202011161007" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202011161007" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202011161019" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011161019" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202011161019" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202011161019" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202011161007" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202011161019" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
