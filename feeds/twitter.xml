@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 16 Nov 2020 09:16:19 +0000</pubDate>
-    <lastBuildDate>Mon, 16 Nov 2020 09:16:19 +0000</lastBuildDate>
+    <pubDate>Mon, 16 Nov 2020 10:07:43 +0000</pubDate>
+    <lastBuildDate>Mon, 16 Nov 2020 10:07:43 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,8 +21,8 @@
   <title>Managing Database Migrations in Scala</title>
   <description>Blog article #FP #Scala #Typelevel</description>
   <pubDate>Sun, 15 Nov 2020 16:17:25 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 09:15:16 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 09:15:16 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html</guid>
   
@@ -114,8 +114,8 @@
   <title>Organize and Index Your Screenshots (OCR) on macOS</title>
   <description>Blog article #Cloud #macOS #Ruby</description>
   <pubDate>Wed, 11 Nov 2020 12:43:46 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html</guid>
   
@@ -1161,8 +1161,8 @@
   <title>Retry Failing Tasks with Cats and Scala</title>
   <description>Blog article #FP #Scala</description>
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/08/03/on-error-retry-loop.html</guid>
   
@@ -1351,8 +1351,8 @@
   <title>Fatal Warnings and Linting in Scala</title>
   <description>Blog article #Scala</description>
   <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html</guid>
   
@@ -1621,8 +1621,8 @@
   <title>Minitest: Zero Crap Scala Testing Library</title>
   <description>Blog article #Testing #Scala</description>
   <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html</guid>
   
@@ -1669,8 +1669,8 @@
   <title>Scala Days 2017 — Monix Task</title>
   <description>Blog article #FP #Scala #Monix #Presentation</description>
   <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html</guid>
   
@@ -1744,8 +1744,8 @@
   <title>Functional Programming Inception (Presentation)</title>
   <description>Blog article #FP #Scala #Monix</description>
   <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/03/15/fp-inception.html</guid>
   
@@ -1794,8 +1794,8 @@
   <title>Fixing scala.collection.Iterator</title>
   <description>Blog article #Scala</description>
   <pubDate>Mon, 16 Jan 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/01/16/iterator.html</guid>
   
@@ -1813,8 +1813,8 @@
   <title>Why Scala&#39;s Traversable Is Bad Design</title>
   <description>Blog article #Scala</description>
   <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/01/13/traversable.html</guid>
   
@@ -1853,8 +1853,8 @@
   <title>Monix Task vs Scalaz vs Future, The Benchmark</title>
   <description>Blog article #FP #Scala #Monix #Typelevel</description>
   <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2016/08/25/monix-task-performance.html</guid>
   
@@ -1878,8 +1878,8 @@
   <title>Akka &amp; Monix - Typelevel Summit, Oslo 2016</title>
   <description>Blog article #FP #Scala #Monix</description>
   <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2016/05/15/monix-observable.html</guid>
   
@@ -1901,8 +1901,8 @@
   <title>Monix Task - flatMap(Oslo) 2016</title>
   <description>Blog article #FP #Monix #Presentation #Scala</description>
   <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2016/05/10/monix-task.html</guid>
   
@@ -1926,8 +1926,8 @@
   <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell</title>
   <description>Blog article #FP #Scala #Rx</description>
   <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 17:09:55 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 17:09:55 +0000</atom:modified>
+  <dc:modified>Mon, 16 Nov 2020 10:06:48 +0000</dc:modified>
+  <atom:modified>Mon, 16 Nov 2020 10:06:48 +0000</atom:modified>
   <link>https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html</guid>
   
