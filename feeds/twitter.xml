@@ -9,14 +9,32 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Nov 2020 10:02:13 +0000</pubDate>
-    <lastBuildDate>Tue, 17 Nov 2020 10:02:13 +0000</lastBuildDate>
+    <pubDate>Tue, 17 Nov 2020 14:12:44 +0000</pubDate>
+    <lastBuildDate>Tue, 17 Nov 2020 14:12:44 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Graphics for JVM</title>
+  <description>Shared link #JVM</description>
+  <pubDate>Tue, 17 Nov 2020 13:58:46 +0000</pubDate>
+  <dc:modified>Tue, 17 Nov 2020 14:11:48 +0000</dc:modified>
+  <atom:modified>Tue, 17 Nov 2020 14:11:48 +0000</atom:modified>
+  <link>https://tonsky.me/blog/skija/</link>
+  <guid isPermaLink="false">https://alexn.org/links/2020/11/17/graphics-for-jvm.html</guid>
+  
+  <dc:creator>Nikita Prokopov</dc:creator>
+  
+  <category>Shared link</category>
+  
+  <category>JVM</category>
+  
+</item>
+
+        
       <item>
   <title>Best practice for natural Ordering</title>
   <description>Blog article #BestPractices #Scala</description>
