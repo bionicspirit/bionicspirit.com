@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Nov 2020 14:16:55 +0000</pubDate>
-    <lastBuildDate>Tue, 17 Nov 2020 14:16:55 +0000</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2020 10:11:18 +0000</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2020 10:11:18 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -19,15 +19,13 @@
     
       
         <item>
-  <title>Android</title>
+  <title>Apps</title>
   <description>&lt;p&gt;
-      Article updated at November 2, 2020, 
+      Article updated at November 21, 2020, 
       created at November 2, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
-
-&lt;ul&gt;
+    &lt;ul&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://www.davx5.com/&quot;&gt;DAVx5&lt;/a&gt;: CalDAV/CardDAV for Android&lt;/li&gt;
   &lt;li&gt;
@@ -59,8 +57,8 @@
 &lt;a href=&quot;https://github.com/PaulWoitaschek/Voice&quot;&gt;Voice&lt;/a&gt;: open-source audiobook player&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 02 Nov 2020 19:09:46 +0000</pubDate>
-  <dc:modified>Mon, 02 Nov 2020 21:35:15 +0000</dc:modified>
-  <atom:modified>Mon, 02 Nov 2020 21:35:15 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/android.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/android.html</guid>
   
@@ -72,21 +70,19 @@
     
       
         <item>
-  <title>Web Tricks</title>
+  <title>Detect the Brave Browser</title>
   <description>&lt;p&gt;
-      Article updated at October 29, 2020, 
+      Article updated at November 21, 2020, 
       created at October 29, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;detect-the-brave-browser&quot;&gt;Detect the Brave Browser&lt;/h2&gt;
-
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Credit: &lt;a href=&quot;https://stackoverflow.com/a/60954062&quot;&gt;https://stackoverflow.com/a/60954062&lt;/a&gt;&lt;/p&gt;</description>
   <pubDate>Thu, 29 Oct 2020 09:48:21 +0000</pubDate>
-  <dc:modified>Thu, 29 Oct 2020 10:49:10 +0000</dc:modified>
-  <atom:modified>Thu, 29 Oct 2020 10:49:10 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/web-tricks.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web-tricks.html</guid>
   
@@ -98,15 +94,13 @@
     
       
         <item>
-  <title>Microsoft .NET</title>
+  <title>CSharp</title>
   <description>&lt;p&gt;
-      Article updated at October 10, 2020, 
+      Article updated at November 21, 2020, 
       created at October 8, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;csharp&quot;&gt;CSharp&lt;/h2&gt;
-
-&lt;h3 id=&quot;game-development&quot;&gt;Game Development&lt;/h3&gt;
+    &lt;h3 id=&quot;game-development&quot;&gt;Game Development&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -158,8 +152,8 @@
 &lt;a href=&quot;https://github.com/haf/expecto#installing&quot;&gt;Expecto&lt;/a&gt;: unit testing&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
-  <dc:modified>Sat, 10 Oct 2020 07:00:47 +0000</dc:modified>
-  <atom:modified>Sat, 10 Oct 2020 07:00:47 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dotnet.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dotnet.html</guid>
   
@@ -171,15 +165,13 @@
     
       
         <item>
-  <title>Privacy</title>
+  <title>Firefox Extensions</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at September 21, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;firefox-extensions&quot;&gt;Firefox Extensions&lt;/h2&gt;
-
-&lt;ul&gt;
+    &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/clearurls/&quot;&gt;CleanURLs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/&quot;&gt;Decentraleyes&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/facebook-container/&quot;&gt;Facebook Container&lt;/a&gt;&lt;/li&gt;
@@ -222,8 +214,8 @@
   &lt;li&gt;&lt;a href=&quot;https://www.torproject.org/download&quot;&gt;Tor Browser&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 21 Sep 2020 13:20:35 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/privacy.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/privacy.html</guid>
   
@@ -235,15 +227,13 @@
     
       
         <item>
-  <title>De-DRM</title>
+  <title>eBooks</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at September 17, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;ebooks&quot;&gt;eBooks&lt;/h2&gt;
-
-&lt;p&gt;Tools:&lt;/p&gt;
+    &lt;p&gt;Tools:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;&lt;/li&gt;
@@ -273,8 +263,8 @@
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;ffmpeg &lt;span class=&quot;nt&quot;&gt;-activation_bytes&lt;/span&gt; XXXXXXXX &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;.AAX &lt;span class=&quot;nt&quot;&gt;-c&lt;/span&gt; copy out.m4b
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Thu, 17 Sep 2020 09:02:43 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dedrm.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dedrm.html</guid>
   
@@ -286,15 +276,13 @@
     
       
         <item>
-  <title>Image Formats</title>
+  <title>Convert HEIC to JPEG in a directory</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at September 15, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;convert-heic-to-jpeg-in-a-directory&quot;&gt;Convert HEIC to JPEG in a directory&lt;/h2&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
 &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;shopt&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; nocaseglob
@@ -313,8 +301,8 @@ convert&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-iname&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;*.heic&quot;&lt;/span&gt; | &lt;span class=&quot;k&quot;&gt;while &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;file&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;convert &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Tue, 15 Sep 2020 18:48:09 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/image-formats.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/image-formats.html</guid>
   
@@ -326,15 +314,13 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
     
       
         <item>
-  <title>Apache Kafka</title>
+  <title>Docker Setup</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at September 4, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;docker-setup&quot;&gt;Docker Setup&lt;/h2&gt;
-
-&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
+    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# Kafka config taken from:&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# https://raw.githubusercontent.com/bitnami/bitnami-docker-kafka/master/docker-compose.yml&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
@@ -395,8 +381,8 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
     &lt;span class=&quot;nt&quot;&gt;--topic&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Fri, 04 Sep 2020 07:30:08 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/kafka.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/kafka.html</guid>
   
@@ -410,7 +396,7 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
         <item>
   <title>Custom Zsh Prompt</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -446,8 +432,8 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
 
 &lt;p&gt;&lt;img src=&quot;https://alexn.org/wiki/assets/custom-zsh-prompt.png&quot; alt=&quot;Screenshot of zsh prompt&quot; style=&quot;max-width: 100%; &quot;&gt;&lt;/p&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/zshrc-prompt.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/zshrc-prompt.html</guid>
   
@@ -459,15 +445,13 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     
       
         <item>
-  <title>Windows 10</title>
+  <title>Macbook drivers for Windows</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;macbook-drivers-for-windows&quot;&gt;Macbook drivers for Windows&lt;/h2&gt;
-
-&lt;p&gt;Can be downloaded via:&lt;/p&gt;
+    &lt;p&gt;Can be downloaded via:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;From MacOS: Boot Camp Assistant -&amp;gt; Menu -&amp;gt; “Action” -&amp;gt; “Download Windows Support Software”&lt;/li&gt;
@@ -486,8 +470,8 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
 &lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/windows.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/windows.html</guid>
   
@@ -499,15 +483,13 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     
       
         <item>
-  <title>Web Apps</title>
+  <title>Progressive Web Apps (PWAs)</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
-
-&lt;ul&gt;
+    &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://web.dev/progressive-web-apps/&quot;&gt;https://web.dev/progressive-web-apps/&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -540,8 +522,8 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     &quot;https://gitter.im&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/web-apps.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web-apps.html</guid>
   
@@ -553,15 +535,13 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     
       
         <item>
-  <title>tmux shortcuts &amp; cheatsheet</title>
+  <title>Intro</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;start new:&lt;/p&gt;
+    &lt;p&gt;start new:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;tmux
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -747,8 +727,8 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 
 &lt;p&gt;Forked from: &lt;a href=&quot;https://gist.github.com/MohamedAlaa/2961058&quot;&gt;https://gist.github.com/MohamedAlaa/2961058&lt;/a&gt;&lt;/p&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/tmux.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/tmux.html</guid>
   
@@ -762,7 +742,7 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
         <item>
   <title>Teach Kids to Code</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -839,8 +819,8 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 &lt;a href=&quot;https://www.edx.org/course/scratch-programming-for-kids-8&quot;&gt;Scratch: Programming for Kids (8+)&lt;/a&gt;: MOOC from EdX&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/teach-kids.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/teach-kids.html</guid>
   
@@ -852,15 +832,13 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
     
       
         <item>
-  <title>Rust</title>
+  <title>Installation</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;See &lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;See &lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;To update Rust:&lt;/p&gt;
 
@@ -950,8 +928,8 @@ cargo check
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;rustup component add rls
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/rust.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/rust.html</guid>
   
@@ -963,15 +941,13 @@ cargo check
     
       
         <item>
-  <title>RSS / Atom feeds</title>
+  <title>Readers</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;readers&quot;&gt;Readers&lt;/h2&gt;
-
-&lt;p&gt;Native, MacOS:&lt;/p&gt;
+    &lt;p&gt;Native, MacOS:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://reederapp.com/&quot;&gt;Reeder&lt;/a&gt;&lt;/li&gt;
@@ -1005,8 +981,8 @@ cargo check
   &lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-feed&quot;&gt;jekyll-feed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/rss-feeds.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/rss-feeds.html</guid>
   
@@ -1018,15 +994,13 @@ cargo check
     
       
         <item>
-  <title>Python</title>
+  <title>Pyenv + Virtualenv</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;pyenv--virtualenv&quot;&gt;Pyenv + Virtualenv&lt;/h2&gt;
-
-&lt;p&gt;Requirements:&lt;/p&gt;
+    &lt;p&gt;Requirements:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt;&lt;/li&gt;
@@ -1064,8 +1038,8 @@ cargo check
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;my_project_name&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; .python-version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/python.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/python.html</guid>
   
@@ -1077,21 +1051,19 @@ cargo check
     
       
         <item>
-  <title>PostgreSQL</title>
+  <title>Creating new database and user</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;creating-new-database-and-user&quot;&gt;Creating new database and user&lt;/h2&gt;
-
-&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;youruser&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ENCRYPTED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'yourpass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;GRANT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;PRIVILEGES&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;youruser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/postgresql.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/postgresql.html</guid>
   
@@ -1103,15 +1075,13 @@ cargo check
     
       
         <item>
-  <title>Org-mode</title>
+  <title>Shortcuts</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;shortcuts&quot;&gt;Shortcuts&lt;/h2&gt;
-
-&lt;ul&gt;
+    &lt;ul&gt;
   &lt;li&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C-c a&lt;/code&gt; show agenda&lt;/li&gt;
   &lt;li&gt;
@@ -1178,8 +1148,8 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
   &lt;li&gt;a reminder that the scheduled date has passed will be present in the compilation for today, until the entry is marked DONE&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/org-mode.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/org-mode.html</guid>
   
@@ -1191,15 +1161,13 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
     
       
         <item>
-  <title>Nix</title>
+  <title>Install/Uninstall instructions</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;installuninstall-instructions&quot;&gt;Install/Uninstall instructions&lt;/h2&gt;
-
-&lt;p&gt;Install with:&lt;/p&gt;
+    &lt;p&gt;Install with:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;sh &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;curl https://nixos.org/nix/install&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--darwin-use-unencrypted-nix-store-volume&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1305,8 +1273,8 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
 
 &lt;p&gt;Then execute &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;nix-shell&lt;/code&gt; in the directory.&lt;/p&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/nix.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/nix.html</guid>
   
@@ -1318,15 +1286,13 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
     
       
         <item>
-  <title>MySQL / MariaDB</title>
+  <title>Start a Docker Instance</title>
   <description>&lt;p&gt;
-      Article updated at November 15, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;start-a-docker-instance&quot;&gt;Start a Docker Instance&lt;/h2&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mariadb &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pass &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3306:3306 mariadb:10.5 
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mariadb &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pass &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3306:3306 mariadb:10.5 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Note &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--rm&lt;/code&gt; deletes the container after stop. Also add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-d&lt;/code&gt; to detach (daemon mode).&lt;/p&gt;
@@ -1362,8 +1328,8 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
 &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mydatabase&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;CHARACTER&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;SET&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;COLLATE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;utf8_general_ci&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 09:49:57 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 09:49:57 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/mysql.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/mysql.html</guid>
   
@@ -1375,15 +1341,13 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
     
       
         <item>
-  <title>MacOS</title>
+  <title>Finder Shortcuts</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;finder-shortcuts&quot;&gt;Finder Shortcuts&lt;/h2&gt;
-
-&lt;ul&gt;
+    &lt;ul&gt;
   &lt;li&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cmd + Shift + G&lt;/code&gt;: Go to Folder&lt;/li&gt;
   &lt;li&gt;
@@ -1420,8 +1384,8 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
   &lt;li&gt;&lt;a href=&quot;https://alexn.org/wiki/dropbox.html#screenshots-sync-on-macos&quot;&gt;Screenshots synchronization&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/macos.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/macos.html</guid>
   
@@ -1433,15 +1397,13 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
     
       
         <item>
-  <title>JSON</title>
+  <title>Command-line parsing</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;command-line-parsing&quot;&gt;Command-line parsing&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt; — command-line JSON processor.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt; — command-line JSON processor.&lt;/p&gt;
 
 &lt;p&gt;Sorting in descending order by field:&lt;/p&gt;
 
@@ -1453,8 +1415,8 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
   &lt;li&gt;&lt;a href=&quot;https://leonid.shevtsov.me/post/handle-large-jsons-effortlessly-with-jq/&quot;&gt;Handle large JSONs effortlessly with jq&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/json.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/json.html</guid>
   
@@ -1468,7 +1430,7 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
         <item>
   <title>iTerm2</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -1542,8 +1504,8 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
 
 &lt;p&gt;&lt;img src=&quot;https://alexn.org/wiki/assets/iterm-semantic-history-setting.png&quot; alt=&quot;Screenshot of iTerm's Semantic History setting&quot; style=&quot;max-width: 100%; &quot;&gt;&lt;/p&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/iterm.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/iterm.html</guid>
   
@@ -1555,15 +1517,13 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
     
       
         <item>
-  <title>Haskell</title>
+  <title>Educational Resources</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;educational-resources&quot;&gt;Educational Resources&lt;/h2&gt;
-
-&lt;ul&gt;
+    &lt;ul&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://github.com/Gabriel439/post-rfc/blob/master/sotu.md&quot;&gt;State of the Haskell ecosystem&lt;/a&gt;: describes the best tools available&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://dev.stephendiehl.com/hask/&quot;&gt;What I Wish I Knew When Learning Haskell&lt;/a&gt;&lt;/li&gt;
@@ -1605,8 +1565,8 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
   &lt;li&gt;&lt;a href=&quot;http://haskellformac.com/&quot;&gt;Haskell for Mac&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/haskell.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/haskell.html</guid>
   
@@ -1620,7 +1580,7 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
         <item>
   <title>GNU Screen</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -1722,8 +1682,8 @@ bind f eval &quot;hardstatus ignore&quot;
 bind F eval &quot;hardstatus alwayslastline&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/gnu-screen.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/gnu-screen.html</guid>
   
@@ -1735,15 +1695,13 @@ bind F eval &quot;hardstatus alwayslastline&quot;
     
       
         <item>
-  <title>GitHub</title>
+  <title>Tools</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
-
-&lt;ul&gt;
+    &lt;ul&gt;
   &lt;li&gt;For creating labels: &lt;a href=&quot;https://github.com/integratedexperts/github-labels/&quot;&gt;https://github.com/integratedexperts/github-labels/&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1769,8 +1727,8 @@ bind F eval &quot;hardstatus alwayslastline&quot;
     &lt;span class=&quot;na&quot;&gt;types&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;custom_event&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/github.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/github.html</guid>
   
@@ -1782,15 +1740,13 @@ bind F eval &quot;hardstatus alwayslastline&quot;
     
       
         <item>
-  <title>Git Tips</title>
+  <title>Large files support</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;large-files-support&quot;&gt;Large files support&lt;/h2&gt;
-
-&lt;p&gt;Resources:&lt;/p&gt;
+    &lt;p&gt;Resources:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://git-lfs.github.com/&quot;&gt;Project homepage&lt;/a&gt;&lt;/li&gt;
@@ -1819,8 +1775,8 @@ bind F eval &quot;hardstatus alwayslastline&quot;
   &lt;li&gt;&lt;a href=&quot;https://github.com/simonthum/git-sync&quot;&gt;github.com/simonthum/git-sync&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/git.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/git.html</guid>
   
@@ -1832,15 +1788,13 @@ bind F eval &quot;hardstatus alwayslastline&quot;
     
       
         <item>
-  <title>Firefox</title>
+  <title>Cool Extensions</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;cool-extensions&quot;&gt;Cool Extensions&lt;/h2&gt;
-
-&lt;ul&gt;
+    &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/&quot;&gt;Auto Tab Discard&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/&quot;&gt;Awesome RSS&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/clearurls/&quot;&gt;CleanURLs&lt;/a&gt;&lt;/li&gt;
@@ -1973,8 +1927,8 @@ services.sync.prefs.media.hardwaremediakeys.enabled
   &lt;li&gt;&lt;a href=&quot;about:webrtc&quot;&gt;about:webrtc&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/firefox.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/firefox.html</guid>
   
@@ -1986,15 +1940,13 @@ services.sync.prefs.media.hardwaremediakeys.enabled
     
       
         <item>
-  <title>Email Tips</title>
+  <title>Send email from localhost</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;send-email-from-localhost&quot;&gt;Send email from localhost&lt;/h2&gt;
-
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swaks
+    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swaks
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;swaks &lt;span class=&quot;nt&quot;&gt;--auth&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
@@ -2011,8 +1963,8 @@ services.sync.prefs.media.hardwaremediakeys.enabled
 
 &lt;p&gt;See: &lt;a href=&quot;https://alexn.org/snippets/2020/03/18/send-mail.py.html&quot;&gt;send-mail.py&lt;/a&gt;&lt;/p&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/email.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/email.html</guid>
   
@@ -2024,15 +1976,13 @@ services.sync.prefs.media.hardwaremediakeys.enabled
     
       
         <item>
-  <title>Emacs Setup</title>
+  <title>Installation</title>
   <description>&lt;p&gt;
-      Article updated at October 26, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
+    &lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;emacs
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -2170,8 +2120,8 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/bbatsov/emacs-lisp-style-guide&quot;&gt;The Emacs Lisp Style Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Mon, 26 Oct 2020 13:49:43 +0000</dc:modified>
-  <atom:modified>Mon, 26 Oct 2020 13:49:43 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/emacs.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/emacs.html</guid>
   
@@ -2183,15 +2133,13 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
     
       
         <item>
-  <title>Dropbox</title>
+  <title>Remove all shared links</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;remove-all-shared-links&quot;&gt;Remove all shared links&lt;/h2&gt;
-
-&lt;p&gt;Go to &lt;a href=&quot;https://www.dropbox.com/share/links&quot;&gt;https://www.dropbox.com/share/links&lt;/a&gt;, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:&lt;/p&gt;
+    &lt;p&gt;Go to &lt;a href=&quot;https://www.dropbox.com/share/links&quot;&gt;https://www.dropbox.com/share/links&lt;/a&gt;, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#links-list .mc-popover-trigger&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -2270,8 +2218,8 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;launchctl load -w ~/Library/LaunchAgents/alex.screenshot.detect.plist
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dropbox.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dropbox.html</guid>
   
@@ -2283,15 +2231,13 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
     
       
         <item>
-  <title>Docker</title>
+  <title>Installation</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
-
-&lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
+    &lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew cask install docker&lt;/code&gt;&lt;/p&gt;
 
@@ -2557,8 +2503,8 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
       &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;main&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/docker.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/docker.html</guid>
   
@@ -2570,15 +2516,13 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
     
       
         <item>
-  <title>DNS settings</title>
+  <title>MacOS</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;macos&quot;&gt;MacOS&lt;/h2&gt;
-
-&lt;h3 id=&quot;refresh-dns&quot;&gt;Refresh DNS&lt;/h3&gt;
+    &lt;h3 id=&quot;refresh-dns&quot;&gt;Refresh DNS&lt;/h3&gt;
 
 &lt;p&gt;To flush the local DNS cache:&lt;/p&gt;
 
@@ -2667,8 +2611,8 @@ brew uninstall dnsmasq
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;networksetup &lt;span class=&quot;nt&quot;&gt;-setdnsservers&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Wi-Fi&quot;&lt;/span&gt; empty
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dns-settings.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dns-settings.html</guid>
   
@@ -2682,7 +2626,7 @@ brew uninstall dnsmasq
         <item>
   <title>Debian Packages (deb)</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -2692,8 +2636,8 @@ brew uninstall dnsmasq
   &lt;li&gt;&lt;a href=&quot;https://santi-bassett.blogspot.com/2014/07/how-to-create-debian-package.html&quot;&gt;https://santi-bassett.blogspot.com/2014/07/how-to-create-debian-package.html&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/debian-packages-deb.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/debian-packages-deb.html</guid>
   
@@ -2705,15 +2649,13 @@ brew uninstall dnsmasq
     
       
         <item>
-  <title>Cloudflare</title>
+  <title>Invalidate cache</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;invalidate-cache&quot;&gt;Invalidate cache&lt;/h2&gt;
-
-&lt;p&gt;Create an API token:&lt;/p&gt;
+    &lt;p&gt;Create an API token:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;go here: &lt;a href=&quot;https://dash.cloudflare.com/profile/api-tokens&quot;&gt;https://dash.cloudflare.com/profile/api-tokens&lt;/a&gt;
@@ -2761,8 +2703,8 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
 &lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/cloudflare.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/cloudflare.html</guid>
   
@@ -2774,15 +2716,13 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
     
       
         <item>
-  <title>Agile software development</title>
+  <title>Kanban</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;kanban&quot;&gt;Kanban&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CD0y-aU1sXo&quot;&gt;Eric Brechner: “Agile Project Management with Kanban”&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CD0y-aU1sXo&quot;&gt;Eric Brechner: “Agile Project Management with Kanban”&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Notes:&lt;/p&gt;
 
@@ -2801,8 +2741,8 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
   &lt;li&gt;Each column has an “in progress” and “done” sub-columns&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/agile.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/agile.html</guid>
   
@@ -2814,9 +2754,9 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
     
       
         <item>
-  <title>DNS Lookup - Check Domain’s DNS Records</title>
+  <title>DNS Lookup - Check Domain&#39;s DNS Records</title>
   <description>&lt;p&gt;
-      Article updated at October 9, 2020, 
+      Article updated at November 21, 2020, 
       created at July 30, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -2850,8 +2790,8 @@ dig @198.101.242.72 mydomain.com MX &lt;span class=&quot;c&quot;&gt;# Alternate 
 dig @176.103.130.130 mydomain.com MX
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Thu, 30 Jul 2020 10:00:27 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dns-lookup.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dns-lookup.html</guid>
   

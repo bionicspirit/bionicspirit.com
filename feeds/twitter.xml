@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 17 Nov 2020 14:16:55 +0000</pubDate>
-    <lastBuildDate>Tue, 17 Nov 2020 14:16:55 +0000</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2020 10:11:18 +0000</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2020 10:11:18 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -216,11 +216,11 @@
         
                 
             <item>
-  <title>Android</title>
+  <title>Apps</title>
   <description>Wiki article</description>
   <pubDate>Mon, 02 Nov 2020 19:09:46 +0000</pubDate>
-  <dc:modified>Mon, 02 Nov 2020 21:35:15 +0000</dc:modified>
-  <atom:modified>Mon, 02 Nov 2020 21:35:15 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/android.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/android.html</guid>
   
@@ -232,11 +232,11 @@
         
                 
             <item>
-  <title>Web Tricks</title>
+  <title>Detect the Brave Browser</title>
   <description>Wiki article</description>
   <pubDate>Thu, 29 Oct 2020 09:48:21 +0000</pubDate>
-  <dc:modified>Thu, 29 Oct 2020 10:49:10 +0000</dc:modified>
-  <atom:modified>Thu, 29 Oct 2020 10:49:10 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/web-tricks.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web-tricks.html</guid>
   
@@ -478,11 +478,11 @@
         
                 
             <item>
-  <title>Microsoft .NET</title>
+  <title>CSharp</title>
   <description>Wiki article</description>
   <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
-  <dc:modified>Sat, 10 Oct 2020 07:00:47 +0000</dc:modified>
-  <atom:modified>Sat, 10 Oct 2020 07:00:47 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dotnet.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dotnet.html</guid>
   
@@ -589,11 +589,11 @@
         
                 
             <item>
-  <title>Privacy</title>
+  <title>Firefox Extensions</title>
   <description>Wiki article</description>
   <pubDate>Mon, 21 Sep 2020 13:20:35 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/privacy.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/privacy.html</guid>
   
@@ -605,11 +605,11 @@
         
                 
             <item>
-  <title>De-DRM</title>
+  <title>eBooks</title>
   <description>Wiki article</description>
   <pubDate>Thu, 17 Sep 2020 09:02:43 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dedrm.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dedrm.html</guid>
   
@@ -621,11 +621,11 @@
         
                 
             <item>
-  <title>Image Formats</title>
+  <title>Convert HEIC to JPEG in a directory</title>
   <description>Wiki article</description>
   <pubDate>Tue, 15 Sep 2020 18:48:09 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/image-formats.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/image-formats.html</guid>
   
@@ -656,11 +656,11 @@
         
                 
             <item>
-  <title>Apache Kafka</title>
+  <title>Docker Setup</title>
   <description>Wiki article</description>
   <pubDate>Fri, 04 Sep 2020 07:30:08 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/kafka.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/kafka.html</guid>
   
@@ -693,11 +693,11 @@
         
                 
             <item>
-  <title>Agile software development</title>
+  <title>Kanban</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/agile.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/agile.html</guid>
   
@@ -709,11 +709,11 @@
         
                 
             <item>
-  <title>Cloudflare</title>
+  <title>Invalidate cache</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/cloudflare.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/cloudflare.html</guid>
   
@@ -728,8 +728,8 @@
   <title>Debian Packages (deb)</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/debian-packages-deb.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/debian-packages-deb.html</guid>
   
@@ -741,11 +741,11 @@
         
                 
             <item>
-  <title>DNS settings</title>
+  <title>MacOS</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dns-settings.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dns-settings.html</guid>
   
@@ -757,11 +757,11 @@
         
                 
             <item>
-  <title>Docker</title>
+  <title>Installation</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/docker.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/docker.html</guid>
   
@@ -773,11 +773,11 @@
         
                 
             <item>
-  <title>Dropbox</title>
+  <title>Remove all shared links</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dropbox.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dropbox.html</guid>
   
@@ -789,11 +789,11 @@
         
                 
             <item>
-  <title>Emacs Setup</title>
+  <title>Installation</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Mon, 26 Oct 2020 13:49:43 +0000</dc:modified>
-  <atom:modified>Mon, 26 Oct 2020 13:49:43 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/emacs.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/emacs.html</guid>
   
@@ -805,11 +805,11 @@
         
                 
             <item>
-  <title>Email Tips</title>
+  <title>Send email from localhost</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/email.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/email.html</guid>
   
@@ -821,11 +821,11 @@
         
                 
             <item>
-  <title>Firefox</title>
+  <title>Cool Extensions</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/firefox.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/firefox.html</guid>
   
@@ -837,11 +837,11 @@
         
                 
             <item>
-  <title>Git Tips</title>
+  <title>Large files support</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/git.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/git.html</guid>
   
@@ -853,11 +853,11 @@
         
                 
             <item>
-  <title>GitHub</title>
+  <title>Tools</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/github.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/github.html</guid>
   
@@ -872,8 +872,8 @@
   <title>GNU Screen</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/gnu-screen.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/gnu-screen.html</guid>
   
@@ -885,11 +885,11 @@
         
                 
             <item>
-  <title>Haskell</title>
+  <title>Educational Resources</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/haskell.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/haskell.html</guid>
   
@@ -904,8 +904,8 @@
   <title>iTerm2</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/iterm.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/iterm.html</guid>
   
@@ -917,11 +917,11 @@
         
                 
             <item>
-  <title>JSON</title>
+  <title>Command-line parsing</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/json.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/json.html</guid>
   
@@ -933,11 +933,11 @@
         
                 
             <item>
-  <title>MacOS</title>
+  <title>Finder Shortcuts</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/macos.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/macos.html</guid>
   
@@ -949,11 +949,11 @@
         
                 
             <item>
-  <title>MySQL / MariaDB</title>
+  <title>Start a Docker Instance</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Sun, 15 Nov 2020 09:49:57 +0000</dc:modified>
-  <atom:modified>Sun, 15 Nov 2020 09:49:57 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/mysql.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/mysql.html</guid>
   
@@ -965,11 +965,11 @@
         
                 
             <item>
-  <title>Nix</title>
+  <title>Install/Uninstall instructions</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/nix.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/nix.html</guid>
   
@@ -981,11 +981,11 @@
         
                 
             <item>
-  <title>Org-mode</title>
+  <title>Shortcuts</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/org-mode.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/org-mode.html</guid>
   
@@ -997,11 +997,11 @@
         
                 
             <item>
-  <title>PostgreSQL</title>
+  <title>Creating new database and user</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/postgresql.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/postgresql.html</guid>
   
@@ -1013,11 +1013,11 @@
         
                 
             <item>
-  <title>Python</title>
+  <title>Pyenv + Virtualenv</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/python.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/python.html</guid>
   
@@ -1029,11 +1029,11 @@
         
                 
             <item>
-  <title>RSS / Atom feeds</title>
+  <title>Readers</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/rss-feeds.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/rss-feeds.html</guid>
   
@@ -1045,11 +1045,11 @@
         
                 
             <item>
-  <title>Rust</title>
+  <title>Installation</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/rust.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/rust.html</guid>
   
@@ -1064,8 +1064,8 @@
   <title>Teach Kids to Code</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/teach-kids.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/teach-kids.html</guid>
   
@@ -1077,11 +1077,11 @@
         
                 
             <item>
-  <title>tmux shortcuts &amp; cheatsheet</title>
+  <title>Intro</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/tmux.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/tmux.html</guid>
   
@@ -1093,11 +1093,11 @@
         
                 
             <item>
-  <title>Web Apps</title>
+  <title>Progressive Web Apps (PWAs)</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/web-apps.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web-apps.html</guid>
   
@@ -1109,11 +1109,11 @@
         
                 
             <item>
-  <title>Windows 10</title>
+  <title>Macbook drivers for Windows</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/windows.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/windows.html</guid>
   
@@ -1128,8 +1128,8 @@
   <title>Custom Zsh Prompt</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/zshrc-prompt.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/zshrc-prompt.html</guid>
   
@@ -1242,11 +1242,11 @@
         
                 
             <item>
-  <title>DNS Lookup - Check Domain’s DNS Records</title>
+  <title>DNS Lookup - Check Domain&#39;s DNS Records</title>
   <description>Wiki article</description>
   <pubDate>Thu, 30 Jul 2020 10:00:27 +0000</pubDate>
-  <dc:modified>Fri, 09 Oct 2020 22:05:02 +0000</dc:modified>
-  <atom:modified>Fri, 09 Oct 2020 22:05:02 +0000</atom:modified>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/dns-lookup.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dns-lookup.html</guid>
   
