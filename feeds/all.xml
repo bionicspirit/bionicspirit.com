@@ -9,8 +9,8 @@
     <description>Feed of blog articles, snippets, wiki, shared links, published at alexn.org</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/all.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Nov 2020 10:11:18 +0000</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2020 10:11:18 +0000</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2020 10:47:49 +0000</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2020 10:47:49 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -20,7 +20,7 @@
       <item>
   <title>Shared Link — Graphics for JVM</title>
   <description>&lt;a href=&quot;https://tonsky.me/blog/skija/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/skija.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/skija.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Let’s say I want to build high-quality desktop apps. I also want to do it on JVM. Don’t get your hopes up—we are not there yet. But I have a plan.”&lt;/em&gt;&lt;/p&gt;
@@ -48,7 +48,7 @@
       <item>
   <title>Best practice for natural Ordering</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/11/17/best-practice-for-ordering-comparable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/ordering.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/ordering.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Definitions of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;scala.math.Ordering&lt;/code&gt; MUST BE consistent with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;equals&lt;/code&gt;, an often overlooked law that can lead to problems.&lt;/p&gt;
@@ -76,7 +76,7 @@
       <item>
   <title>Managing Database Migrations in Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/db-migrations-scala.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/db-migrations-scala.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;The database schema should be described as code, in your repository. And you should be able to semi-automatically update your database schema on new deployments.&lt;/p&gt;
@@ -199,7 +199,7 @@
       <item>
   <title>I like Option.get</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/11/12/i-like-option-get.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/option.get.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/option.get.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;We should strive to make illegal states unrepresentable. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Option.get&lt;/code&gt; is a partial function that, according to many, shouldn’t be in the standard library. Yet it doesn’t bother me; the inability of Scala to make it safe is the problem.&lt;/p&gt;
@@ -229,7 +229,7 @@
       <item>
   <title>Shared Link — Announcing .NET 5.0, C# 9, F# 5</title>
   <description>&lt;a href=&quot;https://devblogs.microsoft.com/dotnet/announcing-net-5-0/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/dotnet.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/articles/dotnet.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;“&lt;em&gt;We’re excited to release .NET 5.0 today and for you to start using it. It’s a major release — including C# 9 and F# 5 — with a broad set of new features and compelling improvements.&lt;/em&gt;”&lt;/p&gt;
@@ -265,7 +265,7 @@
       <item>
   <title>Organize and Index Your Screenshots (OCR) on macOS</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/spotlight-search.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/spotlight-search.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Screenshots contain text, text that should be searchable, as finding a screenshot later is the whole point of creating it.&lt;/p&gt;
@@ -322,7 +322,7 @@
       <item>
   <title>Shared Link — Explicit term inference with Scala 3</title>
   <description>&lt;a href=&quot;https://www.scala-lang.org/2020/11/06/explicit-term-inference-in-scala-3.html&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/scala-explicit-terms.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/scala-explicit-terms.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;“&lt;em&gt;This post briefly introduces the new syntax and semantics available to Scala 3 programmers by analysing the most common use cases and patterns: extension methods, implicit parameters, implicit conversions and typeclasses.&lt;/em&gt;”&lt;/p&gt;
@@ -349,13 +349,15 @@
         
                 
             <item>
-  <title>Wiki — Apps</title>
+  <title>Wiki — Android</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at November 2, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://www.davx5.com/&quot;&gt;DAVx5&lt;/a&gt;: CalDAV/CardDAV for Android&lt;/li&gt;
   &lt;li&gt;
@@ -400,13 +402,15 @@
         
                 
             <item>
-  <title>Wiki — Detect the Brave Browser</title>
+  <title>Wiki — Web Tricks</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at October 29, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;h2 id=&quot;detect-the-brave-browser&quot;&gt;Detect the Brave Browser&lt;/h2&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Credit: &lt;a href=&quot;https://stackoverflow.com/a/60954062&quot;&gt;https://stackoverflow.com/a/60954062&lt;/a&gt;&lt;/p&gt;</description>
@@ -425,7 +429,7 @@
       <item>
   <title>Shared Link — BSP Support in sbt 1.4</title>
   <description>&lt;a href=&quot;https://www.scala-lang.org/blog/2020/10/27/bsp-in-sbt.html&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/snippets/sbt-bsp-announcement.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/snippets/sbt-bsp-announcement.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Today we are proud to announce that support of BSP has been shipped into sbt 1.4.0 … BSP in sbt improves the integration of sbt inside IDEs and code editors.”&lt;/em&gt;&lt;/p&gt;
@@ -482,7 +486,7 @@
       <item>
   <title>Block comments on the web</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/10/20/block-comments-on-the-web.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/block-comments.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/block-comments.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Comments on the web can be toxic, and a waste of time. Here’s how to block them…&lt;/p&gt;
@@ -792,7 +796,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       <item>
   <title>Shared Link — Typelevel Cats Effect 3.0.0-M1</title>
   <description>&lt;a href=&quot;https://github.com/typelevel/cats-effect/releases/tag/v3.0.0-M1&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Cats Effect 3.0.0-M1 is the very first milestone release in the 3.0.0 line. We are expecting to follow this milestone with subsequent ones as necessary to further refine functionality and features, prior to some number of release candidates leading to a final release. The designation “M1” is meant to indicate our relative confidence in the functionality and API of the library, but it by no means indicates completeness or final compatibility. Neither binary compatibility nor source compatibility with anything are assured prior to 3.0.0, though major breakage is unlikely at this point.”&lt;/em&gt;&lt;/p&gt;
@@ -820,7 +824,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       <item>
   <title>Shared Link — Practice typing by retyping ENTIRE classic novels</title>
   <description>&lt;a href=&quot;https://www.typelit.io/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Improve your typing for free online by practicing on classic literature.”&lt;/em&gt;&lt;/p&gt;
@@ -846,7 +850,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       <item>
   <title>When My World Vanishes</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/earth.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/earth.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;It’s me, facing a hard to solve problem. It’s a difficult one, and I’m having problems focusing. I make some coffee, I move to another room, and I’m already thinking of running to some coffee shop, forgetting that we’re still in a pandemic.&lt;/p&gt;
@@ -926,13 +930,15 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
         
                 
             <item>
-  <title>Wiki — CSharp</title>
+  <title>Wiki — Microsoft .NET</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at October 8, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h3 id=&quot;game-development&quot;&gt;Game Development&lt;/h3&gt;
+    &lt;h2 id=&quot;csharp&quot;&gt;CSharp&lt;/h2&gt;
+
+&lt;h3 id=&quot;game-development&quot;&gt;Game Development&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -1205,8 +1211,10 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
   
         
       <item>
-  <title>Snippet — Flow/Processor to Effect</title>
-  <description>&lt;p&gt;Possibly broken implementation, take it with a grain of salt:&lt;/p&gt;
+  <title>Snippet — Flow Processor To Effect</title>
+  <description>&lt;h1 id=&quot;flowprocessor-to-effect&quot;&gt;Flow/Processor to Effect&lt;/h1&gt;
+
+&lt;p&gt;Possibly broken implementation, take it with a grain of salt:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;akka.actor.ActorSystem&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;akka.stream.Materializer&lt;/span&gt;
@@ -1405,13 +1413,15 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
         
                 
             <item>
-  <title>Wiki — Firefox Extensions</title>
+  <title>Wiki — Privacy</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at September 21, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;firefox-extensions&quot;&gt;Firefox Extensions&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/clearurls/&quot;&gt;CleanURLs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/&quot;&gt;Decentraleyes&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/facebook-container/&quot;&gt;Facebook Container&lt;/a&gt;&lt;/li&gt;
@@ -1467,13 +1477,15 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
         
                 
             <item>
-  <title>Wiki — eBooks</title>
+  <title>Wiki — De-DRM</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at September 17, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Tools:&lt;/p&gt;
+    &lt;h2 id=&quot;ebooks&quot;&gt;eBooks&lt;/h2&gt;
+
+&lt;p&gt;Tools:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;&lt;/li&gt;
@@ -1516,13 +1528,15 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
         
                 
             <item>
-  <title>Wiki — Convert HEIC to JPEG in a directory</title>
+  <title>Wiki — Image Formats</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at September 15, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+    &lt;h2 id=&quot;convert-heic-to-jpeg-in-a-directory&quot;&gt;Convert HEIC to JPEG in a directory&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
 &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;shopt&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; nocaseglob
@@ -1555,7 +1569,7 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
       <item>
   <title>Privilege</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/fi-miu.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/fi-miu.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Today it’s my 38ᵗʰ birthday. I was born into privilege. Other people aren’t as lucky.&lt;/p&gt;
@@ -1580,13 +1594,15 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
         
                 
             <item>
-  <title>Wiki — Docker Setup</title>
+  <title>Wiki — Apache Kafka</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at September 4, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
+    &lt;h2 id=&quot;docker-setup&quot;&gt;Docker Setup&lt;/h2&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# Kafka config taken from:&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# https://raw.githubusercontent.com/bitnami/bitnami-docker-kafka/master/docker-compose.yml&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
@@ -1757,13 +1773,15 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
         
                 
             <item>
-  <title>Wiki — Kanban</title>
+  <title>Wiki — Agile software development</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CD0y-aU1sXo&quot;&gt;Eric Brechner: “Agile Project Management with Kanban”&lt;/a&gt;&lt;/p&gt;
+    &lt;h2 id=&quot;kanban&quot;&gt;Kanban&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CD0y-aU1sXo&quot;&gt;Eric Brechner: “Agile Project Management with Kanban”&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Notes:&lt;/p&gt;
 
@@ -1795,13 +1813,15 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
         
                 
             <item>
-  <title>Wiki — Invalidate cache</title>
+  <title>Wiki — Cloudflare</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Create an API token:&lt;/p&gt;
+    &lt;h2 id=&quot;invalidate-cache&quot;&gt;Invalidate cache&lt;/h2&gt;
+
+&lt;p&gt;Create an API token:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;go here: &lt;a href=&quot;https://dash.cloudflare.com/profile/api-tokens&quot;&gt;https://dash.cloudflare.com/profile/api-tokens&lt;/a&gt;
@@ -1887,13 +1907,15 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
         
                 
             <item>
-  <title>Wiki — MacOS</title>
+  <title>Wiki — DNS settings</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h3 id=&quot;refresh-dns&quot;&gt;Refresh DNS&lt;/h3&gt;
+    &lt;h2 id=&quot;macos&quot;&gt;MacOS&lt;/h2&gt;
+
+&lt;h3 id=&quot;refresh-dns&quot;&gt;Refresh DNS&lt;/h3&gt;
 
 &lt;p&gt;To flush the local DNS cache:&lt;/p&gt;
 
@@ -1995,13 +2017,15 @@ brew uninstall dnsmasq
         
                 
             <item>
-  <title>Wiki — Installation</title>
+  <title>Wiki — Docker</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew cask install docker&lt;/code&gt;&lt;/p&gt;
 
@@ -2280,13 +2304,15 @@ brew uninstall dnsmasq
         
                 
             <item>
-  <title>Wiki — Remove all shared links</title>
+  <title>Wiki — Dropbox</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Go to &lt;a href=&quot;https://www.dropbox.com/share/links&quot;&gt;https://www.dropbox.com/share/links&lt;/a&gt;, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:&lt;/p&gt;
+    &lt;h2 id=&quot;remove-all-shared-links&quot;&gt;Remove all shared links&lt;/h2&gt;
+
+&lt;p&gt;Go to &lt;a href=&quot;https://www.dropbox.com/share/links&quot;&gt;https://www.dropbox.com/share/links&lt;/a&gt;, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#links-list .mc-popover-trigger&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -2378,13 +2404,15 @@ brew uninstall dnsmasq
         
                 
             <item>
-  <title>Wiki — Installation</title>
+  <title>Wiki — Emacs Setup</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;emacs
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -2535,13 +2563,15 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
         
                 
             <item>
-  <title>Wiki — Send email from localhost</title>
+  <title>Wiki — Email Tips</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swaks
+    &lt;h2 id=&quot;send-email-from-localhost&quot;&gt;Send email from localhost&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swaks
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;swaks &lt;span class=&quot;nt&quot;&gt;--auth&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
@@ -2571,13 +2601,15 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
         
                 
             <item>
-  <title>Wiki — Cool Extensions</title>
+  <title>Wiki — Firefox</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;cool-extensions&quot;&gt;Cool Extensions&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/&quot;&gt;Auto Tab Discard&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/&quot;&gt;Awesome RSS&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/clearurls/&quot;&gt;CleanURLs&lt;/a&gt;&lt;/li&gt;
@@ -2723,13 +2755,15 @@ services.sync.prefs.media.hardwaremediakeys.enabled
         
                 
             <item>
-  <title>Wiki — Large files support</title>
+  <title>Wiki — Git Tips</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Resources:&lt;/p&gt;
+    &lt;h2 id=&quot;large-files-support&quot;&gt;Large files support&lt;/h2&gt;
+
+&lt;p&gt;Resources:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://git-lfs.github.com/&quot;&gt;Project homepage&lt;/a&gt;&lt;/li&gt;
@@ -2771,13 +2805,15 @@ services.sync.prefs.media.hardwaremediakeys.enabled
         
                 
             <item>
-  <title>Wiki — Tools</title>
+  <title>Wiki — GitHub </title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;For creating labels: &lt;a href=&quot;https://github.com/integratedexperts/github-labels/&quot;&gt;https://github.com/integratedexperts/github-labels/&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -2933,13 +2969,15 @@ bind F eval &quot;hardstatus alwayslastline&quot;
         
                 
             <item>
-  <title>Wiki — Educational Resources</title>
+  <title>Wiki — Haskell</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;educational-resources&quot;&gt;Educational Resources&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://github.com/Gabriel439/post-rfc/blob/master/sotu.md&quot;&gt;State of the Haskell ecosystem&lt;/a&gt;: describes the best tools available&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://dev.stephendiehl.com/hask/&quot;&gt;What I Wish I Knew When Learning Haskell&lt;/a&gt;&lt;/li&gt;
@@ -3083,13 +3121,15 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
         
                 
             <item>
-  <title>Wiki — Command-line parsing</title>
+  <title>Wiki — JSON</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;&lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt; — command-line JSON processor.&lt;/p&gt;
+    &lt;h2 id=&quot;command-line-parsing&quot;&gt;Command-line parsing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt; — command-line JSON processor.&lt;/p&gt;
 
 &lt;p&gt;Sorting in descending order by field:&lt;/p&gt;
 
@@ -3114,13 +3154,15 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
         
                 
             <item>
-  <title>Wiki — Finder Shortcuts</title>
+  <title>Wiki — MacOS</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;finder-shortcuts&quot;&gt;Finder Shortcuts&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cmd + Shift + G&lt;/code&gt;: Go to Folder&lt;/li&gt;
   &lt;li&gt;
@@ -3170,13 +3212,15 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
         
                 
             <item>
-  <title>Wiki — Start a Docker Instance</title>
+  <title>Wiki — MySQL / MariaDB</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mariadb &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pass &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3306:3306 mariadb:10.5 
+    &lt;h2 id=&quot;start-a-docker-instance&quot;&gt;Start a Docker Instance&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mariadb &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pass &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3306:3306 mariadb:10.5 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Note &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--rm&lt;/code&gt; deletes the container after stop. Also add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-d&lt;/code&gt; to detach (daemon mode).&lt;/p&gt;
@@ -3225,13 +3269,15 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
         
                 
             <item>
-  <title>Wiki — Install/Uninstall instructions</title>
+  <title>Wiki — Nix</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Install with:&lt;/p&gt;
+    &lt;h2 id=&quot;installuninstall-instructions&quot;&gt;Install/Uninstall instructions&lt;/h2&gt;
+
+&lt;p&gt;Install with:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;sh &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;curl https://nixos.org/nix/install&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--darwin-use-unencrypted-nix-store-volume&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -3350,13 +3396,15 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
         
                 
             <item>
-  <title>Wiki — Shortcuts</title>
+  <title>Wiki — Org-mode</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;shortcuts&quot;&gt;Shortcuts&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C-c a&lt;/code&gt; show agenda&lt;/li&gt;
   &lt;li&gt;
@@ -3436,13 +3484,15 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
         
                 
             <item>
-  <title>Wiki — Creating new database and user</title>
+  <title>Wiki — PostgreSQL</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;h2 id=&quot;creating-new-database-and-user&quot;&gt;Creating new database and user&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;youruser&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ENCRYPTED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'yourpass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;GRANT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;PRIVILEGES&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;youruser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
@@ -3460,13 +3510,15 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
         
                 
             <item>
-  <title>Wiki — Pyenv + Virtualenv</title>
+  <title>Wiki — Python</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Requirements:&lt;/p&gt;
+    &lt;h2 id=&quot;pyenv--virtualenv&quot;&gt;Pyenv + Virtualenv&lt;/h2&gt;
+
+&lt;p&gt;Requirements:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt;&lt;/li&gt;
@@ -3517,13 +3569,15 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
         
                 
             <item>
-  <title>Wiki — Readers</title>
+  <title>Wiki — RSS / Atom feeds</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Native, MacOS:&lt;/p&gt;
+    &lt;h2 id=&quot;readers&quot;&gt;Readers&lt;/h2&gt;
+
+&lt;p&gt;Native, MacOS:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://reederapp.com/&quot;&gt;Reeder&lt;/a&gt;&lt;/li&gt;
@@ -3570,13 +3624,15 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
         
                 
             <item>
-  <title>Wiki — Installation</title>
+  <title>Wiki — Rust</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;See &lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;To update Rust:&lt;/p&gt;
 
@@ -3771,13 +3827,15 @@ cargo check
         
                 
             <item>
-  <title>Wiki — Intro</title>
+  <title>Wiki — tmux shortcuts &amp; cheatsheet</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;start new:&lt;/p&gt;
+    &lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;start new:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;tmux
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -3976,13 +4034,15 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
         
                 
             <item>
-  <title>Wiki — Progressive Web Apps (PWAs)</title>
+  <title>Wiki — Web Apps</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://web.dev/progressive-web-apps/&quot;&gt;https://web.dev/progressive-web-apps/&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -4028,13 +4088,15 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
         
                 
             <item>
-  <title>Wiki — Macbook drivers for Windows</title>
+  <title>Wiki — Windows 10</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Can be downloaded via:&lt;/p&gt;
+    &lt;h2 id=&quot;macbook-drivers-for-windows&quot;&gt;Macbook drivers for Windows&lt;/h2&gt;
+
+&lt;p&gt;Can be downloaded via:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;From MacOS: Boot Camp Assistant -&amp;gt; Menu -&amp;gt; “Action” -&amp;gt; “Download Windows Support Software”&lt;/li&gt;
@@ -4292,7 +4354,7 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
       <item>
   <title>Retry Failing Tasks with Cats and Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Retry actions ending in failure via simple functions and Typelevel Cats type-classes.&lt;/p&gt;
@@ -4937,7 +4999,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Fatal Warnings and Linting in Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Strengthen your code via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-Xfatal-warnings&lt;/code&gt;, linting and piss off your colleagues with useful compiler errors.&lt;/p&gt;
@@ -4963,7 +5025,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Parallelizing Work via a JavaScript Semaphore</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/async-semaphore-typescript.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/async-semaphore-typescript.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Simple and very effective implementation of a Semaphore, used for easily parallelizing work in JavaScript/TypeScript.&lt;/p&gt;
@@ -5186,7 +5248,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Regexp Replacement via Function in Java/Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-replace-all-function.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-replace-all-function.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Replace in strings via regexp, with the replacement being calculated via a function.&lt;/p&gt;
@@ -5459,7 +5521,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Scala&#39;s isInstanceOf is an Anti-Pattern</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe type classes.&lt;/p&gt;
@@ -5487,7 +5549,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>On Bifunctor IO and Java&#39;s Checked Exceptions</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/bio.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/bio.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Bifunctor IO is a hot topic in the Scala community. Herein I’m expressing my dislike for it, as it shares the problems of Java’s Checked Exceptions.&lt;/p&gt;
@@ -5521,7 +5583,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>In Defense of OOFP</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-stairs.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-stairs.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;OOP versus Type Classes, exemplified and in defense of the Scala collections redesign.&lt;/p&gt;
@@ -5555,7 +5617,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Minitest: Zero Crap Scala Testing Library</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Minitest is my minimal testing library that I’ve been using for developing Monix.
@@ -5583,7 +5645,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>What is Functional Programming?</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/functions.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/functions.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;FP is programming with (mathematical) functions, there’s no room for interpretation.&lt;/p&gt;
@@ -5648,7 +5710,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>JavaScript&#39;s Promise Leaks Memory</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/js-then.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/js-then.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;JavaScript’s Promise leaks memory in recursive loops and what you can do about it.&lt;/p&gt;
@@ -5680,7 +5742,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Automatic Releases to Maven Central with Travis and SBT</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/sbt.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/sbt.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Enabling automatic releases for your open source Scala project with Travis and SBT.&lt;/p&gt;
@@ -5712,7 +5774,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Functional Programming Inception (Presentation)</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/2017-fp-inception.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/2017-fp-inception.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;My presentation from the Bucharest FP meetup.&lt;/p&gt;
@@ -5742,7 +5804,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Asynchronous Programming and Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/nondet.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/nondet.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Asynchrony is everywhere and it subsumes concurrency. This article explains what asynchronous processing is and its challenges.&lt;/p&gt;
@@ -5776,7 +5838,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Fixing scala.collection.Iterator</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;The venerable Iterator interface we all love and hate could use some improvements. This is a follow-up to my previous article, in which I talked about getting rid of Traversable because the Iterable and Iterator duo is enough for Scala’s standard library.
@@ -5802,7 +5864,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Why Scala&#39;s Traversable Is Bad Design</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Traversable was a design mistake, is redundant and we should remove it.&lt;/p&gt;
@@ -5828,7 +5890,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Add to NewsBlur Bookmarklet</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/newsblur.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/newsblur.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;An Add to NewsBlur bookmarklet that you can copy-paste for iPhone/iPad/Android usage&lt;/p&gt;
@@ -5856,7 +5918,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Monix Task vs Scalaz vs Future, The Benchmark</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/monix-1024.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/monix-1024.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;The Task in Monix has really good performance. See the benchmark.&lt;/p&gt;
@@ -5948,7 +6010,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/skunk.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/skunk.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Such practices represent clear signals for code smell, meaning code that sucks as a symptom of a bigger problem, one of design. The lumping together of these practices is not an accident, as they are related.&lt;/p&gt;
@@ -5978,7 +6040,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Monifu vs Akka Streams</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/monifu.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/monifu.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Back in June I attended
@@ -6016,7 +6078,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>Scala Best Practices</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;This is a collection of best practices for Scala, something to get you started.
@@ -6048,7 +6110,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>Resources for Learning Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Getting started with a new programming language shouldn't be hard,
@@ -6130,7 +6192,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>JVM Multithreading: Monitor Locks and Visibility</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/ferrari.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/ferrari.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Multithreading is a pain to deal with. While interviewing developers,
@@ -6174,7 +6236,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>Notes On JavaScript Client-side Development</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/javascript.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/javascript.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Client-side JavaScript development can be quite overwhelming, even for senior developers. I’m describing here what I did in a recent piece of client-side functionality to keep my sanity. This interface I’m talking about is served on mobile-phones, so it must be pretty bloat-free, adding salt over injury.&lt;/p&gt;
@@ -6206,7 +6268,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>On Scala, Functional Programming and Type-Classes</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;I’ve been following the excellent Coursera course on &lt;a href=&quot;https://www.coursera.org/course/progfun&quot;&gt;Functional Programming Principles in Scala&lt;/a&gt; led by Martin Odersky. This was not my first encounter with Scala as I’ve been using it including for my day job.
@@ -6241,7 +6303,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>How To Build a Naive Bayes Classifier</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/conditional-prob.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/conditional-prob.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;In machine learning a classifier is able to predict, given an input, a probability distribution over a set of categories. Some use-cases for building a classifier: spam detection, for example you could build your own Akismet API, automatic assignment of categories to a set of items, automatic detection of the primary language (e.g. Google Translate), sentiment analysis, which in simple terms refers to discovering if an opinion is about love or hate about a certain topic.&lt;/p&gt;
@@ -6273,7 +6335,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Data Mining: Finding Similar Items and Users</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/cosine-distance.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/cosine-distance.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;How to find related items? Here are recipes based on really simple formulas. If you pay attention, this technique is used all over the web (like on Amazon) to personalize the user experience and increase conversion rates. Because we want to give kick-ass product recommendations.&lt;/p&gt;
@@ -6305,7 +6367,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Blogging Platform for Hackers</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/jekyll.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/jekyll.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Host your own static website on Heroku’s free plan, use Google’s App Engine as a CDN, keep Heroku’s free dyno alive, generate the website via Jekyll.&lt;/p&gt;
@@ -6341,7 +6403,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Crawling the Android Marketplace</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/wolf-spider.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/wolf-spider.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;I had a very specific need for fetching the details for some apps in the Android marketplace, in an automated manner. Here I’m describing a script that I used to crawl the marketplace back in 2011.&lt;/p&gt;
@@ -6373,7 +6435,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Android Learning Resources</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/android-development.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/android-development.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Starting out learning Android development may be intimidating at first, as with any new platform of reasonable complexity you’ll have a lot to learn. However the learning process is fun. So here are some learning resources that I’m currently following.&lt;/p&gt;
@@ -6401,7 +6463,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Earning Money as an Amazon Affiliate</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/amazon-associates.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/amazon-associates.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;I published an article that I've meant to publish for a long
@@ -6436,7 +6498,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>4 Books For Learning to Design, The Hard Way</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-all.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-all.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;I present some books I enjoyed, which is the path I’m taking to get better at design and user experience.&lt;/p&gt;
@@ -6468,7 +6530,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>How I Use Flickr: For Backup</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/flickr.jpg?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/flickr.jpg?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;I’ve got a growing number of personal pictures and the collection is growing since 2003 … Pro accounts on Flickr have unlimited storage and can upload and access full-resolution pictures.&lt;/p&gt;
@@ -6498,7 +6560,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Why I Find Heroku Suboptimal</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/heroku.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/heroku.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;Heroku is great. It basically allows you to avoid growing-up. The deployment itself couldn’t be simpler, and when browsing their web interface for available add-ons, I feel like a child in a candy-store. But I’ve outgrown it.&lt;/p&gt;
@@ -6534,7 +6596,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Cross-Domain, Cross-Browser AJAX Requests</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/cors-ajax.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/cors-ajax.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;This article describes how to make cross-browser requests, in all browsers (including IExplorer 6), using web standards along with fallbacks and without using a proxy or JSONP (which is limited and awkward) – as long as you control the destination server, or if the destination server allows.&lt;/p&gt;
@@ -6564,7 +6626,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>I hate NULL and all its variants!</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/beautiful-soup.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/beautiful-soup.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;How many times have you had a chain of methods like this (example showing BeautifulSoup in action) …
@@ -6591,7 +6653,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>FreeSWITCH - Tips for Creating a Dialer</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/freeswitch1.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/freeswitch1.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;FreeSWITCH is a free and open source application server for real-time communication, WebRTC, telecommunications, video and Voice over Internet Protocol. Let’s build a VoIP dialer with it.&lt;/p&gt;
@@ -6625,7 +6687,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Using the Best Tools in Programming: Not Really Doable</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/tools.png?202011211011&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/tools.png?202011211047&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
     &lt;p&gt;There's something that bothers me when it comes to starting a new project. You can't really use the best tool for a certain job, if that tool is not integrated with the rest of your platform. Let me explain.

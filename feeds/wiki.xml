@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Nov 2020 10:11:18 +0000</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2020 10:11:18 +0000</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2020 10:47:49 +0000</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2020 10:47:49 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -19,13 +19,15 @@
     
       
         <item>
-  <title>Apps</title>
+  <title>Android</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at November 2, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://www.davx5.com/&quot;&gt;DAVx5&lt;/a&gt;: CalDAV/CardDAV for Android&lt;/li&gt;
   &lt;li&gt;
@@ -70,13 +72,15 @@
     
       
         <item>
-  <title>Detect the Brave Browser</title>
+  <title>Web Tricks</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at October 29, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;h2 id=&quot;detect-the-brave-browser&quot;&gt;Detect the Brave Browser&lt;/h2&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Credit: &lt;a href=&quot;https://stackoverflow.com/a/60954062&quot;&gt;https://stackoverflow.com/a/60954062&lt;/a&gt;&lt;/p&gt;</description>
@@ -94,13 +98,15 @@
     
       
         <item>
-  <title>CSharp</title>
+  <title>Microsoft .NET</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at October 8, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h3 id=&quot;game-development&quot;&gt;Game Development&lt;/h3&gt;
+    &lt;h2 id=&quot;csharp&quot;&gt;CSharp&lt;/h2&gt;
+
+&lt;h3 id=&quot;game-development&quot;&gt;Game Development&lt;/h3&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -165,13 +171,15 @@
     
       
         <item>
-  <title>Firefox Extensions</title>
+  <title>Privacy</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at September 21, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;firefox-extensions&quot;&gt;Firefox Extensions&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/clearurls/&quot;&gt;CleanURLs&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/&quot;&gt;Decentraleyes&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/facebook-container/&quot;&gt;Facebook Container&lt;/a&gt;&lt;/li&gt;
@@ -227,13 +235,15 @@
     
       
         <item>
-  <title>eBooks</title>
+  <title>De-DRM</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at September 17, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Tools:&lt;/p&gt;
+    &lt;h2 id=&quot;ebooks&quot;&gt;eBooks&lt;/h2&gt;
+
+&lt;p&gt;Tools:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://calibre-ebook.com/&quot;&gt;Calibre&lt;/a&gt;&lt;/li&gt;
@@ -276,13 +286,15 @@
     
       
         <item>
-  <title>Convert HEIC to JPEG in a directory</title>
+  <title>Image Formats</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at September 15, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+    &lt;h2 id=&quot;convert-heic-to-jpeg-in-a-directory&quot;&gt;Convert HEIC to JPEG in a directory&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
 &lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;shopt&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; nocaseglob
@@ -314,13 +326,15 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
     
       
         <item>
-  <title>Docker Setup</title>
+  <title>Apache Kafka</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at September 4, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
+    &lt;h2 id=&quot;docker-setup&quot;&gt;Docker Setup&lt;/h2&gt;
+
+&lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# Kafka config taken from:&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;# https://raw.githubusercontent.com/bitnami/bitnami-docker-kafka/master/docker-compose.yml&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;#&lt;/span&gt;
@@ -445,13 +459,15 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     
       
         <item>
-  <title>Macbook drivers for Windows</title>
+  <title>Windows 10</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Can be downloaded via:&lt;/p&gt;
+    &lt;h2 id=&quot;macbook-drivers-for-windows&quot;&gt;Macbook drivers for Windows&lt;/h2&gt;
+
+&lt;p&gt;Can be downloaded via:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;From MacOS: Boot Camp Assistant -&amp;gt; Menu -&amp;gt; “Action” -&amp;gt; “Download Windows Support Software”&lt;/li&gt;
@@ -483,13 +499,15 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     
       
         <item>
-  <title>Progressive Web Apps (PWAs)</title>
+  <title>Web Apps</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://web.dev/progressive-web-apps/&quot;&gt;https://web.dev/progressive-web-apps/&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -535,13 +553,15 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
     
       
         <item>
-  <title>Intro</title>
+  <title>tmux shortcuts &amp; cheatsheet</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;start new:&lt;/p&gt;
+    &lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+
+&lt;p&gt;start new:&lt;/p&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;tmux
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -832,13 +852,15 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
     
       
         <item>
-  <title>Installation</title>
+  <title>Rust</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;See &lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;See &lt;a href=&quot;https://www.rust-lang.org/tools/install&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;To update Rust:&lt;/p&gt;
 
@@ -941,13 +963,15 @@ cargo check
     
       
         <item>
-  <title>Readers</title>
+  <title>RSS / Atom feeds</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Native, MacOS:&lt;/p&gt;
+    &lt;h2 id=&quot;readers&quot;&gt;Readers&lt;/h2&gt;
+
+&lt;p&gt;Native, MacOS:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://reederapp.com/&quot;&gt;Reeder&lt;/a&gt;&lt;/li&gt;
@@ -994,13 +1018,15 @@ cargo check
     
       
         <item>
-  <title>Pyenv + Virtualenv</title>
+  <title>Python</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Requirements:&lt;/p&gt;
+    &lt;h2 id=&quot;pyenv--virtualenv&quot;&gt;Pyenv + Virtualenv&lt;/h2&gt;
+
+&lt;p&gt;Requirements:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/pyenv/pyenv&quot;&gt;pyenv&lt;/a&gt;&lt;/li&gt;
@@ -1051,13 +1077,15 @@ cargo check
     
       
         <item>
-  <title>Creating new database and user</title>
+  <title>PostgreSQL</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;h2 id=&quot;creating-new-database-and-user&quot;&gt;Creating new database and user&lt;/h2&gt;
+
+&lt;div class=&quot;language-sql highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;CREATE&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;USER&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;youruser&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;WITH&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ENCRYPTED&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;PASSWORD&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'yourpass'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;GRANT&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ALL&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;PRIVILEGES&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;ON&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;DATABASE&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;yourdbname&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;TO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;youruser&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
@@ -1075,13 +1103,15 @@ cargo check
     
       
         <item>
-  <title>Shortcuts</title>
+  <title>Org-mode</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;shortcuts&quot;&gt;Shortcuts&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;C-c a&lt;/code&gt; show agenda&lt;/li&gt;
   &lt;li&gt;
@@ -1161,13 +1191,15 @@ on a Sunday, even if you called and marked it done on Saturday:&lt;/p&gt;
     
       
         <item>
-  <title>Install/Uninstall instructions</title>
+  <title>Nix</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Install with:&lt;/p&gt;
+    &lt;h2 id=&quot;installuninstall-instructions&quot;&gt;Install/Uninstall instructions&lt;/h2&gt;
+
+&lt;p&gt;Install with:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;sh &amp;lt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;curl https://nixos.org/nix/install&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--darwin-use-unencrypted-nix-store-volume&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -1286,13 +1318,15 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
     
       
         <item>
-  <title>Start a Docker Instance</title>
+  <title>MySQL / MariaDB</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mariadb &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pass &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3306:3306 mariadb:10.5 
+    &lt;h2 id=&quot;start-a-docker-instance&quot;&gt;Start a Docker Instance&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--name&lt;/span&gt; mariadb &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;MYSQL_ROOT_PASSWORD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;pass &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; 3306:3306 mariadb:10.5 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Note &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;--rm&lt;/code&gt; deletes the container after stop. Also add &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-d&lt;/code&gt; to detach (daemon mode).&lt;/p&gt;
@@ -1341,13 +1375,15 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
     
       
         <item>
-  <title>Finder Shortcuts</title>
+  <title>MacOS</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;finder-shortcuts&quot;&gt;Finder Shortcuts&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cmd + Shift + G&lt;/code&gt;: Go to Folder&lt;/li&gt;
   &lt;li&gt;
@@ -1397,13 +1433,15 @@ nix-env &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;s1
     
       
         <item>
-  <title>Command-line parsing</title>
+  <title>JSON</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;&lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt; — command-line JSON processor.&lt;/p&gt;
+    &lt;h2 id=&quot;command-line-parsing&quot;&gt;Command-line parsing&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stedolan.github.io/jq/&quot;&gt;jq&lt;/a&gt; — command-line JSON processor.&lt;/p&gt;
 
 &lt;p&gt;Sorting in descending order by field:&lt;/p&gt;
 
@@ -1517,13 +1555,15 @@ History&lt;/code&gt;, and set &lt;code class=&quot;language-plaintext highlighte
     
       
         <item>
-  <title>Educational Resources</title>
+  <title>Haskell</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;educational-resources&quot;&gt;Educational Resources&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://github.com/Gabriel439/post-rfc/blob/master/sotu.md&quot;&gt;State of the Haskell ecosystem&lt;/a&gt;: describes the best tools available&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://dev.stephendiehl.com/hask/&quot;&gt;What I Wish I Knew When Learning Haskell&lt;/a&gt;&lt;/li&gt;
@@ -1695,13 +1735,15 @@ bind F eval &quot;hardstatus alwayslastline&quot;
     
       
         <item>
-  <title>Tools</title>
+  <title>GitHub </title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;tools&quot;&gt;Tools&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;For creating labels: &lt;a href=&quot;https://github.com/integratedexperts/github-labels/&quot;&gt;https://github.com/integratedexperts/github-labels/&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1740,13 +1782,15 @@ bind F eval &quot;hardstatus alwayslastline&quot;
     
       
         <item>
-  <title>Large files support</title>
+  <title>Git Tips</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Resources:&lt;/p&gt;
+    &lt;h2 id=&quot;large-files-support&quot;&gt;Large files support&lt;/h2&gt;
+
+&lt;p&gt;Resources:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://git-lfs.github.com/&quot;&gt;Project homepage&lt;/a&gt;&lt;/li&gt;
@@ -1788,13 +1832,15 @@ bind F eval &quot;hardstatus alwayslastline&quot;
     
       
         <item>
-  <title>Cool Extensions</title>
+  <title>Firefox</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;ul&gt;
+    &lt;h2 id=&quot;cool-extensions&quot;&gt;Cool Extensions&lt;/h2&gt;
+
+&lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/auto-tab-discard/&quot;&gt;Auto Tab Discard&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/awesome-rss/&quot;&gt;Awesome RSS&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://addons.mozilla.org/en-US/firefox/addon/clearurls/&quot;&gt;CleanURLs&lt;/a&gt;&lt;/li&gt;
@@ -1940,13 +1986,15 @@ services.sync.prefs.media.hardwaremediakeys.enabled
     
       
         <item>
-  <title>Send email from localhost</title>
+  <title>Email Tips</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swaks
+    &lt;h2 id=&quot;send-email-from-localhost&quot;&gt;Send email from localhost&lt;/h2&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;swaks
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;swaks &lt;span class=&quot;nt&quot;&gt;--auth&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
@@ -1976,13 +2024,15 @@ services.sync.prefs.media.hardwaremediakeys.enabled
     
       
         <item>
-  <title>Installation</title>
+  <title>Emacs Setup</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;emacs
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -2133,13 +2183,15 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
     
       
         <item>
-  <title>Remove all shared links</title>
+  <title>Dropbox</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Go to &lt;a href=&quot;https://www.dropbox.com/share/links&quot;&gt;https://www.dropbox.com/share/links&lt;/a&gt;, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:&lt;/p&gt;
+    &lt;h2 id=&quot;remove-all-shared-links&quot;&gt;Remove all shared links&lt;/h2&gt;
+
+&lt;p&gt;Go to &lt;a href=&quot;https://www.dropbox.com/share/links&quot;&gt;https://www.dropbox.com/share/links&lt;/a&gt;, open the browser’s JavaScript console (⌘ + ⎇ + I) and paste the following:&lt;/p&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;$$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;#links-list .mc-popover-trigger&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;delete&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
@@ -2231,13 +2283,15 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
     
       
         <item>
-  <title>Installation</title>
+  <title>Docker</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
+    &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;h3 id=&quot;macos&quot;&gt;MacOS&lt;/h3&gt;
 
 &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;brew cask install docker&lt;/code&gt;&lt;/p&gt;
 
@@ -2516,13 +2570,15 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
     
       
         <item>
-  <title>MacOS</title>
+  <title>DNS settings</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h3 id=&quot;refresh-dns&quot;&gt;Refresh DNS&lt;/h3&gt;
+    &lt;h2 id=&quot;macos&quot;&gt;MacOS&lt;/h2&gt;
+
+&lt;h3 id=&quot;refresh-dns&quot;&gt;Refresh DNS&lt;/h3&gt;
 
 &lt;p&gt;To flush the local DNS cache:&lt;/p&gt;
 
@@ -2649,13 +2705,15 @@ brew uninstall dnsmasq
     
       
         <item>
-  <title>Invalidate cache</title>
+  <title>Cloudflare</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;Create an API token:&lt;/p&gt;
+    &lt;h2 id=&quot;invalidate-cache&quot;&gt;Invalidate cache&lt;/h2&gt;
+
+&lt;p&gt;Create an API token:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;go here: &lt;a href=&quot;https://dash.cloudflare.com/profile/api-tokens&quot;&gt;https://dash.cloudflare.com/profile/api-tokens&lt;/a&gt;
@@ -2716,13 +2774,15 @@ cloudflare_invalidate_cache&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;s
     
       
         <item>
-  <title>Kanban</title>
+  <title>Agile software development</title>
   <description>&lt;p&gt;
       Article updated at November 21, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CD0y-aU1sXo&quot;&gt;Eric Brechner: “Agile Project Management with Kanban”&lt;/a&gt;&lt;/p&gt;
+    &lt;h2 id=&quot;kanban&quot;&gt;Kanban&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=CD0y-aU1sXo&quot;&gt;Eric Brechner: “Agile Project Management with Kanban”&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Notes:&lt;/p&gt;
 

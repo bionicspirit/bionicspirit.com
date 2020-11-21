@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Nov 2020 10:11:18 +0000</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2020 10:11:18 +0000</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2020 10:47:49 +0000</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2020 10:47:49 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -216,7 +216,7 @@
         
                 
             <item>
-  <title>Apps</title>
+  <title>Android</title>
   <description>Wiki article</description>
   <pubDate>Mon, 02 Nov 2020 19:09:46 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -232,7 +232,7 @@
         
                 
             <item>
-  <title>Detect the Brave Browser</title>
+  <title>Web Tricks</title>
   <description>Wiki article</description>
   <pubDate>Thu, 29 Oct 2020 09:48:21 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -478,7 +478,7 @@
         
                 
             <item>
-  <title>CSharp</title>
+  <title>Microsoft .NET</title>
   <description>Wiki article</description>
   <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -563,7 +563,7 @@
   
         
       <item>
-  <title>Flow/Processor to Effect</title>
+  <title>Flow Processor To Effect</title>
   <description>Code snippet #Akka #CatsEffect #ReactiveStreams #Scala</description>
   <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -589,7 +589,7 @@
         
                 
             <item>
-  <title>Firefox Extensions</title>
+  <title>Privacy</title>
   <description>Wiki article</description>
   <pubDate>Mon, 21 Sep 2020 13:20:35 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -605,7 +605,7 @@
         
                 
             <item>
-  <title>eBooks</title>
+  <title>De-DRM</title>
   <description>Wiki article</description>
   <pubDate>Thu, 17 Sep 2020 09:02:43 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -621,7 +621,7 @@
         
                 
             <item>
-  <title>Convert HEIC to JPEG in a directory</title>
+  <title>Image Formats</title>
   <description>Wiki article</description>
   <pubDate>Tue, 15 Sep 2020 18:48:09 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -656,7 +656,7 @@
         
                 
             <item>
-  <title>Docker Setup</title>
+  <title>Apache Kafka</title>
   <description>Wiki article</description>
   <pubDate>Fri, 04 Sep 2020 07:30:08 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -693,7 +693,7 @@
         
                 
             <item>
-  <title>Kanban</title>
+  <title>Agile software development</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -709,7 +709,7 @@
         
                 
             <item>
-  <title>Invalidate cache</title>
+  <title>Cloudflare</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -741,7 +741,7 @@
         
                 
             <item>
-  <title>MacOS</title>
+  <title>DNS settings</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -757,7 +757,7 @@
         
                 
             <item>
-  <title>Installation</title>
+  <title>Docker</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -773,7 +773,7 @@
         
                 
             <item>
-  <title>Remove all shared links</title>
+  <title>Dropbox</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -789,7 +789,7 @@
         
                 
             <item>
-  <title>Installation</title>
+  <title>Emacs Setup</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -805,7 +805,7 @@
         
                 
             <item>
-  <title>Send email from localhost</title>
+  <title>Email Tips</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -821,7 +821,7 @@
         
                 
             <item>
-  <title>Cool Extensions</title>
+  <title>Firefox</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -837,7 +837,7 @@
         
                 
             <item>
-  <title>Large files support</title>
+  <title>Git Tips</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -853,7 +853,7 @@
         
                 
             <item>
-  <title>Tools</title>
+  <title>GitHub </title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -885,7 +885,7 @@
         
                 
             <item>
-  <title>Educational Resources</title>
+  <title>Haskell</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -917,7 +917,7 @@
         
                 
             <item>
-  <title>Command-line parsing</title>
+  <title>JSON</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -933,7 +933,7 @@
         
                 
             <item>
-  <title>Finder Shortcuts</title>
+  <title>MacOS</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -949,7 +949,7 @@
         
                 
             <item>
-  <title>Start a Docker Instance</title>
+  <title>MySQL / MariaDB</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -965,7 +965,7 @@
         
                 
             <item>
-  <title>Install/Uninstall instructions</title>
+  <title>Nix</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -981,7 +981,7 @@
         
                 
             <item>
-  <title>Shortcuts</title>
+  <title>Org-mode</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -997,7 +997,7 @@
         
                 
             <item>
-  <title>Creating new database and user</title>
+  <title>PostgreSQL</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -1013,7 +1013,7 @@
         
                 
             <item>
-  <title>Pyenv + Virtualenv</title>
+  <title>Python</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -1029,7 +1029,7 @@
         
                 
             <item>
-  <title>Readers</title>
+  <title>RSS / Atom feeds</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -1045,7 +1045,7 @@
         
                 
             <item>
-  <title>Installation</title>
+  <title>Rust</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -1077,7 +1077,7 @@
         
                 
             <item>
-  <title>Intro</title>
+  <title>tmux shortcuts &amp; cheatsheet</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -1093,7 +1093,7 @@
         
                 
             <item>
-  <title>Progressive Web Apps (PWAs)</title>
+  <title>Web Apps</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
@@ -1109,7 +1109,7 @@
         
                 
             <item>
-  <title>Macbook drivers for Windows</title>
+  <title>Windows 10</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
   <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>

@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Nov 2020 10:11:18 +0000</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2020 10:11:18 +0000</lastBuildDate>
+    <pubDate>Sat, 21 Nov 2020 10:47:49 +0000</pubDate>
+    <lastBuildDate>Sat, 21 Nov 2020 10:47:49 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -547,8 +547,10 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
     
       
         <item>
-  <title>Flow/Processor to Effect</title>
-  <description>&lt;p&gt;Possibly broken implementation, take it with a grain of salt:&lt;/p&gt;
+  <title>Flow Processor To Effect</title>
+  <description>&lt;h1 id=&quot;flowprocessor-to-effect&quot;&gt;Flow/Processor to Effect&lt;/h1&gt;
+
+&lt;p&gt;Possibly broken implementation, take it with a grain of salt:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;akka.actor.ActorSystem&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;akka.stream.Materializer&lt;/span&gt;
