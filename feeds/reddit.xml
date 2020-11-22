@@ -9,14 +9,39 @@
     <description>Feed meant for publishing notifications to Reddit.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/reddit.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 21 Nov 2020 10:47:49 +0000</pubDate>
-    <lastBuildDate>Sat, 21 Nov 2020 10:47:49 +0000</lastBuildDate>
+    <pubDate>Sun, 22 Nov 2020 11:15:27 +0000</pubDate>
+    <lastBuildDate>Sun, 22 Nov 2020 11:15:27 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>EffectTestSuite[F].scala</title>
+  <description>Code snippet #CatsEffect #FP #Programming #Scala</description>
+  <pubDate>Sun, 22 Nov 2020 10:41:11 +0000</pubDate>
+  <dc:modified>Sun, 22 Nov 2020 11:14:13 +0000</dc:modified>
+  <atom:modified>Sun, 22 Nov 2020 11:14:13 +0000</atom:modified>
+  <link>https://alexn.org/snippets/2020/11/22/effecttestsuite-scala.html?pk_campaign=reddit&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/11/22/effecttestsuite-scala.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Cats Effect</category>
+  
+  <category>FP</category>
+  
+  <category>Programming</category>
+  
+  <category>Scala</category>
+  
+</item>
+  
+        
       <item>
   <title>Best practice for natural Ordering</title>
   <description>Blog article #BestPractices #Scala</description>
