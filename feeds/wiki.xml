@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Nov 2020 11:15:27 +0000</pubDate>
-    <lastBuildDate>Sun, 22 Nov 2020 11:15:27 +0000</lastBuildDate>
+    <pubDate>Mon, 23 Nov 2020 11:55:38 +0000</pubDate>
+    <lastBuildDate>Mon, 23 Nov 2020 11:55:38 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -461,13 +461,15 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
         <item>
   <title>Windows 10</title>
   <description>&lt;p&gt;
-      Article updated at November 21, 2020, 
+      Article updated at November 23, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;macbook-drivers-for-windows&quot;&gt;Macbook drivers for Windows&lt;/h2&gt;
+    &lt;h2 id=&quot;installation-on-macbooks&quot;&gt;Installation on Macbooks&lt;/h2&gt;
 
-&lt;p&gt;Can be downloaded via:&lt;/p&gt;
+&lt;h3 id=&quot;boot-camp&quot;&gt;Boot Camp&lt;/h3&gt;
+
+&lt;p&gt;To download the drivers:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;From MacOS: Boot Camp Assistant -&amp;gt; Menu -&amp;gt; “Action” -&amp;gt; “Download Windows Support Software”&lt;/li&gt;
@@ -475,7 +477,14 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
 &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&quot;enable-macbook-support-for-hyper-threading-in-windows&quot;&gt;Enable Macbook support for Hyper-Threading in Windows&lt;/h2&gt;
+&lt;h3 id=&quot;third-party-utilities&quot;&gt;Third-party utilities&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To make the Macbook’s touchpad not suck: &lt;a href=&quot;https://github.com/imbushuo/mac-precision-touchpad&quot;&gt;https://github.com/imbushuo/mac-precision-touchpad&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;support-for-hyper-threading&quot;&gt;Support for Hyper-Threading&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Source: &lt;a href=&quot;https://news.ycombinator.com/item?id=22875681&quot;&gt;Hacker News comment&lt;/a&gt;
@@ -486,8 +495,8 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
 &lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
+  <dc:modified>Mon, 23 Nov 2020 11:54:33 +0000</dc:modified>
+  <atom:modified>Mon, 23 Nov 2020 11:54:33 +0000</atom:modified>
   <link>https://alexn.org/wiki/windows.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/windows.html</guid>
   
