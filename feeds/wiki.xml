@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 23 Nov 2020 11:55:38 +0000</pubDate>
-    <lastBuildDate>Mon, 23 Nov 2020 11:55:38 +0000</lastBuildDate>
+    <pubDate>Sun, 29 Nov 2020 17:39:08 +0000</pubDate>
+    <lastBuildDate>Sun, 29 Nov 2020 17:39:08 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -2035,7 +2035,7 @@ services.sync.prefs.media.hardwaremediakeys.enabled
         <item>
   <title>Emacs Setup</title>
   <description>&lt;p&gt;
-      Article updated at November 21, 2020, 
+      Article updated at November 29, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -2079,10 +2079,12 @@ Binary '/usr/local/bin/etags'.
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;ProgramArguments&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;array&amp;gt;&lt;/span&gt;
       &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;/Applications/Emacs.app/Contents/MacOS/emacs&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
-      &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;--fg-daemon&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;--daemon&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/array&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;RunAtLoad&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;true/&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;key&amp;gt;&lt;/span&gt;UserName&lt;span class=&quot;nt&quot;&gt;&amp;lt;/key&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;string&amp;gt;&lt;/span&gt;replace_me_with_mac_username&lt;span class=&quot;nt&quot;&gt;&amp;lt;/string&amp;gt;&lt;/span&gt;
   &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dict&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/plist&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -2179,8 +2181,8 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/bbatsov/emacs-lisp-style-guide&quot;&gt;The Emacs Lisp Style Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
+  <dc:modified>Sun, 29 Nov 2020 17:38:16 +0000</dc:modified>
+  <atom:modified>Sun, 29 Nov 2020 17:38:16 +0000</atom:modified>
   <link>https://alexn.org/wiki/emacs.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/emacs.html</guid>
   
