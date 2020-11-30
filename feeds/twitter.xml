@@ -9,14 +9,30 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Nov 2020 15:34:09 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Nov 2020 15:34:09 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Nov 2020 15:39:17 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2020 15:39:17 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+                
+            <item>
+  <title>Web</title>
+  <description>Wiki article</description>
+  <pubDate>Mon, 30 Nov 2020 14:38:13 +0000</pubDate>
+  <dc:modified>Mon, 30 Nov 2020 15:38:27 +0000</dc:modified>
+  <atom:modified>Mon, 30 Nov 2020 15:38:27 +0000</atom:modified>
+  <link>https://alexn.org/wiki/web.html?pk_campaign=twitter&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/wiki/web.html</guid>
+  
+  <category>Wiki</category>
+  
+</item>
+
+          
+        
       <item>
   <title>Michael Jackson – They Don’t Care About Us</title>
   <description>Shared link #Music #YouTube</description>
@@ -268,22 +284,6 @@
   <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/android.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/android.html</guid>
-  
-  <category>Wiki</category>
-  
-</item>
-
-          
-        
-                
-            <item>
-  <title>Web</title>
-  <description>Wiki article</description>
-  <pubDate>Thu, 29 Oct 2020 09:48:21 +0000</pubDate>
-  <dc:modified>Mon, 30 Nov 2020 15:33:11 +0000</dc:modified>
-  <atom:modified>Mon, 30 Nov 2020 15:33:11 +0000</atom:modified>
-  <link>https://alexn.org/wiki/web.html?pk_campaign=twitter&amp;pk_kwd=link</link>
-  <guid isPermaLink="true">https://alexn.org/wiki/web.html</guid>
   
   <category>Wiki</category>
   

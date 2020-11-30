@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Nov 2020 15:34:09 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Nov 2020 15:34:09 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Nov 2020 15:39:17 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2020 15:39:17 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -19,63 +19,10 @@
     
       
         <item>
-  <title>Android</title>
-  <description>&lt;p&gt;
-      Article updated at November 21, 2020, 
-      created at November 2, 2020.
-    &lt;/p&gt;
-    &lt;hr&gt;
-    &lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://www.davx5.com/&quot;&gt;DAVx5&lt;/a&gt;: CalDAV/CardDAV for Android&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://f-droid.org&quot;&gt;F-Droid&lt;/a&gt;: FOSS app store&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.seazon.feedme&quot;&gt;FeedMe RSS Reader&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/firefox/mobile/&quot;&gt;Firefox for Android&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.foxit.mobile.pdf.lite&quot;&gt;Foxit PDF Reader&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://gitlab.com/proninyaroslav/libretorrent&quot;&gt;LibreTorrent&lt;/a&gt;: open-source torrent client&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp&quot;&gt;Moon+ Reader Pro&lt;/a&gt;: e-book reader&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://www.newsblur.com/android&quot;&gt;Newsblur&lt;/a&gt;: RSS reader service&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;http://www.orgzly.com/&quot;&gt;Orgzly&lt;/a&gt;: notes and to-do lists, Org-Mode&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://osmand.net/&quot;&gt;OsmAnd&lt;/a&gt;: maps based on OpenStreetMap and Wikipedia&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://www.pocketcasts.com/&quot;&gt;Pocket Casts&lt;/a&gt;: podcasts&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://www.resilio.com/platforms/mobile/&quot;&gt;Resilio Sync&lt;/a&gt;: local files sync&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://tasker.joaoapps.com/&quot;&gt;Tasker&lt;/a&gt;: automation&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://termux.com/&quot;&gt;Termux&lt;/a&gt;: terminal emulator and Linux environment&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://www.videolan.org/vlc/download-android.html&quot;&gt;VLC&lt;/a&gt;: video player&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://github.com/PaulWoitaschek/Voice&quot;&gt;Voice&lt;/a&gt;: open-source audiobook player&lt;/li&gt;
-&lt;/ul&gt;</description>
-  <pubDate>Mon, 02 Nov 2020 19:09:46 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
-  <link>https://alexn.org/wiki/android.html?pk_campaign=rss&amp;pk_kwd=link</link>
-  <guid isPermaLink="true">https://alexn.org/wiki/android.html</guid>
-  
-  <category>Wiki</category>
-  
-</item>
-
-      
-    
-      
-        <item>
   <title>Web</title>
   <description>&lt;p&gt;
       Article updated at November 30, 2020, 
-      created at October 29, 2020.
+      created at November 30, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
     &lt;h2 id=&quot;client-tricks&quot;&gt;Client Tricks&lt;/h2&gt;
@@ -160,11 +107,64 @@
     --name &quot;Gitter&quot; \
     &quot;https://gitter.im&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
-  <pubDate>Thu, 29 Oct 2020 09:48:21 +0000</pubDate>
-  <dc:modified>Mon, 30 Nov 2020 15:33:11 +0000</dc:modified>
-  <atom:modified>Mon, 30 Nov 2020 15:33:11 +0000</atom:modified>
+  <pubDate>Mon, 30 Nov 2020 14:38:13 +0000</pubDate>
+  <dc:modified>Mon, 30 Nov 2020 15:38:27 +0000</dc:modified>
+  <atom:modified>Mon, 30 Nov 2020 15:38:27 +0000</atom:modified>
   <link>https://alexn.org/wiki/web.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web.html</guid>
+  
+  <category>Wiki</category>
+  
+</item>
+
+      
+    
+      
+        <item>
+  <title>Android</title>
+  <description>&lt;p&gt;
+      Article updated at November 21, 2020, 
+      created at November 2, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;apps&quot;&gt;Apps&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.davx5.com/&quot;&gt;DAVx5&lt;/a&gt;: CalDAV/CardDAV for Android&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://f-droid.org&quot;&gt;F-Droid&lt;/a&gt;: FOSS app store&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.seazon.feedme&quot;&gt;FeedMe RSS Reader&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.mozilla.org/firefox/mobile/&quot;&gt;Firefox for Android&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.foxit.mobile.pdf.lite&quot;&gt;Foxit PDF Reader&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://gitlab.com/proninyaroslav/libretorrent&quot;&gt;LibreTorrent&lt;/a&gt;: open-source torrent client&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.flyersoft.moonreaderp&quot;&gt;Moon+ Reader Pro&lt;/a&gt;: e-book reader&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.newsblur.com/android&quot;&gt;Newsblur&lt;/a&gt;: RSS reader service&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;http://www.orgzly.com/&quot;&gt;Orgzly&lt;/a&gt;: notes and to-do lists, Org-Mode&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://osmand.net/&quot;&gt;OsmAnd&lt;/a&gt;: maps based on OpenStreetMap and Wikipedia&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.pocketcasts.com/&quot;&gt;Pocket Casts&lt;/a&gt;: podcasts&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.resilio.com/platforms/mobile/&quot;&gt;Resilio Sync&lt;/a&gt;: local files sync&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://tasker.joaoapps.com/&quot;&gt;Tasker&lt;/a&gt;: automation&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://termux.com/&quot;&gt;Termux&lt;/a&gt;: terminal emulator and Linux environment&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.videolan.org/vlc/download-android.html&quot;&gt;VLC&lt;/a&gt;: video player&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://github.com/PaulWoitaschek/Voice&quot;&gt;Voice&lt;/a&gt;: open-source audiobook player&lt;/li&gt;
+&lt;/ul&gt;</description>
+  <pubDate>Mon, 02 Nov 2020 19:09:46 +0000</pubDate>
+  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
+  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
+  <link>https://alexn.org/wiki/android.html?pk_campaign=rss&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/wiki/android.html</guid>
   
   <category>Wiki</category>
   
