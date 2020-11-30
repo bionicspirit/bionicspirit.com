@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Nov 2020 09:24:41 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Nov 2020 09:24:41 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Nov 2020 12:19:35 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2020 12:19:35 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -72,21 +72,39 @@
     
       
         <item>
-  <title>Web Tricks</title>
+  <title>Web</title>
   <description>&lt;p&gt;
-      Article updated at November 21, 2020, 
+      Article updated at November 30, 2020, 
       created at October 29, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;detect-the-brave-browser&quot;&gt;Detect the Brave Browser&lt;/h2&gt;
+    &lt;h2 id=&quot;browser-benchmarks&quot;&gt;Browser benchmarks&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://browserbench.org/&quot;&gt;https://browserbench.org/&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://browserbench.org/Speedometer2.0/&quot;&gt;https://browserbench.org/Speedometer2.0/&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://browserbench.org/JetStream/&quot;&gt;https://browserbench.org/JetStream/&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://browserbench.org/MotionMark/&quot;&gt;https://browserbench.org/MotionMark/&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://krakenbenchmark.mozilla.org/&quot;&gt;https://krakenbenchmark.mozilla.org/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.wirple.com/bmark/&quot;&gt;https://www.wirple.com/bmark/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://web.basemark.com/&quot;&gt;https://web.basemark.com/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;javascript-tricks&quot;&gt;JavaScript Tricks&lt;/h2&gt;
+
+&lt;h3 id=&quot;detect-the-brave-browser&quot;&gt;Detect the Brave Browser&lt;/h3&gt;
 
 &lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Credit: &lt;a href=&quot;https://stackoverflow.com/a/60954062&quot;&gt;https://stackoverflow.com/a/60954062&lt;/a&gt;&lt;/p&gt;</description>
   <pubDate>Thu, 29 Oct 2020 09:48:21 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
+  <dc:modified>Mon, 30 Nov 2020 12:18:41 +0000</dc:modified>
+  <atom:modified>Mon, 30 Nov 2020 12:18:41 +0000</atom:modified>
   <link>https://alexn.org/wiki/web-tricks.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web-tricks.html</guid>
   
@@ -2035,7 +2053,7 @@ services.sync.prefs.media.hardwaremediakeys.enabled
         <item>
   <title>Emacs Setup</title>
   <description>&lt;p&gt;
-      Article updated at November 29, 2020, 
+      Article updated at November 30, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -2181,8 +2199,8 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/bbatsov/emacs-lisp-style-guide&quot;&gt;The Emacs Lisp Style Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Sun, 29 Nov 2020 17:38:16 +0000</dc:modified>
-  <atom:modified>Sun, 29 Nov 2020 17:38:16 +0000</atom:modified>
+  <dc:modified>Mon, 30 Nov 2020 12:18:40 +0000</dc:modified>
+  <atom:modified>Mon, 30 Nov 2020 12:18:40 +0000</atom:modified>
   <link>https://alexn.org/wiki/emacs.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/emacs.html</guid>
   

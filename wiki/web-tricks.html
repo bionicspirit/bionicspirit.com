@@ -12,16 +12,16 @@
     <!-- https://github.com/darkreader/darkreader/issues/1114 -->
     <meta name="darkreader" content="41637b04c7ddb955e533a5c76d68a2c8">
     <meta name="color-scheme" content="light dark">
-    <title>Web Tricks - Alexandru Nedelcu</title>
+    <title>Web - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Web Tricks" property="og:title">
+    <meta content="Web" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/web-tricks.html" property="og:url">
     <meta content="2020-10-29T09:48:21+00:00" property="article:published_time">
-    <meta content="2020-11-21T10:09:03+00:00" property="article:modified_time">
+    <meta content="2020-11-30T12:18:41+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -34,7 +34,7 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Web Tricks">
+    <meta name="twitter:title" content="Web">
     <meta name="twitter:url" content="https://alexn.org/wiki/web-tricks.html">
     <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202011300924">
-    <link rel="preload" as="style" href="/assets/css/style.css?202011300924">
+    <link rel="stylesheet" href="/assets/css/style.css?202011301219">
+    <link rel="preload" as="style" href="/assets/css/style.css?202011301219">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/web-tricks.html">
@@ -107,7 +107,7 @@
       <h1 class="postTitle" itemprop="headline">
         
         
-          Web Tricks
+          Web
         
         
       </h1>
@@ -118,8 +118,8 @@
       <meta itemprop="datePublished" content="2020-10-29T09:48:21+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-11-21T10:09:03+0000">
-        Updated: November 21, 2020
+      <time itemprop="dateModified" content="2020-11-30T12:18:41+0000">
+        Updated: November 30, 2020
       </time>
       
       
@@ -141,16 +141,50 @@
 
   <p><strong>Contents:</strong></p>
   <ul>
-  <li><a href="#detect-the-brave-browser">Detect the Brave Browser</a></li>
+  <li><a href="#browser-benchmarks">Browser benchmarks</a></li>
+  <li><a href="#javascript-tricks">JavaScript Tricks</a>
+    <ul>
+      <li><a href="#detect-the-brave-browser">Detect the Brave Browser</a></li>
+    </ul>
+  </li>
 </ul>
     
-      <h2 id="detect-the-brave-browser">
+      <h2 id="browser-benchmarks">
+        
+        
+          Browser benchmarks <a href="#browser-benchmarks" class="anchor">#</a>
+        
+        
+      </h2>
+
+<ul>
+  <li><a href="https://browserbench.org/">https://browserbench.org/</a>
+    <ul>
+      <li><a href="https://browserbench.org/Speedometer2.0/">https://browserbench.org/Speedometer2.0/</a></li>
+      <li><a href="https://browserbench.org/JetStream/">https://browserbench.org/JetStream/</a></li>
+      <li><a href="https://browserbench.org/MotionMark/">https://browserbench.org/MotionMark/</a></li>
+    </ul>
+  </li>
+  <li><a href="https://krakenbenchmark.mozilla.org/">https://krakenbenchmark.mozilla.org/</a></li>
+  <li><a href="https://www.wirple.com/bmark/">https://www.wirple.com/bmark/</a></li>
+  <li><a href="https://web.basemark.com/">https://web.basemark.com/</a></li>
+</ul>
+    
+      <h2 id="javascript-tricks">
+        
+        
+          JavaScript Tricks <a href="#javascript-tricks" class="anchor">#</a>
+        
+        
+      </h2>
+    
+      <h3 id="detect-the-brave-browser">
         
         
           Detect the Brave Browser <a href="#detect-the-brave-browser" class="anchor">#</a>
         
         
-      </h2>
+      </h3>
 
 <div class="language-js highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">brave</span> <span class="o">&amp;&amp;</span> <span class="k">await</span> <span class="nb">navigator</span><span class="p">.</span><span class="nx">brave</span><span class="p">.</span><span class="nx">isBrave</span><span class="p">()</span> <span class="o">||</span> <span class="kc">false</span><span class="p">)</span>
 </code></pre></div></div>
@@ -162,12 +196,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202011300924" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011300924" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202011300924" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202011300924" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202011301219" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011301219" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202011301219" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202011301219" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202011300924" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202011301219" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -195,7 +229,7 @@
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Web+Tricks" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Web" style="border:0" alt="" />
 </noscript>
 
    <div class="footer">
@@ -228,7 +262,7 @@
           data-isso-vote="false"
           data-vote-levels=""
           src="https://alexn.org/comments/alexn/js/embed.min.js"></script>
-  <section id="isso-thread" data-title="Web Tricks">
+  <section id="isso-thread" data-title="Web">
   </section>
 </div>
 <noscript>
