@@ -19,9 +19,9 @@
     <meta content="Alexandru Nedelcu" property="og:site_name">
     <meta content="Web" property="og:title">
     <meta content="Personal, volatile wiki documentation" property="og:description">
-    <meta content="https://alexn.org/wiki/web-tricks.html" property="og:url">
+    <meta content="https://alexn.org/wiki/web.html" property="og:url">
     <meta content="2020-10-29T09:48:21+00:00" property="article:published_time">
-    <meta content="2020-11-30T12:18:41+00:00" property="article:modified_time">
+    <meta content="2020-11-30T15:27:36+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -35,7 +35,7 @@
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Web">
-    <meta name="twitter:url" content="https://alexn.org/wiki/web-tricks.html">
+    <meta name="twitter:url" content="https://alexn.org/wiki/web.html">
     <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16" />
@@ -53,11 +53,11 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202011301515">
-    <link rel="preload" as="style" href="/assets/css/style.css?202011301515">
+    <link rel="stylesheet" href="/assets/css/style.css?202011301528">
+    <link rel="preload" as="style" href="/assets/css/style.css?202011301528">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/wiki/web-tricks.html">
+    <link rel="canonical" href="https://alexn.org/wiki/web.html">
 </head>
 
 
@@ -113,17 +113,17 @@
       </h1>
   
   <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/web-tricks.html"/>
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/web.html"/>
     
       <meta itemprop="datePublished" content="2020-10-29T09:48:21+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-11-30T12:18:41+0000">
+      <time itemprop="dateModified" content="2020-11-30T15:27:36+0000">
         Updated: November 30, 2020
       </time>
       
       
-      | <a href="/wiki/web-tricks.html#isso-thread">comments</a>
+      | <a href="/wiki/web.html#isso-thread">comments</a>
       
     
   </p>
@@ -141,33 +141,17 @@
 
   <p><strong>Contents:</strong></p>
   <ul>
-  <li><a href="#browser-benchmarks">Browser benchmarks</a></li>
   <li><a href="#javascript-tricks">JavaScript Tricks</a>
     <ul>
       <li><a href="#detect-the-brave-browser">Detect the Brave Browser</a></li>
     </ul>
   </li>
-</ul>
-    
-      <h2 id="browser-benchmarks">
-        
-        
-          Browser benchmarks <a href="#browser-benchmarks" class="anchor">#</a>
-        
-        
-      </h2>
-
-<ul>
-  <li><a href="https://browserbench.org/">https://browserbench.org/</a>
+  <li><a href="#browser-benchmarks">Browser benchmarks</a></li>
+  <li><a href="#progressive-web-apps-pwas">Progressive Web Apps (PWAs)</a>
     <ul>
-      <li><a href="https://browserbench.org/Speedometer2.0/">https://browserbench.org/Speedometer2.0/</a></li>
-      <li><a href="https://browserbench.org/JetStream/">https://browserbench.org/JetStream/</a></li>
-      <li><a href="https://browserbench.org/MotionMark/">https://browserbench.org/MotionMark/</a></li>
+      <li><a href="#wrap-web-pages-as-desktop-apps">Wrap web pages as desktop apps</a></li>
     </ul>
   </li>
-  <li><a href="https://krakenbenchmark.mozilla.org/">https://krakenbenchmark.mozilla.org/</a></li>
-  <li><a href="https://www.wirple.com/bmark/">https://www.wirple.com/bmark/</a></li>
-  <li><a href="https://web.basemark.com/">https://web.basemark.com/</a></li>
 </ul>
     
       <h2 id="javascript-tricks">
@@ -190,18 +174,86 @@
 </code></pre></div></div>
 
 <p>Credit: <a href="https://stackoverflow.com/a/60954062">https://stackoverflow.com/a/60954062</a></p>
+    
+      <h2 id="browser-benchmarks">
+        
+        
+          Browser benchmarks <a href="#browser-benchmarks" class="anchor">#</a>
+        
+        
+      </h2>
+
+<ul>
+  <li><a href="https://browserbench.org/">https://browserbench.org/</a>
+    <ul>
+      <li><a href="https://browserbench.org/Speedometer2.0/">https://browserbench.org/Speedometer2.0/</a></li>
+      <li><a href="https://browserbench.org/JetStream/">https://browserbench.org/JetStream/</a></li>
+      <li><a href="https://browserbench.org/MotionMark/">https://browserbench.org/MotionMark/</a></li>
+    </ul>
+  </li>
+  <li><a href="https://krakenbenchmark.mozilla.org/">https://krakenbenchmark.mozilla.org/</a></li>
+  <li><a href="https://www.wirple.com/bmark/">https://www.wirple.com/bmark/</a></li>
+  <li><a href="https://web.basemark.com/">https://web.basemark.com/</a></li>
+</ul>
+    
+      <h2 id="progressive-web-apps-pwas">
+        
+        
+          Progressive Web Apps (PWAs) <a href="#progressive-web-apps-pwas" class="anchor">#</a>
+        
+        
+      </h2>
+
+<ul>
+  <li><a href="https://web.dev/progressive-web-apps/">https://web.dev/progressive-web-apps/</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps">https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps</a></li>
+</ul>
+    
+      <h3 id="wrap-web-pages-as-desktop-apps">
+        
+        
+          Wrap web pages as desktop apps <a href="#wrap-web-pages-as-desktop-apps" class="anchor">#</a>
+        
+        
+      </h3>
+
+<p>Using: <a href="https://github.com/jiahaog/nativefier">https://github.com/jiahaog/nativefier</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nativefier \
+    --maximize \
+    -u "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0" \
+    --internal-urls ".*.google.com.*" \
+    --name "YouTube Music" \
+    "https://music.youtube.com/"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nativefier \
+    -u "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0" \
+    --maximize \
+    --counter \
+    --name "Twitter" \
+    "https://twitter.com"
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>nativefier \
+    -u "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0" \
+    --maximize \
+    --counter \
+    --name "Gitter" \
+    "https://gitter.im"
+</code></pre></div></div>
 
   </div>
 </article>
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202011301515" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011301515" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202011301515" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202011301515" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202011301528" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011301528" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202011301528" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202011301528" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202011301515" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202011301528" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -285,7 +337,7 @@
 
 <p>
   Fix or add to this article by submitting a pull request:<br/>
-  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_wiki/web-tricks.md" target="_blank">Edit Page on GitHub</a>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_wiki/web.md" target="_blank">Edit Page on GitHub</a>
 </p>
 
 <p>

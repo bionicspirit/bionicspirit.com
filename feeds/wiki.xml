@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Nov 2020 15:15:20 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Nov 2020 15:15:20 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Nov 2020 15:28:21 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2020 15:28:21 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -78,7 +78,16 @@
       created at October 29, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
-    &lt;h2 id=&quot;browser-benchmarks&quot;&gt;Browser benchmarks&lt;/h2&gt;
+    &lt;h2 id=&quot;javascript-tricks&quot;&gt;JavaScript Tricks&lt;/h2&gt;
+
+&lt;h3 id=&quot;detect-the-brave-browser&quot;&gt;Detect the Brave Browser&lt;/h3&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Credit: &lt;a href=&quot;https://stackoverflow.com/a/60954062&quot;&gt;https://stackoverflow.com/a/60954062&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;browser-benchmarks&quot;&gt;Browser benchmarks&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -94,19 +103,45 @@
   &lt;li&gt;&lt;a href=&quot;https://web.basemark.com/&quot;&gt;https://web.basemark.com/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;javascript-tricks&quot;&gt;JavaScript Tricks&lt;/h2&gt;
+&lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
 
-&lt;h3 id=&quot;detect-the-brave-browser&quot;&gt;Detect the Brave Browser&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://web.dev/progressive-web-apps/&quot;&gt;https://web.dev/progressive-web-apps/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;navigator&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;brave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isBrave&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;h3 id=&quot;wrap-web-pages-as-desktop-apps&quot;&gt;Wrap web pages as desktop apps&lt;/h3&gt;
+
+&lt;p&gt;Using: &lt;a href=&quot;https://github.com/jiahaog/nativefier&quot;&gt;https://github.com/jiahaog/nativefier&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;nativefier \
+    --maximize \
+    -u &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0&quot; \
+    --internal-urls &quot;.*.google.com.*&quot; \
+    --name &quot;YouTube Music&quot; \
+    &quot;https://music.youtube.com/&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Credit: &lt;a href=&quot;https://stackoverflow.com/a/60954062&quot;&gt;https://stackoverflow.com/a/60954062&lt;/a&gt;&lt;/p&gt;</description>
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;nativefier \
+    -u &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0&quot; \
+    --maximize \
+    --counter \
+    --name &quot;Twitter&quot; \
+    &quot;https://twitter.com&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;nativefier \
+    -u &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0&quot; \
+    --maximize \
+    --counter \
+    --name &quot;Gitter&quot; \
+    &quot;https://gitter.im&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Thu, 29 Oct 2020 09:48:21 +0000</pubDate>
-  <dc:modified>Mon, 30 Nov 2020 12:18:41 +0000</dc:modified>
-  <atom:modified>Mon, 30 Nov 2020 12:18:41 +0000</atom:modified>
-  <link>https://alexn.org/wiki/web-tricks.html?pk_campaign=rss&amp;pk_kwd=link</link>
-  <guid isPermaLink="true">https://alexn.org/wiki/web-tricks.html</guid>
+  <dc:modified>Mon, 30 Nov 2020 15:27:36 +0000</dc:modified>
+  <atom:modified>Mon, 30 Nov 2020 15:27:36 +0000</atom:modified>
+  <link>https://alexn.org/wiki/web.html?pk_campaign=rss&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/wiki/web.html</guid>
   
   <category>Wiki</category>
   
@@ -517,60 +552,6 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
   <atom:modified>Fri, 27 Nov 2020 09:56:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/windows.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/windows.html</guid>
-  
-  <category>Wiki</category>
-  
-</item>
-
-      
-    
-      
-        <item>
-  <title>Web Apps</title>
-  <description>&lt;p&gt;
-      Article updated at November 21, 2020, 
-      created at August 24, 2020.
-    &lt;/p&gt;
-    &lt;hr&gt;
-    &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://web.dev/progressive-web-apps/&quot;&gt;https://web.dev/progressive-web-apps/&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&quot;&gt;https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;make-desktop-apps&quot;&gt;Make desktop apps&lt;/h2&gt;
-
-&lt;p&gt;Using: &lt;a href=&quot;https://github.com/jiahaog/nativefier&quot;&gt;https://github.com/jiahaog/nativefier&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;nativefier \
-    --maximize \
-    -u &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0&quot; \
-    --internal-urls &quot;.*.google.com.*&quot; \
-    --name &quot;YouTube Music&quot; \
-    &quot;https://music.youtube.com/&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;nativefier \
-    -u &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0&quot; \
-    --maximize \
-    --counter \
-    --name &quot;Twitter&quot; \
-    &quot;https://twitter.com&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;nativefier \
-    -u &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:76.0) Gecko/20100101 Firefox/76.0&quot; \
-    --maximize \
-    --counter \
-    --name &quot;Gitter&quot; \
-    &quot;https://gitter.im&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
-  <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
-  <link>https://alexn.org/wiki/web-apps.html?pk_campaign=rss&amp;pk_kwd=link</link>
-  <guid isPermaLink="true">https://alexn.org/wiki/web-apps.html</guid>
   
   <category>Wiki</category>
   
