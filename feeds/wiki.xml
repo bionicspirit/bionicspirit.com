@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Nov 2020 09:04:41 +0000</pubDate>
-    <lastBuildDate>Mon, 30 Nov 2020 09:04:41 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Nov 2020 09:24:41 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2020 09:24:41 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -461,7 +461,7 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
         <item>
   <title>Windows 10</title>
   <description>&lt;p&gt;
-      Article updated at November 30, 2020, 
+      Article updated at November 27, 2020, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -495,8 +495,8 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
 &lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Mon, 30 Nov 2020 09:04:03 +0000</dc:modified>
-  <atom:modified>Mon, 30 Nov 2020 09:04:03 +0000</atom:modified>
+  <dc:modified>Fri, 27 Nov 2020 09:56:03 +0000</dc:modified>
+  <atom:modified>Fri, 27 Nov 2020 09:56:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/windows.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/windows.html</guid>
   
