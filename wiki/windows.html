@@ -9,6 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <!-- https://github.com/darkreader/darkreader/issues/1114 -->
+    <meta name="darkreader" content="294a70ee-4dd4-4b97-898b-5e7feb9d912e">
+    <meta name="color-scheme" content="light dark">
     <title>Windows 10 - Alexandru Nedelcu</title>
     
 
@@ -18,7 +21,7 @@
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/windows.html" property="og:url">
     <meta content="2020-08-24T13:24:31+00:00" property="article:published_time">
-    <meta content="2020-11-23T11:54:33+00:00" property="article:modified_time">
+    <meta content="2020-11-30T09:04:03+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -50,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202011291739">
-    <link rel="preload" as="style" href="/assets/css/style.css?202011291739">
+    <link rel="stylesheet" href="/assets/css/style.css?202011300904">
+    <link rel="preload" as="style" href="/assets/css/style.css?202011300904">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/windows.html">
@@ -115,8 +118,8 @@
       <meta itemprop="datePublished" content="2020-08-24T13:24:31+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-11-23T11:54:33+0000">
-        Updated: November 23, 2020
+      <time itemprop="dateModified" content="2020-11-30T09:04:03+0000">
+        Updated: November 30, 2020
       </time>
       
       
@@ -142,9 +145,9 @@
     <ul>
       <li><a href="#boot-camp">Boot Camp</a></li>
       <li><a href="#third-party-utilities">Third-party utilities</a></li>
+      <li><a href="#support-for-hyper-threading">Support for Hyper-Threading</a></li>
     </ul>
   </li>
-  <li><a href="#support-for-hyper-threading">Support for Hyper-Threading</a></li>
 </ul>
     
       <h2 id="installation-on-macbooks">
@@ -182,13 +185,13 @@
   <li>To make the Macbook’s touchpad not suck: <a href="https://github.com/imbushuo/mac-precision-touchpad">https://github.com/imbushuo/mac-precision-touchpad</a></li>
 </ul>
     
-      <h2 id="support-for-hyper-threading">
+      <h3 id="support-for-hyper-threading">
         
         
           Support for Hyper-Threading <a href="#support-for-hyper-threading" class="anchor">#</a>
         
         
-      </h2>
+      </h3>
 
 <ul>
   <li>Source: <a href="https://news.ycombinator.com/item?id=22875681">Hacker News comment</a></li>
@@ -201,12 +204,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202011291739" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011291739" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202011291739" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202011291739" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202011300904" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011300904" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202011300904" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202011300904" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202011291739" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202011300904" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -214,11 +217,22 @@
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="//ly.alexn.org/";
-    _paq.push(['setTrackerUrl', u+'m.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
+    var w = window;
+    var dnt = 
+      ("doNotTrack" in w.navigator && w.navigator.doNotTrack) ||
+      ("doNotTrack" in w && w.doNotTrack) ||
+      ("msDoNotTrack" in w.navigator && w.navigator.msDoNotTrack) || 
+      ("msTrackingProtectionEnabled" in w.external && w.external.msTrackingProtectionEnabled());
+
+    if (dnt === true || dnt === "1" || dnt === 1 || dnt === "yes" || dnt === "true") {
+      console.log("DNT is on, skipping analytics");
+    } else {
+      var u="//ly.alexn.org/";
+      _paq.push(['setTrackerUrl', u+'m.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
+    }
   })();
 </script>
 <noscript>
@@ -241,8 +255,8 @@
   document.write('<div class="note">Be nice!<br><span class="extra">If you don\'t see the self-hosted <a href="https://posativ.org/isso/" target="_blank">Isso</a> commenting widget, it might be blocked by a browser extension.</span></div>');
 </script>
 <div id="comments">
-  <script data-isso="/comments/alexn/"
-          data-isso-css="true"
+  <script data-isso="https://alexn.org/comments/alexn/"
+          data-isso-css="false"
           data-isso-lang="en"
           data-isso-reply-to-self="true"
           data-isso-require-author="true"

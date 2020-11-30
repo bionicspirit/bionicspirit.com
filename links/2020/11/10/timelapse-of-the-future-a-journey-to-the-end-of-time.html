@@ -9,6 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
+    <!-- https://github.com/darkreader/darkreader/issues/1114 -->
+    <meta name="darkreader" content="294a70ee-4dd4-4b97-898b-5e7feb9d912e">
+    <meta name="color-scheme" content="light dark">
     <title>TIMELAPSE OF THE FUTURE: A Journey to the End of Time - Alexandru Nedelcu</title>
     
 
@@ -58,8 +61,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202011291739">
-    <link rel="preload" as="style" href="/assets/css/style.css?202011291739">
+    <link rel="stylesheet" href="/assets/css/style.css?202011300904">
+    <link rel="preload" as="style" href="/assets/css/style.css?202011300904">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/links/2020/11/10/timelapse-of-the-future-a-journey-to-the-end-of-time.html">
@@ -210,6 +213,18 @@
       
       
       <div class="item">
+        <a class="related-link" href="/links/2020/11/29/they-dont-care-about-us.html">
+          Michael Jackson – They Don’t Care About Us
+        </a>
+        <div class="related-meta">
+          <time>November 29, 2020</time>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      
+      
+      
+      <div class="item">
         <a class="related-link" href="/links/2020/11/17/graphics-for-jvm.html">
           Graphics for JVM
         </a>
@@ -246,18 +261,6 @@
       </div>
       
       
-      
-      <div class="item">
-        <a class="related-link" href="/links/2020/10/28/bsp-in-sbt.html">
-          BSP Support in sbt 1.4
-        </a>
-        <div class="related-meta">
-          <time>October 28, 2020</time>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-      
-      
       <div class="clearfix"></div>
     </div>
   </div>
@@ -266,12 +269,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202011291739" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011291739" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202011291739" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202011291739" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202011300904" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011300904" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202011300904" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202011300904" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202011291739" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202011300904" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -279,11 +282,22 @@
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="//ly.alexn.org/";
-    _paq.push(['setTrackerUrl', u+'m.php']);
-    _paq.push(['setSiteId', '1']);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
+    var w = window;
+    var dnt = 
+      ("doNotTrack" in w.navigator && w.navigator.doNotTrack) ||
+      ("doNotTrack" in w && w.doNotTrack) ||
+      ("msDoNotTrack" in w.navigator && w.navigator.msDoNotTrack) || 
+      ("msTrackingProtectionEnabled" in w.external && w.external.msTrackingProtectionEnabled());
+
+    if (dnt === true || dnt === "1" || dnt === 1 || dnt === "yes" || dnt === "true") {
+      console.log("DNT is on, skipping analytics");
+    } else {
+      var u="//ly.alexn.org/";
+      _paq.push(['setTrackerUrl', u+'m.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'m.js'; s.parentNode.insertBefore(g,s);
+    }
   })();
 </script>
 <noscript>
@@ -306,8 +320,8 @@
   document.write('<div class="note">Be nice!<br><span class="extra">If you don\'t see the self-hosted <a href="https://posativ.org/isso/" target="_blank">Isso</a> commenting widget, it might be blocked by a browser extension.</span></div>');
 </script>
 <div id="comments">
-  <script data-isso="/comments/alexn/"
-          data-isso-css="true"
+  <script data-isso="https://alexn.org/comments/alexn/"
+          data-isso-css="false"
           data-isso-lang="en"
           data-isso-reply-to-self="true"
           data-isso-require-author="true"

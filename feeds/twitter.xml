@@ -9,14 +9,34 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 29 Nov 2020 17:39:08 +0000</pubDate>
-    <lastBuildDate>Sun, 29 Nov 2020 17:39:08 +0000</lastBuildDate>
+    <pubDate>Mon, 30 Nov 2020 09:04:41 +0000</pubDate>
+    <lastBuildDate>Mon, 30 Nov 2020 09:04:41 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Michael Jackson – They Don’t Care About Us</title>
+  <description>Shared link #Music #YouTube</description>
+  <pubDate>Sun, 29 Nov 2020 12:04:45 +0000</pubDate>
+  <dc:modified>Mon, 30 Nov 2020 09:04:03 +0000</dc:modified>
+  <atom:modified>Mon, 30 Nov 2020 09:04:03 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=PoEa9bzeTu0</link>
+  <guid isPermaLink="false">https://alexn.org/links/2020/11/29/they-dont-care-about-us.html</guid>
+  
+  <dc:creator>Michael Jackson</dc:creator>
+  
+  <category>Shared link</category>
+  
+  <category>Music</category>
+  
+  <category>YouTube</category>
+  
+</item>
+
+        
       <item>
   <title>EffectTestSuite[F].scala</title>
   <description>Code snippet #CatsEffect #FP #Programming #Scala</description>
@@ -1137,8 +1157,8 @@
   <title>Windows 10</title>
   <description>Wiki article</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Mon, 23 Nov 2020 11:54:33 +0000</dc:modified>
-  <atom:modified>Mon, 23 Nov 2020 11:54:33 +0000</atom:modified>
+  <dc:modified>Mon, 30 Nov 2020 09:04:03 +0000</dc:modified>
+  <atom:modified>Mon, 30 Nov 2020 09:04:03 +0000</atom:modified>
   <link>https://alexn.org/wiki/windows.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/windows.html</guid>
   
