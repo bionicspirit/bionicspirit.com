@@ -1,4 +1,22 @@
 (function () {
+	function warnAboutDarkReader() {
+		var isDarkReaderEnabled =
+			"matchMedia" in window && 
+			window.matchMedia('(prefers-color-scheme: dark)').matches &&
+			"querySelector" in document &&
+			!!document.querySelector("meta[name=darkreader]") &&
+			!document.cookie.match(/accept_dark_reader/);
+
+		if (isDarkReaderEnabled) {
+			document.cookie = "accept_dark_reader=1;path=/;max-age=604800";
+			alert(
+				"You have the Dark Reader extension enabled.\n\n" + 
+				"This website already supports a dark theme 🚀✨\n\n" + 
+				"Please disable Dark Reader for this website,\nas it breaks its design 🙏"
+			);
+		}
+	}
+
 	/**
 	 * Adds the "dropcap" class automatically.
 	 */
@@ -27,6 +45,8 @@
 		$(".time").text(function (_index, value) {
 			return Math.round(parseFloat(value));
 		});
+
+		warnAboutDarkReader();
 	}
 
 	if (document.readyState === "complete") {
