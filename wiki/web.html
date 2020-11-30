@@ -21,7 +21,7 @@
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/web.html" property="og:url">
     <meta content="2020-10-29T09:48:21+00:00" property="article:published_time">
-    <meta content="2020-11-30T15:27:36+00:00" property="article:modified_time">
+    <meta content="2020-11-30T15:33:11+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202011301528">
-    <link rel="preload" as="style" href="/assets/css/style.css?202011301528">
+    <link rel="stylesheet" href="/assets/css/style.css?202011301534">
+    <link rel="preload" as="style" href="/assets/css/style.css?202011301534">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/web.html">
@@ -118,7 +118,7 @@
       <meta itemprop="datePublished" content="2020-10-29T09:48:21+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-11-30T15:27:36+0000">
+      <time itemprop="dateModified" content="2020-11-30T15:33:11+0000">
         Updated: November 30, 2020
       </time>
       
@@ -141,9 +141,11 @@
 
   <p><strong>Contents:</strong></p>
   <ul>
-  <li><a href="#javascript-tricks">JavaScript Tricks</a>
+  <li><a href="#client-tricks">Client Tricks</a>
     <ul>
       <li><a href="#detect-the-brave-browser">Detect the Brave Browser</a></li>
+      <li><a href="#detect-dark-mode">Detect Dark Mode</a></li>
+      <li><a href="#detect-dark-reader-browser-extension">Detect Dark Reader (browser extension)</a></li>
     </ul>
   </li>
   <li><a href="#browser-benchmarks">Browser benchmarks</a></li>
@@ -154,10 +156,10 @@
   </li>
 </ul>
     
-      <h2 id="javascript-tricks">
+      <h2 id="client-tricks">
         
         
-          JavaScript Tricks <a href="#javascript-tricks" class="anchor">#</a>
+          Client Tricks <a href="#client-tricks" class="anchor">#</a>
         
         
       </h2>
@@ -174,6 +176,41 @@
 </code></pre></div></div>
 
 <p>Credit: <a href="https://stackoverflow.com/a/60954062">https://stackoverflow.com/a/60954062</a></p>
+    
+      <h3 id="detect-dark-mode">
+        
+        
+          Detect Dark Mode <a href="#detect-dark-mode" class="anchor">#</a>
+        
+        
+      </h3>
+
+<p>From JavaScript:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="dl">"</span><span class="s2">matchMedia</span><span class="dl">"</span> <span class="k">in</span> <span class="nb">window</span> <span class="o">&amp;&amp;</span> 
+<span class="nb">window</span><span class="p">.</span><span class="nx">matchMedia</span><span class="p">(</span><span class="dl">'</span><span class="s1">(prefers-color-scheme: dark)</span><span class="dl">'</span><span class="p">).</span><span class="nx">matches</span>
+</code></pre></div></div>
+
+<p>From CSS:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">@media</span> <span class="p">(</span><span class="n">prefers-color-scheme</span><span class="p">:</span> <span class="n">dark</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c">/* ... */</span>
+<span class="p">}</span>
+</code></pre></div></div>
+    
+      <h3 id="detect-dark-reader-browser-extension">
+        
+        
+          Detect Dark Reader (browser extension) <a href="#detect-dark-reader-browser-extension" class="anchor">#</a>
+        
+        
+      </h3>
+
+<p>For detecting the <a href="https://darkreader.org/">Dark Reader</a> browser extension:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="dl">"</span><span class="s2">querySelector</span><span class="dl">"</span> <span class="k">in</span> <span class="nb">document</span> <span class="o">&amp;&amp;</span>
+<span class="o">!!</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="dl">"</span><span class="s2">meta[name=darkreader]</span><span class="dl">"</span><span class="p">)</span>
+</code></pre></div></div>
     
       <h2 id="browser-benchmarks">
         
@@ -248,12 +285,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202011301528" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011301528" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202011301528" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202011301528" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202011301534" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202011301534" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202011301534" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202011301534" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202011301528" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202011301534" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
