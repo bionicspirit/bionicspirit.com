@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Dec 2020 00:56:39 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Dec 2020 00:56:39 +0000</lastBuildDate>
+    <pubDate>Tue, 01 Dec 2020 13:14:19 +0000</pubDate>
+    <lastBuildDate>Tue, 01 Dec 2020 13:14:19 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -85,6 +85,7 @@
   &lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.bild.de/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;bild.de&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://knowyourmeme.com/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;knowyourmeme.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://adblock-tester.com/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;adblock-tester.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
@@ -122,8 +123,8 @@
     &quot;https://gitter.im&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 30 Nov 2020 14:38:13 +0000</pubDate>
-  <dc:modified>Tue, 01 Dec 2020 00:50:31 +0000</dc:modified>
-  <atom:modified>Tue, 01 Dec 2020 00:50:31 +0000</atom:modified>
+  <dc:modified>Tue, 01 Dec 2020 13:13:25 +0000</dc:modified>
+  <atom:modified>Tue, 01 Dec 2020 13:13:25 +0000</atom:modified>
   <link>https://alexn.org/wiki/web.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web.html</guid>
   
