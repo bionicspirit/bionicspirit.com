@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 01 Dec 2020 13:47:23 +0000</pubDate>
-    <lastBuildDate>Tue, 01 Dec 2020 13:47:23 +0000</lastBuildDate>
+    <pubDate>Wed, 02 Dec 2020 16:41:16 +0000</pubDate>
+    <lastBuildDate>Wed, 02 Dec 2020 16:41:16 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,7 +21,7 @@
         <item>
   <title>Web</title>
   <description>&lt;p&gt;
-      Article updated at December 1, 2020, 
+      Article updated at December 2, 2020, 
       created at November 30, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -75,17 +75,79 @@
 
 &lt;h3 id=&quot;for-testing-ads-blocking&quot;&gt;For testing ads-blocking&lt;/h3&gt;
 
+&lt;p class=&quot;warn-bubble&quot;&gt;
+  &lt;strong&gt;WARN:&lt;/strong&gt; some of these websites may distribute &lt;a href=&quot;https://en.wikipedia.org/wiki/Malvertising&quot;&gt;malvertising&lt;/a&gt;, pirated or NSFW content. Load at your own risk!
+&lt;/p&gt;
+
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.google.com/search?q=vpn&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;google.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://adblock-tester.com/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;adblock-tester.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.google.com/search?q=vpn&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;google.com&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Features first-party ads, blockable via generic cosmetic rules in uBlock Origin&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://www.youtube.com/results?search_query=vpn&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;youtube.com&lt;/a&gt;
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xGjGQ24cXAY&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;video sample&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;Features first-party ads&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.bild.de/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;bild.de&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://knowyourmeme.com/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;knowyourmeme.com&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://adblock-tester.com/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;adblock-tester.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.bild.de/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;bild.de&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Features anti-ad-blocking tech&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.nytimes.com/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;nytimes.com&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Features annoying cookies / trackers banner&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.forbes.com/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;forbes.com&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Features annoying cookies / trackers dialog, and huge ad banners&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.businessinsider.com/us-fda-approve-pfizer-vaccine-biontech-covid-uk-mhra-2020-12&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;businessinsider.com&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Trackers/cookies dialog, notification spam&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.g4media.ro/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;g4media.ro&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Trackers/cookie dialog, notification spam, Google ads&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://techoreels.com/4920/s4/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;technoreels.com&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;WARN: malvertising, intrusive ads, anti-ad-blocking tech (kicking in after several seconds)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://lookmovie.io/shows/view/2382108-see-dad-run-2012#S3-E8-88337&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;lookmovie.io&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;WARN: pirated content, illegal software; anti-ad-blocking tech&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://forums.lostmediawiki.com/thread/5336/dark-forums-theme-available&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;lostmediawiki.com&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Anti-ad-blocking tech&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://multics.eu/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;multics.eu&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Anti-ad-blocking tech&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;progressive-web-apps-pwas&quot;&gt;Progressive Web Apps (PWAs)&lt;/h2&gt;
@@ -123,8 +185,8 @@
     &quot;https://gitter.im&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 30 Nov 2020 14:38:13 +0000</pubDate>
-  <dc:modified>Tue, 01 Dec 2020 13:13:25 +0000</dc:modified>
-  <atom:modified>Tue, 01 Dec 2020 13:13:25 +0000</atom:modified>
+  <dc:modified>Wed, 02 Dec 2020 16:40:31 +0000</dc:modified>
+  <atom:modified>Wed, 02 Dec 2020 16:40:31 +0000</atom:modified>
   <link>https://alexn.org/wiki/web.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web.html</guid>
   
