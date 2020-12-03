@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 02 Dec 2020 16:41:16 +0000</pubDate>
-    <lastBuildDate>Wed, 02 Dec 2020 16:41:16 +0000</lastBuildDate>
+    <pubDate>Thu, 03 Dec 2020 06:09:52 +0000</pubDate>
+    <lastBuildDate>Thu, 03 Dec 2020 06:09:52 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,7 +21,7 @@
         <item>
   <title>Web</title>
   <description>&lt;p&gt;
-      Article updated at December 2, 2020, 
+      Article updated at December 3, 2020, 
       created at November 30, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -81,6 +81,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://adblock-tester.com/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;adblock-tester.com&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://coveryourtracks.eff.org/&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;coveryourtracks.eff.org&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://www.google.com/search?q=vpn&quot; target='_blank&quot;,rel=&quot;nofollow'&gt;google.com&lt;/a&gt;
     &lt;ul&gt;
@@ -185,8 +186,8 @@
     &quot;https://gitter.im&quot;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
   <pubDate>Mon, 30 Nov 2020 14:38:13 +0000</pubDate>
-  <dc:modified>Wed, 02 Dec 2020 16:40:31 +0000</dc:modified>
-  <atom:modified>Wed, 02 Dec 2020 16:40:31 +0000</atom:modified>
+  <dc:modified>Thu, 03 Dec 2020 06:09:12 +0000</dc:modified>
+  <atom:modified>Thu, 03 Dec 2020 06:09:12 +0000</atom:modified>
   <link>https://alexn.org/wiki/web.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web.html</guid>
   
