@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Dec 2020 06:09:52 +0000</pubDate>
-    <lastBuildDate>Thu, 03 Dec 2020 06:09:52 +0000</lastBuildDate>
+    <pubDate>Sun, 06 Dec 2020 17:05:18 +0000</pubDate>
+    <lastBuildDate>Sun, 06 Dec 2020 17:05:18 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -254,7 +254,7 @@
         <item>
   <title>Microsoft .NET</title>
   <description>&lt;p&gt;
-      Article updated at November 21, 2020, 
+      Article updated at December 6, 2020, 
       created at October 8, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -269,6 +269,29 @@
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;fsharp&quot;&gt;FSharp&lt;/h2&gt;
+
+&lt;h3 id=&quot;start-new-project&quot;&gt;Start New Project&lt;/h3&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Starting a new solution&lt;/span&gt;
+dotnet new sln &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; AdventOfCode
+
+&lt;span class=&quot;c&quot;&gt;# Start a console applicatin&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;AdventOfCode/
+dotnet new console &lt;span class=&quot;nt&quot;&gt;-lang&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;F#&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; App
+
+&lt;span class=&quot;c&quot;&gt;# Add project to the solution&lt;/span&gt;
+dotnet sln add App/App.fsproj
+
+&lt;span class=&quot;c&quot;&gt;# Restore NuGet dependencies&lt;/span&gt;
+dotnet restore
+
+&lt;span class=&quot;c&quot;&gt;# Build the project&lt;/span&gt;
+dotnet build
+
+&lt;span class=&quot;c&quot;&gt;# Run the project&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ./App
+dotnet run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h3 id=&quot;articles&quot;&gt;Articles&lt;/h3&gt;
 
@@ -312,8 +335,8 @@
 &lt;a href=&quot;https://github.com/haf/expecto#installing&quot;&gt;Expecto&lt;/a&gt;: unit testing&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Thu, 08 Oct 2020 05:31:40 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
+  <dc:modified>Sun, 06 Dec 2020 16:59:54 +0000</dc:modified>
+  <atom:modified>Sun, 06 Dec 2020 16:59:54 +0000</atom:modified>
   <link>https://alexn.org/wiki/dotnet.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/dotnet.html</guid>
   

@@ -9,13 +9,80 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 03 Dec 2020 06:09:52 +0000</pubDate>
-    <lastBuildDate>Thu, 03 Dec 2020 06:09:52 +0000</lastBuildDate>
+    <pubDate>Sun, 06 Dec 2020 17:05:18 +0000</pubDate>
+    <lastBuildDate>Sun, 06 Dec 2020 17:05:18 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
+    
+      
+        <item>
+  <title>Execute shell command in F#</title>
+  <description>&lt;div class=&quot;language-fsharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dotnet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fsi&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Diagnostics&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;Threading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Tasks&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;CommandResult&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; 
+  &lt;span class=&quot;nc&quot;&gt;ExitCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+  &lt;span class=&quot;nc&quot;&gt;StandardOutput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;StandardError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt; 
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executeCommand&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startInfo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProcessStartInfo&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;startInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;FileName&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executable&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;startInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;ArgumentList&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Add&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;startInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RedirectStandardOutput&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;startInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RedirectStandardError&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;startInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;UseShellExecute&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;startInfo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;CreateNoWindow&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Process&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;StartInfo&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;startInfo&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Start&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ignore&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outTask&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Task&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;WhenAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;([|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;StandardOutput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ReadToEndAsync&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;StandardError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ReadToEndAsync&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;|])&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;WaitForExitAsync&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;AwaitTask&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;outTask&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;AwaitTask&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nc&quot;&gt;ExitCode&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ExitCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nc&quot;&gt;StandardOutput&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+      &lt;span class=&quot;nc&quot;&gt;StandardError&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executeShell&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;executeCommand&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/usr/bin/env&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;-S&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;bash&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;-c&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;executeShell&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;ls -alh&quot;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;|&amp;gt;&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Async&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;RunSynchronously&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;printfn&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%A&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+  <pubDate>Sun, 06 Dec 2020 16:43:50 +0000</pubDate>
+  <dc:modified>Sun, 06 Dec 2020 16:59:54 +0000</dc:modified>
+  <atom:modified>Sun, 06 Dec 2020 16:59:54 +0000</atom:modified>
+  <link>https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html?pk_campaign=rss&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>FSharp</category>
+  
+  <category>dotNet</category>
+  
+</item>
+
+      
     
       
         <item>

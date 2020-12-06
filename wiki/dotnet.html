@@ -21,7 +21,7 @@
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/dotnet.html" property="og:url">
     <meta content="2020-10-08T05:31:40+00:00" property="article:published_time">
-    <meta content="2020-11-21T10:09:03+00:00" property="article:modified_time">
+    <meta content="2020-12-06T16:59:54+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202012030609">
-    <link rel="preload" as="style" href="/assets/css/style.css?202012030609">
+    <link rel="stylesheet" href="/assets/css/style.css?202012061705">
+    <link rel="preload" as="style" href="/assets/css/style.css?202012061705">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/dotnet.html">
@@ -118,8 +118,8 @@
       <meta itemprop="datePublished" content="2020-10-08T05:31:40+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-11-21T10:09:03+0000">
-        Updated: November 21, 2020
+      <time itemprop="dateModified" content="2020-12-06T16:59:54+0000">
+        Updated: December 6, 2020
       </time>
       
       
@@ -148,6 +148,7 @@
   </li>
   <li><a href="#fsharp">FSharp</a>
     <ul>
+      <li><a href="#start-new-project">Start New Project</a></li>
       <li><a href="#articles">Articles</a></li>
       <li><a href="#presentations">Presentations</a></li>
       <li><a href="#templates">Templates</a></li>
@@ -185,6 +186,35 @@
         
         
       </h2>
+    
+      <h3 id="start-new-project">
+        
+        
+          Start New Project <a href="#start-new-project" class="anchor">#</a>
+        
+        
+      </h3>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="c"># Starting a new solution</span>
+dotnet new sln <span class="nt">-o</span> AdventOfCode
+
+<span class="c"># Start a console applicatin</span>
+<span class="nb">cd </span>AdventOfCode/
+dotnet new console <span class="nt">-lang</span> <span class="s2">"F#"</span> <span class="nt">-o</span> App
+
+<span class="c"># Add project to the solution</span>
+dotnet sln add App/App.fsproj
+
+<span class="c"># Restore NuGet dependencies</span>
+dotnet restore
+
+<span class="c"># Build the project</span>
+dotnet build
+
+<span class="c"># Run the project</span>
+<span class="nb">cd</span> ./App
+dotnet run
+</code></pre></div></div>
     
       <h3 id="articles">
         
@@ -258,12 +288,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202012030609" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202012030609" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202012030609" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202012030609" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202012061705" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202012061705" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202012061705" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202012061705" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202012030609" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202012061705" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
