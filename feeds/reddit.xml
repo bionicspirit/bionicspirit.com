@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Reddit.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/reddit.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 06 Dec 2020 17:05:18 +0000</pubDate>
-    <lastBuildDate>Sun, 06 Dec 2020 17:05:18 +0000</lastBuildDate>
+    <pubDate>Sun, 06 Dec 2020 18:26:12 +0000</pubDate>
+    <lastBuildDate>Sun, 06 Dec 2020 18:26:12 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,8 +21,8 @@
   <title>Execute shell command in F#</title>
   <description>Code snippet #FSharp #dotNet</description>
   <pubDate>Sun, 06 Dec 2020 16:43:50 +0000</pubDate>
-  <dc:modified>Sun, 06 Dec 2020 16:59:54 +0000</dc:modified>
-  <atom:modified>Sun, 06 Dec 2020 16:59:54 +0000</atom:modified>
+  <dc:modified>Sun, 06 Dec 2020 18:21:39 +0000</dc:modified>
+  <atom:modified>Sun, 06 Dec 2020 18:21:39 +0000</atom:modified>
   <link>https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html</guid>
   

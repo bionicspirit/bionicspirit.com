@@ -22,7 +22,7 @@
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html" property="og:url">
     <meta content="2020-12-06T16:43:50+00:00" property="article:published_time">
-    <meta content="2020-12-06T16:59:54+00:00" property="article:modified_time">
+    <meta content="2020-12-06T18:21:39+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -55,8 +55,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202012061705">
-    <link rel="preload" as="style" href="/assets/css/style.css?202012061705">
+    <link rel="stylesheet" href="/assets/css/style.css?202012061826">
+    <link rel="preload" as="style" href="/assets/css/style.css?202012061826">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html">
@@ -120,7 +120,7 @@
       <meta itemprop="datePublished" content="2020-12-06T16:43:50+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-12-06T16:59:54+0000">
+      <time itemprop="dateModified" content="2020-12-06T18:21:39+0000">
         Updated: December 6, 2020
       </time>
       
@@ -160,7 +160,7 @@
     <span class="n">startInfo</span><span class="p">.</span><span class="nc">RedirectStandardError</span> <span class="p">&lt;-</span> <span class="bp">true</span>
     <span class="n">startInfo</span><span class="p">.</span><span class="nc">UseShellExecute</span> <span class="p">&lt;-</span> <span class="bp">false</span>
     <span class="n">startInfo</span><span class="p">.</span><span class="nc">CreateNoWindow</span> <span class="p">&lt;-</span> <span class="bp">true</span>
-    <span class="k">let</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nc">Process</span><span class="bp">()</span>
+    <span class="k">use</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="nc">Process</span><span class="bp">()</span>
     <span class="n">p</span><span class="p">.</span><span class="nc">StartInfo</span> <span class="p">&lt;-</span> <span class="n">startInfo</span>
     <span class="n">p</span><span class="p">.</span><span class="nc">Start</span><span class="bp">()</span> <span class="p">|&gt;</span> <span class="n">ignore</span>
 
@@ -178,17 +178,17 @@
     <span class="p">}</span>
   <span class="p">}</span>
 
-<span class="k">let</span> <span class="n">executeShell</span> <span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="kt">string</span><span class="p">)</span> <span class="p">=</span>
+<span class="k">let</span> <span class="n">executeShellCommand</span> <span class="p">(</span><span class="n">command</span><span class="p">:</span> <span class="kt">string</span><span class="p">)</span> <span class="p">=</span>
   <span class="n">executeCommand</span> <span class="s2">"/usr/bin/env"</span> <span class="p">[</span> <span class="s2">"-S"</span><span class="p">;</span> <span class="s2">"bash"</span><span class="p">;</span> <span class="s2">"-c"</span><span class="p">;</span> <span class="n">command</span> <span class="p">]</span>
 
-<span class="k">let</span> <span class="n">r</span> <span class="p">=</span> <span class="n">executeShell</span> <span class="s2">"ls -alh"</span> <span class="p">|&gt;</span> <span class="nn">Async</span><span class="p">.</span><span class="nc">RunSynchronously</span>
+<span class="k">let</span> <span class="n">r</span> <span class="p">=</span> <span class="n">executeShellCommand</span> <span class="s2">"ls -alh"</span> <span class="p">|&gt;</span> <span class="nn">Async</span><span class="p">.</span><span class="nc">RunSynchronously</span>
 <span class="n">printfn</span> <span class="s2">"%A"</span> <span class="n">r</span>
 </code></pre></div></div>
 
 
 <div id="article-details">
   
-  <time itemprop="dateModified" content="2020-12-06T16:59:54+0000">
+  <time itemprop="dateModified" content="2020-12-06T18:21:39+0000">
       Updated: December 6, 2020
   </time>
   
@@ -282,12 +282,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202012061705" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202012061705" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202012061705" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202012061705" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202012061826" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202012061826" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202012061826" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202012061826" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202012061705" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202012061826" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
