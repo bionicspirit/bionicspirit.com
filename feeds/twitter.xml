@@ -9,14 +9,30 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Jan 2021 09:56:23 +0000</pubDate>
-    <lastBuildDate>Mon, 04 Jan 2021 09:56:23 +0000</lastBuildDate>
+    <pubDate>Thu, 14 Jan 2021 08:43:47 +0000</pubDate>
+    <lastBuildDate>Thu, 14 Jan 2021 08:43:47 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>You might not need jQuery</title>
+  <description>Shared link</description>
+  <pubDate>Thu, 14 Jan 2021 08:38:13 +0000</pubDate>
+  <dc:modified>Thu, 14 Jan 2021 08:38:58 +0000</dc:modified>
+  <atom:modified>Thu, 14 Jan 2021 08:38:58 +0000</atom:modified>
+  <link>http://youmightnotneedjquery.com/</link>
+  <guid isPermaLink="false">https://alexn.org/links/2021/01/14/you-might-not-need-jquery.html</guid>
+  
+  <dc:creator>Adam Schwartz</dc:creator>
+  
+  <category>Shared link</category>
+  
+</item>
+
+        
       <item>
   <title>There are No Acceptable Ads</title>
   <description>Blog article #Browser #Personal #Privacy #Web</description>
