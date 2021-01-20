@@ -9,14 +9,37 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 14 Jan 2021 13:57:10 +0000</pubDate>
-    <lastBuildDate>Thu, 14 Jan 2021 13:57:10 +0000</lastBuildDate>
+    <pubDate>Wed, 20 Jan 2021 09:46:59 +0000</pubDate>
+    <lastBuildDate>Wed, 20 Jan 2021 09:46:59 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Tagless Final vs OOP</title>
+  <description>Code snippet #FP #OOP #Scala</description>
+  <pubDate>Wed, 20 Jan 2021 09:24:14 +0000</pubDate>
+  <dc:modified>Wed, 20 Jan 2021 09:45:40 +0000</dc:modified>
+  <atom:modified>Wed, 20 Jan 2021 09:45:40 +0000</atom:modified>
+  <link>https://alexn.org/snippets/2021/01/20/tagless-final-vs-oop.html?pk_campaign=twitter&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2021/01/20/tagless-final-vs-oop.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>FP</category>
+  
+  <category>OOP</category>
+  
+  <category>Scala</category>
+  
+</item>
+  
+        
       <item>
   <title>Remove blank lines from text in Java/Scala</title>
   <description>Code snippet #Java #Programming #Regexp #Scala</description>
