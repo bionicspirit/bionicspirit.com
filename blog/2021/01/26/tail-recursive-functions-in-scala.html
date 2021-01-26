@@ -21,7 +21,7 @@
     <meta content="Turning imperative algorithms to tail-recursive functions isn’t necessarily obvious. In this episode I’m showing you the trick you need, and in doing so, we’ll discover the Zen of Functional Programming." property="og:description">
     <meta content="https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html" property="og:url">
     <meta content="2021-01-26T19:49:35+00:00" property="article:published_time">
-    <meta content="2021-01-26T20:38:59+00:00" property="article:modified_time">
+    <meta content="2021-01-26T22:02:19+00:00" property="article:modified_time">
     <meta property="og:type" content="video.other" />
     <meta property="og:video:url" content="https://www.youtube-nocookie.com/embed/Ua1iMD4icLU" />
     <meta property="og:video:secure_url" content="https://www.youtube-nocookie.com/embed/Ua1iMD4icLU" />
@@ -57,8 +57,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202101262041">
-    <link rel="preload" as="style" href="/assets/css/style.css?202101262041">
+    <link rel="stylesheet" href="/assets/css/style.css?202101262203">
+    <link rel="preload" as="style" href="/assets/css/style.css?202101262203">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html">
@@ -120,7 +120,7 @@
     <meta itemprop="datePublished" content="2021-01-26T19:49:35+0000"/>
     
     <time itemprop="dateCreated" datetime="2021-01-26T19:49:35+0000">January 26, 2021</time>
-    | <nobr><span class="time">1</span> minute</nobr>
+    | <nobr><span class="time">9</span> minutes</nobr>
     
     | <a href="/blog/2021/01/26/tail-recursive-functions-in-scala.html#isso-thread">comments</a>
     
@@ -168,11 +168,201 @@
 
 <p>Turning imperative algorithms to tail-recursive functions isn’t necessarily obvious. In this episode I’m showing you the trick you need, and in doing so, we’ll discover the Zen of Functional Programming.</p>
 
+<ul>
+  <li><a href="#the-trick">The Trick</a></li>
+  <li><a href="#actual-recursion">(Actual) Recursion</a></li>
+  <li><a href="#zen-of-functional-programming">Zen of Functional Programming?</a></li>
+</ul>
+    
+      <h2 id="the-trick">
+        
+        
+          The Trick <a href="#the-trick" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>Let’s start with a simple function that calculates the length of a list:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">len</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+  <span class="n">l</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="mi">0</span>
+    <span class="k">case</span> <span class="k">_</span> <span class="o">::</span> <span class="n">tail</span> <span class="k">=&gt;</span> <span class="nf">len</span><span class="o">(</span><span class="n">tail</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>It’s a recursive function with a definition that is mathematically correct. However, if we try to test it, this will fail with a <code class="language-plaintext highlighter-rouge">StackOverflowError</code>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nf">len</span><span class="o">(</span><span class="nv">List</span><span class="o">.</span><span class="py">fill</span><span class="o">(</span><span class="mi">100000</span><span class="o">)(</span><span class="mi">1</span><span class="o">))</span>
+</code></pre></div></div>
+
+<p>The problem is that the input list is too big. And because the VM still has work to do after that recursive call, needing to do a <code class="language-plaintext highlighter-rouge">+ 1</code>, the call isn’t in “tail position”, so the <a href="https://en.wikipedia.org/wiki/Call_stack" target="_blank">call-stack</a> must be used. A <code class="language-plaintext highlighter-rouge">StackOverflowError</code> is a memory error, and in this case it’s a correctness issue, because the function will fail on reasonable input.</p>
+
+<p>First let’s describe it as a dirty <code class="language-plaintext highlighter-rouge">while</code> loop instead:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">len</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="k">var</span> <span class="n">count</span> <span class="k">=</span> <span class="mi">1</span>
+  <span class="k">var</span> <span class="n">cursor</span> <span class="k">=</span> <span class="n">l</span>
+
+  <span class="nf">while</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">!=</span> <span class="nc">Nil</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">cursor</span> <span class="k">=</span> <span class="nv">cursor</span><span class="o">.</span><span class="py">tail</span>
+  <span class="o">}</span>
+  <span class="n">count</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>THE TRICK for turning such functions into tail-recursions is to turn those variables, holding state, into <em>function parameters</em>.</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">len</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="c1">// Using an inner function to encapsulate this implementation</span>
+  <span class="nd">@tailrec</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">(</span><span class="n">cursor</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">],</span> <span class="n">count</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span>
+    <span class="n">cursor</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="c1">// Our end condition, copied after that while</span>
+      <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="n">count</span>
+      <span class="k">case</span> <span class="k">_</span> <span class="o">::</span> <span class="n">tail</span> <span class="k">=&gt;</span>
+        <span class="c1">// Copying the same logic from that while statement</span>
+        <span class="nf">loop</span><span class="o">(</span><span class="n">cursor</span> <span class="k">=</span> <span class="n">tail</span><span class="o">,</span> <span class="n">count</span> <span class="k">=</span> <span class="n">count</span> <span class="o">+</span> <span class="mi">1</span><span class="o">)</span>
+    <span class="o">}</span>
+  <span class="c1">// Go, go, go</span>
+  <span class="nf">loop</span><span class="o">(</span><span class="n">l</span><span class="o">,</span> <span class="mi">0</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Now this version is fine. Note the use of the <code class="language-plaintext highlighter-rouge">@tailrec</code> annotation — all this annotation does is to make the compiler throw an error in case the function is not actually tail-recursive. That’s because that call is error-prone, and it needs repeating, this is an issue of correctness.</p>
+
+<p>Let’s do a more complex example to really internalize this. Let’s calculate the N-th number in the Fibonacci sequence — here’s the memory unsafe recursive version:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">fib</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">BigInt</span> <span class="o">=</span> 
+  <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="mi">0</span>
+  <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="mi">1</span>
+  <span class="k">else</span> <span class="nf">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span> <span class="o">+</span> <span class="nf">fib</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="o">)</span>
+
+<span class="nf">fib</span><span class="o">(</span><span class="mi">0</span><span class="o">)</span> <span class="c1">// 0</span>
+<span class="nf">fib</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span> <span class="c1">// 1</span>
+<span class="nf">fib</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> <span class="c1">// 1</span>
+<span class="nf">fib</span><span class="o">(</span><span class="mi">3</span><span class="o">)</span> <span class="c1">// 2</span>
+<span class="nf">fib</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span> <span class="c1">// 3</span>
+<span class="nf">fib</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span> <span class="c1">// 5</span>
+
+<span class="nf">fib</span><span class="o">(</span><span class="mi">100000</span><span class="o">)</span> <span class="c1">// StackOverflowError (also, really slow)</span>
+</code></pre></div></div>
+
+<p>First turn this into a dirty <code class="language-plaintext highlighter-rouge">while</code> loop:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">fib</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">BigInt</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span>
+  <span class="c1">// Going from 0 to n, instead of vice-versa  </span>
+  <span class="k">var</span> <span class="n">a</span><span class="k">:</span> <span class="kt">BigInt</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">// instead of fib(n - 2)</span>
+  <span class="k">var</span> <span class="n">b</span><span class="k">:</span> <span class="kt">BigInt</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1">// instead of fib(n - 1)</span>
+  <span class="k">var</span> <span class="n">i</span> <span class="k">=</span> <span class="n">n</span>
+
+  <span class="nf">while</span> <span class="o">(</span><span class="n">i</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="nv">tmp</span> <span class="k">=</span> <span class="n">a</span>
+    <span class="n">a</span> <span class="k">=</span> <span class="n">b</span>
+    <span class="n">b</span> <span class="k">=</span> <span class="n">tmp</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="n">i</span> <span class="o">-=</span> <span class="mi">1</span>
+  <span class="o">}</span>
+  <span class="n">b</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Then turn its 3 variables into function parameters:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">fib</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">BigInt</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nd">@tailrec</span>
+  <span class="k">def</span> <span class="nf">loop</span><span class="o">(</span><span class="n">a</span><span class="k">:</span> <span class="kt">BigInt</span><span class="o">,</span> <span class="n">b</span><span class="k">:</span> <span class="kt">BigInt</span><span class="o">,</span> <span class="n">i</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">BigInt</span> <span class="o">=</span>
+    <span class="c1">// first condition</span>
+    <span class="nf">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="mi">0</span>
+    <span class="c1">// end of while loop</span>
+    <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="n">b</span>     
+    <span class="c1">// logic inside while loop statement</span>
+    <span class="k">else</span> <span class="nf">loop</span><span class="o">(</span><span class="n">a</span> <span class="k">=</span> <span class="n">b</span><span class="o">,</span> <span class="n">b</span> <span class="k">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">,</span> <span class="n">i</span> <span class="k">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">)</span>
+
+  <span class="nf">loop</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">n</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+    
+      <h2 id="actual-recursion">
+        
+        
+          (Actual) Recursion <a href="#actual-recursion" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>Tail-recursions are just while loops. But some algorithms are actually <em>recursive</em>, and can’t be described via a <code class="language-plaintext highlighter-rouge">while</code> loop that uses constant memory. What makes an algorithm actually recursive is <em>usage of a stack</em>. In imperative programming, for low-level implementations, that’s how you can tell if recursion is required … does it use a manually managed stack or not?</p>
+
+<p>But even in such cases we can use a <code class="language-plaintext highlighter-rouge">while</code> loop, or a <code class="language-plaintext highlighter-rouge">@tailrec</code> function. Doing so has some advantages. Let’s start with a <code class="language-plaintext highlighter-rouge">Tree</code> data-structure:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">sealed</span> <span class="k">trait</span> <span class="nc">Tree</span><span class="o">[</span><span class="kt">+A</span><span class="o">]</span>
+
+<span class="nc">case</span> <span class="k">class</span> <span class="nc">Node</span><span class="o">[</span><span class="kt">+A</span><span class="o">](</span><span class="n">value</span><span class="k">:</span> <span class="kt">A</span><span class="o">,</span> <span class="n">left</span><span class="k">:</span> <span class="kt">Tree</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">right</span><span class="k">:</span> <span class="kt">Tree</span><span class="o">[</span><span class="kt">A</span><span class="o">])</span>
+  <span class="k">extends</span> <span class="nc">Tree</span><span class="o">[</span><span class="kt">A</span><span class="o">]</span>
+<span class="k">case</span> <span class="k">object</span> <span class="nc">Empty</span>
+  <span class="k">extends</span> <span class="nc">Tree</span><span class="o">[</span><span class="kt">Nothing</span><span class="o">]</span>
+</code></pre></div></div>
+
+<p>Defining a fold, which we could use to sum-up all values for example, will be challenging:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">foldTree</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">R</span><span class="o">](</span><span class="n">tree</span><span class="k">:</span> <span class="kt">Tree</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">seed</span><span class="k">:</span> <span class="kt">R</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">R</span><span class="o">,</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
+  <span class="n">tree</span> <span class="k">match</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="nc">Empty</span> <span class="k">=&gt;</span> <span class="n">seed</span>
+    <span class="k">case</span> <span class="nc">Node</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="k">=&gt;</span>
+      <span class="c1">// Recursive call for the left child</span>
+      <span class="k">val</span> <span class="nv">leftR</span> <span class="k">=</span> <span class="nf">foldTree</span><span class="o">(</span><span class="n">left</span><span class="o">,</span> <span class="nf">f</span><span class="o">(</span><span class="n">seed</span><span class="o">,</span> <span class="n">value</span><span class="o">))(</span><span class="n">f</span><span class="o">)</span>
+      <span class="c1">// Recursive call for the right child</span>
+      <span class="nf">foldTree</span><span class="o">(</span><span class="n">right</span><span class="o">,</span> <span class="n">leftR</span><span class="o">)(</span><span class="n">f</span><span class="o">)</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>This is the simple version. And it should be clear that the size of the call-stack will be directly proportional to <em>the height of the tree</em>. And turning it into a <code class="language-plaintext highlighter-rouge">@tailrec</code> version means we need to <em>manually manage a stack</em>:</p>
+
+<div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">foldTree</span><span class="o">[</span><span class="kt">A</span>, <span class="kt">R</span><span class="o">](</span><span class="n">tree</span><span class="k">:</span> <span class="kt">Tree</span><span class="o">[</span><span class="kt">A</span><span class="o">],</span> <span class="n">seed</span><span class="k">:</span> <span class="kt">R</span><span class="o">)(</span><span class="n">f</span><span class="k">:</span> <span class="o">(</span><span class="kt">R</span><span class="o">,</span> <span class="kt">A</span><span class="o">)</span> <span class="k">=&gt;</span> <span class="n">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="nd">@tailrec</span> <span class="k">def</span> <span class="nf">loop</span><span class="o">(</span><span class="n">stack</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="kt">Tree</span><span class="o">[</span><span class="kt">A</span><span class="o">]],</span> <span class="n">state</span><span class="k">:</span> <span class="kt">R</span><span class="o">)</span><span class="k">:</span> <span class="kt">R</span> <span class="o">=</span>
+    <span class="n">stack</span> <span class="k">match</span> <span class="o">{</span>
+      <span class="c1">// End condition, nothing left to do</span>
+      <span class="k">case</span> <span class="nc">Nil</span> <span class="k">=&gt;</span> <span class="n">state</span>
+      <span class="c1">// Ignore empty elements</span>
+      <span class="k">case</span> <span class="nc">Empty</span> <span class="o">::</span> <span class="n">tail</span> <span class="k">=&gt;</span> <span class="nf">loop</span><span class="o">(</span><span class="n">tail</span><span class="o">,</span> <span class="n">state</span><span class="o">)</span>
+      <span class="c1">// Step in our loop</span>
+      <span class="k">case</span> <span class="nc">Node</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="o">::</span> <span class="n">tail</span> <span class="k">=&gt;</span>
+        <span class="c1">// Adds left and right nodes to stack, evolves the state</span>
+        <span class="nf">loop</span><span class="o">(</span><span class="n">left</span> <span class="o">::</span> <span class="n">right</span> <span class="o">::</span> <span class="n">stack</span><span class="o">,</span> <span class="nf">f</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">value</span><span class="o">))</span>
+    <span class="o">}</span>
+  <span class="c1">// Go, go, go!</span>
+  <span class="nf">loop</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="n">tree</span><span class="o">),</span> <span class="n">seed</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Does this manually managed stack buy us anything?</p>
+
+<p>Well yes, if you need such recursive algorithms, such a stack can take up your whole heap memory, which means it can handle a bigger input. But note that with the right input, your process can still blow up, this time with an out-of-memory error (OOM).</p>
+
+<p class="info-bubble">
+  NOTE — in real life, shining examples of algorithms using manually managed stacks are <a href="https://typelevel.org/cats-effect/">Cats-Effect’s IO</a> and <a href="https://monix.io/">Monix’s Task</a>, since they literally replace the JVM’s call-stack 😄
+</p>
+    
+      <h2 id="zen-of-functional-programming">
+        
+        
+          Zen of Functional Programming? <a href="#zen-of-functional-programming" class="anchor">#</a>
+        
+        
+      </h2>
+
+<p>In FP, you turn variables into (immutable) function parameters. And state gets evolved via function calls 💡</p>
+
+<p>That’s it, that’s all there is to FP (plus the design patterns, and the pain of dealing with I/O 🙂).</p>
+
+<p>Enjoy!</p>
+
   </div>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2021-01-26T20:38:59+0000">
+    <time itemprop="dateModified" content="2021-01-26T22:02:19+0000">
         Updated: January 26, 2021
     </time>
     
@@ -309,12 +499,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202101262041" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202101262041" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202101262041" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202101262041" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202101262203" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202101262203" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202101262203" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202101262203" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202101262041" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202101262203" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
