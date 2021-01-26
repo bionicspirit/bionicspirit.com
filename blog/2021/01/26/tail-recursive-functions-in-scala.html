@@ -21,7 +21,7 @@
     <meta content="Turning imperative algorithms to tail-recursive functions isn’t necessarily obvious. In this episode I’m showing you the trick you need, and in doing so, we’ll discover the Zen of Functional Programming." property="og:description">
     <meta content="https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html" property="og:url">
     <meta content="2021-01-26T19:49:35+00:00" property="article:published_time">
-    <meta content="2021-01-26T22:10:23+00:00" property="article:modified_time">
+    <meta content="2021-01-26T22:10:52+00:00" property="article:modified_time">
     <meta property="og:type" content="video.other" />
     <meta property="og:video:url" content="https://www.youtube-nocookie.com/embed/Ua1iMD4icLU" />
     <meta property="og:video:secure_url" content="https://www.youtube-nocookie.com/embed/Ua1iMD4icLU" />
@@ -292,7 +292,7 @@
         
       </h2>
 
-<p>Tail-recursions are just <code class="language-plaintext highlighter-rouge">while</code> loops. But some algorithms are actually <em>recursive</em>, and can’t be described via a <code class="language-plaintext highlighter-rouge">while</code> loop that uses constant memory. What makes an algorithm actually recursive is <em>usage of a stack</em>. In imperative programming, for low-level implementations, that’s how you can tell if recursion is required … does it use a manually managed stack or not?</p>
+<p>Tail-recursions are just loops. But some algorithms are actually <em>recursive</em>, and can’t be described via a <code class="language-plaintext highlighter-rouge">while</code> loop that uses constant memory. What makes an algorithm actually recursive is <em>usage of a stack</em>. In imperative programming, for low-level implementations, that’s how you can tell if recursion is required … does it use a manually managed stack or not?</p>
 
 <p>But even in such cases we can use a <code class="language-plaintext highlighter-rouge">while</code> loop, or a <code class="language-plaintext highlighter-rouge">@tailrec</code> function. Doing so has some advantages. Let’s start with a <code class="language-plaintext highlighter-rouge">Tree</code> data-structure:</p>
 
@@ -362,7 +362,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2021-01-26T22:10:23+0000">
+    <time itemprop="dateModified" content="2021-01-26T22:10:52+0000">
         Updated: January 26, 2021
     </time>
     

@@ -9,8 +9,8 @@
     <description>Feed of recommended links from around the web, published at alexn.org/links/</description>
     <link>https://alexn.org/links/</link>
     <atom:link href="https://alexn.org/feeds/links.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 26 Jan 2021 22:11:08 +0000</pubDate>
-    <lastBuildDate>Tue, 26 Jan 2021 22:11:08 +0000</lastBuildDate>
+    <pubDate>Tue, 26 Jan 2021 22:11:40 +0000</pubDate>
+    <lastBuildDate>Tue, 26 Jan 2021 22:11:40 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
