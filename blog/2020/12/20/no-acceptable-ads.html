@@ -21,14 +21,14 @@
     <meta content="The attention economy, and targeted advertising, are a first world problem, one that we have to deal with, because it’s affecting our well-being." property="og:description">
     <meta content="https://alexn.org/blog/2020/12/20/no-acceptable-ads.html" property="og:url">
     <meta content="2020-12-20T15:16:08+00:00" property="article:published_time">
-    <meta content="2021-01-04T09:55:33+00:00" property="article:modified_time">
+    <meta content="2021-01-27T07:32:49+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/england1835.jpg?202101270653" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/england1835.jpg?202101270653" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/england1835.jpg?202101270733" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/england1835.jpg?202101270733" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/england1835.jpg?202101270653">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/england1835.jpg?202101270733">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="There are No Acceptable Ads">
@@ -50,8 +50,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202101270653">
-    <link rel="preload" as="style" href="/assets/css/style.css?202101270653">
+    <link rel="stylesheet" href="/assets/css/style.css?202101270733">
+    <link rel="preload" as="style" href="/assets/css/style.css?202101270733">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/12/20/no-acceptable-ads.html">
@@ -113,7 +113,7 @@
     <meta itemprop="datePublished" content="2020-12-20T15:16:08+0000"/>
     
     <time itemprop="dateCreated" datetime="2020-12-20T15:16:08+0000">December 20, 2020</time>
-    | <nobr><span class="time">25</span> minutes</nobr>
+    | <nobr><span class="time">27</span> minutes</nobr>
     
     | <a href="/blog/2020/12/20/no-acceptable-ads.html#isso-thread">comments</a>
     
@@ -121,7 +121,7 @@
 
   <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
       <meta itemprop="url" content="https://alexn.org/assets/media/articles/england1835.jpg" />
-      <img src="/assets/media/articles/england1835.jpg?202101270653" alt="England 1835, by John Orlando Parry" />
+      <img src="/assets/media/articles/england1835.jpg?202101270733" alt="England 1835, by John Orlando Parry" />
       <figcaption itemprop="caption">England 1835, by John Orlando Parry</figcaption>
     </figure>
     
@@ -171,6 +171,7 @@
         </ul>
       </li>
       <li><a href="#avoid-brave-the-browser">Avoid Brave, the browser</a></li>
+      <li><a href="#avoid-chromium-shells-with-ads">Avoid Chromium Shells with Ads</a></li>
     </ul>
   </li>
   <li><a href="#final-words">Final Words</a></li>
@@ -491,6 +492,8 @@
   Brave makes money only by serving ads, and in the long run making features opt-out, or making users accept ads via dark patterns, is a natural consequence. <a href="https://github.com/brave/brave-browser/issues/13222">Case in point</a>. And except for the people dreaming of becoming Internet-billionaires with the next Bitcoin-wannabe, who wants Brave’s ads anyway?
 </p>
 
+<p>Brave is just a Chromium shell with a paint job and Ads.</p>
+
 <p>In my tests, mobile Brave’s ads-blocking is no better than mobile Chrome coupled with Pi-hole or NextDNS (for DNS-level ads-blocking). And on iOS, Safari + Wipr is much better, which is quite the feat, given Safari’s limited content blocking capabilities. Firefox + uBlock Origin is miles better. And any performance claims for Brave’s content blocking, being supposedly “native”, is bullshit.</p>
 
 <p>But don’t trust me. You can <a href="/wiki/web.html#browser-benchmarks">run the benchmarks</a> yourself.</p>
@@ -523,6 +526,40 @@
   </li>
 </ul>
     
+      <h3 id="avoid-chromium-shells-with-ads">
+        
+        
+          Avoid Chromium Shells with Ads <a href="#avoid-chromium-shells-with-ads" class="anchor">#</a>
+        
+        
+      </h3>
+
+<p>In practice “<em>Chrome without Google</em>” isn’t working out great.</p>
+
+<p>People have been saying that browsers based on Chromium still give Google power over the market, since they can impose whatever web standards they want, like AMP. There is a bigger problem however. Following the same trend like Brave, being just a Chromium shell with a paint job and Ads, the other browser that does pretty much the same thing is <a href="https://www.microsoft.com/edge" target="_blank&quot;,rel=&quot;nofollow">Microsoft Edge</a>.</p>
+
+<p>People forget that Microsoft also owns Bing Ads, and in 2020 it generated 7.74 billion USD in revenue. That’s nothing to scoff about, making Microsoft also an ads-company, and Edge a vessel for serving those ads.</p>
+
+<p>Don’t believe me? Here’s what Edge asks of me, at the moment of writing:</p>
+
+<figure>
+  <img src="/assets/media/articles/edge-consent-1.png" alt="Screenshot of Edge's consent dialog, for sharing data with advertisers" />
+  <figcaption>Microsoft Edge, requiring consent for sharing data with advertisers.</figcaption>
+</figure>
+
+<p>It uses the same <a href="https://en.wikipedia.org/wiki/Dark_pattern">dark patterns</a> that the rest of the industry is using: an “<em>I Accept</em>” button, with a “<em>Managed Preferences</em>” alternative — this being a dark pattern because the effort to <em>reject all</em> is greater. People will just reach for the easier option, because it gets too annoying otherwise. I wonder if they’ll keep asking me until I accept.</p>
+
+<p>Here’s the screen informing me who Edge intends to share my data with (and this means GPS location data, browsing history, etc), the whole list of “vendors”:</p>
+
+<figure>
+  <img src="/assets/media/articles/edge-consent-2.png" alt="Screenshot of Edge's list of advertisers, that may receive your personal data." />
+  <figcaption>Edge's list of advertisers, that may receive your personal data.</figcaption>
+</figure>
+
+<p>When you click to manage those settings manually, all the checkboxes are already ticked. This means opt-out instead of opt-in, and I’m pretty sure it’s illegal under GDPR.</p>
+
+<p>This is worse than Chrome from a privacy perspective. Just because Google isn’t making it, doesn’t make it better. Google being the biggest target, at least it’s scrutinized, and the controls you have in your Google Account are half-decent. I’m not advocating for Chrome, I’m advocating against Chromium shells coming from other ads companies.</p>
+    
       <h2 id="final-words">
         
         
@@ -547,8 +584,8 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2021-01-04T09:55:33+0000">
-        Updated: January 4, 2021
+    <time itemprop="dateModified" content="2021-01-27T07:32:49+0000">
+        Updated: January 27, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -680,12 +717,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202101270653" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202101270653" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202101270653" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202101270653" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202101270733" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202101270733" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202101270733" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202101270733" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202101270653" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202101270733" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
