@@ -21,14 +21,14 @@
     <meta content="Turning imperative algorithms to tail-recursive functions isn’t necessarily obvious. In this episode I’m showing you the trick you need, and in doing so, we’ll discover the Zen of Functional Programming." property="og:description">
     <meta content="https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html" property="og:url">
     <meta content="2021-01-26T19:49:35+00:00" property="article:published_time">
-    <meta content="2021-01-27T06:52:56+00:00" property="article:modified_time">
+    <meta content="2021-01-27T08:14:17+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270741" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270741" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270814" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270814" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270741">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270814">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Tail Recursive Functions (in Scala)">
@@ -50,8 +50,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202101270741">
-    <link rel="preload" as="style" href="/assets/css/style.css?202101270741">
+    <link rel="stylesheet" href="/assets/css/style.css?202101270814">
+    <link rel="preload" as="style" href="/assets/css/style.css?202101270814">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html">
@@ -200,7 +200,7 @@
 <p>First let’s describe it as a dirty <code class="language-plaintext highlighter-rouge">while</code> loop instead:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">len</span><span class="o">(</span><span class="n">l</span><span class="k">:</span> <span class="kt">List</span><span class="o">[</span><span class="k">_</span><span class="o">])</span><span class="k">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="o">{</span>
-  <span class="k">var</span> <span class="n">count</span> <span class="k">=</span> <span class="mi">1</span>
+  <span class="k">var</span> <span class="n">count</span> <span class="k">=</span> <span class="mi">0</span>
   <span class="k">var</span> <span class="n">cursor</span> <span class="k">=</span> <span class="n">l</span>
 
   <span class="nf">while</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">!=</span> <span class="nc">Nil</span><span class="o">)</span> <span class="o">{</span>
@@ -251,6 +251,7 @@
 <p>First turn this into a dirty <code class="language-plaintext highlighter-rouge">while</code> loop:</p>
 
 <div class="language-scala highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="k">def</span> <span class="nf">fib</span><span class="o">(</span><span class="n">n</span><span class="k">:</span> <span class="kt">Int</span><span class="o">)</span><span class="k">:</span> <span class="kt">BigInt</span> <span class="o">=</span> <span class="o">{</span>
+  <span class="c1">// Kids, don't do this at home 😅</span>
   <span class="nf">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="o">)</span> <span class="k">return</span> <span class="mi">0</span>
   <span class="c1">// Going from 0 to n, instead of vice-versa  </span>
   <span class="k">var</span> <span class="n">a</span><span class="k">:</span> <span class="kt">BigInt</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">// instead of fib(n - 2)</span>
@@ -291,7 +292,7 @@
         
       </h2>
 
-<p>Tail-recursions are just loops. But some algorithms are actually <em>recursive</em>, and can’t be described via a <code class="language-plaintext highlighter-rouge">while</code> loop that uses constant memory. What makes an algorithm actually recursive is id=Ua1iMD4icLUa1iMD4icL_usage of a stack_. In imperative programming, for low-level implementations, that’s how you can tell if recursion is required … does it use a manually managed stack or not?</p>
+<p>Tail-recursions are just loops. But some algorithms are actually <em>recursive</em>, and can’t be described via a <code class="language-plaintext highlighter-rouge">while</code> loop that uses constant memory. What makes an algorithm actually recursive is <em>usage of a stack</em>. In imperative programming, for low-level implementations, that’s how you can tell if recursion is required … does it use a manually managed stack or not?</p>
 
 <p>But even in such cases we can use a <code class="language-plaintext highlighter-rouge">while</code> loop, or a <code class="language-plaintext highlighter-rouge">@tailrec</code> function. Doing so has some advantages. Let’s start with a <code class="language-plaintext highlighter-rouge">Tree</code> data-structure:</p>
 
@@ -328,12 +329,16 @@
       <span class="c1">// Step in our loop</span>
       <span class="k">case</span> <span class="nc">Node</span><span class="o">(</span><span class="n">value</span><span class="o">,</span> <span class="n">left</span><span class="o">,</span> <span class="n">right</span><span class="o">)</span> <span class="o">::</span> <span class="n">tail</span> <span class="k">=&gt;</span>
         <span class="c1">// Adds left and right nodes to stack, evolves the state</span>
-        <span class="nf">loop</span><span class="o">(</span><span class="n">left</span> <span class="o">::</span> <span class="n">right</span> <span class="o">::</span> <span class="n">stack</span><span class="o">,</span> <span class="nf">f</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">value</span><span class="o">))</span>
+        <span class="nf">loop</span><span class="o">(</span><span class="n">left</span> <span class="o">::</span> <span class="n">right</span> <span class="o">::</span> <span class="n">tail</span><span class="o">,</span> <span class="nf">f</span><span class="o">(</span><span class="n">state</span><span class="o">,</span> <span class="n">value</span><span class="o">))</span>
     <span class="o">}</span>
   <span class="c1">// Go, go, go!</span>
   <span class="nf">loop</span><span class="o">(</span><span class="nc">List</span><span class="o">(</span><span class="n">tree</span><span class="o">),</span> <span class="n">seed</span><span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div></div>
+
+<p class="info-bubble">
+  If you want to internalize this notion — recursion == usage of a stack — a great exercise is the [backtracking algorithm](https://en.wikipedia.org/wiki/Backtracking). Implement it with recursive functions, or with dirty loops and a manually managed stack, and compare. The plot thickens for backtracking problems using 2 stacks 🙂
+</p>
 
 <p>Does this manually managed stack buy us anything?</p>
 
@@ -361,7 +366,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2021-01-27T06:52:56+0000">
+    <time itemprop="dateModified" content="2021-01-27T08:14:17+0000">
         Updated: January 27, 2021
     </time>
     
@@ -498,12 +503,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202101270741" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202101270741" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202101270741" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202101270741" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202101270814" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202101270814" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202101270814" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202101270814" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202101270741" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202101270814" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
