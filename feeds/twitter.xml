@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 27 Jan 2021 07:37:29 +0000</pubDate>
-    <lastBuildDate>Wed, 27 Jan 2021 07:37:29 +0000</lastBuildDate>
+    <pubDate>Wed, 27 Jan 2021 07:41:18 +0000</pubDate>
+    <lastBuildDate>Wed, 27 Jan 2021 07:41:18 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -114,8 +114,8 @@
   <title>There are No Acceptable Ads</title>
   <description>Blog article #Browser #Personal #Privacy #Web</description>
   <pubDate>Sun, 20 Dec 2020 15:16:08 +0000</pubDate>
-  <dc:modified>Wed, 27 Jan 2021 07:36:47 +0000</dc:modified>
-  <atom:modified>Wed, 27 Jan 2021 07:36:47 +0000</atom:modified>
+  <dc:modified>Wed, 27 Jan 2021 07:40:42 +0000</dc:modified>
+  <atom:modified>Wed, 27 Jan 2021 07:40:42 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/12/20/no-acceptable-ads.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/12/20/no-acceptable-ads.html</guid>
   
