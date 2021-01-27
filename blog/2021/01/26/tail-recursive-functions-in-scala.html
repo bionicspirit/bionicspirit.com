@@ -21,21 +21,14 @@
     <meta content="Turning imperative algorithms to tail-recursive functions isn’t necessarily obvious. In this episode I’m showing you the trick you need, and in doing so, we’ll discover the Zen of Functional Programming." property="og:description">
     <meta content="https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html" property="og:url">
     <meta content="2021-01-26T19:49:35+00:00" property="article:published_time">
-    <meta content="2021-01-26T22:10:52+00:00" property="article:modified_time">
-    <meta property="og:type" content="video.other" />
-    <meta property="og:video:url" content="https://www.youtube-nocookie.com/embed/Ua1iMD4icLU" />
-    <meta property="og:video:secure_url" content="https://www.youtube-nocookie.com/embed/Ua1iMD4icLU" />
-    <meta property="og:video:type" content="text/html" />
-    <meta property="og:video:width" content="560" />
-    <meta property="og:video:height" content="315" /> 
-    <meta property="og:image" content="https://img.youtube.com/vi/Ua1iMD4icLU/maxresdefault.jpg" />
-    <meta property="og:image:secure_url" content="https://img.youtube.com/vi//maxresdefault.jpg" />
+    <meta content="2021-01-27T06:52:56+00:00" property="article:modified_time">
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270653" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270653" />
     <!-- Twitter Cards -->
-    <meta name="twitter:card" content="player" />
-    <meta name="twitter:player" content="https://www.youtube-nocookie.com/embed/Ua1iMD4icLU">
-    <meta name="twitter:player:width" content="560">
-    <meta name="twitter:player:height" content="315">
-    <meta name="twitter:image" content="https://img.youtube.com/vi/Ua1iMD4icLU/maxresdefault.jpg" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png?202101270653">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Tail Recursive Functions (in Scala)">
@@ -57,8 +50,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202101262211">
-    <link rel="preload" as="style" href="/assets/css/style.css?202101262211">
+    <link rel="stylesheet" href="/assets/css/style.css?202101270653">
+    <link rel="preload" as="style" href="/assets/css/style.css?202101270653">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html">
@@ -126,6 +119,12 @@
     
   </p>
 
+  
+    <div class="hidden" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/media/articles/tail-recursive-functions.png" />
+      
+    </div>
+    
   
 
   <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
@@ -292,7 +291,7 @@
         
       </h2>
 
-<p>Tail-recursions are just loops. But some algorithms are actually <em>recursive</em>, and can’t be described via a <code class="language-plaintext highlighter-rouge">while</code> loop that uses constant memory. What makes an algorithm actually recursive is <em>usage of a stack</em>. In imperative programming, for low-level implementations, that’s how you can tell if recursion is required … does it use a manually managed stack or not?</p>
+<p>Tail-recursions are just loops. But some algorithms are actually <em>recursive</em>, and can’t be described via a <code class="language-plaintext highlighter-rouge">while</code> loop that uses constant memory. What makes an algorithm actually recursive is id=Ua1iMD4icLUa1iMD4icL_usage of a stack_. In imperative programming, for low-level implementations, that’s how you can tell if recursion is required … does it use a manually managed stack or not?</p>
 
 <p>But even in such cases we can use a <code class="language-plaintext highlighter-rouge">while</code> loop, or a <code class="language-plaintext highlighter-rouge">@tailrec</code> function. Doing so has some advantages. Let’s start with a <code class="language-plaintext highlighter-rouge">Tree</code> data-structure:</p>
 
@@ -362,8 +361,8 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2021-01-26T22:10:52+0000">
-        Updated: January 26, 2021
+    <time itemprop="dateModified" content="2021-01-27T06:52:56+0000">
+        Updated: January 27, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -499,12 +498,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202101262211" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202101262211" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202101262211" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202101262211" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202101270653" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202101270653" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202101270653" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202101270653" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202101262211" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202101270653" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
