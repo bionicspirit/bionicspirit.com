@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 28 Jan 2021 09:36:35 +0000</pubDate>
-    <lastBuildDate>Thu, 28 Jan 2021 09:36:35 +0000</lastBuildDate>
+    <pubDate>Thu, 28 Jan 2021 09:37:40 +0000</pubDate>
+    <lastBuildDate>Thu, 28 Jan 2021 09:37:40 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,8 +21,8 @@
   <title>Tail Recursive Functions (in Scala)</title>
   <description>Blog article #Algorithms #FP #Programming #Scala</description>
   <pubDate>Tue, 26 Jan 2021 19:49:35 +0000</pubDate>
-  <dc:modified>Wed, 27 Jan 2021 18:16:42 +0000</dc:modified>
-  <atom:modified>Wed, 27 Jan 2021 18:16:42 +0000</atom:modified>
+  <dc:modified>Thu, 28 Jan 2021 09:36:35 +0000</dc:modified>
+  <atom:modified>Thu, 28 Jan 2021 09:36:35 +0000</atom:modified>
   <link>https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html</guid>
   
