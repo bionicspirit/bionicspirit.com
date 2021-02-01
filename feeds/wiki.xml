@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Feb 2021 06:50:16 +0000</pubDate>
-    <lastBuildDate>Mon, 01 Feb 2021 06:50:16 +0000</lastBuildDate>
+    <pubDate>Mon, 01 Feb 2021 14:19:03 +0000</pubDate>
+    <lastBuildDate>Mon, 01 Feb 2021 14:19:03 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -190,6 +190,181 @@
   <atom:modified>Thu, 03 Dec 2020 06:09:12 +0000</atom:modified>
   <link>https://alexn.org/wiki/web.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/web.html</guid>
+  
+  <category>Wiki</category>
+  
+</item>
+
+      
+    
+      
+        <item>
+  <title>Vim</title>
+  <description>&lt;p&gt;
+      Article updated at February 1, 2021, 
+      created at November 4, 2020.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;h2 id=&quot;docs--articles&quot;&gt;Docs &amp;amp; Articles&lt;/h2&gt;
+
+&lt;p&gt;Important:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://alexn.org/wiki/vim-quickref.txt&quot;&gt;Quick Reference&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://vim.rtorr.com/&quot;&gt;Vim Cheatsheet&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201154856/https://vim.rtorr.com/&quot;&gt;archive&lt;/a&gt;) / &lt;a href=&quot;https://github.com/rtorr/vim-cheat-sheet&quot;&gt;Github Repo&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201155116/https://github.com/rtorr/vim-cheat-sheet&quot;&gt;archive&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;http://www.viemu.com/vi-vim-cheat-sheet.gif&quot;&gt;Vim Graphical Cheatsheet&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201160106/http://www.viemu.com/vi-vim-cheat-sheet.gif&quot;&gt;archive&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://medium.com/@danidiaz/configuring-ideavimrc-de16a4da0715&quot;&gt;Configuring .ideavimrc&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201132546/https://medium.com/@danidiaz/configuring-ideavimrc-de16a4da0715&quot;&gt;archive&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://yehudakatz.com/2010/07/29/everyone-who-tried-to-convince-me-to-use-vim-was-wrong/&quot;&gt;Everyone Who Tried to Convince Me to use Vim was Wrong&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201154621/https://yehudakatz.com/2010/07/29/everyone-who-tried-to-convince-me-to-use-vim-was-wrong/&quot;&gt;archive&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.moolenaar.net/habits.html&quot;&gt;Seven habits of effective text editing&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201155823/https://www.moolenaar.net/habits.html&quot;&gt;archive&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vimeo.com/53144573&quot;&gt;Vim - precision editing at the speed of thought (Vimeo.com video)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://vim-adventures.com/&quot;&gt;Vim Adventures (game)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://alvinalexander.com/taxonomy/term/3013/&quot;&gt;Vim content by Alvin Alexander&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201155458/https://alvinalexander.com/taxonomy/term/3013/&quot;&gt;archive&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://jemma.dev/blog/intermediate-vim-tips&quot;&gt;Vim Tips for the Intermediate Vim User&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201151013/https://jemma.dev/blog/intermediate-vim-tips&quot;&gt;archive&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://www.vimgolf.com/&quot;&gt;VimGolf&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201151233/https://www.vimgolf.com/&quot;&gt;archive&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;random-tips&quot;&gt;Random tips&lt;/h2&gt;
+
+&lt;h3 id=&quot;documentation&quot;&gt;Documentation&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:help&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:help g&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:help motion.txt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:help spell.txt&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:help user-manual&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:help visual.txt&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;shell-setup&quot;&gt;Shell setup&lt;/h3&gt;
+
+&lt;p&gt;For Zsh:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; vi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;For Bash:&lt;/p&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;bindkey &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Indicating the editing mode via the prompt in Zsh:&lt;/p&gt;
+
+&lt;div class=&quot;language-zsh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;BASE_RPROMPT&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$RPROMPT&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:git:*'&lt;/span&gt; formats &lt;span class=&quot;s1&quot;&gt;'%F{240}%b %f %F{237}%r%f'&lt;/span&gt;
+zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;enable &lt;/span&gt;git
+
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;zle-line-init zle-keymap-select &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;RPS1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;%B%F{237}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;KEYMAP&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/vicmd/--NORMAL--&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;/(main|viins)/--INSERT--&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;%f%b &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$BASE_RPROMPT&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;RPS2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$RPS1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    zle reset-prompt
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+zle &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt; zle-line-init
+zle &lt;span class=&quot;nt&quot;&gt;-N&lt;/span&gt; zle-keymap-select
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;surround-text&quot;&gt;Surround text&lt;/h3&gt;
+
+&lt;p&gt;Functionality from &lt;a href=&quot;https://github.com/tpope/vim-surround&quot;&gt;vim-surround&lt;/a&gt;, which also works in VS Code (with VSCodeVim):&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;v                    # Enter visual mode
+&amp;lt;visually select&amp;gt;    # Use the keyboard to select the section of text
+s                    # Press upper case S
+&quot;                    # Specify what you want to surround the visual selection with
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;visual-block-mode&quot;&gt;Visual-block mode&lt;/h3&gt;
+
+&lt;p&gt;This works like (and implemented with) multi-cursors in other editors (see &lt;a href=&quot;https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor&quot;&gt;VS Code&lt;/a&gt; (&lt;a href=&quot;https://web.archive.org/web/20210201153540/https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor&quot;&gt;archive&lt;/a&gt;)).&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl-v&lt;/code&gt; to enter visual-block mode
+    &lt;ul&gt;
+      &lt;li&gt;Select block&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;I&lt;/code&gt; (capital letter) to enter insert mode&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;Esc&amp;gt;&lt;/code&gt; to exit insert mode&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;copy--paste&quot;&gt;Copy &amp;amp; Paste&lt;/h3&gt;
+
+&lt;p&gt;Shortcuts:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;d&lt;/code&gt; is for cut, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt; is for copy, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;P&lt;/code&gt; are for paste&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Normally one uses the clipboard register to cut, copy and paste, which is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;. 
+So &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;*y&lt;/code&gt; copies to the system clipboard, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;*p&lt;/code&gt; pastes from that clipboard.&lt;/p&gt;
+
+&lt;p&gt;To activate the system clipboard for copy and pasting with the “unnamed” register, add this to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.vimrc&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;set clipboard+=unnamed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;fold--unfold&quot;&gt;Fold / Unfold&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zc&lt;/code&gt;: fold&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zo&lt;/code&gt;: unfold&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zM&lt;/code&gt;: fold all&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;zR&lt;/code&gt;: unfold all&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;go-to-&quot;&gt;Go to …&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gd&lt;/code&gt;: go to definition&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gx&lt;/code&gt;: open link&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl+O&lt;/code&gt;: jump back to last position&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;vimdiff&quot;&gt;Vimdiff&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;do&lt;/code&gt;: Get changes from other window into the current window&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;dp&lt;/code&gt;: Put the changes from current window into the other window.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;]c&lt;/code&gt;: Jump to the next change.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[c&lt;/code&gt;: Jump to the previous change.&lt;/li&gt;
+  &lt;li&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Ctrl W + Ctrl W&lt;/code&gt;: Switch to the other split window.&lt;/li&gt;
+&lt;/ul&gt;</description>
+  <pubDate>Wed, 04 Nov 2020 11:57:32 +0000</pubDate>
+  <dc:modified>Mon, 01 Feb 2021 14:18:19 +0000</dc:modified>
+  <atom:modified>Mon, 01 Feb 2021 14:18:19 +0000</atom:modified>
+  <link>https://alexn.org/wiki/vim.html?pk_campaign=rss&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/wiki/vim.html</guid>
   
   <category>Wiki</category>
   
@@ -2158,7 +2333,7 @@ services.sync.prefs.media.hardwaremediakeys.enabled
         <item>
   <title>Emacs Setup</title>
   <description>&lt;p&gt;
-      Article updated at November 30, 2020, 
+      Article updated at February 1, 2021, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -2166,7 +2341,10 @@ services.sync.prefs.media.hardwaremediakeys.enabled
 
 &lt;p&gt;My preferred installation on macOS:&lt;/p&gt;
 
-&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;emacs
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;emacs &lt;span class=&quot;nt&quot;&gt;--no-quarantine&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Needed lately because signature verification fails with gpgtools.org&lt;/span&gt;
+brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;gnupg
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This installs:&lt;/p&gt;
@@ -2304,8 +2482,8 @@ emacs_open_buffer&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/bbatsov/emacs-lisp-style-guide&quot;&gt;The Emacs Lisp Style Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Mon, 30 Nov 2020 12:18:40 +0000</dc:modified>
-  <atom:modified>Mon, 30 Nov 2020 12:18:40 +0000</atom:modified>
+  <dc:modified>Mon, 01 Feb 2021 14:18:19 +0000</dc:modified>
+  <atom:modified>Mon, 01 Feb 2021 14:18:19 +0000</atom:modified>
   <link>https://alexn.org/wiki/emacs.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/emacs.html</guid>
   

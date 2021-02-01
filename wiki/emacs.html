@@ -21,7 +21,7 @@
     <meta content="Personal, volatile wiki documentation" property="og:description">
     <meta content="https://alexn.org/wiki/emacs.html" property="og:url">
     <meta content="2020-08-24T13:24:31+00:00" property="article:published_time">
-    <meta content="2020-11-30T12:18:40+00:00" property="article:modified_time">
+    <meta content="2021-02-01T14:18:19+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px.png" />
@@ -51,8 +51,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202102010650">
-    <link rel="preload" as="style" href="/assets/css/style.css?202102010650">
+    <link rel="stylesheet" href="/assets/css/style.css?202102011419">
+    <link rel="preload" as="style" href="/assets/css/style.css?202102011419">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/emacs.html">
@@ -116,8 +116,8 @@
       <meta itemprop="datePublished" content="2020-08-24T13:24:31+0000"/>
       
       
-      <time itemprop="dateModified" content="2020-11-30T12:18:40+0000">
-        Updated: November 30, 2020
+      <time itemprop="dateModified" content="2021-02-01T14:18:19+0000">
+        Updated: February 1, 2021
       </time>
       
       
@@ -163,7 +163,10 @@
 
 <p>My preferred installation on macOS:</p>
 
-<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>brew cask <span class="nb">install </span>emacs
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>brew cask <span class="nb">install </span>emacs <span class="nt">--no-quarantine</span>
+
+<span class="c"># Needed lately because signature verification fails with gpgtools.org</span>
+brew <span class="nb">install </span>gnupg
 </code></pre></div></div>
 
 <p>This installs:</p>
@@ -354,12 +357,12 @@ emacs_open_buffer<span class="o">()</span>
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202102010650" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202102010650" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202102010650" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202102010650" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202102011419" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202102011419" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202102011419" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202102011419" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202102010650" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202102011419" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
