@@ -9,14 +9,40 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 03 Feb 2021 09:35:19 +0000</pubDate>
-    <lastBuildDate>Wed, 03 Feb 2021 09:35:19 +0000</lastBuildDate>
+    <pubDate>Sun, 07 Feb 2021 12:04:51 +0000</pubDate>
+    <lastBuildDate>Sun, 07 Feb 2021 12:04:51 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>FP vs OO: Choose Two</title>
+  <description>Shared link #FP #Java #OOP #Programming #YouTube</description>
+  <pubDate>Sun, 07 Feb 2021 12:00:28 +0000</pubDate>
+  <dc:modified>Sun, 07 Feb 2021 12:03:54 +0000</dc:modified>
+  <atom:modified>Sun, 07 Feb 2021 12:03:54 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=8GWZE2Y2O9E</link>
+  <guid isPermaLink="false">https://alexn.org/links/2021/02/07/fp-vs-oo-choose-two.html</guid>
+  
+  <dc:creator>Brian Goetz</dc:creator>
+  
+  <category>Shared link</category>
+  
+  <category>FP</category>
+  
+  <category>Java</category>
+  
+  <category>OOP</category>
+  
+  <category>Programming</category>
+  
+  <category>YouTube</category>
+  
+</item>
+
+        
       <item>
   <title>Tail Recursive Functions (in Scala)</title>
   <description>Blog article #Algorithms #FP #Programming #Scala</description>
