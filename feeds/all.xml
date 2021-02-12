@@ -9,14 +9,47 @@
     <description>Feed of blog articles, snippets, wiki, shared links, published at alexn.org</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/all.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 07 Feb 2021 12:04:51 +0000</pubDate>
-    <lastBuildDate>Sun, 07 Feb 2021 12:04:51 +0000</lastBuildDate>
+    <pubDate>Fri, 12 Feb 2021 11:56:03 +0000</pubDate>
+    <lastBuildDate>Fri, 12 Feb 2021 11:56:03 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Scala&#39;s List has a Secret</title>
+  <description>&lt;a href=&quot;https://alexn.org/blog/2021/02/12/scala-list-secret.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-list.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+          alt=&quot;&quot; /&gt;
+      &lt;/a&gt;
+      &lt;br /&gt;
+    &lt;p&gt;OOP couples the data with the methods operating on it, and this is considered bad in FP circles. But is it?&lt;/p&gt;
+&lt;p&gt;
+      &lt;a href=&quot;https://alexn.org/blog/2021/02/12/scala-list-secret.html?pk_campaign=rss&amp;pk_kwd=read-more&quot;&gt;Read article →&lt;/a&gt;
+    &lt;/p&gt;</description>
+  <pubDate>Fri, 12 Feb 2021 11:32:33 +0000</pubDate>
+  <dc:modified>Fri, 12 Feb 2021 11:55:12 +0000</dc:modified>
+  <atom:modified>Fri, 12 Feb 2021 11:55:12 +0000</atom:modified>
+  <link>https://alexn.org/blog/2021/02/12/scala-list-secret.html?pk_campaign=rss&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/blog/2021/02/12/scala-list-secret.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Blog</category>
+  
+  <category>FP</category>
+  
+  <category>Multithreading</category>
+  
+  <category>Programming</category>
+  
+  <category>Scala</category>
+  
+</item>
+
+        
       <item>
   <title>Shared Link — FP vs OO: Choose Two</title>
   <description>&lt;a href=&quot;https://www.youtube.com/watch?v=8GWZE2Y2O9E&quot;&gt;
@@ -53,7 +86,7 @@
       <item>
   <title>Tail Recursive Functions (in Scala)</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/tail-recursive-functions.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/tail-recursive-functions.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -237,7 +270,7 @@
       <item>
   <title>There are No Acceptable Ads</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/12/20/no-acceptable-ads.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/england1835.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/england1835.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;England 1835, by John Orlando Parry&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -668,7 +701,7 @@
       <item>
   <title>Shared Link — Graphics for JVM</title>
   <description>&lt;a href=&quot;https://tonsky.me/blog/skija/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/skija.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/skija.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Let’s say I want to build high-quality desktop apps. I also want to do it on JVM. Don’t get your hopes up—we are not there yet. But I have a plan.”&lt;/em&gt;&lt;/p&gt;
@@ -696,7 +729,7 @@
       <item>
   <title>Best practice for natural Ordering</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/11/17/best-practice-for-ordering-comparable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/ordering.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/ordering.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -725,7 +758,7 @@
       <item>
   <title>Managing Database Migrations in Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/db-migrations-scala.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/db-migrations-scala.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -849,7 +882,7 @@
       <item>
   <title>I like Option.get</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/11/12/i-like-option-get.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/option.get.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/option.get.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -880,7 +913,7 @@
       <item>
   <title>Shared Link — Announcing .NET 5.0, C# 9, F# 5</title>
   <description>&lt;a href=&quot;https://devblogs.microsoft.com/dotnet/announcing-net-5-0/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/dotnet.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/articles/dotnet.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;“&lt;em&gt;We’re excited to release .NET 5.0 today and for you to start using it. It’s a major release — including C# 9 and F# 5 — with a broad set of new features and compelling improvements.&lt;/em&gt;”&lt;/p&gt;
@@ -916,7 +949,7 @@
       <item>
   <title>Organize and Index Your Screenshots (OCR) on macOS</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/spotlight-search.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/spotlight-search.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -974,7 +1007,7 @@
       <item>
   <title>Shared Link — Explicit term inference with Scala 3</title>
   <description>&lt;a href=&quot;https://www.scala-lang.org/2020/11/06/explicit-term-inference-in-scala-3.html&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/scala-explicit-terms.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/scala-explicit-terms.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;“&lt;em&gt;This post briefly introduces the new syntax and semantics available to Scala 3 programmers by analysing the most common use cases and patterns: extension methods, implicit parameters, implicit conversions and typeclasses.&lt;/em&gt;”&lt;/p&gt;
@@ -1230,7 +1263,7 @@ So &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;*y&l
       <item>
   <title>Shared Link — BSP Support in sbt 1.4</title>
   <description>&lt;a href=&quot;https://www.scala-lang.org/blog/2020/10/27/bsp-in-sbt.html&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/snippets/sbt-bsp-announcement.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/snippets/sbt-bsp-announcement.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Today we are proud to announce that support of BSP has been shipped into sbt 1.4.0 … BSP in sbt improves the integration of sbt inside IDEs and code editors.”&lt;/em&gt;&lt;/p&gt;
@@ -1287,7 +1320,7 @@ So &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;*y&l
       <item>
   <title>Block comments on the web</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/10/20/block-comments-on-the-web.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/block-comments.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/block-comments.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -1598,7 +1631,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       <item>
   <title>Shared Link — Typelevel Cats Effect 3.0.0-M1</title>
   <description>&lt;a href=&quot;https://github.com/typelevel/cats-effect/releases/tag/v3.0.0-M1&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Cats Effect 3.0.0-M1 is the very first milestone release in the 3.0.0 line. We are expecting to follow this milestone with subsequent ones as necessary to further refine functionality and features, prior to some number of release candidates leading to a final release. The designation “M1” is meant to indicate our relative confidence in the functionality and API of the library, but it by no means indicates completeness or final compatibility. Neither binary compatibility nor source compatibility with anything are assured prior to 3.0.0, though major breakage is unlikely at this point.”&lt;/em&gt;&lt;/p&gt;
@@ -1626,7 +1659,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       <item>
   <title>Shared Link — Practice typing by retyping ENTIRE classic novels</title>
   <description>&lt;a href=&quot;https://www.typelit.io/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Improve your typing for free online by practicing on classic literature.”&lt;/em&gt;&lt;/p&gt;
@@ -1652,7 +1685,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       <item>
   <title>When My World Vanishes</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/earth.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/earth.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -2395,7 +2428,7 @@ find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quo
       <item>
   <title>Privilege</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/fi-miu.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/fi-miu.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;My son ❤️&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -5141,7 +5174,7 @@ zstyle &lt;span class=&quot;s1&quot;&gt;':vcs_info:*'&lt;/span&gt; &lt;span clas
       <item>
   <title>Retry Failing Tasks with Cats and Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -5787,7 +5820,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Fatal Warnings and Linting in Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -5814,7 +5847,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Parallelizing Work via a JavaScript Semaphore</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/async-semaphore-typescript.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/async-semaphore-typescript.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6039,7 +6072,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Regexp Replacement via Function in Java/Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-replace-all-function.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-replace-all-function.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6313,7 +6346,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Scala&#39;s isInstanceOf is an Anti-Pattern</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6342,7 +6375,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>On Bifunctor IO and Java&#39;s Checked Exceptions</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/bio.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/bio.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6377,7 +6410,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>In Defense of OOFP</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-stairs.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-stairs.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&amp;lt;a href=&amp;quot;https://www.flickr.com/photos/gilles_dubochet/7327041044&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;Credits&amp;lt;/a&amp;gt;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6412,7 +6445,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Minitest: Zero Crap Scala Testing Library</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6441,7 +6474,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>What is Functional Programming?</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/functions.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/functions.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6508,7 +6541,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>JavaScript&#39;s Promise Leaks Memory</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/js-then.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/js-then.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6541,7 +6574,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Automatic Releases to Maven Central with Travis and SBT</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/sbt.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/sbt.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6574,7 +6607,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Functional Programming Inception (Presentation)</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/2017-fp-inception.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/2017-fp-inception.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6605,7 +6638,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Asynchronous Programming and Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/nondet.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/nondet.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6640,7 +6673,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Fixing scala.collection.Iterator</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6667,7 +6700,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Why Scala&#39;s Traversable Is Bad Design</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6694,7 +6727,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Add to NewsBlur Bookmarklet</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/newsblur.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/newsblur.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6723,7 +6756,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Monix Task vs Scalaz vs Future, The Benchmark</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/monix-1024.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/monix-1024.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6818,7 +6851,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Avoid Javaisms: Mocks, Stubs, DI is Code Smell</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/skunk.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/skunk.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6849,7 +6882,7 @@ dig @176.103.130.130 mydomain.com MX
       <item>
   <title>Monifu vs Akka Streams</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/monifu.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/monifu.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6888,7 +6921,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>Scala Best Practices</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -6921,7 +6954,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>Resources for Learning Scala</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7004,7 +7037,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>JVM Multithreading: Monitor Locks and Visibility</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/ferrari.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/ferrari.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7049,7 +7082,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>Notes On JavaScript Client-side Development</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/javascript.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/javascript.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7082,7 +7115,7 @@ but let me give you the perspective from the other side.
       <item>
   <title>On Scala, Functional Programming and Type-Classes</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7118,7 +7151,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>How To Build a Naive Bayes Classifier</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/conditional-prob.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/conditional-prob.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7151,7 +7184,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Data Mining: Finding Similar Items and Users</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/cosine-distance.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/cosine-distance.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7184,7 +7217,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Blogging Platform for Hackers</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/jekyll.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/jekyll.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7221,7 +7254,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Crawling the Android Marketplace</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/wolf-spider.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/wolf-spider.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7254,7 +7287,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Android Learning Resources</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/android-development.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/android-development.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7283,7 +7316,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Earning Money as an Amazon Affiliate</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/amazon-associates.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/amazon-associates.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7319,7 +7352,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>4 Books For Learning to Design, The Hard Way</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-all.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-all.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7352,7 +7385,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>How I Use Flickr: For Backup</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/flickr.jpg?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/flickr.jpg?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&amp;lt;a href='https://flic.kr/p/qYPVGA' target='_blank'&amp;gt;Source&amp;lt;/a&amp;gt;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7383,7 +7416,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Why I Find Heroku Suboptimal</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/heroku.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/heroku.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7420,7 +7453,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Cross-Domain, Cross-Browser AJAX Requests</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/cors-ajax.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/cors-ajax.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7451,7 +7484,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>I hate NULL and all its variants!</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/beautiful-soup.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/beautiful-soup.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7479,7 +7512,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>FreeSWITCH - Tips for Creating a Dialer</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/freeswitch1.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/freeswitch1.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
@@ -7514,7 +7547,7 @@ In this article I’m describing my impressions of the Scala programming languag
       <item>
   <title>Using the Best Tools in Programming: Not Really Doable</title>
   <description>&lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-        &lt;img src=&quot;https://alexn.org/assets/media/articles/tools.png?202102071204&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
+        &lt;img src=&quot;https://alexn.org/assets/media/articles/tools.png?202102121156&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot;
           alt=&quot;&quot; /&gt;
       &lt;/a&gt;
       &lt;br /&gt;
