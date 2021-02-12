@@ -9,8 +9,8 @@
     <description>Feed of recommended links from around the web, published at alexn.org/links/</description>
     <link>https://alexn.org/links/</link>
     <atom:link href="https://alexn.org/feeds/links.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Feb 2021 13:17:10 +0000</pubDate>
-    <lastBuildDate>Fri, 12 Feb 2021 13:17:10 +0000</lastBuildDate>
+    <pubDate>Fri, 12 Feb 2021 13:26:44 +0000</pubDate>
+    <lastBuildDate>Fri, 12 Feb 2021 13:26:44 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -113,7 +113,7 @@
         <item>
   <title>Graphics for JVM</title>
   <description>&lt;a href=&quot;https://tonsky.me/blog/skija/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/skija.png?202102121317&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/skija.png?202102121326&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Let’s say I want to build high-quality desktop apps. I also want to do it on JVM. Don’t get your hopes up—we are not there yet. But I have a plan.”&lt;/em&gt;&lt;/p&gt;
@@ -143,7 +143,7 @@
         <item>
   <title>Announcing .NET 5.0, C# 9, F# 5</title>
   <description>&lt;a href=&quot;https://devblogs.microsoft.com/dotnet/announcing-net-5-0/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/articles/dotnet.png?202102121317&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/articles/dotnet.png?202102121326&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;“&lt;em&gt;We’re excited to release .NET 5.0 today and for you to start using it. It’s a major release — including C# 9 and F# 5 — with a broad set of new features and compelling improvements.&lt;/em&gt;”&lt;/p&gt;
@@ -210,7 +210,7 @@
         <item>
   <title>Explicit term inference with Scala 3</title>
   <description>&lt;a href=&quot;https://www.scala-lang.org/2020/11/06/explicit-term-inference-in-scala-3.html&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/scala-explicit-terms.png?202102121317&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/scala-explicit-terms.png?202102121326&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;“&lt;em&gt;This post briefly introduces the new syntax and semantics available to Scala 3 programmers by analysing the most common use cases and patterns: extension methods, implicit parameters, implicit conversions and typeclasses.&lt;/em&gt;”&lt;/p&gt;
@@ -240,7 +240,7 @@
         <item>
   <title>BSP Support in sbt 1.4</title>
   <description>&lt;a href=&quot;https://www.scala-lang.org/blog/2020/10/27/bsp-in-sbt.html&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/snippets/sbt-bsp-announcement.png?202102121317&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/snippets/sbt-bsp-announcement.png?202102121326&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Today we are proud to announce that support of BSP has been shipped into sbt 1.4.0 … BSP in sbt improves the integration of sbt inside IDEs and code editors.”&lt;/em&gt;&lt;/p&gt;
@@ -334,7 +334,7 @@
         <item>
   <title>Typelevel Cats Effect 3.0.0-M1</title>
   <description>&lt;a href=&quot;https://github.com/typelevel/cats-effect/releases/tag/v3.0.0-M1&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202102121317&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/ce3.svg?202102121326&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Cats Effect 3.0.0-M1 is the very first milestone release in the 3.0.0 line. We are expecting to follow this milestone with subsequent ones as necessary to further refine functionality and features, prior to some number of release candidates leading to a final release. The designation “M1” is meant to indicate our relative confidence in the functionality and API of the library, but it by no means indicates completeness or final compatibility. Neither binary compatibility nor source compatibility with anything are assured prior to 3.0.0, though major breakage is unlikely at this point.”&lt;/em&gt;&lt;/p&gt;
@@ -364,7 +364,7 @@
         <item>
   <title>Practice typing by retyping ENTIRE classic novels</title>
   <description>&lt;a href=&quot;https://www.typelit.io/&quot;&gt;
-      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202102121317&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+      &lt;img src=&quot;https://alexn.org/assets/media/links/typelit.io.png?202102121326&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
     &lt;/a&gt;
     &lt;br /&gt;
     &lt;p&gt;&lt;em&gt;“Improve your typing for free online by practicing on classic literature.”&lt;/em&gt;&lt;/p&gt;
