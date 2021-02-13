@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Reddit.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/reddit.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 12 Feb 2021 18:37:50 +0000</pubDate>
-    <lastBuildDate>Fri, 12 Feb 2021 18:37:50 +0000</lastBuildDate>
+    <pubDate>Sat, 13 Feb 2021 16:12:31 +0000</pubDate>
+    <lastBuildDate>Sat, 13 Feb 2021 16:12:31 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
