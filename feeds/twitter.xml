@@ -9,14 +9,42 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Feb 2021 16:12:31 +0000</pubDate>
-    <lastBuildDate>Sat, 13 Feb 2021 16:12:31 +0000</lastBuildDate>
+    <pubDate>Sat, 13 Feb 2021 16:18:27 +0000</pubDate>
+    <lastBuildDate>Sat, 13 Feb 2021 16:18:27 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>OOP vs Type Classes (Slides, PDF)</title>
+  <description>Shared link #CategoryTheory #FP #OOP #PDF #Programming #Scala</description>
+  <pubDate>Sat, 13 Feb 2021 16:14:21 +0000</pubDate>
+  <dc:modified>Sat, 13 Feb 2021 16:17:41 +0000</dc:modified>
+  <atom:modified>Sat, 13 Feb 2021 16:17:41 +0000</atom:modified>
+  <link>http://alexn.org/assets/pdfs/OOP-vs-Type-Classes-Scala-Love-2021.pdf</link>
+  <guid isPermaLink="false">https://alexn.org/links/2021/02/13/oop-vs-type-classes-slides-from-scala-love-in-the-city-2021.html</guid>
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Shared link</category>
+  
+  <category>Category Theory</category>
+  
+  <category>FP</category>
+  
+  <category>OOP</category>
+  
+  <category>PDF</category>
+  
+  <category>Programming</category>
+  
+  <category>Scala</category>
+  
+</item>
+
+        
       <item>
   <title>Scala&#39;s List has a Secret</title>
   <description>Blog article #FP #Multithreading #Programming #Scala</description>
