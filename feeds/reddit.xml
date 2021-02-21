@@ -9,14 +9,37 @@
     <description>Feed meant for publishing notifications to Reddit.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/reddit.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 13 Feb 2021 16:18:27 +0000</pubDate>
-    <lastBuildDate>Sat, 13 Feb 2021 16:18:27 +0000</lastBuildDate>
+    <pubDate>Sun, 21 Feb 2021 22:25:47 +0000</pubDate>
+    <lastBuildDate>Sun, 21 Feb 2021 22:25:47 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Matomo (Analytics) Hosting via Docker</title>
+  <description>Code snippet #Blogging #Self-hosting #Web</description>
+  <pubDate>Sun, 21 Feb 2021 22:12:25 +0000</pubDate>
+  <dc:modified>Sun, 21 Feb 2021 22:20:45 +0000</dc:modified>
+  <atom:modified>Sun, 21 Feb 2021 22:20:45 +0000</atom:modified>
+  <link>https://alexn.org/snippets/2021/02/21/matomo-hosting-via-docker.html?pk_campaign=reddit&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/snippets/2021/02/21/matomo-hosting-via-docker.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Snippet</category>
+  
+  <category>Blogging</category>
+  
+  <category>Self-hosting</category>
+  
+  <category>Web</category>
+  
+</item>
+  
+        
       <item>
   <title>Scala&#39;s List has a Secret</title>
   <description>Blog article #FP #Multithreading #Programming #Scala</description>
