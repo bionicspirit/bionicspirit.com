@@ -21,14 +21,14 @@
     <meta content="Yo dawg, I heard you liked concurrency primitives. Let’s implement our own asynchronous, dirty CountDownLatch." property="og:description">
     <meta content="https://alexn.org/blog/2021/02/22/countdownlatch-async-dirty.html" property="og:url">
     <meta content="2021-02-22T13:39:35+00:00" property="article:published_time">
-    <meta content="2021-02-22T14:42:09+00:00" property="article:modified_time">
+    <meta content="2021-02-22T17:21:21+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/countdownlatch-async-dirty.png?202102221629" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/countdownlatch-async-dirty.png?202102221629" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/countdownlatch-async-dirty.png?202102221722" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/countdownlatch-async-dirty.png?202102221722" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/countdownlatch-async-dirty.png?202102221629">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/countdownlatch-async-dirty.png?202102221722">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Implementing a CountDownLatch (async and dirty)">
@@ -50,8 +50,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202102221629">
-    <link rel="preload" as="style" href="/assets/css/style.css?202102221629">
+    <link rel="stylesheet" href="/assets/css/style.css?202102221722">
+    <link rel="preload" as="style" href="/assets/css/style.css?202102221722">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2021/02/22/countdownlatch-async-dirty.html">
@@ -113,7 +113,7 @@
     <meta itemprop="datePublished" content="2021-02-22T13:39:35+0000"/>
     
     <time itemprop="dateCreated" datetime="2021-02-22T13:39:35+0000">February 22, 2021</time>
-    | <nobr><span class="time">9</span> minutes</nobr>
+    | <nobr><span class="time">10</span> minutes</nobr>
     
     | <a href="/blog/2021/02/22/countdownlatch-async-dirty.html#isso-thread">comments</a>
     
@@ -241,16 +241,23 @@
         <span class="k">case</span> <span class="kc">null</span> <span class="k">=&gt;</span>
           <span class="o">()</span> <span class="c1">// countDown reached zero</span>
       <span class="o">}</span>
-    <span class="c1">// Keeping this as a value in order to avoid duplicate work in `onComplete`</span>
-    <span class="k">val</span> <span class="nv">ex</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">TimeoutException</span><span class="o">(</span><span class="n">s</span><span class="s">"AsyncCountDownLatch.await($timeout)"</span><span class="o">)</span>
+    <span class="c1">// Keeping this as a value in order to avoid duplicate work</span>
+    <span class="k">val</span> <span class="nv">ex</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">TimeoutException</span><span class="o">(</span>
+      <span class="n">s</span><span class="s">"AsyncCountDownLatch.await($timeout)"</span>
+    <span class="o">)</span>
     <span class="k">val</span> <span class="nv">timeoutTask</span><span class="k">:</span> <span class="kt">Runnable</span> <span class="o">=</span> <span class="o">()</span> <span class="k">=&gt;</span> <span class="o">{</span>
       <span class="c1">// Timeout won, get rid of promise from our state</span>
       <span class="nf">removePromise</span><span class="o">()</span>
       <span class="nv">p</span><span class="o">.</span><span class="py">tryFailure</span><span class="o">(</span><span class="n">ex</span><span class="o">)</span>
     <span class="o">}</span>
     <span class="k">try</span> <span class="o">{</span>
-      <span class="c1">// Finally our timeout task</span>
-      <span class="k">val</span> <span class="nv">cancelToken</span> <span class="k">=</span> <span class="nv">scheduler</span><span class="o">.</span><span class="py">schedule</span><span class="o">(</span><span class="n">timeoutTask</span><span class="o">,</span> <span class="nv">timeout</span><span class="o">.</span><span class="py">length</span><span class="o">,</span> <span class="nv">timeout</span><span class="o">.</span><span class="py">unit</span><span class="o">)</span>
+      <span class="c1">// Finally, installing our timeout, w00t!</span>
+      <span class="k">val</span> <span class="nv">cancelToken</span> <span class="k">=</span> <span class="nv">scheduler</span><span class="o">.</span><span class="py">schedule</span><span class="o">(</span>
+        <span class="n">timeoutTask</span><span class="o">,</span> 
+        <span class="nv">timeout</span><span class="o">.</span><span class="py">length</span><span class="o">,</span> 
+        <span class="nv">timeout</span><span class="o">.</span><span class="py">unit</span>
+      <span class="o">)</span>
+      <span class="c1">// Canceling our timeout task, if primary completes first</span>
       <span class="nv">p</span><span class="o">.</span><span class="py">future</span><span class="o">.</span><span class="py">onComplete</span> <span class="o">{</span> <span class="n">r</span> <span class="k">=&gt;</span>
         <span class="c1">// Avoiding duplicate work</span>
         <span class="nf">if</span> <span class="o">(</span><span class="nv">r</span><span class="o">.</span><span class="py">fold</span><span class="o">(</span><span class="k">_</span> <span class="o">!=</span> <span class="n">ex</span><span class="o">,</span> <span class="k">_</span> <span class="k">=&gt;</span> <span class="kc">true</span><span class="o">))</span>
@@ -297,8 +304,8 @@
     <span class="o">}</span>
 
   <span class="cm">/**
-    * Causes the consumer to wait until the latch has counted down to zero,
-    * or the specified waiting time elapses.
+    * Causes the consumer to wait until the latch has counted down 
+    * to zero, or the specified waiting time elapses.
     *
     * If the timeout gets triggered, then the returned `Future`
     * will complete with a `TimeoutException`.
@@ -401,7 +408,7 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2021-02-22T14:42:09+0000">
+    <time itemprop="dateModified" content="2021-02-22T17:21:21+0000">
         Updated: February 22, 2021
     </time>
     
@@ -557,12 +564,12 @@
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202102221629" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202102221629" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202102221629" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202102221629" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202102221722" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202102221722" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202102221722" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202102221722" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202102221629" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202102221722" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
