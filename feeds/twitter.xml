@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 Feb 2021 07:25:34 +0000</pubDate>
-    <lastBuildDate>Wed, 24 Feb 2021 07:25:34 +0000</lastBuildDate>
+    <pubDate>Fri, 26 Feb 2021 07:26:41 +0000</pubDate>
+    <lastBuildDate>Fri, 26 Feb 2021 07:26:41 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -18,11 +18,36 @@
 
     
       <item>
+  <title>ING Scala Meetup on Scala 3 (live coding session)</title>
+  <description>Blog article #FP #Programming #Scala #Video</description>
+  <pubDate>Fri, 26 Feb 2021 06:30:07 +0000</pubDate>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
+  <link>https://alexn.org/blog/2021/02/26/type-classes-in-scala-3-live-coding-session.html?pk_campaign=twitter&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/blog/2021/02/26/type-classes-in-scala-3-live-coding-session.html</guid>
+  
+  
+  <dc:creator>Alexandru Nedelcu</dc:creator>
+  
+  <category>Blog</category>
+  
+  <category>FP</category>
+  
+  <category>Programming</category>
+  
+  <category>Scala</category>
+  
+  <category>Video</category>
+  
+</item>
+
+        
+      <item>
   <title>Implementing a CountDownLatch (async and dirty)</title>
-  <description>Blog article #Concurrency #Multithreading #Programming #Scala #JVM</description>
+  <description>Blog article #Concurrency #JVM #Multithreading #Programming #Scala #Video</description>
   <pubDate>Mon, 22 Feb 2021 13:39:35 +0000</pubDate>
-  <dc:modified>Mon, 22 Feb 2021 17:28:25 +0000</dc:modified>
-  <atom:modified>Mon, 22 Feb 2021 17:28:25 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://alexn.org/blog/2021/02/22/countdownlatch-async-dirty.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2021/02/22/countdownlatch-async-dirty.html</guid>
   
@@ -33,13 +58,15 @@
   
   <category>Concurrency</category>
   
+  <category>JVM</category>
+  
   <category>Multithreading</category>
   
   <category>Programming</category>
   
   <category>Scala</category>
   
-  <category>JVM</category>
+  <category>Video</category>
   
 </item>
 
@@ -122,10 +149,10 @@
         
       <item>
   <title>FP vs OO: Choose Two</title>
-  <description>Shared link #FP #Java #OOP #Programming #YouTube</description>
+  <description>Shared link #FP #Java #OOP #Programming #Video</description>
   <pubDate>Sun, 07 Feb 2021 12:00:28 +0000</pubDate>
-  <dc:modified>Sun, 07 Feb 2021 12:03:54 +0000</dc:modified>
-  <atom:modified>Sun, 07 Feb 2021 12:03:54 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=8GWZE2Y2O9E</link>
   <guid isPermaLink="false">https://alexn.org/links/2021/02/07/fp-vs-oo-choose-two.html</guid>
   
@@ -141,17 +168,17 @@
   
   <category>Programming</category>
   
-  <category>YouTube</category>
+  <category>Video</category>
   
 </item>
 
         
       <item>
   <title>Tail Recursive Functions (in Scala)</title>
-  <description>Blog article #Algorithms #FP #Programming #Scala</description>
+  <description>Blog article #Algorithms #FP #Programming #Scala #Video</description>
   <pubDate>Tue, 26 Jan 2021 19:49:35 +0000</pubDate>
-  <dc:modified>Thu, 28 Jan 2021 09:36:35 +0000</dc:modified>
-  <atom:modified>Thu, 28 Jan 2021 09:36:35 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html</guid>
   
@@ -167,6 +194,8 @@
   <category>Programming</category>
   
   <category>Scala</category>
+  
+  <category>Video</category>
   
 </item>
 
@@ -303,10 +332,10 @@
         
       <item>
   <title>Michael Jackson – They Don’t Care About Us</title>
-  <description>Shared link #Music #YouTube</description>
+  <description>Shared link #Music #Video</description>
   <pubDate>Sun, 29 Nov 2020 12:04:45 +0000</pubDate>
-  <dc:modified>Sun, 29 Nov 2020 12:15:39 +0000</dc:modified>
-  <atom:modified>Sun, 29 Nov 2020 12:15:39 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=PoEa9bzeTu0</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/11/29/they-dont-care-about-us.html</guid>
   
@@ -316,7 +345,7 @@
   
   <category>Music</category>
   
-  <category>YouTube</category>
+  <category>Video</category>
   
 </item>
 
@@ -505,10 +534,10 @@
         
       <item>
   <title>TIMELAPSE OF THE FUTURE: A Journey to the End of Time</title>
-  <description>Shared link #Entertainment #YouTube</description>
+  <description>Shared link #Entertainment #Video</description>
   <pubDate>Tue, 10 Nov 2020 08:51:12 +0000</pubDate>
-  <dc:modified>Tue, 10 Nov 2020 08:53:37 +0000</dc:modified>
-  <atom:modified>Tue, 10 Nov 2020 08:53:37 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=uD4izuDMUQA</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/11/10/timelapse-of-the-future-a-journey-to-the-end-of-time.html</guid>
   
@@ -518,7 +547,7 @@
   
   <category>Entertainment</category>
   
-  <category>YouTube</category>
+  <category>Video</category>
   
 </item>
 
@@ -597,10 +626,10 @@
         
       <item>
   <title>Donald Trump vs Joe Biden — Epic Rap Battles Of History</title>
-  <description>Shared link #Entertainment #Politics #YouTube</description>
+  <description>Shared link #Entertainment #Politics #Video</description>
   <pubDate>Sat, 24 Oct 2020 20:41:03 +0000</pubDate>
-  <dc:modified>Tue, 10 Nov 2020 08:53:37 +0000</dc:modified>
-  <atom:modified>Tue, 10 Nov 2020 08:53:37 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=FkGK7bitav0</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/24/donald-trump-vs-joe-biden.html</guid>
   
@@ -610,7 +639,7 @@
   
   <category>Politics</category>
   
-  <category>YouTube</category>
+  <category>Video</category>
   
 </item>
 
@@ -663,10 +692,10 @@
         
       <item>
   <title>Haskell: Monads. A 5-minute introduction</title>
-  <description>Shared link #FP #Haskell #Programming #YouTube</description>
+  <description>Shared link #FP #Haskell #Programming #Video</description>
   <pubDate>Tue, 13 Oct 2020 07:50:16 +0000</pubDate>
-  <dc:modified>Wed, 28 Oct 2020 07:40:46 +0000</dc:modified>
-  <atom:modified>Wed, 28 Oct 2020 07:40:46 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=_Gk_lwhJMzk</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/13/haskell-monads-a-5-minute-introduction.html</guid>
   
@@ -680,7 +709,7 @@
   
   <category>Programming</category>
   
-  <category>YouTube</category>
+  <category>Video</category>
   
 </item>
 
@@ -844,10 +873,10 @@
         
       <item>
   <title>Category Theory for the Working Hacker</title>
-  <description>Shared link #Programming #CategoryTheory #FP #Haskell #YouTube</description>
+  <description>Shared link #Programming #CategoryTheory #FP #Haskell #Video</description>
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Sat, 24 Oct 2020 20:48:55 +0000</dc:modified>
-  <atom:modified>Sat, 24 Oct 2020 20:48:55 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://www.youtube.com/watch?v=V10hzjgoklA</link>
   <guid isPermaLink="false">https://alexn.org/links/2020/10/08/category-theory-for-the-working-hacker.html</guid>
   
@@ -863,7 +892,7 @@
   
   <category>Haskell</category>
   
-  <category>YouTube</category>
+  <category>Video</category>
   
 </item>
 
@@ -2021,10 +2050,10 @@
         
       <item>
   <title>Scala Days 2017 — Monix Task</title>
-  <description>Blog article #FP #Scala #Monix #Presentation</description>
+  <description>Blog article #FP #Scala #Monix #Video</description>
   <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 10:18:34 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html</guid>
   
@@ -2039,7 +2068,7 @@
   
   <category>Monix</category>
   
-  <category>Presentation</category>
+  <category>Video</category>
   
 </item>
 
@@ -2230,10 +2259,10 @@
         
       <item>
   <title>Akka &amp; Monix - Typelevel Summit, Oslo 2016</title>
-  <description>Blog article #FP #Scala #Monix</description>
+  <description>Blog article #FP #Scala #Monix #Video</description>
   <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 10:18:34 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2016/05/15/monix-observable.html</guid>
   
@@ -2248,15 +2277,17 @@
   
   <category>Monix</category>
   
+  <category>Video</category>
+  
 </item>
 
         
       <item>
   <title>Monix Task - flatMap(Oslo) 2016</title>
-  <description>Blog article #FP #Monix #Presentation #Scala</description>
+  <description>Blog article #FP #Monix #Scala #Video</description>
   <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 10:18:34 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
   <link>https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2016/05/10/monix-task.html</guid>
   
@@ -2269,9 +2300,9 @@
   
   <category>Monix</category>
   
-  <category>Presentation</category>
-  
   <category>Scala</category>
+  
+  <category>Video</category>
   
 </item>
 
