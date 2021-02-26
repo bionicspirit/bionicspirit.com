@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Feb 2021 13:09:23 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2021 13:09:23 +0000</lastBuildDate>
+    <pubDate>Fri, 26 Feb 2021 13:11:08 +0000</pubDate>
+    <lastBuildDate>Fri, 26 Feb 2021 13:11:08 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -21,8 +21,8 @@
   <title>ING Scala Meetup on Scala 3 (live coding session)</title>
   <description>Blog article #FP #Programming #Scala #Video</description>
   <pubDate>Fri, 26 Feb 2021 06:30:07 +0000</pubDate>
-  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
-  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
+  <dc:modified>Fri, 26 Feb 2021 13:10:17 +0000</dc:modified>
+  <atom:modified>Fri, 26 Feb 2021 13:10:17 +0000</atom:modified>
   <link>https://alexn.org/blog/2021/02/26/type-classes-in-scala-3-live-coding-session.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2021/02/26/type-classes-in-scala-3-live-coding-session.html</guid>
   
