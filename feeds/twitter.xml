@@ -9,14 +9,36 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 26 Feb 2021 15:51:31 +0000</pubDate>
-    <lastBuildDate>Fri, 26 Feb 2021 15:51:31 +0000</lastBuildDate>
+    <pubDate>Sun, 21 Mar 2021 09:02:39 +0000</pubDate>
+    <lastBuildDate>Sun, 21 Mar 2021 09:02:39 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
     
+      <item>
+  <title>Happiest Man on Earth</title>
+  <description>Shared link #Meditation #Video #YouTube</description>
+  <pubDate>Sun, 21 Mar 2021 08:47:06 +0000</pubDate>
+  <dc:modified>Sun, 21 Mar 2021 08:58:12 +0000</dc:modified>
+  <atom:modified>Sun, 21 Mar 2021 08:58:12 +0000</atom:modified>
+  <link>https://www.youtube.com/watch?v=kaNO09cPS6c</link>
+  <guid isPermaLink="false">https://alexn.org/links/2021/03/21/happiest-man-on-earth.html</guid>
+  
+  <dc:creator>Mingyur Rinpoche</dc:creator>
+  
+  <category>Shared link</category>
+  
+  <category>Meditation</category>
+  
+  <category>Video</category>
+  
+  <category>YouTube</category>
+  
+</item>
+
+        
       <item>
   <title>ING Scala Meetup on Scala 3 (live coding session)</title>
   <description>Blog article #FP #Programming #Scala #Video</description>
