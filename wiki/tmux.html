@@ -54,8 +54,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/tmux.html">
@@ -63,7 +63,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -112,6 +111,7 @@
         
         
       </h1>
+    
   
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/tmux.html"/>
@@ -154,7 +154,6 @@
   <li><a href="#resources">Resources:</a></li>
   <li><a href="#credits">Credits</a></li>
 </ul>
-    
       <h2 id="intro">
         
         
@@ -162,6 +161,7 @@
         
         
       </h2>
+    
 
 <p>start new:</p>
 
@@ -199,7 +199,6 @@
 </code></pre></div></div>
 
 <p>In tmux, hit the prefix <code class="language-plaintext highlighter-rouge">ctrl+b</code> (my modified prefix is ctrl+a) and then:</p>
-    
       <h2 id="sessions">
         
         
@@ -207,12 +206,12 @@
         
         
       </h2>
+    
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>:new&lt;CR&gt;  new session
 s  list sessions
 $  name session
 </code></pre></div></div>
-    
       <h2 id="windows-tabs">
         
         
@@ -220,6 +219,7 @@ $  name session
         
         
       </h2>
+    
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>c  create window
 w  list windows
@@ -229,7 +229,6 @@ f  find window
 ,  name window
 &amp;  kill window
 </code></pre></div></div>
-    
       <h2 id="panes-splits">
         
         
@@ -237,6 +236,7 @@ f  find window
         
         
       </h2>
+    
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>%  vertical split
 "  horizontal split
@@ -252,7 +252,6 @@ x  kill pane
 &lt;prefix&gt; } (Move the current pane right)
 &lt;prefix&gt; z toggle pane zoom
 </code></pre></div></div>
-    
       <h2 id="sync-panes">
         
         
@@ -260,6 +259,7 @@ x  kill pane
         
         
       </h2>
+    
 
 <p>You can do this by switching to the appropriate window, typing your Tmux prefix (commonly Ctrl-B or Ctrl-A) and then a colon to bring up a Tmux command line, and typing:</p>
 
@@ -267,7 +267,6 @@ x  kill pane
 </code></pre></div></div>
 
 <p>You can optionally add on or off to specify which state you want; otherwise the option is simply toggled. This option is specific to one window, so it won’t change the way your other sessions or windows operate. When you’re done, toggle it off again by repeating the command. <a href="http://blog.sanctum.geek.nz/sync-tmux-panes/">tip source</a></p>
-    
       <h2 id="resizing-panes">
         
         
@@ -275,6 +274,7 @@ x  kill pane
         
         
       </h2>
+    
 
 <p>You can also resize panes if you don’t like the layout defaults. I personally rarely need to do this, though it’s handy to know how. Here is the basic syntax to resize panes:</p>
 
@@ -289,7 +289,6 @@ PREFIX : resize-pane -R 20 (Resizes the current pane right by 20 cells)
 PREFIX : resize-pane -t 2 20 (Resizes the pane with the id of 2 down by 20 cells)
 PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cells)
 </code></pre></div></div>
-    
       <h2 id="copy-mode">
         
         
@@ -297,6 +296,7 @@ PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cell
         
         
       </h2>
+    
 
 <p>Pressing PREFIX [ places us in Copy mode. We can then use our movement keys to move our cursor around the screen. By default, the arrow keys work. we set our configuration file to use Vim keys for moving between windows and resizing panes so we wouldn’t have to take our hands off the home row. tmux has a vi mode for working with the buffer as well. To enable it, add this line to .tmux.conf:</p>
 
@@ -341,7 +341,6 @@ PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cell
    Start selection         Space          C-Space
    Transpose chars                        C-t
 </code></pre></div></div>
-    
       <h2 id="misc">
         
         
@@ -349,13 +348,13 @@ PREFIX : resize-pane -t -L 20 (Resizes the pane with the id of 2 left by 20 cell
         
         
       </h2>
+    
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>d  detach
 t  big clock
 ?  list shortcuts
 :  prompt
 </code></pre></div></div>
-    
       <h2 id="configurations-options">
         
         
@@ -363,6 +362,7 @@ t  big clock
         
         
       </h2>
+    
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code># Mouse support - set to on if you want to use the mouse
 * setw -g mode-mouse off
@@ -385,7 +385,6 @@ unbind Up bind Up new-window -d -n tmp \; swap-pane -s tmp.1 \; select-window -t
 unbind Down
 bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
 </code></pre></div></div>
-    
       <h2 id="resources">
         
         
@@ -393,12 +392,12 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
         
         
       </h2>
+    
 
 <ul>
   <li><a href="http://pragprog.com/book/bhtmux/tmux">tmux: Productive Mouse-Free Development</a></li>
   <li><a href="http://superuser.com/questions/343572/tmux-how-do-i-reorder-my-windows">How to reorder windows</a></li>
 </ul>
-    
       <h2 id="credits">
         
         
@@ -406,20 +405,22 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
         
         
       </h2>
+    
 
 <p>Forked from: <a href="https://gist.github.com/MohamedAlaa/2961058">https://gist.github.com/MohamedAlaa/2961058</a></p>
 
   </div>
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -533,7 +534,6 @@ bind Down last-window \; swap-pane -s tmp.1 \; kill-window -t tmp
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

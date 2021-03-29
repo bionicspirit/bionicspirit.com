@@ -27,11 +27,11 @@
     <meta content="2020-04-21T13:06:57+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/sbt.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/sbt.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/sbt.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/sbt.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/sbt.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/sbt.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Automatic Releases to Maven Central with Travis and SBT">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,47 +102,53 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Automatic Releases to Maven Central with Travis and SBT
+          
+      Automatic Releases to Maven Central with Travis and SBT
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html"/>
-    <meta itemprop="datePublished" content="2017-08-16T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2017-08-16T00:00:00+0000">August 16, 2017</time>
-    | <nobr><span class="time">13</span> minutes</nobr>
-    
-    | <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/sbt.png" />
-      <img src="/assets/media/articles/sbt.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html"/>
+      <meta itemprop="datePublished" content="2017-08-16T00:00:00+0000"/>
       
-    </figure>
-    
-  
+      <time itemprop="dateCreated" datetime="2017-08-16T00:00:00+0000">August 16, 2017</time>
+      | <nobr><span class="time">13</span> minutes</nobr>
+      
+      | <a href="/blog/2017/08/16/automatic-releases-sbt-travis.html#isso-thread">comments</a>
+      
+    </p>
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/sbt.png" />
+          <img src="/assets/media/articles/sbt.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
+
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    </header>
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">Builds and deployments of new versions and snapshots is a pain. This article is an explanation to how I automated this process for <a href="https://monix.io">monix.io</a>, an open source Scala library that’s making use of <a href="http://www.scala-sbt.org/">SBT</a> as the build tool and <a href="https://travis-ci.org/">travis-ci.org</a> as the continuous integration.</p>
@@ -173,7 +178,6 @@ for inspiration:</p>
 trust <a href="https://travis-ci.org/">Travis-ci.org</a> with your PGP private
 key for signing the published binaries. If that’s an acceptable risk
 or not, that’s up to you. See below.</p>
-    
       <h2 id="generating-a-pgp-key-pair">
         
         
@@ -181,6 +185,7 @@ or not, that’s up to you. See below.</p>
         
         
       </h2>
+    
 
 <p>For deployments to Sonatype / Maven Central the built packages need to
 be signed. If you don’t have an existing PGP key, one can be easily
@@ -271,7 +276,6 @@ directory and then:</p>
 tools might generate junk. We only want those 2 files (<code class="language-plaintext highlighter-rouge">pubring.gpg</code>
 and <code class="language-plaintext highlighter-rouge">secring.gpg</code>), so check your project directory with <code class="language-plaintext highlighter-rouge">git status</code>
 and delete anything extra.</p>
-    
       <h2 id="configuring-sbt">
         
         
@@ -279,6 +283,7 @@ and delete anything extra.</p>
         
         
       </h2>
+    
 
 <p>Curently in <a href="https://monix.io">monix.io</a> I’m using the following plugins:</p>
 
@@ -398,7 +403,6 @@ you can do:</p>
 
 <p>Replace <code class="language-plaintext highlighter-rouge">xxxxxx</code> with your passphrase. If this command works, then we
 are good thus far.</p>
-    
       <h2 id="configuring-travis">
         
         
@@ -406,6 +410,7 @@ are good thus far.</p>
         
         
       </h2>
+    
 
 <p>In <code class="language-plaintext highlighter-rouge">build.sbt</code> I configured these 2 commands:</p>
 
@@ -489,7 +494,6 @@ are good thus far.</p>
 $ git commit -am 'Build changes for automatic releases'
 $ git push
 </code></pre></div></div>
-    
       <h3 id="setting-environment-variables">
         
         
@@ -497,6 +501,7 @@ $ git push
         
         
       </h3>
+    
 
 <p>As a final step we need to set the following environment variables in Travis:</p>
 
@@ -518,7 +523,6 @@ and access the “<em>User Token</em>”, or generate a new one.</p>
 <figure>
   <img src="/assets/media/articles/travis-env-vars.png" />
 </figure>
-    
       <h3 id="alternative-env-with-travis-encryption">
         
         
@@ -526,6 +530,7 @@ and access the “<em>User Token</em>”, or generate a new one.</p>
         
         
       </h3>
+    
 
 <p>As an alternative to setting those environment variables in Travis’s
 UI, you can use Travis’s mechanism for encrypting stuff to set these
@@ -562,7 +567,6 @@ that resembles the following:</p>
 
 <p>Now this can be committed in your repository and Travis will take care
 of decrypting those values.</p>
-    
       <h2 id="publishing">
         
         
@@ -570,6 +574,7 @@ of decrypting those values.</p>
         
         
       </h2>
+    
 
 <p>For publishing hashed snapshot versions, we need a <code class="language-plaintext highlighter-rouge">snapshot</code> branch,
 as that’s what the script above looks for.</p>
@@ -584,7 +589,6 @@ $ git push --set-upstream origin snapshot
 
 <p>If everything goes well, we should have a new hashed version published,
 but watch the output of Travis for any problems.</p>
-    
       <h2 id="extra-resources">
         
         
@@ -592,6 +596,7 @@ but watch the output of Travis for any problems.</p>
         
         
       </h2>
+    
 
 <p>I’ve written this document while preparing the Shade project for
 automatic deployments. So here’s for inspiration:</p>
@@ -603,7 +608,6 @@ automatic deployments. So here’s for inspiration:</p>
   <li><a href="https://travis-ci.org/monix/shade/jobs/265221087">release of v1.10.0</a>
 (that published the final <code class="language-plaintext highlighter-rouge">1.10.0</code> on Maven Central)</li>
 </ul>
-    
       <h2 id="in-closing">
         
         
@@ -611,6 +615,7 @@ automatic deployments. So here’s for inspiration:</p>
         
         
       </h2>
+    
 
 <p>So that’s about it. Pretty painful if you ask me, but hopefully we
 don’t have to do this too often.</p>
@@ -649,7 +654,6 @@ forgetting what I did the first time.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -657,6 +661,7 @@ forgetting what I did the first time.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -768,15 +773,16 @@ forgetting what I did the first time.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -922,7 +928,6 @@ forgetting what I did the first time.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

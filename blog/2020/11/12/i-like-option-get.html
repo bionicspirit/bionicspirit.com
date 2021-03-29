@@ -24,14 +24,14 @@
     <meta content="We should strive to make illegal states unrepresentable. Option.get is a partial function that, according to many, shouldn’t be in the standard library. Yet it doesn’t bother me; the inability of Scala to make it safe is the problem." property="og:description">
     <meta content="https://alexn.org/blog/2020/11/12/i-like-option-get.html" property="og:url">
     <meta content="2020-11-12T18:02:46+00:00" property="article:published_time">
-    <meta content="2020-11-12T20:08:25+00:00" property="article:modified_time">
+    <meta content="2021-03-29T19:10:58+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/option.get.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/option.get.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/option.get.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/option.get.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/option.get.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/option.get.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="I like Option.get">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/11/12/i-like-option-get.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,50 +102,58 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          I like Option.get
+          
+      I like Option.get
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/11/12/i-like-option-get.html"/>
-    <meta itemprop="datePublished" content="2020-11-12T18:02:46+0000"/>
     
-    <time itemprop="dateCreated" datetime="2020-11-12T18:02:46+0000">November 12, 2020</time>
-    | <nobr><span class="time">4</span> minutes</nobr>
-    
-    | <a href="/blog/2020/11/12/i-like-option-get.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/option.get.png" />
-      <img src="/assets/media/articles/option.get.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/11/12/i-like-option-get.html"/>
+      <meta itemprop="datePublished" content="2020-11-12T18:02:46+0000"/>
       
-    </figure>
-    
-  
+      <time itemprop="dateCreated" datetime="2020-11-12T18:02:46+0000">November 12, 2020</time>
+      | <nobr><span class="time">4</span> minutes</nobr>
+      
+      | <a href="/blog/2020/11/12/i-like-option-get.html#isso-thread">comments</a>
+      
+    </p>
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/option.get.png" />
+          <img src="/assets/media/articles/option.get.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
+
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    </header>
 
   <div id="content" itemprop="articleBody">
-    <p>In strong, static, expressive FP languages, such as Scala, or Haskell, there’s the ongoing drive to “<em>capture invariants in the type system</em>” and “<em>to make illegal states unrepresentable</em>”. For a nice introduction, see <a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/">Parse, don’t validate</a> by Alexis King.</p>
+    <p class="intro withcap">
+  In strong, static, expressive FP languages, such as Scala, or Haskell, there’s the ongoing drive to “<em>capture invariants in the type system</em>” and “<em>to make illegal states unrepresentable</em>”. For a nice introduction, see <a href="https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/">Parse, don’t validate</a> by Alexis King.
+</p>
 
 <p><code class="language-plaintext highlighter-rouge">Option.get</code> or <code class="language-plaintext highlighter-rouge">List.head</code> get such bad reps because these functions aren’t total. To wit:</p>
 
@@ -242,8 +249,8 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-11-12T20:08:25+0000">
-        Updated: November 12, 2020
+    <time itemprop="dateModified" content="2021-03-29T19:10:58+0000">
+        Updated: March 29, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -266,7 +273,6 @@
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -274,6 +280,7 @@
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -379,15 +386,16 @@
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -533,7 +541,6 @@
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

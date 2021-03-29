@@ -32,7 +32,7 @@
     <meta property="og:video:width" content="560" />
     <meta property="og:video:height" content="315" /> 
     <meta property="og:image" content="https://img.youtube.com/vi/rftcbxj7et0/maxresdefault.jpg" />
-    <meta property="og:image:secure_url" content="https://img.youtube.com/vi//maxresdefault.jpg" />
+    <meta property="og:image:secure_url" content="https://img.youtube.com/vi/rftcbxj7et0/maxresdefault.jpg" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="player" />
     <meta name="twitter:player" content="https://www.youtube-nocookie.com/embed/rftcbxj7et0">
@@ -60,8 +60,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2016/05/10/monix-task.html">
@@ -69,7 +69,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -110,53 +109,58 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Monix Task - flatMap(Oslo) 2016
+          
+      Monix Task - flatMap(Oslo) 2016
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2016/05/10/monix-task.html"/>
-    <meta itemprop="datePublished" content="2016-05-10T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2016-05-10T00:00:00+0000">May 10, 2016</time>
-    | <nobr><span class="time">1</span> minute</nobr>
-    
-    | <a href="/blog/2016/05/10/monix-task.html#isso-thread">comments</a>
-    
-  </p>
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2016/05/10/monix-task.html"/>
+      <meta itemprop="datePublished" content="2016-05-10T00:00:00+0000"/>
+      
+      <time itemprop="dateCreated" datetime="2016-05-10T00:00:00+0000">May 10, 2016</time>
+      | <nobr><span class="time">1</span> minute</nobr>
+      
+      | <a href="/blog/2016/05/10/monix-task.html#isso-thread">comments</a>
+      
+    </p>
 
-  
+    
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    </header>
 
   <div id="content" itemprop="articleBody">
     
 <figure class="video">
+  
   <a href="https://www.youtube.com/watch?v=rftcbxj7et0&amp;autoplay=1" target="_blank" class="youtube-play-link" title="Go to YouTube video">
-    <!-- <img src="/assets/media/youtube.png" alt="YouTube play logo" class="play-logo" /> -->
-    <img src="https://img.youtube.com/vi/rftcbxj7et0/maxresdefault.jpg" alt="YouTube video thumbnail" class="play-thumb" />
+    <img src="https://img.youtube.com/vi/rftcbxj7et0/maxresdefault.jpg?202103291912" alt="" class="play-thumb" />
   </a>
   <figcaption>
     <a href="https://www.youtube.com/watch?v=rftcbxj7et0&amp;autoplay=1" target="_blank">
-      Link
-      (YouTube Video)
+      Video link
+      (click to open on YouTube.com)
     </a>
   </figcaption>
 </figure>
@@ -177,7 +181,6 @@ my presentation from
 Typelevel Summit, Oslo, 2016</li>
   <li><a href="https://monix.io">Monix</a> project</li>
 </ul>
-    
       <h2 id="abstract">
         
         
@@ -185,6 +188,7 @@ Typelevel Summit, Oslo, 2016</li>
         
         
       </h2>
+    
 
 <p>Scala’s Future from the standard library is great, but sometimes we need more.</p>
 
@@ -236,7 +240,6 @@ instead of blocking threads.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -244,6 +247,7 @@ instead of blocking threads.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -351,15 +355,16 @@ instead of blocking threads.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -505,7 +510,6 @@ instead of blocking threads.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

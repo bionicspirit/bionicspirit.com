@@ -56,8 +56,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html">
@@ -65,7 +65,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -106,41 +105,46 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Towards a Better AtomicReference
+          
+      Towards a Better AtomicReference
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html"/>
-    <meta itemprop="datePublished" content="2013-05-07T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2013-05-07T00:00:00+0000">May 7, 2013</time>
-    | <nobr><span class="time">10</span> minutes</nobr>
-    
-    | <a href="/blog/2013/05/07/towards-better-atomicreference-scala.html#isso-thread">comments</a>
-    
-  </p>
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html"/>
+      <meta itemprop="datePublished" content="2013-05-07T00:00:00+0000"/>
+      
+      <time itemprop="dateCreated" datetime="2013-05-07T00:00:00+0000">May 7, 2013</time>
+      | <nobr><span class="time">10</span> minutes</nobr>
+      
+      | <a href="/blog/2013/05/07/towards-better-atomicreference-scala.html#isso-thread">comments</a>
+      
+    </p>
 
-  
+    
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    </header>
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">
@@ -188,7 +192,6 @@ my own <code class="language-plaintext highlighter-rouge">shifter.concurrency.at
   <li>see the code in <a href="https://github.com/alexandru/shifter/blob/master/core/src/main/scala/shifter/concurrency/atomic/Ref.scala">my GitHub repo</a></li>
   <li>checkout the <a href="http://shifter.alexn.org/api/current/core/#shifter.concurrency.atomic.package">API docs</a></li>
 </ul>
-    
       <h2 id="the-common-interface">
         
         
@@ -196,6 +199,7 @@ my own <code class="language-plaintext highlighter-rouge">shifter.concurrency.at
         
         
       </h2>
+    
 
 <p>Lets start by mirroring the basics of AtomicReference:</p>
 
@@ -466,7 +470,6 @@ orchestrate multiple atomic references at once.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -474,6 +477,7 @@ orchestrate multiple atomic references at once.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -589,15 +593,16 @@ orchestrate multiple atomic references at once.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -743,7 +748,6 @@ orchestrate multiple atomic references at once.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

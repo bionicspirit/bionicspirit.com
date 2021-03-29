@@ -27,11 +27,11 @@
     <meta content="2019-12-14T00:00:00+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/freeswitch1.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/freeswitch1.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/freeswitch1.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/freeswitch1.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/freeswitch1.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/freeswitch1.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="FreeSWITCH - Tips for Creating a Dialer">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,50 +102,58 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          FreeSWITCH - Tips for Creating a Dialer
+          
+      FreeSWITCH - Tips for Creating a Dialer
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html"/>
-    <meta itemprop="datePublished" content="2009-02-20T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2009-02-20T00:00:00+0000">February 20, 2009</time>
-    | <nobr><span class="time">13</span> minutes</nobr>
-    
-    | <a href="/blog/2009/02/20/tips-for-creating-voip-dialer.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/freeswitch1.png" />
-      <img src="/assets/media/articles/freeswitch1.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html"/>
+      <meta itemprop="datePublished" content="2009-02-20T00:00:00+0000"/>
       
-    </figure>
+      <time itemprop="dateCreated" datetime="2009-02-20T00:00:00+0000">February 20, 2009</time>
+      | <nobr><span class="time">13</span> minutes</nobr>
+      
+      | <a href="/blog/2009/02/20/tips-for-creating-voip-dialer.html#isso-thread">comments</a>
+      
+    </p>
+
     
-  
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/freeswitch1.png" />
+          <img src="/assets/media/articles/freeswitch1.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
 
-  <div id="content" itemprop="articleBody">
-    <ul>
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#prerequisites">Prerequisites</a></li>
   <li><a href="#step-1-instalation">Step 1: Instalation</a></li>
@@ -162,10 +169,13 @@
       <li><a href="#how-to-execute-external-commands-from-your-script">How to execute external commands from your script?</a></li>
     </ul>
   </li>
-  <li><a href="#step-6-communicating-with-freeswitch-using-modeventsocket">Step 6: Communicating with FreeSWITCH using mod_event_socket</a></li>
+  <li><a href="#step-6-communicating-with-freeswitch-using-mod_event_socket">Step 6: Communicating with FreeSWITCH using mod_event_socket</a></li>
   <li><a href="#wrapping-up">Wrapping up</a></li>
 </ul>
-    
+    </nav>
+    </header>
+
+  <div id="content" itemprop="articleBody">
       <h2 id="introduction">
         
         
@@ -173,6 +183,7 @@
         
         
       </h2>
+    
 
 <p class="intro withcap">FreeSWITCH is a free and open source application server for real-time communication, WebRTC, telecommunications, video and Voice over Internet Protocol. Let's build a VoIP dialer with it.</p>
 
@@ -185,7 +196,6 @@
 <p>As you will learn, FreeSWITCH is a little overwhelming, while being flexible and easy to use.</p>
 
 <p>Being a software developer, I prefer the flexibility of a programming language, rather than working with XML configuration files. Fortunately the standard FreeSWITCH distribution comes with both a SpiderMonkey engine (javascript) and Lua embeded. And it works great for our needs.</p>
-    
       <h2 id="prerequisites">
         
         
@@ -193,13 +203,13 @@
         
         
       </h2>
+    
 
 <p>Our setup is based on Debian Linux. You should have no problem following it for other Linux-distros or operating systems though.</p>
 
 <p>For external scripts, we prefer Perl, and I’ll give a code sample using it, but I don’t think it would be a problem porting it to the language of your choice.</p>
 
 <p>You’ll also need a <a href="http://en.wikipedia.org/wiki/Session_Initiation_Protocol">SIP</a> provider for initiating external VoIP calls.</p>
-    
       <h2 id="step-1-instalation">
         
         
@@ -207,13 +217,13 @@
         
         
       </h2>
+    
 
 <p>You can find detailed installation instructions here: <a href="http://wiki.freeswitch.org/wiki/Installation_Guide">http://wiki.freeswitch.org/wiki/Installation_Guide</a>.</p>
 
 <p>Our setups are based on Debian, and there are also instructions for <a href="http://wiki.freeswitch.org/wiki/Installation_Guide#Debian_Linux">building Debian packages</a>.</p>
 
 <p>If you build Debian packages, the default instalation path is <code class="language-plaintext highlighter-rouge">/opt/freeswitch</code> (revision 10694). You can change that by modifying debian/rules in the sources directory (search for “<code class="language-plaintext highlighter-rouge">/opt/freeswitch</code>”, you’ll find a “<code class="language-plaintext highlighter-rouge">./configure</code>” section), once you download it. But this tutorial is based on the default settings.</p>
-    
       <h2 id="step-2-configuration">
         
         
@@ -221,11 +231,11 @@
         
         
       </h2>
+    
 
 <p>I won’t dwell on details since the configuration can be a painful process, and you would be better served contacting the <a href="http://wiki.freeswitch.org/wiki/Main_Page#Community_and_Support">FreeSWITCH community</a>.</p>
 
 <p>But you’ll probably need to configure authentication settings for your SIP provider. To do that, look at the lead on the wiki: <a href="http://wiki.freeswitch.org/wiki/Getting_Started_Guide#External">external SIP profiles</a>. For us it was easy since our provider doesn’t require user/password authentication, and no extra configuration was necessary.</p>
-    
       <h2 id="step-3-initiating-external-calls">
         
         
@@ -233,6 +243,7 @@
         
         
       </h2>
+    
 
 <p>In case the FreeSWITCH daemon has started, you need to stop it for now …</p>
 
@@ -270,7 +281,6 @@
 </code></pre></div></div>
 
 <p>If everything goes well (the phone rings, and you can hear the audion file), then <strong>congratulations</strong>, you’re well on your way :)</p>
-    
       <h2 id="step-4-scripting">
         
         
@@ -278,6 +288,7 @@
         
         
       </h2>
+    
 
 <p>Freeswitch comes with Spidermonkey, and Lua embedded, and also offers integration with other languages, like Python and Perl. I’m going to exemplify Javascript, because it’s a decent mainstream language that I like, but if you’re worried about performance or you just want to have some fun, you should give Lua a try.</p>
 
@@ -314,7 +325,6 @@
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code>jsrun /path/to/voice.js
 </code></pre></div></div>
-    
       <h2 id="step-5-more-scripting">
         
         
@@ -322,9 +332,9 @@
         
         
       </h2>
+    
 
 <p>Now that we’ve got working code, lets expand it a little to make it more useful.</p>
-    
       <h3 id="how-to-send-a-caller-id-when-initiating-calls">
         
         
@@ -332,6 +342,7 @@
         
         
       </h3>
+    
 
 <p>We want the call to have an associated caller-ID. The caller-ID is passed by setting the channel variables <em>origination_caller_id_number</em> and <em>origination_caller_id_name</em>. Try it in a FreeSWITCH console right now by executing this command:</p>
 
@@ -354,7 +365,6 @@
            <span class="nv">ignore_early_media</span><span class="o">=</span><span class="nb">true</span><span class="o">}</span>sofia/external/<span class="nv">$number</span>@provider <span class="se">\</span>
            &amp;bridge<span class="o">(</span>sofia/external/<span class="nv">$second_number</span>@provider<span class="o">)</span>
 </code></pre></div></div>
-    
       <h3 id="how-to-retry-if-phone-is-busy">
         
         
@@ -362,6 +372,7 @@
         
         
       </h3>
+    
 
 <p>We want to retry the call immediately after, maybe the client pressed the wrong button and rejected the call. As in this <a href="http://wiki.freeswitch.org/wiki/Busy_Call_Retry">wiki page</a>, but with a twist: we wouldn’t want to retry more than once, because annoyed customers are not happy customers.</p>
 
@@ -402,7 +413,6 @@
 <p>See: <a href="http://wiki.freeswitch.org/wiki/Session_hangup">hangup</a>.</p>
 
 <p>Of course, this script retries the call immediately. This may not be what you want (you may want to wait 10 minutes for a retry), so our favorite way for retries is through an external script that handles the calls queue.</p>
-    
       <h3 id="how-to-detect-phone-keys-pressed">
         
         
@@ -410,6 +420,7 @@
         
         
       </h3>
+    
 
 <p>Now we’re getting somewhere :)</p>
 
@@ -458,7 +469,6 @@
 </code></pre></div></div>
 
 <p><strong>Note:</strong> minutes cost money, so you should add a counter to limit the maximum times a message can be replayed. There are many weirdos out there 😉</p>
-    
       <h3 id="how-to-create-a-connection-between-your-session-and-another-phone">
         
         
@@ -466,6 +476,7 @@
         
         
       </h3>
+    
 
 <p>Maybe you want your client to be connected to a real operator (when he’s pressing “0” on his phone keyboard maybe?). It’s easy, here’s how:</p>
 
@@ -489,7 +500,6 @@
 </code></pre></div></div>
 
 <p>See: <a href="http://wiki.freeswitch.org/wiki/Mod_commands#bridge">bridge</a>. If you want to add the actual key-press event, see the example above.</p>
-    
       <h3 id="how-to-execute-external-commands-from-your-script">
         
         
@@ -497,11 +507,11 @@
         
         
       </h3>
+    
 
 <p>If you want to execute an external script (like for sending a notification when a certain event happens), you can use the <a href="http://wiki.freeswitch.org/wiki/Javascript_Misc_system">system</a> command.</p>
 
 <p>If you want to execute an external command, and process its output, you can open a pipe using the <a href="http://wiki.freeswitch.org/wiki/File">File</a> object. In FreeSWITCH you do have the possibility of accessing a database using ODBC, but I haven’t tried it, and in case it doesn’t work, you can always write an external script that does the processing you need, and then returns a JSON, or an XML file.</p>
-    
       <h2 id="step-6-communicating-with-freeswitch-using-mod_event_socket">
         
         
@@ -509,6 +519,7 @@
         
         
       </h2>
+    
 
 <p>Playing in the FreeSWITCH console is fun, but what you need is a server who receives notifications from an external script.</p>
 
@@ -547,7 +558,6 @@
 </code></pre></div></div>
 
 <p>Btw, if you’re not feeling comfortable about communicating through plain-old sockets with FreeSWITCH, try <a href="http://wiki.freeswitch.org/wiki/Mod_http">mod_http</a>.</p>
-    
       <h2 id="wrapping-up">
         
         
@@ -555,6 +565,7 @@
         
         
       </h2>
+    
 
 <p>Congratulations, you’ve made it to the end. You just need to add you’re specific business logic, and you already have a kick-ass dialer.</p>
 
@@ -594,7 +605,6 @@
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -602,6 +612,7 @@
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -707,15 +718,16 @@
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -861,7 +873,6 @@
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

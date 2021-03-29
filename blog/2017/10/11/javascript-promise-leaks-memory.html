@@ -24,14 +24,14 @@
     <meta content="JavaScript’s Promise leaks memory in recursive loops and what you can do about it." property="og:description">
     <meta content="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html" property="og:url">
     <meta content="2017-10-11T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-11-13T14:50:48+00:00" property="article:modified_time">
+    <meta content="2021-03-29T19:10:58+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/js-then.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/js-then.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/js-then.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/js-then.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/js-then.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/js-then.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="JavaScript&#39;s Promise Leaks Memory">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,50 +102,57 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          JavaScript&#39;s Promise Leaks Memory
+          
+      JavaScript&#39;s Promise Leaks Memory
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html"/>
-    <meta itemprop="datePublished" content="2017-10-11T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2017-10-11T00:00:00+0000">October 11, 2017</time>
-    | <nobr><span class="time">13</span> minutes</nobr>
-    
-    | <a href="/blog/2017/10/11/javascript-promise-leaks-memory.html#isso-thread">comments</a>
-    
-  </p>
-
-  
-    <div class="hidden" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/js-then.png" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html"/>
+      <meta itemprop="datePublished" content="2017-10-11T00:00:00+0000"/>
       
-    </div>
+      <time itemprop="dateCreated" datetime="2017-10-11T00:00:00+0000">October 11, 2017</time>
+      | <nobr><span class="time">13</span> minutes</nobr>
+      
+      | <a href="/blog/2017/10/11/javascript-promise-leaks-memory.html#isso-thread">comments</a>
+      
+    </p>
+
     
-  
+      <div class="hidden" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/media/articles/js-then.png" />
+        
+      </div>
+      
+    
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
 
-  <div id="content" itemprop="articleBody">
-    <ul>
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#the-spec-is-the-problem">The Spec is The Problem</a></li>
   <li><a href="#the-non-leaky-solution">The Non-leaky Solution</a></li>
@@ -168,7 +174,10 @@
   </li>
   <li><a href="#final-words">Final Words</a></li>
 </ul>
-    
+    </nav>
+    </header>
+
+  <div id="content" itemprop="articleBody">
       <h2 id="introduction">
         
         
@@ -176,6 +185,7 @@
         
         
       </h2>
+    
 
 <p>This piece of code will leak memory and eventually crash your Node.js
 process or browser:</p>
@@ -234,7 +244,6 @@ recursive calls, the <code class="language-plaintext highlighter-rouge">Promise<
 not chaining <code class="language-plaintext highlighter-rouge">then</code> calls correctly. And that sample should not leak,
 the <code class="language-plaintext highlighter-rouge">Promise</code> implementation should be able to do the equivalent of TCO
 and in such a case eliminate frames in the <code class="language-plaintext highlighter-rouge">then</code> chain being created.</p>
-    
       <h2 id="the-spec-is-the-problem">
         
         
@@ -242,6 +251,7 @@ and in such a case eliminate frames in the <code class="language-plaintext highl
         
         
       </h2>
+    
 
 <figure>
   <a href="https://promisesaplus.com/">
@@ -261,7 +271,6 @@ Relevant links to known issues on GitHub, explaining why:</p>
 
 <p>As you’ll see, there are some reasonable arguments for why the <code class="language-plaintext highlighter-rouge">Promise</code>
 implementation is allowed to leak memory. But I can’t agree.</p>
-    
       <h2 id="the-non-leaky-solution">
         
         
@@ -269,6 +278,7 @@ implementation is allowed to leak memory. But I can’t agree.</p>
         
         
       </h2>
+    
 
 <p>The solution, if you insist on using JavaScript’s <code class="language-plaintext highlighter-rouge">Promise</code>, is to work
 with non-recursive functions:</p>
@@ -285,7 +295,6 @@ with non-recursive functions:</p>
 
 <p>But at this point any semblance of functional programming, if you ever had
 any, goes out the window, see below.</p>
-    
       <h2 id="common-objections">
         
         
@@ -293,9 +302,9 @@ any, goes out the window, see below.</p>
         
         
       </h2>
+    
 
 <p>Gathering feedback from people, here are the common objections:</p>
-    
       <h3 id="1-this-is-normal">
         
         
@@ -303,6 +312,7 @@ any, goes out the window, see below.</p>
         
         
       </h3>
+    
 
 <p>No, if you judge this implementation, relative to other <code class="language-plaintext highlighter-rouge">Promise</code> / <code class="language-plaintext highlighter-rouge">Future</code>
 implementations in the industry, which are setting expectations.</p>
@@ -330,7 +340,6 @@ and Monix <a href="https://monix.io/api/3.0/monix/execution/CancelableFuture.htm
 <p>Interestingly, complaints for Scala’s <code class="language-plaintext highlighter-rouge">Future</code> happened due to usage of
 Play’s <a href="https://www.playframework.com/documentation/2.6.x/Iteratees">Iteratees</a>,
 with which people have been modeling stream processing.</p>
-    
       <h3 id="2-but-it-does-unlimited-chaining-of-promises">
         
         
@@ -338,6 +347,7 @@ with which people have been modeling stream processing.</p>
         
         
       </h3>
+    
 
 <p>Yes, that’s why it’s leaking memory.</p>
 
@@ -347,7 +357,6 @@ the implementations mentioned that don’t leak.</p>
 
 <p>The fault lies with the standard <code class="language-plaintext highlighter-rouge">Promise</code> implementation, not with
 the shown sample, being a legitimate use-case.</p>
-    
       <h3 id="3-that-sample-does-not-use-the-return-value">
         
         
@@ -355,6 +364,7 @@ the shown sample, being a legitimate use-case.</p>
         
         
       </h3>
+    
 
 <p>The sample is kept simple for didactic purposes, however:</p>
 
@@ -364,7 +374,6 @@ aggregating information along the way, returning a result later</li>
   <li>the script does do error handling and without that inner
 <code class="language-plaintext highlighter-rouge">return</code>, the <code class="language-plaintext highlighter-rouge">.catch(console.error)</code> would have no effect</li>
 </ol>
-    
       <h3 id="4-thats-the-equivalent-of-a-stack-overflow">
         
         
@@ -372,6 +381,7 @@ aggregating information along the way, returning a result later</li>
         
         
       </h3>
+    
 
 <p>Yes, I’ve mentioned this above, but just to set your mind at rest on this point,
 proper Tail-Calls Optimizations are coming for normal call sites, being part of
@@ -389,7 +399,6 @@ if that sample would be synchronous, it would not trigger a stack overflow.</p>
 happening independently of the current call stack / run loop, this behavior
 is actually surprising, since one of the reasons to go async is to escape
 the limitations of the call stack.</p>
-    
       <h3 id="5-you-dont-understand-how-promises-work">
         
         
@@ -397,6 +406,7 @@ the limitations of the call stack.</p>
         
         
       </h3>
+    
 
 <p>I’ve been told that I don’t understand promises. So I apologize for the
 appeal to authority that I’m about to make.</p>
@@ -423,7 +433,6 @@ Bonus — see my <a href="https://www.youtube.com/watch?v=wi97X8_JQUk">presentat
 <p>My work, good or bad, has followed a certain pattern, which is why I do
 understand promises, I do understand at least two solutions to this, hence
 this article.</p>
-    
       <h3 id="6-no-use-cases-this-is-a-niche">
         
         
@@ -431,6 +440,7 @@ this article.</p>
         
         
       </h3>
+    
 
 <p>Functional programming might be a niche, however more and more projects, 
 including at big companies such as Facebook, are now using an 
@@ -491,7 +501,6 @@ something like this in the future, even if you don’t like it ;-)</p>
 </code></pre></div></div>
 
 <p>Alas, with the <code class="language-plaintext highlighter-rouge">Promise</code> implementation leaking, this doesn’t work ;-)</p>
-    
       <h2 id="alternatives">
         
         
@@ -507,6 +516,7 @@ something like this in the future, even if you don’t like it ;-)</p>
         
         
       </h3>
+    
 
 <p>Project Page: <a href="https://github.com/fluture-js/Fluture">github.com/fluture-js/Fluture</a></p>
 
@@ -515,7 +525,6 @@ something like this in the future, even if you don’t like it ;-)</p>
 <p>It isn’t a direct replacement however because it has lazy behavior, being meant for suspending side effects. This is more like an <code class="language-plaintext highlighter-rouge">IO</code> data type. Which is cool, you should use something like it, but it’s also apples vs oranges.</p>
 
 <p>I don’t have enough experience with it, making this recommendation solely based on its popularity and I double checked that it indeed preserves stack safety.</p>
-    
       <h3 id="funfix">
         
         
@@ -523,6 +532,7 @@ something like this in the future, even if you don’t like it ;-)</p>
         
         
       </h3>
+    
 
 <p>I’ve been building a new project, <a href="https://funfix.org/">Funfix</a>,
 a JavaScript library for functional programming (capital FP), supporting
@@ -582,7 +592,6 @@ for “<em>shameless self promotion</em>”.<br /><br />
 I’m building stuff that I share with the world and I like talking about
 it on my personal blog. I’m not going to apologize for it.
 </p>
-    
       <h2 id="final-words">
         
         
@@ -590,6 +599,7 @@ it on my personal blog. I’m not going to apologize for it.
         
         
       </h2>
+    
 
 <p>That the current JavaScript <code class="language-plaintext highlighter-rouge">Promise</code> implementation has this leak
 is a big problem, because tail-recursive calls are the cornerstone
@@ -613,8 +623,8 @@ where people are afraid to take on dependencies.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-11-13T14:50:48+0000">
-        Updated: November 13, 2020
+    <time itemprop="dateModified" content="2021-03-29T19:10:58+0000">
+        Updated: March 29, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -640,7 +650,6 @@ where people are afraid to take on dependencies.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -648,6 +657,7 @@ where people are afraid to take on dependencies.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -763,15 +773,16 @@ where people are afraid to take on dependencies.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -917,7 +928,6 @@ where people are afraid to take on dependencies.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

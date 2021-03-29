@@ -24,14 +24,14 @@
     <meta content="Strengthen your code via -Xfatal-warnings, linting and piss off your colleagues with useful compiler errors." property="og:description">
     <meta content="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html" property="og:url">
     <meta content="2020-05-26T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-11-16T10:18:34+00:00" property="article:modified_time">
+    <meta content="2021-03-29T19:10:58+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Fatal Warnings and Linting in Scala">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,56 +102,58 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Fatal Warnings and Linting in Scala
+          
+      Fatal Warnings and Linting in Scala
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html"/>
-    <meta itemprop="datePublished" content="2020-05-26T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2020-05-26T00:00:00+0000">May 26, 2020</time>
-    | <nobr><span class="time">10</span> minutes</nobr>
-    
-    | <a href="/blog/2020/05/26/scala-fatal-warnings.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
-      <img src="/assets/media/articles/scala-xfatal-warnings.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html"/>
+      <meta itemprop="datePublished" content="2020-05-26T00:00:00+0000"/>
       
-    </figure>
+      <time itemprop="dateCreated" datetime="2020-05-26T00:00:00+0000">May 26, 2020</time>
+      | <nobr><span class="time">10</span> minutes</nobr>
+      
+      | <a href="/blog/2020/05/26/scala-fatal-warnings.html#isso-thread">comments</a>
+      
+    </p>
+
     
-  
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala-xfatal-warnings.png" />
+          <img src="/assets/media/articles/scala-xfatal-warnings.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
 
-  <div id="content" itemprop="articleBody">
-    <p class="intro withcap">
-  The best practices are those enforced by the build tools, as part of the build process. Don’t annoy your colleagues in code reviews; let the build tools do that for you.
-</p>
-
-<p>The Scala compiler has multiple linting options available and emits some warnings out of the box that would be more useful as errors. Let’s see how we can rely on the Scala compiler to strengthen our code and piss off your colleagues with clean code requirements.</p>
-
-<ul>
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
   <li><a href="#best-practice-stop-ignoring-warnings">Best Practice: Stop Ignoring Warnings!</a></li>
   <li><a href="#1-activate--xfatal-warnings">1. Activate -Xfatal-warnings</a>
     <ul>
@@ -179,7 +180,15 @@
   </li>
   <li><a href="#final-words">Final words</a></li>
 </ul>
-    
+    </nav>
+    </header>
+
+  <div id="content" itemprop="articleBody">
+    <p class="intro withcap">
+  The best practices are those enforced by the build tools, as part of the build process. Don’t annoy your colleagues in code reviews; let the build tools do that for you.
+</p>
+
+<p>The Scala compiler has multiple linting options available and emits some warnings out of the box that would be more useful as errors. Let’s see how we can rely on the Scala compiler to strengthen our code and piss off your colleagues with clean code requirements.</p>
       <h2 id="best-practice-stop-ignoring-warnings">
         
         
@@ -187,6 +196,7 @@
         
         
       </h2>
+    
 
 <p>Some of it might be noise; however, in that noise, some real gems might be missed, warnings that signal bugs. For example, the compiler can do exhaustiveness checks when pattern matching:</p>
 
@@ -205,7 +215,6 @@
 </code></pre></div></div>
 
 <p>It shouldn’t be just a warning. Even if you’re diligent, this warning can get lost in a sea of other warnings, like it often does. And here we were lucky, because the runtime exception was triggered on the happy path, but our luck would eventually run out and end up with such exceptions in production.</p>
-    
       <h2 id="1-activate--xfatal-warnings">
         
         
@@ -213,6 +222,7 @@
         
         
       </h2>
+    
 
 <p>To turn all compiler warnings into errors, you can activate <code class="language-plaintext highlighter-rouge">-Xfatal-warnings</code>. In <a href="https://www.scala-sbt.org/1.x/docs/Basic-Def.html">build.sbt</a>:</p>
 
@@ -236,7 +246,6 @@
 </code></pre></div></div>
 
 <p>Thus we can no longer ignore it.</p>
-    
       <h3 id="11-make-only-some-warnings-fatal-scala-213">
         
         
@@ -244,6 +253,7 @@
         
         
       </h3>
+    
 
 <p>There’s a new <code class="language-plaintext highlighter-rouge">-Wconf</code> option in Scala 2.13.2 (<a href="https://github.com/scala/scala/pull/8373">see PR</a>). With it, we can still keep some warnings as warnings.</p>
 
@@ -266,7 +276,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>scalac <span class="nt">-Wconf</span>:help
 </code></pre></div></div>
-    
       <h2 id="2-activate-all-linting-options">
         
         
@@ -274,6 +283,7 @@
         
         
       </h2>
+    
 
 <p>There are many useful compiler options that you could activate. You can find a (possibly non-complete) list on <a href="https://docs.scala-lang.org/overviews/compiler-options/index.html">docs.scala-lang.org</a>.</p>
 
@@ -330,7 +340,6 @@
 </code></pre></div></div>
 
 <p>There are many useful options in there, from disallowing “adapted args”, detecting inaccessible code, inferred <code class="language-plaintext highlighter-rouge">Any</code>, shadowing of values, to unused imports and params and others.</p>
-    
       <h3 id="21-use-the-sbt-tpolecat-plugin">
         
         
@@ -338,11 +347,11 @@
         
         
       </h3>
+    
 
 <p>Keeping that list of compiler options up to date is exhausting, new useful options get added all the time, others are deprecated, and especially for libraries, you have to deal with multiple Scala versions in the same project.</p>
 
 <p>A better option is to include <a href="https://github.com/DavidGregory084/sbt-tpolecat">sbt-tpolecat</a> in your project.</p>
-    
       <h3 id="22-exclude-annoying-linting-options">
         
         
@@ -350,6 +359,7 @@
         
         
       </h3>
+    
 
 <p>Some linting options can trigger false positives that are too annoying. It’s fine to remove them from your project or specific configurations (e.g. <code class="language-plaintext highlighter-rouge">Test</code>, <code class="language-plaintext highlighter-rouge">Console</code>).</p>
 
@@ -365,7 +375,6 @@
   <span class="o">)</span>
 <span class="o">}</span>
 </code></pre></div></div>
-    
       <h3 id="23-relax-the-console-configuration">
         
         
@@ -373,6 +382,7 @@
         
         
       </h3>
+    
 
 <p>When playing around in the console, it’s a good idea to deactivate <code class="language-plaintext highlighter-rouge">Xfatal-warnings</code>, along with some of the more annoying warnings.</p>
 
@@ -396,7 +406,6 @@
 </code></pre></div></div>
 
 <p>Credit for this snippet: <a href="https://github.com/DavidGregory084/sbt-tpolecat/blob/v0.1.11/src/main/scala/io/github/davidgregory084/TpolecatPlugin.scala#L109">DavidGregory084/sbt-tpolecat</a>.</p>
-    
       <h2 id="3-silence-some-warnings">
         
         
@@ -404,6 +413,7 @@
         
         
       </h2>
+    
 
 <p>Sometimes you want to ignore a certain warning:</p>
 
@@ -411,7 +421,6 @@
   <li>maybe it’s a false positive</li>
   <li>maybe you want something “unused”, as a placeholder</li>
 </ul>
-    
       <h3 id="31-silencer-plugin-scala--213">
         
         
@@ -419,6 +428,7 @@
         
         
       </h3>
+    
 
 <p>You can use the <a href="https://github.com/ghik/silencer">ghik/silencer</a> compiler plugin.</p>
 
@@ -442,7 +452,6 @@
   <span class="s">"-P:silencer:pathFilters=.*[/]src_managed[/].*"</span><span class="o">,</span>
 <span class="o">)</span>
 </code></pre></div></div>
-    
       <h3 id="32-using-nowarn-and--wconf-in-scala-2132">
         
         
@@ -450,6 +459,7 @@
         
         
       </h3>
+    
 
 <p>Scala 2.13 has added the <a href="https://github.com/scala/scala/pull/8373">-Wconf flag for configurable warnings, @nowarn annotation for local suppression</a>.</p>
 
@@ -494,7 +504,6 @@
 <p class="info-bubble">
   <strong>NOTE:</strong> for <strong>forward compatibility</strong> in older Scala versions, with the <a href="#31-silencer-plugin-scala--213">Silencer plugin</a>, coupled with <a href="https://github.com/scala/scala-library-compat">scala-library-compat</a>, you can use the new <code class="language-plaintext highlighter-rouge">@nowarn</code> annotation with older Scala versions, however only the <code class="language-plaintext highlighter-rouge">@nowarn("msg=&lt;pattern&gt;")</code> filtering is supported.
 </p>
-    
       <h2 id="4-other-linters">
         
         
@@ -502,6 +511,7 @@
         
         
       </h2>
+    
 
 <p>You shouldn’t stop at Scala’s linting options. There are other sbt plugins available that can enforce certain best practices. Off the top of my head:</p>
 
@@ -515,7 +525,6 @@
 <p>With these, you could ban <code class="language-plaintext highlighter-rouge">null</code> or <code class="language-plaintext highlighter-rouge">Any</code> from your project, among other beneficial options.</p>
 
 <p>Any useful plugins that I’m missing?</p>
-    
       <h3 id="41-example-disable-tostring-conversions">
         
         
@@ -523,6 +532,7 @@
         
         
       </h3>
+    
 
 <p>I recently disabled unsafe <code class="language-plaintext highlighter-rouge">.toString</code> and <code class="language-plaintext highlighter-rouge">string + any</code> conversions in our work project, with the purpose to not leak sensitive customer data in logs. To do this I enabled “<em>Wartremover</em>” with this configuration in <code class="language-plaintext highlighter-rouge">build.sbt</code>, and it is doing wonders:</p>
 
@@ -531,7 +541,6 @@
 </code></pre></div></div>
 
 <p>Coupled with a custom logger interface making use of its own type class, we can ensure that data structures containing protected data cannot leak by mistake via logging (either Logback or <code class="language-plaintext highlighter-rouge">println</code> statements).</p>
-    
       <h2 id="final-words">
         
         
@@ -539,6 +548,7 @@
         
         
       </h2>
+    
 
 <p>Scala is a static language, but sometimes it isn’t static or opinionated enough. The more you can prove about your code at compile-time, the less defects you can have at runtime.</p>
 
@@ -548,8 +558,8 @@
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-11-16T10:18:34+0000">
-        Updated: November 16, 2020
+    <time itemprop="dateModified" content="2021-03-29T19:10:58+0000">
+        Updated: March 29, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -566,7 +576,6 @@
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -574,6 +583,7 @@
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -685,15 +695,16 @@
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -839,7 +850,6 @@
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

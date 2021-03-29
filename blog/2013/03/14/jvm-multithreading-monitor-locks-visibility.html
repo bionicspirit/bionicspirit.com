@@ -25,14 +25,14 @@
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html" property="og:url">
     <meta content="2013-03-14T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-11-13T14:50:48+00:00" property="article:modified_time">
+    <meta content="2021-03-29T19:10:58+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/ferrari.jpg?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/ferrari.jpg?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/ferrari.jpg?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/ferrari.jpg?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/ferrari.jpg?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/ferrari.jpg?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="JVM Multithreading: Monitor Locks and Visibility">
@@ -55,8 +55,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html">
@@ -64,7 +64,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -105,47 +104,73 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          JVM Multithreading: Monitor Locks and Visibility
+          
+      JVM Multithreading: Monitor Locks and Visibility
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html"/>
-    <meta itemprop="datePublished" content="2013-03-14T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2013-03-14T00:00:00+0000">March 14, 2013</time>
-    | <nobr><span class="time">15</span> minutes</nobr>
-    
-    | <a href="/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/ferrari.jpg" />
-      <img src="/assets/media/articles/ferrari.jpg?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html"/>
+      <meta itemprop="datePublished" content="2013-03-14T00:00:00+0000"/>
       
-    </figure>
-    
-  
+      <time itemprop="dateCreated" datetime="2013-03-14T00:00:00+0000">March 14, 2013</time>
+      | <nobr><span class="time">15</span> minutes</nobr>
+      
+      | <a href="/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html#isso-thread">comments</a>
+      
+    </p>
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/ferrari.jpg" />
+          <img src="/assets/media/articles/ferrari.jpg?202103291912" alt="" />
+          
+        </figure>
+        
+    
+
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
+  <li><a href="#the-problem-of-atomicity">The Problem of Atomicity</a>
+    <ul>
+      <li><a href="#the-big-problem-with-locks">The Big Problem with Locks</a></li>
+    </ul>
+  </li>
+  <li><a href="#visibility">The Problem of Visibility</a>
+    <ul>
+      <li><a href="#happens-before-relationships-and-memory-barriers">Happens-Before Relationships and Memory Barriers</a></li>
+      <li><a href="#volatiles">Volatiles</a></li>
+    </ul>
+  </li>
+  <li><a href="#further-reading">Further Reading</a></li>
+</ul>
+    </nav>
+    </header>
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">
@@ -168,7 +193,6 @@ compare-and-set, up to high-level tools, such as Futures/Promises,
 actors and optimistic locking with shared transactional memory.</p>
 
 <!-- read more -->
-    
       <h2 id="the-problem-of-atomicity">
         
         
@@ -176,6 +200,7 @@ actors and optimistic locking with shared transactional memory.</p>
         
         
       </h2>
+    
 
 <p>Over 100,000 people can watch the same soccer game from the same
 stadium, at the same time. Those same 100,000 people cannot all take a
@@ -364,7 +389,6 @@ version), because that’s how I roll</li>
 <p>That’s better. Not perfect though, as Stacks are the easiest immutable
 data-structures to implement … so how about not using any locks at
 all? (that’s for another article)</p>
-    
       <h3 id="the-big-problem-with-locks">
         
         
@@ -372,6 +396,7 @@ all? (that’s for another article)</p>
         
         
       </h3>
+    
 
 <p>Take these 2 stacks:</p>
 
@@ -397,7 +422,6 @@ an external lock that protects both at all times.</p>
 
 <p>Code that’s thread-safe through synchronization based on locks is
 <strong>not composable</strong>.</p>
-    
       <h2 id="visibility">
         
         
@@ -405,6 +429,7 @@ an external lock that protects both at all times.</p>
         
         
       </h2>
+    
 
 <p>When speaking of multithreading, the most obvious problem is the
 inconsistency of shared mutable state when being changed and read by
@@ -479,7 +504,6 @@ the laptop is plugged in or not, on planetary alignments and so on.</p>
   new value. On my desktop in more than 1 out of 10 cases this little
   example goes into an infinite loop.</li>
 </ol>
-    
       <h3 id="happens-before-relationships-and-memory-barriers">
         
         
@@ -487,6 +511,7 @@ the laptop is plugged in or not, on planetary alignments and so on.</p>
         
         
       </h3>
+    
 
 <p>As I was saying at point 2 above, in addition to cached values, you
 can also have reordered instructions. Say that you’ve got the
@@ -569,7 +594,6 @@ monitor lock. This gotcha could happen for a bunch of reasons, for
 instance the JVM does escape-analysis and it can get rid of locks
 completely if it decides a lock isn’t used concurrently by multiple
 threads.</p>
-    
       <h3 id="volatiles">
         
         
@@ -577,6 +601,7 @@ threads.</p>
         
         
       </h3>
+    
 
 <p>For this particular example, you actually don’t need a lock at
 all. All you need is a <code class="language-plaintext highlighter-rouge">volatile</code>:</p>
@@ -609,7 +634,6 @@ algorithms, an atomic operation that’s optimized on most CPUs today
 that you can’t do with plain volatiles.</p>
 
 <p>But that’s a topic for another article.</p>
-    
       <h2 id="further-reading">
         
         
@@ -617,6 +641,7 @@ that you can’t do with plain volatiles.</p>
         
         
       </h2>
+    
 
 <p>Checkout the following:</p>
 
@@ -630,8 +655,8 @@ that you can’t do with plain volatiles.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-11-13T14:50:48+0000">
-        Updated: November 13, 2020
+    <time itemprop="dateModified" content="2021-03-29T19:10:58+0000">
+        Updated: March 29, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -663,7 +688,6 @@ that you can’t do with plain volatiles.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -671,6 +695,7 @@ that you can’t do with plain volatiles.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -786,15 +811,16 @@ that you can’t do with plain volatiles.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -940,7 +966,6 @@ that you can’t do with plain volatiles.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

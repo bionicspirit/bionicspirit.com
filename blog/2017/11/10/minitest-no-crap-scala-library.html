@@ -25,14 +25,14 @@
       <meta content="On programming and personal projects" property="og:description">
     <meta content="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html" property="og:url">
     <meta content="2017-11-10T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-11-16T10:18:34+00:00" property="article:modified_time">
+    <meta content="2021-03-29T19:10:58+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Minitest: Zero Crap Scala Testing Library">
@@ -55,8 +55,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html">
@@ -64,7 +64,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -105,51 +104,81 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Minitest: Zero Crap Scala Testing Library
+          
+      Minitest: Zero Crap Scala Testing Library
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html"/>
-    <meta itemprop="datePublished" content="2017-11-10T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2017-11-10T00:00:00+0000">November 10, 2017</time>
-    | <nobr><span class="time">11</span> minutes</nobr>
-    
-    | <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala.png" />
-      <img src="/assets/media/articles/scala.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html"/>
+      <meta itemprop="datePublished" content="2017-11-10T00:00:00+0000"/>
       
-    </figure>
-    
-  
+      <time itemprop="dateCreated" datetime="2017-11-10T00:00:00+0000">November 10, 2017</time>
+      | <nobr><span class="time">11</span> minutes</nobr>
+      
+      | <a href="/blog/2017/11/10/minitest-no-crap-scala-library.html#isso-thread">comments</a>
+      
+    </p>
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala.png" />
+          <img src="/assets/media/articles/scala.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
+
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
+  <li><a href="#raison-dêtre">Raison d’être</a>
+    <ul>
+      <li><a href="#portability">Portability</a></li>
+      <li><a href="#say-no-to-dsls">Say No to DSLs</a></li>
+      <li><a href="#minimal-implementation-less-is-more">Minimal Implementation, Less is More</a></li>
+    </ul>
+  </li>
+  <li><a href="#hypothesis">Hypothesis</a></li>
+  <li><a href="#tutorial">Tutorial</a></li>
+  <li><a href="#common-complaints">Common Complaints</a>
+    <ul>
+      <li><a href="#i-do-not-like-future">I do not like Future</a></li>
+      <li><a href="#i-want-a-purely-functional-api">I want a purely functional API</a></li>
+      <li><a href="#it-does-not-support-maven-cbt-or-others">It does not support Maven, CBT or others</a></li>
+    </ul>
+  </li>
+  <li><a href="#final-words">Final Words</a></li>
+</ul>
+    </nav>
+    </header>
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap"><a href="https://github.com/monix/minitest">Minitest</a> is my minimal testing library that I’ve been using for developing <a href="https://monix.io">Monix</a>.</p>
-    
       <h2 id="raison-dêtre">
         
         
@@ -157,6 +186,7 @@
         
         
       </h2>
+    
 
 <p>I dislike most testing frameworks, because of bloat and of heavy DSLs
 trying to mimic the English language. When I created Minitest, I
@@ -176,7 +206,6 @@ choices of popular testing libraries. I know that libraries like
 are because people want them that way. And those are awesome
 projects, having awesome authors. They are just not for me.
 </p>
-    
       <h3 id="portability">
         
         
@@ -184,6 +213,7 @@ projects, having awesome authors. They are just not for me.
         
         
       </h3>
+    
 
 <p>The natural tendency of testing frameworks is to grow beyond all
 imagination in order to accommodate the various testing styles that
@@ -210,7 +240,6 @@ expressions or statements that I don’t immediately understand. That,
 and I wanted an easy transition in Monix from ScalaTest’s
 <a href="http://www.scalatest.org/getting_started_with_fun_suite">FunSuite</a>,
 which is what I was using.</p>
-    
       <h3 id="say-no-to-dsls">
         
         
@@ -218,6 +247,7 @@ which is what I was using.</p>
         
         
       </h3>
+    
 
 <p>I do not want to write <code class="language-plaintext highlighter-rouge">x shouldBe greaterThan(y)</code> or other such
 nonsense. I do not have the memory for that, I always forget the API
@@ -265,7 +295,6 @@ objects, so <code class="language-plaintext highlighter-rouge">it</code> is a ba
 almost never happens and if they are inclined to do that (like once in
 a million), then they can just learn programming. It’s not like an
 English-like DSL is any closer to natural language.</p>
-    
       <h3 id="minimal-implementation-less-is-more">
         
         
@@ -273,6 +302,7 @@ English-like DSL is any closer to natural language.</p>
         
         
       </h3>
+    
 
 <p>Because the implementation is minimal, there’s nothing that I can’t
 fix in it, there’s nothing that I can’t implement should I need
@@ -284,7 +314,6 @@ is available for Scala 2.12 (at the moment of writing, it isn’t).</p>
 
 <p>In fact, if you want to build your own testing framework, Minitest can
 serve as a sample ;-)</p>
-    
       <h2 id="hypothesis">
         
         
@@ -292,6 +321,7 @@ serve as a sample ;-)</p>
         
         
       </h2>
+    
 
 <p>All you need is the ability to express:</p>
 
@@ -323,7 +353,6 @@ nice error message</li>
   <li>an English-like DSL</li>
   <li>a purely functional <em>base</em> API</li>
 </ol>
-    
       <h2 id="tutorial">
         
         
@@ -331,6 +360,7 @@ nice error message</li>
         
         
       </h2>
+    
 
 <p>Test suites MUST BE objects, not classes. To create a simple test
 suite, it could inherit from <code class="language-plaintext highlighter-rouge">SimpleTestSuite</code>. Here’s a simple test:</p>
@@ -426,7 +456,6 @@ So for property-based testing:</p>
 </code></pre></div></div>
 
 <p>That’s everything!</p>
-    
       <h2 id="common-complaints">
         
         
@@ -442,6 +471,7 @@ So for property-based testing:</p>
         
         
       </h3>
+    
 
 <p>That’s too bad, because the <code class="language-plaintext highlighter-rouge">Future</code> is needed by the runtime and
 regardless what alternative you use (e.g. <code class="language-plaintext highlighter-rouge">cats.effect.IO</code>,
@@ -453,7 +483,6 @@ depend on Cats or Scalaz.</p>
 
 <p>And you can always build your own <code class="language-plaintext highlighter-rouge">testTask</code>, <code class="language-plaintext highlighter-rouge">testEffect</code> or <code class="language-plaintext highlighter-rouge">testIO</code>
 utilities on top of <code class="language-plaintext highlighter-rouge">testAsync</code>.</p>
-    
       <h3 id="i-want-a-purely-functional-api">
         
         
@@ -461,6 +490,7 @@ utilities on top of <code class="language-plaintext highlighter-rouge">testAsync
         
         
       </h3>
+    
 
 <p><a href="https://etorreborre.github.io/specs2/">Specs2</a> has a nice functional
 API. You might like that, however I don’t like it for all the reasons
@@ -497,7 +527,6 @@ your own utilities and I recommend piggybacking on ScalaCheck, e.g:</p>
 
 <p>I don’t want that in Monix though - the integration that we have with
 ScalaCheck is minimal and enough.</p>
-    
       <h3 id="it-does-not-support-maven-cbt-or-others">
         
         
@@ -505,13 +534,13 @@ ScalaCheck is minimal and enough.</p>
         
         
       </h3>
+    
 
 <p>Sorry about that, but this library is meant to be minimal and stable,
 and I don’t have the time to expand support beyond SBT right now.</p>
 
 <p>Pull requests open and only accepted if they don’t complicate the
 codebase much.</p>
-    
       <h2 id="final-words">
         
         
@@ -519,6 +548,7 @@ codebase much.</p>
         
         
       </h2>
+    
 
 <p>Forget DSLs.</p>
 
@@ -530,8 +560,8 @@ codebase much.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-11-16T10:18:34+0000">
-        Updated: November 16, 2020
+    <time itemprop="dateModified" content="2021-03-29T19:10:58+0000">
+        Updated: March 29, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -551,7 +581,6 @@ codebase much.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -559,6 +588,7 @@ codebase much.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -670,15 +700,16 @@ codebase much.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -824,7 +855,6 @@ codebase much.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

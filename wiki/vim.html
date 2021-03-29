@@ -54,8 +54,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/vim.html">
@@ -63,7 +63,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -112,6 +111,7 @@
         
         
       </h1>
+    
   
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/vim.html"/>
@@ -156,7 +156,6 @@
     </ul>
   </li>
 </ul>
-    
       <h2 id="docs--articles">
         
         
@@ -164,6 +163,7 @@
         
         
       </h2>
+    
 
 <p>Important:</p>
 
@@ -185,7 +185,6 @@
   <li><a href="https://jemma.dev/blog/intermediate-vim-tips">Vim Tips for the Intermediate Vim User</a> (<a href="https://web.archive.org/web/20210201151013/https://jemma.dev/blog/intermediate-vim-tips">archive</a>)</li>
   <li><a href="https://www.vimgolf.com/">VimGolf</a> (<a href="https://web.archive.org/web/20210201151233/https://www.vimgolf.com/">archive</a>)</li>
 </ul>
-    
       <h2 id="random-tips">
         
         
@@ -201,6 +200,7 @@
         
         
       </h3>
+    
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">:help</code></li>
@@ -210,7 +210,6 @@
   <li><code class="language-plaintext highlighter-rouge">:help user-manual</code></li>
   <li><code class="language-plaintext highlighter-rouge">:help visual.txt</code></li>
 </ul>
-    
       <h3 id="shell-setup">
         
         
@@ -218,6 +217,7 @@
         
         
       </h3>
+    
 
 <p>For Zsh:</p>
 
@@ -245,7 +245,6 @@ zstyle <span class="s1">':vcs_info:*'</span> <span class="nb">enable </span>git
 zle <span class="nt">-N</span> zle-line-init
 zle <span class="nt">-N</span> zle-keymap-select
 </code></pre></div></div>
-    
       <h3 id="surround-text">
         
         
@@ -253,6 +252,7 @@ zle <span class="nt">-N</span> zle-keymap-select
         
         
       </h3>
+    
 
 <p>Functionality from <a href="https://github.com/tpope/vim-surround">vim-surround</a>, which also works in VS Code (with VSCodeVim):</p>
 
@@ -261,7 +261,6 @@ zle <span class="nt">-N</span> zle-keymap-select
 s                    # Press upper case S
 "                    # Specify what you want to surround the visual selection with
 </code></pre></div></div>
-    
       <h3 id="visual-block-mode">
         
         
@@ -269,6 +268,7 @@ s                    # Press upper case S
         
         
       </h3>
+    
 
 <p>This works like (and implemented with) multi-cursors in other editors (see <a href="https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor">VS Code</a> (<a href="https://web.archive.org/web/20210201153540/https://code.visualstudio.com/docs/editor/codebasics#_multiple-selections-multicursor">archive</a>)).</p>
 
@@ -281,7 +281,6 @@ s                    # Press upper case S
   <li><code class="language-plaintext highlighter-rouge">I</code> (capital letter) to enter insert mode</li>
   <li><code class="language-plaintext highlighter-rouge">&lt;Esc&gt;</code> to exit insert mode</li>
 </ul>
-    
       <h3 id="copy--paste">
         
         
@@ -289,6 +288,7 @@ s                    # Press upper case S
         
         
       </h3>
+    
 
 <p>Shortcuts:</p>
 
@@ -303,7 +303,6 @@ So <code class="language-plaintext highlighter-rouge">"*y</code> copies to the s
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>set clipboard+=unnamed
 </code></pre></div></div>
-    
       <h3 id="fold--unfold">
         
         
@@ -311,6 +310,7 @@ So <code class="language-plaintext highlighter-rouge">"*y</code> copies to the s
         
         
       </h3>
+    
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">zc</code>: fold</li>
@@ -318,7 +318,6 @@ So <code class="language-plaintext highlighter-rouge">"*y</code> copies to the s
   <li><code class="language-plaintext highlighter-rouge">zM</code>: fold all</li>
   <li><code class="language-plaintext highlighter-rouge">zR</code>: unfold all</li>
 </ul>
-    
       <h3 id="go-to-">
         
         
@@ -326,13 +325,13 @@ So <code class="language-plaintext highlighter-rouge">"*y</code> copies to the s
         
         
       </h3>
+    
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">gd</code>: go to definition</li>
   <li><code class="language-plaintext highlighter-rouge">gx</code>: open link</li>
   <li><code class="language-plaintext highlighter-rouge">Ctrl+O</code>: jump back to last position</li>
 </ul>
-    
       <h3 id="vimdiff">
         
         
@@ -340,6 +339,7 @@ So <code class="language-plaintext highlighter-rouge">"*y</code> copies to the s
         
         
       </h3>
+    
 
 <ul>
   <li><code class="language-plaintext highlighter-rouge">do</code>: Get changes from other window into the current window</li>
@@ -351,15 +351,16 @@ So <code class="language-plaintext highlighter-rouge">"*y</code> copies to the s
 
   </div>
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -473,7 +474,6 @@ So <code class="language-plaintext highlighter-rouge">"*y</code> copies to the s
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

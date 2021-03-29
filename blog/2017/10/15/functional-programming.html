@@ -24,14 +24,14 @@
     <meta content="FP is programming with (mathematical) functions, there’s no room for interpretation." property="og:description">
     <meta content="https://alexn.org/blog/2017/10/15/functional-programming.html" property="og:url">
     <meta content="2017-10-15T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-04-22T01:16:57+00:00" property="article:modified_time">
+    <meta content="2021-03-29T19:10:58+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/functions.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/functions.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/functions.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/functions.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/functions.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/functions.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="What is Functional Programming?">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2017/10/15/functional-programming.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,57 +102,58 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          What is Functional Programming?
+          
+      What is Functional Programming?
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/10/15/functional-programming.html"/>
-    <meta itemprop="datePublished" content="2017-10-15T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2017-10-15T00:00:00+0000">October 15, 2017</time>
-    | <nobr><span class="time">10</span> minutes</nobr>
-    
-    | <a href="/blog/2017/10/15/functional-programming.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/functions.png" />
-      <img src="/assets/media/articles/functions.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2017/10/15/functional-programming.html"/>
+      <meta itemprop="datePublished" content="2017-10-15T00:00:00+0000"/>
       
-    </figure>
+      <time itemprop="dateCreated" datetime="2017-10-15T00:00:00+0000">October 15, 2017</time>
+      | <nobr><span class="time">10</span> minutes</nobr>
+      
+      | <a href="/blog/2017/10/15/functional-programming.html#isso-thread">comments</a>
+      
+    </p>
+
     
-  
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/functions.png" />
+          <img src="/assets/media/articles/functions.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
 
-  <div id="content" itemprop="articleBody">
-    <p class="intro withcap">Functional Programming (FP) is programming with <em>functions</em>. <a href="https://goo.gl/q8dToC">Mathematical functions</a>.</p>
-
-<p>There’s no other definition that’s correct, unless it’s equivalent
-to this one. There’s no other definition that matters.</p>
-
-<p><strong>Contents:</strong></p>
-
-<ul>
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
   <li><a href="#background">Background</a></li>
   <li><a href="#why-functional-programming">Why Functional Programming?</a></li>
   <li><a href="#procedural-programming">Procedural Programming</a>
@@ -165,7 +165,14 @@ to this one. There’s no other definition that matters.</p>
   <li><a href="#can-we-do-fp-in-any-language">Can We do FP in Any Language?</a></li>
   <li><a href="#learning-resources">Learning Resources</a></li>
 </ul>
-    
+    </nav>
+    </header>
+
+  <div id="content" itemprop="articleBody">
+    <p class="intro withcap">Functional Programming (FP) is programming with <em>functions</em>. <a href="https://goo.gl/q8dToC">Mathematical functions</a>.</p>
+
+<p>There’s no other definition that’s correct, unless it’s equivalent
+to this one. There’s no other definition that matters.</p>
       <h2 id="background">
         
         
@@ -173,6 +180,7 @@ to this one. There’s no other definition that matters.</p>
         
         
       </h2>
+    
 
 <p>I first read the rigorous definition of a mathematical function
 in my first year of high-school, the 9-th grade. A <em>function</em>
@@ -219,7 +227,6 @@ doesn’t have that luxury because it’s also an OOP language, so they are
 developing <a href="http://lampwww.epfl.ch/%7Eamin/dot/soundness_oopsla16.pdf">DOT calculus</a>
 as an alternative. Interesting stuff.
 </p>
-    
       <h2 id="why-functional-programming">
         
         
@@ -227,6 +234,7 @@ as an alternative. Interesting stuff.
         
         
       </h2>
+    
 
 <p>Many people are enamored with Functional Programming because it
 gives us:</p>
@@ -268,7 +276,6 @@ point).</p>
 <p>If you no longer require purity, if you change the definition of what
 kind of “<em>functions</em>” we can accept, then we are no longer talking of
 Functional Programming, but about …</p>
-    
       <h2 id="procedural-programming">
         
         
@@ -276,6 +283,7 @@ Functional Programming, but about …</p>
         
         
       </h2>
+    
 
 <p>We wouldn’t need the “<em>pure</em>” qualification if we, as programmers,
 wouldn’t overload terms.</p>
@@ -290,7 +298,6 @@ subroutines had a single entry point and a single exit point.</p>
 
 <p>We have had a perfectly good term for describing programming made of
 procedures / subroutines: <a href="https://en.wikipedia.org/wiki/Procedural_programming">Procedural Programming</a> 😉</p>
-    
       <h3 id="impure-is-uninteresting">
         
         
@@ -298,6 +305,7 @@ procedures / subroutines: <a href="https://en.wikipedia.org/wiki/Procedural_prog
         
         
       </h3>
+    
 
 <p>Lately the trend is to classify code making use of “lambda expressions”
 as functional programming and to classify programming languages that
@@ -338,7 +346,6 @@ change definitions, instead of attacking the problem head on.
 We should recognize a <em>rebranding</em> for what it is, an effort by
 marketing people to make turds more attractive by embracing trends
 only in name, but not in spirit.</p>
-    
       <h2 id="anti-intellectualism-phenomenon">
         
         
@@ -346,6 +353,7 @@ only in name, but not in spirit.</p>
         
         
       </h2>
+    
 
 <p>For all the learning that we are doing, we software developers are
 a really conservative bunch, unwilling to accept new concepts easily
@@ -375,7 +383,6 @@ from academia.</p>
 <p>Which is probably why we keep reinventing the same two languages,
 somehow expecting different results and personally I’m getting
 the feeling that we are in Groundhog Day, that movie from 1993.</p>
-    
       <h2 id="can-we-do-fp-in-any-language">
         
         
@@ -383,6 +390,7 @@ the feeling that we are in Groundhog Day, that movie from 1993.</p>
         
         
       </h2>
+    
 
 <p>Yes, although some programming languages are better than others.</p>
 
@@ -431,7 +439,6 @@ the communities of languages being bred for FP, like Haskell,
 PureScript, OCaml, Scala, etc are probably richer and bigger than
 the FP sub-communities of the top mainstream languages, Java and
 JavaScript included.</p>
-    
       <h2 id="learning-resources">
         
         
@@ -439,6 +446,7 @@ JavaScript included.</p>
         
         
       </h2>
+    
 
 <p>Don’t believe the opinions of people on the Internet, mine included.
 Learn some Functional Programming instead, the real stuff, not the
@@ -494,8 +502,8 @@ but it’s not that good for learning FP in 2017.</p>
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-04-22T01:16:57+0000">
-        Updated: April 22, 2020
+    <time itemprop="dateModified" content="2021-03-29T19:10:58+0000">
+        Updated: March 29, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -524,7 +532,6 @@ but it’s not that good for learning FP in 2017.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -532,6 +539,7 @@ but it’s not that good for learning FP in 2017.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -641,15 +649,16 @@ but it’s not that good for learning FP in 2017.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -795,7 +804,6 @@ but it’s not that good for learning FP in 2017.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

@@ -27,11 +27,11 @@
     <meta content="2019-12-28T00:00:00+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/cosine-distance.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/cosine-distance.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/cosine-distance.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/cosine-distance.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/cosine-distance.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/cosine-distance.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Data Mining: Finding Similar Items and Users">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,62 +102,58 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Data Mining: Finding Similar Items and Users
+          
+      Data Mining: Finding Similar Items and Users
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html"/>
-    <meta itemprop="datePublished" content="2012-01-16T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2012-01-16T00:00:00+0000">January 16, 2012</time>
-    | <nobr><span class="time">17</span> minutes</nobr>
-    
-    | <a href="/blog/2012/01/16/cosine-similarity-euclidean-distance.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/cosine-distance.png" />
-      <img src="/assets/media/articles/cosine-distance.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html"/>
+      <meta itemprop="datePublished" content="2012-01-16T00:00:00+0000"/>
       
-    </figure>
+      <time itemprop="dateCreated" datetime="2012-01-16T00:00:00+0000">January 16, 2012</time>
+      | <nobr><span class="time">16</span> minutes</nobr>
+      
+      | <a href="/blog/2012/01/16/cosine-similarity-euclidean-distance.html#isso-thread">comments</a>
+      
+    </p>
+
     
-  
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/cosine-distance.png" />
+          <img src="/assets/media/articles/cosine-distance.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
 
-  <div id="content" itemprop="articleBody">
-    <p class="intro withcap">
-  How to find related items? Here are recipes based on really simple
-  formulas. If you pay attention, this technique is used all over the web
-  (like on Amazon) to personalize the user experience and increase
-  conversion rates. Because we want to give kick-ass product recommendations.
-</p>
-
-<p>To get one question out of the way: there are already many available
-libraries that do this, but as you’ll see there are multiple ways of
-skinning the cat and you won’t be able to pick the right one without
-understanding the process, at least intuitively.</p>
-
-<ul>
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
   <li><a href="#defining-the-problem">Defining the Problem</a></li>
   <li><a href="#redefining-the-problem-in-terms-of-geometry">Redefining the Problem in Terms of Geometry</a></li>
   <li><a href="#euclidean-distance">Euclidean Distance</a>
@@ -174,7 +169,21 @@ understanding the process, at least intuitively.</p>
   <li><a href="#pearson-correlation-coefficient">Pearson Correlation Coefficient</a></li>
   <li><a href="#manhattan-distance">Manhattan Distance</a></li>
 </ul>
-    
+    </nav>
+    </header>
+
+  <div id="content" itemprop="articleBody">
+    <p class="intro withcap">
+  How to find related items? Here are recipes based on really simple
+  formulas. If you pay attention, this technique is used all over the web
+  (like on Amazon) to personalize the user experience and increase
+  conversion rates. Because we want to give kick-ass product recommendations.
+</p>
+
+<p>To get one question out of the way: there are already many available
+libraries that do this, but as you’ll see there are multiple ways of
+skinning the cat and you won’t be able to pick the right one without
+understanding the process, at least intuitively.</p>
       <h2 id="defining-the-problem">
         
         
@@ -182,6 +191,7 @@ understanding the process, at least intuitively.</p>
         
         
       </h2>
+    
 
 <p><img src="/assets/media/articles/amazon-recommended-items.png" alt="Amazon gives kick-ass suggestions to their customers" /></p>
 
@@ -204,7 +214,6 @@ thus giving you suggestions on movies you’d like to watch in the future</li>
 whether it is tags, or items purchased, or movies reviewed. We’ll be
 using tags, as it is simpler, but the formula holds for more
 complicated instances.</p>
-    
       <h2 id="redefining-the-problem-in-terms-of-geometry">
         
         
@@ -212,6 +221,7 @@ complicated instances.</p>
         
         
       </h2>
+    
 
 <p>We’ll be using my blog as sample. Let’s take some tags:</p>
 
@@ -249,7 +259,6 @@ like:</p>
 <figure>
   <img src="/assets/media/articles/similarity-graphic.png" />
 </figure>
-    
       <h2 id="euclidean-distance">
         
         
@@ -257,6 +266,7 @@ like:</p>
         
         
       </h2>
+    
 
 <p>The mathematical formula for the Euclidean distance is really
 simple. Considering 2 points, A and B, with their associated
@@ -363,7 +373,6 @@ the bellow script and run it directly:</p>
 <span class="nb">require</span> <span class="s1">'yaml'</span>
 <span class="nb">puts</span> <span class="no">YAML</span><span class="p">.</span><span class="nf">dump</span><span class="p">(</span><span class="n">sorted</span><span class="p">)</span>
 </code></pre></div></div>
-    
       <h3 id="the-problem-or-strength-of-euclidean-distance">
         
         
@@ -371,6 +380,7 @@ the bellow script and run it directly:</p>
         
         
       </h3>
+    
 
 <p>Can you see one flaw with it for our chosen data-set and intention? I
 think you can - the first 2 articles have the same Euclidean distance
@@ -396,7 +406,6 @@ distance: it measures <em>dissimilarity</em>. The coordinates that are the
 same are less important than the coordinates that are different. For
 my purpose here, this is not good - because articles with more tags
 (or less) tags than the average are going to be disadvantaged.</p>
-    
       <h2 id="cosine-similarity">
         
         
@@ -404,6 +413,7 @@ my purpose here, this is not good - because articles with more tags
         
         
       </h2>
+    
 
 <p>This method is very similar to the one above, but does tend to give
 slightly different results, because this one actually measures
@@ -470,7 +480,6 @@ that as an exercise):</p>
 
 <p>Right, so much better for this chosen sample and usage. Ain’t this
 fun? BUT, you guessed it, there’s a problem with this too …</p>
-    
       <h3 id="the-problem-with-our-sample-the-tf-idf-weight">
         
         
@@ -478,6 +487,7 @@ fun? BUT, you guessed it, there’s a problem with this too …</p>
         
         
       </h3>
+    
 
 <p>Our data sample is so simple that we could have simply counted the
 number of common tags and use that as a metric. The result would be
@@ -500,7 +510,6 @@ zeros. But I’ll leave that for another day.</p>
 metric, like the
 <a href="http://en.wikipedia.org/wiki/Jaccard_index">Jaccard index</a> would be
 better.</p>
-    
       <h2 id="pearson-correlation-coefficient">
         
         
@@ -508,6 +517,7 @@ better.</p>
         
         
       </h2>
+    
 
 <p>The
 <a href="http://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient">Pearson Correlation Coefficient</a>
@@ -570,7 +580,6 @@ theory is not very intuitive though. But it is simple to calculate:</p>
 <span class="nb">puts</span> <span class="n">pearson_score</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
 <span class="c1"># =&gt; -1</span>
 </code></pre></div></div>
-    
       <h2 id="manhattan-distance">
         
         
@@ -578,6 +587,7 @@ theory is not very intuitive though. But it is simple to calculate:</p>
         
         
       </h2>
+    
 
 <p>There is no one size fits all and the formula you’re going to use
 depends on your data and what you want out of it.</p>
@@ -638,7 +648,6 @@ some text into another.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -646,6 +655,7 @@ some text into another.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -747,15 +757,16 @@ some text into another.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/load-mathjax.js?202103291137"></script>
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/load-mathjax.js?202103291912"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -901,7 +912,6 @@ some text into another.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

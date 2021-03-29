@@ -27,11 +27,11 @@
     <meta content="2020-11-16T10:18:34+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/monix-1024.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/monix-1024.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/monix-1024.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/monix-1024.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/monix-1024.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/monix-1024.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Monix Task vs Scalaz vs Future, The Benchmark">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2016/08/25/monix-task-performance.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,47 +102,53 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Monix Task vs Scalaz vs Future, The Benchmark
+          
+      Monix Task vs Scalaz vs Future, The Benchmark
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2016/08/25/monix-task-performance.html"/>
-    <meta itemprop="datePublished" content="2016-08-25T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2016-08-25T00:00:00+0000">August 25, 2016</time>
-    | <nobr><span class="time">4</span> minutes</nobr>
-    
-    | <a href="/blog/2016/08/25/monix-task-performance.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/monix-1024.png" />
-      <img src="/assets/media/articles/monix-1024.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2016/08/25/monix-task-performance.html"/>
+      <meta itemprop="datePublished" content="2016-08-25T00:00:00+0000"/>
       
-    </figure>
-    
-  
+      <time itemprop="dateCreated" datetime="2016-08-25T00:00:00+0000">August 25, 2016</time>
+      | <nobr><span class="time">4</span> minutes</nobr>
+      
+      | <a href="/blog/2016/08/25/monix-task-performance.html#isso-thread">comments</a>
+      
+    </p>
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/monix-1024.png" />
+          <img src="/assets/media/articles/monix-1024.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
+
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    </header>
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">The Monix <a href="https://monix.io/docs/2x/eval/task.html">Task</a> was heavily inspired by <code class="language-plaintext highlighter-rouge">scalaz.concurrent.Task</code> and by <code class="language-plaintext highlighter-rouge">scala.concurrent.Future</code>. That’s not a secret and I’ll be forever grateful to their authors. I’ve ran a benchmark and I’m glad to report that the Monix <a href="https://monix.io/docs/2x/eval/task.html">Task</a> beats in performance both.</p>
@@ -166,7 +171,6 @@ in the repository</li>
   <li>Java version: <code class="language-plaintext highlighter-rouge">1.8.0_60</code></li>
   <li>OS: OS X El Captain, version <code class="language-plaintext highlighter-rouge">10.11.6</code></li>
 </ul>
-    
       <h3 id="sequence">
         
         
@@ -174,6 +178,7 @@ in the repository</li>
         
         
       </h3>
+    
 
 <p>The purpose of this test is the performance of <code class="language-plaintext highlighter-rouge">flatMap</code>, or in other
 words the performance of the run-loop, on both normal/synchronous
@@ -266,7 +271,6 @@ trampolined:</p>
 
 <p>As you can see, the Monix <code class="language-plaintext highlighter-rouge">Task</code> has twice the throughput of Scalaz
 and fares quite better compared with Scala’s standard <code class="language-plaintext highlighter-rouge">Future</code>.</p>
-    
       <h3 id="gather">
         
         
@@ -274,6 +278,7 @@ and fares quite better compared with Scala’s standard <code class="language-pl
         
         
       </h3>
+    
 
 <p>The gather operation would be:</p>
 
@@ -372,7 +377,6 @@ parallel. The performance of <code class="language-plaintext highlighter-rouge">
 <code class="language-plaintext highlighter-rouge">Future.sequence</code>, because of the execution model. But if it executes
 tasks that have immediate execution, or a mixed batch, then it is much
 better.</p>
-    
       <h3 id="gather-unordered">
         
         
@@ -380,6 +384,7 @@ better.</p>
         
         
       </h3>
+    
 
 <p>The <code class="language-plaintext highlighter-rouge">gatherUnordered</code> operation would be:</p>
 
@@ -474,7 +479,6 @@ you don’t care about order.</p>
 
 <p>Again, performance is really good for synchronous tasks, whereas for
 forked tasks it evens out with the performance of <code class="language-plaintext highlighter-rouge">Future.sequence</code>.</p>
-    
       <h3 id="raw-output">
         
         
@@ -482,6 +486,7 @@ forked tasks it evens out with the performance of <code class="language-plaintex
         
         
       </h3>
+    
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>[info] # Run complete. Total time: 00:04:28
 [info]
@@ -534,7 +539,6 @@ forked tasks it evens out with the performance of <code class="language-plaintex
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -542,6 +546,7 @@ forked tasks it evens out with the performance of <code class="language-plaintex
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -645,15 +650,16 @@ forked tasks it evens out with the performance of <code class="language-plaintex
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -799,7 +805,6 @@ forked tasks it evens out with the performance of <code class="language-plaintex
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

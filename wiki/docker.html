@@ -54,8 +54,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/docker.html">
@@ -63,7 +63,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -112,6 +111,7 @@
         
         
       </h1>
+    
   
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/docker.html"/>
@@ -168,7 +168,6 @@
     </ul>
   </li>
 </ul>
-    
       <h2 id="installation">
         
         
@@ -184,9 +183,9 @@
         
         
       </h3>
+    
 
 <p><code class="language-plaintext highlighter-rouge">brew cask install docker</code></p>
-    
       <h2 id="basic-usage">
         
         
@@ -202,6 +201,7 @@
         
         
       </h3>
+    
 
 <p>Pulling an existing from the repository:</p>
 
@@ -220,7 +220,6 @@
   <li><code class="language-plaintext highlighter-rouge">-i</code>: keep STDIN open even if not attached — this means <code class="language-plaintext highlighter-rouge">&lt;cmd&gt; | docker run</code> works</li>
   <li><code class="language-plaintext highlighter-rouge">-t</code>: allocates a pseudo-TTY, which in combination with <code class="language-plaintext highlighter-rouge">-i</code> means we can interact with the process</li>
 </ul>
-    
       <h3 id="running-a-container-as-daemon">
         
         
@@ -228,12 +227,12 @@
         
         
       </h3>
+    
 
 <p>For this we add the <code class="language-plaintext highlighter-rouge">-d</code> option:</p>
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker run <span class="nt">-p</span> 4222:4222 <span class="nt">-d</span> <span class="nt">-ti</span> nats:latest
 </code></pre></div></div>
-    
       <h3 id="list-containers">
         
         
@@ -241,6 +240,7 @@
         
         
       </h3>
+    
 
 <p>List active containers:</p>
 
@@ -251,7 +251,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker ps <span class="nt">-a</span>
 </code></pre></div></div>
-    
       <h3 id="start--stop-containers">
         
         
@@ -259,6 +258,7 @@
         
         
       </h3>
+    
 
 <p>Stops container with the id <code class="language-plaintext highlighter-rouge">&lt;containerid&gt;</code>:</p>
 
@@ -274,7 +274,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker start &lt;containerid&gt;
 </code></pre></div></div>
-    
       <h3 id="remove-containers">
         
         
@@ -282,6 +281,7 @@
         
         
       </h3>
+    
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker <span class="nb">rm</span> &lt;container_id&gt;
 </code></pre></div></div>
@@ -295,7 +295,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker <span class="nb">rm</span> <span class="nt">-f</span> <span class="si">$(</span>docker ps <span class="nt">-a</span> <span class="nt">-q</span><span class="si">)</span>
 </code></pre></div></div>
-    
       <h3 id="remove-orphan-volumes">
         
         
@@ -303,6 +302,7 @@
         
         
       </h3>
+    
 
 <p>List:</p>
 
@@ -313,7 +313,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker volume <span class="nb">rm</span> <span class="si">$(</span>docker volume <span class="nb">ls</span> <span class="nt">-qf</span> <span class="nv">dangling</span><span class="o">=</span><span class="nb">true</span><span class="si">)</span>
 </code></pre></div></div>
-    
       <h3 id="list-or-remove-images">
         
         
@@ -321,6 +320,7 @@
         
         
       </h3>
+    
 
 <p>List images available locally:</p>
 
@@ -331,7 +331,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker rmi <span class="si">$(</span>docker images <span class="nt">-q</span> <span class="nt">-a</span><span class="si">)</span>
 </code></pre></div></div>
-    
       <h3 id="list-or-remove-volumes">
         
         
@@ -339,6 +338,7 @@
         
         
       </h3>
+    
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker volume <span class="nb">ls</span>
 </code></pre></div></div>
@@ -352,7 +352,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker volume <span class="nb">rm</span> <span class="si">$(</span>docker volume <span class="nb">ls</span> <span class="nt">-q</span><span class="si">)</span>
 </code></pre></div></div>
-    
       <h3 id="gain-shell-access-to-a-container">
         
         
@@ -360,10 +359,10 @@
         
         
       </h3>
+    
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> &lt;container_id&gt; sh
 </code></pre></div></div>
-    
       <h2 id="building-docker-images">
         
         
@@ -371,13 +370,13 @@
         
         
       </h2>
+    
 
 <p>Resources:</p>
 
 <ul>
   <li><a href="https://nodejs.org/en/docs/guides/nodejs-docker-webapp/">Dockerizing a Node.js web app</a></li>
 </ul>
-    
       <h2 id="auto-update-containers-to-latest">
         
         
@@ -385,6 +384,7 @@
         
         
       </h2>
+    
 
 <p>Run watchtower container, with option to auto update only labelled containers:</p>
 
@@ -428,7 +428,6 @@
 </code></pre></div></div>
 
 <p>Watchtower will check periodically for newer images and will restart services/containers with new image.</p>
-    
       <h2 id="docker-compose">
         
         
@@ -436,6 +435,7 @@
         
         
       </h2>
+    
 
 <p>See <a href="https://docs.docker.com/compose/install/">docs for installing</a>.</p>
 
@@ -451,7 +451,6 @@
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code>docker-compose up <span class="nt">-d</span>
 </code></pre></div></div>
-    
       <h3 id="example-docker-composeyml">
         
         
@@ -459,6 +458,7 @@
         
         
       </h3>
+    
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.7"</span>
 
@@ -532,15 +532,16 @@
 
   </div>
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -654,7 +655,6 @@
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

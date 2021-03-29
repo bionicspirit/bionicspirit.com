@@ -27,11 +27,11 @@
     <meta content="2020-11-13T14:50:48+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/javascript.jpg?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/javascript.jpg?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/javascript.jpg?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/javascript.jpg?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/javascript.jpg?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/javascript.jpg?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Notes On JavaScript Client-side Development">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/11/07/notes-javascript-development.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,47 +102,53 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Notes On JavaScript Client-side Development
+          
+      Notes On JavaScript Client-side Development
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/11/07/notes-javascript-development.html"/>
-    <meta itemprop="datePublished" content="2012-11-07T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2012-11-07T00:00:00+0000">November 7, 2012</time>
-    | <nobr><span class="time">6</span> minutes</nobr>
-    
-    | <a href="/blog/2012/11/07/notes-javascript-development.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/javascript.jpg" />
-      <img src="/assets/media/articles/javascript.jpg?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/11/07/notes-javascript-development.html"/>
+      <meta itemprop="datePublished" content="2012-11-07T00:00:00+0000"/>
       
-    </figure>
-    
-  
+      <time itemprop="dateCreated" datetime="2012-11-07T00:00:00+0000">November 7, 2012</time>
+      | <nobr><span class="time">6</span> minutes</nobr>
+      
+      | <a href="/blog/2012/11/07/notes-javascript-development.html#isso-thread">comments</a>
+      
+    </p>
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/javascript.jpg" />
+          <img src="/assets/media/articles/javascript.jpg?202103291912" alt="" />
+          
+        </figure>
+        
+    
+
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    </header>
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">
@@ -153,7 +158,6 @@
   talking about is served on mobile-phones, so it must be pretty
   bloat-free, adding salt over injury.
 </p>
-    
       <h2 id="dealing-with-modules-packaging-and-minifying">
         
         
@@ -161,6 +165,7 @@
         
         
       </h2>
+    
 
 <p>This is probably my biggest gripe with JavaScript, that you can’t
 simply <code class="language-plaintext highlighter-rouge">require("some.namespace")</code> without extra glue and tricks. This
@@ -199,7 +204,6 @@ Brunch can watch for changes in real-time and also exposes a built-in
 server. So Brunch can take care of packaging for all your modules in a
 single JS file, also minimizing for production if you want. The
 workflow is pretty sweat, the configuration simple.</p>
-    
       <h2 id="dealing-with-javascripts-syntax-quirks">
         
         
@@ -207,6 +211,7 @@ workflow is pretty sweat, the configuration simple.</p>
         
         
       </h2>
+    
 
 <p>JavaScript is a capable language exposed by an awful syntax and
 plagued by incompatibilities - did you know that placing extra commas
@@ -237,7 +242,6 @@ JavaScript, but with nice add-ons. Unfortunately it’s too immature and
 so
 <a href="https://twitter.com/brunch/status/253571565923467264">it isn’t included by Brunch’s authors yet</a>,
 but it probably will be at some point.</p>
-    
       <h2 id="dealing-with-async-events">
         
         
@@ -245,6 +249,7 @@ but it probably will be at some point.</p>
         
         
       </h2>
+    
 
 <p>Many people use <a href="http://backbonejs.org/">Backbone.js</a> or things based
 on it. What Backbone gives you, besides a structure for your app with
@@ -282,7 +287,6 @@ easier. Brunch can also run your tests and you can use something like
 <p>This doesn’t mean that Backbone and data flows with something like Q
 can’t be used together. I can certainly see myself working with
 Backbone for larger projects.</p>
-    
       <h2 id="going-mobile">
         
         
@@ -290,6 +294,7 @@ Backbone for larger projects.</p>
         
         
       </h2>
+    
 
 <p>Other libraries I’m using are:</p>
 
@@ -328,7 +333,6 @@ follow any conventions. I also thought about using
 <a href="https://github.com/clojure/clojurescript">ClojureScript</a>, which emits
 Closure-compatible JavaScript, but I’m not familiar enough with the
 language, so maybe some other day :-)</p>
-    
       <h2 id="as-a-conclusion">
         
         
@@ -336,6 +340,7 @@ language, so maybe some other day :-)</p>
         
         
       </h2>
+    
 
 <p>Keep things simple and work with tools provided by the Node.js
 community, because that’s where the real action is.</p>
@@ -371,7 +376,6 @@ community, because that’s where the real action is.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -379,6 +383,7 @@ community, because that’s where the real action is.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -482,15 +487,16 @@ community, because that’s where the real action is.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -636,7 +642,6 @@ community, because that’s where the real action is.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

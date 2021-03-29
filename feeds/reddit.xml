@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Reddit.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/reddit.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Mar 2021 11:37:54 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Mar 2021 11:37:54 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Mar 2021 19:12:00 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Mar 2021 19:12:00 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -123,8 +123,8 @@
   <title>Tail Recursive Functions (in Scala)</title>
   <description>Blog article #Algorithms #FP #Programming #Scala #Video</description>
   <pubDate>Tue, 26 Jan 2021 19:49:35 +0000</pubDate>
-  <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
-  <atom:modified>Fri, 26 Feb 2021 07:25:54 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html</guid>
   
@@ -290,8 +290,8 @@
   <title>Managing Database Migrations in Scala</title>
   <description>Blog article #FP #Scala #Typelevel</description>
   <pubDate>Sun, 15 Nov 2020 16:17:25 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 19:22:22 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 19:22:22 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html</guid>
   
@@ -336,8 +336,8 @@
   <title>I like Option.get</title>
   <description>Blog article #FP #Scala #TypeScript</description>
   <pubDate>Thu, 12 Nov 2020 18:02:46 +0000</pubDate>
-  <dc:modified>Thu, 12 Nov 2020 20:08:25 +0000</dc:modified>
-  <atom:modified>Thu, 12 Nov 2020 20:08:25 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/11/12/i-like-option-get.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/11/12/i-like-option-get.html</guid>
   
@@ -359,8 +359,8 @@
   <title>Organize and Index Your Screenshots (OCR) on macOS</title>
   <description>Blog article #Cloud #macOS #Ruby</description>
   <pubDate>Wed, 11 Nov 2020 12:43:46 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 10:18:34 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html</guid>
   
@@ -451,8 +451,8 @@
   <title>When My World Vanishes</title>
   <description>Blog article #Personal</description>
   <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 20 Oct 2020 21:50:16 +0000</dc:modified>
-  <atom:modified>Tue, 20 Oct 2020 21:50:16 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html</guid>
   
@@ -638,8 +638,8 @@
   <title>Retry Failing Tasks with Cats and Scala</title>
   <description>Blog article #FP #Scala</description>
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 10:18:34 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/08/03/on-error-retry-loop.html</guid>
   
@@ -812,8 +812,8 @@
   <title>Fatal Warnings and Linting in Scala</title>
   <description>Blog article #Scala</description>
   <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 10:18:34 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html</guid>
   
@@ -940,8 +940,8 @@
   <title>Regexp Replacement via Function in Java/Scala</title>
   <description>Blog article #Scala #Ruby</description>
   <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html</guid>
   
@@ -1007,8 +1007,8 @@
   <title>Scala&#39;s isInstanceOf is an Anti-Pattern</title>
   <description>Blog article #BestOf #Scala</description>
   <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 23:15:01 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 23:15:01 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html</guid>
   
@@ -1028,8 +1028,8 @@
   <title>On Bifunctor IO and Java&#39;s Checked Exceptions</title>
   <description>Blog article #BestOf #FP #Typelevel #Scala #Haskell</description>
   <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2018/05/06/bifunctor-io.html</guid>
   
@@ -1055,8 +1055,8 @@
   <title>In Defense of OOFP</title>
   <description>Blog article #BestOf #OOP #FP #Haskell #Scala</description>
   <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
-  <dc:modified>Tue, 21 Apr 2020 18:05:28 +0000</dc:modified>
-  <atom:modified>Tue, 21 Apr 2020 18:05:28 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2018/02/12/in-defense-oofp.html</guid>
   
@@ -1082,8 +1082,8 @@
   <title>Minitest: Zero Crap Scala Testing Library</title>
   <description>Blog article #Testing #Scala</description>
   <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
-  <atom:modified>Mon, 16 Nov 2020 10:18:34 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html</guid>
   
@@ -1103,8 +1103,8 @@
   <title>What is Functional Programming?</title>
   <description>Blog article #BestOf #FP #Haskell #Scala #JavaScript</description>
   <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Wed, 22 Apr 2020 01:16:57 +0000</dc:modified>
-  <atom:modified>Wed, 22 Apr 2020 01:16:57 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/10/15/functional-programming.html</guid>
   
@@ -1155,8 +1155,8 @@
   <title>JavaScript&#39;s Promise Leaks Memory</title>
   <description>Blog article #Concurrency #FP #Funfix #JavaScript</description>
   <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
-  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html</guid>
   
@@ -1228,8 +1228,8 @@
   <title>Asynchronous Programming and Scala</title>
   <description>Blog article #Asynchrony #BestOf #Concurrency #Multithreading #Scala</description>
   <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
-  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html</guid>
   
@@ -1462,8 +1462,8 @@
   <title>Resources for Learning Scala</title>
   <description>Blog article #Languages #FP #Scala #Books</description>
   <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
-  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2013/05/13/getting-started-with-scala.html</guid>
   
@@ -1516,8 +1516,8 @@
   <title>JVM Multithreading: Monitor Locks and Visibility</title>
   <description>Blog article #Languages #FP #Scala #Java #Multithreading #Concurrency</description>
   <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
-  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html</guid>
   
@@ -1570,8 +1570,8 @@
   <title>On Scala, Functional Programming and Type-Classes</title>
   <description>Blog article #Languages #FP #Scala #Clojure #Java</description>
   <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
-  <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
-  <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
   <link>https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=reddit&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html</guid>
   

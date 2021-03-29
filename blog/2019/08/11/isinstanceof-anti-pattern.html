@@ -24,14 +24,14 @@
     <meta content="Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe type classes." property="og:description">
     <meta content="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html" property="og:url">
     <meta content="2019-08-11T00:00:00+00:00" property="article:published_time">
-    <meta content="2020-04-21T23:15:01+00:00" property="article:modified_time">
+    <meta content="2021-03-29T19:10:58+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="Scala&#39;s isInstanceOf is an Anti-Pattern">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,50 +102,70 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          Scala&#39;s isInstanceOf is an Anti-Pattern
+          
+      Scala&#39;s isInstanceOf is an Anti-Pattern
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html"/>
-    <meta itemprop="datePublished" content="2019-08-11T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2019-08-11T00:00:00+0000">August 11, 2019</time>
-    | <nobr><span class="time">9</span> minutes</nobr>
-    
-    | <a href="/blog/2019/08/11/isinstanceof-anti-pattern.html#isso-thread">comments</a>
-    
-  </p>
-
-  <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png" />
-      <img src="/assets/media/articles/scala-instanceof-antipattern.png?202103291137" alt="" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html"/>
+      <meta itemprop="datePublished" content="2019-08-11T00:00:00+0000"/>
       
-    </figure>
-    
-  
+      <time itemprop="dateCreated" datetime="2019-08-11T00:00:00+0000">August 11, 2019</time>
+      | <nobr><span class="time">9</span> minutes</nobr>
+      
+      | <a href="/blog/2019/08/11/isinstanceof-anti-pattern.html#isso-thread">comments</a>
+      
+    </p>
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    
+        <figure class="featuredImage" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+          <meta itemprop="url" content="https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png" />
+          <img src="/assets/media/articles/scala-instanceof-antipattern.png?202103291912" alt="" />
+          
+        </figure>
+        
+    
+
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
+  <li><a href="#the-anti-pattern">The Anti-Pattern</a></li>
+  <li><a href="#type-classes-to-the-rescue">Type Classes to the rescue</a></li>
+  <li><a href="#the-problem-with-defaults">The problem with defaults</a></li>
+  <li><a href="#in-conclusion">In conclusion</a></li>
+</ul>
+    </nav>
+    </header>
 
   <div id="content" itemprop="articleBody">
-    <p>When you use <code class="language-plaintext highlighter-rouge">isInstanceOf[Class]</code> checks, that’s an anti-pattern, as Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe <a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>.</p>
+    <p class="intro withcap">
+  When you use <code class="language-plaintext highlighter-rouge">isInstanceOf[Class]</code> checks, that’s an anti-pattern, as Scala has a much better way of discriminating between types. Scala has implicit parameters, with which you can describe <a href="https://en.wikipedia.org/wiki/Type_class">type classes</a>.
+</p>
 
 <p class="info-bubble">
   When C# developers try Java, one primary complaint is about the lack of reification for Java’s generics and by that they mean the ability to discriminate between different type parameters, so to differentiate between <code class="language-plaintext highlighter-rouge">List[Int]</code> and <code class="language-plaintext highlighter-rouge">List[String]</code> via <code class="language-plaintext highlighter-rouge">isInstanceOf</code> checks. Java and Scala do type erasure so a <code class="language-plaintext highlighter-rouge">List[String]</code> at runtime becomes a <code class="language-plaintext highlighter-rouge">List[Any]</code>.
@@ -155,7 +174,6 @@
 </p>
 
 <p>Let’s do an exercise …</p>
-    
       <h2 id="the-anti-pattern">
         
         
@@ -163,6 +181,7 @@
         
         
       </h2>
+    
 
 <p>Given some piece of heavy logic, let’s say you want to describe a function that can execute a block of code, along with some finalizer, something like this:</p>
 
@@ -242,7 +261,6 @@
 </code></pre></div></div>
 
 <p>Oops again! Now we’ve got a bug.</p>
-    
       <h2 id="type-classes-to-the-rescue">
         
         
@@ -250,6 +268,7 @@
         
         
       </h2>
+    
 
 <p>Let us define a type class for discriminating between types at <em>compile-time</em>:</p>
 
@@ -301,7 +320,6 @@
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></div></div>
-    
       <h2 id="the-problem-with-defaults">
         
         
@@ -309,6 +327,7 @@
         
         
       </h2>
+    
 
 <p>What happens in case you don’t define <code class="language-plaintext highlighter-rouge">CanGuarantee[Thunk[A]]</code>?</p>
 
@@ -396,7 +415,6 @@ then use CanGuarantee.synchronous[Unit] to create one.
 
 <span class="n">guarantee</span> <span class="o">{</span> <span class="nf">println</span><span class="o">(</span><span class="s">"Executing!"</span><span class="o">)</span> <span class="o">}</span> <span class="o">{</span> <span class="nf">println</span><span class="o">(</span><span class="s">"Done!"</span><span class="o">)</span> <span class="o">}</span>
 </code></pre></div></div>
-    
       <h2 id="in-conclusion">
         
         
@@ -404,6 +422,7 @@ then use CanGuarantee.synchronous[Unit] to create one.
         
         
       </h2>
+    
 
 <p>Friends don’t let friends use <code class="language-plaintext highlighter-rouge">isInstanceOf</code> checks, because Scala has better ways of handling the related use cases.</p>
 
@@ -413,8 +432,8 @@ then use CanGuarantee.synchronous[Unit] to create one.
 
   <div id="article-details">
     
-    <time itemprop="dateModified" content="2020-04-21T23:15:01+0000">
-        Updated: April 21, 2020
+    <time itemprop="dateModified" content="2021-03-29T19:10:58+0000">
+        Updated: March 29, 2021
     </time>
     
       | Written by <a href="https://alexn.org/about.html#alexelcu" itemprop="url" rel="author">Alexandru Nedelcu</a>
@@ -434,7 +453,6 @@ then use CanGuarantee.synchronous[Unit] to create one.
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -442,6 +460,7 @@ then use CanGuarantee.synchronous[Unit] to create one.
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -555,15 +574,16 @@ then use CanGuarantee.synchronous[Unit] to create one.
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -709,7 +729,6 @@ then use CanGuarantee.synchronous[Unit] to create one.
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

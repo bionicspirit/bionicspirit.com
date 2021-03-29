@@ -27,11 +27,11 @@
     <meta content="2020-01-25T00:00:00+00:00" property="article:modified_time">
     
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="https://alexn.org/assets/media/articles/conditional-prob.png?202103291137" />
-    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/conditional-prob.png?202103291137" />
+    <meta property="og:image" content="https://alexn.org/assets/media/articles/conditional-prob.png?202103291912" />
+    <meta property="og:image:secure_url" content="https://alexn.org/assets/media/articles/conditional-prob.png?202103291912" />
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/conditional-prob.png?202103291137">
+    <meta name="twitter:image:src" content="https://alexn.org/assets/media/articles/conditional-prob.png?202103291912">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
     <meta name="twitter:title" content="How To Build a Naive Bayes Classifier">
@@ -53,8 +53,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html">
@@ -62,7 +62,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -103,47 +102,78 @@
 
    <div class="content">
       <div class="container">
-         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+         <article class="post" itemscope itemtype="http://schema.org/BlogPosting"><header>
       <h1 class="postTitle" itemprop="headline">
         
         
-          How To Build a Naive Bayes Classifier
+          
+      How To Build a Naive Bayes Classifier
+    
         
         
       </h1>
-  <p class="meta">
-    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html"/>
-    <meta itemprop="datePublished" content="2012-02-09T00:00:00+0000"/>
     
-    <time itemprop="dateCreated" datetime="2012-02-09T00:00:00+0000">February 9, 2012</time>
-    | <nobr><span class="time">11</span> minutes</nobr>
-    
-    | <a href="/blog/2012/02/09/howto-build-naive-bayes-classifier.html#isso-thread">comments</a>
-    
-  </p>
-
-  
-    <div class="hidden" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/media/articles/conditional-prob.png" />
+    <p class="meta">
+      <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html"/>
+      <meta itemprop="datePublished" content="2012-02-09T00:00:00+0000"/>
       
-    </div>
-    
-  
+      <time itemprop="dateCreated" datetime="2012-02-09T00:00:00+0000">February 9, 2012</time>
+      | <nobr><span class="time">11</span> minutes</nobr>
+      
+      | <a href="/blog/2012/02/09/howto-build-naive-bayes-classifier.html#isso-thread">comments</a>
+      
+    </p>
 
-  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
-    <meta itemprop="name" content="Alexandru Nedelcu">
-    <meta itemprop="url" content="https://alexn.org/about.html">
-    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+    
+      <div class="hidden" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/media/articles/conditional-prob.png" />
+        
+      </div>
+      
+    
+
+    <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+      <meta itemprop="name" content="Alexandru Nedelcu">
+      <meta itemprop="url" content="https://alexn.org/about.html">
+      <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
+      </div>
     </div>
-  </div>
-  <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alexandru Nedelcu" />
-      <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
-      <meta itemprop="url" content="https://twitter.com/alexelcu" />
-      <meta itemprop="url" content="https://github.com/alexandru" />
-    </div>
-  
+    <div class="hidden" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="Alexandru Nedelcu" />
+        <meta itemprop="url" content="https://alexn.org/about.html#alexelcu" />
+        <meta itemprop="url" content="https://twitter.com/alexelcu" />
+        <meta itemprop="url" content="https://github.com/alexandru" />
+      </div>
+    
+
+    
+    
+    
+    <nav class="toc">
+      <p class="toc-title">Table of Contents:</p>
+      <ul>
+  <li><a href="#0-the-source-code">0. The Source Code</a></li>
+  <li><a href="#1-introduction-to-probabilities">1. Introduction to Probabilities</a>
+    <ul>
+      <li><a href="#11-events-and-event-types">1.1. Events and Event Types</a></li>
+      <li><a href="#12-conditional-probabilities-and-the-bayes-theorem">1.2. Conditional Probabilities and The Bayes Theorem</a></li>
+      <li><a href="#13-the-naive-bayes-approach">1.3. The Naive Bayes Approach</a></li>
+    </ul>
+  </li>
+  <li><a href="#2-implementation">2. Implementation</a>
+    <ul>
+      <li><a href="#21-general-algorithm">2.1. General Algorithm</a></li>
+      <li><a href="#22-avoiding-floating-point-underflow-update-feb-27-2012">2.2. Avoiding Floating Point Underflow (UPDATE Feb 27, 2012)</a></li>
+      <li><a href="#23-training">2.3. Training</a></li>
+      <li><a href="#24-getting-rid-of-stop-words--stemming">2.4. Getting Rid of Stop Words / Stemming</a></li>
+      <li><a href="#25-implementation-guidelines">2.5. Implementation Guidelines</a></li>
+    </ul>
+  </li>
+  <li><a href="#final-words">Final Words</a></li>
+</ul>
+    </nav>
+    </header>
 
   <div id="content" itemprop="articleBody">
     <p class="intro withcap">
@@ -172,30 +202,6 @@ even though there are a lot of libraries out there that already do
 this, you’re far better off for understanding the concept behind it,
 otherwise you won’t be able to tweak the implementation in response to
 your needs.</p>
-
-<!-- read more -->
-
-<ul>
-  <li><a href="#0-the-source-code">0. The Source Code</a></li>
-  <li><a href="#1-introduction-to-probabilities">1. Introduction to Probabilities</a>
-    <ul>
-      <li><a href="#11-events-and-event-types">1.1. Events and Event Types</a></li>
-      <li><a href="#12-conditional-probabilities-and-the-bayes-theorem">1.2. Conditional Probabilities and The Bayes Theorem</a></li>
-      <li><a href="#13-the-naive-bayes-approach">1.3. The Naive Bayes Approach</a></li>
-    </ul>
-  </li>
-  <li><a href="#2-implementation">2. Implementation</a>
-    <ul>
-      <li><a href="#21-general-algorithm">2.1. General Algorithm</a></li>
-      <li><a href="#22-avoiding-floating-point-underflow-update-feb-27-2012">2.2. Avoiding Floating Point Underflow (UPDATE Feb 27, 2012)</a></li>
-      <li><a href="#23-training">2.3. Training</a></li>
-      <li><a href="#24-getting-rid-of-stop-words--stemming">2.4. Getting Rid of Stop Words / Stemming</a></li>
-      <li><a href="#25-implementation-guidelines">2.5. Implementation Guidelines</a></li>
-    </ul>
-  </li>
-  <li><a href="#final-words">Final Words</a></li>
-</ul>
-    
       <h2 id="0-the-source-code">
         
         
@@ -203,6 +209,7 @@ your needs.</p>
         
         
       </h2>
+    
 
 <p>I published the source-code associated at
 <a href="https://github.com/alexandru/stuff-classifier">github.com/alexandru/stuff-classifier</a>. The
@@ -210,7 +217,6 @@ implementation itself is at
 <a href="https://github.com/alexandru/stuff-classifier/blob/master/lib/stuff-classifier/bayes.rb">lib/bayes.rb</a>,
 with the corresponding
 <a href="https://github.com/alexandru/stuff-classifier/blob/master/test/test_003_naive_bayes.rb">test/test_003_naive_bayes.rb</a>.</p>
-    
       <h2 id="1-introduction-to-probabilities">
         
         
@@ -218,12 +224,12 @@ with the corresponding
         
         
       </h2>
+    
 
 <p>Let’s start by refreshing forgotten knowledge. Again, this is very
 basic stuff, but if you can’t follow the theory here, you can always
 go to the
 <a href="https://www.khanacademy.org/math/statistics-probability/probability-library">probabilities section on khanacademy.org</a>.</p>
-    
       <h3 id="11-events-and-event-types">
         
         
@@ -231,6 +237,7 @@ go to the
         
         
       </h3>
+    
 
 <p>An “event” is a set of outcomes (a subset of all possible outcomes)
 with a probability attached. So when flipping a coin, we can have one
@@ -285,7 +292,6 @@ a tail 4 times in a row (0.5 ^ 4)</li>
 
 <p>Things are not so simple for dependent events, which is where the
 Bayes Theorem comes into play.</p>
-    
       <h3 id="12-conditional-probabilities-and-the-bayes-theorem">
         
         
@@ -293,6 +299,7 @@ Bayes Theorem comes into play.</p>
         
         
       </h3>
+    
 
 <p>Let’s take one example. So we have the following stats:</p>
 
@@ -327,7 +334,6 @@ r &amp;=&amp; P(spam|penis) \\[6pt]
 
 <p>This was a simple one, you could definitely see the result without
 complicating yourself with the Bayes formula.</p>
-    
       <h3 id="13-the-naive-bayes-approach">
         
         
@@ -335,6 +341,7 @@ complicating yourself with the Bayes formula.</p>
         
         
       </h3>
+    
 
 <p>Let us complicate the problem above by adding to it:</p>
 
@@ -383,7 +390,6 @@ involved.</p>
 clearly those 2 events we’ve picked (viagra and penis) are correlated
 and our assumption is wrong. But this just means our results will be
 less accurate.</p>
-    
       <h2 id="2-implementation">
         
         
@@ -391,11 +397,11 @@ less accurate.</p>
         
         
       </h2>
+    
 
 <p>I mention it again, you can take a look at the source-code published
 at
 <a href="https://github.com/alexandru/stuff-classifier/">github.com/alexandru/stuff-classifier</a>.</p>
-    
       <h3 id="21-general-algorithm">
         
         
@@ -403,6 +409,7 @@ at
         
         
       </h3>
+    
 
 <p>You simply get the probability for a text to belong to each of the
 categories you test against. The category with the highest probability
@@ -414,7 +421,6 @@ for the given text wins:</p>
 <p>Do note that above I also eliminated the <em>denominator</em> from our original
 formula, because it is a constant that we do not need (called
 <em>evidence</em>).</p>
-    
       <h3 id="22-avoiding-floating-point-underflow-update-feb-27-2012">
         
         
@@ -422,6 +428,7 @@ formula, because it is a constant that we do not need (called
         
         
       </h3>
+    
 
 <p>Because of the underlying limits of floating points, if you’re working
 with big documents (not the case in this example), you do have to make
@@ -438,7 +445,6 @@ use this one:</p>
 
 \[classify(word_1, word_2 \ldots word_n) = \\[6pt]
   \operatorname*{argmax}_{cat} log_{e} (P(cat))  + \sum_{i=1}^{n} log_{e} (P(word_i|cat))\]
-    
       <h3 id="23-training">
         
         
@@ -446,6 +452,7 @@ use this one:</p>
         
         
       </h3>
+    
 
 <p>Your implementation must have a training method. Here’s how mine looks like:</p>
 
@@ -463,7 +470,6 @@ use this one:</p>
 
 <p>For the full implementation, take a look at
 <a href="https://github.com/alexandru/stuff-classifier/blob/master/lib/stuff-classifier/base.rb">base.rb</a>.</p>
-    
       <h3 id="24-getting-rid-of-stop-words--stemming">
         
         
@@ -471,6 +477,7 @@ use this one:</p>
         
         
       </h3>
+    
 
 <p>First of all, you must get rid of the junk. Every language has words
 that are so commonly used that make them meaningless for any kind of
@@ -526,7 +533,6 @@ where I’m getting rid of stop words and stemming the remaining.</p>
 a good idea. Stemming is useful in the beginning when you don’t have a
 lot of data. Otherwise consider “<em>house</em>” and “<em>housing</em>” … the
 former is used less frequently in a spammy context then the later.</p>
-    
       <h3 id="25-implementation-guidelines">
         
         
@@ -534,6 +540,7 @@ former is used less frequently in a spammy context then the later.</p>
         
         
       </h3>
+    
 
 <p>When classifying emails for spam, it is a good idea to be sure that a
 certain message is a spam message, otherwise users may get pissed by
@@ -575,7 +582,6 @@ implementation looks like:</p>
   <span class="k">return</span> <span class="n">best</span>
 <span class="k">end</span>
 </code></pre></div></div>
-    
       <h2 id="final-words">
         
         
@@ -583,6 +589,7 @@ implementation looks like:</p>
         
         
       </h2>
+    
 
 <p>My example involved spam classification, however this is not how
 modern spam classifiers work btw. Because the independence assumptions
@@ -625,7 +632,6 @@ you started.</p>
 
   
   <div class="related">
-    
       <h2 id="related-articles">
         
         
@@ -633,6 +639,7 @@ you started.</p>
         
         
       </h2>
+    
     <div class="container">
       
       
@@ -734,15 +741,16 @@ you started.</p>
 
   
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/load-mathjax.js?202103291137"></script>
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/load-mathjax.js?202103291912"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -888,7 +896,6 @@ you started.</p>
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>

@@ -54,8 +54,8 @@
     <link rel="alternate" type="application/rss+xml" title="Shared Links" href="/feeds/links.xml" />
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="/assets/css/style.css?202103291137">
-    <link rel="preload" as="style" href="/assets/css/style.css?202103291137">
+    <link rel="stylesheet" href="/assets/css/style.css?202103291912">
+    <link rel="preload" as="style" href="/assets/css/style.css?202103291912">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
     <link rel="canonical" href="https://alexn.org/wiki/dns-settings.html">
@@ -63,7 +63,6 @@
 
 
 <body>
-
    <div class="header">
   <div class="container">
     <div class="inner-container">
@@ -112,6 +111,7 @@
         
         
       </h1>
+    
   
   <p class="meta">
     <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/dns-settings.html"/>
@@ -150,7 +150,6 @@
     </ul>
   </li>
 </ul>
-    
       <h2 id="macos">
         
         
@@ -166,13 +165,13 @@
         
         
       </h3>
+    
 
 <p>To flush the local DNS cache:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nb">sudo </span>dscacheutil <span class="nt">-flushcache</span>
 <span class="nb">sudo </span>killall <span class="nt">-HUP</span> mDNSResponder
 </code></pre></div></div>
-    
       <h3 id="set-dns-to-cloudflare">
         
         
@@ -180,6 +179,7 @@
         
         
       </h3>
+    
 
 <p>To set the DNS to Cloudflare’s 1.1.1.1:</p>
 
@@ -205,7 +205,6 @@ Non-authoritative answer:
 Name:	google.com
 Address: 172.217.21.238
 </code></pre></div></div>
-    
       <h3 id="split-dns">
         
         
@@ -213,6 +212,7 @@ Address: 172.217.21.238
         
         
       </h3>
+    
 
 <p>Source: <a href="https://gist.github.com/dferg/0472269333be4aca6aaa21cf3b165c02">https://gist.github.com/dferg/0472269333be4aca6aaa21cf3b165c02</a></p>
 
@@ -257,7 +257,6 @@ Address: 172.217.21.238
 
 <span class="nb">sudo </span>networksetup <span class="nt">-setdnsservers</span> <span class="s2">"USB 10/100/1000 LAN"</span> 127.0.0.1
 </code></pre></div></div>
-    
       <h4 id="uninstall-dnsmasq">
         
         
@@ -265,6 +264,7 @@ Address: 172.217.21.238
         
         
       </h4>
+    
 
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="code"><code><span class="nb">sudo </span>brew services stop dnsmasq
 brew uninstall dnsmasq
@@ -274,15 +274,16 @@ brew uninstall dnsmasq
 
   </div>
 </article>
+
       </div>
    </div><!-- end .content -->
 
-   <script async src="/assets/js/modernizr.custom.15390.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/dropcap.min.js?202103291137" type="text/javascript"></script>
-<script async src="/assets/js/responsive-nav.min.js?202103291137" type="text/javascript"></script>
+   <script async src="/assets/js/modernizr.custom.15390.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js-managed/jquery/dist/jquery.slim.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/dropcap.min.js?202103291912" type="text/javascript"></script>
+<script async src="/assets/js/responsive-nav.min.js?202103291912" type="text/javascript"></script>
 
-<script async src="/assets/js/scripts.js?202103291137" type="text/javascript"></script>
+<script async src="/assets/js/scripts.js?202103291912" type="text/javascript"></script>
 
 <script type="text/javascript">
   var _paq = window._paq || [];
@@ -396,7 +397,6 @@ brew uninstall dnsmasq
     </div>
   </div>
 </div><!-- end .footer -->
-
 
 </body>
 </html>
