@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Mar 2021 22:32:39 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Mar 2021 22:32:39 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Mar 2021 22:54:59 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Mar 2021 22:54:59 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -1305,7 +1305,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
         <item>
   <title>Error Hierarchy.scala</title>
-  <description>&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+  <description>&lt;figure&gt;
   &lt;a href=&quot;https://alexn.org/assets/media/snippets/error-hierarchy.svg&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/snippets/error-hierarchy.svg&quot; alt=&quot;Error hierarchy graph&quot; title=&quot;Error hierarchy graph&quot; style=&quot;max-width: 100%; width:100%;&quot;&gt;
   &lt;/a&gt;

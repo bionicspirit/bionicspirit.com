@@ -9,8 +9,8 @@
     <description>Feed of blog articles, published at alexn.org/blog/</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/blog.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Mar 2021 22:32:39 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Mar 2021 22:32:39 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Mar 2021 22:54:59 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Mar 2021 22:54:59 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -22,8 +22,8 @@
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2021/03/29/atom-rss-feeds-are-the-best-way-to-consume-the-web.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/highway.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2021/03/29/atom-rss-feeds-are-the-best-way-to-consume-the-web.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/highway.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -104,7 +104,7 @@
 &lt;p&gt;Enjoy 😎&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/03/29/atom-rss-feeds-are-the-best-way-to-consume-the-web.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Atom/RSS Feeds are the Best Way to Consume the Web&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/03/29/atom-rss-feeds-are-the-best-way-to-consume-the-web.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Atom/RSS Feeds are the Best Way to Consume the Web&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 29 Mar 2021 19:58:29 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 21:39:11 +0000</dc:modified>
@@ -132,37 +132,41 @@
 
 &lt;p&gt;In the first half of the meetup, Ayush Mittal did a live presentation on the newly introduced types of Scala 3 — enums, intersection types, untagged union types.&lt;/p&gt;
 
-&lt;figure class=&quot;video&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure class=&quot;video&quot;&gt;
+  
   
   &lt;a href=&quot;https://www.youtube.com/watch?v=qqqfImDtduE&amp;amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://alexn.org/assets/media/articles/ing-meetup-working-with-dotty-2.jpg?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
+    &lt;img src=&quot;https://alexn.org/assets/media/articles/ing-meetup-working-with-dotty-2.jpg?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
+
   &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=qqqfImDtduE&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
-      The types of Scala 3 — Ayush Mittal
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=qqqfImDtduE&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
+    The types of Scala 3 — Ayush Mittal
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;In the second half of the meetup, I did a live coding session on implementing Type Classes in Scala 3, and what this major version of the compiler brings new to the table for helping us to encode type classes — presentation starts from beginner level but then progresses to advanced 😅&lt;/p&gt;
 
-&lt;figure class=&quot;video&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure class=&quot;video&quot;&gt;
+  
   
   &lt;a href=&quot;https://www.youtube.com/watch?v=qqqfImDtduE&amp;amp;autoplay=1&amp;amp;t=4963&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://alexn.org/assets/media/articles/ing-meetup-working-with-dotty-1.jpg?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
+    &lt;img src=&quot;https://alexn.org/assets/media/articles/ing-meetup-working-with-dotty-1.jpg?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
+
   &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=qqqfImDtduE&amp;amp;autoplay=1&amp;amp;t=4963&quot; target=&quot;_blank&quot;&gt;
-      Type Classes in Scala 3 — Alexandru Nedelcu
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=qqqfImDtduE&amp;amp;autoplay=1&amp;amp;t=4963&quot; target=&quot;_blank&quot;&gt;
+    Type Classes in Scala 3 — Alexandru Nedelcu
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/02/26/type-classes-in-scala-3-live-coding-session.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;ING Scala Meetup on Scala 3 (live coding session)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/02/26/type-classes-in-scala-3-live-coding-session.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;ING Scala Meetup on Scala 3 (live coding session)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 26 Feb 2021 06:30:07 +0000</pubDate>
   <dc:modified>Tue, 23 Mar 2021 07:11:23 +0000</dc:modified>
@@ -188,17 +192,19 @@
     
       <item>
   <title>Implementing a CountDownLatch (async and dirty)</title>
-  <description>&lt;figure class=&quot;video&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+  <description>&lt;figure class=&quot;video&quot;&gt;
+  
   
   &lt;a href=&quot;https://www.youtube.com/watch?v=R6pl91IRVaI&amp;amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://alexn.org/assets/media/articles/countdownlatch-async-dirty.png?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
+    &lt;img src=&quot;https://alexn.org/assets/media/articles/countdownlatch-async-dirty.png?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
+
   &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=R6pl91IRVaI&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
-      Video link
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=R6pl91IRVaI&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
+    Video link
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Yo dawg, I heard you liked concurrency primitives. Let’s implement our own asynchronous, dirty &lt;a href=&quot;https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CountDownLatch.html&quot;&gt;CountDownLatch&lt;/a&gt;.&lt;/p&gt;
@@ -433,7 +439,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/02/22/countdownlatch-async-dirty.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Implementing a CountDownLatch (async and dirty)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/02/22/countdownlatch-async-dirty.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Implementing a CountDownLatch (async and dirty)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 22 Feb 2021 13:39:35 +0000</pubDate>
   <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
@@ -538,7 +544,7 @@
 &lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/02/12/scala-list-secret.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Scala&amp;#39;s List has a Secret&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/02/12/scala-list-secret.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Scala's List has a Secret&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 12 Feb 2021 11:32:33 +0000</pubDate>
   <dc:modified>Fri, 12 Feb 2021 18:36:40 +0000</dc:modified>
@@ -567,19 +573,21 @@
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         
-&lt;figure class=&quot;video&quot; style=&quot;margin: 0;&quot;&gt;
+&lt;figure class=&quot;video&quot;&gt;
   
-  &lt;a href=&quot;https://www.youtube.com/watch?v=Ua1iMD4icLU&amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://alexn.org/assets/media/articles/tail-recursive-functions.png?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; /&gt;
+  
+  &lt;a href=&quot;https://www.youtube.com/watch?v=Ua1iMD4icLU&amp;amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
+    &lt;img src=&quot;https://alexn.org/assets/media/articles/tail-recursive-functions.png?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
-  &lt;figcaption&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=Ua1iMD4icLU&amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
-      Video link
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/figcaption&gt;
+
+  &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=Ua1iMD4icLU&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
+    Video link
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
- 
+
       
       &lt;/div&gt;
     
@@ -763,7 +771,7 @@
 &lt;p&gt;Enjoy!&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Tail Recursive Functions (in Scala)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2021/01/26/tail-recursive-functions-in-scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Tail Recursive Functions (in Scala)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 26 Jan 2021 19:49:35 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -810,7 +818,7 @@
 &lt;p&gt;We should indeed fight to preserve privacy, and to combat filter bubbles and targeted advertising. But when going to battle, I recommend caution, and doing some research first, preferably one grounded in economics, and not philosophy of history 😉&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/12/20/no-acceptable-ads.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;There are No Acceptable Ads&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/12/20/no-acceptable-ads.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;There are No Acceptable Ads&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 20 Dec 2020 15:16:08 +0000</pubDate>
   <dc:modified>Wed, 24 Feb 2021 07:24:45 +0000</dc:modified>
@@ -839,8 +847,8 @@
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2020/11/17/best-practice-for-ordering-comparable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/ordering.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2020/11/17/best-practice-for-ordering-comparable.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/ordering.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -960,7 +968,7 @@
 &lt;p&gt;Don’t take shortcuts, don’t do anything less than this, even if you think that you currently don’t need it. Because one of your colleagues, or even your future self, might reuse this definition without knowing that it’s broken.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/11/17/best-practice-for-ordering-comparable.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Best practice for natural Ordering&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/11/17/best-practice-for-ordering-comparable.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Best practice for natural Ordering&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 17 Nov 2020 09:02:13 +0000</pubDate>
   <dc:modified>Mon, 30 Nov 2020 15:02:24 +0000</dc:modified>
@@ -985,8 +993,8 @@
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/db-migrations-scala.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/db-migrations-scala.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -1358,7 +1366,7 @@ docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&qu
 &lt;p&gt;Enjoy~&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Managing Database Migrations in Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/11/15/managing-database-migrations-scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Managing Database Migrations in Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 15 Nov 2020 16:17:25 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -1385,8 +1393,8 @@ docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&qu
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2020/11/12/i-like-option-get.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/option.get.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2020/11/12/i-like-option-get.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/option.get.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -1488,7 +1496,7 @@ docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&qu
 &lt;p&gt;I hope Scala will evolve to do it too, because TypeScript, and Kotlin can already do this 🙂 and it would be a shame for Scala to not evolve such abilities, to go along with its brand new &lt;a href=&quot;https://dotty.epfl.ch/docs/reference/new-types/union-types.html&quot;&gt;untagged union types&lt;/a&gt;.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/11/12/i-like-option-get.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;I like Option.get&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/11/12/i-like-option-get.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;I like Option.get&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Thu, 12 Nov 2020 18:02:46 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -1515,8 +1523,8 @@ docker run &lt;span class=&quot;nt&quot;&gt;--rm&lt;/span&gt; &lt;span class=&qu
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/spotlight-search.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/spotlight-search.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -1739,7 +1747,7 @@ Usage:
 &lt;p&gt;They’ll also get indexed by Dropbox, because the Plus plan supports searching in PDF files.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Organize and Index Your Screenshots (OCR) on macOS&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Organize and Index Your Screenshots (OCR) on macOS&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Wed, 11 Nov 2020 12:43:46 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 22:32:01 +0000</dc:modified>
@@ -1789,8 +1797,8 @@ youtube.com###comments
 
 &lt;p&gt;Here’s how it should look like:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
-  &lt;img src=&quot;https://alexn.org/assets/media/articles/block-comments.png?202103292232&quot; alt=&quot;Screenshot of uBlock Origin's My Filters section&quot; style=&quot;max-width: 100%; &quot;&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;https://alexn.org/assets/media/articles/block-comments.png?202103292255&quot; alt=&quot;Screenshot of uBlock Origin's My Filters section&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;These rules block comments from:&lt;/p&gt;
@@ -1840,8 +1848,8 @@ youtube.com###comments
 
 &lt;p&gt;You can then import it in uBlock Origin easily:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
-  &lt;img src=&quot;https://alexn.org/assets/media/articles/block-comments2.png?202103292232&quot; alt=&quot;Screenshot of uBlock Origin's Filter List&quot; style=&quot;max-width: 100%; &quot;&gt;
+&lt;figure&gt;
+  &lt;img src=&quot;https://alexn.org/assets/media/articles/block-comments2.png?202103292255&quot; alt=&quot;Screenshot of uBlock Origin's Filter List&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;safari--ios-iphone-ipad&quot;&gt;Safari / iOS (iPhone, iPad)&lt;/h2&gt;
@@ -1859,7 +1867,7 @@ youtube.com###comments
 &lt;p&gt;If you know of a better solution, write about it in the comments section 😅😂&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/10/20/block-comments-on-the-web.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Block comments on the web&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/10/20/block-comments-on-the-web.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Block comments on the web&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 20 Oct 2020 19:51:45 +0000</pubDate>
   <dc:modified>Tue, 20 Oct 2020 22:01:46 +0000</dc:modified>
@@ -1899,7 +1907,7 @@ youtube.com###comments
 
 &lt;p&gt;To help focus I often play some tune on repeat, over and over again. Or maybe there’s some inertia, the problem is exciting, and that magic moment finally comes …&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/earth.jpg&quot; alt=&quot;Picture of Earth&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -1911,17 +1919,19 @@ youtube.com###comments
 
 &lt;p&gt;I remembered this intense feeling of focus while browsing my music library, and finding a gem. I give you the sound-track of &lt;a href=&quot;https://monix.io&quot;&gt;Monix&lt;/a&gt;, a tune I played over and over again during some of the most focused days I’ve ever had:&lt;/p&gt;
 
-&lt;figure class=&quot;video&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure class=&quot;video&quot;&gt;
+  
   
   &lt;a href=&quot;https://www.youtube.com/watch?v=mlXtwZY4ko4&amp;amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/mlXtwZY4ko4/maxresdefault.jpg?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
+    &lt;img src=&quot;https://img.youtube.com/vi/mlXtwZY4ko4/maxresdefault.jpg?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
+
   &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=mlXtwZY4ko4&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
-      Best Mamgu Ever — Underworld
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=mlXtwZY4ko4&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
+    Best Mamgu Ever — Underworld
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;Tonight I worked on a hard problem, playing this tune on auto-repeat.&lt;/p&gt;
@@ -1929,7 +1939,7 @@ youtube.com###comments
 &lt;p&gt;I’ll probably fail to go to sleep too soon, as this dumb tune is going to keep ringing in my ears. But it’s not really the music that’s keeping me awake, but the problem I’ve been working on, with the tune being just its echo. Oh well, my brain will have to calm down eventually.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;When My World Vanishes&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/10/10/when-my-world-vanishes.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;When My World Vanishes&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -1952,10 +1962,10 @@ youtube.com###comments
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/fi-miu.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/fi-miu.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
-          &lt;figcaption&gt;My son ❤️&lt;/figcaption&gt;
+          &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;My son ❤️&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
         &lt;/figure&gt;
       
       &lt;/div&gt;
@@ -1995,7 +2005,7 @@ youtube.com###comments
 &lt;p&gt;Therefore I’m raising my son not to hate or discriminate against other people based on social position, race, ethnicity, religion, body size, sex, or sexual orientation. It’s the least I could do. And you should too.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Privilege&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/09/10/privilege.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Privilege&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Thu, 10 Sep 2020 00:00:00 +0000</pubDate>
   <dc:modified>Thu, 10 Sep 2020 14:04:28 +0000</dc:modified>
@@ -2018,8 +2028,8 @@ youtube.com###comments
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/snippets/on-error-retry-loop.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -2334,12 +2344,12 @@ youtube.com###comments
 
 &lt;p&gt;Enjoy~&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/cute-cat.jpg&quot; loading=&quot;lazy&quot; alt=&quot;Cute cat surprised by a job well done&quot; title=&quot;Cute cat surprised by a job well done&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Retry Failing Tasks with Cats and Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Retry Failing Tasks with Cats and Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -2364,8 +2374,8 @@ youtube.com###comments
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-xfatal-warnings.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -2668,7 +2678,7 @@ youtube.com###comments
 &lt;p&gt;Now go forth and annoy your colleagues with actually useful compiler errors!&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Fatal Warnings and Linting in Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/05/26/scala-fatal-warnings.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Fatal Warnings and Linting in Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -2691,8 +2701,8 @@ youtube.com###comments
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/async-semaphore-typescript.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/async-semaphore-typescript.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -2845,7 +2855,7 @@ youtube.com###comments
 &lt;p&gt;Enjoy~&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Parallelizing Work via a JavaScript Semaphore&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/04/21/javascript-semaphore.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Parallelizing Work via a JavaScript Semaphore&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 21 Apr 2020 16:00:00 +0000</pubDate>
   <dc:modified>Wed, 22 Apr 2020 09:12:30 +0000</dc:modified>
@@ -2895,23 +2905,25 @@ youtube.com###comments
   &lt;li&gt;Integration of &lt;a href=&quot;https://www.mathjax.org/&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;MathJax&lt;/a&gt; for math formulas&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;video&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure class=&quot;video&quot;&gt;
+  
   
   &lt;a href=&quot;https://www.youtube.com/watch?v=RYmGT905Skc&amp;amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/RYmGT905Skc/maxresdefault.jpg?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
+    &lt;img src=&quot;https://img.youtube.com/vi/RYmGT905Skc/maxresdefault.jpg?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
+
   &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=RYmGT905Skc&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
-      Video link
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=RYmGT905Skc&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
+    Video link
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;If you find anything broken, please let me know.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/04/21/blog-updates.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Blog Updates&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2020/04/21/blog-updates.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Blog Updates&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 21 Apr 2020 10:00:00 +0000</pubDate>
   <dc:modified>Wed, 26 Aug 2020 06:02:40 +0000</dc:modified>
@@ -2936,8 +2948,8 @@ youtube.com###comments
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-replace-all-function.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-replace-all-function.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -3049,7 +3061,7 @@ youtube.com###comments
 &lt;p&gt;Enjoy ~&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Regexp Replacement via Function in Java/Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2019/11/22/howto-regexp-replacement-via-function-java-scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Regexp Replacement via Function in Java/Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -3074,8 +3086,8 @@ youtube.com###comments
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-instanceof-antipattern.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -3324,7 +3336,7 @@ then use CanGuarantee.synchronous[Unit] to create one.
 &lt;p&gt;Enjoy~&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Scala&amp;#39;s isInstanceOf is an Anti-Pattern&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2019/08/11/isinstanceof-anti-pattern.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Scala's isInstanceOf is an Anti-Pattern&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 11 Aug 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -3349,8 +3361,8 @@ then use CanGuarantee.synchronous[Unit] to create one.
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/bio.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/bio.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -3875,7 +3887,7 @@ the current status quo. Scala is a great environment.&lt;/p&gt;
 &lt;p&gt;That’s all.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;On Bifunctor IO and Java&amp;#39;s Checked Exceptions&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2018/05/06/bifunctor-io.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;On Bifunctor IO and Java's Checked Exceptions&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 06 May 2018 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -3906,10 +3918,10 @@ the current status quo. Scala is a great environment.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-stairs.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-stairs.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
-          &lt;figcaption&gt;&amp;lt;a href=&amp;quot;https://www.flickr.com/photos/gilles_dubochet/7327041044&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;Credits&amp;lt;/a&amp;gt;&lt;/figcaption&gt;
+          &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;&amp;lt;a href=&quot;https://www.flickr.com/photos/gilles_dubochet/7327041044&quot; target=&quot;_blank&quot;&amp;gt;Credits&amp;lt;/a&amp;gt;&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
         &lt;/figure&gt;
       
       &lt;/div&gt;
@@ -4043,7 +4055,7 @@ solutions to problems you don’t have!
 &lt;a href=&quot;https://www.scala-lang.org/api/2.12.4/scala/collection/immutable/List.html&quot;&gt;List&lt;/a&gt;,
 by &lt;a href=&quot;https://github.com/tpolecat&quot;&gt;Rob Norris&lt;/a&gt;:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-list.jpg&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -4051,7 +4063,7 @@ by &lt;a href=&quot;https://github.com/tpolecat&quot;&gt;Rob Norris&lt;/a&gt;:&l
 
 &lt;p&gt;And this is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;List&lt;/code&gt;, after the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;collection-strawman&lt;/code&gt; refactoring:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/scala-list-strawman.jpg&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -4260,7 +4272,7 @@ approach - this can lead to choice paralysis however and lots of drama!
 
 &lt;h3 id=&quot;4-case-study-monix-iterant&quot;&gt;4. Case Study: Monix Iterant&lt;/h3&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;a href=&quot;https://www.youtube.com/watch?v=JFbYQGG2Nb4&quot; target=&quot;_blank&quot; title=&quot;A Tale of Two Monix Streams, by Alexandru Nedelcu&quot;&gt;
     &lt;img src=&quot;https://img.youtube.com/vi/JFbYQGG2Nb4/maxresdefault.jpg&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
@@ -4873,7 +4885,7 @@ Scala’s OOP and the new collections.&lt;/p&gt;
 &lt;p&gt;Thanks for reading ️❤️&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;In Defense of OOFP&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2018/02/12/in-defense-oofp.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;In Defense of OOFP&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -4904,8 +4916,8 @@ Scala’s OOP and the new collections.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -5232,7 +5244,7 @@ codebase much.&lt;/p&gt;
 &lt;a href=&quot;https://www.scalacheck.org/&quot;&gt;ScalaCheck&lt;/a&gt;.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Minitest: Zero Crap Scala Testing Library&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/11/10/minitest-no-crap-scala-library.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Minitest: Zero Crap Scala Testing Library&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 10 Nov 2017 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -5257,8 +5269,8 @@ codebase much.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/functions.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/functions.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -5553,7 +5565,7 @@ but it’s not that good for learning FP in 2017.&lt;/p&gt;
 &lt;p&gt;Now go forth and spread the true FP love 💘&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;What is Functional Programming?&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/10/15/functional-programming.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;What is Functional Programming?&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 15 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -5590,22 +5602,24 @@ and &lt;a href=&quot;http://event.scaladays.org/scaladays-cph-2017&quot;&gt;Cope
   &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=wi97X8_JQUk&quot;&gt;Video (YouTube)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;figure class=&quot;video&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure class=&quot;video&quot;&gt;
+  
   
   &lt;a href=&quot;https://www.youtube.com/watch?v=wi97X8_JQUk&amp;amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/wi97X8_JQUk/maxresdefault.jpg?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
+    &lt;img src=&quot;https://img.youtube.com/vi/wi97X8_JQUk/maxresdefault.jpg?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
+
   &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=wi97X8_JQUk&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
-      Video link
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=wi97X8_JQUk&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
+    Video link
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/scaladays.jpg&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -5616,7 +5630,7 @@ and &lt;a href=&quot;http://event.scaladays.org/scaladays-cph-2017&quot;&gt;Cope
 &lt;p&gt;In this talk I’ll show you its design, when you should use it and why in dealing with asynchronicity it’s better to work with Task instead of blocking threads.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Scala Days 2017 — Monix Task&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/10/13/scaladays-copenhagen.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Scala Days 2017 — Monix Task&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
@@ -5704,7 +5718,7 @@ and in such a case eliminate frames in the &lt;code class=&quot;language-plainte
 
 &lt;h2 id=&quot;the-spec-is-the-problem&quot;&gt;The Spec is The Problem&lt;/h2&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;a href=&quot;https://promisesaplus.com/&quot;&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/articles/js-then.png&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
@@ -6008,7 +6022,7 @@ use the standard implementation, especially in JavaScript’s ecosystem
 where people are afraid to take on dependencies.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;JavaScript&amp;#39;s Promise Leaks Memory&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/10/11/javascript-promise-leaks-memory.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;JavaScript's Promise Leaks Memory&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -6037,8 +6051,8 @@ where people are afraid to take on dependencies.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/sbt.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/sbt.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -6407,7 +6421,7 @@ and access the “&lt;em&gt;User Token&lt;/em&gt;”, or generate a new one.&lt;
 
 &lt;p&gt;Here’s a screenshot of how my setup currently looks like:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/travis-env-vars.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -6489,7 +6503,7 @@ don’t have to do this too often.&lt;/p&gt;
 forgetting what I did the first time.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Automatic Releases to Maven Central with Travis and SBT&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/08/16/automatic-releases-sbt-travis.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Automatic Releases to Maven Central with Travis and SBT&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
@@ -6561,7 +6575,7 @@ comparison about what to use and when - a problem that the Scala
 developer has in his daily work.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Functional Programming Inception (Presentation)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/03/15/fp-inception.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Functional Programming Inception (Presentation)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Wed, 15 Mar 2017 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
@@ -6637,7 +6651,7 @@ to a &lt;em&gt;deterministic&lt;/em&gt; algorithm … A &lt;em&gt;concurrent&lt;
 differently on different runs due to a race condition.
 &lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/nondet.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -6916,7 +6930,7 @@ doing synchronization.&lt;/p&gt;
 
 &lt;p&gt;To better visualize what we’re dealing with, here’s the state machine:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/callback-hell-stm.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -7913,7 +7927,7 @@ prone and not composable at all&lt;/li&gt;
 avoiding concurrency 💀&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Asynchronous Programming and Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/01/30/asynchronous-programming-scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Asynchronous Programming and Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 30 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -7944,8 +7958,8 @@ avoiding concurrency 💀&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -8222,7 +8236,7 @@ however given the very complex inheritance hierarchy and the traversable
 grandparents, I’m afraid to wish for it.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Fixing scala.collection.Iterator&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/01/16/iterator.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Fixing scala.collection.Iterator&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 16 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
@@ -8245,8 +8259,8 @@ grandparents, I’m afraid to wish for it.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -8401,7 +8415,7 @@ if you want to learn more checkout this presentation:
 &lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Why Scala&amp;#39;s Traversable Is Bad Design&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2017/01/13/traversable.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Why Scala's Traversable Is Bad Design&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
@@ -8424,8 +8438,8 @@ if you want to learn more checkout this presentation:
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/newsblur.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/newsblur.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -8468,7 +8482,7 @@ and you should see all bookmarks, press and hold on the new
 &lt;p&gt;Enjoy!&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Add to NewsBlur Bookmarklet&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2016/11/11/newsblur-bookmarklet.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Add to NewsBlur Bookmarklet&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 11 Nov 2016 00:00:00 +0000</pubDate>
   <dc:modified>Tue, 21 Apr 2020 13:06:57 +0000</dc:modified>
@@ -8493,8 +8507,8 @@ and you should see all bookmarks, press and hold on the new
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/monix-1024.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/monix-1024.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -8840,7 +8854,7 @@ forked tasks it evens out with the performance of &lt;code class=&quot;language-
 &lt;p&gt;Cheers!&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Monix Task vs Scalaz vs Future, The Benchmark&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2016/08/25/monix-task-performance.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Monix Task vs Scalaz vs Future, The Benchmark&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Thu, 25 Aug 2016 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
@@ -8866,17 +8880,19 @@ forked tasks it evens out with the performance of &lt;code class=&quot;language-
     
       <item>
   <title>Akka &amp; Monix - Typelevel Summit, Oslo 2016</title>
-  <description>&lt;figure class=&quot;video&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+  <description>&lt;figure class=&quot;video&quot;&gt;
+  
   
   &lt;a href=&quot;https://www.youtube.com/watch?v=CQxviYlAKaY&amp;amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/CQxviYlAKaY/maxresdefault.jpg?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
+    &lt;img src=&quot;https://img.youtube.com/vi/CQxviYlAKaY/maxresdefault.jpg?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
+
   &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=CQxviYlAKaY&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
-      Video link
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=CQxviYlAKaY&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
+    Video link
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Akka &amp;amp; Monix: Controlling Power Plants&lt;/strong&gt; -
@@ -8917,7 +8933,7 @@ needed for describing purely functional state, along with a
 presentation of Monix Observable and how that helps.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Akka &amp;amp; Monix - Typelevel Summit, Oslo 2016&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2016/05/15/monix-observable.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Akka &amp;amp; Monix - Typelevel Summit, Oslo 2016&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 15 May 2016 00:00:00 +0000</pubDate>
   <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
@@ -8943,17 +8959,19 @@ presentation of Monix Observable and how that helps.&lt;/p&gt;
     
       <item>
   <title>Monix Task - flatMap(Oslo) 2016</title>
-  <description>&lt;figure class=&quot;video&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+  <description>&lt;figure class=&quot;video&quot;&gt;
+  
   
   &lt;a href=&quot;https://www.youtube.com/watch?v=rftcbxj7et0&amp;amp;autoplay=1&quot; target=&quot;_blank&quot; class=&quot;youtube-play-link&quot; title=&quot;Go to YouTube video&quot;&gt;
-    &lt;img src=&quot;https://img.youtube.com/vi/rftcbxj7et0/maxresdefault.jpg?202103292232&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
+    &lt;img src=&quot;https://img.youtube.com/vi/rftcbxj7et0/maxresdefault.jpg?202103292255&quot; alt=&quot;&quot; class=&quot;play-thumb&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/a&gt;
+
   &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;
-    &lt;a href=&quot;https://www.youtube.com/watch?v=rftcbxj7et0&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
-      Video link
-      (click to open on YouTube.com)
-    &lt;/a&gt;
-  &lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
+  &lt;a href=&quot;https://www.youtube.com/watch?v=rftcbxj7et0&amp;amp;autoplay=1&quot; target=&quot;_blank&quot;&gt;
+    Video link
+    (click to open on YouTube.com)
+  &lt;/a&gt;
+&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
 &lt;/figure&gt;
 
 &lt;p&gt;&lt;strong&gt;Monix Task: Lazy, Async &amp;amp; Awesome&lt;/strong&gt; -
@@ -8997,7 +9015,7 @@ why in dealing with asynchronicity it’s better to work with Task
 instead of blocking threads.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Monix Task - flatMap(Oslo) 2016&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2016/05/10/monix-task.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Monix Task - flatMap(Oslo) 2016&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 10 May 2016 00:00:00 +0000</pubDate>
   <dc:modified>Fri, 26 Feb 2021 07:25:54 +0000</dc:modified>
@@ -9026,8 +9044,8 @@ instead of blocking threads.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/skunk.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/skunk.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -9357,7 +9375,7 @@ initiated that’s free of Javaisms.&lt;/p&gt;
 &lt;p&gt;Cheers,&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Avoid Javaisms: Mocks, Stubs, DI is Code Smell&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2015/12/15/avoid-javaisms-code-smell.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Avoid Javaisms: Mocks, Stubs, DI is Code Smell&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 16 Nov 2020 10:18:34 +0000</dc:modified>
@@ -9389,7 +9407,7 @@ It was a good talk, yet I felt a little bias towards Akka Streams,
 which is natural coming from somebody that is contributing to Akka,
 but let me give you the perspective from &lt;em&gt;the other side&lt;/em&gt;.&lt;/p&gt;
 
-&lt;figure class=&quot;page-width&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure class=&quot;page-width&quot;&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/monifu.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -9534,7 +9552,7 @@ vice-versa. And people are really not good at reasoning about graphs
 and making those graphs explicit doesn’t make it better, it makes it
 worse.&lt;/p&gt;
 
-&lt;figure class=&quot;page-width&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure class=&quot;page-width&quot;&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/river.jpg&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -9671,7 +9689,7 @@ After  9,625,207 samples π is approximated as 3.14393
 
 &lt;p&gt;The results:&lt;/p&gt;
 
-&lt;figure class=&quot;page-width&quot; style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure class=&quot;page-width&quot;&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/bench-monifu.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -9736,7 +9754,7 @@ which is why I’m dumbfounded by claims of parallelism&lt;/li&gt;
 &lt;p&gt;Cheers,&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Monifu vs Akka Streams&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2015/09/06/monifu-vs-akka-streams.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Monifu vs Akka Streams&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 06 Sep 2015 00:00:00 +0000</pubDate>
   <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
@@ -9765,8 +9783,8 @@ which is why I’m dumbfounded by claims of parallelism&lt;/li&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -9782,7 +9800,7 @@ which is why I’m dumbfounded by claims of parallelism&lt;/li&gt;
 &lt;p&gt;If you find it useful as a starting point for your team, fork it.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Scala Best Practices&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2014/10/20/scala-best-practices.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Scala Best Practices&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 20 Oct 2014 00:00:00 +0000</pubDate>
   <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
@@ -9811,8 +9829,8 @@ which is why I’m dumbfounded by claims of parallelism&lt;/li&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -10013,7 +10031,7 @@ mailing-list. For instance
 for problems related to the Play framework.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Resources for Learning Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2013/05/13/getting-started-with-scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Resources for Learning Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 13 May 2013 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -10326,7 +10344,7 @@ you really need it.&lt;/p&gt;
 orchestrate multiple atomic references at once.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Towards a Better AtomicReference&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2013/05/07/towards-better-atomicreference-scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Towards a Better AtomicReference&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 07 May 2013 00:00:00 +0000</pubDate>
   <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
@@ -10359,8 +10377,8 @@ orchestrate multiple atomic references at once.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/ferrari.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/ferrari.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -10816,7 +10834,7 @@ that you can’t do with plain volatiles.&lt;/p&gt;
 &lt;/ul&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;JVM Multithreading: Monitor Locks and Visibility&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2013/03/14/jvm-multithreading-monitor-locks-visibility.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;JVM Multithreading: Monitor Locks and Visibility&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Thu, 14 Mar 2013 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -10849,8 +10867,8 @@ that you can’t do with plain volatiles.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/javascript.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/javascript.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -11024,7 +11042,7 @@ language, so maybe some other day :-)&lt;/p&gt;
 community, because that’s where the real action is.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Notes On JavaScript Client-side Development&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/11/07/notes-javascript-development.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Notes On JavaScript Client-side Development&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Wed, 07 Nov 2012 00:00:00 +0000</pubDate>
   <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
@@ -11053,8 +11071,8 @@ community, because that’s where the real action is.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/scala.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -12041,7 +12059,7 @@ or patience for it (or once I finish reading the
 &lt;a href=&quot;http://joyofclojure.com/&quot;&gt;Joy of Clojure&lt;/a&gt;, great book btw).&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;On Scala, Functional Programming and Type-Classes&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/11/02/scala-functional-programming-type-classes.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;On Scala, Functional Programming and Type-Classes&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 02 Nov 2012 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
@@ -12119,7 +12137,7 @@ with a probability attached. So when flipping a coin, we can have one
 of these 2 events happening: tail or head. Each of them has a
 probability of 50%. Using a Venn diagram, this would look like this:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/coin-flip.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -12127,7 +12145,7 @@ probability of 50%. Using a Venn diagram, this would look like this:&lt;/p&gt;
 “rain” and “cloud formation”, as raining can only happen if there are
 clouds:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/inclusive.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -12188,7 +12206,7 @@ simple form of the Bayes Theorem:&lt;/p&gt;
 
 &lt;p&gt;Or visually:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/conditional-prob.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -12423,7 +12441,7 @@ detection, but also for lots of other use-cases and it’s enough to get
 you started.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;How To Build a Naive Bayes Classifier&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/02/09/howto-build-naive-bayes-classifier.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;How To Build a Naive Bayes Classifier&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Thu, 09 Feb 2012 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 25 Jan 2020 00:00:00 +0000</dc:modified>
@@ -12452,8 +12470,8 @@ you started.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/cosine-distance.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/cosine-distance.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -12531,7 +12549,7 @@ associated vectors, or the actual euclidean distance between the 2
 points. For a 2-dimensional Euclidean space, here’s how it would look
 like:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/similarity-graphic.png&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -12838,7 +12856,7 @@ point to the other if a grid-like path is followed. I like this
 graphic from Wikipedia that perfectly illustrates the difference with
 Euclidean distance:&lt;/p&gt;
 
-&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+&lt;figure&gt;
   &lt;img src=&quot;https://alexn.org/assets/media/articles/manhattan.svg&quot; alt=&quot;Manhattan distance&quot; style=&quot;max-width: 100%; &quot;&gt;
 &lt;/figure&gt;
 
@@ -12857,7 +12875,7 @@ which measures the minimum number of changes required to transform
 some text into another.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Data Mining: Finding Similar Items and Users&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/01/16/cosine-similarity-euclidean-distance.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Data Mining: Finding Similar Items and Users&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 16 Jan 2012 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 28 Dec 2019 00:00:00 +0000</dc:modified>
@@ -12886,8 +12904,8 @@ some text into another.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/jekyll.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/jekyll.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -13398,7 +13416,7 @@ anyway, but this was fun.&lt;/p&gt;
 &lt;p&gt;Enjoy ~&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Blogging Platform for Hackers&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2012/01/05/blogging-for-hackers.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Blogging Platform for Hackers&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Thu, 05 Jan 2012 00:00:00 +0000</pubDate>
   <dc:modified>Thu, 19 Dec 2019 00:00:00 +0000</dc:modified>
@@ -13431,8 +13449,8 @@ anyway, but this was fun.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/wolf-spider.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/wolf-spider.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -13539,7 +13557,7 @@ distribution is freemium based.&lt;/p&gt;
 
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Crawling the Android Marketplace&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/12/15/crawling-the-android-marketplace-155200-apps.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Crawling the Android Marketplace&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Thu, 15 Dec 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
@@ -13568,8 +13586,8 @@ distribution is freemium based.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/android-development.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/android-development.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -13595,7 +13613,7 @@ fast. Books from 2010, while still useful, are already insufficient
 now with the release of Ice Cream Sandwich. The upside is that there
 are a lot of books out there.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://commonsware.com&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;&lt;img src=&quot;https://alexn.org/assets/media/articles/books-commonsware.png&quot; style=&quot;max-width: 100%; &quot;&gt;&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://commonsware.com&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;figure&gt;&lt;img src=&quot;https://alexn.org/assets/media/articles/books-commonsware.png&quot; style=&quot;max-width: 100%; &quot;&gt;&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;For ~ $20 you can buy a 1-year subscription for
 &lt;a href=&quot;https://commonsware.com&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;CommonsWare.com&lt;/a&gt;. The author, Mark Murphy, is
@@ -13614,7 +13632,7 @@ these):&lt;/p&gt;
   &lt;li&gt;&lt;a rel=&quot;nofollow&quot; href=&quot;http://www.amazon.com/gp/product/0981678041/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=bionicspirit-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=0981678041&quot;&gt;Android Programming Tutorials&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/gp/product/1934356565/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=bionicspirit-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=1934356565&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;&lt;img src=&quot;https://alexn.org/assets/media/articles/prag_hello_android.jpg&quot; style=&quot;max-width: 100%; &quot;&gt;&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/gp/product/1934356565/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=bionicspirit-20&amp;amp;linkCode=as2&amp;amp;camp=1789&amp;amp;creative=390957&amp;amp;creativeASIN=1934356565&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;&lt;figure&gt;&lt;img src=&quot;https://alexn.org/assets/media/articles/prag_hello_android.jpg&quot; style=&quot;max-width: 100%; &quot;&gt;&lt;/figure&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Again, don’t buy these items from Amazon. Buy them with the 1-year
 subscription from the &lt;a href=&quot;http://commonsware.com&quot;&gt;Author’s Website&lt;/a&gt; (I
@@ -13672,7 +13690,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;p&gt;Please help me out in identifying other resources! Thanks!&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Android Learning Resources&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/12/12/android-learning-resources.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Android Learning Resources&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Mon, 12 Dec 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
@@ -13697,8 +13715,8 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/amazon-associates.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/amazon-associates.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -13924,7 +13942,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Earning Money as an Amazon Affiliate&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/11/29/earning-money-as-an-amazon-affiliate.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Earning Money as an Amazon Affiliate&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 29 Nov 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
@@ -13951,8 +13969,8 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-all.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-all.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -13975,7 +13993,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;h2&gt;The Design of Everyday Things (&lt;a href=&quot;http://www.amazon.com/gp/product/0465067107/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=alexanedel-20&amp;amp;linkCode=as2&amp;amp;camp=217145&amp;amp;creative=399369&amp;amp;creativeASIN=0465067107&quot; rel=&quot;nofollow&quot; title=&quot;The Design of Everyday Things&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;)&lt;/h2&gt;
 
 &lt;a href=&quot;http://www.amazon.com/gp/product/0465067107/ref=as_li_ss_tl?ie=UTF8&amp;amp;tag=alexanedel-20&amp;amp;linkCode=as2&amp;amp;camp=217145&amp;amp;creative=399369&amp;amp;creativeASIN=0465067107&quot; title=&quot;The Design of Everyday Things&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;
-  &lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+  &lt;figure&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-1.jpg&quot; width=&quot;454&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/figure&gt;
 &lt;/a&gt;
@@ -14013,7 +14031,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;h2&gt;Non-Designer's Design Book (&lt;a href=&quot;http://www.amazon.com/gp/product/0321534042/ref=as_li_ss_il?ie=UTF8&amp;amp;tag=alexanedel-20&amp;amp;linkCode=as2&amp;amp;camp=217145&amp;amp;creative=399369&amp;amp;creativeASIN=0321534042&quot; rel=&quot;nofollow&quot; title=&quot;Non-Designer's Design Book&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;)&lt;/h2&gt;
 
 &lt;a href=&quot;http://www.amazon.com/gp/product/0321534042/ref=as_li_ss_il?ie=UTF8&amp;amp;tag=alexanedel-20&amp;amp;linkCode=as2&amp;amp;camp=217145&amp;amp;creative=399369&amp;amp;creativeASIN=0321534042&quot; title=&quot;Non-Designer's Design Book&quot; rel=&quot;nofollow&quot; target=&quot;_blank&quot;&gt;
-  &lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+  &lt;figure&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-2.jpg&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/figure&gt;
 &lt;/a&gt;
@@ -14046,7 +14064,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;h2&gt;Color: A Course in Mastering the Art of Mixing Colors (&lt;a href=&quot;http://www.amazon.com/gp/product/1585422193/ref=as_li_ss_il?ie=UTF8&amp;amp;tag=alexanedel-20&amp;amp;linkCode=as2&amp;amp;camp=217145&amp;amp;creative=399369&amp;amp;creativeASIN=1585422193&quot; rel=&quot;nofollow&quot; title=&quot;Color: A Course in Mastering the Art of Mixing Colors&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;)&lt;/h2&gt;
 
 &lt;a href=&quot;http://www.amazon.com/gp/product/1585422193/ref=as_li_ss_il?ie=UTF8&amp;amp;tag=alexanedel-20&amp;amp;linkCode=as2&amp;amp;camp=217145&amp;amp;creative=399369&amp;amp;creativeASIN=1585422193&quot; rel=&quot;nofollow&quot; title=&quot;Color: A Course in Mastering the Art of Mixing Colors&quot; target=&quot;_blank&quot;&gt;
-  &lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+  &lt;figure&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-3.jpg&quot; width=&quot;454&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/figure&gt;
 &lt;/a&gt;
@@ -14103,7 +14121,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;h2&gt;Drawing on the Right Side of the Brain (&lt;a href=&quot;http://www.amazon.com/gp/product/0874774195/ref=as_li_ss_il?ie=UTF8&amp;amp;tag=alexanedel-20&amp;amp;linkCode=as2&amp;amp;camp=217145&amp;amp;creative=399369&amp;amp;creativeASIN=0874774195&quot; rel=&quot;nofollow&quot; title=&quot;The New Drawing on the Right Side of the Brain&quot; target=&quot;_blank&quot;&gt;link&lt;/a&gt;)&lt;/h2&gt;
 
 &lt;a href=&quot;http://www.amazon.com/gp/product/0874774195/ref=as_li_ss_il?ie=UTF8&amp;amp;tag=alexanedel-20&amp;amp;linkCode=as2&amp;amp;camp=217145&amp;amp;creative=399369&amp;amp;creativeASIN=0874774195&quot; rel=&quot;nofollow&quot; title=&quot;The New Drawing on the Right Side of the Brain&quot; target=&quot;_blank&quot;&gt;
-  &lt;figure style=&quot;margin: 0; max-width: 100%; &quot;&gt;
+  &lt;figure&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/articles/book-design-4.jpg&quot; width=&quot;454&quot; style=&quot;max-width: 100%; &quot;&gt;
   &lt;/figure&gt;
 &lt;/a&gt;
@@ -14182,7 +14200,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;4 Books For Learning to Design, The Hard Way&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/11/25/4-books-for-learning-to-design-the-hard-way.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;4 Books For Learning to Design, The Hard Way&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 25 Nov 2011 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 16 Dec 2019 00:00:00 +0000</dc:modified>
@@ -14211,10 +14229,10 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/flickr.jpg?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/flickr.jpg?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
-          &lt;figcaption&gt;&amp;lt;a href='https://flic.kr/p/qYPVGA' target='_blank'&amp;gt;Source&amp;lt;/a&amp;gt;&lt;/figcaption&gt;
+          &lt;figcaption&gt;&lt;p&gt;&lt;em&gt;&amp;lt;a href='https://flic.kr/p/qYPVGA' target='_blank'&amp;gt;Source&amp;lt;/a&amp;gt;&lt;/em&gt;&lt;/p&gt;&lt;/figcaption&gt;
         &lt;/figure&gt;
       
       &lt;/div&gt;
@@ -14264,7 +14282,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;p&gt;So on Google’s Picasa, I’m currently working on integrating with their API too. The desktop app is nice, but too limited for me.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;How I Use Flickr: For Backup&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/10/29/how-i-use-flickr.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;How I Use Flickr: For Backup&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sat, 29 Oct 2011 00:00:00 +0000</pubDate>
   <dc:modified>Sun, 15 Dec 2019 00:00:00 +0000</dc:modified>
@@ -14291,8 +14309,8 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/heroku.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/heroku.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -14388,7 +14406,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;p&gt;Stop fearing the penguin and start configuring your own damn servers. As with everything that’s actually worth it in life (like having children of your own), it’s hard at first but the return of investment will be tenfold.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Why I Find Heroku Suboptimal&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/10/23/why-i-find-heroku-suboptimal.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Why I Find Heroku Suboptimal&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 23 Oct 2011 00:00:00 +0000</pubDate>
   <dc:modified>Wed, 18 Dec 2019 00:00:00 +0000</dc:modified>
@@ -14421,8 +14439,8 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/cors-ajax.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/cors-ajax.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -14736,7 +14754,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;p&gt;To see the final code, go here: &lt;a href=&quot;https://github.com/alexandru/crossdomain-requests-js/blob/gh-pages/public/crossdomain-ajax.js&quot;&gt;crossdomain-ajax.js&lt;/a&gt;.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Cross-Domain, Cross-Browser AJAX Requests&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2011/03/24/cross-domain-requests.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Cross-Domain, Cross-Browser AJAX Requests&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Thu, 24 Mar 2011 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 14 Dec 2019 00:00:00 +0000</dc:modified>
@@ -14763,8 +14781,8 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/beautiful-soup.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/beautiful-soup.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -14873,7 +14891,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;p&gt;See &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/python-proxy.py.html&quot;&gt;full code snippet&lt;/a&gt; for copy/pasting.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;I hate NULL and all its variants!&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2010/05/25/i-hate-null.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;I hate NULL and all its variants!&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Tue, 25 May 2010 00:00:00 +0000</pubDate>
   <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
@@ -14896,8 +14914,8 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/freeswitch1.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/freeswitch1.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -15215,7 +15233,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;p&gt;There are lots of scenarios not addressed by this tutorial. One need you might have would be to get the logs of your calls, and see what customers haven’t answered, what customers pressed what key, the average duration of a call, and other such niceties. Since this is a big topic to talk about, and since I still have some research to do, this deserves a whole new article.&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;FreeSWITCH - Tips for Creating a Dialer&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2009/02/20/tips-for-creating-voip-dialer.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;FreeSWITCH - Tips for Creating a Dialer&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Fri, 20 Feb 2009 00:00:00 +0000</pubDate>
   <dc:modified>Sat, 14 Dec 2019 00:00:00 +0000</dc:modified>
@@ -15246,8 +15264,8 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
   <description>&lt;div class=&quot;post-featured-image&quot;&gt;
       
         &lt;figure style=&quot;margin: 0;&quot;&gt;
-          &lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;pk_kwd=image&quot;&gt;
-            &lt;img src=&quot;https://alexn.org/assets/media/articles/tools.png?202103292232&quot; align=&quot;middle&quot; style=&quot;display: block; max-width:100%; margin: 0 auto;&quot; alt=&quot;&quot; /&gt;
+          &lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;amp;pk_kwd=image&quot;&gt;
+            &lt;img src=&quot;https://alexn.org/assets/media/articles/tools.png?202103292255&quot; align=&quot;middle&quot; width=&quot;100%;&quot; alt=&quot;&quot; style=&quot;max-width: 100%; &quot;&gt;
           &lt;/a&gt;
           
         &lt;/figure&gt;
@@ -15277,7 +15295,7 @@ experience. Hopefully this will change for the better.&lt;/p&gt;
 &lt;p&gt;These developments make me happy :)&lt;/p&gt;
 
     &lt;p&gt;
-      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Using the Best Tools in Programming: Not Really Doable&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+      &lt;i&gt;The article &lt;a href=&quot;https://alexn.org/blog/2009/02/01/using-best-tools-programming-not-doable.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Using the Best Tools in Programming: Not Really Doable&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
     &lt;/p&gt;</description>
   <pubDate>Sun, 01 Feb 2009 00:00:00 +0000</pubDate>
   <dc:modified>Sun, 01 Feb 2009 00:00:00 +0000</dc:modified>
