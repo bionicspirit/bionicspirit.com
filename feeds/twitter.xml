@@ -9,8 +9,8 @@
     <description>Feed meant for publishing notifications to Twitter.</description>
     <link>https://alexn.org/</link>
     <atom:link href="https://alexn.org/feeds/twitter.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Mar 2021 22:17:20 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Mar 2021 22:17:20 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Mar 2021 22:32:39 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Mar 2021 22:32:39 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -582,8 +582,8 @@
   <title>Organize and Index Your Screenshots (OCR) on macOS</title>
   <description>Blog article #Cloud #macOS #Ruby</description>
   <pubDate>Wed, 11 Nov 2020 12:43:46 +0000</pubDate>
-  <dc:modified>Mon, 29 Mar 2021 19:10:58 +0000</dc:modified>
-  <atom:modified>Mon, 29 Mar 2021 19:10:58 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 22:32:01 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 22:32:01 +0000</atom:modified>
   <link>https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html?pk_campaign=twitter&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/blog/2020/11/11/organize-index-screenshots-ocr-macos.html</guid>
   
