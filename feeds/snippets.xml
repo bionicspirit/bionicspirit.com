@@ -9,8 +9,8 @@
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Mar 2021 21:10:29 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Mar 2021 21:10:29 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Mar 2021 21:14:12 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Mar 2021 21:14:12 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -91,7 +91,7 @@
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2021/02/21/matomo-hosting-via-docker.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Matomo (Analytics) Hosting via Docker&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2021/02/21/matomo-hosting-via-docker.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Matomo (Analytics) Hosting via Docker&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Sun, 21 Feb 2021 22:12:25 +0000</pubDate>
   <dc:modified>Sun, 21 Feb 2021 22:20:45 +0000</dc:modified>
@@ -187,7 +187,7 @@
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2021/01/20/tagless-final-vs-oop.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Tagless Final vs OOP&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2021/01/20/tagless-final-vs-oop.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Tagless Final vs OOP&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Wed, 20 Jan 2021 09:24:14 +0000</pubDate>
   <dc:modified>Wed, 20 Jan 2021 12:23:15 +0000</dc:modified>
@@ -228,7 +228,7 @@
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2021/01/14/remove-blank-lines.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Remove blank lines from text in Java/Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2021/01/14/remove-blank-lines.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Remove blank lines from text in Java/Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 14 Jan 2021 13:29:25 +0000</pubDate>
   <dc:modified>Thu, 14 Jan 2021 13:56:11 +0000</dc:modified>
@@ -310,7 +310,7 @@
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Execute shell command in F#&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Execute shell command in F#&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Sun, 06 Dec 2020 16:43:50 +0000</pubDate>
   <dc:modified>Sun, 06 Dec 2020 18:33:06 +0000</dc:modified>
@@ -424,7 +424,7 @@
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/11/22/effecttestsuite-scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;EffectTestSuite[F].scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/11/22/effecttestsuite-scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;EffectTestSuite[F].scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Sun, 22 Nov 2020 10:41:11 +0000</pubDate>
   <dc:modified>Sun, 22 Nov 2020 11:14:13 +0000</dc:modified>
@@ -526,7 +526,7 @@
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/11/13/list-blog-tags-in-folder.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;List static blog tags in folder (Jekyll, etc)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/11/13/list-blog-tags-in-folder.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;List static blog tags in folder (Jekyll, etc)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Fri, 13 Nov 2020 13:59:43 +0000</pubDate>
   <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
@@ -637,7 +637,7 @@
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/10/15/generic-ioapp-alternative.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Generic IOApp alternative&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/10/15/generic-ioapp-alternative.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Generic IOApp alternative&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 15 Oct 2020 07:05:19 +0000</pubDate>
   <dc:modified>Thu, 15 Oct 2020 07:50:24 +0000</dc:modified>
@@ -789,7 +789,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/10/12/effect-runtime.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Effect Runtime&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/10/12/effect-runtime.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Effect Runtime&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Mon, 12 Oct 2020 14:17:42 +0000</pubDate>
   <dc:modified>Tue, 13 Oct 2020 06:24:33 +0000</dc:modified>
@@ -911,7 +911,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Unlawful Effect.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Unlawful Effect.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -979,7 +979,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Running integration tests, with Scala + sbt&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Running integration tests, with Scala + sbt&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1185,7 +1185,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Flow Processor To Effect&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Flow Processor To Effect&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1293,7 +1293,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Safe Password.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Safe Password.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1392,7 +1392,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Error Hierarchy.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Error Hierarchy.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1431,7 +1431,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Sbt Fork Debug.sbt&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Sbt Fork Debug.sbt&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1490,7 +1490,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Flow Sensitive Typing.ts&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Flow Sensitive Typing.ts&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1645,7 +1645,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;On Error Retry Loop.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;On Error Retry Loop.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1738,7 +1738,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Resource As Publisher.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Resource As Publisher.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1869,7 +1869,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Python Proxy.py&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Python Proxy.py&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1914,7 +1914,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;From Resource To Reactivestreams.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;From Resource To Reactivestreams.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -1971,7 +1971,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Enumeratum.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Enumeratum.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -2057,7 +2057,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Akka Streams Buffer Test.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Akka Streams Buffer Test.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -2105,7 +2105,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Future Stack Overflow.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Future Stack Overflow.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -2178,7 +2178,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Send Mail.py&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Send Mail.py&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -2250,7 +2250,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Encrypt.sh&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Encrypt.sh&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -2290,7 +2290,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Sierpinski.hs&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Sierpinski.hs&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -2456,7 +2456,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Async Queue.ts&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Async Queue.ts&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
@@ -2547,7 +2547,7 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
     &lt;hr /&gt;
     &lt;p&gt;
-      The article &lt;a href=&quot;https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Blocking Task.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt; 🎁
+      The article &lt;a href=&quot;https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;Blocking Task.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.
     &lt;/p&gt;</description>
   <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
