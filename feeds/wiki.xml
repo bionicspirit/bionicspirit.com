@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Mar 2021 07:55:01 +0000</pubDate>
-    <lastBuildDate>Tue, 23 Mar 2021 07:55:01 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Mar 2021 07:16:03 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Mar 2021 07:16:03 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -649,7 +649,7 @@ dotnet run
         <item>
   <title>Image Formats</title>
   <description>&lt;p&gt;
-      Article updated at November 21, 2020, 
+      Article updated at March 29, 2021, 
       created at September 15, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -672,10 +672,14 @@ convert&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
 find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-iname&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;*.heic&quot;&lt;/span&gt; | &lt;span class=&quot;k&quot;&gt;while &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;file&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do &lt;/span&gt;convert &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$file&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;converting-to-avifwebpother&quot;&gt;Converting to AVIF/WebP/Other&lt;/h2&gt;
+
+&lt;p&gt;Use: &lt;a href=&quot;https://github.com/GoogleChromeLabs/squoosh/tree/dev/cli&quot;&gt;squoosh/cli&lt;/a&gt;&lt;/p&gt;</description>
   <pubDate>Tue, 15 Sep 2020 18:48:09 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 07:15:12 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 07:15:12 +0000</atom:modified>
   <link>https://alexn.org/wiki/image-formats.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/image-formats.html</guid>
   
