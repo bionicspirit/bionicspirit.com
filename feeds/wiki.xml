@@ -9,8 +9,8 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 29 Mar 2021 07:16:03 +0000</pubDate>
-    <lastBuildDate>Mon, 29 Mar 2021 07:16:03 +0000</lastBuildDate>
+    <pubDate>Mon, 29 Mar 2021 11:37:54 +0000</pubDate>
+    <lastBuildDate>Mon, 29 Mar 2021 11:37:54 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -1285,11 +1285,24 @@ cargo check
         <item>
   <title>RSS / Atom feeds</title>
   <description>&lt;p&gt;
-      Article updated at November 21, 2020, 
+      Article updated at March 29, 2021, 
       created at August 24, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
     &lt;h2 id=&quot;readers&quot;&gt;Readers&lt;/h2&gt;
+
+&lt;p&gt;Web:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://feedly.com/&quot;&gt;Feedly&lt;/a&gt; (web)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://freshrss.org/&quot;&gt;FreshRSS&lt;/a&gt; (web, open source, self-hosted)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://github.com/miniflux/miniflux&quot;&gt;Miniflux&lt;/a&gt; (web, open-source, self-hosted)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://newsblur.com&quot;&gt;Newsblur&lt;/a&gt; (web, open source)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;Native, MacOS:&lt;/p&gt;
 
@@ -1305,17 +1318,41 @@ cargo check
   &lt;li&gt;&lt;a href=&quot;https://gitlab.com/news-flash/news_flash_gtk&quot;&gt;NewsFlash&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Web:&lt;/p&gt;
+&lt;p&gt;Native, Android:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://feedly.com/&quot;&gt;Feedly&lt;/a&gt; (web)&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://freshrss.org/&quot;&gt;FreshRSS&lt;/a&gt; (web, open source, self-hosted)&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://github.com/miniflux/miniflux&quot;&gt;Miniflux&lt;/a&gt; (web, open-source, self-hosted)&lt;/li&gt;
-  &lt;li&gt;
-&lt;a href=&quot;https://newsblur.com&quot;&gt;Newsblur&lt;/a&gt; (web, open source)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.seazon.feedme&amp;amp;hl=en_US&amp;amp;gl=US&quot;&gt;FeedMe&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://play.google.com/store/apps/details?id=me.hyliu.fluent_reader_lite&amp;amp;hl=en_US&amp;amp;gl=US&quot;&gt;Fluent Reader Lite&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;recommendation-newsblur&quot;&gt;Recommendation: Newsblur&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://newsblur.com&quot;&gt;Newsblur&lt;/a&gt; is probably the best:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mobile client included for Android/iOS, OK for tablets, readable, auto Dark Mode, good integration&lt;/li&gt;
+  &lt;li&gt;Organizing with multiple categories per feed&lt;/li&gt;
+  &lt;li&gt;Newsletters forwarding support&lt;/li&gt;
+  &lt;li&gt;Filtering via “infrequent articles” and training&lt;/li&gt;
+  &lt;li&gt;Easy to migrate away&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;self-hosted-recommendation-freshrss&quot;&gt;Self-hosted recommendation: FreshRSS&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://freshrss.org/&quot;&gt;FreshRSS&lt;/a&gt; is the best for self-hosting:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Very easy to install and manage via Docker&lt;/li&gt;
+  &lt;li&gt;Responsive web design, can work on mobile without client&lt;/li&gt;
+  &lt;li&gt;Exposes the Fever and the GReader APIs out of the box, compatible with Reeder and other clients&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Annoyances:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Feeds can’t belong to multiple categories, making organization hard&lt;/li&gt;
+  &lt;li&gt;Filtering support for dealing with noise is only rudimentary&lt;/li&gt;
+  &lt;li&gt;Couldn’t find any Android clients that I liked (FeedMe is close)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id=&quot;resources&quot;&gt;Resources&lt;/h2&gt;
@@ -1325,8 +1362,8 @@ cargo check
   &lt;li&gt;&lt;a href=&quot;https://github.com/jekyll/jekyll-feed&quot;&gt;jekyll-feed&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
   <pubDate>Mon, 24 Aug 2020 13:24:31 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
+  <dc:modified>Mon, 29 Mar 2021 11:37:06 +0000</dc:modified>
+  <atom:modified>Mon, 29 Mar 2021 11:37:06 +0000</atom:modified>
   <link>https://alexn.org/wiki/rss-feeds.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/rss-feeds.html</guid>
   
