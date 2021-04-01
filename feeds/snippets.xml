@@ -2,15 +2,16 @@
 <rss version="2.0"
   xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-  xmlns:dc="http://purl.org/dc/elements/1.1/">
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
 
   <channel>
     <title>Alexandru Nedelcu - Snippets</title>
     <description>Feed of snippets, published at alexn.org/snippets/</description>
     <link>https://alexn.org/snippets/</link>
     <atom:link href="https://alexn.org/feeds/snippets.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 30 Mar 2021 23:17:56 +0000</pubDate>
-    <lastBuildDate>Tue, 30 Mar 2021 23:17:56 +0000</lastBuildDate>
+    <pubDate>Thu, 01 Apr 2021 11:43:22 +0000</pubDate>
+    <lastBuildDate>Thu, 01 Apr 2021 11:43:22 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
@@ -18,9 +19,11 @@
 
     
       
-        <item>
+        
+<item>
   <title>Matomo (Analytics) Hosting via Docker</title>
-  <description>&lt;p&gt;For self-hosting &lt;a href=&quot;https://matomo.org/&quot;&gt;Matomo&lt;/a&gt;, a FOSS alternative to Google Analytics — via &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt;:&lt;/p&gt;
+  <description>For self-hosting Matomo, a FOSS alternative to Google Analytics — via docker-compose:</description>
+  <content:encoded>&lt;p&gt;For self-hosting &lt;a href=&quot;https://matomo.org/&quot;&gt;Matomo&lt;/a&gt;, a FOSS alternative to Google Analytics — via &lt;a href=&quot;https://docs.docker.com/compose/&quot;&gt;docker-compose&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-yaml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3.3'&lt;/span&gt;
 
@@ -87,7 +90,13 @@
 &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;db&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;redis&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2021/02/21/matomo-hosting-via-docker.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Matomo (Analytics) Hosting via Docker&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Sun, 21 Feb 2021 22:12:25 +0000</pubDate>
   <dc:modified>Sun, 21 Feb 2021 22:20:45 +0000</dc:modified>
   <atom:modified>Sun, 21 Feb 2021 22:20:45 +0000</atom:modified>
@@ -110,9 +119,11 @@
       
     
       
-        <item>
+        
+<item>
   <title>Tagless Final vs OOP</title>
-  <description>&lt;p&gt;These may as well be interview questions for Scala developers:&lt;/p&gt;
+  <description>These may as well be interview questions for Scala developers:</description>
+  <content:encoded>&lt;p&gt;These may as well be interview questions for Scala developers:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;Which signature do you prefer?&lt;/li&gt;
@@ -178,7 +189,13 @@
   &lt;span class=&quot;k&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;_&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;UserDB&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;EmailService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;instance&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;RegistrationService&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;???&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2021/01/20/tagless-final-vs-oop.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Tagless Final vs OOP&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Wed, 20 Jan 2021 09:24:14 +0000</pubDate>
   <dc:modified>Wed, 20 Jan 2021 12:23:15 +0000</dc:modified>
   <atom:modified>Wed, 20 Jan 2021 12:23:15 +0000</atom:modified>
@@ -201,9 +218,11 @@
       
     
       
-        <item>
+        
+<item>
   <title>Remove blank lines from text in Java/Scala</title>
-  <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;replaceAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(?m)(^\\s*$\\r?\\n)+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+  <description>text.replaceAll(&quot;(?m)(^\\s*$\\r?\\n)+&quot;, &quot;&quot;)</description>
+  <content:encoded>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;replaceAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(?m)(^\\s*$\\r?\\n)+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Or via &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Pattern&lt;/code&gt; objects:&lt;/p&gt;
@@ -214,7 +233,13 @@
   &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;compile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;(^\\s*$\\r?\\n)+&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Pattern&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;MULTILINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;matcher&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;replaceAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2021/01/14/remove-blank-lines.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Remove blank lines from text in Java/Scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 14 Jan 2021 13:29:25 +0000</pubDate>
   <dc:modified>Thu, 14 Jan 2021 13:56:11 +0000</dc:modified>
   <atom:modified>Thu, 14 Jan 2021 13:56:11 +0000</atom:modified>
@@ -239,9 +264,12 @@
       
     
       
-        <item>
+        
+<item>
   <title>Execute shell command in F#</title>
-  <description>&lt;div class=&quot;language-fsharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dotnet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fsi&lt;/span&gt;
+  <description>```fsharp
+#!/usr/bin/env -S dotnet fsi</description>
+  <content:encoded>&lt;div class=&quot;language-fsharp highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;S&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;dotnet&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fsi&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;open&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Diagnostics&lt;/span&gt;
@@ -291,7 +319,13 @@
 &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;eprintfn&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;%s&quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;StandardError&lt;/span&gt;
   &lt;span class=&quot;nn&quot;&gt;Environment&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;ExitCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/12/06/execute-shell-command-in-fsharp.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Execute shell command in F#&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Sun, 06 Dec 2020 16:43:50 +0000</pubDate>
   <dc:modified>Sun, 06 Dec 2020 18:33:06 +0000</dc:modified>
   <atom:modified>Sun, 06 Dec 2020 18:33:06 +0000</atom:modified>
@@ -312,9 +346,11 @@
       
     
       
-        <item>
+        
+<item>
   <title>EffectTestSuite[F].scala</title>
-  <description>&lt;p&gt;Helpers for &lt;a href=&quot;https://www.scalatest.org/&quot;&gt;ScalaTest&lt;/a&gt; for testing effects (e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cats.effect.IO&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;monix.eval.Task&lt;/code&gt;). This is similar to &lt;a href=&quot;https://alexn.org/snippets/2020/10/15/generic-ioapp-alternative.html&quot;&gt;PureApp&lt;/a&gt;.&lt;/p&gt;
+  <description>Helpers for ScalaTest for testing effects (e.g. cats.effect.IO, monix.eval.Task). This is similar to PureApp.</description>
+  <content:encoded>&lt;p&gt;Helpers for &lt;a href=&quot;https://www.scalatest.org/&quot;&gt;ScalaTest&lt;/a&gt; for testing effects (e.g. &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;cats.effect.IO&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;monix.eval.Task&lt;/code&gt;). This is similar to &lt;a href=&quot;https://alexn.org/snippets/2020/10/15/generic-ioapp-alternative.html&quot;&gt;PureApp&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Requirement:&lt;/strong&gt; &lt;a href=&quot;https://alexn.org/snippets/2020/10/12/effect-runtime.html&quot;&gt;EffectRuntime&lt;/a&gt; (snippet)&lt;/p&gt;
 
@@ -400,7 +436,13 @@
       &lt;span class=&quot;nv&quot;&gt;runtimeRef&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;timer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/11/22/effecttestsuite-scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;EffectTestSuite[F].scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Sun, 22 Nov 2020 10:41:11 +0000</pubDate>
   <dc:modified>Sun, 22 Nov 2020 11:14:13 +0000</dc:modified>
   <atom:modified>Sun, 22 Nov 2020 11:14:13 +0000</atom:modified>
@@ -425,9 +467,11 @@
       
     
       
-        <item>
+        
+<item>
   <title>List static blog tags in folder (Jekyll, etc)</title>
-  <description>&lt;p&gt;I maintain a Jekyll blog, with tagged articles (tags specified in the Markdown front-matter), but maintaining tags isn’t easy, because I often forget what tags I used. E.g. is it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Functional&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FP&lt;/code&gt;? I can never remember.&lt;/p&gt;
+  <description>I maintain a Jekyll blog, with tagged articles (tags specified in the Markdown front-matter), but maintaining tags isn’t easy, because I often forget what tags I used. E.g. is it Functional, or FP? I can never remember.</description>
+  <content:encoded>&lt;p&gt;I maintain a Jekyll blog, with tagged articles (tags specified in the Markdown front-matter), but maintaining tags isn’t easy, because I often forget what tags I used. E.g. is it &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Functional&lt;/code&gt;, or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FP&lt;/code&gt;? I can never remember.&lt;/p&gt;
 
 &lt;p&gt;Here’s a simple script that traverses all the files in a directory, parsing their YAML front-matter, gathers all the tags, then displays them sorted by popularity:&lt;/p&gt;
 
@@ -497,7 +541,13 @@
              Haskell   1
                  JVM   1
           JavaScript   1
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/11/13/list-blog-tags-in-folder.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;List static blog tags in folder (Jekyll, etc)&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Fri, 13 Nov 2020 13:59:43 +0000</pubDate>
   <dc:modified>Fri, 13 Nov 2020 14:50:48 +0000</dc:modified>
   <atom:modified>Fri, 13 Nov 2020 14:50:48 +0000</atom:modified>
@@ -520,9 +570,11 @@
       
     
       
-        <item>
+        
+<item>
   <title>Generic IOApp alternative</title>
-  <description>&lt;p&gt;This is a simple and generic &lt;a href=&quot;https://typelevel.org/cats-effect/datatypes/ioapp.html&quot;&gt;IOApp&lt;/a&gt; and &lt;a href=&quot;https://monix.io/api/current/monix/eval/TaskApp.html&quot;&gt;TaskApp&lt;/a&gt; replacement. For those instances in which you want to work with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;F[_]&lt;/code&gt; and not &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IO&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Task&lt;/code&gt;, even in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; apps.&lt;/p&gt;
+  <description>This is a simple and generic IOApp and TaskApp replacement. For those instances in which you want to work with F[_] and not IO or Task, even in main apps.</description>
+  <content:encoded>&lt;p&gt;This is a simple and generic &lt;a href=&quot;https://typelevel.org/cats-effect/datatypes/ioapp.html&quot;&gt;IOApp&lt;/a&gt; and &lt;a href=&quot;https://monix.io/api/current/monix/eval/TaskApp.html&quot;&gt;TaskApp&lt;/a&gt; replacement. For those instances in which you want to work with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;F[_]&lt;/code&gt; and not &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;IO&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Task&lt;/code&gt;, even in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;main&lt;/code&gt; apps.&lt;/p&gt;
 
 &lt;p&gt;Requirements:&lt;/p&gt;
 
@@ -603,7 +655,13 @@
   &lt;span class=&quot;k&quot;&gt;override&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;effect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;implicit&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;EffectRuntime&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;F&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; 
     &lt;span class=&quot;nv&quot;&gt;IO&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;ioConcurrentEffect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/10/15/generic-ioapp-alternative.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Generic IOApp alternative&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 15 Oct 2020 07:05:19 +0000</pubDate>
   <dc:modified>Thu, 15 Oct 2020 07:50:24 +0000</dc:modified>
   <atom:modified>Thu, 15 Oct 2020 07:50:24 +0000</atom:modified>
@@ -626,9 +684,11 @@
       
     
       
-        <item>
+        
+<item>
   <title>Effect Runtime</title>
-  <description>&lt;p&gt;Defining an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EffectRuntime&lt;/code&gt; that is used to build IO effects. This would be a replacement for &lt;a href=&quot;https://typelevel.org/cats-effect/datatypes/contextshift.html&quot;&gt;ContextShift&lt;/a&gt; (Cats Effect 2.x), with an integrated &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Logger&lt;/code&gt;, &lt;a href=&quot;https://monix.io/docs/current/execution/scheduler.html&quot;&gt;Scheduler&lt;/a&gt; (thus having access to &lt;a href=&quot;https://typelevel.org/cats-effect/datatypes/timer.html&quot;&gt;Timer&lt;/a&gt; too), and utilities for monitoring.&lt;/p&gt;
+  <description>Defining an EffectRuntime that is used to build IO effects. This would be a replacement for ContextShift (Cats Effect 2.x), with an integrated Logger, Scheduler (thus having access to Timer too), and utilities for monitoring.</description>
+  <content:encoded>&lt;p&gt;Defining an &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;EffectRuntime&lt;/code&gt; that is used to build IO effects. This would be a replacement for &lt;a href=&quot;https://typelevel.org/cats-effect/datatypes/contextshift.html&quot;&gt;ContextShift&lt;/a&gt; (Cats Effect 2.x), with an integrated &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Logger&lt;/code&gt;, &lt;a href=&quot;https://monix.io/docs/current/execution/scheduler.html&quot;&gt;Scheduler&lt;/a&gt; (thus having access to &lt;a href=&quot;https://typelevel.org/cats-effect/datatypes/timer.html&quot;&gt;Timer&lt;/a&gt; too), and utilities for monitoring.&lt;/p&gt;
 
 &lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UnsafeLogger&lt;/code&gt; / &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SafeLogger&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;UnsafeMonitoring&lt;/code&gt; interfaces are left as an exercise for the reader.&lt;/p&gt;
 
@@ -750,7 +810,13 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;WARN: the retry logic isn’t a good one. For a better implementation,
-see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&quot;&gt;Retry Failing Tasks with Cats and Scala&lt;/a&gt;.&lt;/p&gt;</description>
+see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&quot;&gt;Retry Failing Tasks with Cats and Scala&lt;/a&gt;.&lt;/p&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/10/12/effect-runtime.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Effect Runtime&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Mon, 12 Oct 2020 14:17:42 +0000</pubDate>
   <dc:modified>Tue, 13 Oct 2020 06:24:33 +0000</dc:modified>
   <atom:modified>Tue, 13 Oct 2020 06:24:33 +0000</atom:modified>
@@ -773,9 +839,11 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Unlawful Effect.scala</title>
-  <description>&lt;p&gt;Unlawful version of &lt;a href=&quot;https://typelevel.org/cats-effect/typeclasses/effect.html&quot;&gt;cats.effect.Effect&lt;/a&gt;:&lt;/p&gt;
+  <description>Unlawful version of cats.effect.Effect:</description>
+  <content:encoded>&lt;p&gt;Unlawful version of &lt;a href=&quot;https://typelevel.org/cats-effect/typeclasses/effect.html&quot;&gt;cats.effect.Effect&lt;/a&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.ApplicativeError&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Effect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;IO&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -867,7 +935,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;This is similar to usage of &lt;a href=&quot;https://monix.io/api/current/monix/eval/TaskLike.html&quot;&gt;TaskLike&lt;/a&gt; in &lt;a href=&quot;https://monix.io&quot;&gt;Monix&lt;/a&gt;.&lt;/p&gt;</description>
+&lt;p&gt;This is similar to usage of &lt;a href=&quot;https://monix.io/api/current/monix/eval/TaskLike.html&quot;&gt;TaskLike&lt;/a&gt; in &lt;a href=&quot;https://monix.io&quot;&gt;Monix&lt;/a&gt;.&lt;/p&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/10/08/unlawful-effect.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Unlawful Effect.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -888,9 +962,11 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Running integration tests, with Scala + sbt</title>
-  <description>&lt;p&gt;For separating integration tests, from unit tests, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build.sbt&lt;/code&gt;:&lt;/p&gt;
+  <description>For separating integration tests, from unit tests, in build.sbt:</description>
+  <content:encoded>&lt;p&gt;For separating integration tests, from unit tests, in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;build.sbt&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// sbt command-line shortcut&lt;/span&gt;
 &lt;span class=&quot;nf&quot;&gt;addCommandAlias&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;ci-integration&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Integration/testOnly -- -n integrationTest&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -930,7 +1006,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 &lt;p&gt;Then run:&lt;/p&gt;
 
 &lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;sbt ci-integration
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/10/05/running-integration-tests.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Running integration tests, with Scala + sbt&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Mon, 05 Oct 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -953,9 +1035,11 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Flow Processor To Effect</title>
-  <description>&lt;h1 id=&quot;flowprocessor-to-effect&quot;&gt;Flow/Processor to Effect&lt;/h1&gt;
+  <description>Flow/Processor to Effect</description>
+  <content:encoded>&lt;h1 id=&quot;flowprocessor-to-effect&quot;&gt;Flow/Processor to Effect&lt;/h1&gt;
 
 &lt;p&gt;Possibly broken implementation, take it with a grain of salt:&lt;/p&gt;
 
@@ -1131,7 +1215,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/09/25/flow-processor-to-effect.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Flow Processor To Effect&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1156,9 +1246,11 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Safe Password.scala</title>
-  <description>&lt;p&gt;See: &lt;a href=&quot;https://books.nowsecure.com/secure-mobile-development/en/coding-practices/securely-store-sensitive-data-in-ram.html&quot;&gt;Securely Store Sensitive Data in RAM&lt;/a&gt;&lt;/p&gt;
+  <description>For security, it’s not a good practice to keep sensitive data in RAM indefinitely.</description>
+  <content:encoded>&lt;p&gt;See: &lt;a href=&quot;https://books.nowsecure.com/secure-mobile-development/en/coding-practices/securely-store-sensitive-data-in-ram.html&quot;&gt;Securely Store Sensitive Data in RAM&lt;/a&gt;&lt;/p&gt;
 
 &lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Resource&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Sync&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.util.ConcurrentModificationException&lt;/span&gt;
@@ -1234,7 +1326,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/08/27/safe-password.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Safe Password.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 27 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1255,9 +1353,11 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Error Hierarchy.scala</title>
-  <description>&lt;figure&gt;
+  <description></description>
+  <content:encoded>&lt;figure&gt;
   &lt;a href=&quot;https://alexn.org/assets/media/snippets/error-hierarchy.svg&quot; target=&quot;_blank&quot;&gt;
     &lt;img src=&quot;https://alexn.org/assets/media/snippets/error-hierarchy.svg&quot; alt=&quot;Error hierarchy graph&quot; title=&quot;Error hierarchy graph&quot; style=&quot;width:100%;&quot;&gt;
   &lt;/a&gt;
@@ -1328,7 +1428,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/08/14/error-hierarchy.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Error Hierarchy.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1347,9 +1453,12 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Sbt Fork Debug.sbt</title>
-  <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  <description>```scala
+fork := true</description>
+  <content:encoded>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;fork&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;javaOptions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;++=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;val&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;Digits&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;^(\\d+)$&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;r&lt;/span&gt;
@@ -1362,7 +1471,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       &lt;span class=&quot;nv&quot;&gt;Seq&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;empty&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/08/13/sbt-fork-debug.sbt.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Sbt Fork Debug.sbt&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 13 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1383,9 +1498,15 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Flow Sensitive Typing.ts</title>
-  <description>&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  <description>```typescript
+type Left = {
+  either: &quot;left&quot;
+  value: L
+}</description>
+  <content:encoded>&lt;div class=&quot;language-typescript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;either&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;
   &lt;span class=&quot;na&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;L&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1416,7 +1537,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
   &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/08/11/flow-sensitive-typing.ts.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Flow Sensitive Typing.ts&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Tue, 11 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1435,9 +1562,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>On Error Retry Loop.scala</title>
-  <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io._&lt;/span&gt;
+  <description>```scala
+import java.io._
+import java.nio.charset.CharacterCodingException</description>
+  <content:encoded>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.io._&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;java.nio.charset.CharacterCodingException&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ApplicativeError&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Defer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;MonadError&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
@@ -1566,7 +1697,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;yield&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;ExitCode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;Success&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/08/03/on-error-retry-loop.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;On Error Retry Loop.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1587,9 +1724,16 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Resource As Publisher.scala</title>
-  <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
+  <description>```scala
+/**
+
+  Imported from Gist:
+  [[https://gist.github.com/alexandru/b258f67ab1e21d61d06dcfd6ec73557a]]
+  */</description>
+  <content:encoded>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/b258f67ab1e21d61d06dcfd6ec73557a]]
   */&lt;/span&gt;
@@ -1654,7 +1798,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/resource-as-publisher.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Resource As Publisher.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1679,9 +1829,16 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Python Proxy.py</title>
-  <description>&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProxyAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  <description>```py
+class ProxyAttribute(object):
+    def init(self, name):
+        self.name = name
+    def repr(self):
+        return “.” + self.name</description>
+  <content:encoded>&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ProxyAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__repr__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
@@ -1780,7 +1937,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
         &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;o&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;_chain&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
             &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'  '&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;repr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;']'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/python-proxy.py.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Python Proxy.py&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1799,9 +1962,14 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>From Resource To Reactivestreams.scala</title>
-  <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect.Resource&lt;/span&gt;
+  <description>```scala
+import cats.effect.Resource
+import org.reactivestreams.Publisher
+import scala.concurrent.Future</description>
+  <content:encoded>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cats.effect.Resource&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;org.reactivestreams.Publisher&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;scala.concurrent.Future&lt;/span&gt;
 
@@ -1820,7 +1988,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
 &lt;span class=&quot;c1&quot;&gt;// Explicit acknowledgement logic is required&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;fromFile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Publisher&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;InputStream&lt;/span&gt;, &lt;span class=&quot;kt&quot;&gt;Ack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;])]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/from-resource-to-reactivestreams.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;From Resource To Reactivestreams.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1845,9 +2019,16 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Enumeratum.scala</title>
-  <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
+  <description>```scala
+/**
+
+  Imported from Gist:
+  [[https://gist.github.com/alexandru/3df8116f1c85f69612143b3b1884e1ed]]
+  */</description>
+  <content:encoded>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/3df8116f1c85f69612143b3b1884e1ed]]
   */&lt;/span&gt;
@@ -1872,7 +2053,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
   &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;object&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Session&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;AcknowledgeMode&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;session&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/enumeratum.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Enumeratum.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1891,9 +2078,16 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Akka Streams Buffer Test.scala</title>
-  <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
+  <description>```scala
+/**
+
+  Imported from Gist:
+  [[https://gist.github.com/alexandru/23e102b4891cda37ab41ffa74d40e390]]
+  */</description>
+  <content:encoded>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/**
   * Imported from Gist:
   * [[https://gist.github.com/alexandru/23e102b4891cda37ab41ffa74d40e390]]
   */&lt;/span&gt;
@@ -1953,7 +2147,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
     &lt;span class=&quot;nv&quot;&gt;Await&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;system&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;py&quot;&gt;terminate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;10.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;seconds&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/07/30/akka-streams-buffer-test.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Akka Streams Buffer Test.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -1976,9 +2176,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Future Stack Overflow.scala</title>
-  <description>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Demonstrating that directly executing runnables in your &lt;/span&gt;
+  <description>```scala
+// Demonstrating that directly executing runnables in your 
+// ExecutionContext is a really bad idea</description>
+  <content:encoded>&lt;div class=&quot;language-scala highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// Demonstrating that directly executing runnables in your &lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// ExecutionContext is a really bad idea&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;trigger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cycles&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;Future&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;Int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
@@ -1996,7 +2200,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 
 &lt;span class=&quot;c1&quot;&gt;// Throws StackOverflowError&lt;/span&gt;
 &lt;span class=&quot;nf&quot;&gt;trigger&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/05/27/future-stack-overflow.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Future Stack Overflow.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -2017,9 +2227,12 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Send Mail.py</title>
-  <description>&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python
+  <description>```python
+#!/usr/bin/env python</description>
+  <content:encoded>&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python
 &lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;smtplib&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;argparse&lt;/span&gt;
@@ -2064,7 +2277,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;login&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smtp_user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;args&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;smtp_pass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;msg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;service&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/03/18/send-mail.py.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Send Mail.py&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Wed, 18 Mar 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -2085,9 +2304,23 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Encrypt.sh</title>
-  <description>&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+  <description>```sh
+#!/usr/bin/env bash
+#
+Quickly encrypt a message or a file for sending to
+your colleagues over unsecure messengers (Slack, etc)…
+#
+echo “secret message” | encrypt
+#
+Or to encrypt a file:
+#
+encrypt ./path/to/file
+#
+—————————————————————————–</description>
+  <content:encoded>&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;#&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Quickly encrypt a message or a file for sending to&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# your colleagues over unsecure messengers (Slack, etc)...&lt;/span&gt;
@@ -2131,7 +2364,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
     &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&amp;amp;2
     &lt;span class=&quot;nb&quot;&gt;exit &lt;/span&gt;1
 &lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2020/02/18/encrypt.sh.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Encrypt.sh&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Tue, 18 Feb 2020 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -2152,9 +2391,14 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Sierpinski.hs</title>
-  <description>&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;
+  <description>```haskell
+#!/usr/bin/env stack
+– stack –resolver lts-14.14 script
+import Data.Bits</description>
+  <content:encoded>&lt;div class=&quot;language-haskell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;#!/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;usr&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;-- stack --resolver lts-14.14 script&lt;/span&gt;
 &lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;Data.Bits&lt;/span&gt;
 
@@ -2166,7 +2410,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&amp;amp;.&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'*'&lt;/span&gt;
       &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;..&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2019/11/29/sierpinski.hs.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Sierpinski.hs&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Fri, 29 Nov 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -2187,9 +2437,12 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Async Queue.ts</title>
-  <description>&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  <description>```ts
+type Callback = (a: A) =&amp;gt; void;</description>
+  <content:encoded>&lt;div class=&quot;language-ts highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Callback&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
 &lt;span class=&quot;cm&quot;&gt;/**
  * Delays stuff for ensuring fairness.
@@ -2327,7 +2580,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
 &lt;span class=&quot;nx&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2019/10/07/async-queue.ts.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Async Queue.ts&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
@@ -2350,9 +2609,11 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       
     
       
-        <item>
+        
+<item>
   <title>Blocking Task.scala</title>
-  <description>&lt;p&gt;Imported from &lt;a href=&quot;https://gist.github.com/alexandru/d04c23e3ebd918c6144b5ad33c69f48f&quot;&gt;gist.github.com&lt;/a&gt;.&lt;/p&gt;
+  <description>Imported from gist.github.com.</description>
+  <content:encoded>&lt;p&gt;Imported from &lt;a href=&quot;https://gist.github.com/alexandru/d04c23e3ebd918c6144b5ad33c69f48f&quot;&gt;gist.github.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;WARN: not sure if this code is correct.&lt;/p&gt;
 
@@ -2413,7 +2674,13 @@ see &lt;a href=&quot;https://alexn.org/blog/2020/08/03/on-error-retry-loop.html&
       &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+  
+  &lt;hr&gt;
+  &lt;p&gt;
+    &lt;i&gt;The snippet &lt;a href=&quot;https://alexn.org/snippets/2019/09/02/blocking-task.scala.html?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;Blocking Task.scala&lt;/a&gt; first appeared on &lt;a href=&quot;https://alexn.org?pk_campaign=rss&amp;amp;pk_kwd=footer-link&quot;&gt;alexn.org&lt;/a&gt;.&lt;/i&gt;
+  &lt;/p&gt;</content:encoded>
   <pubDate>Mon, 02 Sep 2019 00:00:00 +0000</pubDate>
   <dc:modified>Mon, 12 Oct 2020 14:00:24 +0000</dc:modified>
   <atom:modified>Mon, 12 Oct 2020 14:00:24 +0000</atom:modified>
