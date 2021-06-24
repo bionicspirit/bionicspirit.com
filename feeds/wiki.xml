@@ -10,13 +10,44 @@
     <description>Feed of wiki articles, published at alexn.org/wiki/</description>
     <link>https://alexn.org/wiki/</link>
     <atom:link href="https://alexn.org/feeds/wiki.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 04 May 2021 12:58:23 +0000</pubDate>
-    <lastBuildDate>Tue, 04 May 2021 12:58:23 +0000</lastBuildDate>
+    <pubDate>Thu, 24 Jun 2021 07:20:30 +0000</pubDate>
+    <lastBuildDate>Thu, 24 Jun 2021 07:20:30 +0000</lastBuildDate>
   	<language>en</language>
     <sy:updatePeriod>hourly</sy:updatePeriod>
 	  <sy:updateFrequency>1</sy:updateFrequency>
     <generator>Jekyll v4.1.1</generator>
 
+    
+      
+        
+<item>
+  <title>TLS/SSL (HTTPS)</title>
+  <description>Article updated at June 24, 2021, created at June 24, 2021.</description>
+  <content:encoded>&lt;p&gt;
+      Article updated at June 24, 2021, 
+      created at June 24, 2021.
+    &lt;/p&gt;
+    &lt;hr&gt;
+    &lt;p&gt;Download the certificate of a domain:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;echo -n | openssl s_client -connect google.com:443 -servername google.com | openssl x509
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Verify that the certificate corresponds to CA certificate:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;code&quot;&gt;&lt;code&gt;openssl verify -verbose -purpose sslserver -CAfile /path/to/cafile.pem /path/to/cert.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content:encoded>
+  <pubDate>Thu, 24 Jun 2021 07:13:23 +0000</pubDate>
+  <dc:modified>Thu, 24 Jun 2021 07:16:43 +0000</dc:modified>
+  <atom:modified>Thu, 24 Jun 2021 07:16:43 +0000</atom:modified>
+  <link>https://alexn.org/wiki/tls.html?pk_campaign=rss&amp;pk_kwd=link</link>
+  <guid isPermaLink="true">https://alexn.org/wiki/tls.html</guid>
+  
+  <category>Wiki</category>
+  
+</item>
+
+      
     
       
         
@@ -390,9 +421,9 @@ So &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;*y&l
         
 <item>
   <title>Android</title>
-  <description>Article updated at November 21, 2020, created at November 2, 2020.</description>
+  <description>Article updated at June 24, 2021, created at November 2, 2020.</description>
   <content:encoded>&lt;p&gt;
-      Article updated at November 21, 2020, 
+      Article updated at June 24, 2021, 
       created at November 2, 2020.
     &lt;/p&gt;
     &lt;hr&gt;
@@ -428,10 +459,18 @@ So &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;*y&l
 &lt;a href=&quot;https://www.videolan.org/vlc/download-android.html&quot;&gt;VLC&lt;/a&gt;: video player&lt;/li&gt;
   &lt;li&gt;
 &lt;a href=&quot;https://github.com/PaulWoitaschek/Voice&quot;&gt;Voice&lt;/a&gt;: open-source audiobook player&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;screen-sharing-with-laptop&quot;&gt;Screen-sharing with Laptop&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+&lt;a href=&quot;https://deskreen.com/lang-en&quot;&gt;Deskreen&lt;/a&gt;: for sharing the desktop’s screen over the local network, works with any device&lt;/li&gt;
+  &lt;li&gt;
 &lt;/ul&gt;</content:encoded>
   <pubDate>Mon, 02 Nov 2020 19:09:46 +0000</pubDate>
-  <dc:modified>Sat, 21 Nov 2020 10:09:03 +0000</dc:modified>
-  <atom:modified>Sat, 21 Nov 2020 10:09:03 +0000</atom:modified>
+  <dc:modified>Thu, 24 Jun 2021 07:16:43 +0000</dc:modified>
+  <atom:modified>Thu, 24 Jun 2021 07:16:43 +0000</atom:modified>
   <link>https://alexn.org/wiki/android.html?pk_campaign=rss&amp;pk_kwd=link</link>
   <guid isPermaLink="true">https://alexn.org/wiki/android.html</guid>
   

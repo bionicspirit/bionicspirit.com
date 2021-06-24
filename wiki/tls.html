@@ -15,15 +15,16 @@
     <!--https://developers.google.com/web/fundamentals/design-and-ux/browser-customization-->
     <meta name="theme-color" content="#493667">
     
-    <title>Links tagged with `publishing` - Alexandru Nedelcu</title>
+    <title>TLS/SSL (HTTPS) - Alexandru Nedelcu</title>
     
 
     <!-- Open Graph Meta -->
     <meta content="Alexandru Nedelcu" property="og:site_name">
-    <meta content="Links tagged with `publishing`" property="og:title">
-    
-      <meta content="On programming and personal projects" property="og:description">
-    <meta content="https://alexn.org/links/tag/publishing/index.html" property="og:url">
+    <meta content="TLS/SSL (HTTPS)" property="og:title">
+    <meta content="Personal, volatile wiki documentation" property="og:description">
+    <meta content="https://alexn.org/wiki/tls.html" property="og:url">
+    <meta content="2021-06-24T07:13:23+00:00" property="article:published_time">
+    <meta content="2021-06-24T07:16:43+00:00" property="article:modified_time">
     
     <meta content="website" property="og:type">
     <meta property="og:image" content="https://alexn.org/assets/logo/800px-bordered.png" />
@@ -34,10 +35,9 @@
     <meta name="twitter:image:src" content="https://alexn.org/assets/logo/800px-bordered.png">
     <meta name="twitter:site" content="@alexelcu">
     <meta name="twitter:creator" content="@alexelcu">
-    <meta name="twitter:title" content="Links tagged with `publishing`">
-    <meta name="twitter:url" content="https://alexn.org/links/tag/publishing/index.html">
-    
-      <meta name="twitter:description" content="On programming and personal projects">
+    <meta name="twitter:title" content="TLS/SSL (HTTPS)">
+    <meta name="twitter:url" content="https://alexn.org/wiki/tls.html">
+    <meta name="twitter:description" content="Personal, volatile wiki documentation">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/assets/logo/16px.png" sizes="16x16" />
@@ -60,7 +60,7 @@
     <link rel="preload" as="style" href="/assets/css/style.css?202106240720">
     
     <!--[if IE 8]><link rel="stylesheet" href="/assets/css/ie.css"><![endif]-->
-    <link rel="canonical" href="https://alexn.org/links/tag/publishing/">
+    <link rel="canonical" href="https://alexn.org/wiki/tls.html">
 </head>
 
 
@@ -76,7 +76,7 @@
             <a href="/blog/">Blog</a>
           </li>
           
-          <li class="element   ">
+          <li class="element  current ">
             <a href="/wiki/">Wiki</a>
           </li>
           
@@ -84,7 +84,7 @@
             <a href="/snippets/">Snippets</a>
           </li>
           
-          <li class="element  current ">
+          <li class="element   ">
             <a href="/links/">Links</a>
           </li>
           
@@ -105,26 +105,54 @@
 
    <div class="content">
       <div class="container">
-         <div class="home" id="home">
-      <h1 class="pageTitle">
+         <article class="post " itemscope itemtype="http://schema.org/Article">
+      <h1 class="postTitle" itemprop="headline">
         
         
-          <span class="type">Links Tag:</span> Publishing
+          TLS/SSL (HTTPS)
         
         
       </h1>
     
-
-  <div class="archive_list">
-    <div class="container">
+  
+  <p class="meta">
+    <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="https://alexn.org/wiki/tls.html"/>
+    
+      <meta itemprop="datePublished" content="2021-06-24T07:13:23+0000"/>
       
-      <div class="clearfix"></div>
+      
+      <time itemprop="dateModified" content="2021-06-24T07:16:43+0000">
+        Updated: June 24, 2021
+      </time>
+      
+      
+      | <a href="/wiki/tls.html#isso-thread">comments</a>
+      
+    
+  </p>
+
+  <div class="hidden" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+    <meta itemprop="name" content="Alexandru Nedelcu">
+    <meta itemprop="url" content="https://alexn.org/about.html">
+    <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+      <meta itemprop="url" content="https://alexn.org/assets/raw/logo-green.png">
     </div>
   </div>
 
-  <!-- Pagination links -->
-  
-</div>
+  <div id="content" itemprop="articleBody">
+    
+<p>Download the certificate of a domain:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>echo -n | openssl s_client -connect google.com:443 -servername google.com | openssl x509
+</code></pre></div></div>
+
+<p>Verify that the certificate corresponds to CA certificate:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="code"><code>openssl verify -verbose -purpose sslserver -CAfile /path/to/cafile.pem /path/to/cert.pem
+</code></pre></div></div>
+
+  </div>
+</article>
 
       </div>
    </div><!-- end .content -->
@@ -162,10 +190,77 @@
 </script>
 <noscript>
   
-  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=Links+tagged+with+%60publishing%60" style="border:0" alt="" />
+  <img src="https://ly.alexn.org/m.php?idsite=1&rec=1&action_name=TLS%2FSSL+%28HTTPS%29" style="border:0" alt="" />
 </noscript>
 
    <div class="footer">
+  
+  <div class="container">
+    <div class="contributions">
+      <div id="footer-comments-widget">
+  
+<h2 id="comments">
+  Comments
+  <a href="#comments" class="anchor">#</a>
+</h2>
+
+<div class="note only-js">
+  Be nice!<br><span class="extra">If you don't see the self-hosted <a href="https://posativ.org/isso/" target="_blank">Isso</a> commenting widget, it might be blocked by a browser extension.</span>
+</div>
+
+<div id="comments">
+  <script data-isso="https://alexn.org/comments/alexn/"
+          data-isso-css="false"
+          data-isso-lang="en"
+          data-isso-reply-to-self="true"
+          data-isso-require-author="true"
+          data-isso-require-email="false"
+          data-isso-reply-notifications="true"
+          data-isso-max-comments-top="10"
+          data-isso-max-comments-nested="5"
+          data-isso-reveal-on-click="5"
+          data-isso-gravatar="true"
+          data-isso-avatar="false"
+          data-isso-vote="false"
+          data-vote-levels=""
+          src="https://alexn.org/comments/alexn/js/embed.min.js"></script>
+  <section id="isso-thread" data-title="TLS/SSL (HTTPS)">
+  </section>
+</div>
+<noscript>
+  <div class="note">
+    <strong>Enable JavaScript to see comments!</strong>
+    <br>
+    <span class="extra">
+      Commenting widget is powered by a self-hosted <a href="https://posativ.org/isso/" target="_blank">Isso</a>
+      commenting server. Read our <a href="/docs/privacy-policy.html">privacy policy</a>.
+    </span>
+  </div>
+</noscript>
+
+</div>
+
+<h2 id="contribute">
+  Contribute
+  <a href="#contribute" class="anchor">#</a>
+</h2>
+
+<p>
+  Fix or add to this article by submitting a pull request:<br/>
+  <a style="white-space: nowrap;" href="https://github.com/alexandru/alexn.org/blob/master/_wiki/tls.md" target="_blank">Edit Page on GitHub</a>
+</p>
+
+<p>
+  Donate to cover ongoing website costs, or buy me coffee ☕️😋 <br/>
+  <a href="https://www.patreon.com/bePatron?u=6102596" target="_blank">
+    <img label="Become a Patron!" alt="Become a Patron!" title="Become a Patron!" src="/assets/media/buttons/patreon.png" height="40" />
+  </a>
+</p>
+
+
+
+    </div>  
+  </div>
   
 
   <div class="bottom">
